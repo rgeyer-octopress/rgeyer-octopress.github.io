@@ -1,0 +1,73 @@
+---
+layout: post
+title: Linux 1080p HTPC
+categories:
+- Linux
+- Worklogs
+tags:
+- linkedin
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: qwikrex.blogspot.com
+  blogger_author: RyanG
+  blogger_permalink: /feeds/posts/default/2070183690831763592
+  syntaxhighlighter_encoded: '1'
+  _edit_last: '1'
+  _sexybookmarks_shortUrl: http://bit.ly/cjfvyD
+  _sexybookmarks_permaHash: cbe16535b2088dedc28fe95da84f74c2
+---
+So, I finally broke down and built a HTPC (home theater personal computer).  Actually, I bought it in late December, and have had it mostly up and running since about the middle of January, but I'm just getting the chance to post about it now.
+
+I knew from the start I wanted to run Gentoo Linux with MythTV, and I must say it was an adventure getting it all working.  I've outlined the details of the build for anyone interested in doing something similar, or who might just be curious.
+<h3>The hardware</h3>
+<a href="http://www.newegg.com/product/product.aspx?Item=N82E16813128072"> GIGABYTE GA-73PVM-S2H</a>
+<a href="http://www.newegg.com/product/product.aspx?Item=N82E16822148230"> Seagate Barracuda 7200.10 ST3160815AS 160GB
+</a><a href="http://www.newegg.com/product/product.aspx?Item=N82E16819116040"> Intel Celeron 420 Conroe-L 1.6GHz 512KB L2 Cache</a>
+<a href="http://www.newegg.com/product/product.aspx?Item=N82E16820134114"> Kingston 1GB 240-Pin DDR2</a>
+<a href="http://www.newegg.com/product/product.aspx?Item=N82E16827106070"> Lite-On Black DVDRW</a>
+<a href="http://www.newegg.com/product/product.aspx?Item=N82E16880125001"> eDATA DEC-200B Vista Certified Infrared Remote</a>
+
+I already had a low profile desktop case sitting around which I used for the project, so that's not included.  Total without the case was just under $300.  I later added two <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16826104027">Logitech ChillStream</a> game controllers for playing console game emulators.
+
+The motherboard was chosen because it had "everything" I needed onboard and didn't cost a fortune.  I needed HDMI out for my new <a href="http://www.sharpusa.com/products/ModelLanding/0,1058,1922,00.html">Sharp Aquos 42" HDTV</a> so I could have a clean digital signal at the full 1920x1080 resolution.
+
+The other stuff should be fairly obvious, I had to have a processor, drive, memory, and of course since this is an HTPC, a remote control.  Since I wasn't planning on doing anything particularly processor intensive (see goals) and I was going to be accessing nearly all my media over the network a fire breathing processor and giant hard drive weren't necessary.
+<h3>Goals</h3>
+I wasn't interested in a TV tuner or using this as a PVR/DVR, nor archiving DVD's.  I wanted this to replace the DVD changer in my existing HTIAB (home theater in a box) and be able to play DVD's upscaled to 1080p.  Also I wanted to be able to play video captured on my <a href="http://www.camcorderinfo.com/content/Sony-HCR-HC1-Review.htm">Sony HDR-HC1 HD camcorder</a> at it's native resolution.
+
+Secondary things would be playing my fairly sizable MP3 music collection, looking at pictures, and other cool stuff you can do with a computer connected to your television.
+<h3>Wrestling with the feral Gentoo</h3>
+Since I was dealing with "bleeding edge" hardware at least with the motherboard chipset and the remote control, getting Gentoo linux up and running with support for all of my hardware would be a challenge.
+
+After a fair amount of googling, and plenty of trial and error, I was able to get things working.  For the sake of reference, I'll document the highlights of getting things going.
+
+1) The 2007.0 Live CD wouldn't recognize my SATA DVDR drive unless I booted it with "gentoo all-generic-ide", and set the sata controller to "IDE" in the bios.
+
+2) The latest nvidia driver available in portage (100.14.19) didn't seem to properly support my video hardware, so I downloaded the latest from the nvidia website (169.07) which seemed to work much better.  I actually went so far as to make my own custom ebuild for it.
+
+3) The latest lirc available in portage (0.8.2-r2) didn't seem to properly support my MCE2 USB style remote control.  At the time 0.8.3_pre1 was masked as unstable, but it did the trick
+
+4) Getting the ChillStream's to be recognized by the kernel was interesting too.  A kernel module (xpad) exists that is meant to support these type of controls with the XBOX-360 style.  However, a patch was necessary to properly support these.  It just added the PID to the source to support this controller.  They work great now.  :-)
+<h3>Results</h3>
+So, after all that did I reach my goals?
+
+Yes, and then some!  Below is a list of the highlights of functionality, but in all this project was quite a success.  And I think the functionality is impressive considering the bargain price!
+
+One of the things which came as a pleasant surprise was getting MythGame setup with some emulators of old consoles I'd played.  It's amazingly nostalgic to play some of those Nintendo games!
+
+What works
+* MythFrontend at 1080p over HDMI (should show modelines)
+* MythVideo/DVD playing any video I like at native resolution
+* xine playing DVD's at 1080p
+* MythGallery
+* Audio out through TOSLINK optical output, passing along AC3/Dolby Digital &amp; DTS
+* MythMusic to play MP3 files from the network
+* MCE Remote Control to run MythFrontend
+* MythGame
+
+What doesn't
+* Audio out through HDMI
+<h3>Future plans</h3>
+Now that the HD DVD vs Bluray war is apparently <a href="http://www.tacp.toshiba.com/news/newsarticle.asp?newsid=198">over</a> when the drive prices come down a bit more, I intend to put a Blueray drive in this.  I suspect I'll need a more powerful processor to successfully play a movie though.  I'm sure that linux will have limited or non existent support for the format for some time to come as well, so we'll see how that plays out.  The hardware is mostly up to the task though, and represents a bargain compared to the several pieces of equipment that would have been required to do the same stuff.
