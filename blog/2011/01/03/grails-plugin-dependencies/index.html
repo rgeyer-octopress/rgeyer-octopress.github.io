@@ -103,14 +103,16 @@
   </header>
 
 
-<div class="entry-content">You just finished adding a shiny new plugin to your Grails project, and build some functionality around it.  You excitedly push it out to your deployment site and you&#8217;re greeted with a NoClassDefException.  If this has happened to you, the complex and murky plugin dependency handling of Grails may be to blame.
+<div class="entry-content"><p>You just finished adding a shiny new plugin to your Grails project, and build some functionality around it.  You excitedly push it out to your deployment site and you&rsquo;re greeted with a NoClassDefException.  If this has happened to you, the complex and murky plugin dependency handling of Grails may be to blame.</p>
+
 <!--more-->
 
-The release of Grails 1.2 introduced a DSL for defining your projects external dependencies using Ivy, by convention, in your BuildConfig.groovy file, and the villagers rejoiced.  Then, Grails 1.3 expanded on this successful design and allowed you to define your projects plugin dependencies in the BuildConfig.groovy file rather than having to run <em>grails install-plugin</em>.  The villagers prepared a sacrificial virgin, declared Grails as their new deity, and began a holy war to convert the nearby settlers.
 
-But things may not be exactly as they appear..
+<p>The release of Grails 1.2 introduced a DSL for defining your projects external dependencies using Ivy, by convention, in your BuildConfig.groovy file, and the villagers rejoiced.  Then, Grails 1.3 expanded on this successful design and allowed you to define your projects plugin dependencies in the BuildConfig.groovy file rather than having to run <em>grails install-plugin</em>.  The villagers prepared a sacrificial virgin, declared Grails as their new deity, and began a holy war to convert the nearby settlers.</p>
 
-Straight from the <a href=http://grails.org/doc/latest/guide/3.%20Configuration.html#3.7.1 Configurations and Dependencies">Grails documentation</a> we have this.
+<p>But things may not be exactly as they appear..</p>
+
+<p>Straight from the <a href=http://grails.org/doc/latest/guide/3.%20Configuration.html#3.7.1 Configurations and Dependencies">Grails documentation</a> we have this.</p>
 
 <blockquote>
 Grails features 5 dependency resolution configurations (or &#8216;scopes&#8217;) which you can take advantage of:
@@ -121,82 +123,102 @@ Grails features 5 dependency resolution configurations (or &#8216;scopes&#8217;)
 -provided: Dependencies needed at development time, but not during WAR deployment
 </blockquote>
 
-So based on this you might assume you must specify all dependencies for each configuration individually, I certainly did.  Suppose that you&#8217;re working on a project that has these plugins installed.
+
+<p>So based on this you might assume you must specify all dependencies for each configuration individually, I certainly did.  Suppose that you&rsquo;re working on a project that has these plugins installed.</p>
 
 <ul>
-	<li>fixtures-1.0.RC1.SNAPSHOT</li>
-	<li>joda-time-1.1</li>
-	<li>spock-0.4-groovy-1.7-SNAPSHOT</li>
+    <li>fixtures-1.0.RC1.SNAPSHOT</li>
+    <li>joda-time-1.1</li>
+    <li>spock-0.4-groovy-1.7-SNAPSHOT</li>
 </ul>
 
-If you want the fixtures and joda time plugins loaded each time you do a compile, run-app, run-war, or war, and only include the spock plugin when you run test-app, you might assume your BuildConfig should look like this.
 
-[groovy highlight=&#8221;27&#8221;]
+<p>If you want the fixtures and joda time plugins loaded each time you do a compile, run-app, run-war, or war, and only include the spock plugin when you run test-app, you might assume your BuildConfig should look like this.</p>
+
+<p>[groovy highlight=&ldquo;27&rdquo;]
 grails.project.class.dir = &quot;target/classes&quot;
 grails.project.test.class.dir = &quot;target/test-classes&quot;
-grails.project.test.reports.dir = &quot;target/test-reports&quot;
+grails.project.test.reports.dir = &quot;target/test-reports&quot;</p>
 
-grails.project.dependency.resolution = {
+<p>grails.project.dependency.resolution = {
   // inherit Grails&#8217; default dependencies
   inherits(&quot;global&quot;) {
   }
-  log &quot;warn&quot; // log level of Ivy resolver, either &#8216;error&#8217;, &#8216;warn&#8217;, &#8216;info&#8217;, &#8216;debug&#8217; or &#8216;verbose&#8217;
-  repositories {
-    grailsPlugins()
-    grailsHome()
-    grailsCentral()
-  }
-  dependencies {
-    // specify dependencies here under either &#8216;build&#8217;, &#8216;compile&#8217;, &#8216;runtime&#8217;, &#8216;test&#8217; or &#8216;provided&#8217; scopes eg.
-  }
-  plugins {
-    build &#8216;:fixtures:1.0.RC1.SNAPSHOT&#8217;,
-      &#8216;:joda-time:1.1&#8217;
-    compile &#8216;:fixtures:1.0.RC1.SNAPSHOT&#8217;,
-      &#8216;:joda-time:1.1&#8217;
-    runtime &#8216;:fixtures:1.0.RC1.SNAPSHOT&#8217;,
-      &#8216;:joda-time:1.1&#8217;    
-    test &#8216;:fixtures:1.0.RC1.SNAPSHOT&#8217;,
-      &#8216;:joda-time:1.1&#8217;,
-      &#8216;:spock:0.4-groovy-1.7-SNAPSHOT&#8217;
-  }
+  log &quot;warn&quot; // log level of Ivy resolver, either &lsquo;error&rsquo;, &lsquo;warn&rsquo;, &lsquo;info&rsquo;, &lsquo;debug&rsquo; or &lsquo;verbose&rsquo;
+  repositories {</p>
+
+<pre><code>grailsPlugins()
+grailsHome()
+grailsCentral()
+</code></pre>
+
+<p>  }
+  dependencies {</p>
+
+<pre><code>// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+</code></pre>
+
+<p>  }
+  plugins {</p>
+
+<pre><code>build ':fixtures:1.0.RC1.SNAPSHOT',
+  ':joda-time:1.1'
+compile ':fixtures:1.0.RC1.SNAPSHOT',
+  ':joda-time:1.1'
+runtime ':fixtures:1.0.RC1.SNAPSHOT',
+  ':joda-time:1.1'    
+test ':fixtures:1.0.RC1.SNAPSHOT',
+  ':joda-time:1.1',
+  ':spock:0.4-groovy-1.7-SNAPSHOT'
+</code></pre>
+
+<p>  }
 }
-[/groovy]
+[/groovy]</p>
 
-Notice the duplication across all configurations?  In fact only the test configuration is different with the addition of the spock plugin.  Intuitively this would make sense, even if a particular phase didn&#8217;t really require the plugin by including it you make sure all of the dependencies are available; better safe than sorry, right?
+<p>Notice the duplication across all configurations?  In fact only the test configuration is different with the addition of the spock plugin.  Intuitively this would make sense, even if a particular phase didn&rsquo;t really require the plugin by including it you make sure all of the dependencies are available; better safe than sorry, right?</p>
 
-The problem is that these configurations interact with one another in subtle, and not clearly documented ways.  In actual fact what you&#8217;ve done above is excluded all plugins from every phase but test.  To achieve the desired result your build config would need to look like this instead.
+<p>The problem is that these configurations interact with one another in subtle, and not clearly documented ways.  In actual fact what you&rsquo;ve done above is excluded all plugins from every phase but test.  To achieve the desired result your build config would need to look like this instead.</p>
 
-[groovy highlight=&#8221;19&#8221;]
+<p>[groovy highlight=&ldquo;19&rdquo;]</p>
 
-grails.project.class.dir = &quot;target/classes&quot;
+<p>grails.project.class.dir = &quot;target/classes&quot;
 grails.project.test.class.dir = &quot;target/test-classes&quot;
-grails.project.test.reports.dir = &quot;target/test-reports&quot;
+grails.project.test.reports.dir = &quot;target/test-reports&quot;</p>
 
-grails.project.dependency.resolution = {
+<p>grails.project.dependency.resolution = {
   // inherit Grails&#8217; default dependencies
   inherits(&quot;global&quot;) {
   }
-  log &quot;warn&quot; // log level of Ivy resolver, either &#8216;error&#8217;, &#8216;warn&#8217;, &#8216;info&#8217;, &#8216;debug&#8217; or &#8216;verbose&#8217;
-  repositories {
-    grailsPlugins()
-    grailsHome()
-    grailsCentral()
-  }
-  dependencies {
-    // specify dependencies here under either &#8216;build&#8217;, &#8216;compile&#8217;, &#8216;runtime&#8217;, &#8216;test&#8217; or &#8216;provided&#8217; scopes eg.
-  }
-  plugins {
-    build: &#8216;:joda-time:1.1&#8217;
-    test &#8216;:fixtures:1.0.RC1.SNAPSHOT&#8217;,
-      &#8216;:spock:0.4-groovy-1.7-SNAPSHOT&#8217;
-  }
+  log &quot;warn&quot; // log level of Ivy resolver, either &lsquo;error&rsquo;, &lsquo;warn&rsquo;, &lsquo;info&rsquo;, &lsquo;debug&rsquo; or &lsquo;verbose&rsquo;
+  repositories {</p>
+
+<pre><code>grailsPlugins()
+grailsHome()
+grailsCentral()
+</code></pre>
+
+<p>  }
+  dependencies {</p>
+
+<pre><code>// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+</code></pre>
+
+<p>  }
+  plugins {</p>
+
+<pre><code>build: ':joda-time:1.1'
+test ':fixtures:1.0.RC1.SNAPSHOT',
+  ':spock:0.4-groovy-1.7-SNAPSHOT'
+</code></pre>
+
+<p>  }
 }
-[/groovy]
+[/groovy]</p>
 
-The scopes are in fact additive, so if you put all of your dependency declarations in the build scope they&#8217;re automatically included in all other scopes.  In every other scope, by listing a dependency there it effectively adds it to that scope, and <em>removes</em> it from all other scopes.  That&#8217;s why your deployed war file breaks.
+<p>The scopes are in fact additive, so if you put all of your dependency declarations in the build scope they&rsquo;re automatically included in all other scopes.  In every other scope, by listing a dependency there it effectively adds it to that scope, and <em>removes</em> it from all other scopes.  That&rsquo;s why your deployed war file breaks.</p>
 
-Something else to look out for if you&#8217;re working on an older project which used Grails 1.2 or earlier.  If you&#8217;ve used the <em>grails install-plugin</em> method of including a plugin in your project your application.properties file will list the plugins for your project.  This method of listing dependencies, and the &#8220;new&#8221; dependencies DSL for Grails 1.3+ do not mix well, so be sure to stick to one or the other!
+<p>Something else to look out for if you&rsquo;re working on an older project which used Grails 1.2 or earlier.  If you&rsquo;ve used the <em>grails install-plugin</em> method of including a plugin in your project your application.properties file will list the plugins for your project.  This method of listing dependencies, and the &ldquo;new&rdquo; dependencies DSL for Grails 1.3+ do not mix well, so be sure to stick to one or the other!</p>
 </div>
 
 

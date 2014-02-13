@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan J. Geyer">
 
   
-  <meta name="description" content="If you&#8217;re looking to start a blog to promote your business, or boost your presence on the internet, you&#8217;ve probably heard of Wordpress. &hellip;">
+  <meta name="description" content="If you&rsquo;re looking to start a blog to promote your business, or boost your presence on the internet, you&rsquo;ve probably heard of Wordpress. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,48 +103,60 @@
   </header>
 
 
-<div class="entry-content">If you&#8217;re looking to start a blog to promote your business, or boost your presence on the internet, you&#8217;ve probably heard of <a href="http://wordpress.org">Wordpress</a>.
+<div class="entry-content"><p>If you&rsquo;re looking to start a blog to promote your business, or boost your presence on the internet, you&rsquo;ve probably heard of <a href="http://wordpress.org">Wordpress</a>.</p>
 
-You may also have heard about the <a href="http://en.support.wordpress.com/com-vs-org/">benefits</a> of hosting your own instance of Wordpress, but you&#8217;re intimidated by the idea of setting up and maintaining your own server, or trusting your business to a shared hosting solution.
+<p>You may also have heard about the <a href="http://en.support.wordpress.com/com-vs-org/">benefits</a> of hosting your own instance of Wordpress, but you&rsquo;re intimidated by the idea of setting up and maintaining your own server, or trusting your business to a shared hosting solution.</p>
 
-What if I told you that I&#8217;ve got a solution that&#8217;ll let you run your Wordpress blog, on your very own server, with automated backups and disaster recover, completely free?
+<p>What if I told you that I&rsquo;ve got a solution that&rsquo;ll let you run your Wordpress blog, on your very own server, with automated backups and disaster recover, completely free?</p>
 
-Wait wait! I know it sounds too good to be true, but don&#8217;t leave just yet, hear me out&#8230;
+<p>Wait wait! I know it sounds too good to be true, but don&rsquo;t leave just yet, hear me out&hellip;</p>
+
 <!--more-->
 
+
+
+
 <h2>Amazon AWS Free Tier</h2>
-First, let me be straight with you.  When I say &#8220;free&#8221; I&#8217;m referring to the <a href="http://aws.amazon.com/free/">free tier</a> of Amazon&#8217;s virtual computing and storage platform AWS.
 
-This free tier allows you to run their smallest instance free for one year.  In practice you actually end up paying them a very small sum (around $0.12 average for me thus far) each month for transfer costs to run a low to medium traffic blog.
 
-After your first year of free usage has expried, it&#8217;ll start to cost around $15 per month to keep using the same size instance.
+<p>First, let me be straight with you.  When I say &ldquo;free&rdquo; I&rsquo;m referring to the <a href="http://aws.amazon.com/free/">free tier</a> of Amazon&rsquo;s virtual computing and storage platform AWS.</p>
+
+<p>This free tier allows you to run their smallest instance free for one year.  In practice you actually end up paying them a very small sum (around $0.12 average for me thus far) each month for transfer costs to run a low to medium traffic blog.</p>
+
+<p>After your first year of free usage has expried, it&rsquo;ll start to cost around $15 per month to keep using the same size instance.</p>
 
 <h2>Managed by RightScale</h2>
-You may be looking at AWS and thinking that setting up your own server, and keeping it running and backed up would be a daunting task, and it can be.  That&#8217;s where <a href="http://www.rightscale.com/">RightScale</a> comes into the picture.
 
-RightScale offers a <a href="http://www.rightscale.com/products/free_edition.php">Free Developer Edition</a> that gives you access to their shared library of ServerTemplates.
 
-In that library is one little gem that I published, expressly for the purpose of running a server that hosts my blog, a few sites for other domains I own, as well as all of the email traffic for my various domains.
+<p>You may be looking at AWS and thinking that setting up your own server, and keeping it running and backed up would be a daunting task, and it can be.  That&rsquo;s where <a href="http://www.rightscale.com/">RightScale</a> comes into the picture.</p>
 
-In fact, you&#8217;re reading this right now from a server running from <a href="http://www.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">this ServerTemplate</a>.
+<p>RightScale offers a <a href="http://www.rightscale.com/products/free_edition.php">Free Developer Edition</a> that gives you access to their shared library of ServerTemplates.</p>
+
+<p>In that library is one little gem that I published, expressly for the purpose of running a server that hosts my blog, a few sites for other domains I own, as well as all of the email traffic for my various domains.</p>
+
+<p>In fact, you&rsquo;re reading this right now from a server running from <a href="http://www.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">this ServerTemplate</a>.</p>
 
 <h2>Full Disclosure</h2>
-Before I give you the skinny on how to start using these tools to host a Wordpress blog on your own virtual server, a few warnings are in order.
 
-I am using <a href="http://www.opscode.com/chef/">Opscode Chef</a> to configure the server.  Chef support is currently in <em><strong>Beta</strong></em> on RightScale, meaning that they do not recommend you use it to configure and manage &#8220;Production&#8221; servers.
 
-It also means that there can be some hiccups when you&#8217;re launching and configuring a server with this ServerTemplate.
+<p>Before I give you the skinny on how to start using these tools to host a Wordpress blog on your own virtual server, a few warnings are in order.</p>
 
-So, don&#8217;t be surprised if the first time you launch your server, it doesn&#8217;t work.  Try launching a second time.
+<p>I am using <a href="http://www.opscode.com/chef/">Opscode Chef</a> to configure the server.  Chef support is currently in <em><strong>Beta</strong></em> on RightScale, meaning that they do not recommend you use it to configure and manage &ldquo;Production&rdquo; servers.</p>
 
-Lastly, I can&#8217;t take any responsibility for any loss of self esteem, data, productivity, or sanity.  You have been warned.
+<p>It also means that there can be some hiccups when you&rsquo;re launching and configuring a server with this ServerTemplate.</p>
 
-That said, I&#8217;m using this server to run the very blog you&#8217;re reading, and I haven&#8217;t had any significant glitches yet.  RightScale is working as we speak to improve their support for Chef and things will only get better from here.
+<p>So, don&rsquo;t be surprised if the first time you launch your server, it doesn&rsquo;t work.  Try launching a second time.</p>
 
-Haven&#8217;t scared you off yet? Okay, good..  Here we go..
+<p>Lastly, I can&rsquo;t take any responsibility for any loss of self esteem, data, productivity, or sanity.  You have been warned.</p>
+
+<p>That said, I&rsquo;m using this server to run the very blog you&rsquo;re reading, and I haven&rsquo;t had any significant glitches yet.  RightScale is working as we speak to improve their support for Chef and things will only get better from here.</p>
+
+<p>Haven&rsquo;t scared you off yet? Okay, good..  Here we go..</p>
 
 <h2>20 Minute Quickstart</h2>
-The RightScale management tool, and this ServerTemplate offer all sorts of cool functionality which we can explore later, but if you&#8217;re in a hurry to get started here&#8217;s all you need to know.
+
+
+<p>The RightScale management tool, and this ServerTemplate offer all sorts of cool functionality which we can explore later, but if you&rsquo;re in a hurry to get started here&rsquo;s all you need to know.</p>
 
 <ol>
 <li>Go sign up for an <a href="http://aws.amazon.com/">AWS Account</a></li>
@@ -170,15 +182,22 @@ The RightScale management tool, and this ServerTemplate offer all sorts of cool 
 <li>Start Blogging!</li>
 </ol>
 
-<h2>What&#8217;s Next?</h2>
-That&#8217;s really all there is to it.  As I mentioned the ServerTemplate does a number of other cool things, which you can read about in it&#8217;s <a href="http://www.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">description</a>.
 
-The best part is that because this ServerTemplate is what I use for my own blog and email hosting duties, you can be sure that I&#8217;ll keep it up to date, secure, and be adding features fairly regularly.
+
+
+<h2>What&#8217;s Next?</h2>
+
+
+<p>That&rsquo;s really all there is to it.  As I mentioned the ServerTemplate does a number of other cool things, which you can read about in it&rsquo;s <a href="http://www.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">description</a>.</p>
+
+<p>The best part is that because this ServerTemplate is what I use for my own blog and email hosting duties, you can be sure that I&rsquo;ll keep it up to date, secure, and be adding features fairly regularly.</p>
 
 <h2>Drop me a note</h2>
-If you followed these directions, or if you&#8217;re using this ServerTemplate, or if you&#8217;re having trouble, by all means drop me a note in the comments here.
 
-I&#8217;ll be happy to answer any questions I can, and I&#8217;d love to get a sense for how many people are out there running servers based on this template, it&#8217;ll keep me motivated to publish more stuff in the public ServerTemplate library!
+
+<p>If you followed these directions, or if you&rsquo;re using this ServerTemplate, or if you&rsquo;re having trouble, by all means drop me a note in the comments here.</p>
+
+<p>I&rsquo;ll be happy to answer any questions I can, and I&rsquo;d love to get a sense for how many people are out there running servers based on this template, it&rsquo;ll keep me motivated to publish more stuff in the public ServerTemplate library!</p>
 </div>
 
 

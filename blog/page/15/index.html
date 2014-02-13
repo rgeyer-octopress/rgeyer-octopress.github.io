@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan J. Geyer">
 
   
-  <meta name="description" content="If you know me, or if you&#8217;ve read some of my blog posts you probably know I&#8217;m a big fan of diesel engines. In particular I&#8217;m quite &hellip;">
+  <meta name="description" content="I just learned about a Bash History Meme originated at Planet Fedora from a blog I read regularly. In short, you run the following command in bash, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,85 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2008/04/16/fedora-bash-history-meme/">Fedora Bash History Meme</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-16T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I just learned about a Bash History Meme originated at <a href="http://planet.fedoraproject.org/">Planet Fedora</a> from a <a href="http://basildoncoder.com/blog/">blog</a> I read regularly.</p>
+
+<p>In short, you run the following command in bash, and show your results.</p>
+
+<pre lang="bash">
+history | awk '{a[$2]++ } END{for(i in a){print a[i] " " i}}'|sort -rn|head
+</pre>
+
+
+<p>My results from my home box are as follows;</p>
+
+<pre lang="bash">
+103 ls
+59 cd
+52 exit
+38 vi
+38 firefox
+29 for
+22 su
+18 /opt/hdv/myworkflow.sh
+14 ssh
+13 diff
+</pre>
+
+
+<p>Seems I&rsquo;m unwilling to simply close my terminal window in KDE, but instead have to type &ldquo;exit&rdquo;.  The &ldquo;myworkflow.sh&rdquo; script is a work in progress which I hope to one day post about.  It does stuff to help me convert and do post production on video from my HDV camcorder.  I&rsquo;ve been using &ldquo;diff&rdquo; to compare original files with modified ones for web updates I&rsquo;ve been doing for clients.</p>
+
+<p>Here&rsquo;s the results from my web hosting box;</p>
+
+<pre lang="bash">
+394 ls
+212 cd
+89 vi
+77 exit
+60 du
+30 mv
+28 rm
+20 mkdir
+19 pwd
+12 cp
+</pre>
+
+
+<p>Suppose there&rsquo;s nothing particularly interesting here.  I was checking a file upload progress in a very nasty way by calling &ldquo;du&rdquo;, what can I say..  I&rsquo;m lazy.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2008/03/24/a-penny-for-your-soybean/">A Penny for Your Soybean?</a></h1>
     
     
@@ -106,17 +185,17 @@
   </header>
 
 
-  <div class="entry-content"><img src="http://farm6.static.flickr.com/5051/5449777902_4025f2b249_o.jpg" width="283" height="423" alt="soybeans" class="alignleft" />
+  <div class="entry-content"><p><img src="http://farm6.static.flickr.com/5051/5449777902_4025f2b249_o.jpg" width="283" height="423" alt="soybeans" class="alignleft" /></p>
 
-If you know me, or if you&#8217;ve read some of my blog posts you probably know I&#8217;m a big fan of diesel engines.  In particular I&#8217;m quite fond of biodiesel.  I&#8217;ve often preached that while OPEC continues to shaft us on the price of crude oil making gasoline and petroleum based diesel unreasonably expensive, biodiesel should decrease in price as the process used to produce it becomes more advanced and cost effective.
+<p>If you know me, or if you&rsquo;ve read some of my blog posts you probably know I&rsquo;m a big fan of diesel engines.  In particular I&rsquo;m quite fond of biodiesel.  I&rsquo;ve often preached that while OPEC continues to shaft us on the price of crude oil making gasoline and petroleum based diesel unreasonably expensive, biodiesel should decrease in price as the process used to produce it becomes more advanced and cost effective.</p>
 
-So, you can imagine my dismay when I drove by the local station which sells B99 expecting to see that it&#8217;s price continued to hover around $3.30 per gallon, only to see that it was well over $4 per gallon.  What gives?!  Biodiesel was supposed to be the stable and reliable alternative to petroleum diesel, and here it is trumping the price of petroleum diesel by several cents per gallon.
+<p>So, you can imagine my dismay when I drove by the local station which sells B99 expecting to see that it&rsquo;s price continued to hover around $3.30 per gallon, only to see that it was well over $4 per gallon.  What gives?!  Biodiesel was supposed to be the stable and reliable alternative to petroleum diesel, and here it is trumping the price of petroleum diesel by several cents per gallon.</p>
 
-Well, I forgot one important point.  Biodiesel is not just about the process required to produce it, there is also the feedstock required for the raw vegetable oil.  Turns out, <a href="http://www.autobloggreen.com/2007/08/22/rising-soybean-prices-cramp-biodiesel-producers-style/">the price of soybean oil</a> has increased dramatically this season.  This in turn has made biodiesel prices mirror petroleum diesel prices.
+<p>Well, I forgot one important point.  Biodiesel is not just about the process required to produce it, there is also the feedstock required for the raw vegetable oil.  Turns out, <a href="http://www.autobloggreen.com/2007/08/22/rising-soybean-prices-cramp-biodiesel-producers-style/">the price of soybean oil</a> has increased dramatically this season.  This in turn has made biodiesel prices mirror petroleum diesel prices.</p>
 
-Now, I suppose this should have been an easily foreseeable problem based on the rules of supply and demand, but somehow I&#8217;m still disappointed.  This is leaving me with a lot of doubt over what had previously seemed like a rock solid and obvious conclusion of buying diesel vehicles or converting my existing ones to diesel.  Where I had thought I&#8217;d want to buy an Excursion, I think the wife is going to get her way and we&#8217;re going to get an Acura MDX.  And where I had thought I&#8217;d like to convert my Ford Explorer to some sort of diesel power plant, I&#8217;m seriously considering modding my existing motor.  I don&#8217;t suppose I&#8217;ll get the same kind of fuel economy, or performance in either case but at least I can predict that the price of my fuel will steadily rise until I&#8217;d rather walk than drive, rather than being at the mercy of a new fuel and a new industry.
+<p>Now, I suppose this should have been an easily foreseeable problem based on the rules of supply and demand, but somehow I&rsquo;m still disappointed.  This is leaving me with a lot of doubt over what had previously seemed like a rock solid and obvious conclusion of buying diesel vehicles or converting my existing ones to diesel.  Where I had thought I&rsquo;d want to buy an Excursion, I think the wife is going to get her way and we&rsquo;re going to get an Acura MDX.  And where I had thought I&rsquo;d like to convert my Ford Explorer to some sort of diesel power plant, I&rsquo;m seriously considering modding my existing motor.  I don&rsquo;t suppose I&rsquo;ll get the same kind of fuel economy, or performance in either case but at least I can predict that the price of my fuel will steadily rise until I&rsquo;d rather walk than drive, rather than being at the mercy of a new fuel and a new industry.</p>
 
-I&#8217;m actually in no particular hurry to change anything, so I suppose I&#8217;ll just wait to see how things pan out, and maybe I&#8217;ll end up doing what I&#8217;d initially planned.  But for now, consider me dejected and sad.
+<p>I&rsquo;m actually in no particular hurry to change anything, so I suppose I&rsquo;ll just wait to see how things pan out, and maybe I&rsquo;ll end up doing what I&rsquo;d initially planned.  But for now, consider me dejected and sad.</p>
 </div>
   
   
@@ -152,14 +231,18 @@ I&#8217;m actually in no particular hurry to change anything, so I suppose I&#82
   </header>
 
 
-  <div class="entry-content">This one confounded me when I first discovered it, and I&#8217;ve recently been reminded about it.  For the sake of remembering the details, and hopefully helping someone else out I&#8217;m going to document it here.
+  <div class="entry-content"><p>This one confounded me when I first discovered it, and I&rsquo;ve recently been reminded about it.  For the sake of remembering the details, and hopefully helping someone else out I&rsquo;m going to document it here.</p>
 
-The problem is this.  When you have a COM library that you need to use from a C# app, you import it as a reference.  In the background the Microsoft.NET wizards do their magic by running the <a href="http://msdn2.microsoft.com/en-us/library/tt0cf3sx(VS.80).aspx">Tlbimp.exe</a> to generate a managed DLL with all of the objects and interfaces from the COM library.  You proceed to use the code that Microsoft so conveniently converted for you fully confident that all is well.
+<p>The problem is this.  When you have a COM library that you need to use from a C# app, you import it as a reference.  In the background the Microsoft.NET wizards do their magic by running the <a href="http://msdn2.microsoft.com/en-us/library/tt0cf3sx(VS.80).aspx">Tlbimp.exe</a> to generate a managed DLL with all of the objects and interfaces from the COM library.  You proceed to use the code that Microsoft so conveniently converted for you fully confident that all is well.</p>
 
-But it&#8217;s not.  See, suppose your COM library has a method that returns a <strong>BSTR</strong> via an [out] parameter, or perhaps it defines an interface for a listener your managed code must implement.  Suddenly there is the potential for a serious memory leak!
+<p>But it&rsquo;s not.  See, suppose your COM library has a method that returns a <strong>BSTR</strong> via an [out] parameter, or perhaps it defines an interface for a listener your managed code must implement.  Suddenly there is the potential for a serious memory leak!</p>
 
-See, a <strong>BSTR</strong> in unmanaged code aren&#8217;t just any normal string.  <strong>BSTR</strong>&#8217;s are allocated by the system by calling <strong>SysAllocString</strong> and subsequently released by calling <strong>SysFreeString</strong>.  This poses a problem for managed code if you aren&#8217;t careful.  Take the following listener interface for example.
+<p>See, a <strong>BSTR</strong> in unmanaged code aren&rsquo;t just any normal string.  <strong>BSTR</strong>&rsquo;s are allocated by the system by calling <strong>SysAllocString</strong> and subsequently released by calling <strong>SysFreeString</strong>.  This poses a problem for managed code if you aren&rsquo;t careful.  Take the following listener interface for example.</p>
+
 <p style="font-family: italic; font-size: 10px">*Interface names and GUID&#8217;s changed to protect the innocent</p>
+
+
+
 
 <pre line="1" lang="idl">
 interface IImplementMeListener : IDispatch{
@@ -168,7 +251,10 @@ id(0x000000C9)
 ]
 HRESULT _stdcall notify([in] TEventType eventType, [in] BSTR data );
 };</pre>
-The Tlbimp.exe generates a managed assembly with the following signature for this same method.
+
+
+<p>The Tlbimp.exe generates a managed assembly with the following signature for this same method.</p>
+
 <pre line="1" lang="csharp">
 [ComImport, TypeLibType((short) 0x10c0), Guid("00000000-0000-0000-0000-000000000000")]
 public interface IImplementMeListener
@@ -177,7 +263,10 @@ public interface IImplementMeListener
     void notify([In, ComAliasName("ExampleLib.TEventType")] TEventType eventType,
         [In, MarshalAs(UnmanagedType.BStr)] string data);
 }</pre>
-Which means when you implement this interface in your managed class, you&#8217;ll just have <strong>String</strong> as the data type for the second parameter.  Which might look like this.
+
+
+<p>Which means when you implement this interface in your managed class, you&rsquo;ll just have <strong>String</strong> as the data type for the second parameter.  Which might look like this.</p>
+
 <pre line="1" lang="csharp">
 class MyManagedListener : ExampleLib.IImplementMeListener{
     public void notify(ExampleLib.TEventType eventType, String data)
@@ -185,25 +274,28 @@ class MyManagedListener : ExampleLib.IImplementMeListener{
         DoSomethingWithData(data);
     }
 }</pre>
-So this is what happens.
 
-1) Your COM library allocates the string to pass into your listener using <strong>SysAllocString</strong>.
 
-2) Your COM library passes the newly allocated string into your managed app by calling the <strong>notify</strong> method of your listener.
+<p>So this is what happens.</p>
 
-3) Your managed app does whatever it&#8217;s going to do with the string, then returns.
+<p>1) Your COM library allocates the string to pass into your listener using <strong>SysAllocString</strong>.</p>
 
-Normally in a fully managed app this would be no problem, when the reference count to the string finally reaches 0, the garbage collector sweeps it up and the memory is reclaimed.  However, in this case we have a problem.  The COM library allocated the string, and passed it into your managed app, and it&#8217;s responsibility for that string ends there.  The expectation is that the client will release the <strong>BSTR</strong> by calling <strong>SysFreeString</strong>.  Clearly we can&#8217;t explicitly do that to the managed <strong>String</strong> type.
+<p>2) Your COM library passes the newly allocated string into your managed app by calling the <strong>notify</strong> method of your listener.</p>
 
-So what do we do?  We rewrite the part of the assembly that Tlbimp.exe made for us, and adjust our listener implementation slightly.
+<p>3) Your managed app does whatever it&rsquo;s going to do with the string, then returns.</p>
 
-This is how I did it, though there may be better ways.
+<p>Normally in a fully managed app this would be no problem, when the reference count to the string finally reaches 0, the garbage collector sweeps it up and the memory is reclaimed.  However, in this case we have a problem.  The COM library allocated the string, and passed it into your managed app, and it&rsquo;s responsibility for that string ends there.  The expectation is that the client will release the <strong>BSTR</strong> by calling <strong>SysFreeString</strong>.  Clearly we can&rsquo;t explicitly do that to the managed <strong>String</strong> type.</p>
 
-1) Use a disassembler to view the code of the Tlbimp.exe generated assembly for your COM library.  I used, <a href="http://www.aisto.com/roeder/dotnet/">Lutz&#8217;s Reflector</a>.
+<p>So what do we do?  We rewrite the part of the assembly that Tlbimp.exe made for us, and adjust our listener implementation slightly.</p>
 
-2) Copy the code for the entire library into a *.cs file, then change just the signature of the method you&#8217;re concerned with.
+<p>This is how I did it, though there may be better ways.</p>
 
-The new signature should look like this.
+<p>1) Use a disassembler to view the code of the Tlbimp.exe generated assembly for your COM library.  I used, <a href="http://www.aisto.com/roeder/dotnet/">Lutz&rsquo;s Reflector</a>.</p>
+
+<p>2) Copy the code for the entire library into a *.cs file, then change just the signature of the method you&rsquo;re concerned with.</p>
+
+<p>The new signature should look like this.</p>
+
 <pre line="1" lang="csharp">
 [ComImport, Guid("00000000-0000-0000-0000-000000000000"), TypeLibType((short) 0x10c0)]
 public interface IImplementMeListener
@@ -212,7 +304,10 @@ public interface IImplementMeListener
     void notify([In, ComAliasName("ExampleLib.TEventType")] TEventType eventType,
         [In] IntPtr data);
 }</pre>
-And your implementing class changes to this.
+
+
+<p>And your implementing class changes to this.</p>
+
 <pre line="1" lang="csharp">
 class MyManagedListener : ExampleLib.IImplementMeListener{
     public void notify(ExampleLib.TEventType eventType, IntPtr data)
@@ -222,9 +317,11 @@ class MyManagedListener : ExampleLib.IImplementMeListener{
         Marshal.FreeBSTR(data);
     }
 }</pre>
-This is not particularly tricky wizardry.  All we&#8217;re doing is marshaling the input value from the library as an <strong>IntPtr</strong> instead of a managed <strong>String</strong>.  This allows us to explicitly release it using the <strong>System.Runtime.InteropServices.Marshal.FreeBSTR</strong> method, just like the library expects us to do.
 
-Hopefully, this will save you some hastle, and avoid a potentially large memory leak.
+
+<p>This is not particularly tricky wizardry.  All we&rsquo;re doing is marshaling the input value from the library as an <strong>IntPtr</strong> instead of a managed <strong>String</strong>.  This allows us to explicitly release it using the <strong>System.Runtime.InteropServices.Marshal.FreeBSTR</strong> method, just like the library expects us to do.</p>
+
+<p>Hopefully, this will save you some hastle, and avoid a potentially large memory leak.</p>
 </div>
   
   
@@ -260,27 +357,27 @@ Hopefully, this will save you some hastle, and avoid a potentially large memory 
   </header>
 
 
-  <div class="entry-content"><img src="http://farm6.static.flickr.com/5016/5449168507_97423bc6a9_o.jpg" width="436" height="275" alt="fordgt" />
+  <div class="entry-content"><p><img src="http://farm6.static.flickr.com/5016/5449168507_97423bc6a9_o.jpg" width="436" height="275" alt="fordgt" /></p>
 
-No, I didn&#8217;t actually buy a super car, but I think that I should be able to.  Allow me to elaborate.
+<p>No, I didn&rsquo;t actually buy a super car, but I think that I should be able to.  Allow me to elaborate.</p>
 
-I live in a rather affluent part of Southern California and nice (expensive) cars are not uncommon on our roads.  I spent just a couple hours recently at Shoreline (some bluffs just over the beach) and watched as every 3rd car that drove by was a Porshe.  Mostly boxters and cayman but none the less, where else in this world are porche&#8217;s more common than hondas?  Here, you have to drive a Ferrari or Lamborghini to even begin to stand out.
+<p>I live in a rather affluent part of Southern California and nice (expensive) cars are not uncommon on our roads.  I spent just a couple hours recently at Shoreline (some bluffs just over the beach) and watched as every 3rd car that drove by was a Porshe.  Mostly boxters and cayman but none the less, where else in this world are porche&rsquo;s more common than hondas?  Here, you have to drive a Ferrari or Lamborghini to even begin to stand out.</p>
 
-It&#8217;s worse than that though.  I know of no less than 3 Ford GT&#8217;s, 2 BMW M5&#8217;s, 4-5 Astin Martin Vanquish, 2-3 Ferrari F430&#8217;s, countless Bently GT&#8217;s and Mercedes AMG&#8217;s of all flavor, and last but not least one Maserati quattroporte which I see every day at work.  If I recall, when I read a magazine review of the Maserati the author felt comfortable saying that you may never see one of these vehicles in person, and here I am fighting for a parking spot with one.
+<p>It&rsquo;s worse than that though.  I know of no less than 3 Ford GT&rsquo;s, 2 BMW M5&rsquo;s, 4-5 Astin Martin Vanquish, 2-3 Ferrari F430&rsquo;s, countless Bently GT&rsquo;s and Mercedes AMG&rsquo;s of all flavor, and last but not least one Maserati quattroporte which I see every day at work.  If I recall, when I read a magazine review of the Maserati the author felt comfortable saying that you may never see one of these vehicles in person, and here I am fighting for a parking spot with one.</p>
 
-Now those are just the cars that I&#8217;ve observed on the road, god knows what is tucked away in garages and not driven but on the most holy of days to tootle on down to the country club.  And here, by my reckoning, is the worst part.  Most of the owners of the cars have NO CLUE how to drive, nor will they ever come close to exercising those cars to any where near the potential.  The worst offenders are the trophy wives who are driving around in their various Mercedes Benz AMG&#8217;s.  There isn&#8217;t one of them that drives more than 40 MPH at any time for any reason, very much including the freeway.  Either that, or they think they&#8217;re an Andretti and drive dangerously fast in a straight line, and panic whenever they have to actually change trajectory.  Why their sugar daddies thought it was necessary to spend 30% more for the same car, but with a ton more power they&#8217;ll never use, I can only guess.
+<p>Now those are just the cars that I&rsquo;ve observed on the road, god knows what is tucked away in garages and not driven but on the most holy of days to tootle on down to the country club.  And here, by my reckoning, is the worst part.  Most of the owners of the cars have NO CLUE how to drive, nor will they ever come close to exercising those cars to any where near the potential.  The worst offenders are the trophy wives who are driving around in their various Mercedes Benz AMG&rsquo;s.  There isn&rsquo;t one of them that drives more than 40 MPH at any time for any reason, very much including the freeway.  Either that, or they think they&rsquo;re an Andretti and drive dangerously fast in a straight line, and panic whenever they have to actually change trajectory.  Why their sugar daddies thought it was necessary to spend 30% more for the same car, but with a ton more power they&rsquo;ll never use, I can only guess.</p>
 
-Which brings me to the point of my rant.  I know, about time eh?!  I think that all manufacturers that make cars built for the enthusiast should have some sort of discount program.  Here&#8217;s how it would work.
+<p>Which brings me to the point of my rant.  I know, about time eh?!  I think that all manufacturers that make cars built for the enthusiast should have some sort of discount program.  Here&rsquo;s how it would work.</p>
 
-Perhaps only a couple weeks out of each year, you could walk in to your favorite uber car dealership, take a test drive, and chat with the salesperson.  Then before you go to sign the paperwork for your shiny new cruise missile you are required to prove your enthusiasm for the car.  How you ask?  By proving your mettle on a series of driving tests.
+<p>Perhaps only a couple weeks out of each year, you could walk in to your favorite uber car dealership, take a test drive, and chat with the salesperson.  Then before you go to sign the paperwork for your shiny new cruise missile you are required to prove your enthusiasm for the car.  How you ask?  By proving your mettle on a series of driving tests.</p>
 
-Picture this, you get behind the wheel of the $360k car that you&#8217;d like to buy, and if you can wring it around the test track in less time than a certain predefined speed, demonstrate competence in controlling the car at, and beyond the limits of traction, and otherwise convince the manufacturer that you&#8217;re willing and able to drive the car in the way it was designed, why it&#8217;s yours for a mere fraction of the price!
+<p>Picture this, you get behind the wheel of the $360k car that you&rsquo;d like to buy, and if you can wring it around the test track in less time than a certain predefined speed, demonstrate competence in controlling the car at, and beyond the limits of traction, and otherwise convince the manufacturer that you&rsquo;re willing and able to drive the car in the way it was designed, why it&rsquo;s yours for a mere fraction of the price!</p>
 
-Isn&#8217;t that what it&#8217;s really about anyway?  These cars aren&#8217;t built so that only real estate moguls and CEO&#8217;s can own and drive them.  No!  They&#8217;re designed to be driven FAST, on a track by a talented and appreciative driver.  So why not give your average Joe the ability to get into one of these vehicles, someone who would really cherish the privilege and (hopefully) have some respect for traffic laws and be able to control the vehicle on the street, someone like ME!
+<p>Isn&rsquo;t that what it&rsquo;s really about anyway?  These cars aren&rsquo;t built so that only real estate moguls and CEO&rsquo;s can own and drive them.  No!  They&rsquo;re designed to be driven FAST, on a track by a talented and appreciative driver.  So why not give your average Joe the ability to get into one of these vehicles, someone who would really cherish the privilege and (hopefully) have some respect for traffic laws and be able to control the vehicle on the street, someone like ME!</p>
 
-It might even cut down on the number of <a href="http://www.nslms.com/2008/03/05/with-great-power-comes/">incompetent and unexperienced</a> drivers that get behind the wheel of these monsters.
+<p>It might even cut down on the number of <a href="http://www.nslms.com/2008/03/05/with-great-power-comes/">incompetent and unexperienced</a> drivers that get behind the wheel of these monsters.</p>
 
-Just a thought.  Manufacturers are you listening?  I&#8217;ll take delivery of my Ford GT as soon as you realize how good this would be for business.  ;-)
+<p>Just a thought.  Manufacturers are you listening?  I&rsquo;ll take delivery of my Ford GT as soon as you realize how good this would be for business.  ;&ndash;)</p>
 </div>
   
   
@@ -316,24 +413,31 @@ Just a thought.  Manufacturers are you listening?  I&#8217;ll take delivery of m
   </header>
 
 
-  <div class="entry-content">Not long ago I shared my bash script for <a href="http://www.nslms.com/2008/02/20/image-thumbnail-generating-script/">creating thumbnails</a> and manageable sized &#8220;big&#8221; images for an image gallery, or other image store.  Well, today I had to update an existing gallery with a pretty significant number of new images.  It occurred to me that I&#8217;d like to only convert new images rather than re-converting the whole lot.  Then, I&#8217;d like to simply upload the new files to my server in some automated way.
+  <div class="entry-content"><p>Not long ago I shared my bash script for <a href="http://www.nslms.com/2008/02/20/image-thumbnail-generating-script/">creating thumbnails</a> and manageable sized &ldquo;big&rdquo; images for an image gallery, or other image store.  Well, today I had to update an existing gallery with a pretty significant number of new images.  It occurred to me that I&rsquo;d like to only convert new images rather than re-converting the whole lot.  Then, I&rsquo;d like to simply upload the new files to my server in some automated way.</p>
 
-So here&#8217;s the tools to do it.  It assumes you have the same layout for your pictures on your local drive as I do, which is as follows.
+<p>So here&rsquo;s the tools to do it.  It assumes you have the same layout for your pictures on your local drive as I do, which is as follows.</p>
+
 <ul>
-	<li><strong><em>RootDirectoryForGallery</em></strong> &#8211; This contains the full resolution pictures directly from your camera, and the following directories.
+    <li><strong><em>RootDirectoryForGallery</em></strong> &#8211; This contains the full resolution pictures directly from your camera, and the following directories.
 <ul>
-	<li><strong><em>web</em></strong> &#8211; This is a sub directory of RootDirectoryForGallery which contains the &#8220;big&#8221; web version of your image, and the thumbnails directory described below.
+    <li><strong><em>web</em></strong> &#8211; This is a sub directory of RootDirectoryForGallery which contains the &#8220;big&#8221; web version of your image, and the thumbnails directory described below.
 <ul>
-	<li><strong><em>thumbnails</em></strong> &#8211; This is a sub directory of web, and contains the thumbnail sized versions of the images.</li>
+    <li><strong><em>thumbnails</em></strong> &#8211; This is a sub directory of web, and contains the thumbnail sized versions of the images.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-The first step, is to copy your new pictures from the digital camera to your <strong><em>RootDirectoryForGallery</em></strong>.  Then, we want to get a list of the files that are new, so we run the following from the <strong><em>RootDirectoryForGallery</em></strong>.
+
+
+<p>The first step, is to copy your new pictures from the digital camera to your <strong><em>RootDirectoryForGallery</em></strong>.  Then, we want to get a list of the files that are new, so we run the following from the <strong><em>RootDirectoryForGallery</em></strong>.</p>
+
 <pre lang="bash">
 diff . web/ | grep 'Only in \.: d' | awk '{print $4}' | grep jpg &gt;&gt; 3-6-08_update.diff</pre>
-This creates a file in the <strong><em>RootDirectoryForGallery</em></strong> named &#8220;3-6-08_update.diff&#8221; which contains a list of only the new pictures, one per line.  Now, we want to use our image thumbnail script to convert only the new images to the &#8220;big&#8221; and thumbnail sized images.  I discovered that I needed to make a change to my script in order to do this.  Namely in the for loop I needed to enclose the command used to list files in &#8220;$()&#8221;.  The modified script is shown below.  Notice the &#8220;$($SEARCH)&#8221; where there was previously just &#8220;$SEARCH&#8221;.
+
+
+<p>This creates a file in the <strong><em>RootDirectoryForGallery</em></strong> named &ldquo;3-6-08_update.diff&rdquo; which contains a list of only the new pictures, one per line.  Now, we want to use our image thumbnail script to convert only the new images to the &ldquo;big&rdquo; and thumbnail sized images.  I discovered that I needed to make a change to my script in order to do this.  Namely in the for loop I needed to enclose the command used to list files in &ldquo;$()&rdquo;.  The modified script is shown below.  Notice the &ldquo;$($SEARCH)&rdquo; where there was previously just &ldquo;$SEARCH&rdquo;.</p>
+
 <pre lang="bash">
 #!/bin/bash
 
@@ -352,14 +456,22 @@ do
         echo "Converting $i"
         convert -resize $SIZE $i -resize $SIZE +profile '*' $DEST$i
 done</pre>
-So with our edited script we convert the files.
+
+
+<p>So with our edited script we convert the files.</p>
+
 <pre lang="bash">
 /opt/imagethumbnail.sh "cat 3-6-08_update.diff" "800x600" "web/"
 /opt/imagethumbnail.sh "cat 3-6-08_update.diff" "150×112 "web/_thb_"</pre>
-Lastly, we want to upload just the changed files to our server.  We&#8217;ll use rsync for this.  The paths, server name, and user name have been changed to protect the innocent.  ;-)
+
+
+<p>Lastly, we want to upload just the changed files to our server.  We&rsquo;ll use rsync for this.  The paths, server name, and user name have been changed to protect the innocent.  ;&ndash;)</p>
+
 <pre lang="bash">
 rsync -e ssh -av /path/to/local/copy/ yourusername@yourserver.com:/path/to/www/server/copy/</pre>
-And there you have it, with just a few simple commands you&#8217;ve created thumbnails of all of your images, and uploaded just the new ones to your server.  Easy!
+
+
+<p>And there you have it, with just a few simple commands you&rsquo;ve created thumbnails of all of your images, and uploaded just the new ones to your server.  Easy!</p>
 </div>
   
   
@@ -395,15 +507,15 @@ And there you have it, with just a few simple commands you&#8217;ve created thum
   </header>
 
 
-  <div class="entry-content">I&#8217;ve been noticing a trend lately in modern cars.  Everything is getting exponentially faster and more powerful, and meanwhile more affordable.
+  <div class="entry-content"><p>I&rsquo;ve been noticing a trend lately in modern cars.  Everything is getting exponentially faster and more powerful, and meanwhile more affordable.</p>
 
-You can go out today and buy a lightweight SUV or sedan from Jeep/Dodge/Chrystler with a 420hp Hemi for around $35k.  But it&#8217;s not just the &#8220;hot rod&#8221; cars that are getting big power, a 2008 Honda Civic has no less than 140hp in it&#8217;s cheapest form.  Not even 10 years ago that amount of power was reserved for the &#8220;Si&#8221; model.  A 2008 Honda Accord v6 has 286hp.  The performance of these cars easily exceeds that of the 60&#8217;s and 70&#8217;s muscle car and is well in excess of what most drivers need, or can use.
+<p>You can go out today and buy a lightweight SUV or sedan from Jeep/Dodge/Chrystler with a 420hp Hemi for around $35k.  But it&rsquo;s not just the &ldquo;hot rod&rdquo; cars that are getting big power, a 2008 Honda Civic has no less than 140hp in it&rsquo;s cheapest form.  Not even 10 years ago that amount of power was reserved for the &ldquo;Si&rdquo; model.  A 2008 Honda Accord v6 has 286hp.  The performance of these cars easily exceeds that of the 60&rsquo;s and 70&rsquo;s muscle car and is well in excess of what most drivers need, or can use.</p>
 
-Meanwhile, all you need to do is memorize a few rules and convince a government worker that you can drive in a straight line and use your signals when appropriate to get a license.  Worse still, you only need to prove it once.  Afterward you&#8217;ll just get a renewal notice in the mail until your 130th birthday when they start to wonder if you are still alive, and should be driving.  That&#8217;s well past the age where &#8220;oops I mistook the gas for the brake&#8221; is at an acceptable margin of error.  There is no requirement to handle power induced slides, know how to react when you start to go sideways in a turn, nothing!  But 16 year old Johnny, if he&#8217;s fortunate, or wealthy can be behind the wheel of a relative super car.
+<p>Meanwhile, all you need to do is memorize a few rules and convince a government worker that you can drive in a straight line and use your signals when appropriate to get a license.  Worse still, you only need to prove it once.  Afterward you&rsquo;ll just get a renewal notice in the mail until your 130th birthday when they start to wonder if you are still alive, and should be driving.  That&rsquo;s well past the age where &ldquo;oops I mistook the gas for the brake&rdquo; is at an acceptable margin of error.  There is no requirement to handle power induced slides, know how to react when you start to go sideways in a turn, nothing!  But 16 year old Johnny, if he&rsquo;s fortunate, or wealthy can be behind the wheel of a relative super car.</p>
 
-Where&#8217;s the responsibility?  You should have some vague inclination of how to drive, and control yourself if you&#8217;re going to be able to drive some of todays cars on the street with others.  Now don&#8217;t get me wrong, my first car was a 1967 Thunderbird which made 340hp.  However, it almost NEVER ran well enough to generate that power and deliver it to the tires.  Furthermore, I had to work hard on that car to even keep it running, which gave me a good sense of it&#8217;s inner workings, and exactly what I was dealing with.  I was also taught a few important lessons about speed and control before I was set out on my own with it or any other vehicle.
+<p>Where&rsquo;s the responsibility?  You should have some vague inclination of how to drive, and control yourself if you&rsquo;re going to be able to drive some of todays cars on the street with others.  Now don&rsquo;t get me wrong, my first car was a 1967 Thunderbird which made 340hp.  However, it almost NEVER ran well enough to generate that power and deliver it to the tires.  Furthermore, I had to work hard on that car to even keep it running, which gave me a good sense of it&rsquo;s inner workings, and exactly what I was dealing with.  I was also taught a few important lessons about speed and control before I was set out on my own with it or any other vehicle.</p>
 
-The idea of just anyone with an (easily acquired) drivers license behind the wheel of some of these vehicles is frankly quite terrifying to me, particularly in the face of the sort of antics I see on a daily basis even from &#8220;mature&#8221; drivers.  Mind you I wasn&#8217;t alive during the &#8220;hot rod&#8221; era of the 60&#8217;s and 70&#8217;s where I&#8217;m sure a similar situation existed, even in the absence of anti lock disk brake systems, air bags, and chassis/traction controls, so maybe this is just history repeating itself.
+<p>The idea of just anyone with an (easily acquired) drivers license behind the wheel of some of these vehicles is frankly quite terrifying to me, particularly in the face of the sort of antics I see on a daily basis even from &ldquo;mature&rdquo; drivers.  Mind you I wasn&rsquo;t alive during the &ldquo;hot rod&rdquo; era of the 60&rsquo;s and 70&rsquo;s where I&rsquo;m sure a similar situation existed, even in the absence of anti lock disk brake systems, air bags, and chassis/traction controls, so maybe this is just history repeating itself.</p>
 </div>
   
   
@@ -439,59 +551,74 @@ The idea of just anyone with an (easily acquired) drivers license behind the whe
   </header>
 
 
-  <div class="entry-content">So, I finally broke down and built a HTPC (home theater personal computer).  Actually, I bought it in late December, and have had it mostly up and running since about the middle of January, but I&#8217;m just getting the chance to post about it now.
+  <div class="entry-content"><p>So, I finally broke down and built a HTPC (home theater personal computer).  Actually, I bought it in late December, and have had it mostly up and running since about the middle of January, but I&rsquo;m just getting the chance to post about it now.</p>
 
-I knew from the start I wanted to run Gentoo Linux with MythTV, and I must say it was an adventure getting it all working.  I&#8217;ve outlined the details of the build for anyone interested in doing something similar, or who might just be curious.
+<p>I knew from the start I wanted to run Gentoo Linux with MythTV, and I must say it was an adventure getting it all working.  I&rsquo;ve outlined the details of the build for anyone interested in doing something similar, or who might just be curious.</p>
+
 <h3>The hardware</h3>
-<a href="http://www.newegg.com/product/product.aspx?Item=N82E16813128072"> GIGABYTE GA-73PVM-S2H</a>
+
+
+<p><a href="http://www.newegg.com/product/product.aspx?Item=N82E16813128072"> GIGABYTE GA-73PVM-S2H</a>
 <a href="http://www.newegg.com/product/product.aspx?Item=N82E16822148230"> Seagate Barracuda 7200.10 ST3160815AS 160GB
 </a><a href="http://www.newegg.com/product/product.aspx?Item=N82E16819116040"> Intel Celeron 420 Conroe-L 1.6GHz 512KB L2 Cache</a>
 <a href="http://www.newegg.com/product/product.aspx?Item=N82E16820134114"> Kingston 1GB 240-Pin DDR2</a>
 <a href="http://www.newegg.com/product/product.aspx?Item=N82E16827106070"> Lite-On Black DVDRW</a>
-<a href="http://www.newegg.com/product/product.aspx?Item=N82E16880125001"> eDATA DEC-200B Vista Certified Infrared Remote</a>
+<a href="http://www.newegg.com/product/product.aspx?Item=N82E16880125001"> eDATA DEC-200B Vista Certified Infrared Remote</a></p>
 
-I already had a low profile desktop case sitting around which I used for the project, so that&#8217;s not included.  Total without the case was just under $300.  I later added two <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16826104027">Logitech ChillStream</a> game controllers for playing console game emulators.
+<p>I already had a low profile desktop case sitting around which I used for the project, so that&rsquo;s not included.  Total without the case was just under $300.  I later added two <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16826104027">Logitech ChillStream</a> game controllers for playing console game emulators.</p>
 
-The motherboard was chosen because it had &#8220;everything&#8221; I needed onboard and didn&#8217;t cost a fortune.  I needed HDMI out for my new <a href="http://www.sharpusa.com/products/ModelLanding/0,1058,1922,00.html">Sharp Aquos 42&#8221; HDTV</a> so I could have a clean digital signal at the full 1920x1080 resolution.
+<p>The motherboard was chosen because it had &ldquo;everything&rdquo; I needed onboard and didn&rsquo;t cost a fortune.  I needed HDMI out for my new <a href="http://www.sharpusa.com/products/ModelLanding/0,1058,1922,00.html">Sharp Aquos 42&#8221; HDTV</a> so I could have a clean digital signal at the full 1920x1080 resolution.</p>
 
-The other stuff should be fairly obvious, I had to have a processor, drive, memory, and of course since this is an HTPC, a remote control.  Since I wasn&#8217;t planning on doing anything particularly processor intensive (see goals) and I was going to be accessing nearly all my media over the network a fire breathing processor and giant hard drive weren&#8217;t necessary.
+<p>The other stuff should be fairly obvious, I had to have a processor, drive, memory, and of course since this is an HTPC, a remote control.  Since I wasn&rsquo;t planning on doing anything particularly processor intensive (see goals) and I was going to be accessing nearly all my media over the network a fire breathing processor and giant hard drive weren&rsquo;t necessary.</p>
+
 <h3>Goals</h3>
-I wasn&#8217;t interested in a TV tuner or using this as a PVR/DVR, nor archiving DVD&#8217;s.  I wanted this to replace the DVD changer in my existing HTIAB (home theater in a box) and be able to play DVD&#8217;s upscaled to 1080p.  Also I wanted to be able to play video captured on my <a href="http://www.camcorderinfo.com/content/Sony-HCR-HC1-Review.htm">Sony HDR-HC1 HD camcorder</a> at it&#8217;s native resolution.
 
-Secondary things would be playing my fairly sizable MP3 music collection, looking at pictures, and other cool stuff you can do with a computer connected to your television.
+
+<p>I wasn&rsquo;t interested in a TV tuner or using this as a PVR/DVR, nor archiving DVD&rsquo;s.  I wanted this to replace the DVD changer in my existing HTIAB (home theater in a box) and be able to play DVD&rsquo;s upscaled to 1080p.  Also I wanted to be able to play video captured on my <a href="http://www.camcorderinfo.com/content/Sony-HCR-HC1-Review.htm">Sony HDR-HC1 HD camcorder</a> at it&rsquo;s native resolution.</p>
+
+<p>Secondary things would be playing my fairly sizable MP3 music collection, looking at pictures, and other cool stuff you can do with a computer connected to your television.</p>
+
 <h3>Wrestling with the feral Gentoo</h3>
-Since I was dealing with &#8220;bleeding edge&#8221; hardware at least with the motherboard chipset and the remote control, getting Gentoo linux up and running with support for all of my hardware would be a challenge.
 
-After a fair amount of googling, and plenty of trial and error, I was able to get things working.  For the sake of reference, I&#8217;ll document the highlights of getting things going.
 
-1) The 2007.0 Live CD wouldn&#8217;t recognize my SATA DVDR drive unless I booted it with &#8220;gentoo all-generic-ide&#8221;, and set the sata controller to &#8220;IDE&#8221; in the bios.
+<p>Since I was dealing with &ldquo;bleeding edge&rdquo; hardware at least with the motherboard chipset and the remote control, getting Gentoo linux up and running with support for all of my hardware would be a challenge.</p>
 
-2) The latest nvidia driver available in portage (100.14.19) didn&#8217;t seem to properly support my video hardware, so I downloaded the latest from the nvidia website (169.07) which seemed to work much better.  I actually went so far as to make my own custom ebuild for it.
+<p>After a fair amount of googling, and plenty of trial and error, I was able to get things working.  For the sake of reference, I&rsquo;ll document the highlights of getting things going.</p>
 
-3) The latest lirc available in portage (0.8.2-r2) didn&#8217;t seem to properly support my MCE2 USB style remote control.  At the time 0.8.3_pre1 was masked as unstable, but it did the trick
+<p>1) The 2007.0 Live CD wouldn&rsquo;t recognize my SATA DVDR drive unless I booted it with &ldquo;gentoo all-generic-ide&rdquo;, and set the sata controller to &ldquo;IDE&rdquo; in the bios.</p>
 
-4) Getting the ChillStream&#8217;s to be recognized by the kernel was interesting too.  A kernel module (xpad) exists that is meant to support these type of controls with the XBOX-360 style.  However, a patch was necessary to properly support these.  It just added the PID to the source to support this controller.  They work great now.  :-)
+<p>2) The latest nvidia driver available in portage (100.14.19) didn&rsquo;t seem to properly support my video hardware, so I downloaded the latest from the nvidia website (169.07) which seemed to work much better.  I actually went so far as to make my own custom ebuild for it.</p>
+
+<p>3) The latest lirc available in portage (0.8.2-r2) didn&rsquo;t seem to properly support my MCE2 USB style remote control.  At the time 0.8.3_pre1 was masked as unstable, but it did the trick</p>
+
+<p>4) Getting the ChillStream&rsquo;s to be recognized by the kernel was interesting too.  A kernel module (xpad) exists that is meant to support these type of controls with the XBOX-360 style.  However, a patch was necessary to properly support these.  It just added the PID to the source to support this controller.  They work great now.  :&ndash;)</p>
+
 <h3>Results</h3>
-So, after all that did I reach my goals?
 
-Yes, and then some!  Below is a list of the highlights of functionality, but in all this project was quite a success.  And I think the functionality is impressive considering the bargain price!
 
-One of the things which came as a pleasant surprise was getting MythGame setup with some emulators of old consoles I&#8217;d played.  It&#8217;s amazingly nostalgic to play some of those Nintendo games!
+<p>So, after all that did I reach my goals?</p>
 
-What works
+<p>Yes, and then some!  Below is a list of the highlights of functionality, but in all this project was quite a success.  And I think the functionality is impressive considering the bargain price!</p>
+
+<p>One of the things which came as a pleasant surprise was getting MythGame setup with some emulators of old consoles I&rsquo;d played.  It&rsquo;s amazingly nostalgic to play some of those Nintendo games!</p>
+
+<p>What works
 * MythFrontend at 1080p over HDMI (should show modelines)
 * MythVideo/DVD playing any video I like at native resolution
-* xine playing DVD&#8217;s at 1080p
+* xine playing DVD&rsquo;s at 1080p
 * MythGallery
 * Audio out through TOSLINK optical output, passing along AC3/Dolby Digital &amp; DTS
 * MythMusic to play MP3 files from the network
 * MCE Remote Control to run MythFrontend
-* MythGame
+* MythGame</p>
 
-What doesn&#8217;t
-* Audio out through HDMI
+<p>What doesn&rsquo;t
+* Audio out through HDMI</p>
+
 <h3>Future plans</h3>
-Now that the HD DVD vs Bluray war is apparently <a href="http://www.tacp.toshiba.com/news/newsarticle.asp?newsid=198">over</a> when the drive prices come down a bit more, I intend to put a Blueray drive in this.  I suspect I&#8217;ll need a more powerful processor to successfully play a movie though.  I&#8217;m sure that linux will have limited or non existent support for the format for some time to come as well, so we&#8217;ll see how that plays out.  The hardware is mostly up to the task though, and represents a bargain compared to the several pieces of equipment that would have been required to do the same stuff.
+
+
+<p>Now that the HD DVD vs Bluray war is apparently <a href="http://www.tacp.toshiba.com/news/newsarticle.asp?newsid=198">over</a> when the drive prices come down a bit more, I intend to put a Blueray drive in this.  I suspect I&rsquo;ll need a more powerful processor to successfully play a movie though.  I&rsquo;m sure that linux will have limited or non existent support for the format for some time to come as well, so we&rsquo;ll see how that plays out.  The hardware is mostly up to the task though, and represents a bargain compared to the several pieces of equipment that would have been required to do the same stuff.</p>
 </div>
   
   
@@ -527,18 +654,19 @@ Now that the HD DVD vs Bluray war is apparently <a href="http://www.tacp.toshiba
   </header>
 
 
-  <div class="entry-content">I have often wished that I could easily convert several images to a smaller size simultaneously.  This is useful for batch resizing images for thumbnails, galleries, or use on the web.
+  <div class="entry-content"><p>I have often wished that I could easily convert several images to a smaller size simultaneously.  This is useful for batch resizing images for thumbnails, galleries, or use on the web.</p>
 
-On a linux system with imageMagick installed, you can use the script at the end of this post to batch convert the images.
+<p>On a linux system with imageMagick installed, you can use the script at the end of this post to batch convert the images.</p>
 
-I use it to create thumbnails and scaled images for my online <a href="http://www.nslms.com/gallery">photo gallery</a> using the following commands.
-./imagethumbnail.sh &#8220;*.jpg&#8221; &#8220;800x600&#8221; &#8220;web/&#8221;
+<p>I use it to create thumbnails and scaled images for my online <a href="http://www.nslms.com/gallery">photo gallery</a> using the following commands.
+./imagethumbnail.sh &ldquo;*.jpg&rdquo; &ldquo;800x600&rdquo; &ldquo;web/&rdquo;</p>
 
-./imagethumbnail.sh &#8220;*.jpg&#8221; &#8220;150x112&#8221; &#8220;web/_thb_&#8221;
+<p>./imagethumbnail.sh &ldquo;*.jpg&rdquo; &ldquo;150x112&rdquo; &ldquo;web/<em>thb</em>&rdquo;</p>
 
-This creates a reasonable sized &#8220;large&#8221; image at 800x600 and a thumbnail at 150x112.  Makes managing new images in my gallery much easier.  Hopefully you&#8217;ll find it useful too.
+<p>This creates a reasonable sized &ldquo;large&rdquo; image at 800x600 and a thumbnail at 150x112.  Makes managing new images in my gallery much easier.  Hopefully you&rsquo;ll find it useful too.</p>
 
-Contents of imagethumbnail.sh
+<p>Contents of imagethumbnail.sh</p>
+
 <pre lang="bash">#!/bin/bash
 SEARCH=$1
 SIZE=$2
@@ -555,6 +683,7 @@ do
 echo "Converting $i"
 convert -resize $SIZE $i -resize $SIZE +profile '*' $DEST$i
 done</pre>
+
 </div>
   
   
@@ -590,11 +719,11 @@ done</pre>
   </header>
 
 
-  <div class="entry-content">So here we are.  I used www.blogger.com for a while to host my blog, and it treated me fairly well, but I found it lacked features and customization that I&#8217;d started to expect from my blogging solution.
+  <div class="entry-content"><p>So here we are.  I used www.blogger.com for a while to host my blog, and it treated me fairly well, but I found it lacked features and customization that I&rsquo;d started to expect from my blogging solution.</p>
 
-I&#8217;m still getting the hang of Wordpress, and I suspect things will be changing around here fairly rapidly, probably first getting a more attractive, non standard theme going.
+<p>I&rsquo;m still getting the hang of Wordpress, and I suspect things will be changing around here fairly rapidly, probably first getting a more attractive, non standard theme going.</p>
 
-While you&#8217;re here, feel free to read some of my old posts, as they&#8217;ve been ported over from blogger.com.  Also, please take a moment to subscribe to my newsletter to receive notifications about updates to the blog, and other interesting bits.
+<p>While you&rsquo;re here, feel free to read some of my old posts, as they&rsquo;ve been ported over from blogger.com.  Also, please take a moment to subscribe to my newsletter to receive notifications about updates to the blog, and other interesting bits.</p>
 </div>
   
   
@@ -630,46 +759,10 @@ While you&#8217;re here, feel free to read some of my old posts, as they&#8217;v
   </header>
 
 
-  <div class="entry-content"><a href="http://bp1.blogger.com/_OWuoNyoEG0M/R5F_anr8gRI/AAAAAAAAABA/ahjHUvwfGKU/s1600-h/DSCN0699.JPG" onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}"><img src="http://bp1.blogger.com/_OWuoNyoEG0M/R5F_anr8gRI/AAAAAAAAABA/ahjHUvwfGKU/s320/DSCN0699.JPG" style="margin: 0pt 10px 10px 0pt; cursor: pointer" id="BLOGGER_PHOTO_ID_5157043143622557970" border="0" /></a>
-Our new baby boy (Quincy Joel) was born January 2nd at 8:20pm.  He didn&#8217;t seem interested in arriving naturally, so after 20 hours of labor a c-section was performed.  He weighed in at 7lbs 6oz and 20&#8221;.
+  <div class="entry-content"><p><a href="http://bp1.blogger.com/_OWuoNyoEG0M/R5F_anr8gRI/AAAAAAAAABA/ahjHUvwfGKU/s1600-h/DSCN0699.JPG" onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}"><img src="http://bp1.blogger.com/_OWuoNyoEG0M/R5F_anr8gRI/AAAAAAAAABA/ahjHUvwfGKU/s320/DSCN0699.JPG" style="margin: 0pt 10px 10px 0pt; cursor: pointer" id="BLOGGER_PHOTO_ID_5157043143622557970" border="0" /></a>
+Our new baby boy (Quincy Joel) was born January 2nd at 8:20pm.  He didn&rsquo;t seem interested in arriving naturally, so after 20 hours of labor a c-section was performed.  He weighed in at 7lbs 6oz and 20&#8221;.</p>
 
-He&#8217;s been great, but kept us busy thus the delayed blog entry.  I&#8217;ll likely blog about him here in the future as interesting stuff happens.  :-)
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/11/16/wga-strike-a-national-emergency/">WGA Strike, a National Emergency</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-11-16T00:00:00-08:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">War in Iraq? Old news.  Lead laden toys from china?  Big deal.  Peak Oil? Puhleez!  Global warming? Pffft.<br /><br />What we really ought to be worried about is the Writers Guild Strike!!<br /><br />Now, you may already be clicking the comments link to remind me about <a href="http://qwikrex.blogspot.com/2007/10/oh-holy-entertainment.html">my rant about our much adored entertainment</a>.  Yeah, I know a bit ironic and hypocritical but I&#8217;m really starting to take this strike personally!<br /><br />I don&#8217;t think I&#8217;m prepared to start watching re-runs of Big Bang Theory and Chuck.  Not to mention the inevitable delay of the return of Notes From The Underbelly.<br /><br />I&#8217;m still enjoying my made-for-television story telling high from November sweeps week, and I don&#8217;t think I&#8217;ll be able to survive the long and arduous drought which lies ahead.  Please, networks, give the writers what they want, and avert a potential national catastrophe!  Well, maybe it&#8217;s not that bad, but the recent crop of great shows has renewed my faith in entertaining television, I don&#8217;t think I&#8217;m ready to go back!
+<p>He&rsquo;s been great, but kept us busy thus the delayed blog entry.  I&rsquo;ll likely blog about him here in the future as interesting stuff happens.  :&ndash;)</p>
 </div>
   
   

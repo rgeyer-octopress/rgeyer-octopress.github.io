@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan J. Geyer">
 
   
-  <meta name="description" content="This one confounded me when I first discovered it, and I&#8217;ve recently been reminded about it. For the sake of remembering the details, and &hellip;">
+  <meta name="description" content="This one confounded me when I first discovered it, and I&rsquo;ve recently been reminded about it. For the sake of remembering the details, and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,14 +103,18 @@
   </header>
 
 
-<div class="entry-content">This one confounded me when I first discovered it, and I&#8217;ve recently been reminded about it.  For the sake of remembering the details, and hopefully helping someone else out I&#8217;m going to document it here.
+<div class="entry-content"><p>This one confounded me when I first discovered it, and I&rsquo;ve recently been reminded about it.  For the sake of remembering the details, and hopefully helping someone else out I&rsquo;m going to document it here.</p>
 
-The problem is this.  When you have a COM library that you need to use from a C# app, you import it as a reference.  In the background the Microsoft.NET wizards do their magic by running the <a href="http://msdn2.microsoft.com/en-us/library/tt0cf3sx(VS.80).aspx">Tlbimp.exe</a> to generate a managed DLL with all of the objects and interfaces from the COM library.  You proceed to use the code that Microsoft so conveniently converted for you fully confident that all is well.
+<p>The problem is this.  When you have a COM library that you need to use from a C# app, you import it as a reference.  In the background the Microsoft.NET wizards do their magic by running the <a href="http://msdn2.microsoft.com/en-us/library/tt0cf3sx(VS.80).aspx">Tlbimp.exe</a> to generate a managed DLL with all of the objects and interfaces from the COM library.  You proceed to use the code that Microsoft so conveniently converted for you fully confident that all is well.</p>
 
-But it&#8217;s not.  See, suppose your COM library has a method that returns a <strong>BSTR</strong> via an [out] parameter, or perhaps it defines an interface for a listener your managed code must implement.  Suddenly there is the potential for a serious memory leak!
+<p>But it&rsquo;s not.  See, suppose your COM library has a method that returns a <strong>BSTR</strong> via an [out] parameter, or perhaps it defines an interface for a listener your managed code must implement.  Suddenly there is the potential for a serious memory leak!</p>
 
-See, a <strong>BSTR</strong> in unmanaged code aren&#8217;t just any normal string.  <strong>BSTR</strong>&#8217;s are allocated by the system by calling <strong>SysAllocString</strong> and subsequently released by calling <strong>SysFreeString</strong>.  This poses a problem for managed code if you aren&#8217;t careful.  Take the following listener interface for example.
+<p>See, a <strong>BSTR</strong> in unmanaged code aren&rsquo;t just any normal string.  <strong>BSTR</strong>&rsquo;s are allocated by the system by calling <strong>SysAllocString</strong> and subsequently released by calling <strong>SysFreeString</strong>.  This poses a problem for managed code if you aren&rsquo;t careful.  Take the following listener interface for example.</p>
+
 <p style="font-family: italic; font-size: 10px">*Interface names and GUID&#8217;s changed to protect the innocent</p>
+
+
+
 
 <pre line="1" lang="idl">
 interface IImplementMeListener : IDispatch{
@@ -119,7 +123,10 @@ id(0x000000C9)
 ]
 HRESULT _stdcall notify([in] TEventType eventType, [in] BSTR data );
 };</pre>
-The Tlbimp.exe generates a managed assembly with the following signature for this same method.
+
+
+<p>The Tlbimp.exe generates a managed assembly with the following signature for this same method.</p>
+
 <pre line="1" lang="csharp">
 [ComImport, TypeLibType((short) 0x10c0), Guid("00000000-0000-0000-0000-000000000000")]
 public interface IImplementMeListener
@@ -128,7 +135,10 @@ public interface IImplementMeListener
     void notify([In, ComAliasName("ExampleLib.TEventType")] TEventType eventType,
         [In, MarshalAs(UnmanagedType.BStr)] string data);
 }</pre>
-Which means when you implement this interface in your managed class, you&#8217;ll just have <strong>String</strong> as the data type for the second parameter.  Which might look like this.
+
+
+<p>Which means when you implement this interface in your managed class, you&rsquo;ll just have <strong>String</strong> as the data type for the second parameter.  Which might look like this.</p>
+
 <pre line="1" lang="csharp">
 class MyManagedListener : ExampleLib.IImplementMeListener{
     public void notify(ExampleLib.TEventType eventType, String data)
@@ -136,25 +146,28 @@ class MyManagedListener : ExampleLib.IImplementMeListener{
         DoSomethingWithData(data);
     }
 }</pre>
-So this is what happens.
 
-1) Your COM library allocates the string to pass into your listener using <strong>SysAllocString</strong>.
 
-2) Your COM library passes the newly allocated string into your managed app by calling the <strong>notify</strong> method of your listener.
+<p>So this is what happens.</p>
 
-3) Your managed app does whatever it&#8217;s going to do with the string, then returns.
+<p>1) Your COM library allocates the string to pass into your listener using <strong>SysAllocString</strong>.</p>
 
-Normally in a fully managed app this would be no problem, when the reference count to the string finally reaches 0, the garbage collector sweeps it up and the memory is reclaimed.  However, in this case we have a problem.  The COM library allocated the string, and passed it into your managed app, and it&#8217;s responsibility for that string ends there.  The expectation is that the client will release the <strong>BSTR</strong> by calling <strong>SysFreeString</strong>.  Clearly we can&#8217;t explicitly do that to the managed <strong>String</strong> type.
+<p>2) Your COM library passes the newly allocated string into your managed app by calling the <strong>notify</strong> method of your listener.</p>
 
-So what do we do?  We rewrite the part of the assembly that Tlbimp.exe made for us, and adjust our listener implementation slightly.
+<p>3) Your managed app does whatever it&rsquo;s going to do with the string, then returns.</p>
 
-This is how I did it, though there may be better ways.
+<p>Normally in a fully managed app this would be no problem, when the reference count to the string finally reaches 0, the garbage collector sweeps it up and the memory is reclaimed.  However, in this case we have a problem.  The COM library allocated the string, and passed it into your managed app, and it&rsquo;s responsibility for that string ends there.  The expectation is that the client will release the <strong>BSTR</strong> by calling <strong>SysFreeString</strong>.  Clearly we can&rsquo;t explicitly do that to the managed <strong>String</strong> type.</p>
 
-1) Use a disassembler to view the code of the Tlbimp.exe generated assembly for your COM library.  I used, <a href="http://www.aisto.com/roeder/dotnet/">Lutz&#8217;s Reflector</a>.
+<p>So what do we do?  We rewrite the part of the assembly that Tlbimp.exe made for us, and adjust our listener implementation slightly.</p>
 
-2) Copy the code for the entire library into a *.cs file, then change just the signature of the method you&#8217;re concerned with.
+<p>This is how I did it, though there may be better ways.</p>
 
-The new signature should look like this.
+<p>1) Use a disassembler to view the code of the Tlbimp.exe generated assembly for your COM library.  I used, <a href="http://www.aisto.com/roeder/dotnet/">Lutz&rsquo;s Reflector</a>.</p>
+
+<p>2) Copy the code for the entire library into a *.cs file, then change just the signature of the method you&rsquo;re concerned with.</p>
+
+<p>The new signature should look like this.</p>
+
 <pre line="1" lang="csharp">
 [ComImport, Guid("00000000-0000-0000-0000-000000000000"), TypeLibType((short) 0x10c0)]
 public interface IImplementMeListener
@@ -163,7 +176,10 @@ public interface IImplementMeListener
     void notify([In, ComAliasName("ExampleLib.TEventType")] TEventType eventType,
         [In] IntPtr data);
 }</pre>
-And your implementing class changes to this.
+
+
+<p>And your implementing class changes to this.</p>
+
 <pre line="1" lang="csharp">
 class MyManagedListener : ExampleLib.IImplementMeListener{
     public void notify(ExampleLib.TEventType eventType, IntPtr data)
@@ -173,9 +189,11 @@ class MyManagedListener : ExampleLib.IImplementMeListener{
         Marshal.FreeBSTR(data);
     }
 }</pre>
-This is not particularly tricky wizardry.  All we&#8217;re doing is marshaling the input value from the library as an <strong>IntPtr</strong> instead of a managed <strong>String</strong>.  This allows us to explicitly release it using the <strong>System.Runtime.InteropServices.Marshal.FreeBSTR</strong> method, just like the library expects us to do.
 
-Hopefully, this will save you some hastle, and avoid a potentially large memory leak.
+
+<p>This is not particularly tricky wizardry.  All we&rsquo;re doing is marshaling the input value from the library as an <strong>IntPtr</strong> instead of a managed <strong>String</strong>.  This allows us to explicitly release it using the <strong>System.Runtime.InteropServices.Marshal.FreeBSTR</strong> method, just like the library expects us to do.</p>
+
+<p>Hopefully, this will save you some hastle, and avoid a potentially large memory leak.</p>
 </div>
 
 

@@ -103,18 +103,19 @@
   </header>
 
 
-<div class="entry-content">I have often wished that I could easily convert several images to a smaller size simultaneously.  This is useful for batch resizing images for thumbnails, galleries, or use on the web.
+<div class="entry-content"><p>I have often wished that I could easily convert several images to a smaller size simultaneously.  This is useful for batch resizing images for thumbnails, galleries, or use on the web.</p>
 
-On a linux system with imageMagick installed, you can use the script at the end of this post to batch convert the images.
+<p>On a linux system with imageMagick installed, you can use the script at the end of this post to batch convert the images.</p>
 
-I use it to create thumbnails and scaled images for my online <a href="http://www.nslms.com/gallery">photo gallery</a> using the following commands.
-./imagethumbnail.sh &#8220;*.jpg&#8221; &#8220;800x600&#8221; &#8220;web/&#8221;
+<p>I use it to create thumbnails and scaled images for my online <a href="http://www.nslms.com/gallery">photo gallery</a> using the following commands.
+./imagethumbnail.sh &ldquo;*.jpg&rdquo; &ldquo;800x600&rdquo; &ldquo;web/&rdquo;</p>
 
-./imagethumbnail.sh &#8220;*.jpg&#8221; &#8220;150x112&#8221; &#8220;web/_thb_&#8221;
+<p>./imagethumbnail.sh &ldquo;*.jpg&rdquo; &ldquo;150x112&rdquo; &ldquo;web/<em>thb</em>&rdquo;</p>
 
-This creates a reasonable sized &#8220;large&#8221; image at 800x600 and a thumbnail at 150x112.  Makes managing new images in my gallery much easier.  Hopefully you&#8217;ll find it useful too.
+<p>This creates a reasonable sized &ldquo;large&rdquo; image at 800x600 and a thumbnail at 150x112.  Makes managing new images in my gallery much easier.  Hopefully you&rsquo;ll find it useful too.</p>
 
-Contents of imagethumbnail.sh
+<p>Contents of imagethumbnail.sh</p>
+
 <pre lang="bash">#!/bin/bash
 SEARCH=$1
 SIZE=$2
@@ -131,6 +132,7 @@ do
 echo "Converting $i"
 convert -resize $SIZE $i -resize $SIZE +profile '*' $DEST$i
 done</pre>
+
 </div>
 
 

@@ -104,14 +104,31 @@
 
 
 <div class="entry-content"><p>It&#39;s been a while since I&#39;ve provided an update about the progress of on the Caddy. &nbsp;Mostly because things have been slow due to a busy work and family schedule. &nbsp;Here&#39;s the rundown of what I have gotten done though.</p>
+
+
 <p>I have rebuilt the carb, and realized that a broken vacuum pot on the carb was actually only used to crack the throttle open a bit and increase the idle RPM when the A/C was running. &nbsp;Since the A/C system is not holding pressure, and looks like it hasn&#39;t in many many years, I went ahead and removed this &quot;extra&quot; part. &nbsp;Hopefully this&#39;ll fix the hesitation problem that I detected on the few short drives I took. &nbsp;</p>
+
+
 <p><!--more--></p>
+
+
 <p>Now, when I first got the car, I immediately noticed that there wasn&#39;t any sort of linkage that I could see for the tranny kickdown. &nbsp;So while I&#39;ve been staring at the service manual to get my carb back together properly, I&#39;ve also been trying to figure out how the heck this thing is supposed to get a kickdown signal from the throttle. &nbsp;Turns out there is a switch which is supposed to be mounted on the intake manifold, near the carb which actually sends a +12v signal to the transmission for kickdown!</p>
+
+
 <p>Even more interesting than that, the transmission in this thing is at least as rare as the engine. &nbsp;I&#39;ve got a THM400 with &quot;Switch Pitch&quot;, which was only offered in the Caddy for like 3 years. &nbsp;Basically the torque converter has two stall settings, one around 1000RPM and another around 3200RPM. &nbsp;It switches between the two with another +12v signal (also sent by the switch which I don&#39;t have) which causes the angle of the blades in the converter to change. &nbsp;So, that means two things.</p>
+
+
 <p>First, instead of just throwing everything back together and hoping the trans &quot;just works&quot; I&#39;m actually going to take the time to yank it out and have it gone over to make sure it&#39;ll work well for me. &nbsp;No sense it blowing this thing up since it&#39;s a stout and apparently rather desirable piece! &nbsp;I&#39;m hoping to have it yanked out this weekend, and over to&nbsp;Alphonso&#39;s Transmission by Monday.</p>
+
+
 <p>Second, because I don&#39;t have the original switch to operate the &quot;Switch Pitch&quot; mode and kickdown I&#39;ve got to either find one (fat chance) or devise my own. &nbsp;Currently, my plan is to mount up a TPS (Throttle Position Sensor) to the carb and feed that signal to an&nbsp;<a href="http://www.sparkfun.com/commerce/categories.php?c=103" target="_blank">Arduino Microprocessor</a>&nbsp;which will send the +12v signals to the trans for both the switch pitch, and trans kickdown. &nbsp;There is actually a guy who built a controller for the switch pitch part of the trans back in the mid 80&#39;s, and I&#39;ve actually been in touch with him. &nbsp;His solution uses vacuum, the brake light, and timers to operate just the pitch change of the torque converter. &nbsp;Then a mechanical switch for the transmission kickdown. &nbsp;His name is Bruce Roe (<a href="mailto:bcroe@juno.com?subject=Switch%20Pitch%20Controller%20-%20via%20Ryan%20J.%20Geyer%20(www.nslms.com)">bcroe@juno.com</a>) and I&#39;ve been in touch with him to get some feedback on how his device works. &nbsp;He&#39;s been very helpful and encouraging, I can only hope my device is as effective as his.</p>
+
+
 <p>So, with that I&#39;ve decided I&#39;m going to nickname my Caddy &quot;Bionic Caddy&quot; in honor of the fact that &quot;we have the technology, we can make it better&quot;. &nbsp;It&#39;s especially fitting since I&#39;m going to put a <a href="http://www.mp3car.com">CarPC</a>&nbsp;in it, and hopefully put a <a href="http://www.bgsoflex.com/megasquirt.html">Megasquirt EFI</a> on it one day. &nbsp;Also, it abbreviates nicely to a personalized license plate *BIONCAD*. &nbsp;Should be good fun.</p>
+
+
 <p>While my simple project of identifying (and fixing) a mysterious &quot;clunk&quot; has sorta exploded into a much bigger project of getting the engine back together and building a controller for the transmission, I still hope to get it done reasonably soon and keep the complexity to a minimum. &nbsp;Stay tuned for updates!</p>
+
 </div>
 
 

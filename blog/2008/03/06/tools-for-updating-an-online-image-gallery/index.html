@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan J. Geyer">
 
   
-  <meta name="description" content="Not long ago I shared my bash script for creating thumbnails and manageable sized &#8220;big&#8221; images for an image gallery, or other image store &hellip;">
+  <meta name="description" content="Not long ago I shared my bash script for creating thumbnails and manageable sized &ldquo;big&rdquo; images for an image gallery, or other image store &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,24 +103,31 @@
   </header>
 
 
-<div class="entry-content">Not long ago I shared my bash script for <a href="http://www.nslms.com/2008/02/20/image-thumbnail-generating-script/">creating thumbnails</a> and manageable sized &#8220;big&#8221; images for an image gallery, or other image store.  Well, today I had to update an existing gallery with a pretty significant number of new images.  It occurred to me that I&#8217;d like to only convert new images rather than re-converting the whole lot.  Then, I&#8217;d like to simply upload the new files to my server in some automated way.
+<div class="entry-content"><p>Not long ago I shared my bash script for <a href="http://www.nslms.com/2008/02/20/image-thumbnail-generating-script/">creating thumbnails</a> and manageable sized &ldquo;big&rdquo; images for an image gallery, or other image store.  Well, today I had to update an existing gallery with a pretty significant number of new images.  It occurred to me that I&rsquo;d like to only convert new images rather than re-converting the whole lot.  Then, I&rsquo;d like to simply upload the new files to my server in some automated way.</p>
 
-So here&#8217;s the tools to do it.  It assumes you have the same layout for your pictures on your local drive as I do, which is as follows.
+<p>So here&rsquo;s the tools to do it.  It assumes you have the same layout for your pictures on your local drive as I do, which is as follows.</p>
+
 <ul>
-	<li><strong><em>RootDirectoryForGallery</em></strong> &#8211; This contains the full resolution pictures directly from your camera, and the following directories.
+    <li><strong><em>RootDirectoryForGallery</em></strong> &#8211; This contains the full resolution pictures directly from your camera, and the following directories.
 <ul>
-	<li><strong><em>web</em></strong> &#8211; This is a sub directory of RootDirectoryForGallery which contains the &#8220;big&#8221; web version of your image, and the thumbnails directory described below.
+    <li><strong><em>web</em></strong> &#8211; This is a sub directory of RootDirectoryForGallery which contains the &#8220;big&#8221; web version of your image, and the thumbnails directory described below.
 <ul>
-	<li><strong><em>thumbnails</em></strong> &#8211; This is a sub directory of web, and contains the thumbnail sized versions of the images.</li>
+    <li><strong><em>thumbnails</em></strong> &#8211; This is a sub directory of web, and contains the thumbnail sized versions of the images.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-The first step, is to copy your new pictures from the digital camera to your <strong><em>RootDirectoryForGallery</em></strong>.  Then, we want to get a list of the files that are new, so we run the following from the <strong><em>RootDirectoryForGallery</em></strong>.
+
+
+<p>The first step, is to copy your new pictures from the digital camera to your <strong><em>RootDirectoryForGallery</em></strong>.  Then, we want to get a list of the files that are new, so we run the following from the <strong><em>RootDirectoryForGallery</em></strong>.</p>
+
 <pre lang="bash">
 diff . web/ | grep 'Only in \.: d' | awk '{print $4}' | grep jpg &gt;&gt; 3-6-08_update.diff</pre>
-This creates a file in the <strong><em>RootDirectoryForGallery</em></strong> named &#8220;3-6-08_update.diff&#8221; which contains a list of only the new pictures, one per line.  Now, we want to use our image thumbnail script to convert only the new images to the &#8220;big&#8221; and thumbnail sized images.  I discovered that I needed to make a change to my script in order to do this.  Namely in the for loop I needed to enclose the command used to list files in &#8220;$()&#8221;.  The modified script is shown below.  Notice the &#8220;$($SEARCH)&#8221; where there was previously just &#8220;$SEARCH&#8221;.
+
+
+<p>This creates a file in the <strong><em>RootDirectoryForGallery</em></strong> named &ldquo;3-6-08_update.diff&rdquo; which contains a list of only the new pictures, one per line.  Now, we want to use our image thumbnail script to convert only the new images to the &ldquo;big&rdquo; and thumbnail sized images.  I discovered that I needed to make a change to my script in order to do this.  Namely in the for loop I needed to enclose the command used to list files in &ldquo;$()&rdquo;.  The modified script is shown below.  Notice the &ldquo;$($SEARCH)&rdquo; where there was previously just &ldquo;$SEARCH&rdquo;.</p>
+
 <pre lang="bash">
 #!/bin/bash
 
@@ -139,14 +146,22 @@ do
         echo "Converting $i"
         convert -resize $SIZE $i -resize $SIZE +profile '*' $DEST$i
 done</pre>
-So with our edited script we convert the files.
+
+
+<p>So with our edited script we convert the files.</p>
+
 <pre lang="bash">
 /opt/imagethumbnail.sh "cat 3-6-08_update.diff" "800x600" "web/"
 /opt/imagethumbnail.sh "cat 3-6-08_update.diff" "150×112 "web/_thb_"</pre>
-Lastly, we want to upload just the changed files to our server.  We&#8217;ll use rsync for this.  The paths, server name, and user name have been changed to protect the innocent.  ;-)
+
+
+<p>Lastly, we want to upload just the changed files to our server.  We&rsquo;ll use rsync for this.  The paths, server name, and user name have been changed to protect the innocent.  ;&ndash;)</p>
+
 <pre lang="bash">
 rsync -e ssh -av /path/to/local/copy/ yourusername@yourserver.com:/path/to/www/server/copy/</pre>
-And there you have it, with just a few simple commands you&#8217;ve created thumbnails of all of your images, and uploaded just the new ones to your server.  Easy!
+
+
+<p>And there you have it, with just a few simple commands you&rsquo;ve created thumbnails of all of your images, and uploaded just the new ones to your server.  Easy!</p>
 </div>
 
 

@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan J. Geyer">
 
   
-  <meta name="description" content="Last week, I told you how you can use Amazon&#8217;s Identity and Access Management (IAM) offering to better secure the services and tools you use to &hellip;">
+  <meta name="description" content="Last week, I told you how you can use Amazon&rsquo;s Identity and Access Management (IAM) offering to better secure the services and tools you use to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,28 +103,34 @@
   </header>
 
 
-<div class="entry-content">Last week, I told you how you can use Amazon&#8217;s Identity and Access Management (IAM) offering to better secure the services and tools you use to manage your AWS environment with <a href="http://www.nslms.com/2011/03/28/create-aws-ser…ounts-with-iam/">service accounts</a>.  Well on February 14th IAM got that much sweeter when they opened up the ability for IAM users to login to the AWS Console.
+<div class="entry-content"><p>Last week, I told you how you can use Amazon&rsquo;s Identity and Access Management (IAM) offering to better secure the services and tools you use to manage your AWS environment with <a href="http://www.nslms.com/2011/03/28/create-aws-ser…ounts-with-iam/">service accounts</a>.  Well on February 14th IAM got that much sweeter when they opened up the ability for IAM users to login to the AWS Console.</p>
+
 <!--more-->
 
-In the previous blog post we covered how to create users and get an AWS Access Key ID and AWS Secret Access Key to use with the AWS API.  Well the IAM also offers the ability to allow those users to log into the AWS console.
 
-This is significant because it allows you to give restricted access to users through the AWS console.  So you could have a user who is only able to launch new EC2 instances, but can not stop or terminate them.  You can have another user who can create EBS snapshots, but can not delete them or do anything with EC2 instances.  You can officially delegate a lot of responsibilities to other users who do not have to know anything about the AWS API in order to manage objects in your AWS environment.
+<p>In the previous blog post we covered how to create users and get an AWS Access Key ID and AWS Secret Access Key to use with the AWS API.  Well the IAM also offers the ability to allow those users to log into the AWS console.</p>
+
+<p>This is significant because it allows you to give restricted access to users through the AWS console.  So you could have a user who is only able to launch new EC2 instances, but can not stop or terminate them.  You can have another user who can create EBS snapshots, but can not delete them or do anything with EC2 instances.  You can officially delegate a lot of responsibilities to other users who do not have to know anything about the AWS API in order to manage objects in your AWS environment.</p>
 
 <h2>Naming your AWS account</h2>
-The first step to allowing IAM users to login is setting an alias for your AWS account.  Technically, this step is optional since you can use your account number to access the AWS console login for your account, but by providing a nickname for your account, you&#8217;ll make it much easier for your users to remember.  It&#8217;s the difference between https://123456789012.signin.aws.amazon.com/console/ec2/ and https://nickname.signin.aws.amazon.com/console/ec2/.  Best of all, it&#8217;s just a simple oneliner if you already have the IAM CLI tools installed.
 
-[bash]
+
+<p>The first step to allowing IAM users to login is setting an alias for your AWS account.  Technically, this step is optional since you can use your account number to access the AWS console login for your account, but by providing a nickname for your account, you&rsquo;ll make it much easier for your users to remember.  It&rsquo;s the difference between <a href="https://123456789012.signin.aws.amazon.com/console/ec2/">https://123456789012.signin.aws.amazon.com/console/ec2/</a> and <a href="https://nickname.signin.aws.amazon.com/console/ec2/.">https://nickname.signin.aws.amazon.com/console/ec2/.</a>  Best of all, it&rsquo;s just a simple oneliner if you already have the IAM CLI tools installed.</p>
+
+<p>[bash]
 $ iam-accountaliascreate -a nickname
-[/bash]
+[/bash]</p>
 
 <h2>Enabling login for a user</h2>
-Once you&#8217;ve created the account alias to make logging in much easier for your users, you&#8217;ll want to grant them login permissions.  In this example, we&#8217;re making the assumption there is already a user named <em>ryan.geyer</em>.
 
-[bash]
+
+<p>Once you&rsquo;ve created the account alias to make logging in much easier for your users, you&rsquo;ll want to grant them login permissions.  In this example, we&rsquo;re making the assumption there is already a user named <em>ryan.geyer</em>.</p>
+
+<p>[bash]
 $ iam-useraddloginprofile -u ryan.geyer -p supersecretpassword
-[/bash]
+[/bash]</p>
 
-That&#8217;s it, now you can direct the user to https://nickname.signin.aws.amazon.com/console/ec2/ and they can login with their own username and password.  Once they&#8217;re logged in, they will only be able to access the AWS objects defined by the IAM policies for the groups to which they are assigned.
+<p>That&rsquo;s it, now you can direct the user to <a href="https://nickname.signin.aws.amazon.com/console/ec2/">https://nickname.signin.aws.amazon.com/console/ec2/</a> and they can login with their own username and password.  Once they&rsquo;re logged in, they will only be able to access the AWS objects defined by the IAM policies for the groups to which they are assigned.</p>
 </div>
 
 

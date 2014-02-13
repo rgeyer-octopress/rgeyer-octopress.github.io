@@ -103,26 +103,26 @@
   </header>
 
 
-<div class="entry-content">I just received an email today from one of my contacts on <a href="https://www.linkedin.com/">LinkedIn</a>.  It was an invitation to join this new <a href="http://www.unyk.com/">UNYK</a> Address Book application which is apparently in beta.
+<div class="entry-content"><p>I just received an email today from one of my contacts on <a href="https://www.linkedin.com/">LinkedIn</a>.  It was an invitation to join this new <a href="http://www.unyk.com/">UNYK</a> Address Book application which is apparently in beta.</p>
 
-I think I&#8217;ve made it clear that I&#8217;m a <a href="http://www.nslms.com/2008/09/09/livin-on-the-web/">big fan</a> of anything which centralizes my information and allows me to access it through a web browser from anywhere, so I checked it out.
+<p>I think I&rsquo;ve made it clear that I&rsquo;m a <a href="http://www.nslms.com/2008/09/09/livin-on-the-web/">big fan</a> of anything which centralizes my information and allows me to access it through a web browser from anywhere, so I checked it out.</p>
 
-Overall, it looks quite promising.  It will harvest your existing contacts from several different locations (Yahoo!, Google, LinkedIn, Microsoft Outlook, MSN, etc.) and consolidate them.  When you sign up you provide your personal and professional contact information, and this in turn keeps your contact record up to date for anyone who has you in their address book.  Their premise is that everyone will eventually use them to manage their contact information, and therefore your address book will always be &#8220;automatically&#8221; up to date, because all of your contacts will have updated their information with UNYK.
+<p>Overall, it looks quite promising.  It will harvest your existing contacts from several different locations (Yahoo!, Google, LinkedIn, Microsoft Outlook, MSN, etc.) and consolidate them.  When you sign up you provide your personal and professional contact information, and this in turn keeps your contact record up to date for anyone who has you in their address book.  Their premise is that everyone will eventually use them to manage their contact information, and therefore your address book will always be &ldquo;automatically&rdquo; up to date, because all of your contacts will have updated their information with UNYK.</p>
 
-My first, and perhaps biggest problem with the service is that they don&#8217;t provide an https:// option.  So as I&#8217;m entering all of this personal and professional data, as well as supplying my login credentials for these other services it&#8217;s all going across the wire in plain text!
+<p>My first, and perhaps biggest problem with the service is that they don&rsquo;t provide an <a href="https://">https://</a> option.  So as I&rsquo;m entering all of this personal and professional data, as well as supplying my login credentials for these other services it&rsquo;s all going across the wire in plain text!</p>
 
-My second problem is that I&#8217;m already using <a href="https://www.goosync.com/">GooSync</a> to store my contacts, and then synchronize them with my HTC phone, which is my life line as far as contact information is concerned.
+<p>My second problem is that I&rsquo;m already using <a href="https://www.goosync.com/">GooSync</a> to store my contacts, and then synchronize them with my HTC phone, which is my life line as far as contact information is concerned.</p>
 
-There is also some considerable controversy regarding the fact that it will effectively &#8220;spam&#8221; the contacts that you do import inviting them to join UNYK as well.  This is no doubt how the email was sent to me.  I&#8217;m less concerned about this than the previous two points however.
+<p>There is also some considerable controversy regarding the fact that it will effectively &ldquo;spam&rdquo; the contacts that you do import inviting them to join UNYK as well.  This is no doubt how the email was sent to me.  I&rsquo;m less concerned about this than the previous two points however.</p>
 
-So in order for me to fully embrace this new UNYK solution, it&#8217;ll have to get a &#8220;secure&#8221; presence, and either integrate (which they seem to already do quite well with several other services) with GooSync, or provide the same functionality (syncing with my HTC).
+<p>So in order for me to fully embrace this new UNYK solution, it&rsquo;ll have to get a &ldquo;secure&rdquo; presence, and either integrate (which they seem to already do quite well with several other services) with GooSync, or provide the same functionality (syncing with my HTC).</p>
 
-Seems like a cool idea, but it&#8217;s not quite mature enough for me to dive in head first.  I&#8217;ll keep an eye out though!
+<p>Seems like a cool idea, but it&rsquo;s not quite mature enough for me to dive in head first.  I&rsquo;ll keep an eye out though!</p>
 
-EDIT:
-Since I was more than a little bit surprised that there was no secure access to login and supply my credential for other services, I did a little further digging.  UNYK insists in their <a href="http://www.unyk.com/en/Confidentiality">privacy policy</a> that they encrypt any &#8220;sensitive data&#8221; that goes across the wire.  Here it is directly from their site.
+<p>EDIT:
+Since I was more than a little bit surprised that there was no secure access to login and supply my credential for other services, I did a little further digging.  UNYK insists in their <a href="http://www.unyk.com/en/Confidentiality">privacy policy</a> that they encrypt any &ldquo;sensitive data&rdquo; that goes across the wire.  Here it is directly from their site.</p>
 
-<blockquote>How Secure Are Your Web Servers?  	[ ^ ]
+<blockquote>How Secure Are Your Web Servers?    [ ^ ]
 The security of your personal information is important to us. When you enter sensitive information (such as credit card number) on our registration or order forms, we encrypt that information using secure socket layer technology (SSL).
 To learn more about SSL, follow this link http://www.verisign.com/products-services/security-services/ssl/index.html.
 
@@ -130,7 +130,8 @@ We follow generally accepted industry standards to protect the personal informat
 
 If you have any questions about security on our Web site, you can contact us.</blockquote>
 
-So, since it looked like they used a lot of Web 2.0 technologies I thought possibly they were doing some javascript magic to encrypt the stuff going across the wire, I did a little test with <a href="http://www.wireshark.org/">Wireshark</a> to see what got sent.  I bit the bullet and imported my gmail contacts, and this was the result, with the password obscured by me, of course.
+
+<p>So, since it looked like they used a lot of Web 2.0 technologies I thought possibly they were doing some javascript magic to encrypt the stuff going across the wire, I did a little test with <a href="http://www.wireshark.org/">Wireshark</a> to see what got sent.  I bit the bullet and imported my gmail contacts, and this was the result, with the password obscured by me, of course.</p>
 
 <pre lang="bash">
 POST /Scripts/dotNET/ContactFinderProxy/Services.asmx/ImportWebContacts HTTP/1.1
@@ -152,7 +153,8 @@ Cache-Control: no-cache
 provider=Gmail&username=qwikrex%40gmail.com&password=*********&useOctazen=true
 </pre>
 
-Clearly not secure.  I do have to admit however that I seem to have been wrong about the mobile sync, they do provide this, though I&#8217;ll have no idea how well it works until they fix the security problem.
+
+<p>Clearly not secure.  I do have to admit however that I seem to have been wrong about the mobile sync, they do provide this, though I&rsquo;ll have no idea how well it works until they fix the security problem.</p>
 </div>
 
 

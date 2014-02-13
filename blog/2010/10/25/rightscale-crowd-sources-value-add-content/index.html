@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan J. Geyer">
 
   
-  <meta name="description" content="RightScale is definitely doing the whole &#8220;social media thing&#8221; right. They&#8217;re active on Twitter and Facebook. The CEO blogs, they &hellip;">
+  <meta name="description" content="RightScale is definitely doing the whole &ldquo;social media thing&rdquo; right. They&rsquo;re active on Twitter and Facebook. The CEO blogs, they &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,37 +103,51 @@
   </header>
 
 
-<div class="entry-content">RightScale is definitely doing the whole &#8220;social media thing&#8221; right.  They&#8217;re active on <a href="http://twitter.com/rightscale">Twitter</a> and <a href="http://www.facebook.com/RightScale">Facebook</a>.  The CEO <a href=http://blog.rightscale.com/">blogs</a>, they have a community <a href="http://forums.rightscale.com/">forum</a> and the very nature of their product encourages users to interact and share with one another.  Clearly they&#8217;ve ticked all of the big social media checkboxes, but their latest announcement is sheer evil genius!
+<div class="entry-content"><p>RightScale is definitely doing the whole &ldquo;social media thing&rdquo; right.  They&rsquo;re active on <a href="http://twitter.com/rightscale">Twitter</a> and <a href="http://www.facebook.com/RightScale">Facebook</a>.  The CEO <a href=http://blog.rightscale.com/">blogs</a>, they have a community <a href="http://forums.rightscale.com/">forum</a> and the very nature of their product encourages users to interact and share with one another.  Clearly they&rsquo;ve ticked all of the big social media checkboxes, but their latest announcement is sheer evil genius!</p>
+
 <!--more-->
 
-<h2>How to motivate your users to add value</h2>
-RightScale is holding a <a href="http://blog.rightscale.com/2010/10/07/rightscale-servertemplate-showdown/">contest</a> for the best Server Template submitted to the community.  They&#8217;ve also dangled the most trendy carrot available (a shiny new iPad) as the grand prize for winners in three categories.  This is social media 101.  Get the users involved, and motivate them to generate great content that drives interest and brings you even more users who will in turn create great content.  Plus, because it&#8217;s a contest it gives users more incentive to share their best work with the community, rather than just the left overs.
 
-What&#8217;s really cool about this contest besides encouraging users to share their best work, is that it may also motivate them to really put the finishing touches on the templates and scripts which they may have already written.  In fact, that&#8217;s exactly the effect it had on me when I read about the contest.
+
+
+<h2>How to motivate your users to add value</h2>
+
+
+<p>RightScale is holding a <a href="http://blog.rightscale.com/2010/10/07/rightscale-servertemplate-showdown/">contest</a> for the best Server Template submitted to the community.  They&rsquo;ve also dangled the most trendy carrot available (a shiny new iPad) as the grand prize for winners in three categories.  This is social media 101.  Get the users involved, and motivate them to generate great content that drives interest and brings you even more users who will in turn create great content.  Plus, because it&rsquo;s a contest it gives users more incentive to share their best work with the community, rather than just the left overs.</p>
+
+<p>What&rsquo;s really cool about this contest besides encouraging users to share their best work, is that it may also motivate them to really put the finishing touches on the templates and scripts which they may have already written.  In fact, that&rsquo;s exactly the effect it had on me when I read about the contest.</p>
 
 <h2>My ServerTemplate submissions</h2>
-When we first started using RightScale to build out an infrastructure for our SaaS application at work, there were a few things we needed.
 
-First, our application was going to use LDAP for authentication.  We needed a decentralized database for our users since we plan to have many different applications and websites that a user can access with the same credentials.
 
-We were also leveraging the paid RightScale ServerTemplates <a href="http://www.rightscale.com/library/server_templates/Tomcat6-FrontEnd-v9/12326">Tomcat6 FrontEnd</a>, <a href="http://www.rightscale.com/library/server_templates/Tomcat6-App-Server-v9/12324">Tomcat6 Application</a>, and <a href="http://www.rightscale.com/library/server_templates/MySQL-5-1-EBS-v2/14192">MySQL 5.1</a> to build out our production deployment environment.  But we needed to be able to run all of these services on a single box for development, staging, and QA purposes.
+<p>When we first started using RightScale to build out an infrastructure for our SaaS application at work, there were a few things we needed.</p>
+
+<p>First, our application was going to use LDAP for authentication.  We needed a decentralized database for our users since we plan to have many different applications and websites that a user can access with the same credentials.</p>
+
+<p>We were also leveraging the paid RightScale ServerTemplates <a href="http://www.rightscale.com/library/server_templates/Tomcat6-FrontEnd-v9/12326">Tomcat6 FrontEnd</a>, <a href="http://www.rightscale.com/library/server_templates/Tomcat6-App-Server-v9/12324">Tomcat6 Application</a>, and <a href="http://www.rightscale.com/library/server_templates/MySQL-5-1-EBS-v2/14192">MySQL 5.1</a> to build out our production deployment environment.  But we needed to be able to run all of these services on a single box for development, staging, and QA purposes.</p>
 
 <h3>OpenLDAP ServerTemplate</h3>
-Thinking that an LDAP directory would be a pretty common requirement for infrastructure in the cloud I went searching the <a href="http://www.rightscale.com/library/">RightScale Library</a> for a ServerTemplate I could use out of the box, or modify a bit for our purposes.  Instead I was a bit shocked to find that there wasn&#8217;t anything out there, which is why I built my <a href="http://www.rightscale.com/library/server_templates/OpenLDAP-Directory-Server-v1-1/14476">OpenLDAP Directory ServerTemplate</a>.
 
-This is a ServerTemplate that we&#8217;re currently using for our production environment to authenticate users, and it has some pretty cool features.  It allows you to easily setup a &#8220;Provider&#8221; and &#8220;Consumer&#8221; pair of servers, and allows you to easily promote the &#8220;Consumer&#8221; server in the case of a failure.  It also backs up the database daily to a file in an S3 storage bucket of your choice.
+
+<p>Thinking that an LDAP directory would be a pretty common requirement for infrastructure in the cloud I went searching the <a href="http://www.rightscale.com/library/">RightScale Library</a> for a ServerTemplate I could use out of the box, or modify a bit for our purposes.  Instead I was a bit shocked to find that there wasn&rsquo;t anything out there, which is why I built my <a href="http://www.rightscale.com/library/server_templates/OpenLDAP-Directory-Server-v1-1/14476">OpenLDAP Directory ServerTemplate</a>.</p>
+
+<p>This is a ServerTemplate that we&rsquo;re currently using for our production environment to authenticate users, and it has some pretty cool features.  It allows you to easily setup a &ldquo;Provider&rdquo; and &ldquo;Consumer&rdquo; pair of servers, and allows you to easily promote the &ldquo;Consumer&rdquo; server in the case of a failure.  It also backs up the database daily to a file in an S3 storage bucket of your choice.</p>
 
 <h3>Tomcat6 All-in-One ServerTemplate</h3>
-This <a href="http://www.rightscale.com/library/server_templates/Tomcat6-Java-or-Grails-App-Fro/14552">ServerTemplate</a> is a utility template that comes in handy if, like us, you&#8217;re using the RightScript ServerTemplates mentioned earlier to host a Java application.  It combines all of the roles (Front End, Application Server, Database Server, and my own OpenLDAP server) into a single instance.
 
-This allows you to setup parallel environments that are nearly identical to your production environment for the purposes of development, testing, or troubleshooting an issue in production.  We&#8217;re running one of these that our continuous integration deploys to nightly for demo and smoke testing purposes.
 
-One of the coolest features of this template is the ability to fire up a utility server which will exactly mirror your production environment.  This is done by grabbing the latest EBS volume snapshots your production server is creating for backups, then using those snapshots to attach new EBS volumes to your utility server.  This effectively duplicates the production database, allowing you to work with it in isolation.  This is great for staging a significant upgrade which might effect the database schema, you can bring up a &#8220;throw away&#8221; server instance, test and troubleshoot your upgrade, allowing you complete confidence that your upgrade will go off without a hitch in production!
+<p>This <a href="http://www.rightscale.com/library/server_templates/Tomcat6-Java-or-Grails-App-Fro/14552">ServerTemplate</a> is a utility template that comes in handy if, like us, you&rsquo;re using the RightScript ServerTemplates mentioned earlier to host a Java application.  It combines all of the roles (Front End, Application Server, Database Server, and my own OpenLDAP server) into a single instance.</p>
+
+<p>This allows you to setup parallel environments that are nearly identical to your production environment for the purposes of development, testing, or troubleshooting an issue in production.  We&rsquo;re running one of these that our continuous integration deploys to nightly for demo and smoke testing purposes.</p>
+
+<p>One of the coolest features of this template is the ability to fire up a utility server which will exactly mirror your production environment.  This is done by grabbing the latest EBS volume snapshots your production server is creating for backups, then using those snapshots to attach new EBS volumes to your utility server.  This effectively duplicates the production database, allowing you to work with it in isolation.  This is great for staging a significant upgrade which might effect the database schema, you can bring up a &ldquo;throw away&rdquo; server instance, test and troubleshoot your upgrade, allowing you complete confidence that your upgrade will go off without a hitch in production!</p>
 
 <h3>One more for the road</h3>
-I do have one other ServerTemplate that I&#8217;m putting some finishing touches on.  It&#8217;s based on a collection of RightScripts and configuration stuff that I&#8217;ve compiled for our own development team server.  It provides services like git, svn, Teamcity, and artifactory.  I&#8217;m hoping to be able to submit it before the October 29th deadline.
 
-So, for motivating me to step up my game and share my best work my thanks go to RightScale.  Ohh and, you&#8217;re welcome for the value add, I just hope it&#8217;s worthy of an iPad!
+
+<p>I do have one other ServerTemplate that I&rsquo;m putting some finishing touches on.  It&rsquo;s based on a collection of RightScripts and configuration stuff that I&rsquo;ve compiled for our own development team server.  It provides services like git, svn, Teamcity, and artifactory.  I&rsquo;m hoping to be able to submit it before the October 29th deadline.</p>
+
+<p>So, for motivating me to step up my game and share my best work my thanks go to RightScale.  Ohh and, you&rsquo;re welcome for the value add, I just hope it&rsquo;s worthy of an iPad!</p>
 </div>
 
 

@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan J. Geyer">
 
   
-  <meta name="description" content="Now that Amazon&#8217;s Identity and Access Management (IAM) is more widely known, and you can use your IAM credentials to login to the AWS Console, &hellip;">
+  <meta name="description" content="Now that Amazon&rsquo;s Identity and Access Management (IAM) is more widely known, and you can use your IAM credentials to login to the AWS Console, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,35 +103,41 @@
   </header>
 
 
-<div class="entry-content">Now that Amazon&#8217;s Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href="http://www.nslms.com/2011/04/04/enabling-aws-console-login-for-iam-users/">login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.
+<div class="entry-content"><p>Now that Amazon&rsquo;s Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href="http://www.nslms.com/2011/04/04/enabling-aws-console-login-for-iam-users/">login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.</p>
+
 <!--more-->
-One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.
 
-[code]
+
+<p>One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.</p>
+
+<p>[code]
 {
-  &#8220;Statement&#8221;: [
-    {
-      &#8220;Action&#8221;: [
-        &#8220;s3:ListAllMyBuckets&#8221;
-      ],
-      &#8220;Effect&#8221;: &#8220;Allow&#8221;,
-      &#8220;Resource&#8221;: &#8220;arn:aws:s3:::*&#8221;
-    },
-    {
-      &#8220;Action&#8221;: &#8220;s3:*&#8221;,
-      &#8220;Effect&#8221;: &#8220;Allow&#8221;,
-      &#8220;Resource&#8221;: &#8220;arn:aws:s3:::bucket_name_here&#8221;
-    },
-    {
-      &#8220;Action&#8221;: &#8220;s3:*&#8221;,
-      &#8220;Effect&#8221;: &#8220;Allow&#8221;,
-      &#8220;Resource&#8221;: &#8220;arn:aws:s3:::bucket_name_here/*&#8221;
-    }
-  ]
-}
-[/code]
+  &ldquo;Statement&rdquo;: [</p>
 
-This contains three simple IAM statements.
+<pre><code>{
+  "Action": [
+    "s3:ListAllMyBuckets"
+  ],
+  "Effect": "Allow",
+  "Resource": "arn:aws:s3:::*"
+},
+{
+  "Action": "s3:*",
+  "Effect": "Allow",
+  "Resource": "arn:aws:s3:::bucket_name_here"
+},
+{
+  "Action": "s3:*",
+  "Effect": "Allow",
+  "Resource": "arn:aws:s3:::bucket_name_here/*"
+}
+</code></pre>
+
+<p>  ]
+}
+[/code]</p>
+
+<p>This contains three simple IAM statements.</p>
 
 <ol>
 <li>The s3:ListAllMyBuckets for the entirety of S3 (arn:aws:s3:::*)</li>
@@ -139,9 +145,10 @@ This contains three simple IAM statements.
 <li>Ful control of the contents of the specified bucket</li>
 </ol>
 
-Sadly, there is no way to limit a user to which buckets are listed, instead you have to let them see all buckets which is accomplished by the first statement.
 
-The second and third statement gives the user full control of the bucket itself, and it&#8217;s contents respectively.  Assign this policy directly to a user, or a group that the user belongs to, and you&#8217;re all set!
+<p>Sadly, there is no way to limit a user to which buckets are listed, instead you have to let them see all buckets which is accomplished by the first statement.</p>
+
+<p>The second and third statement gives the user full control of the bucket itself, and it&rsquo;s contents respectively.  Assign this policy directly to a user, or a group that the user belongs to, and you&rsquo;re all set!</p>
 </div>
 
 

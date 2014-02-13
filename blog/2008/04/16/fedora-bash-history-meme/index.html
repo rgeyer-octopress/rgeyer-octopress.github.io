@@ -103,15 +103,17 @@
   </header>
 
 
-<div class="entry-content">I just learned about a Bash History Meme originated at <a href="http://planet.fedoraproject.org/">Planet Fedora</a> from a <a href="http://basildoncoder.com/blog/">blog</a> I read regularly.
+<div class="entry-content"><p>I just learned about a Bash History Meme originated at <a href="http://planet.fedoraproject.org/">Planet Fedora</a> from a <a href="http://basildoncoder.com/blog/">blog</a> I read regularly.</p>
 
-In short, you run the following command in bash, and show your results.
+<p>In short, you run the following command in bash, and show your results.</p>
 
 <pre lang="bash">
 history | awk '{a[$2]++ } END{for(i in a){print a[i] " " i}}'|sort -rn|head
 </pre>
 
-My results from my home box are as follows;
+
+<p>My results from my home box are as follows;</p>
+
 <pre lang="bash">
 103 ls
 59 cd
@@ -125,9 +127,11 @@ My results from my home box are as follows;
 13 diff
 </pre>
 
-Seems I&#8217;m unwilling to simply close my terminal window in KDE, but instead have to type &#8220;exit&#8221;.  The &#8220;myworkflow.sh&#8221; script is a work in progress which I hope to one day post about.  It does stuff to help me convert and do post production on video from my HDV camcorder.  I&#8217;ve been using &#8220;diff&#8221; to compare original files with modified ones for web updates I&#8217;ve been doing for clients.
 
-Here&#8217;s the results from my web hosting box;
+<p>Seems I&rsquo;m unwilling to simply close my terminal window in KDE, but instead have to type &ldquo;exit&rdquo;.  The &ldquo;myworkflow.sh&rdquo; script is a work in progress which I hope to one day post about.  It does stuff to help me convert and do post production on video from my HDV camcorder.  I&rsquo;ve been using &ldquo;diff&rdquo; to compare original files with modified ones for web updates I&rsquo;ve been doing for clients.</p>
+
+<p>Here&rsquo;s the results from my web hosting box;</p>
+
 <pre lang="bash">
 394 ls
 212 cd
@@ -141,7 +145,8 @@ Here&#8217;s the results from my web hosting box;
 12 cp
 </pre>
 
-Suppose there&#8217;s nothing particularly interesting here.  I was checking a file upload progress in a very nasty way by calling &#8220;du&#8221;, what can I say..  I&#8217;m lazy.
+
+<p>Suppose there&rsquo;s nothing particularly interesting here.  I was checking a file upload progress in a very nasty way by calling &ldquo;du&rdquo;, what can I say..  I&rsquo;m lazy.</p>
 </div>
 
 
