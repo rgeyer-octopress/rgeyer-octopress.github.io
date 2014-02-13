@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>RightScale Crowd Sources Value-add Content - Ryans Octopress Blog</title>
+  <meta name="author" content="Ryan J. Geyer">
+
+  
+  <meta name="description" content="RightScale is definitely doing the whole &#8220;social media thing&#8221; right. They&#8217;re active on Twitter and Facebook. The CEO blogs, they &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://rgeyer-octopress.github.io/blog/2010/10/25/rightscale-crowd-sources-value-add-content">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2840005-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ryans Octopress Blog</a></h1>
+  
+    <h2>Testing out Ocotopress to replace my Wordpress blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:rgeyer-octopress.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">RightScale Crowd Sources Value-add Content</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-25T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">RightScale is definitely doing the whole &#8220;social media thing&#8221; right.  They&#8217;re active on <a href="http://twitter.com/rightscale">Twitter</a> and <a href="http://www.facebook.com/RightScale">Facebook</a>.  The CEO <a href=http://blog.rightscale.com/">blogs</a>, they have a community <a href="http://forums.rightscale.com/">forum</a> and the very nature of their product encourages users to interact and share with one another.  Clearly they&#8217;ve ticked all of the big social media checkboxes, but their latest announcement is sheer evil genius!
+<!--more-->
+
+<h2>How to motivate your users to add value</h2>
+RightScale is holding a <a href="http://blog.rightscale.com/2010/10/07/rightscale-servertemplate-showdown/">contest</a> for the best Server Template submitted to the community.  They&#8217;ve also dangled the most trendy carrot available (a shiny new iPad) as the grand prize for winners in three categories.  This is social media 101.  Get the users involved, and motivate them to generate great content that drives interest and brings you even more users who will in turn create great content.  Plus, because it&#8217;s a contest it gives users more incentive to share their best work with the community, rather than just the left overs.
+
+What&#8217;s really cool about this contest besides encouraging users to share their best work, is that it may also motivate them to really put the finishing touches on the templates and scripts which they may have already written.  In fact, that&#8217;s exactly the effect it had on me when I read about the contest.
+
+<h2>My ServerTemplate submissions</h2>
+When we first started using RightScale to build out an infrastructure for our SaaS application at work, there were a few things we needed.
+
+First, our application was going to use LDAP for authentication.  We needed a decentralized database for our users since we plan to have many different applications and websites that a user can access with the same credentials.
+
+We were also leveraging the paid RightScale ServerTemplates <a href="http://www.rightscale.com/library/server_templates/Tomcat6-FrontEnd-v9/12326">Tomcat6 FrontEnd</a>, <a href="http://www.rightscale.com/library/server_templates/Tomcat6-App-Server-v9/12324">Tomcat6 Application</a>, and <a href="http://www.rightscale.com/library/server_templates/MySQL-5-1-EBS-v2/14192">MySQL 5.1</a> to build out our production deployment environment.  But we needed to be able to run all of these services on a single box for development, staging, and QA purposes.
+
+<h3>OpenLDAP ServerTemplate</h3>
+Thinking that an LDAP directory would be a pretty common requirement for infrastructure in the cloud I went searching the <a href="http://www.rightscale.com/library/">RightScale Library</a> for a ServerTemplate I could use out of the box, or modify a bit for our purposes.  Instead I was a bit shocked to find that there wasn&#8217;t anything out there, which is why I built my <a href="http://www.rightscale.com/library/server_templates/OpenLDAP-Directory-Server-v1-1/14476">OpenLDAP Directory ServerTemplate</a>.
+
+This is a ServerTemplate that we&#8217;re currently using for our production environment to authenticate users, and it has some pretty cool features.  It allows you to easily setup a &#8220;Provider&#8221; and &#8220;Consumer&#8221; pair of servers, and allows you to easily promote the &#8220;Consumer&#8221; server in the case of a failure.  It also backs up the database daily to a file in an S3 storage bucket of your choice.
+
+<h3>Tomcat6 All-in-One ServerTemplate</h3>
+This <a href="http://www.rightscale.com/library/server_templates/Tomcat6-Java-or-Grails-App-Fro/14552">ServerTemplate</a> is a utility template that comes in handy if, like us, you&#8217;re using the RightScript ServerTemplates mentioned earlier to host a Java application.  It combines all of the roles (Front End, Application Server, Database Server, and my own OpenLDAP server) into a single instance.
+
+This allows you to setup parallel environments that are nearly identical to your production environment for the purposes of development, testing, or troubleshooting an issue in production.  We&#8217;re running one of these that our continuous integration deploys to nightly for demo and smoke testing purposes.
+
+One of the coolest features of this template is the ability to fire up a utility server which will exactly mirror your production environment.  This is done by grabbing the latest EBS volume snapshots your production server is creating for backups, then using those snapshots to attach new EBS volumes to your utility server.  This effectively duplicates the production database, allowing you to work with it in isolation.  This is great for staging a significant upgrade which might effect the database schema, you can bring up a &#8220;throw away&#8221; server instance, test and troubleshoot your upgrade, allowing you complete confidence that your upgrade will go off without a hitch in production!
+
+<h3>One more for the road</h3>
+I do have one other ServerTemplate that I&#8217;m putting some finishing touches on.  It&#8217;s based on a collection of RightScripts and configuration stuff that I&#8217;ve compiled for our own development team server.  It provides services like git, svn, Teamcity, and artifactory.  I&#8217;m hoping to be able to submit it before the October 29th deadline.
+
+So, for motivating me to step up my game and share my best work my thanks go to RightScale.  Ohh and, you&#8217;re welcome for the value add, I just hope it&#8217;s worthy of an iPad!
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ryan J. Geyer</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-25T00:00:00-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cloud-computing/'>Cloud computing</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://rgeyer-octopress.github.io/blog/2010/10/25/rightscale-crowd-sources-value-add-content/" data-via="rjgeyer" data-counturl="http://rgeyer-octopress.github.io/blog/2010/10/25/rightscale-crowd-sources-value-add-content/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/09/14/how-to-headlight-oxidation-restoration/" title="Previous Post: How To - Headlight Oxidation Restoration">&laquo; How To - Headlight Oxidation Restoration</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud/" title="Next Post: How to resize billions of images in the cloud">How to resize billions of images in the cloud &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">Policy for an S3 Only Amazon IAM User</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/24/the-baby/">The Baby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13: NO WAY!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12: Old Hat</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/rgeyer">@rgeyer</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'rgeyer',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+RyanGeyerCycles?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ryan J. Geyer -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

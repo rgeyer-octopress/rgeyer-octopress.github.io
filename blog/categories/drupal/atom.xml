@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Drupal | Ryans Octopress Blog]]></title>
+  <link href="http://rgeyer-octopress.github.io/blog/categories/drupal/atom.xml" rel="self"/>
+  <link href="http://rgeyer-octopress.github.io/"/>
+  <updated>2014-02-12T21:07:20-08:00</updated>
+  <id>http://rgeyer-octopress.github.io/</id>
+  <author>
+    <name><![CDATA[Ryan J. Geyer]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Web Development Environment - "on the Go"]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2009/04/07/web-development-environment-on-the-go/"/>
+    <updated>2009-04-07T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2009/04/07/web-development-environment-on-the-go</id>
+    <content type="html"><![CDATA[<p>Over the past few weeks I&rsquo;ve been spending most of my spare time developing a couple of web sites.  These sites are based on the Drupal CMS written in PHP.  And I&rsquo;ve taken a bit of a crash course in Drupal module design.</p>
+
+<p>When I set out developing these, I faced a challenge that I&rsquo;d been aware of, but managed to avoid in the past.  How do I work on these projects in a predictable, constant environment, and still bring my code with me to work on my home machine, work machine, laptop, and anything else I happen to sit down in front of?</p>
+
+<p>This blog post is about how I&rsquo;ve accomplished this so far.  Read more after the break&hellip;</p>
+
+<h2><!--more-->Portable Storage Device</h2>
+
+
+<p>Your first inclination will probably be to install these tools on a USB thumb drive that you can easily store in your pocket.  And you&rsquo;d be in good company, this was my first choice too.  However, after getting everything going, I quickly realized that it simply wasn&rsquo;t fast enough.  Others have reported different results, and a lot has to do with the particular device, and the file system (NTFS is best).</p>
+
+<p>That said, I chose to go a different route, with fewer unknowns, and picked up a <a href="http://freeagent.seagate.com/en-us/hard-drive/portable-hard-drive/Free-Agent.html">Seagate FreeAgent Go 250GB USB harddrive</a>.  I picked it up with a docking port from our local Costco for $80 and it eliminates concerns I had about performance.</p>
+
+<h2><a name="File_Structure">File Structure</a></h2>
+
+
+<p>Throughout the rest of this article, I&rsquo;m going to refer to files in my file structure, so I may as well show it to you so that these references can make sense.  This probably isn&rsquo;t the best layout, but it&rsquo;s what works for me.</p>
+
+<ul>
+    <li>FreeAgent Go Root
+<ul>
+    <li>ampp
+<ul>
+    <li>lampp</li>
+    <li>wampp</li>
+    <li>shared
+<ul>
+    <li>htdocs
+<ul>
+    <li>&lt;code&gt;</li>
+</ul>
+</li>
+    <li>mysql
+<ul>
+    <li>data
+<ul>
+    <li>&lt;databases&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+    <li>Portable
+<ul></ul>
+</li>
+    <li>cygwin</li>
+    <li>libs
+<ul>
+    <li>java-runtime
+<ul>
+    <li>jre1.6.0_06</li>
+</ul>
+</li>
+</ul>
+</li>
+    <li>Program Files
+<ul></ul>
+</li>
+    <li>7-ZipPortable</li>
+    <li>eclipse</li>
+    <li>FirefoxPortable</li>
+    <li>junction</li>
+    <li>Rapidsvn</li>
+    <li>soapui-2.5.1</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Foundation (AMPP)</h2>
+
+
+<p>The first thing we&rsquo;re going to needed is a good Apache, MySQL, PHP setup.  For this I did some quick googling and stumbled upon XAMPP.  This is an Apache Friends project that packages all the server side components I need.  You can check them out, and download it over at their <a href="http://www.apachefriends.org/en/xampp.html">site</a>.</p>
+
+<p>I just downloaded the zip file, and extracted it to my drive at \ampp\wampp.  If you don&rsquo;t unzip this project to the root of your device, you&rsquo;ll need to run the &ldquo;setup_xampp.bat&rdquo; batch script supplied.</p>
+
+<h2>Shared Source &amp; Database Files</h2>
+
+
+<p>For the sake of organization, and the ability to run this system on both Windows and Linux boxes (see notes below about linux), I&rsquo;m keeping my htdocs and MySQL database files outside of the normal directory structure of the XAMPP installation.</p>
+
+<p>See my <a href="#File_Structure">File Structure</a> above..</p>
+
+<p>This way all of the web files for my individual websites and projects go in the &ldquo;htdocs&rdquo; directory, while the database data files go in the &ldquo;mysql\data&rdquo; directory, making them easy to find.</p>
+
+<p>Of course, this presents a problem since the XAMPP install won&rsquo;t be looking in those directories for the databases and code.  So, to solve this I&rsquo;ve written another small batch script which lives in the &ldquo;shared&rdquo; directory.  This script uses the microsoft system tool <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx">Junction.exe</a> to create links of my shared directories in the location that XAMPP is looking.  The junction.exe file is in an &ldquo;Installers&rdquo; directory on the drive, though I should probably move it somewhere more logical.  Here&rsquo;s the script that deletes old junctions, and creates new ones.  You&rsquo;ll want to run this when you move from computer to computer, since the drive letter of the USB drive will likely change, and the junctions are to absolute paths.  I put this file in \ampp\shared and it uses relative paths, so that&rsquo;s important.</p>
+
+<h4>refresh-junctions.bat</h4>
+
+
+<p>[text toolbar=&ldquo;false&rdquo;]for /d %%A in (htdocs*) do &quot;....\Portable\Program Files\junction\junction.exe&quot; -d &quot;..\xampp\%%A&quot;
+for /d %%A in (htdocs*) do &quot;....\Portable\Program Files\junction\junction.exe&quot; -s &quot;..\xampp\%%A&quot; &quot;%%A&quot;</p>
+
+<p>for /d %%A in (mysql\data*) do &quot;....\Portable\Program Files\junction\junction.exe&quot; -d &quot;..\xampp\%%A&quot;
+for /d %%A in (mysql\data*) do &quot;....\Portable\Program Files\junction\junction.exe&quot; -s &quot;..\xampp\%%A&quot; &quot;%%A&quot;
+[/text]</p>
+
+<p>The requirement here of course is that you always create new sites by creating a directory in \ampp\shared\htdocs, and that any time you create a new database, you must move it&rsquo;s directory from \ampp\wampp\mysql\data&amp;lt;database&gt; to \ampp\shared\mysql\data&amp;lt;database&gt; then re-run the refresh-junctions.bat script while the MySQL server is not running.  But it&rsquo;s a fairly workable solution.</p>
+
+<h2>Integrated Development Environment (IDE)</h2>
+
+
+<p>Okay, so we&rsquo;ve got a nice predictable, repeatable hosting environment.  Now to  write some code!</p>
+
+<p>My personal choice of IDE is Eclipse with the PHP Development Tools (PDT).  Eclipse is by it&rsquo;s nature portable since it&rsquo;s a Java application, and the installation for the PDT is just to unzip it to a drive.  There are a couple of pitfalls though, and here&rsquo;s what I&rsquo;ve done to overcome them.</p>
+
+<p>First, since Eclipse does require the Java runtime you have two choices.</p>
+
+<ol>
+    <li>Make sure that a current JVM is installed on any machine you intend to run your portable environment on.</li>
+    <li>Carry a copy of the JVM with you!</li>
+</ol>
+
+
+<p>I chose #2, and used instructions found <a href="http://www.jonlee.ca/how-to-run-eclipse-or-aptana-from-usb-drive/" target="_blank">here</a> to do it.  Basically, store a copy of the JVM on your disk and edit the Eclipse startup batch script to use your portable copy.  In my case, the JVM is in the Portable/libs/java-runtime directory as shown in my <a href="#File_Structure">File Structure</a> above.</p>
+
+<p>Secondly, I thought it would be a good idea to just store my workspace on the portable drive as well, so I could keep all my settings with me.  Thus far I haven&rsquo;t found an elegant way to do this, since it apparently uses absolute paths for projects.  So instead I keep a workspace on each system I work on that has the settings.  I hope to find a better solution to this, and if I do I&rsquo;ll post it here.</p>
+
+<h2>Portable Firefox Browser &amp; Plugins</h2>
+
+
+<p>Alright, so now we&rsquo;ve got a web server to show our code, a nice IDE to write code in.  What we need is a predictable way to view it all.  You could install your favorite browser on every computer you interact with, or you could bring it with you!  In my case, Firefox is my very favorite browser so I used <a href="http://portableapps.com/apps/internet/firefox_portable" target="_blank">Firefox Portable</a> so that I can take it and all my configuration preferences as well as Firefox Add-Ons with me.  My core set of Add-Ons which I find invaluable are..</p>
+
+<ul>
+    <li><a href="http://getfirebug.com/" target="_blank">Firebug</a></li>
+    <li><a href="https://addons.mozilla.org/en-US/firefox/addon/35" target="_blank">IE View</a></li>
+    <li><a href="https://addons.mozilla.org/en-US/firefox/addon/60" target="_blank">Web Developer</a></li>
+</ul>
+
+
+<h2>Portable *NIX tools with Cygwin</h2>
+
+
+<p>So we&rsquo;ve written some code in our portable IDE, we&rsquo;ve tested it out using our portable web server and Firefox browser and we&rsquo;re satisfied with the results, and want to upload them to our production server.  My very favorite method of doing so is over RSYNC so I transfer only what&rsquo;s changed, and it&rsquo;s secure.  In order to do that, I usually use cygwin.</p>
+
+<p>On the surface it seems like it&rsquo;d be easy to just install cygwin to a directory on your portable drive.  And in part, it is.  You can simply install to that directory, and you&rsquo;re all set.  Problem is as soon as you move it to another computer, and that computer assigns your drive a different drive letter, everything breaks down real quick.  Some quick google searching revealed a way to make this work.  I had to make some minor tweaks in order to fit within my <a href="#File_Structure">File Structure</a> but you can find the inspiration for my changes <a href="http://www.dam.brown.edu/people/sezer/software/cygwin/" target="_blank">here</a>.</p>
+
+<p>My changes are to the X.bat and uninstall.bat files.  I instead called them ~cygwin-install-X.bat and ~cygwin-uninstall.bat and put them in the cygwin install directory at Portable\cygwin.  Here they are.</p>
+
+<h4>~cygwin-install-X.bat</h4>
+
+
+<p>[text]for /F %%A in (&lsquo;cd&rsquo;) do set WD=%%A
+bin\mount -m | bin\sed s/mount/&quot;%WD%\/bin\/mount&quot;/ &gt; tmp\mount.log
+bin\umount -c
+bin\umount -A
+bin\mount -bfu %WD%/ /
+bin\mount -bfu %WD%/bin /usr/bin
+bin\mount -bfu %WD%/lib /usr/lib</p>
+
+<p>set path=%path%;%WD%\bin;%WD%\usr\X11R6\bin
+start bin\rxvt.exe -title &quot;&quot; -bg &quot;#fafad2&quot; -fg &quot;#000040&quot; -color10 green4 -color14 brown -fn &quot;Lucida Console-14&quot; -geometry 80x58+0+0 -sl 4000 -sr -tn rxvt -e /bin/bash &mdash;login -i
+set DISPLAY=localhost:0.0
+run usr\X11R6\bin\XWin -multiwindow -emulate3buttons 200
+[/text]</p>
+
+<h4>~cygwin-uninstall.bat</h4>
+
+
+<p>[text]bin\umount -c
+bin\umount -A
+bin\bash  tmp\mount.log
+bin\rm    tmp\mount.log
+[/text]</p>
+
+<h2>Portable Source Control (SVN)</h2>
+
+
+<p>Lastly, you&rsquo;ll probably want to submit your changes to some sort of source control.  In my case I&rsquo;m using Concurrent Versioning (CVS) or Subversion (SVN) for my source control, and both are handled nicely by the portable version of <a href="http://portableapps.com/node/13470" target="_blank">RapidSVN</a>.</p>
+
+<p>So there you have it, my end to end solution for doing web development from a portable flash drive on any windows box you happen to come across.  My original intention was to be able to just plug this drive into any windows OR linux box and work, but I have some kinks to work out with the linux solution.  Watch this space for more on that as I develop it.</p>
+
+<p>Hopefully this helps you if you&rsquo;re trying to setup a nice portable webdev environment!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Drupal Flickr Module. Now With URLs!]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2009/03/27/drupal-flickr-module-now-with-urls/"/>
+    <updated>2009-03-27T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2009/03/27/drupal-flickr-module-now-with-urls</id>
+    <content type="html"><![CDATA[<p>Okay, so I've been a bit preoccupied with a couple projects which have slowed my efforts at blogging etc.</p>
+
+
+<p>In both cases, I've been working on websites that leverage the PHP based Drupal CMS.&nbsp; One of those projects is over at <a href="http://www.chasejarvisshoeproject.com">http://www.chasejarvisshoeproject.com</a>.&nbsp; That site is basically a small community forum for some folks that are sending a pair of shoes around the world, and taking pictures of them in various locations and situations.&nbsp; Pretty cool.&nbsp; The result of this effort is a Flickr photo pool and a good time.</p>
+
+
+<p>So, of course a website devoted to a group on Flickr, is going to require some integration with Flickr.&nbsp; Enter the <a href="http://drupal.org/project/flickr">Drupal Flickr Module</a>.&nbsp; When I&nbsp;started using it, this module was still in either an alpha, or beta (can't seem to remember) and has released it's 1.0 as of the 25th of March.&nbsp; Throughout the time I've been using it however, there've been a few functions of the Flickr API which I&nbsp;needed, and the module didn't support.&nbsp; Those were.</p>
+
+
+<ul>
+    <li><a href="http://flickr.com/services/api/flickr.groups.pools.getPhotos.html">flickr.groups.pools.getPhotos</a></li>
+    <li><a href="http://flickr.com/services/api/flickr.urls.getGroup.html">flickr.urls.getGroup</a></li>
+    <li><a href="http://flickr.com/services/api/flickr.urls.getUserPhotos.html">flickr.urls.getUserPhotos</a></li>
+</ul>
+
+
+<p>Since the framework of the module did the hard work of making the calls, it was easy to write my own methods which performed these Flickr API&nbsp;functions for me.&nbsp; And as the module developers released new versions, I&nbsp;just copy/pasted my code back into the new file, and went about my business.</p>
+
+
+<p>Well when 1.0 was released, I&nbsp;took a closer look.&nbsp; It turns out they'd implemented the call to get photos from a group pool, but still nothing for the URL's.&nbsp; So I&nbsp;figured I'd contribute and write a patch for the two calls I&nbsp;was still in need of.&nbsp; And that, is what you see here.</p>
+
+
+<pre lang="diff">
+569,597d568
+< }
+< 
+< /** 
+<  * @param $nsid
+<  *   nsid of the group whose pool url will be returned
+<  * @return 
+<  *   The URL portion of the response from the flickr method flickr.urls.getGroup
+<  */
+< function flickr_urls_get_group($nsid)
+< {
+<   $response = flickr_request('flickr.urls.getGroup', array('group_id' => $nsid));
+< if($response)
+<     return $response['group']['url'];
+<     
+<   return FALSE;
+< }
+< 
+< /**
+<  * @param $nsid
+<  *   nsid of the user whose photostream url will be returned
+<  * @return unknown_type
+<  */
+< function flickr_urls_get_user_photos($nsid)
+< {
+<   $response = flickr_request('flickr.urls.getUserPhotos', array('user_id' => $nsid));
+< if($response)
+<     return $response['user']['url'];
+<     
+<   return FALSE;
+</pre>
+
+
+<p>As you can see, pretty basic but I&nbsp;figured I'd contribute.&nbsp; I&nbsp;posted this as a feature request/issue over on the Flickr Module's <a href="http://drupal.org/node/414096">issue queue</a>, but have yet to receive a response.&nbsp; If nothing else, I&nbsp;can use this to patch the next version.&nbsp; Hopefully it helps someone else as well.</p>
+
+
+<p></pre></p>
+]]></content>
+  </entry>
+  
+</feed>
