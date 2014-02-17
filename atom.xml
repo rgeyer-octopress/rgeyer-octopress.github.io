@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Ryans Octopress Blog]]></title>
+  <link href="http://rgeyer-octopress.github.io/atom.xml" rel="self"/>
+  <link href="http://rgeyer-octopress.github.io/"/>
+  <updated>2014-02-16T20:50:04-08:00</updated>
+  <id>http://rgeyer-octopress.github.io/</id>
+  <author>
+    <name><![CDATA[Ryan J. Geyer]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How I Vandalized a Weed Whacker at Home Depot]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/"/>
+    <updated>2011-07-02T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot</id>
+    <content type="html"><![CDATA[<p>So we&rsquo;ve been renting a house for a bit over a year and a half.  As a techie and an obsessive tinkerer, this means an excuse to start buying tools and other things in the name of &ldquo;maintaining the house&rdquo;.</p>
+
+<h1>How it all began</h1>
+
+
+<p>One such tool which we recently bought was an electric weed whacker.  About two months ago, the weed whacker needed it&rsquo;s wire spool replaced.  In the interest of speed, I popped the plastic cover off of the spool, and removed the screw in the center of the spool (thinking it was necessary to get the spool off), all while standing in the grass.</p>
+
+<p><em>Big Mistake</em></p>
+
+<p>I set the plastic cover down in the grass, and put the screw right in the center of it as I replaced the spool.  Meanwhile Q is running around and playing with everything in his sight and grasp.  I should have been paying more attention to him, but I didn&rsquo;t.</p>
+
+<p><em>Really&hellip; Really <strong>BIG</strong> mistake</em></p>
+
+<p>When I got the new spool in, I looked down to the grass beside me expecting to grab my screw and plastic cap and reassemble the weed whacker.  But it was <em><strong>gone</strong></em>..</p>
+
+<p>I yelled to Q and he came running, plastic cap in hand.</p>
+
+<p>The next 30 minutes or so consisted of me interrogating the poor boy on the whereabouts of my screw, and then a futile search for it in the grass.</p>
+
+<h1>How I became a vandal</h1>
+
+
+<p>Which brings us to today.  I was in Home Depot picking up some misc. stuff, and thought I&rsquo;d try a last ditch effort to find a replacement for that screw.  Since it isn&rsquo;t a wear part, and you aren&rsquo;t supposed to remove it when replacing the wire spool, they don&rsquo;t sell a replacement.</p>
+
+<p>Fortunately though, they DID have the exact model that I bought on display.</p>
+
+<p><em>Do you see where this is going yet?</em></p>
+
+<p>So here I am in a Home Depot with no available replacement for my screw, but a new weed whacker of the exact same model right in front of me.  If only I could somehow see the screw I had lost and go over to hardware to find a replacement.</p>
+
+<p><em>So it begins</em></p>
+
+<p>So, I casually wander over the the tool department and grab a screwdriver.  I then saunter back over to the garden center with my screwdriver in hand.</p>
+
+<p>Watching over my shoulder, and setting Q as a lookout, I quickly remove the screw from the floor model.  Next stop, hardware.</p>
+
+<p>With my ill gotten screw in hand I head over to the hardware department.  I identify the size and thread pitch of the screw, and grab a couple screws that match it.</p>
+
+<p>Then it&rsquo;s back to the garden center to return the screw I &ldquo;borrowed&rdquo;, and back to the tool corral to return my screwdriver.</p>
+
+<p><em>Mission accomplished</em></p>
+
+<p>I am now happy to report that I now have a fully operational weed whacker again, thanks to a quick covert operation in our local Home Depot!</p>
+
+<p><img src="http://farm6.static.flickr.com/5195/5896209886_a0125d52d5_z.jpg" width="640" height="361" alt="weedwacker"/></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Policy for an S3 only Amazon IAM User]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
+    <updated>2011-06-27T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
+    <content type="html"><![CDATA[<p>Now that Amazon&rsquo;s Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href="http://www.nslms.com/2011/04/04/enabling-aws-console-login-for-iam-users/">login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.</p>
+
+<!--more-->
+
+
+<p>One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.</p>
+
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>{
+</div><div class='line'>  &ldquo;Statement&rdquo;: [
+</div><div class='line'>    {
+</div><div class='line'>      &ldquo;Action&rdquo;: [
+</div><div class='line'>        &ldquo;s3:ListAllMyBuckets&rdquo;
+</div><div class='line'>      ],
+</div><div class='line'>      &ldquo;Effect&rdquo;: &ldquo;Allow&rdquo;,
+</div><div class='line'>      &ldquo;Resource&rdquo;: &ldquo;arn:aws:s3:::<em>&rdquo;
+</div><div class='line'>    },
+</div><div class='line'>    {
+</div><div class='line'>      &ldquo;Action&rdquo;: &ldquo;s3:</em>&rdquo;,
+</div><div class='line'>      &ldquo;Effect&rdquo;: &ldquo;Allow&rdquo;,
+</div><div class='line'>      &ldquo;Resource&rdquo;: &ldquo;arn:aws:s3:::bucket_name_here&rdquo;
+</div><div class='line'>    },
+</div><div class='line'>    {
+</div><div class='line'>      &ldquo;Action&rdquo;: &ldquo;s3:<em>&rdquo;,
+</div><div class='line'>      &ldquo;Effect&rdquo;: &ldquo;Allow&rdquo;,
+</div><div class='line'>      &ldquo;Resource&rdquo;: &ldquo;arn:aws:s3:::bucket_name_here/</em>&rdquo;
+</div><div class='line'>    }
+</div><div class='line'>  ]
+</div><div class='line'>}
+</div></pre></td></tr></table></div></figure></p>
+
+<p>This contains three simple IAM statements.</p>
+
+<ol>
+<li>The s3:ListAllMyBuckets for the entirety of S3 (arn:aws:s3:::*)</li>
+<li>Full control of the specified bucket (bucket_name_here, in this case)</li>
+<li>Ful control of the contents of the specified bucket</li>
+</ol>
+
+
+<p>Sadly, there is no way to limit a user to which buckets are listed, instead you have to let them see all buckets which is accomplished by the first statement.</p>
+
+<p>The second and third statement gives the user full control of the bucket itself, and it&rsquo;s contents respectively.  Assign this policy directly to a user, or a group that the user belongs to, and you&rsquo;re all set!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The baby]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/24/the-baby/"/>
+    <updated>2011-06-24T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/24/the-baby</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/rgeyer/5630016717/" title="Tate by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5307/5630016717_87e53254bb_m.jpg" width="161" height="240" alt="Tate" class="alignright"/></a>
+I know I have been talking soooo much about my eldest son, the amazing three year old that has accomplished sooo much in the potty training arena.  I have to say a few things about my baby boy.</p>
+
+<p>I am in awe over this child and know that I will be trying to keep up with him for the rest of my life.  He is a climber.  Like, the kid doesn&rsquo;t walk yet (buries head in sand over the steps he ran and walked randomly) and yet he climbs everything he can get his hands on.  We like to go to a park that has the little play ground and the big play ground.  My baby boy has shown his climbing prowess by climbing the big play ground trying to keep up with his brother that is nearly 2.5 years older than him.</p>
+
+<p>He is amazing.  Oh and he talks.  I am not the delusional parent convinced he speaks well, he is learning and is a great mimic.  He loves to try to enunciate nearly every word that he hears. <em>makes note to clean up the music listened to around him</em>  He is amazing.  Oh and he is an eater.  My first son was only interested in nursing for the first full year of his life.  My second?  He loves to chill at the BF cafe when he can but he also wants a bite of that burger his mom is eating  while nursing him.  Epic.</p>
+
+<p>So he is &lsquo;nearly&rsquo; walking (I&rsquo;m still not willing to say otherwise), he crawls ridiculously fast, he climbs everything he can and I&rsquo;m hoping he loves a diversity of good food, so far so good. :D</p>
+
+<p>I just adore my boys, adore.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 13:  NO WAY!]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/22/potty-training-day-13-no-way/"/>
+    <updated>2011-06-22T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/22/potty-training-day-13-no-way</id>
+    <content type="html"><![CDATA[<p>He&rsquo;s being all awesome and doing all he can on his own.  I had no idea he would do so well.</p>
+
+<p>I mean I knew he could do it but I had no idea he would just embrace the process so willingly and be so self sufficient.</p>
+
+<p>He is awesome.</p>
+
+<p>I am proud.</p>
+
+<p>I officially have a giant grin on my face so big that even my baby is grinning since that is what you are supposed to do when someone uses the potty correctly.  Yay!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 12:  Old Hat]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/20/potty-training-day-12-old-hat/"/>
+    <updated>2011-06-20T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/20/potty-training-day-12-old-hat</id>
+    <content type="html"><![CDATA[<p>We did the scariest thing ever!  We took both boys grocery shopping while one was diaperless!  Scary stuff, huh?  We went grocery shopping without both boys last week, yes we were big chickens, so what!</p>
+
+<p>My big boy was doing well all day with the potty training, you know acting like he&rsquo;s been doing this for years.  He even had attitude with me when I asked if he needed to use the potty, he rolled his eyes and told me I was silly since he had just peed a few minutes ago.  <em>Epic</em>.</p>
+
+<p>Back to grocery shopping.  We weren&rsquo;t used to this process and both my husband and I spaced on offering a potty break at the first store.  We went to the second store with our eldest son recovering from grocery cart regret, he didn&rsquo;t use the cart with the plastic car on the front per his request to &ldquo;Be like Mommy and Daddy&rdquo;, then lost his mind when he saw another kid riding in it.</p>
+
+<p>So our first trip to a commercial toilet, I was nervous and my son was excited.  We ran to the bathroom since my son announced he had to pee NOW.  I saw the womens bathroom was occupied so I figured having my son with me authorized us to use the mens bathroom.  It worked out nicely and so far my son isn&rsquo;t petrified of those evil automatic flushing toilets.  We did in fact high five after washing our hands and grocery shopping was narrated by my son.</p>
+
+<p>He is just so happy with himself but has this air to him that just says, &lsquo;Yeah, I&rsquo;m just that awesome.&rsquo;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 11:  Kicking butt and taking names]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/17/potty-training-day-11-kicking-butt-and-taking-names/"/>
+    <updated>2011-06-17T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/17/potty-training-day-11-kicking-butt-and-taking-names</id>
+    <content type="html"><![CDATA[<p>Yeah, my son was a rock start today.</p>
+
+<p>He proudly would announce that he used the potty all by himself, with a dance.  Yes, I had to escort him back to the bathroom to wash his hands and wash my own hands since I high fived him with glee before remembering that he can&rsquo;t turn the faucet on by himself.</p>
+
+<p>Yes my son was a potty trained big boy and for the umpteenth time I have realized that my children are growing before my very eyes and it is happening way too fast but this is the wild ride I volunteered for.</p>
+
+<p>For now I&rsquo;m just going to enjoy a song and dance with my son potty training skillZ, yeah with a capital <strong>Z</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 10: Getting better]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/15/potty-training-day-10-getting-better/"/>
+    <updated>2011-06-15T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/15/potty-training-day-10-getting-better</id>
+    <content type="html"><![CDATA[<p>Yesterday was horrid, just horrid as everyone was struggling with the emotional turmoil of the accidents.  Yes, even the baby realized that everyone was having a hard time.  It&rsquo;s amazing how your child has an accident and you try to focus all your energy on making it right and yet you, as a mother, find the time to beat yourself up for dropping the ball and possibly not give your kid enough time and attention.</p>
+
+<p>Today, we are getting better, much better.  My son started the day with an accident and a shower and I had a load of laundry to do before doing anything.  We followed it up with being my son then being way too confident with his bladder control and having a moment where he forgot to take his pants off while peeing.  From that point on he was showing his prowess, kicking butt and taking names and kept things dry everywhere but in the potty.</p>
+
+<p>You are so happy you stumbled over this blog right now.  I mean, I can just see the techie followers of my husband wondering what in the hell they came across.  You can thank my ever so wonderful husband for sharing this space with his stay at home mom wife to share the joys of pees and poops and lactating boobies and other fantastical bodily functions.  Go ahead, take a minute to thank him. :-P</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 9: Set back]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/13/potty-training-day-9-set-back/"/>
+    <updated>2011-06-13T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/13/potty-training-day-9-set-back</id>
+    <content type="html"><![CDATA[<p>My potty training star and his little brother were in rare form and all they want is to cling to me and make demands.  I think I was just worn out and the boys just like to go full throttle, meaning I was a big baby on this day.  My toddler was in a mouthy mood and my baby was dealing with the teething woes along with me being tired and in some kind of allergy stupor, it was a bad combination.</p>
+
+<p>The potty training was great until we had words when he just wasn&rsquo;t willing to sit on the potty for a minute to be sure he was ok.  It went down hill fast after that point.  He had an accident, he was upset with himself.  I cleaned him up in a hurry, not a big deal, well I didn&rsquo;t think so until I took his favorite pajamas and he cried.  I hurried and got him in another favorite outfit and he was still in tears.  The baby was screaming his head off as I put him in the pack n play to keep him out of the mess I was cleaning.  My baby doesn&rsquo;t understand why I wouldn&rsquo;t want him clinging to my side, ready to bolt to get into some kind of mess.</p>
+
+<p>The stress of this event along with me not getting my much needed 5-10 minutes of quiet on my own and me not feeling spectacular was building up.  My solution?  Take the boys on a walk, of course!  I needed to get some endorphins going and my toddler needed another outing sans diaper and my baby needed some sunshine.  We went on said walk and came back to the house in a better mood, or so I thought.  I asked my toddler to sit on the potty a couple times.  Sadly he refused and announced he could do it by himself.  Cue accident number two while he made it to the potty he forgot getting his pants off first.</p>
+
+<p>There were tears and panic from both my husband and toddler at this point.  I had to stop a nursing session with my baby and take over just so things would calm down.  When everyone was cleaned up and calmed down I sat and cried.  This is the easy stuff guys, and as they get older it is only going to get harder.  I want to be an awesome mom and today I didn&rsquo;t feel like an awesome mom.  I know there are going to be hard days but when you are in the thick of it, holy crap this job is so hard.</p>
+
+<p>The day ended on a good note and I needed that.  I&rsquo;ll try to be an awesome mom again tomorrow.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 8:  Show off ;)]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/10/potty-training-day-8-show-off/"/>
+    <updated>2011-06-10T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/10/potty-training-day-8-show-off</id>
+    <content type="html"><![CDATA[<p>We had a great day and when it came to today&rsquo;s outing, we stretched it out over two hours and the first thing our potty training star did was map out the potty available and tried it out.</p>
+
+<p>Yeah, he is awesome.</p>
+
+<p>He didn&rsquo;t have a single accident and was even applauding himself by the time we got home.  He is a bit of show off. :&ndash;)  I&rsquo;m so proud of my big boy.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 7:  Going out]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/08/potty-training-day-7-going-out/"/>
+    <updated>2011-06-08T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/08/potty-training-day-7-going-out</id>
+    <content type="html"><![CDATA[<p>We have survived so far.  Heck, it has been smooth sailing considering how hard and rough this journey could be.  I love to stay home and frankly my toddler prefers to stay home unless we are going to visit his Nana or go to a park but we need to try going out.  We needed a kiddie pool to survive the heat wave we were dealing with (and by we, I mean me).  So I asked my mom to come with us, as I was too big of a baby to even consider going on this trip with my boys on my own.</p>
+
+<p>We went to the store and though the toys were a distraction we some how made it out with my toddler dry and with only a few tears and a kiddie pool.  We forced the pool in my van with the help of a kind gentleman that saw us struggling to put it in the vehicle.  We got home and got the boys out of the car and then celebrated on our &lsquo;dry run&rsquo; with our own little pool party.</p>
+
+<p>I think we are doing well (and by we, I mean my toddler) is doing an awesome job.  We got out of the house!  :throws confetti:</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 6:  Getting Smoother]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/06/potty-training-day-6-getting-smoother/"/>
+    <updated>2011-06-06T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/06/potty-training-day-6-getting-smoother</id>
+    <content type="html"><![CDATA[<p>I had been letting my toddler run around in underwear as clothes seemed to be such an huge challenge.  I had so many things going for us so we tried clothes again.  My toddler did fantastic.</p>
+
+<p>We spent more time outside which meant that he had to trek into the house to use the potty.  We were putting stickers on the chart, eating our candy treats, high fiving, doing dances.  Life is good.</p>
+
+<p>I&rsquo;m now realizing that one day we will have to go out as a family, with my little boy in underwear.  It has to happen.  It will happen.  I am afraid.  This process has gotten smoother but we are about to add a new challenge.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 5:  HELP!]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/03/potty-training-day-5-help/"/>
+    <updated>2011-06-03T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/03/potty-training-day-5-help</id>
+    <content type="html"><![CDATA[<p>I thought I had this process under control, well as under control as you can get.  My toddler boy rarely had any accidents.  He did a dance, we high fived with each success.  I felt good until I started getting more and more attitude from my toddler.</p>
+
+<p>Then I turned to the interwebs for advice.  I went to a couple baby boards that I have been a part of for a while and discovered that I was doing almost everything right.  Yay, I think.  Then one of incredible ladies on one of the baby boards I frequented asked if I used a timer to alert my toddler it was time to check if he had to use the potty.  Oh my goodness!  Using this technique meant less attitude from my toddler as he felt more in control.  It meant less time outs for my toddler as his hissy fits were massive and were terrible displays of disrespect for me.  It meant we were back on the same page.</p>
+
+<p>Thank goodness when I needed help I was not only given the key tip to make life better for all of us but I also was reassured that I was using the techniques needed.  This meant that my mobile baby was also given more attention and we could focus more on learning and playing.</p>
+
+<p>Yay for help.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training day 4: Stubborn]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/01/potty-training-day-4-stubborn/"/>
+    <updated>2011-06-01T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/01/potty-training-day-4-stubborn</id>
+    <content type="html"><![CDATA[<p>Now day four was a good day minus the attitude.  I&rsquo;m not sure who&rsquo;s attitude was worse my toddler&rsquo;s or my own in response to his attitude but we both showed that we are very stubborn.  He made it clear that he was busy playing or eating (slowest eater in the house here) and just couldn&rsquo;t be bothered to check to see if he needed to use the potty while I kept checking with him and encouraging him to sit on the potty.</p>
+
+<p>I then had flashes of what my future was going to be like when he is a teenager and I panicked.  I did my best to keep my cool but these visions of him telling me he was too busy to clean his room and that the newest video game was much more important than bathing.  Then having fights over why he couldn&rsquo;t borrow the car after not doing his chores and being disrespectful.  These are scary, scary thoughts.</p>
+
+<p>We survived the day, we still liked each other, we still loved each other.  I had a glimpse of my toddler becoming a big boy and I am happy we have a long way till we get there.  He&rsquo;s just a stubborn person like his mama.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 3: Clothes are the Enemy]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/05/04/potty-training-day-3-clothes-are-the-enemy/"/>
+    <updated>2011-05-04T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/05/04/potty-training-day-3-clothes-are-the-enemy</id>
+    <content type="html"><![CDATA[<p>Day three of the potty training process for toddler boy was no easy feat.  We threw too many curve balls at the kid.  We dressed him completely and moved the potty from the play room to the bathroom which is really far apart.</p>
+
+<p>We then learned that toddler boy&rsquo;s shirts are way too long to be able to pull down said shorts and underwear in a hurry.  We also learned that the run from the sun room to the bathroom is really way too long to have to remember that you have to do more than simply sit on the potty and pee.</p>
+
+<p>Clothes complicate things, a lot.  I mean I know getting dressed for a date with my mister is a hard one to figure out.   Where are we going?  What are we doing?  How much walking will I have to do?  What if we change our plans?  Will I look under or over dressed for said possible change?  Clothes are the enemy, I mean, aren&rsquo;t the clothes the ones that let us know if we are getting a little fluffy?</p>
+
+<p>I get it and I totally agree little man, clothes are the enemy.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 2: Reality settles in...]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/05/03/potty-training-day-2-reality-settles-in/"/>
+    <updated>2011-05-03T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/05/03/potty-training-day-2-reality-settles-in</id>
+    <content type="html"><![CDATA[<p>So yesterday was all excitement and squealing and today I realized that keeping both boys taken care of and potty training the eldest while keeping the baby, literally out of the potty is going to be a huge undertaking.  My toddler still expects me to high five him every time he does anything potty training related and his little brother still needs to be included.  Here I thought just taking care of the boys full time was going to be a HUGE challenge, it isn&rsquo;t anything compared to potty training and caring for both boys.</p>
+
+<p>It&rsquo;s like the time my then boyfriend flaked on his plans with me to hang out with the boys.  The reality hit that I was in a relationship and there will be bumps in the road.  Oh and that cute thing when he stopped talking to me when a nice car drives by, becoming less cute.</p>
+
+<p>My son is showing that he is self aware.  I was eating breakfast and nursing his brother and then he came up to me squealing that he did it again.  I thought this was simply a ploy to get more candy because quite frankly my toddler is smart enough to play on my sleep deprived memory to get a sugar fix.  Nope.  He used the potty on his own, he peed a little on a tile next to his potty but mostly made the potty without so much as a word from me.</p>
+
+<p>He&rsquo;s doing it without me!!!  I squealed and clapped.  I cleaned up the mess then took my little troop to the bathroom to flush what was in the potty in the big toilet.  We celebrated as my toddler flushed the toilet.  Then we all washed our hands.  We marched back to the living room with a clean potty chair and put a sticker on the chart.  My big boy got the candy he wanted and put the potty chair back together in the play room.  We are getting there!  :&ndash;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Training Day 1: The Infatuation]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/05/02/potty-training-day-1-the-infatuation/"/>
+    <updated>2011-05-02T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/05/02/potty-training-day-1-the-infatuation</id>
+    <content type="html"><![CDATA[<p>Potty training is an ongoing conversation in my household, it only make sense as I have three year old in diapers.  I talk to my mom about potty training.  I talk to my husband about potty training.  Hell, I have talked to my toddler about potty training daily if not during every time I go to the bathroom.  Yes, it&rsquo;s true you have kids and stay home with them and you have company every time you use the toilet.</p>
+
+<p>So this week my son came up to me asking to use his personal potty.  I was elated!  I squealed and jumped up and down and when he asked for his big boy underwear I clapped and screamed!   My son was excited to get so much attention and for the rest of the day was in big boy underwear, like daddy.  We talked about stickers and I gave him candy.</p>
+
+<p>It was like the beginning of a relationship where my son screaming, &ldquo;I have to poop!&rdquo; when he actually had to pee and did outside was adorable.  I was just happy he was learning when he should be on the potty.</p>
+
+<p>It&rsquo;s kind of like how I thought it was adorable when my husband, then crush, paused conversations to figure out what was making that fantastic diesel sound.  Or would be giving me an adoring gaze which was interrupted by the Cobra replica that we saw at the intersection we were stopped at.  Then the conversation was no longer about what our life may be if we got married but the money it cost to build a Cobra and if he could fit in it.  I was infatuated with how passionate he was.  You get the point.</p>
+
+<p>Day one was all about the infatuation with the idea of my toddler being potty trained, and my son feeling like he was a big boy like his daddy.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Livin’ On The Edge]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/04/20/livin-on-the-edge/"/>
+    <updated>2011-04-20T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/04/20/livin-on-the-edge</id>
+    <content type="html"><![CDATA[<p><a href="http://www.nslms.com/wp-content/255790697_f288115839_m.jpg"><img src="http://www.nslms.com/wp-content/255790697_f288115839_m.jpg" alt="" title="255790697_f288115839_m" width="240" height="215" class="alignleft size-full wp-image-1082" /></a>When I was little livin' on the edge has changed so much over the years.  When I was a child, living on the edge meant walking on the highest point of a swing set and climbing to scary heights of a giant tree.  It meant playing in a vacant apartment to escape the heat, because I knew I would be in huge trouble taking my baby sister to the pool without my parent&rsquo;s permission.</p>
+
+<p>When I was a teen it meant talking back to my mom, staying out late, and that one time I drove my friend&rsquo;s car with her trying to cheer me on before I got my license.  It was when I tried to see just how long I could function well with little to no sleep, oh college days.  Yeah, I was that awesome culinary student that worked in a bakery, so there were days I would be up at 3:30am and wouldn&rsquo;t get to bed the following day till 1pm due to work, school and my dreamy boyfriend.</p>
+
+<p>When I was in my twenties it meant having crazy make out sessions with my husband everywhere, yeah I&rsquo;m a wild child, crazy newlywed me and yeah we grossed out our sisters on numerous occasions.  Or the fantastic time we went to a wine festival and followed up that afternoon of drinking with going home and drinking more wine and eating of fine cheeses and fruit.  Wild and crazy I tell ya!!</p>
+
+<p>Now as a mother, living on the edge is a whole new world.  When I had one child, living on the edge was coming home late for his evening nursing session or letting him run around naked for more than half an hour.  Now living on the edge is changing my toddler on the floor and spacing on closing the gate to keep my baby away from the dirty diaper I have removed.  It&rsquo;s also when I hear an pause in the constant chatter from both boys and don&rsquo;t immediately jump up and check on what mischief they may be getting into with each other, you know like tearing apart their play room to the point beyond recognition.  Like right now, I&rsquo;m so living on the edge as I have not followed my baby crawling to the office where my dreamy, adorable, and thank goodness patient husband is busy working.  How things have changed.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[It all comes down to poop]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/04/15/it-all-comes-down-to-poop/"/>
+    <updated>2011-04-15T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/04/15/it-all-comes-down-to-poop</id>
+    <content type="html"><![CDATA[<p>Let&rsquo;s talk about how often moms &lsquo;get&rsquo; to talk about poop.  First we talk about poop all of the time when we are pregnant, or the lack there of due to all the iron we are taking.  Then as we get closer to delivery then we are amazed with the amount of &lsquo;cleansing&rsquo; our body does.</p>
+
+<p>When we have our beautiful baby then we are very concerned about the number of wet and dirty diapers.  You even beg your child when jaundiced to just poop a few more times that particular day.  You even proudly show the chart you&rsquo;ve been using to record all the naps and wet and dirty diapers the first time you go and see the pediatrician.</p>
+
+<p>Then there are the conversations about poop, wet diapers, and frequency that you have with other moms.  When you child starts to eat solids, you start to panic due to the length of time between poopy diapers.  Then you conversation includes, what foods help your nearly toothless wonder to poop.  How about what foods to avoid when you are still having to change poopy diapers.  I also love the hysterical moments that I&rsquo;ve dealt with and didn&rsquo;t warn my husband about the effect the blue rice crispy treat had on my toddler&rsquo;s dirty diaper.</p>
+
+<p>I would have never thought that I would have long in depth conversations about my sons bowel movements.  I do now have those conversations with more people than I ever dreamed of. Heck, now that I&rsquo;m trying to convince my eldest son to potty train, we talk about pee and poop every single diaper change.  Heck, now my son brings up the topic of poop to me on a daily basis.  I have a feeling I will continue to talk about poop for the rest of my life, personally I blame Dr. Oz.  He started it.  I mean who else but he encouraged us to look in to toilet after we pooped.  Yep, I blame him.  :-P</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Caveman communication]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/04/13/caveman-communication/"/>
+    <updated>2011-04-13T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/04/13/caveman-communication</id>
+    <content type="html"><![CDATA[<p>[flickr size=&ldquo;small&rdquo; float=&ldquo;right&rdquo;]5426078103[/flickr]</p>
+
+<p>You would think that being the only girl in the house that I would not be surprised with the grunting that goes on here.  I mean my husband has been known to nod at me and grunt and I would know that means, &ldquo;Why yes I would love another beer sweetie.&rdquo; and that a long grunt with eyes closed while at the dinner table and eating a dinner I made means, &ldquo;Oh my goodness honey, you out did yourself.  The cabernet savignion bouquet paired with the fillet mignion and the red wine reduction sauce is outstanding with your roasted garlic mashed potatoes.&rdquo;.</p>
+
+<p>I learned quickly what my first son was trying to communicate with grunts and hand gestures when he was an infant.  He was much more focused on learning and mastering physical milestones, he was all about stacking blocks and figuring out how to use his legos before one.</p>
+
+<p>Now, with my second son I am often in awe over how well he communicates already as an infant.  He is a great mimic and sounds like he is using words.  No, this isn&rsquo;t the delusion of a proud mom.  I have had other people confirm that he is trying to imitate words being said and he is pretty darn good at it.  My son has his clear and concise way of communicating when he wants to eat, play, and crawl.  I officially can&rsquo;t say he didn&rsquo;t tell me when he needs or wants something.</p>
+
+<p>My eldest loves learning new words and regularly amazes me.  Of late he loves to say, &ldquo;I suppose.&rdquo;, and uses the perfect inflection when saying it.  He uses other fantastic phrases and only likes to use them when he understands their meaning and asks you to say it so he can get the pronunciation down pat then put his own spin on it.  My favorite is when someone is trying to talk about something and they don&rsquo;t understand a word he uses, he then says it perfectly in an exasperated tone that says, &lsquo;duh.&rsquo;.  Yes my children are a wee bit snobby.</p>
+
+<p>So I have the caveman, short hand communication down pat with my guys and the one that is the biggest fan of communicating with grunts is the big one, you know, my husband and their father.  Who would have guessed?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Taking Route 53 to Optimized Website Performance]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/04/11/taking-route-53-to-optimized-website-performance/"/>
+    <updated>2011-04-11T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/04/11/taking-route-53-to-optimized-website-performance</id>
+    <content type="html"><![CDATA[<p>When Amazon announced it&rsquo;s Authoritative DNS service, cheekily named Route 53 a few things popped into my head immediately.  First, this should be a much easier way to get the effects of Dynamic DNS which we were currently leveraging <a href="http://www.dnsmadeeasy.com/">DNS Made Easy</a> for.  Secondly, I wonder how much of a performance boost using it might provide.</p>
+
+<!--more-->
+
+
+<p>Amazon&rsquo;s entire model for providing services through AWS is predicated on the idea of distributing load.  They have several availability zones for computing and storage, they have a Content Delivery Network (CDN) which will deliver your static web content to users at blazing speeds because it&rsquo;s coming from a data center as close to them as possible.</p>
+
+<p>So why wouldn&rsquo;t that persist to their new DNS offering?</p>
+
+<p>Turns out I wasn&rsquo;t the only one wondering this.  Brant recently revealed some performance and stability findings in a <a href="http://x-pose.org/2011/02/amazon-route-53-benchmark-comparisons/">blog post</a> about Route 53.</p>
+
+<h2>How does it improve speed?</h2>
+
+
+<p>With the increasing focus on the speed of websites, everything is getting optimized.  Image sizes, whitespace in your CSS and JS files, the number of additional files you load, etc.  Each of these techniques strips a millisecond or two off of the time it takes your browser to find and download all of the components which make up the page you&rsquo;re looking at.</p>
+
+<p>But there is another facet of browsing the web which takes time, the DNS lookup.  See, your browser has no idea which server to send the request for &ldquo;www.google.com&rdquo; to, since servers are identified not by their domain or hostnames, but by their IP address.  DNS is used to translate the hostname you enter into your browser, into an IP address which can be used to actually locate the server.</p>
+
+<p>Of course, this lookup takes time, and if you have lots of components on your page, perhaps even some from other servers, this time could add up.</p>
+
+<p>Google launched a recursive DNS service for this some time back.  By using the recursive (think &ldquo;cached&rdquo;) servers you could drastically improve your DNS lookup times which is demonstrated quite well in <a href="http://code.google.com/speed/public-dns/docs/performance.html">this FAQ</a> for the service.</p>
+
+<p>The downside of course is that you only get the benefit if you change your computers network settings to use the Google DNS servers, and since the DNS data is cached it can lag behind when changes are made to the authoritative DNS records.</p>
+
+<p>On the other hand, if you use Route 53 as the authority for your DNS records, every internet user will benefit from the performance boost of making a DNS request to a much closer (and faster) DNS server.  Sweet!</p>
+]]></content>
+  </entry>
+  
+</feed>

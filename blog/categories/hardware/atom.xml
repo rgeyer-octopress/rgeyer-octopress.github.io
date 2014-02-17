@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: hardware | Ryans Octopress Blog]]></title>
+  <link href="http://rgeyer-octopress.github.io/blog/categories/hardware/atom.xml" rel="self"/>
+  <link href="http://rgeyer-octopress.github.io/"/>
+  <updated>2014-02-16T20:50:04-08:00</updated>
+  <id>http://rgeyer-octopress.github.io/</id>
+  <author>
+    <name><![CDATA[Ryan J. Geyer]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MacBook Pro - First Impressions]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2010/03/18/macbook-pro-first-impressions/"/>
+    <updated>2010-03-18T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2010/03/18/macbook-pro-first-impressions</id>
+    <content type="html"><![CDATA[<p>I just took delivery of my latest new computer from my employer. &nbsp;This time, instead of another run of the mill IBM compatible laptop or desktop it was a fancy new 17&quot; MacBook Pro. &nbsp;We&#39;re developing software which we&#39;re supporting in Safari using the Silverlight plugin and I needed to be able to develop and test in that native environment.</p>
+
+
+<p>First, let me give you some background. &nbsp;See, I&#39;m an Apple geek from days of yore. &nbsp;We&#39;re talking Mac II and Quadra days here. &nbsp;I was raised around Apples because my father owned his own business in the desktop publishing industry. &nbsp;Around 1996 or so, I started to defect to &quot;the dark side&quot; and use the Windows OS, and only a few short years later I started dabbling with Linux, which is my current OS of choice.</p>
+
+
+<p>Now, I knew that OSX was BSD based, and I knew I&#39;d like it. &nbsp;I also knew that the Apple hardware was pretty stinkin&#39; elegant. &nbsp;But man.... I had no idea. &nbsp;This feels all so new and exciting, but at the same time comfortable and familiar. &nbsp;In the ~3hrs I&#39;ve had it I&#39;ve installed pretty much an entire Groovy/Grails development tool set as well as installing and configuring things I&#39;ll be using on a daily basis.</p>
+
+
+<p>I&#39;m discovering some things which require are requiring a bit of research, but once I find the answer it usually fits some pattern or concept that is very familiar. &nbsp;I&#39;ll likely be blogging about a few of those items as I continue to &quot;move in&quot; to my new machine.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Apples? Sure, sign me up!]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2007/10/24/apples-sure-sign-me-up/"/>
+    <updated>2007-10-24T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2007/10/24/apples-sure-sign-me-up</id>
+    <content type="html"><![CDATA[<p>I grew up with computers.  I used a TRS-80, and probably one of every family of macintoshes.  However, I eventually defected to IBM Compatible PC&rsquo;s, and Microsoft Windows around the age of 14-ish.  I&rsquo;ve been a &ldquo;PC&rdquo; guy ever since.  Usually running Windows, but preferring to run a lot of my personal hardware on various flavors of Linux.</p>
+
+<p>Welp, the time has come for me to reconsider Apple Mac&rsquo;s.  In particular, I really want a 15" MacBook Pro.  It&rsquo;s got intel hardware and processors, a sexy case, every built-in technology I could want including BlueTooth, and a BSD based OS.  What more could a geek want?</p>
+
+<p>With the OS being BSD based, I can run all the good stuff I&rsquo;ve become familiar with on Linux, plus be able to run the built-in software, and stuff designed specifically for the Mac.  On top of all of that, using <a href="http://www.parallels.com/en/products/desktop/">Parallels Desktop</a> I can run any remaining Windows apps I can&rsquo;t live without.</p>
+
+<p>Plus, since my day job is as a software engineer, it&rsquo;ll give me the chance to see what developing on a mac is all about.</p>
+
+<p>The funny thing is, my decision to change seems to be coming at an interesting time in Apple history.  With the introduction of the iPhone, then the subsequent price drop, and &ldquo;update&rdquo; which apparently removed some features of the phone, previously loyal Mac zealots are preparing to launch a jihad against Steve Jobs and Apple.</p>
+
+<p>Apparently, the Apple community is up in arms over the the way Apple has handled things with the iPhone, and are accusing Steve Jobs of becoming just like Bill Gates <em>gasp</em>.</p>
+
+<p>Ahh well, I still want my MacBook Pro.  I just never seem to be into trends when they&rsquo;re still &ldquo;in style&rdquo;.</p>
+]]></content>
+  </entry>
+  
+</feed>

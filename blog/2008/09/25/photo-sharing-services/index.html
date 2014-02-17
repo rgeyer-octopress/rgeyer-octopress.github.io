@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Photo Sharing Services - Ryans Octopress Blog</title>
+  <meta name="author" content="Ryan J. Geyer">
+
+  
+  <meta name="description" content="Since I became a dad, and bought a dSLR I&rsquo;ve been trying to figure out the best way to store and share my pictures of my son, and other &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://rgeyer-octopress.github.io/blog/2008/09/25/photo-sharing-services">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2840005-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ryans Octopress Blog</a></h1>
+  
+    <h2>Testing out Ocotopress to replace my Wordpress blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:rgeyer-octopress.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Photo Sharing Services</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-25T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Since I became a dad, and bought a dSLR I&rsquo;ve been trying to figure out the best way to store and share my pictures of my son, and other interesting stuff I shoot.  As far as securely storing it locally, I have a sizable RAID setup that handles redundantly storing my pictures on two drives, but it&rsquo;s the sharing part that I&rsquo;ve had some trouble with.</p>
+
+<p>Initially, I was using my own web host and the rather nice PHP based <a href="http://spgm.sourceforge.net/">SPGM photo gallery</a> software.  The problem though, is that it&rsquo;s fairly tedious to resize and upload the images (I wrote a whole blog post about it <a href="http://www.nslms.com/2008/03/06/tools-for-updating-an-online-image-gallery/">here</a>), and I have &ldquo;only&rdquo; 20GB of storage and 500GB monthly throughput.  When shooting at 10 megapixels I could fill that space up quickly.  Beyond that I knew that some of the web based sharing sites out there had some really cool features for sharing and organizing your photos.</p>
+
+<p>So, the search begins.  I had some (I thought) fairly simple requirements.  I was hoping to have these requirements met by a free solution, but I was willing to pay a nominal subscription fee if I got everything I was after.  Here&rsquo;s the run-down of what was important to me.</p>
+
+<ul>
+    <li>Ability to upload original sized images.  Some services have a limit to the size of each image</li>
+        <li>Unlimited storage/uploads</li>
+    <li>Sophisticated organization features.  This means unlimited "albums" and the ability to have an "album" hierarchy and probably some other stuff that the service would surprise me with</li>
+    <li>Ability to use my images on my website, blog, forum posts, etc.</li>
+    <li>Ability to have a gallery on my site which displays all of the public images from the photo sharing site</li>
+</ul>
+
+
+<p>That&rsquo;s a fairly short list, and seems as though it should be fairly easy to match but surprisingly it isn&rsquo;t.</p>
+
+<p>So let&rsquo;s break down the services I tried and how they stack up.  First, let me say that I did not try every service out there, I ruled some out just based on their feature set, some due to their obscurity etc.  Listed here are just the ones that I either discovered myself, or were directly suggested to me.  If you want to do your own search and want to see all of the services available, here are a couple links that I found useful during my search.</p>
+
+<p><a href="http://photo-sharing-services-review.toptenreviews.com/">Top Ten Reviews</a>
+<a href="http://reviews.cnet.com/4520-6451_7-6245099-1.html">CNET Reviews</a></p>
+
+<h3>Picasa</h3>
+
+
+<p>This was a fairly natural choice for me since I&rsquo;m a pretty heavy user of Google services.  I use Gmail, Google Reader, Google Analytics, Google Calendar, Blogger (switched from blogger to wordpress), Google Docs, and YouTube.  Additionally, Picasa has a great desktop tool for uploading photos that acts as a great photo management tool on your local system as well.</p>
+
+<p>Unfortunately, Picasa only allows you to organize your photos into albums with no hierarchy.  Also, while you can upload a photo in it&rsquo;s original size, the number of photos you can store is limited by your storage space.  You&rsquo;re given 1GB of space for free, and you can buy additional space on a yearly basis.  But again, shooting at 10 megapixels means I&rsquo;m going to need a whole lot of storage space, and I suspect that even their 400GB plan for $500 a year would become insufficient sooner or later.</p>
+
+<h3>Facebook</h3>
+
+
+<p>To be honest, Facebook is actually what warmed me up to the idea of using a photo sharing service on the web.  So while it&rsquo;s technically not a photo sharing service I thought I&rsquo;d talk about what I did and didn&rsquo;t like about the photo storage and sharing options it had.</p>
+
+<p>First, I loved how easy it was to upload pictures and tag the subjects in the photo.  Facebook also had no limit to the number of photos I could upload.  Of course, those photos were downsized to a much more reasonable 604x404px, and their album hierarchy was also flat.  And perhaps the most annoying thing was that I couldn&rsquo;t share my pictures on my own web site and the galleries I made public I had to link directly.  For instance I can send you to my public album of <a href="http://www.new.facebook.com/album.php?aid=3616&l=53ace&id=1344570211">artistic shots</a> but I can&rsquo;t send you to a page that shows all of my public albums on Facebook.  If you had a Facebook account, and were added as one of my friends you could see them all, but that&rsquo;s cumbersome.</p>
+
+<h3>Snapfish</h3>
+
+
+<p>Frankly, I didn&rsquo;t get very far in evaluating this service.  There wasn&rsquo;t much public information about the services offered, and it had a requirement of buying some product from them at some specified interval in order to keep your account active.  As such, I never even signed up or tried it.</p>
+
+<h2>And the winner is....</h2>
+
+
+
+
+<h3>Flickr</h3>
+
+
+<p>As it turns out, this had all of the features I wanted, plus some ones I didn&rsquo;t realize I wanted until I used them.</p>
+
+<p>First, the negatives.  With a free account your only allowed to upload 100MB of files each month, and you&rsquo;re limited to 3 &ldquo;sets&rdquo; (Flickr&rsquo;s version of an album).  Also, you can&rsquo;t technically have a multi-level hierarchy of sets but there are ways to overcome that (more on this later).  Of course, those limitations are removed as soon as you buy a &ldquo;Pro&rdquo; account which is a paltry $25 per year.  Needless to say I went with that.</p>
+
+<p>Now the good stuff!  While you can only have a flat hierarchy of sets, you can create &ldquo;collections&rdquo; which contain sets or other collections.  These can be nested up to 5 deep.  This more than handles my organization needs.  For instance, I&rsquo;d like to categorize all of my pictures of my son, then break it down into particular types of events, then the specific event.  Something like &ldquo;Baby Pictures &ndash;> Firsts &ndash;> Crawling, Walking, Solid Food, Etc.&rdquo;.</p>
+
+<p>And if that organization is not enough, you can also tag a photo with keywords that are search able by the community, and act as a sort of metadata for organization.</p>
+
+<p>Built right in is the ability to use your photo in a variety of sizes on your blog, forums, website, or whatever you like.  Even more exciting is that there are plenty of options for sharing your pictures on other sites, as well as a <a href="http://www.flickr.com/photos/rgeyer/">public landing page</a> for you.  They even offer an open API which I&rsquo;m sure I&rsquo;ll find useful eventually!</p>
+
+<p>So there it is.  After a fair amount of time spent searching I found the solution that works best for me.  Hopefully my comparison can help you if you&rsquo;re searching for a photo sharing service.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ryan J. Geyer</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-25T00:00:00-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cloud-computing/'>cloud computing</a>, <a class='category' href='/blog/categories/photography/'>photography</a>, <a class='category' href='/blog/categories/reviews/'>reviews</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://rgeyer-octopress.github.io/blog/2008/09/25/photo-sharing-services/" data-via="rjgeyer" data-counturl="http://rgeyer-octopress.github.io/blog/2008/09/25/photo-sharing-services/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/09/17/the-nikon-d90-excites-me/" title="Previous Post: The Nikon D90 Excites Me">&laquo; The Nikon D90 Excites Me</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/10/09/30l-mercedes-diesel-datsun-240z/" title="Next Post: 3.0L Mercedes Diesel - Datsun 240z">3.0L Mercedes Diesel - Datsun 240z &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">Policy for an S3 Only Amazon IAM User</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/24/the-baby/">The Baby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13: NO WAY!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12: Old Hat</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/rgeyer">@rgeyer</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'rgeyer',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+RyanGeyerCycles?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ryan J. Geyer -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'randmu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

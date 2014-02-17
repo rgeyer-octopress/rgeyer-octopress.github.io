@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Hacking the RadioPopper JrX - Ryans Octopress Blog</title>
+  <meta name="author" content="Ryan J. Geyer">
+
+  
+  <meta name="description" content="Okay I know what you're thinking, and no I didn't figure out how to turn a basic reciever into a studio receiver, but sadly, I'm simply not that cool &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://rgeyer-octopress.github.io/blog/2009/09/17/hacking-the-radiopopper-jrx">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2840005-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ryans Octopress Blog</a></h1>
+  
+    <h2>Testing out Ocotopress to replace my Wordpress blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:rgeyer-octopress.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Hacking the RadioPopper JrX</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-17T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Okay I know what you're thinking, and no I didn't figure out how to turn a <a href="http://shop.radiopopper.com/radiopopperjrxreceiverbasicusca.aspx" target="_blank">basic reciever</a> into a <a href="http://shop.radiopopper.com/radiopopperjrxreceiverstudiousca.aspx" target="_blank">studio receiver</a>, but sadly, I'm simply not that cool.  What I did do however was open the boxes for my two new RadioPopper JrX Studio receivers, put batteries in them, test them (oohh pretty), then instantly void their warranties.  Why you ask?  Because I can.  Also because there were just a couple design choices which weren't convenient for me so I wanted to tweak them to fit my workflow and needs a little better.</p>
+
+
+
+
+<p>So, as part of my <a href="http://www.nslms.com/2009/09/13/you-get-what-you-pay-for-or-less/" target="_blank">aforementioned shopping spree</a> I decided it was time to upgrade my wireless triggering system.  I was previously using the "Cactus v2s" triggers, which worked reasonably well but had limited range and reliability in spite of the fact that I performed <a href="http://jeremykuster.blogspot.com/2007/10/gi-cactus-v2s-modification-tutorial.html" target="_blank">hacks</a> on those as well.  My choice for a replacement is the JrX system from <a href="http://radiopopper.com" target="_blank">RadioPopper</a>.  In my case, one transmitter, and two Studio receivers.  The studio receiver allows you to control the output of up to three groups of the White Lightning or AlienBees studio strobes and/or TTL Nikon or Canon speedlights (with yet to be released RPCubes).  This works well for me because I have some old and new Nikon flashes with TTL, and when I step up to studio strobes, I'll likely choose White Lightning and/or AlienBees.</p>
+
+
+
+
+<p><a href="http://www.flickr.com/photos/rgeyer/3930133107/" target="_blank"><img src="http://farm3.static.flickr.com/2480/3930133107_ff5ffe3d73_m.jpg" alt="Lanyard Mount" class="alignright" /></a>So now to the nitty gritty stuff.  Just like on my old Cactus triggers, I really wanted a nice way to mount or hang these triggers on a light stand.  When I modded my Cactus triggers, I went a little crazy and bought 100 lanyards so I had plenty to spare.  Sadly the receiver didn't have any built in place to mount one, so I went searching for an appropriate place.  I finally decided on putting it just below the data port which (if you're looking at it from the front) is on the left side of the trigger.  There is space there to drill two small 3/32 holes pretty close together to thread the lanyard through.</p>
+
+
+
+
+<p><a href="http://www.flickr.com/photos/rgeyer/3930132757/" target="_blank"><img src="http://farm3.static.flickr.com/2493/3930132757_a402fd6bda_m.jpg" alt="Battery wires connected to circuit board" class="alignleft" /></a>The other thing which bothered me about the receivers was the special battery that was required.  Now, to the credit of RadioPopper, they chose a battery which is common enough that there is a market of rechargeable versions (the CR123A).  And, even better David over at <a href="http://www.strobist.blogspot.com" target="_blank">Strobist</a> has done the hard work of finding a good package and strategy for keeping charged batteries in your gear.  There's a hitch though.  The rechargeables will slowly discharge on the shelf or in my camera bag.  I'm an amateur/hobbiest, and as such I only break out strobes and wireless triggers maybe once or twice a week.  Chances are I'd have to replace the batteries just about every time I pulled my triggers out for use!  Okay, so that's an exaggeration, but stick with me for the punchline there are other reasons the battery RadioPopper chose doesn't quite work for me.</p>
+
+
+
+
+<p><a href="http://www.flickr.com/photos/rgeyer/3930910642/" target="_blank"><img src="http://farm3.static.flickr.com/2521/3930910642_84e79eb59e_m.jpg" alt="Battery mounted to JrX with velcro" class="alignright" /></a>Enter my second mod.  Just like the one on the Cactus triggers, I replaced the proprietary 3v battery with a pair of good old fashioned AA cells so I can use some of my standard NiMH rechargeable batteries.  Now, I know what you're thinking, that I complained about the self discharge of the LiFeP04 battery and here I am replacing it with an even faster self discharging NiMH rechargeable?  Well, yes, and for a few good reasons.  First, I have a pretty good stock of rechargeable AA's and chargers, and I have enough devices that run on them that I can be pretty confident I'll have a charged up set ready for me when I'm shooting.  There is also the excellent <a href="http://www.eneloop.info/" target="_blank">Eneloop</a> NiMH battery which has a self discharge rate so low that you can consider it non existent for all practical uses.  And lastly, in a pinch, I can find a crappy set of AA's just about anywhere, and their superior mAh (usually 2000 or greater for an average rechargable AA, vs 750 mAh for the CR123A rechargeable) means they'll last longer during use, and have more capacity to self discharge giving me a bigger time buffer for storage.  In the end, it's compelling enough for me to make the switch.</p>
+
+
+
+
+<p>So there you have it, my two simple mods which make these great triggers just that much more user friendly for me.  You can see a few more pictures of the mods in my Flickr <a href="http://www.flickr.com/photos/rgeyer/sets/72157622401801774/" target="_blank">photostream</a>.  All of those photos were taken with a Nikon SB24 which was triggered by a Radiopopper JrX receiver which was already modded, in case you were wondering if it worked.  ;-)  Now to wait impatiently for the RPCubes so I can control all my Nikon strobes!</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ryan J. Geyer</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-17T00:00:00-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/photography/'>photography</a>, <a class='category' href='/blog/categories/worklogs/'>worklogs</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://rgeyer-octopress.github.io/blog/2009/09/17/hacking-the-radiopopper-jrx/" data-via="rjgeyer" data-counturl="http://rgeyer-octopress.github.io/blog/2009/09/17/hacking-the-radiopopper-jrx/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/09/13/you-get-what-you-pay-for-or-less/" title="Previous Post: You get what you pay for, or less!">&laquo; You get what you pay for, or less!</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/09/19/the-weaning/" title="Next Post: The Weaning">The Weaning &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">Policy for an S3 Only Amazon IAM User</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/24/the-baby/">The Baby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13: NO WAY!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12: Old Hat</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/rgeyer">@rgeyer</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'rgeyer',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+RyanGeyerCycles?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ryan J. Geyer -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'randmu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

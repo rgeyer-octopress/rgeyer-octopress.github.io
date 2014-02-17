@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://rgeyer-octopress.github.io/sitemap.xml 

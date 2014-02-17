@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Uploading to Flickr from Picasa on Linux - Ryans Octopress Blog</title>
+  <meta name="author" content="Ryan J. Geyer">
+
+  
+  <meta name="description" content="When I performed my search for the perfect photo sharing solution, I fell in love with the Picasa desktop application. I even discovered that there &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://rgeyer-octopress.github.io/blog/2008/12/14/uploading-to-flickr-from-picasa-on-linux">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2840005-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ryans Octopress Blog</a></h1>
+  
+    <h2>Testing out Ocotopress to replace my Wordpress blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:rgeyer-octopress.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Uploading to Flickr From Picasa on Linux</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-14T00:00:00-08:00" pubdate data-updated="true"></time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>When I performed my search for the perfect <a href="http://www.nslms.com/2008/09/25/photo-sharing-services/">photo sharing</a> solution, I fell in love with the Picasa desktop application.  I even discovered that there is a linux version.  However, as you&rsquo;d likely expect, it didn&rsquo;t really play nice as far as uploading photos to any photo sharing site other than Google&rsquo;s Picasa Web Albums.</p>
+
+<p>On windows, there is a great solution called <a href="http://jerryong.com/blog/2008/06/picasa2flickr-uploads-your-picasa-photos-directly-to-flickr/">picasa2flickr</a> which passes the desired photo&rsquo;s to the windows <a href="http://www.flickr.com/tools/uploadr/">Flickr Uploader</a>.  Again, for obvious reasons, this doesn&rsquo;t work well on linux.</p>
+
+<p>So, having determined that it wasn&rsquo;t worth my time to pursue trying to get Flickr uploads working from Picasa on Linux, I started evaluating many of the other native options on linux, such as digikam and fspot.  While these more easily uploaded to Flickr, and had open API&rsquo;s, none of them worked quite the way I wanted, so I abandoned my search for a good solution.</p>
+
+<p>Then, on a whim I did a Google search just a couple hours after Andy O'Neill made a <a href="http://ultrahigh.org/2008/12/09/picflick-picasa-to-flickr-export-on-linux/">blog post</a> about a button he wrote to import photos to Flickr from the Linux version of Picasa, named picflick.</p>
+
+<p>I eagerly (re)installed Picasa3 on my Gentoo box using a beta ebuild found <a href="http://bugs.gentoo.org/show_bug.cgi?id=240406">here</a>.  Then installed his button.</p>
+
+<p>After playing with it for a bit, I realized a few things didn&rsquo;t quite jive for me.</p>
+
+<p>1) The script automatically resizes the image before uploading it to Flickr.  I prefer to upload all of my images at their original resolution, so this was a bit of a road block for me.</p>
+
+<p>2) The script used a Perl module to upload to Flickr.  For the life of me, I couldn&rsquo;t seem to figure out how to get it authorized with my Flickr account to actually permit uploads.  I&rsquo;m sure if I spent a bit more time and read a few more manuals I could have gotten it right, but it didn&rsquo;t quite work &ldquo;out-of-the-box&rdquo; for me.</p>
+
+<p>3) I&rsquo;d prefer to see the progress being made, rather than the beeps and tray notifications that Andy&rsquo;s script provided.</p>
+
+<p>So, I stole the key part of his script, the part which translates Windows paths to *nix ones, and broke down the rest to simply pass the photos on to my preferred linux Flickr uploader, <a href="http://kflickr.sourceforge.net/wikka.php?wakka=Kflickr">KFlickr</a></p>
+
+<p>Here&rsquo;s the contents of my script, including the win2native function written by Andy.</p>
+
+<pre lang="bash" line="1">
+#!/bin/bash
+
+DEBUG=1     # debug to $LOG
+LOG=/tmp/picflick.log
+PICASA_WINE_DIR="$HOME/.google\/picasa\/3.0\/drive_c"  # Relative to $HOME
+PICASA_WINE_DIR_NATIVE=`echo $PICASA_WINE_DIR |sed 's|\\\\||g'`
+
+function debug() {
+        if [ $DEBUG -eq 1 ]; then
+                echo "$*" >> $LOG
+        fi
+}
+
+# wine2native(): convert wine filename to native linux filenames
+# Arguments: _name_ of variable which holds path
+# Example: wine2native file  # not wine2native $file
+function wine2native() {
+        VAR=$1
+        eval "VAL=\$$1"
+        debug "Wine path: $VAL"
+        # use '|' to delimit the paths
+        VAL=`echo "$VAL" | \
+                sed "s|C:|$PICASA_WINE_DIR|" | \
+                sed 's|\\\\|/|g'`
+        debug "Source file: $VAL"
+        eval "$VAR=\$VAL"
+}
+
+# check we have the required dependencies
+which kflickr > /dev/null || die "You need to install kflickr"
+
+file=$1
+wine2native file
+DIR=`dirname "$file"`
+EXT=${file##*.}
+debug "START_UPLOAD"
+for file in "$@"; do
+        wine2native file
+        KFLICKR="$KFLICKR $file"
+done
+
+debug "Launching kflickr with the following args $KFLICKR"
+kflickr $KFLICKR
+
+debug "Done"
+</pre>
+
+
+<p>Now when I click the &ldquo;Flickr&rdquo; button in Picasa, it brings up the KFlickr app with all the pictures I selected ready to upload.  Thanks for the inspiration, and code bits to make this work Andy, I was too lazy to actually figure out what was necessary to pull the image paths from Picasa and use them.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ryan J. Geyer</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-14T00:00:00-08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/photography/'>photography</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://rgeyer-octopress.github.io/blog/2008/12/14/uploading-to-flickr-from-picasa-on-linux/" data-via="rjgeyer" data-counturl="http://rgeyer-octopress.github.io/blog/2008/12/14/uploading-to-flickr-from-picasa-on-linux/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/12/08/whopper-virgins-campaign/" title="Previous Post: Whopper Virgins Campaign">&laquo; Whopper Virgins Campaign</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/12/22/unyk-address-book/" title="Next Post: UNYK Address Book">UNYK Address Book &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">Policy for an S3 Only Amazon IAM User</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/24/the-baby/">The Baby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13: NO WAY!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12: Old Hat</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/rgeyer">@rgeyer</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'rgeyer',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+RyanGeyerCycles?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ryan J. Geyer -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'randmu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

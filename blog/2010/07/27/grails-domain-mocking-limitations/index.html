@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Grails Domain Mocking Limitations - Ryans Octopress Blog</title>
+  <meta name="author" content="Ryan J. Geyer">
+
+  
+  <meta name="description" content="So, I just threw out most of this morning trying to figure out why something which clearly should work was blowing up my unit test on a grails app. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://rgeyer-octopress.github.io/blog/2010/07/27/grails-domain-mocking-limitations">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2840005-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ryans Octopress Blog</a></h1>
+  
+    <h2>Testing out Ocotopress to replace my Wordpress blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:rgeyer-octopress.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Grails Domain Mocking Limitations</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-27T00:00:00-07:00" pubdate data-updated="true"></time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>So, I just threw out most of this morning trying to figure out why something which clearly <em>should</em> work was blowing up my unit test on a grails app.  To spare you the same pain I&rsquo;m documenting it here.</p>
+
+<p>The scenario is that I have Roles and Privileges as domain classes.  A role has many privileges, and any privilege may belong to one or more roles.  This is represented in domain classes pretty succinctly as;</p>
+
+<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Role.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">mockdomainlimitations</span>
+</div><div class='line'> </div><div class='line'><span class="kd">class</span> <span class="nc">Role</span> <span class="o">{</span>
+</div><div class='line'>  <span class="kd">static</span> <span class="n">hasMany</span> <span class="o">=</span> <span class="o">[</span><span class="nl">privileges:</span> <span class="n">Privilege</span><span class="o">]</span>
+</div><div class='line'> </div><div class='line'>  <span class="kd">static</span> <span class="n">constraints</span> <span class="o">=</span> <span class="o">{</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'>  <span class="n">String</span> <span class="n">name</span>
+</div><div class='line'><span class="o">}</span>
+</div></pre></td></tr></table></div></figure></p>
+
+<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">mockdomainlimitations</span>
+</div><div class='line'> </div><div class='line'><span class="kd">class</span> <span class="nc">Privilege</span> <span class="o">{</span>
+</div><div class='line'> </div><div class='line'>  <span class="kd">static</span> <span class="n">constraints</span> <span class="o">=</span> <span class="o">{</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'> </div><div class='line'>  <span class="n">String</span> <span class="n">name</span>
+</div><div class='line'><span class="o">}</span>
+</div></pre></td></tr></table></div></figure></p>
+
+<p>So I can access all the privileges which belong to a role pretty easily, but what if I want to know all roles which a particular privilege belongs to?  Easy enough, we can look that up in a variety of ways.  Below I show adding a new closure to the privilege domain class which uses the <a href="http://grails.org/doc/latest/ref/Domain%20Classes/withCriteria.html">withCriteria</a> functionality of GORM to return all roles which have this privilege in the privileges map.  The new closure is in the highlighted lines.</p>
+
+<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy (with new closure) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">mockdomainlimitations</span>
+</div><div class='line'> </div><div class='line'><span class="kd">class</span> <span class="nc">Privilege</span> <span class="o">{</span>
+</div><div class='line'> </div><div class='line'>  <span class="kd">static</span> <span class="n">constraints</span> <span class="o">=</span> <span class="o">{</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'> </div><div class='line'>  <span class="n">String</span> <span class="n">name</span>
+</div><div class='line'> </div><div class='line'>  <span class="kt">def</span> <span class="n">getRolesWithThisPrivilege</span> <span class="o">=</span> <span class="o">{</span>
+</div><div class='line'>    <span class="n">Role</span><span class="o">.</span><span class="na">withCriteria</span><span class="o">()</span> <span class="o">{</span>
+</div><div class='line'>      <span class="n">privileges</span> <span class="o">{</span>
+</div><div class='line'>        <span class="n">eq</span><span class="o">(</span><span class="s1">&#39;id&#39;</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span><span class="o">)</span>
+</div><div class='line'>      <span class="o">}</span>
+</div><div class='line'>    <span class="o">}</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'><span class="o">}</span>
+</div></pre></td></tr></table></div></figure></p>
+
+<p>Now, if you&rsquo;re doing proper test driven development (you are doing TDD, right?!), you&rsquo;d probably already have a test written for this new closure that would look something like the highlighted lines of the test fixture below.  Notice lines 8 and 9 which are also highlighted to show that we&rsquo;re asking the framework to mock out the GORM methods on the role and privilege classes.</p>
+
+<p><figure class='code'><figcaption>/test/unit/com/nslms/mockdomainlimitaions/PrivilegeTests.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div><div data-line='29' class='line-number'></div><div data-line='30' class='line-number'></div><div data-line='31' class='line-number'></div><div data-line='32' class='line-number'></div><div data-line='33' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">mockdomainlimitations</span>
+</div><div class='line'> </div><div class='line'><span class="kn">import</span> <span class="nn">grails.test.*</span>
+</div><div class='line'> </div><div class='line'><span class="kd">class</span> <span class="nc">PrivilegeTests</span> <span class="kd">extends</span> <span class="n">GrailsUnitTestCase</span> <span class="o">{</span>
+</div><div class='line'>  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="o">{</span>
+</div><div class='line'>    <span class="kd">super</span><span class="o">.</span><span class="na">setUp</span><span class="o">()</span>
+</div><div class='line'>    <span class="n">MockUtils</span><span class="o">.</span><span class="na">mockDomain</span><span class="o">(</span><span class="n">Role</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">MockUtils</span><span class="o">.</span><span class="na">mockDomain</span><span class="o">(</span><span class="n">Privilege</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'> </div><div class='line'>  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">tearDown</span><span class="o">()</span> <span class="o">{</span>
+</div><div class='line'>    <span class="kd">super</span><span class="o">.</span><span class="na">tearDown</span><span class="o">()</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'> </div><div class='line'>  <span class="kt">void</span> <span class="nf">testAbilityToGetAListOfRolesAPrivilegeBelongsTo</span><span class="o">()</span> <span class="o">{</span>
+</div><div class='line'>    <span class="kt">def</span> <span class="n">role1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Role</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;Administrator&#39;</span><span class="o">)</span>
+</div><div class='line'>    <span class="kt">def</span> <span class="n">role2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Role</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;User&#39;</span><span class="o">)</span>
+</div><div class='line'> </div><div class='line'>    <span class="kt">def</span> <span class="n">priv1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Privilege</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;ReadAll&#39;</span><span class="o">).</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
+</div><div class='line'> </div><div class='line'>    <span class="n">role1</span><span class="o">.</span><span class="na">addToPrivileges</span><span class="o">(</span><span class="n">priv1</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">role2</span><span class="o">.</span><span class="na">addToPrivileges</span><span class="o">(</span><span class="n">priv1</span><span class="o">)</span>
+</div><div class='line'> </div><div class='line'>    <span class="n">role1</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">role2</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
+</div><div class='line'> </div><div class='line'>    <span class="kt">def</span> <span class="n">roleList</span> <span class="o">=</span> <span class="n">priv1</span><span class="o">.</span><span class="na">getRolesWithThisPrivilege</span><span class="o">()</span>
+</div><div class='line'> </div><div class='line'>    <span class="k">assert</span> <span class="n">roleList</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">2</span>
+</div><div class='line'>    <span class="k">assert</span> <span class="n">roleList</span> <span class="o">==</span> <span class="o">[</span><span class="n">role1</span><span class="o">,</span> <span class="n">role2</span><span class="o">]</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'><span class="o">}</span>
+</div></pre></td></tr></table></div></figure></p>
+
+<p>Even after you&rsquo;ve implemented <strong>getRolesWithThisPrivilege</strong> on the Privileges domain class though, you&rsquo;ll find your test still fails with an error that looks like the following.</p>
+
+<p style="font-size: larger; font-style: italic; color: red;">No signature of method: com.nslms.mockdomainlimitations.Role.withCriteria() is applicable for argument types: (com.nslms.mockdomainlimitations.Privilege$_closure1_closure3) values: [com.nslms.mockdomainlimitations.Privilege$_closure1_closure3@8327473]</p>
+
+
+<p>In short, it&rsquo;s telling us that the <a href="http://grails.org/doc/latest/ref/Domain%20Classes/withCriteria.html">withCriteria</a> method of GORM isn&rsquo;t implemented in the context of our test.  Of course if you put the exact same code in an integration test you&rsquo;re golden.</p>
+
+<p><figure class='code'><figcaption>/test/integration/com/nslms/mockdomainlimitations/PrivilegeTest.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">mockdomainlimitations</span>
+</div><div class='line'> </div><div class='line'><span class="kd">class</span> <span class="nc">PrivilegeTest</span> <span class="kd">extends</span> <span class="n">GroovyTestCase</span> <span class="o">{</span>
+</div><div class='line'>  <span class="kt">void</span> <span class="nf">testAbilityToGetAListOfRolesAPrivilegeBelongsTo</span><span class="o">()</span> <span class="o">{</span>
+</div><div class='line'>    <span class="kt">def</span> <span class="n">role1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Role</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;Administrator&#39;</span><span class="o">)</span>
+</div><div class='line'>    <span class="kt">def</span> <span class="n">role2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Role</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;User&#39;</span><span class="o">)</span>
+</div><div class='line'> </div><div class='line'>    <span class="kt">def</span> <span class="n">priv1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Privilege</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;ReadAll&#39;</span><span class="o">).</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
+</div><div class='line'> </div><div class='line'>    <span class="n">role1</span><span class="o">.</span><span class="na">addToPrivileges</span><span class="o">(</span><span class="n">priv1</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">role2</span><span class="o">.</span><span class="na">addToPrivileges</span><span class="o">(</span><span class="n">priv1</span><span class="o">)</span>
+</div><div class='line'> </div><div class='line'>    <span class="n">role1</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">role2</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
+</div><div class='line'> </div><div class='line'>    <span class="kt">def</span> <span class="n">roleList</span> <span class="o">=</span> <span class="n">priv1</span><span class="o">.</span><span class="na">getRolesWithThisPrivilege</span><span class="o">()</span>
+</div><div class='line'> </div><div class='line'>    <span class="k">assert</span> <span class="n">roleList</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">2</span>
+</div><div class='line'>    <span class="k">assert</span> <span class="n">roleList</span> <span class="o">==</span> <span class="o">[</span><span class="n">role1</span><span class="o">,</span> <span class="n">role2</span><span class="o">]</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'><span class="o">}</span>
+</div></pre></td></tr></table></div></figure></p>
+
+<p>With this in place, you can run a &ldquo;grails test-app -integration&rdquo; and the exact same test which failed during unit testing will succeed.  This is of course because the entire grails bootstrapping occurs, and all of the artifacts (like domain classes) are wired up fully by the framework.</p>
+
+<p>So the moral of the story?  If you&rsquo;re planning to test anything more than simple saves with GORM in your testing phase, consider putting the more complex stuff into an integration test.  Either that, or keep your eyes peeled for problems like this and be prepared to refactor.</p>
+
+<p>Feel free to grab a copy of the test grails app I created for this example.</p>
+
+<p><del datetime="2010-12-26T23:15:20+00:00">svn export <a href="https://linode.nslms.com/svn_ro/MockDomainLimitations">https://linode.nslms.com/svn_ro/MockDomainLimitations</a></del></p>
+
+<p><em><strong><span style="color: #ff0000;">* UPDATE: This example app has a new home..</span></strong></em></p>
+
+<p>Grab the project</p>
+
+
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>git clone git://ec2.nslms.com/grails/blog_example_mock_limitations
+</div></pre></td></tr></table></div></figure></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ryan J. Geyer</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-27T00:00:00-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/grails-slash-groovy/'>grails/groovy</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://rgeyer-octopress.github.io/blog/2010/07/27/grails-domain-mocking-limitations/" data-via="rjgeyer" data-counturl="http://rgeyer-octopress.github.io/blog/2010/07/27/grails-domain-mocking-limitations/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/07/20/my-torrid-confession/" title="Previous Post: My torrid confession...">&laquo; My torrid confession...</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/08/01/sleep-sweet-sweet-sleep/" title="Next Post: Sleep, sweet sweet sleep">Sleep, sweet sweet sleep &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">Policy for an S3 Only Amazon IAM User</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/24/the-baby/">The Baby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13: NO WAY!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12: Old Hat</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/rgeyer">@rgeyer</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'rgeyer',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+RyanGeyerCycles?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Ryan J. Geyer -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'randmu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

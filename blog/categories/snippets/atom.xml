@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: snippets | Ryans Octopress Blog]]></title>
+  <link href="http://rgeyer-octopress.github.io/blog/categories/snippets/atom.xml" rel="self"/>
+  <link href="http://rgeyer-octopress.github.io/"/>
+  <updated>2014-02-16T20:50:04-08:00</updated>
+  <id>http://rgeyer-octopress.github.io/</id>
+  <author>
+    <name><![CDATA[Ryan J. Geyer]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Policy for an S3 only Amazon IAM User]]></title>
+    <link href="http://rgeyer-octopress.github.io/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
+    <updated>2011-06-27T00:00:00-07:00</updated>
+    <id>http://rgeyer-octopress.github.io/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
+    <content type="html"><![CDATA[<p>Now that Amazon&rsquo;s Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href="http://www.nslms.com/2011/04/04/enabling-aws-console-login-for-iam-users/">login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.</p>
+
+<!--more-->
+
+
+<p>One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.</p>
+
+<p>```</p>
+
+<p>{
+  &ldquo;Statement&rdquo;: [</p>
+
+<pre><code>{
+  "Action": [
+    "s3:ListAllMyBuckets"
+  ],
+  "Effect": "Allow",
+  "Resource": "arn:aws:s3:::*"
+},
+{
+  "Action": "s3:*",
+  "Effect": "Allow",
+  "Resource": "arn:aws:s3:::bucket_name_here"
+},
+{
+  "Action": "s3:*",
+  "Effect": "Allow",
+  "Resource": "arn:aws:s3:::bucket_name_here/*"
+}
+</code></pre>
+
+<p>  ]
+}</p>
+
+<p>```</p>
+
+<p>This contains three simple IAM statements.</p>
+
+<ol>
+<li>The s3:ListAllMyBuckets for the entirety of S3 (arn:aws:s3:::*)</li>
+<li>Full control of the specified bucket (bucket_name_here, in this case)</li>
+<li>Ful control of the contents of the specified bucket</li>
+</ol>
+
+
+<p>Sadly, there is no way to limit a user to which buckets are listed, instead you have to let them see all buckets which is accomplished by the first statement.</p>
+
+<p>The second and third statement gives the user full control of the bucket itself, and it&rsquo;s contents respectively.  Assign this policy directly to a user, or a group that the user belongs to, and you&rsquo;re all set!</p>
+]]></content>
+  </entry>
+  
+</feed>
