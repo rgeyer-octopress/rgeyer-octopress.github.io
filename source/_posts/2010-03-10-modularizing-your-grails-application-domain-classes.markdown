@@ -113,6 +113,4 @@ grails -Dserver.port=8082 run-app
 
 <em><strong><span style="color: #ff0000;">* UPDATE: The example apps have a new home..</span></strong></em>
 <p>Grab the projects at</p>
-[bash]
-git clone git://ec2.nslms.com/grails/blog_example_modular
-[/bash]
+[bash]git clone git://ec2.nslms.com/grails/blog_example_modular[/bash]

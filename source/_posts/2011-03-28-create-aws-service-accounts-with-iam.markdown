@@ -46,6 +46,7 @@ Don't be too intimidated by the creating policies for more restrictive cases tho
 
 So lets write out our full control policy somewhere to disk so that we can use it later.
 
+<p class="filename">/tmp/fullcontrol_iam_policy.json</p>
 [code]
 {
   &quot;Statement&quot;: [
@@ -57,7 +58,6 @@ So lets write out our full control policy somewhere to disk so that we can use i
   ]
 }
 [/code]
-<p class="filename">/tmp/fullcontrol_iam_policy.json</p>
 
 With that out of the way, lets create a new IAM user group named <strong>RightScaleDash</strong> and upload our new policy file using the IAM CLI tools.
 [code]

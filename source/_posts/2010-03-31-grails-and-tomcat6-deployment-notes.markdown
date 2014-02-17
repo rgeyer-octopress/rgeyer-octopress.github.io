@@ -41,8 +41,10 @@ meta:
 
 <p>Now, we need to find the Catalina configuration directory for our Tomcat deployment.  On Ubuntu, which is the environment I'm using, this is at /etc/tomcat6/Catalina/localhost.  What you'll find there, are a number of XML files each one describes a "context".  You can define sub-contexts by using a special syntax in the filename which is just barely mentioned in passing in the <a href="http://tomcat.apache.org/tomcat-6.0-doc/config/context.html#Introduction">Tomcat docs</a>.  You can set a multi level context name by using the # character.  So lets create a new sub-context for our example app at the correct path.</p>
 
-[bash highlight="2"]cd /etc/tomcat6/Catalina/localhost
-vim examples#MyExampleApp.xml[/bash]
+{% codeblock #!/bin/sh lang:bash mark:2 %}
+cd /etc/tomcat6/Catalina/localhost
+vim examples#MyExampleApp.xml
+{% endcodeblock %}
 
 <p>Now we need to add the content to this context file which will tell Tomcat where to find the applications files. Remember back when we created a new directory for our tomcat webapps, this is where we'll use it.</p>
 

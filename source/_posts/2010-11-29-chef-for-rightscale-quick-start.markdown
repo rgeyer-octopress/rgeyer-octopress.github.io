@@ -130,14 +130,14 @@ With that done, let's put our first recipe in the cookbook.  Using your favorite
 <b>EDIT: Many have correctly pointed out that the hello world file should actually go in <i>&lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook/recipes</i>.  Thanks all for the feedback!</b>
 
 <p class="filename">helloworld.rb</p>
-[code lang="ruby"]
+[ruby]
 log &quot;Hello World&quot;
-[/code]
+[/ruby]
 
 With the recipe created, we need to add it to our metadata file so that Chef and RightScale can know it's there.  Here's a copy of our default <em>metadata.rb</em> file.  The highlighted line is added to define the recipe we've added.
 
 <p class="filename">metadata.rb</p>
-[code lang="ruby" highlight="8"]
+[ruby highlight="8"]
 maintainer       &quot;YOUR_COMPANY_NAME&quot;
 maintainer_email &quot;YOUR_EMAIL&quot;
 license          &quot;All rights reserved&quot;
@@ -146,7 +146,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          &quot;0.0.1&quot;
 
 recipe &quot;my-first-cookbook::helloworld&quot;, &quot;My first recipe, prints Hello World to the RightScale dashboard&quot;
-[/code]
+[/ruby]
 
 We only have one more step before we're ready to commit our new cookbook and recipe to our new git repository.
 

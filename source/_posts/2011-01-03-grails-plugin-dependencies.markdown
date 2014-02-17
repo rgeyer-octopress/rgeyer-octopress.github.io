@@ -45,7 +45,7 @@ So based on this you might assume you must specify all dependencies for each con
 
 If you want the fixtures and joda time plugins loaded each time you do a compile, run-app, run-war, or war, and only include the spock plugin when you run test-app, you might assume your BuildConfig should look like this.
 
-[groovy highlight="27"]
+{% codeblock BuildConfig lang:groovy mark:27 %}
 grails.project.class.dir = &quot;target/classes&quot;
 grails.project.test.class.dir = &quot;target/test-classes&quot;
 grails.project.test.reports.dir = &quot;target/test-reports&quot;
@@ -75,13 +75,13 @@ grails.project.dependency.resolution = {
       ':spock:0.4-groovy-1.7-SNAPSHOT'
   }
 }
-[/groovy]
+{% endcodeblock %}
 
 Notice the duplication across all configurations?  In fact only the test configuration is different with the addition of the spock plugin.  Intuitively this would make sense, even if a particular phase didn't really require the plugin by including it you make sure all of the dependencies are available; better safe than sorry, right?
 
 The problem is that these configurations interact with one another in subtle, and not clearly documented ways.  In actual fact what you've done above is excluded all plugins from every phase but test.  To achieve the desired result your build config would need to look like this instead.
 
-[groovy highlight="19"]
+{% codeblock BuildConfig lang:groovy mark:19 %}
 
 grails.project.class.dir = &quot;target/classes&quot;
 grails.project.test.class.dir = &quot;target/test-classes&quot;
@@ -106,7 +106,7 @@ grails.project.dependency.resolution = {
       ':spock:0.4-groovy-1.7-SNAPSHOT'
   }
 }
-[/groovy]
+{% endcodeblock %}
 
 The scopes are in fact additive, so if you put all of your dependency declarations in the build scope they're automatically included in all other scopes.  In every other scope, by listing a dependency there it effectively adds it to that scope, and <em>removes</em> it from all other scopes.  That's why your deployed war file breaks.
 
