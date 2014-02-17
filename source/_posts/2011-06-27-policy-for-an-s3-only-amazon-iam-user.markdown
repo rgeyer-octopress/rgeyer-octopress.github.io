@@ -26,7 +26,6 @@ Now that Amazon's Identity and Access Management (<a href="http://aws.amazon.com
 One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.
 
 ```
-
 {
   "Statement": [
     {
@@ -48,7 +47,6 @@ One really good use for IAM is allowing access for specific users to specific S3
     }
   ]
 }
-
 ```
 
 

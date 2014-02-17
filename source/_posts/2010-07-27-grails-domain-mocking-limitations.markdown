@@ -24,7 +24,6 @@ So, I just threw out most of this morning trying to figure out why something whi
 The scenario is that I have Roles and Privileges as domain classes.  A role has many privileges, and any privilege may belong to one or more roles.  This is represented in domain classes pretty succinctly as;
 
 {% codeblock /grails-app/domain/com/nslms/mockdomainlimtations/Role.groovy lang:groovy %}
-
 package com.nslms.mockdomainlimitations
 
 class Role {
@@ -34,12 +33,10 @@ class Role {
   }
   String name
 }
-
 {% endcodeblock %}
 
 
 {% codeblock /grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy lang:groovy %}
-
 package com.nslms.mockdomainlimitations
 
 class Privilege {
@@ -49,14 +46,12 @@ class Privilege {
 
   String name
 }
-
 {% endcodeblock %}
 
 
 So I can access all the privileges which belong to a role pretty easily, but what if I want to know all roles which a particular privilege belongs to?  Easy enough, we can look that up in a variety of ways.  Below I show adding a new closure to the privilege domain class which uses the <a href="http://grails.org/doc/latest/ref/Domain%20Classes/withCriteria.html">withCriteria</a> functionality of GORM to return all roles which have this privilege in the privileges map.  The new closure is in the highlighted lines.
 
 {% codeblock /grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy (with new closure) lang:groovy mark:10,11,12,13,14,15,16 %}
-
 package com.nslms.mockdomainlimitations
 
 class Privilege {
@@ -74,14 +69,12 @@ class Privilege {
     }
   }
 }
-
 {% endcodeblock %}
 
 
 Now, if you're doing proper test driven development (you are doing TDD, right?!), you'd probably already have a test written for this new closure that would look something like the highlighted lines of the test fixture below.  Notice lines 8 and 9 which are also highlighted to show that we're asking the framework to mock out the GORM methods on the role and privilege classes.
 
 {% codeblock /test/unit/com/nslms/mockdomainlimitaions/PrivilegeTests.groovy lang:groovy mark:8,9,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32 %}
-
 package com.nslms.mockdomainlimitations
 
 import grails.test.*
@@ -115,7 +108,6 @@ class PrivilegeTests extends GrailsUnitTestCase {
     assert roleList == [role1, role2]
   }
 }
-
 {% endcodeblock %}
 
 
@@ -126,7 +118,6 @@ Even after you've implemented <strong>getRolesWithThisPrivilege</strong> on the 
 In short, it's telling us that the <a href="http://grails.org/doc/latest/ref/Domain%20Classes/withCriteria.html">withCriteria</a> method of GORM isn't implemented in the context of our test.  Of course if you put the exact same code in an integration test you're golden.
 
 {% codeblock /test/integration/com/nslms/mockdomainlimitations/PrivilegeTest.groovy lang:groovy %}
-
 package com.nslms.mockdomainlimitations
 
 class PrivilegeTest extends GroovyTestCase {
@@ -148,7 +139,6 @@ class PrivilegeTest extends GroovyTestCase {
     assert roleList == [role1, role2]
   }
 }
-
 {% endcodeblock %}
 
 
@@ -163,8 +153,6 @@ Feel free to grab a copy of the test grails app I created for this example.
 <em><strong><span style="color: #ff0000;">* UPDATE: This example app has a new home..</span></strong></em>
 <p>Grab the project</p>
 ```
-
 git clone git://ec2.nslms.com/grails/blog_example_mock_limitations
-
 ```
 

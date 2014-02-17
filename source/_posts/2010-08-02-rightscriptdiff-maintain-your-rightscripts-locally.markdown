@@ -38,7 +38,6 @@ In order for RightScriptDiff to compare your local files, they must be named wit
 Here's an example of a successful run;
 
 ```
-
 Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
 Please enter the path to scripts stored locally...
 *.sh
@@ -82,14 +81,12 @@ Found 1 nodes:
 -- NODE --
 
 Local copy of 238497-LDAP DB S3 Disable Continuous Backup.sh does not differ from RightScale copy.
-
 ```
 
 
 This is what it looks like when the scripts differ;
 
 ```
-
 Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
 Please enter the path to scripts stored locally...
 237784*.sh
@@ -105,7 +102,6 @@ Local copy of 237784-LDAP Create Database.sh differs from RightScale copy.. Diff
 							      &gt;	sed -i &quot;s/@@DB_CHECKPOINT@@/$DB_CHECKPOINT/g&quot; $tmp_file
 							      &lt;
 echo &quot;Finishing up...&quot;
-
 ```
 
 
@@ -116,18 +112,14 @@ After developing this, I discovered that I had edited one of my script files loc
 You can download RightScriptDiff by running the following command.  I wrote it on OSX 10.6.4, but it should work on most flavors of linux as well.
 
 ```
-
 svn export https://linode.nslms.com/svn_ro/RightScriptDiff/
-
 ```
 
 
 <em><strong><span style="color: #ff0000;">* UPDATE: RightScriptDiff has a new home</span></strong></em>
 
 ```
-
 git clone git://github.com/rgeyer/RightScriptDiff.git
-
 ```
 
 

@@ -49,7 +49,6 @@ grails create-domain-class com.nslms.modular.domain.Comment
 
 <p>Now we specify some properties for our new shared domain class.</p>
 {% codeblock Comment.groovy lang:groovy %}
-
 package com.nslms.modular.domain
 
 class Comment {
@@ -67,7 +66,6 @@ class Comment {
 	
 	Boolean isApproved = false
 }
-
 {% endcodeblock %}
 
 <p>With our new shared domain class created, we want to package up our plugin so we can load it into the other projects which we'll be creating in a moment.</p>
@@ -89,14 +87,12 @@ grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
 
 <p>Because you can <a href="#download-instructions">download</a> the project I created, I'm not going to go into excruciating detail about the controller and view(s) I setup in my front end, but sufficed to say I am accessing the "Comment" domain class that is supplied by the Modular-DAL plugin project!</p>
 {% codeblock CommentsController.groovy (snippet) lang:groovy mark:1,5 %}
-
 import com.nslms.modular.domain.*
 
 class CommentsController {
 
     def index = { [comments: Comment.findAllByisApproved(true)] }
 }
-
 {% endcodeblock %}
 
 <p>The result of the front end app should be a list of comments which are approved (by the backend) and a submission form to allow you to submit new comments.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/frontend/comments" target="_blank">this</a>.</p>
@@ -114,22 +110,20 @@ grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
 
 <p>Again because you can <a href="#download-instructions">download</a> the project I created, here's just a snippet of the admin controller showing the juicy bits where we use the shared domain class</p>
 {% codeblock AdminController.groovy (snippet) lang:groovy mark:1,5 %}
-
 import com.nslms.modular.domain.*;
 
 class AdminController {
 
     def comments = { [comments: Comment.findAllByisApproved(false)] }
 }
-
 {% endcodeblock %}
 
 <p>The back end app should have a list of all unapproved comments, and a method to approve them.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/backend/admin/comments" target="_blank">this</a>.</p>
 
 <strong>Trying it out</strong>
 <p>Now if you've followed along and created your own controllers and views, or <a href="#download-instructions">downloaded</a> my basic project, you're going to want to try running both the front end and back end at the same time, persisting data to a common datasource so that you can see the whole thing in action.  If you just use the grails run-app command, you'll find very quickly that you can only run one or the other project, but not both at the same time.  This is because they'll both be trying to run on the common Tomcat port (8080).  To overcome this, and run both apps at the same time, try the following starting from the Modular-FrontEnd directory.</p>
-```
 
+```
 grails -Dserver.port=8081 run-app
 cd ../Modular-BackEnd
 grails -Dserver.port=8082 run-app

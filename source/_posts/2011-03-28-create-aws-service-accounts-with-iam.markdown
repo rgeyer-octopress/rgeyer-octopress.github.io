@@ -47,7 +47,6 @@ Don't be too intimidated by the creating policies for more restrictive cases tho
 So lets write out our full control policy somewhere to disk so that we can use it later.
 
 {% codeblock /tmp/fullcontrol_iam_policy.json lang:bash %}
-
 {
   "Statement": [
     {
@@ -57,35 +56,31 @@ So lets write out our full control policy somewhere to disk so that we can use i
     }
   ]
 }
-
 {% endcodeblock %}
 
 
 With that out of the way, lets create a new IAM user group named <strong>RightScaleDash</strong> and upload our new policy file using the IAM CLI tools.
-```
 
+```
 $ iam-groupcreate -g RightScaleDash
 $ iam-groupuploadpolicy -g RightScaleDash -p FullControl -f /tmp/fullcontrol_iam_policy.json
-
 ```
 
 
 Then, we create a new user named <strong>rsdash</strong> and assign the new user to the <strong>RightScaleDash</strong> group.  Note the <strong>-k</strong> parameter, this instructs the IAM CLI tools to create a new AWS key and secret pair.
+
 ```
-
 $ iam-usercreate -u rsdash -g RightScaleDash -k
-
 ```
 
 
 Some things like signing your custom Amazon Machine Images (AMI's) require an x.509 certificate, and RightScale has a place for entering this type of "credential" as well, so we'll create a self signed one for this example.
-```
 
+```
 $ openssl genrsa -out iam.key 1024
 $ openssl req -new -key iam.key -out iam.csr
 $ openssl x509 -req -in iam.csr -signkey iam.key -out iam.pem
 $ iam-useraddcert -u rsdash -f iam.pem
-
 ```
 
 
