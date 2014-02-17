@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: bio diesel | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Bio Diesel | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/bio-diesel/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -67,7 +67,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[A penny for your soybean?]]></title>
+    <title type="html"><![CDATA[A Penny for Your Soybean?]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2008/03/24/a-penny-for-your-soybean/"/>
     <updated>2008-03-24T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2008/03/24/a-penny-for-your-soybean</id>
@@ -86,7 +86,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[An Ob-NOx-ious truth]]></title>
+    <title type="html"><![CDATA[An Ob-NOx-ious Truth]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2007/10/29/an-ob-nox-ious-truth/"/>
     <updated>2007-10-29T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2007/10/29/an-ob-nox-ious-truth</id>

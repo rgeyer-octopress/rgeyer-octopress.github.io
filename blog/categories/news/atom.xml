@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: news | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: News | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/news/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Navigating Domain Registration - A tale of a near miss]]></title>
+    <title type="html"><![CDATA[Navigating Domain Registration - a Tale of a Near Miss]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/12/03/navigating-domain-registration-a-tale-of-a-near-miss/"/>
     <updated>2009-12-03T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/12/03/navigating-domain-registration-a-tale-of-a-near-miss</id>
@@ -56,7 +56,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Caveman instincts]]></title>
+    <title type="html"><![CDATA[Caveman Instincts]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/11/06/caveman-instincts/"/>
     <updated>2009-11-06T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/11/06/caveman-instincts</id>
@@ -73,7 +73,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[The sleeper has awakened!]]></title>
+    <title type="html"><![CDATA[The Sleeper Has Awakened!]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/11/02/the-sleeper-has-awakened/"/>
     <updated>2009-11-02T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/11/02/the-sleeper-has-awakened</id>
@@ -118,7 +118,7 @@ I believe my entries on this will be a bit different than by incredible husband&
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[No Internet For You!]]></title>
+    <title type="html"><![CDATA[No Internet for You!]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/02/17/no-internet-for-you/"/>
     <updated>2009-02-17T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/02/17/no-internet-for-you</id>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: software | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Software | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/software/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: cloud computing | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Cloud Computing | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/cloud-computing/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Policy for an S3 only Amazon IAM User]]></title>
+    <title type="html"><![CDATA[Policy for an S3 Only Amazon IAM User]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
     <updated>2011-06-27T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
@@ -25,9 +25,8 @@
 
 <p>One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.</p>
 
-<p>```</p>
-
-<p>{
+<p>[code]
+{
   &ldquo;Statement&rdquo;: [</p>
 
 <pre><code>{
@@ -50,9 +49,8 @@
 </code></pre>
 
 <p>  ]
-}</p>
-
-<p>```</p>
+}
+[/code]</p>
 
 <p>This contains three simple IAM statements.</p>
 
@@ -103,7 +101,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Create AWS Service Accounts with IAM]]></title>
+    <title type="html"><![CDATA[Create AWS Service Accounts With IAM]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/03/28/create-aws-service-accounts-with-iam/"/>
     <updated>2011-03-28T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/03/28/create-aws-service-accounts-with-iam</id>
@@ -151,44 +149,42 @@
 
 <p>So lets write out our full control policy somewhere to disk so that we can use it later.</p>
 
-<p><figure class='code'><figcaption>/tmp/fullcontrol_iam_policy.json </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div></pre></td><td class='main  json'><pre><div class='line'><span class="err">&lt;/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="err">&lt;p&gt;</span><span class="p">{</span>
-</div><div class='line'>  <span class="err">&amp;ldquo;Statement&amp;rdquo;:</span> <span class="err">[&lt;/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="err">&lt;pre&gt;&lt;code&gt;{</span>
-</div><div class='line'>  <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-</div><div class='line'>  <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-</div><div class='line'>  <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-</div><div class='line'><span class="p">}</span>
-</div><div class='line'><span class="err">&lt;/code&gt;&lt;/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="err">&lt;p&gt;</span>  <span class="err">]</span>
-</div><div class='line'><span class="err">}&lt;/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="err">&lt;p&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p>[code]
+{
+  &quot;Statement&quot;: [</p>
+
+<pre><code>{
+  &amp;quot;Action&amp;quot;: &amp;quot;*&amp;quot;,
+  &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;,
+  &amp;quot;Resource&amp;quot;: &amp;quot;*&amp;quot;
+}
+</code></pre>
+
+<p>  ]
+}
+[/code]</p>
+
+<p class="filename">/tmp/fullcontrol_iam_policy.json</p>
+
 
 <p>With that out of the way, lets create a new IAM user group named <strong>RightScaleDash</strong> and upload our new policy file using the IAM CLI tools.
-```</p>
-
-<p>$ iam-groupcreate -g RightScaleDash
-$ iam-groupuploadpolicy -g RightScaleDash -p FullControl -f /tmp/fullcontrol_iam_policy.json</p>
-
-<p>```</p>
+[code]
+$ iam-groupcreate -g RightScaleDash
+$ iam-groupuploadpolicy -g RightScaleDash -p FullControl -f /tmp/fullcontrol_iam_policy.json
+[/code]</p>
 
 <p>Then, we create a new user named <strong>rsdash</strong> and assign the new user to the <strong>RightScaleDash</strong> group.  Note the <strong>-k</strong> parameter, this instructs the IAM CLI tools to create a new AWS key and secret pair.
-```</p>
-
-<p>$ iam-usercreate -u rsdash -g RightScaleDash -k</p>
-
-<p>```</p>
+[code]
+$ iam-usercreate -u rsdash -g RightScaleDash -k
+[/code]</p>
 
 <p>Some things like signing your custom Amazon Machine Images (AMI&rsquo;s) require an x.509 certificate, and RightScale has a place for entering this type of &ldquo;credential&rdquo; as well, so we&rsquo;ll create a self signed one for this example.
-```</p>
-
-<p>$ openssl genrsa -out iam.key 1024
+[code]
+$ openssl genrsa -out iam.key 1024
 $ openssl req -new -key iam.key -out iam.csr
 $ openssl x509 -req -in iam.csr -signkey iam.key -out iam.pem
-$ iam-useraddcert -u rsdash -f iam.pem</p>
-
-<p>```</p>
+$ iam-useraddcert -u rsdash -f iam.pem
+[/code]</p>
 
 <p>That&rsquo;s really all there is to creating your service account.  Once you&rsquo;ve set things up you aren&rsquo;t locked in to your choices either.  At any time you can go back and add or remove security policies using the IAM CLI.</p>
 
@@ -209,7 +205,7 @@ $ iam-useraddcert -u rsdash -f iam.pem</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[How to host Wordpress for Free]]></title>
+    <title type="html"><![CDATA[How to Host Wordpress for Free]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/02/14/how-to-host-wordpress-for-free/"/>
     <updated>2011-02-14T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/02/14/how-to-host-wordpress-for-free</id>
@@ -336,11 +332,9 @@ $ iam-useraddcert -u rsdash -f iam.pem</p>
 
 <p>I&rsquo;m developing on a Mac and the only suitable installation method seems to be using Ruby Gems to install.  This mechanism should also work for most Linux and Debian machines which already have Ruby installed.</p>
 
-<p>```</p>
-
-<p>sudo gem install chef</p>
-
-<p>```</p>
+<p>[code lang=&ldquo;bash&rdquo;]
+sudo gem install chef
+[/code]</p>
 
 <p>Be sure that you run this as root, or with sudo or Chef will get installed at ~/.gem and won&rsquo;t be in your $PATH or consequently accessible to other users.</p>
 
@@ -353,9 +347,8 @@ $ iam-useraddcert -u rsdash -f iam.pem</p>
 
 <p>To create a simple configuration file for knife, just run knife config, and accept all of the defaults.</p>
 
-<p>```</p>
-
-<p>knife configure
+<p>[code lang=&ldquo;bash&rdquo;]
+knife configure
 No knife configuration file found
 Where should I put the config file? [~/.chef/knife.rb]
 Please enter the chef server URL: [<a href="http://localhost:4000">http://localhost:4000</a>]
@@ -376,9 +369,8 @@ WARN:   /etc/chef/validation.pem
 WARN: Before generating instance data with Knife!
 WARN:
 WARN: *****
-WARN: Configuration file written to /Users/rgeyer/.chef/knife.rb</p>
-
-<p>```</p>
+WARN: Configuration file written to /Users/rgeyer/.chef/knife.rb
+[/code]</p>
 
 <p>You&rsquo;re safe to ignore the warnings since they only pertain to actually connecting to a Chef server, which we won&rsquo;t be doing.</p>
 
@@ -410,23 +402,19 @@ WARN: Configuration file written to /Users/rgeyer/.chef/knife.rb</p>
 
 <p>OpsCode, (the folks behind Chef) have conveniently provided a public github repository that represents the skeleton of a fully operational Chef repository.  You can clone this repository to get you started.</p>
 
-<p>```</p>
-
-<p>git clone git://github.com/opscode/chef-repo.git</p>
-
-<p>```</p>
+<p>[code lang=&ldquo;bash&rdquo;]
+git clone git://github.com/opscode/chef-repo.git
+[/code]</p>
 
 <p>Once you&rsquo;ve cloned the skeleton repository, you&rsquo;ll want to configure git to use the new github repository we created earlier.  Here&rsquo;s where you&rsquo;ll use the SSH URL I told you to take note of.  Substitute that URL where you find &lt;ssh_url&gt; below.</p>
 
-<p>```</p>
-
-<p>cd chef-repo/
+<p>[code lang=&ldquo;bash&rdquo;]
+cd chef-repo/
 git remote rename origin opscode-github
 git remote add origin &lt;ssh_url&gt;
 git remote rm opscode-github
-git push origin master</p>
-
-<p>```</p>
+git push origin master
+[/code]</p>
 
 <h2>Create cookbook</h2>
 
@@ -435,35 +423,38 @@ git push origin master</p>
 
 <p>Creating a cookbook is our first chance to use our freshly sharpened knife, like so.</p>
 
-<p>```</p>
-
-<p>knife cookbook create my-first-cookbook -o cookbooks/</p>
-
-<p>```</p>
+<p>[code lang=&ldquo;bash&rdquo;]
+knife cookbook create my-first-cookbook -o cookbooks/
+[/code]</p>
 
 <p>This should create a nice new cookbook skeleton directory at &lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook.</p>
 
 <p>With that done, let&rsquo;s put our first recipe in the cookbook.  Using your favorite IDE, create and save a file named <em>helloworld.rb</em> inside the new cookbook directory.</p>
 
-<p><strong>EDIT: Many have correctly pointed out that the hello world file should actually go in <em>&lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook/recipes</em>.  Thanks all for the feedback!</strong></p>
+<p><b>EDIT: Many have correctly pointed out that the hello world file should actually go in <i>&lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook/recipes</i>.  Thanks all for the feedback!</b></p>
 
-<p><figure class='code'><figcaption>helloworld.rb </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div></pre></td><td class='main  rb'><pre><div class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="sr">&lt;p&gt;log &amp;ldquo;Hello World&amp;rdquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">helloworld.rb</p>
+
+
+<p>[code lang=&ldquo;ruby&rdquo;]
+log &quot;Hello World&quot;
+[/code]</p>
 
 <p>With the recipe created, we need to add it to our metadata file so that Chef and RightScale can know it&rsquo;s there.  Here&rsquo;s a copy of our default <em>metadata.rb</em> file.  The highlighted line is added to define the recipe we&rsquo;ve added.</p>
 
-<p><figure class='code'><figcaption>metadata.rb </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div></pre></td><td class='main  rb'><pre><div class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="sr">&lt;p&gt;maintainer       &amp;ldquo;YOUR_COMPANY_NAME&amp;rdquo;</span>
-</div><div class='line'><span class="sr">maintainer_email &amp;ldquo;YOUR_EMAIL&amp;rdquo;</span>
-</div><div class='line'><span class="sr">license          &amp;ldquo;All rights reserved&amp;rdquo;</span>
-</div><div class='line'><span class="sr">description      &amp;ldquo;Installs/</span><span class="no">Configures</span> <span class="n">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">cookbook</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
-</div><div class='line'><span class="n">long_description</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="no">FILE</span><span class="o">&lt;</span><span class="sr">/strong&gt;), &amp;lsquo;README.rdoc&amp;rsquo;))</span>
-</div><div class='line'><span class="sr">version          &amp;ldquo;0.0.1&amp;rdquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">recipe</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">cookbook</span><span class="o">::</span><span class="n">helloworld</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">My</span> <span class="n">first</span> <span class="n">recipe</span><span class="p">,</span> <span class="n">prints</span> <span class="no">Hello</span> <span class="no">World</span> <span class="n">to</span> <span class="n">the</span> <span class="no">RightScale</span> <span class="n">dashboard</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="sr">&lt;p&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">metadata.rb</p>
+
+
+<p>[code lang=&ldquo;ruby&rdquo; highlight=&ldquo;8&rdquo;]
+maintainer       &quot;YOUR_COMPANY_NAME&quot;
+maintainer_email &quot;YOUR_EMAIL&quot;
+license          &quot;All rights reserved&quot;
+description      &quot;Installs/Configures my-first-cookbook&quot;
+long_description IO.read(File.join(File.dirname(<strong>FILE</strong>), &lsquo;README.rdoc&rsquo;))
+version          &quot;0.0.1&quot;</p>
+
+<p>recipe &quot;my-first-cookbook::helloworld&quot;, &quot;My first recipe, prints Hello World to the RightScale dashboard&quot;
+[/code]</p>
 
 <p>We only have one more step before we&rsquo;re ready to commit our new cookbook and recipe to our new git repository.</p>
 
@@ -471,23 +462,19 @@ git push origin master</p>
 
 <p>The contents of <em>metadata.json</em> are effectively the same as <em>metadata.rb</em>, but take heart, you only need maintain the <em>metadata.rb</em> file, then convert it using another Chef command.  To generate <em>metadata.json</em> from <em>metadata.rb</em> just run the following command.</p>
 
-<p>```</p>
-
-<p>rake metadata</p>
-
-<p>```</p>
+<p>[code lang=&ldquo;bash&rdquo;]
+rake metadata
+[/code]</p>
 
 <p>You can run this command either right at the root of your repository, or inside each cookbook.  If you run it from the root directory of your repository, it will convert all the metadata files in all of the cookbooks.</p>
 
 <p>Now we&rsquo;re ready to commit our repository and try out our new cookbook.</p>
 
-<p>```</p>
-
-<p>git add cookbooks/
+<p>[code lang=&ldquo;bash&rdquo;]
+git add cookbooks/
 git commit -am &quot;Added my-first-cookbook and helloworld recipe&quot;
-git push</p>
-
-<p>```</p>
+git push
+[/code]</p>
 
 <h1>RightScale Configuration</h1>
 
@@ -541,11 +528,9 @@ git push</p>
 
 <p>If there are any syntax errors or anything else amiss in your repository, you&rsquo;ll find that not just the cookbook or recipe which you&rsquo;re working on is failing, but absolutely <strong><em>every</em></strong> recipe in your repo (or any other repo that&rsquo;s part of your RepoPath) will fail with this super informative error message.</p>
 
-<p>```</p>
-
-<p>*ERROR&gt; Chef process failed with return code 1</p>
-
-<p>```</p>
+<p>[code]
+*ERROR&gt; Chef process failed with return code 1
+[/code]</p>
 
 <p>Of course, you can also get that error message if you have some other problem in the recipe you&rsquo;re working on.</p>
 

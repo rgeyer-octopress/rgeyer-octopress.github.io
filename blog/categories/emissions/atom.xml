@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: emissions | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Emissions | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/emissions/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[An Ob-NOx-ious truth]]></title>
+    <title type="html"><![CDATA[An Ob-NOx-ious Truth]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2007/10/29/an-ob-nox-ious-truth/"/>
     <updated>2007-10-29T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2007/10/29/an-ob-nox-ious-truth</id>
@@ -35,7 +35,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[I see your Prius, and raise you an Excursion.]]></title>
+    <title type="html"><![CDATA[I See Your Prius, and Raise You an Excursion.]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2007/10/19/i-see-your-prius-and-raise-you-an-excursion/"/>
     <updated>2007-10-19T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2007/10/19/i-see-your-prius-and-raise-you-an-excursion</id>

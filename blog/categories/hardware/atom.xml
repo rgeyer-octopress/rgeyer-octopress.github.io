@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: hardware | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Hardware | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/hardware/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -29,11 +29,16 @@
 
 <p>I&#39;m discovering some things which require are requiring a bit of research, but once I find the answer it usually fits some pattern or concept that is very familiar. &nbsp;I&#39;ll likely be blogging about a few of those items as I continue to &quot;move in&quot; to my new machine.</p>
 
+
+<p>I&#39;ve also been firing off my thoughts as I have them on Twitter, you can follow the stream below if you&#39;re interested.</p>
+
+
+<p>[wpts terms=#mbpfirstimpressions limit=20 lang=en]</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Apples? Sure, sign me up!]]></title>
+    <title type="html"><![CDATA[Apples? Sure, Sign Me Up!]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2007/10/24/apples-sure-sign-me-up/"/>
     <updated>2007-10-24T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2007/10/24/apples-sure-sign-me-up</id>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: software development | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Software Development | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/software-development/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Web development environment - "On The Go"]]></title>
+    <title type="html"><![CDATA[Web Development Environment - "on the Go"]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/04/07/web-development-environment-on-the-go/"/>
     <updated>2009-04-07T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/04/07/web-development-environment-on-the-go</id>
@@ -106,14 +106,17 @@
 
 <p>This way all of the web files for my individual websites and projects go in the &ldquo;htdocs&rdquo; directory, while the database data files go in the &ldquo;mysql\data&rdquo; directory, making them easy to find.</p>
 
-<p>Of course, this presents a problem since the XAMPP install won&rsquo;t be looking in those directories for the databases and code.  So, to solve this I&rsquo;ve written another small batch script which lives in the &ldquo;shared&rdquo; directory.  This script uses the microsoft system tool <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx">Junction.exe</a> to create links of my shared directories in the location that XAMPP is looking.  The junction.exe file is in an &ldquo;Installers&rdquo; directory on the drive, though I should probably move it somewhere more logical.  Here&rsquo;s the script that deletes old junctions, and creates new ones.  You&rsquo;ll want to run this when you move from computer to computer, since the drive letter of the USB drive will likely change, and the junctions are to absolute paths.  I put this file in \ampp\shared and it uses relative paths, so that&rsquo;s important.
-<figure class='code'><figcaption>refresh-junctions.bat </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div></pre></td><td class='main  bat'><pre><div class='line'>&lt;<span class="n">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="n">for</span> <span class="n">/d</span> <span class="nv">%%A</span> in (htdocs*) <span class="k">do</span> &amp;ldquo;....\Portable\Program Files\junction\junction.exe&amp;rdquo; -d &amp;ldquo;..\xampp\<span class="nv">%%A</span>&amp;rdquo;
-</div><div class='line'><span class="k">for</span> <span class="n">/d</span> <span class="nv">%%A</span> in (htdocs*) <span class="k">do</span> &amp;ldquo;....\Portable\Program Files\junction\junction.exe&amp;rdquo; -s &amp;ldquo;..\xampp\<span class="nv">%%A</span>&amp;rdquo; &amp;ldquo;<span class="nv">%%A</span>&amp;rdquo;&lt;<span class="n">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="n">for</span> <span class="n">/d</span> <span class="nv">%%A</span> in (mysql\data*) <span class="k">do</span> &amp;ldquo;....\Portable\Program Files\junction\junction.exe&amp;rdquo; -d &amp;ldquo;..\xampp\<span class="nv">%%A</span>&amp;rdquo;
-</div><div class='line'><span class="k">for</span> <span class="n">/d</span> <span class="nv">%%A</span> in (mysql\data*) <span class="k">do</span> &amp;ldquo;....\Portable\Program Files\junction\junction.exe&amp;rdquo; -s &amp;ldquo;..\xampp\<span class="nv">%%A</span>&amp;rdquo; &amp;ldquo;<span class="nv">%%A</span>&amp;rdquo;&lt;<span class="n">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="p">&lt;</span><span class="n">p</span>&gt;
-</div></pre></td></tr></table></div></figure></p>
+<p>Of course, this presents a problem since the XAMPP install won&rsquo;t be looking in those directories for the databases and code.  So, to solve this I&rsquo;ve written another small batch script which lives in the &ldquo;shared&rdquo; directory.  This script uses the microsoft system tool <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx">Junction.exe</a> to create links of my shared directories in the location that XAMPP is looking.  The junction.exe file is in an &ldquo;Installers&rdquo; directory on the drive, though I should probably move it somewhere more logical.  Here&rsquo;s the script that deletes old junctions, and creates new ones.  You&rsquo;ll want to run this when you move from computer to computer, since the drive letter of the USB drive will likely change, and the junctions are to absolute paths.  I put this file in \ampp\shared and it uses relative paths, so that&rsquo;s important.</p>
+
+<h4>refresh-junctions.bat</h4>
+
+
+<p>[text toolbar=&ldquo;false&rdquo;]for /d %%A in (htdocs*) do &quot;....\Portable\Program Files\junction\junction.exe&quot; -d &quot;..\xampp\%%A&quot;
+for /d %%A in (htdocs*) do &quot;....\Portable\Program Files\junction\junction.exe&quot; -s &quot;..\xampp\%%A&quot; &quot;%%A&quot;</p>
+
+<p>for /d %%A in (mysql\data*) do &quot;....\Portable\Program Files\junction\junction.exe&quot; -d &quot;..\xampp\%%A&quot;
+for /d %%A in (mysql\data*) do &quot;....\Portable\Program Files\junction\junction.exe&quot; -s &quot;..\xampp\%%A&quot; &quot;%%A&quot;
+[/text]</p>
 
 <p>The requirement here of course is that you always create new sites by creating a directory in \ampp\shared\htdocs, and that any time you create a new database, you must move it&rsquo;s directory from \ampp\wampp\mysql\data&amp;lt;database&gt; to \ampp\shared\mysql\data&amp;lt;database&gt; then re-run the refresh-junctions.bat script while the MySQL server is not running.  But it&rsquo;s a fairly workable solution.</p>
 
@@ -157,28 +160,31 @@
 
 <p>My changes are to the X.bat and uninstall.bat files.  I instead called them ~cygwin-install-X.bat and ~cygwin-uninstall.bat and put them in the cygwin install directory at Portable\cygwin.  Here they are.</p>
 
-<p><figure class='code'><figcaption>~cygwin-install-X.bat </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div></pre></td><td class='main  bat'><pre><div class='line'>&lt;<span class="n">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="n">for</span> <span class="n">/F</span> <span class="nv">%%A</span> in (&amp;lsquo;<span class="k">cd</span>&amp;rsquo;) <span class="k">do</span> <span class="k">set</span> <span class="nv">WD</span><span class="o">=</span><span class="nv">%%A</span>
-</div><div class='line'>bin\mount -m <span class="p">|</span> <span class="n">bin</span>\sed s<span class="n">/mount/&amp;ldquo;%WD%\/bin\/mount&amp;rdquo;/</span> <span class="p">&gt;</span> <span class="n">tmp</span>\mount.log
-</div><div class='line'>bin\umount -c
-</div><div class='line'>bin\umount -A
-</div><div class='line'>bin\mount -bfu <span class="nv">%WD%</span>/ /
-</div><div class='line'>bin\mount -bfu <span class="nv">%WD%</span><span class="n">/bin</span> <span class="n">/usr/bin</span>
-</div><div class='line'>bin\mount -bfu <span class="nv">%WD%</span><span class="n">/lib</span> <span class="n">/usr/lib&lt;/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="n">set</span> path<span class="o">=</span><span class="nv">%path%</span>;<span class="nv">%WD%</span>\bin;<span class="nv">%WD%</span>\usr\X<span class="m">11</span>R<span class="m">6</span>\bin
-</div><div class='line'>start bin\rxvt.exe -title &amp;ldquo;&amp;rdquo; -bg &amp;ldquo;#fafad<span class="m">2</span>&amp;rdquo; -fg &amp;ldquo;#<span class="m">000040</span>&amp;rdquo; -color<span class="m">10</span> green<span class="m">4</span> -color<span class="m">14</span> brown -fn &amp;ldquo;Lucida Console<span class="m">-14</span>&amp;rdquo; -geometry <span class="m">80</span>x<span class="m">58</span>+<span class="m">0</span>+<span class="m">0</span> -sl <span class="m">4000</span> -sr -tn rxvt -e <span class="n">/bin/bash</span> &amp;mdash;login -i
-</div><div class='line'><span class="k">set</span> <span class="nv">DISPLAY</span><span class="o">=</span>localhost:0.<span class="m">0</span>
-</div><div class='line'>run usr\X<span class="m">11</span>R<span class="m">6</span>\bin\XWin -multiwindow -emulate<span class="m">3</span>buttons <span class="m">200</span>&lt;<span class="n">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="p">&lt;</span><span class="n">p</span>&gt;
-</div></pre></td></tr></table></div></figure></p>
+<h4>~cygwin-install-X.bat</h4>
 
-<p><figure class='code'><figcaption>~cygwin-uninstall.bat </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div></pre></td><td class='main  bat'><pre><div class='line'>&lt;<span class="n">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="n">bin</span>\umount -c
-</div><div class='line'>bin\umount -A
-</div><div class='line'>bin\bash  tmp\mount.log
-</div><div class='line'>bin\rm    tmp\mount.log&lt;<span class="n">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="p">&lt;</span><span class="n">p</span>&gt;
-</div></pre></td></tr></table></div></figure></p>
+
+<p>[text]for /F %%A in (&lsquo;cd&rsquo;) do set WD=%%A
+bin\mount -m | bin\sed s/mount/&quot;%WD%\/bin\/mount&quot;/ &gt; tmp\mount.log
+bin\umount -c
+bin\umount -A
+bin\mount -bfu %WD%/ /
+bin\mount -bfu %WD%/bin /usr/bin
+bin\mount -bfu %WD%/lib /usr/lib</p>
+
+<p>set path=%path%;%WD%\bin;%WD%\usr\X11R6\bin
+start bin\rxvt.exe -title &quot;&quot; -bg &quot;#fafad2&quot; -fg &quot;#000040&quot; -color10 green4 -color14 brown -fn &quot;Lucida Console-14&quot; -geometry 80x58+0+0 -sl 4000 -sr -tn rxvt -e /bin/bash &mdash;login -i
+set DISPLAY=localhost:0.0
+run usr\X11R6\bin\XWin -multiwindow -emulate3buttons 200
+[/text]</p>
+
+<h4>~cygwin-uninstall.bat</h4>
+
+
+<p>[text]bin\umount -c
+bin\umount -A
+bin\bash  tmp\mount.log
+bin\rm    tmp\mount.log
+[/text]</p>
 
 <h2>Portable Source Control (SVN)</h2>
 

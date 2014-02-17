@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: cars | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Cars | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/cars/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Have your classic, and drive it too]]></title>
+    <title type="html"><![CDATA[Have Your Classic, and Drive It Too]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2010/06/06/have-your-classic-and-drive-it-too/"/>
     <updated>2010-06-06T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2010/06/06/have-your-classic-and-drive-it-too</id>
@@ -159,7 +159,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[The X is dead.. Long live the X!!]]></title>
+    <title type="html"><![CDATA[The X Is Dead.. Long Live the X!!]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/09/03/the-x-is-dead-long-live-the-x/"/>
     <updated>2009-09-03T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/09/03/the-x-is-dead-long-live-the-x</id>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: supercars | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Supercars | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/supercars/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -48,7 +48,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Check out my new ride!]]></title>
+    <title type="html"><![CDATA[Check Out My New Ride!]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2008/03/11/check-out-my-new-ride/"/>
     <updated>2008-03-11T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2008/03/11/check-out-my-new-ride</id>

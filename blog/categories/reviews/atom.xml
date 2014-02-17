@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: reviews | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Reviews | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/reviews/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -29,11 +29,16 @@
 
 <p>I&#39;m discovering some things which require are requiring a bit of research, but once I find the answer it usually fits some pattern or concept that is very familiar. &nbsp;I&#39;ll likely be blogging about a few of those items as I continue to &quot;move in&quot; to my new machine.</p>
 
+
+<p>I&#39;ve also been firing off my thoughts as I have them on Twitter, you can follow the stream below if you&#39;re interested.</p>
+
+
+<p>[wpts terms=#mbpfirstimpressions limit=20 lang=en]</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Modularizing your Grails Application - Domain Classes]]></title>
+    <title type="html"><![CDATA[Modularizing Your Grails Application - Domain Classes]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2010/03/10/modularizing-your-grails-application-domain-classes/"/>
     <updated>2010-03-10T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2010/03/10/modularizing-your-grails-application-domain-classes</id>
@@ -51,12 +56,12 @@
 <h2>What won't work</h2>
 
 
-<p><strong>The RESTful JSON Service</strong></p>
+<p><b>The RESTful JSON Service</b></p>
 
 <p>My first thought was to deploy a 3rd application which would be internet visible and act as a proxy for all the database requests.  I could then query that application with REST and handle a JSON payload which would be my domain object.  This actually seemed pretty elegant since I wouldn't have to actually share any code between the Front End and Back End applications and I still got a well defined object on either end.  The problem of course is that all I get is the data for my domain class, and I don't have access to any of the functionality that GORM gives me "for free".  I'd have to duplicate search functionality, limits, grouping, sorting, and all sorts of other querying tools in my service.  That seemed like an awful lot of work for functionality that is offered by GORM and works very well!</p>
 
 
-<p><strong>Just JAR it man</strong></p>
+<p><b>Just JAR it man</b></p>
 
 <p>The next obvious conclusion is to just toss my domain classes into a library JAR file and reference that library in both of my other applications.  This way I actually have the whole domain class and access to the dynamic find methods and all that other good stuff.  But, how do you package these?  Do you compile the Groovy classes then package the .class files? Will the data source information have to be set for the domain class(es) in the JAR, or will the data source of the application referencing the library be used?</p>
 
@@ -74,132 +79,133 @@
 <p>It didn't take me long to discover that putting my reusable code into a <a href="http://grails.org/doc/latest/guide/12.%20Plug-ins.html" target="_blank">Grails Plugin</a> was the best and most scalable approach. For the sake of demonstration I'm going to take you through an example comment submission and administration application, kinda like blog comments.</p>
 
 
-<p><strong>The plugin project</strong></p>
+<p><b>The plugin project</b></p>
 
 <p>First, let's go ahead and create our plugin project.</p>
 
 
-<p><code>
-grails create-plugin Modular-DAL
-</code></p>
+<p>[bash]grails create-plugin Modular-DAL[/bash]</p>
 
 <p>Once you've got your shiny new plugin created, open it up with your favorite IDE (I use <a href="http://www.springsource.com/products/sts">Spring Source Tool Suite</a>) and add a new domain class that you're going to be sharing.</p>
 
 
-<p><code>
-grails create-domain-class com.nslms.modular.domain.Comment
-</code></p>
+<p>[bash]grails create-domain-class com.nslms.modular.domain.Comment[/bash]</p>
 
 <p>Now we specify some properties for our new shared domain class.</p>
 
 
-<p><figure class='code'><figcaption>Comment.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.modular.domain&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">Comment</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;static constraints = {</span>
-</div><div class='line'><span class="s">    name(blank:false)</span>
-</div><div class='line'><span class="s">    email(blank:false)</span>
-</div><div class='line'><span class="s">    comment(blank:false)</span>
-</div><div class='line'><span class="s">}</span>
-</div><div class='line'> </div><div class='line'><span class="s">String name </span>
-</div><div class='line'><span class="s">String email</span>
-</div><div class='line'><span class="s">String website</span>
-</div><div class='line'><span class="s">String comment</span>
-</div><div class='line'> </div><div class='line'><span class="s">Boolean isApproved = false</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">Comment.groovy</p>
+
+
+<p>[groovy]
+package com.nslms.modular.domain</p>
+
+<p>class Comment {</p>
+
+<pre><code>static constraints = {
+    name(blank:false)
+    email(blank:false)
+    comment(blank:false)
+}
+
+String name 
+String email
+String website
+String comment
+
+Boolean isApproved = false
+</code></pre>
+
+<p>}
+[/groovy]</p>
 
 <p>With our new shared domain class created, we want to package up our plugin so we can load it into the other projects which we'll be creating in a moment.</p>
 
 
-<p><code>
-grails package-plugin
-</code></p>
+<p>[bash]grails package-plugin[/bash]</p>
 
 <p>That's it, you've just created a (very small) module of your application which contains a shared domain class.  This could, of course, contain any number of domain classes, controllers, or services, views, javascript, css, etc. that would be used by other parts of your application, or by other applications.</p>
 
 
-<p><strong>The Front End</strong></p>
+<p><b>The Front End</b></p>
 
 <p>Now, lets create an application which will serve as the "front end" or externally facing form for collecting data.</p>
 
 
-<p><code>
-grails create-app Modular-FrontEnd
-</code></p>
+<p>[bash]grails create-app Modular-FrontEnd[/bash]</p>
 
 <p>Then the very important part of installing the plugin we just created</p>
 
 
-<p><code>
-grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
-</code></p>
+<p>[bash]grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip[/bash]</p>
 
 <p>Because you can <a href="#download-instructions">download</a> the project I created, I'm not going to go into excruciating detail about the controller and view(s) I setup in my front end, but sufficed to say I am accessing the "Comment" domain class that is supplied by the Modular-DAL plugin project!</p>
 
 
-<p><figure class='code'><figcaption>CommentsController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import com.nslms.modular.domain.*&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">CommentsController</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def index = { [comments: Comment.findAllByisApproved(true)] }</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">CommentsController.groovy (snippet)</p>
+
+
+<p>[groovy highlight=&ldquo;1,5&rdquo;]
+import com.nslms.modular.domain.*</p>
+
+<p>class CommentsController {</p>
+
+<pre><code>def index = { [comments: Comment.findAllByisApproved(true)] }
+</code></pre>
+
+<p>}
+[/groovy]</p>
 
 <p>The result of the front end app should be a list of comments which are approved (by the backend) and a submission form to allow you to submit new comments.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/frontend/comments" target="_blank">this</a>.</p>
 
 
-<p><strong>The Back End</strong></p>
+<p><b>The Back End</b></p>
 
 <p>Now we need to create the system which will allow you as the administrator to approve the comments submitted by the unwashed masses.</p>
 
 
-<p><code>
-grails create-app Modular-BackEnd
-</code></p>
+<p>[bash]grails create-app Modular-BackEnd[/bash]</p>
 
 <p>And install the plugin with the shared domain class.</p>
 
 
-<p><code>
-grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
-</code></p>
+<p>[bash]grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip[/bash]</p>
 
 <p>Again because you can <a href="#download-instructions">download</a> the project I created, here's just a snippet of the admin controller showing the juicy bits where we use the shared domain class</p>
 
 
-<p><figure class='code'><figcaption>AdminController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import com.nslms.modular.domain.*;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">AdminController</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def comments = { [comments: Comment.findAllByisApproved(false)] }</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">AdminController.groovy (snippet)</p>
+
+
+<p>[groovy highlight=&ldquo;1,5&rdquo;]
+import com.nslms.modular.domain.*;</p>
+
+<p>class AdminController {</p>
+
+<pre><code>def comments = { [comments: Comment.findAllByisApproved(false)] }
+</code></pre>
+
+<p>}
+[/groovy]</p>
 
 <p>The back end app should have a list of all unapproved comments, and a method to approve them.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/backend/admin/comments" target="_blank">this</a>.</p>
 
 
-<p><strong>Trying it out</strong></p>
+<p><b>Trying it out</b></p>
 
 <p>Now if you've followed along and created your own controllers and views, or <a href="#download-instructions">downloaded</a> my basic project, you're going to want to try running both the front end and back end at the same time, persisting data to a common datasource so that you can see the whole thing in action.  If you just use the grails run-app command, you'll find very quickly that you can only run one or the other project, but not both at the same time.  This is because they'll both be trying to run on the common Tomcat port (8080).  To overcome this, and run both apps at the same time, try the following starting from the Modular-FrontEnd directory.</p>
 
 
-<p>```</p>
-
-<p>grails -Dserver.port=8081 run-app
+<p>[bash]
+grails -Dserver.port=8081 run-app
 cd ../Modular-BackEnd
-grails -Dserver.port=8082 run-app</p>
-
-<p>```</p>
+grails -Dserver.port=8082 run-app
+[/bash]</p>
 
 <p>Now you should be able to access both applications at <a href="http://localhost:8081/FrontEnd">http://localhost:8081/FrontEnd</a> and <a href="http://localhost:8082/BackEnd">http://localhost:8082/BackEnd</a> respectively.</p>
 
 
-<p><b id="download-instructions">Download The Project(s)</strong></p>
+<p><b id="download-instructions">Download The Project(s)</b></p>
 
 <p>If you want to download the project(s) and follow along, fire up your favorite subversion client and export everything at <del datetime="2010-12-26T22:17:49+00:00"><a href="svn://linode.nslms.com/blog/grails/Modular">svn://linode.nslms.com/blog/grails/Modular</a></del> or download it <a href="http://www.nslms.com/downloads/Modular.zip">here</a>.  A couple things to note if you're grabbing my project, it's currently setup to use a MySQL database named "modular" running on the same system as the application.  If you don't already have MySQL setup, give <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> a look to get you started quickly.  Also, I didn't include the JDBC driver, go fetch it <a href="http://www.mysql.com/downloads/connector/j/">here</a> and drop it into the "lib" directory of both the FrontEnd and BackEnd applications.  Lastly, these projects are all written with Grails 1.2.1 so you'll have to be using 1.2.1 or newer.</p>
 
@@ -209,9 +215,9 @@ grails -Dserver.port=8082 run-app</p>
 <p>Grab the projects at</p>
 
 
-<p><code>
+<p>[bash]
 git clone git://ec2.nslms.com/grails/blog_example_modular
-</code></p>
+[/bash]</p>
 ]]></content>
   </entry>
   
@@ -230,10 +236,7 @@ git clone git://ec2.nslms.com/grails/blog_example_modular
 
 <p>Throughout this post I'll be referring to domain objects, controllers, and views which would have been created by running the <a href="http://www.grails.org/AcegiSecurity+Plugin+-+LDAP+Tutorial">Acegi LDAP tutorial</a>.  So if you want to follow along, go walk through the tutorial, then come back here to see how we tweak it.  Be sure to take the "optional" step of creating the views and controllers for the auth domains, you'll need it not only in the tutorial, but also for some customization we'll be doing later.
 
-```
-grails generate-manager
-```
-
+[bash]grails generate-manager[/bash]
 
 You can also download a copy of the Spring Source STS project I used for this application <a href="http://www.nslms.com/downloads/GrailsInActiveDirectoryGroove.zip">here</a>.
 </p>
@@ -247,29 +250,36 @@ You can also download a copy of the Spring Source STS project I used for this ap
 <p>As I started searching to figure out how to authenticate my users, everything seemed to point to using the <a href="http://grails.org/plugin/acegi">Acegi Plugin</a> for Grails, and using it with LDAP, tweaked to talk to Active Directory.  So, I started down this path and followed the <a href="http://www.grails.org/AcegiSecurity+Plugin+-+LDAP+Tutorial">LDAP tutorial</a> for the Acegi plugin.  Without a lot of trouble I got this working by following the steps in the tutorial, though I did make a couple significant changes to the SecurityConfig.groovy file to make it play nice with Active Directory</p>
 
 
-<p><figure class='code'><figcaption>SecurityConfig.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div><div data-line='29' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;security {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="c1">// see DefaultSecurityConfig.groovy for all settable/overridable properties</span>
-</div><div class='line'> </div><div class='line'><span class="n">active</span> <span class="o">=</span> <span class="kc">true</span>
-</div><div class='line'> </div><div class='line'><span class="n">useLdap</span> <span class="o">=</span> <span class="kc">false</span>
-</div><div class='line'><span class="n">ldapRetrieveDatabaseRoles</span> <span class="o">=</span> <span class="kc">false</span>
-</div><div class='line'><span class="n">ldapRetrieveGroupRoles</span> <span class="o">=</span> <span class="kc">true</span>
-</div><div class='line'><span class="n">ldapServer</span> <span class="o">=</span> <span class="s1">&#39;ldap://&amp;lt;your-domain-controller&amp;gt;&#39;</span>
-</div><div class='line'><span class="n">ldapManagerDn</span> <span class="o">=</span> <span class="s1">&#39;&amp;lt;your-service-account-dn&amp;gt;&#39;</span>
-</div><div class='line'><span class="n">ldapManagerPassword</span> <span class="o">=</span> <span class="s1">&#39;&amp;lt;your-service-account-password&amp;gt;&#39;</span>
-</div><div class='line'><span class="n">ldapSearchBase</span> <span class="o">=</span> <span class="s1">&#39;OU=People,DC=yourdomain,DC=com&#39;</span>
-</div><div class='line'><span class="n">ldapSearchFilter</span> <span class="o">=</span> <span class="s1">&#39;(sAMAccountName={0})&#39;</span>
-</div><div class='line'><span class="n">ldapSearchSubtree</span> <span class="o">=</span> <span class="kc">true</span>
-</div><div class='line'><span class="n">ldapGroupSearchBase</span> <span class="o">=</span> <span class="s1">&#39;CN=Users,DC=yourdomain,DC=com&#39;</span>
-</div><div class='line'><span class="n">ldapGroupSearchFilter</span> <span class="o">=</span> <span class="s1">&#39;member={0}&#39;</span>
-</div><div class='line'><span class="n">ldapUsePassword</span> <span class="o">=</span> <span class="kc">false</span>
-</div><div class='line'> </div><div class='line'><span class="n">loginUserDomainClass</span> <span class="o">=</span> <span class="s2">&quot;User&quot;</span>
-</div><div class='line'><span class="n">authorityDomainClass</span> <span class="o">=</span> <span class="s2">&quot;Role&quot;</span>
-</div><div class='line'><span class="n">requestMapClass</span> <span class="o">=</span> <span class="s2">&quot;Requestmap&quot;</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">SecurityConfig.groovy</p>
+
+
+<p>[groovy highlight=&ldquo;14,17,18&rdquo;]
+security {</p>
+
+<pre><code>// see DefaultSecurityConfig.groovy for all settable/overridable properties
+
+active = true
+
+useLdap = false
+ldapRetrieveDatabaseRoles = false
+ldapRetrieveGroupRoles = true
+ldapServer = 'ldap://&amp;lt;your-domain-controller&amp;gt;'
+ldapManagerDn = '&amp;lt;your-service-account-dn&amp;gt;'
+ldapManagerPassword = '&amp;lt;your-service-account-password&amp;gt;'
+ldapSearchBase = 'OU=People,DC=yourdomain,DC=com'
+ldapSearchFilter = '(sAMAccountName={0})'
+ldapSearchSubtree = true
+ldapGroupSearchBase = 'CN=Users,DC=yourdomain,DC=com'
+ldapGroupSearchFilter = 'member={0}'
+ldapUsePassword = false
+
+loginUserDomainClass = &amp;quot;User&amp;quot;
+authorityDomainClass = &amp;quot;Role&amp;quot;
+requestMapClass = &amp;quot;Requestmap&amp;quot;
+</code></pre>
+
+<p>}
+[/groovy]</p>
 
 <p>By setting ldapSearchFilter to '(sAMAccountName={0})', we're telling the Acegi plugin to look for the field in Active Directory that stores the username, this means that users can login just like they're used to by using their Active Directory user name and password.</p>
 
@@ -281,7 +291,7 @@ You can also download a copy of the Spring Source STS project I used for this ap
 
 
 
-<p>Setting ldapUsePassword to false is important too.  What we're telling the Acegi plugin is not to extract the users password from Active Directory.  If you don't set this to false, you'll get a lovely exception which isn't particularly useful, <strong><em>java.lang.IllegalArgumentException: Cannot pass null or empty values to constructor</em><em></em></strong>.  What this is trying to tell you is that the users password is null, which is correct since the default setting for the Acegi plugin is to try to extract the users password from Active Directory, and we haven't told Acegi what attribute Active Directory stores the password in.  By setting ldapUsePassword to false, the plugin provides a bogus password for the user details, and we're able to proceed without incident.</p>
+<p>Setting ldapUsePassword to false is important too.  What we're telling the Acegi plugin is not to extract the users password from Active Directory.  If you don't set this to false, you'll get a lovely exception which isn't particularly useful, <b><i>java.lang.IllegalArgumentException: Cannot pass null or empty values to constructor</i><i></i></b>.  What this is trying to tell you is that the users password is null, which is correct since the default setting for the Acegi plugin is to try to extract the users password from Active Directory, and we haven't told Acegi what attribute Active Directory stores the password in.  By setting ldapUsePassword to false, the plugin provides a bogus password for the user details, and we're able to proceed without incident.</p>
 
 
 
@@ -298,21 +308,28 @@ You can also download a copy of the Spring Source STS project I used for this ap
 </p>
 
 
-<p><figure class='code'><figcaption>SecurityConfig.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;security {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="c1">// see DefaultSecurityConfig.groovy for all settable/overridable properties</span>
-</div><div class='line'> </div><div class='line'><span class="n">active</span> <span class="o">=</span> <span class="kc">true</span>
-</div><div class='line'> </div><div class='line'><span class="n">useNtlm</span> <span class="o">=</span> <span class="kc">true</span>
-</div><div class='line'><span class="n">ntlm</span><span class="o">.</span><span class="na">stripDomain</span> <span class="o">=</span> <span class="kc">false</span>
-</div><div class='line'><span class="n">ntlm</span><span class="o">.</span><span class="na">defaultDomain</span> <span class="o">=</span> <span class="s2">&quot;yourdomain.com&quot;</span>
-</div><div class='line'><span class="n">ntlm</span><span class="o">.</span><span class="na">netbiosWINS</span> <span class="o">=</span> <span class="s2">&quot;&amp;lt;your-domain-controller-ip&amp;gt;&quot;</span>
-</div><div class='line'> </div><div class='line'><span class="n">loginUserDomainClass</span> <span class="o">=</span> <span class="s2">&quot;User&quot;</span>
-</div><div class='line'><span class="n">authorityDomainClass</span> <span class="o">=</span> <span class="s2">&quot;Role&quot;</span>
-</div><div class='line'><span class="n">requestMapClass</span> <span class="o">=</span> <span class="s2">&quot;Requestmap&quot;</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">SecurityConfig.groovy</p>
+
+
+<p>[groovy]
+security {</p>
+
+<pre><code>// see DefaultSecurityConfig.groovy for all settable/overridable properties
+
+active = true
+
+useNtlm = true
+ntlm.stripDomain = false
+ntlm.defaultDomain = &amp;quot;yourdomain.com&amp;quot;
+ntlm.netbiosWINS = &amp;quot;&amp;lt;your-domain-controller-ip&amp;gt;&amp;quot;
+
+loginUserDomainClass = &amp;quot;User&amp;quot;
+authorityDomainClass = &amp;quot;Role&amp;quot;
+requestMapClass = &amp;quot;Requestmap&amp;quot;
+</code></pre>
+
+<p>}
+[/groovy]</p>
 
 <p>Nothing really outstanding here, I chose to set ntlm.stripDomain to false, so that the users name is not prefixed by the domain, I.E. DOMAIN\username.  Also ntlm.defaultDomain and ntlm.netbiosWINS are both required, and I found that the ntlm.netbiosWINS works better if you actually give it the IP address of your domain controller, rather than the DNS name.</p>
 
@@ -330,60 +347,80 @@ You can also download a copy of the Spring Source STS project I used for this ap
 <p>Now we've got an application which will use NTLM to authenticate the user, we restrict access using the requestmap, and we add users and their roles using the user and role controllers.  The problem, of course is that if you deploy this application anyone can go right to http://yourdomain.com/sso-app/user and add themselves as a user with any roles they see fit!  So we need to make sure that our security controllers are secured, and that there is an authorized user that can get in to add users and roles.</p>
 
 
-<p><strong>Securing the Security Controllers</strong></p>
+<p><b>Securing the Security Controllers</b></p>
 
 <p>The first thing we're going to want to do is secure our authentication controllers.  My preference is to do this with annotations on the controllers, so lets secure the UserController and RoleController with annotations.  Shown below we annotate them to show that the "ROLE_USER_ADMINISTRATOR" role is necessary to access any of the pages for either controller.
 </p>
 
 
-<p><figure class='code'><figcaption>UserController.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import org.codehaus.groovy.grails.plugins.springsecurity.Secured;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nd">@Secured</span><span class="o">([&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="n">ROLE_USER_ADMINISTRATOR</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;])</span>
-</div><div class='line'><span class="s">/&lt;em&gt;*</span>
-</div><div class='line'><span class="s"> * User controller.</span>
-</div><div class='line'><span class="s"> &lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="s">/</span>
-</div><div class='line'><span class="s">class UserController {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="cm">/* Snip */</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">UserController.groovy</p>
 
-<p><figure class='code'><figcaption>RoleController.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import org.codehaus.groovy.grails.plugins.springsecurity.Secured;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nd">@Secured</span><span class="o">([&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="n">ROLE_USER_ADMINISTRATOR</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;])</span>
-</div><div class='line'><span class="s">/&lt;em&gt;*</span>
-</div><div class='line'><span class="s"> * Authority Controller.</span>
-</div><div class='line'><span class="s"> &lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="s">/</span>
-</div><div class='line'><span class="s">class RoleController {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="cm">/* Snip */</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
 
-<p><strong>Enabling the @Secured annotation</strong></p>
+<p>[groovy highlight=&ldquo;1,3&rdquo;]
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured;</p>
+
+<p>@Secured([&quot;ROLE_USER_ADMINISTRATOR&quot;])
+/<em>*
+ * User controller.
+ </em>/
+class UserController {</p>
+
+<pre><code>/* Snip */
+</code></pre>
+
+<p>}
+[/groovy]</p>
+
+<p class="filename">RoleController.groovy</p>
+
+
+<p>[groovy highlight=&ldquo;1,3&rdquo;]
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured;</p>
+
+<p>@Secured([&quot;ROLE_USER_ADMINISTRATOR&quot;])
+/<em>*
+ * Authority Controller.
+ </em>/
+class RoleController {</p>
+
+<pre><code>/* Snip */
+</code></pre>
+
+<p>}
+[/groovy]</p>
+
+<p><b>Enabling the @Secured annotation</b></p>
 
 <p>Now if you were simply to run the application like this, you'd find that you can still freely navigate to /user and /role without having to be authenticated, that's because we are still configured to use the Requestmap to restrict access to specific parts of our application.  To configure this for use with annotations instead, we only need to make a couple of small changes to the SecurityConfig.groovy file.</p>
 
 
-<p><figure class='code'><figcaption>SecurityConfig.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;security {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="c1">// see DefaultSecurityConfig.groovy for all settable/overridable properties</span>
-</div><div class='line'> </div><div class='line'><span class="n">active</span> <span class="o">=</span> <span class="kc">true</span>
-</div><div class='line'> </div><div class='line'><span class="n">useNtlm</span> <span class="o">=</span> <span class="kc">true</span>
-</div><div class='line'><span class="n">ntlm</span><span class="o">.</span><span class="na">stripDomain</span> <span class="o">=</span> <span class="kc">false</span>
-</div><div class='line'><span class="n">ntlm</span><span class="o">.</span><span class="na">defaultDomain</span> <span class="o">=</span> <span class="s2">&quot;yourdomain.com&quot;</span>
-</div><div class='line'><span class="n">ntlm</span><span class="o">.</span><span class="na">netbiosWINS</span> <span class="o">=</span> <span class="s2">&quot;&amp;lt;your-domain-controller-ip&amp;gt;&quot;</span>
-</div><div class='line'> </div><div class='line'><span class="n">loginUserDomainClass</span> <span class="o">=</span> <span class="s2">&quot;User&quot;</span>
-</div><div class='line'><span class="n">authorityDomainClass</span> <span class="o">=</span> <span class="s2">&quot;Role&quot;</span>
-</div><div class='line'><span class="c1">//requestMapClass = &quot;Requestmap&quot;</span>
-</div><div class='line'> </div><div class='line'><span class="n">userRequestMapDomainClass</span> <span class="o">=</span> <span class="kc">false</span>
-</div><div class='line'><span class="n">useControllerAnnotations</span> <span class="o">=</span> <span class="kc">true</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+
+
+<p class="filename">SecurityConfig.groovy</p>
+
+
+<p>[groovy highlight=&ldquo;14,16,17&rdquo;]
+security {</p>
+
+<pre><code>// see DefaultSecurityConfig.groovy for all settable/overridable properties
+
+active = true
+
+useNtlm = true
+ntlm.stripDomain = false
+ntlm.defaultDomain = &amp;quot;yourdomain.com&amp;quot;
+ntlm.netbiosWINS = &amp;quot;&amp;lt;your-domain-controller-ip&amp;gt;&amp;quot;
+
+loginUserDomainClass = &amp;quot;User&amp;quot;
+authorityDomainClass = &amp;quot;Role&amp;quot;
+//requestMapClass = &amp;quot;Requestmap&amp;quot;
+
+userRequestMapDomainClass = false
+useControllerAnnotations = true
+</code></pre>
+
+<p>}
+[/groovy]</p>
 
 <p>Setting useControllerAnnotations to true gives the @Secured annotations on the user and role controllers meaning.  By setting userRequestMapDomainClass to false we tell the Acegi security plugin to not even query for restrictions in the database, but to use only the static configuration defined by the annotations.  We also delete the requestMapClass line.  I commented it here instead of deleting it so it can be highlighted as a change in the file, but we're not quite done with the requestmap yet.  Now that we've configured our application not to use the request map we can delete the controller, domain, and views for it.  Go ahead and delete the following files.
 
@@ -395,33 +432,40 @@ You can also download a copy of the Spring Source STS project I used for this ap
 </p>
 
 
-<p><strong>BootStrapping</strong></p>
+<p><b>BootStrapping</b></p>
 
 <p>Now that we have our app secured, and we're using annotations to restrict access we need to make sure that some user can successfully login after we first deploy our application.  Otherwise no one will be able to access the pages to add new users!  So we use boot strapping to add a user administrator who can add more users and roles for the application.</p>
 
 
-<p><figure class='code'><figcaption>BootStrap.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class BootStrap {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kt">def</span> <span class="n">authenticateService</span>
-</div><div class='line'> </div><div class='line'><span class="kt">def</span> <span class="n">init</span> <span class="o">=</span> <span class="o">{</span> <span class="n">servletContext</span> <span class="o">-&amp;</span><span class="n">gt</span><span class="o">;</span>
-</div><div class='line'>    <span class="kt">def</span> <span class="n">role</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Role</span><span class="o">(</span><span class="nl">authority:</span> <span class="s1">&#39;ROLE_USER_ADMINISTRATOR&#39;</span><span class="o">,</span> <span class="nl">description:</span><span class="s1">&#39;User Administrator&#39;</span><span class="o">)</span>
-</div><div class='line'>    <span class="n">role</span><span class="o">.</span><span class="na">save</span><span class="o">()</span>
-</div><div class='line'>    <span class="kt">def</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="nl">username:</span> <span class="s1">&#39;admin&#39;</span><span class="o">,</span>
-</div><div class='line'>            <span class="nl">userRealName:</span> <span class="s1">&#39;Administrator&#39;</span><span class="o">,</span>
-</div><div class='line'>            <span class="nl">passwd:</span> <span class="n">authenticateService</span><span class="o">.</span><span class="na">encodePassword</span><span class="o">(</span><span class="s1">&#39;foobar&#39;</span><span class="o">),</span>
-</div><div class='line'>            <span class="nl">enabled:</span> <span class="kc">true</span><span class="o">,</span>
-</div><div class='line'>            <span class="nl">description:</span> <span class="s1">&#39;&#39;</span><span class="o">,</span>
-</div><div class='line'>            <span class="nl">email:</span> <span class="s1">&#39;&#39;</span><span class="o">,</span>
-</div><div class='line'>            <span class="nl">emailShow:</span> <span class="kc">false</span><span class="o">)</span>
-</div><div class='line'>    <span class="n">user</span><span class="o">.</span><span class="na">addToAuthorities</span><span class="o">(</span><span class="n">role</span><span class="o">)</span>
-</div><div class='line'>    <span class="n">user</span><span class="o">.</span><span class="na">save</span><span class="o">()</span>
-</div><div class='line'> <span class="o">}</span>
-</div><div class='line'> <span class="kt">def</span> <span class="n">destroy</span> <span class="o">=</span> <span class="o">{</span>
-</div><div class='line'> <span class="o">}</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+
+
+<p class="filename">BootStrap.groovy</p>
+
+
+<p>[groovy]
+class BootStrap {</p>
+
+<pre><code>def authenticateService
+
+def init = { servletContext -&amp;gt;
+    def role = new Role(authority: 'ROLE_USER_ADMINISTRATOR', description:'User Administrator')
+    role.save()
+    def user = new User(username: 'admin',
+            userRealName: 'Administrator', 
+            passwd: authenticateService.encodePassword('foobar'), 
+            enabled: true, 
+            description: '', 
+            email: '', 
+            emailShow: false)
+    user.addToAuthorities(role)
+    user.save()
+ }
+ def destroy = {
+ }
+</code></pre>
+
+<p>}
+[/groovy]</p>
 
 <p>So there you have it, an application which allows users to connect using their cached authentication using NTLM, uses annotations to secure your controllers, and actually allows access to at least one user once it's deployed.  Now, there are still some weaknesses.  Particularly the level of permissions you can assign is limited to roles, I.E. "Administrator", "User", "Reporting User", "User Administrator", etc.  Also in a corporate environment, having to go through this configuration for every grails app, and adding users and assigning their roles for each app can be tedious.  I'll be looking into improving these things with Acegi ACL's and possibly using a centralized database for users and roles in future articles so stay tuned!</p>
 
@@ -443,7 +487,7 @@ You can also download a copy of the Spring Source STS project I used for this ap
 
 
 
-<p>From the searching I've had to do in order to get answers or better understanding about the challenges I've faced, I think I have a chance to be a real resource to others who are just starting out with Grails and Groovy.  What's more I'm writing from the perspective of a relative newbie to the Java world.  Stay tuned as you follow my journey into Grails and Groovy. <em><strong>*Spoiler alert* - I like it, a LOT!</strong></em></p>
+<p>From the searching I've had to do in order to get answers or better understanding about the challenges I've faced, I think I have a chance to be a real resource to others who are just starting out with Grails and Groovy.  What's more I'm writing from the perspective of a relative newbie to the Java world.  Stay tuned as you follow my journey into Grails and Groovy. <i><b>*Spoiler alert* - I like it, a LOT!</b></i></p>
 
 ]]></content>
   </entry>

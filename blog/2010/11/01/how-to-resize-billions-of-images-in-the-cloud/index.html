@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>How to resize billions of images in the cloud - Ryans Octopress Blog</title>
+  <title>How to Resize Billions of Images in the Cloud - Ryans Octopress Blog</title>
   <meta name="author" content="Ryan J. Geyer">
 
   
@@ -24,7 +24,7 @@
   <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -98,8 +98,6 @@
 
 <time datetime="2010-11-01T00:00:00-07:00" pubdate data-updated="true"></time>
         
-         | <a href="#disqus_thread">Comments</a>
-        
       </p>
     
   </header>
@@ -121,7 +119,7 @@
 
 <p>You can find the code for it over on my <a href="http://github.com/rgeyer/RESTful-PHP-Resizer">GitHub</a>.</p>
 
-<h2>Just how many images we talkin'?</h2>
+<h2>Just how many images we talkin&#8217;?</h2>
 
 
 <p>Another carefully guarded secret it seems, is the total number of images that Flickr is currently hosting.  I did a lot of searching and tried a few naughty tricks to see if I could get the API or website to tell me, but it was to no avail.</p>
@@ -142,7 +140,7 @@
 <h1>The experiment</h1>
 
 
-<p>What I learned in short was&hellip;  This is a <strong><em>HUGE</em></strong> undertaking!  I also found that while any approach would probably be cost prohibitive, performing this resizing task using on-demand servers in the cloud is still the cheapest route by far.</p>
+<p>What I learned in short was&hellip;  This is a <b><em>HUGE</em></b> undertaking!  I also found that while any approach would probably be cost prohibitive, performing this resizing task using on-demand servers in the cloud is still the cheapest route by far.</p>
 
 <h2>Assumptions</h2>
 
@@ -177,7 +175,7 @@
 
 <p>Say that they wanted to convert all of the images in one week, at 2 seconds per image for 10B images, it would require just over 33,000 servers to convert that many images in the cloud.  What&rsquo;s more is that it would take effectively &ldquo;no time&rdquo; to deploy that many servers, use them for a week, then terminate them.  Try rolling out that many real, bare metal servers in that timeframe!</p>
 
-<h2>What's it gonna cost?</h2>
+<h2>What&#8217;s it gonna cost?</h2>
 
 
 <p>You might look at those results and think that these times are fairly reasonable.  However, if you take these figures and start multiplying them by ludicrously large numbers (like 10 <em>billion</em> for example), those reasonable numbers start to look very unreasonable.</p>
@@ -221,7 +219,7 @@
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/cloud-computing/'>cloud computing</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/php/'>php</a>
+    <a class='category' href='/blog/categories/cloud-computing/'>Cloud computing</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/php/'>php</a>
   
 </span>
 
@@ -338,19 +336,6 @@
 
 </footer>
   
-
-<script type="text/javascript">
-      var disqus_shortname = 'randmu';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
 
 
 

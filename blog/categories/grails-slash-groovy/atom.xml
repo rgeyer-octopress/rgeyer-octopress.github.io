@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: grails/groovy | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Grails/Groovy | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/grails-slash-groovy/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -50,68 +50,86 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
 
 <p>If you want the fixtures and joda time plugins loaded each time you do a compile, run-app, run-war, or war, and only include the spock plugin when you run test-app, you might assume your BuildConfig should look like this.</p>
 
-<p><figure class='code'><figcaption>BuildConfig </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div><div data-line='29' class='line-number'></div><div data-line='30' class='line-number'></div><div data-line='31' class='line-number'></div><div data-line='32' class='line-number'></div><div data-line='33' class='line-number'></div><div data-line='34' class='line-number'></div><div data-line='35' class='line-number'></div><div data-line='36' class='line-number'></div><div data-line='37' class='line-number'></div><div data-line='38' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>grails.project.class.dir = &quot;target/classes&quot;
-</div><div class='line'>grails.project.test.class.dir = &quot;target/test-classes&quot;
-</div><div class='line'>grails.project.test.reports.dir = &quot;target/test-reports&quot;&lt;/p>
-</div><div class='line'> </div><div class='line'>&lt;p>grails.project.dependency.resolution = {
-</div><div class='line'>  // inherit Grails' default dependencies
-</div><div class='line'>  inherits(&quot;global&quot;) {
-</div><div class='line'>  }
-</div><div class='line'>  log &quot;warn&quot; // log level of Ivy resolver, either &lsquo;error&rsquo;, &lsquo;warn&rsquo;, &lsquo;info&rsquo;, &lsquo;debug&rsquo; or &lsquo;verbose&rsquo;
-</div><div class='line'>  repositories {&lt;/p>
-</div><div class='line'> </div><div class='line'>&lt;pre>&lt;code>grailsPlugins()
-</div><div class='line'>grailsHome()
-</div><div class='line'>grailsCentral()
-</div><div class='line'>&lt;/code>&lt;/pre>
-</div><div class='line'> </div><div class='line'>&lt;p>  }
-</div><div class='line'>  dependencies {&lt;/p>
-</div><div class='line'> </div><div class='line'>&lt;pre>&lt;code>// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-</div><div class='line'>&lt;/code>&lt;/pre>
-</div><div class='line'> </div><div class='line'>&lt;p>  }
-</div><div class='line'>  plugins {&lt;/p>
-</div><div class='line'> </div><div class='line'>&lt;pre>&lt;code>build ':fixtures:1.0.RC1.SNAPSHOT',
-</div><div class='line'>  ':joda-time:1.1'
-</div><div class='line'>compile ':fixtures:1.0.RC1.SNAPSHOT',
-</div><div class='line'>  ':joda-time:1.1'
-</div><div class='line'>runtime ':fixtures:1.0.RC1.SNAPSHOT',
-</div><div class='line'>  ':joda-time:1.1'    
-</div><div class='line'>test ':fixtures:1.0.RC1.SNAPSHOT',
-</div><div class='line'>  ':joda-time:1.1',
-</div><div class='line'>  ':spock:0.4-groovy-1.7-SNAPSHOT'
-</div><div class='line'>&lt;/code>&lt;/pre>
-</div><div class='line'> </div><div class='line'>&lt;p>  }
-</div><div class='line'>}</div></pre></td></tr></table></div></figure></p>
+<p>[groovy highlight=&ldquo;27&rdquo;]
+grails.project.class.dir = &quot;target/classes&quot;
+grails.project.test.class.dir = &quot;target/test-classes&quot;
+grails.project.test.reports.dir = &quot;target/test-reports&quot;</p>
+
+<p>grails.project.dependency.resolution = {
+  // inherit Grails' default dependencies
+  inherits(&quot;global&quot;) {
+  }
+  log &quot;warn&quot; // log level of Ivy resolver, either &lsquo;error&rsquo;, &lsquo;warn&rsquo;, &lsquo;info&rsquo;, &lsquo;debug&rsquo; or &lsquo;verbose&rsquo;
+  repositories {</p>
+
+<pre><code>grailsPlugins()
+grailsHome()
+grailsCentral()
+</code></pre>
+
+<p>  }
+  dependencies {</p>
+
+<pre><code>// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+</code></pre>
+
+<p>  }
+  plugins {</p>
+
+<pre><code>build ':fixtures:1.0.RC1.SNAPSHOT',
+  ':joda-time:1.1'
+compile ':fixtures:1.0.RC1.SNAPSHOT',
+  ':joda-time:1.1'
+runtime ':fixtures:1.0.RC1.SNAPSHOT',
+  ':joda-time:1.1'    
+test ':fixtures:1.0.RC1.SNAPSHOT',
+  ':joda-time:1.1',
+  ':spock:0.4-groovy-1.7-SNAPSHOT'
+</code></pre>
+
+<p>  }
+}
+[/groovy]</p>
 
 <p>Notice the duplication across all configurations?  In fact only the test configuration is different with the addition of the spock plugin.  Intuitively this would make sense, even if a particular phase didn&rsquo;t really require the plugin by including it you make sure all of the dependencies are available; better safe than sorry, right?</p>
 
 <p>The problem is that these configurations interact with one another in subtle, and not clearly documented ways.  In actual fact what you&rsquo;ve done above is excluded all plugins from every phase but test.  To achieve the desired result your build config would need to look like this instead.</p>
 
-<p><figure class='code'><figcaption>BuildConfig </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div><div data-line='29' class='line-number'></div><div data-line='30' class='line-number'></div><div data-line='31' class='line-number'></div><div data-line='32' class='line-number'></div><div data-line='33' class='line-number'></div><div data-line='34' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>&lt;/p>
-</div><div class='line'> </div><div class='line'>&lt;p>grails.project.class.dir = &quot;target/classes&quot;
-</div><div class='line'>grails.project.test.class.dir = &quot;target/test-classes&quot;
-</div><div class='line'>grails.project.test.reports.dir = &quot;target/test-reports&quot;&lt;/p>
-</div><div class='line'> </div><div class='line'>&lt;p>grails.project.dependency.resolution = {
-</div><div class='line'>  // inherit Grails' default dependencies
-</div><div class='line'>  inherits(&quot;global&quot;) {
-</div><div class='line'>  }
-</div><div class='line'>  log &quot;warn&quot; // log level of Ivy resolver, either &lsquo;error&rsquo;, &lsquo;warn&rsquo;, &lsquo;info&rsquo;, &lsquo;debug&rsquo; or &lsquo;verbose&rsquo;
-</div><div class='line'>  repositories {&lt;/p>
-</div><div class='line'> </div><div class='line'>&lt;pre>&lt;code>grailsPlugins()
-</div><div class='line'>grailsHome()
-</div><div class='line'>grailsCentral()
-</div><div class='line'>&lt;/code>&lt;/pre>
-</div><div class='line'> </div><div class='line'>&lt;p>  }
-</div><div class='line'>  dependencies {&lt;/p>
-</div><div class='line'> </div><div class='line'>&lt;pre>&lt;code>// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-</div><div class='line'>&lt;/code>&lt;/pre>
-</div><div class='line'> </div><div class='line'>&lt;p>  }
-</div><div class='line'>  plugins {&lt;/p>
-</div><div class='line'> </div><div class='line'>&lt;pre>&lt;code>build: ':joda-time:1.1'
-</div><div class='line'>test ':fixtures:1.0.RC1.SNAPSHOT',
-</div><div class='line'>  ':spock:0.4-groovy-1.7-SNAPSHOT'
-</div><div class='line'>&lt;/code>&lt;/pre>
-</div><div class='line'> </div><div class='line'>&lt;p>  }
-</div><div class='line'>}</div></pre></td></tr></table></div></figure></p>
+<p>[groovy highlight=&ldquo;19&rdquo;]</p>
+
+<p>grails.project.class.dir = &quot;target/classes&quot;
+grails.project.test.class.dir = &quot;target/test-classes&quot;
+grails.project.test.reports.dir = &quot;target/test-reports&quot;</p>
+
+<p>grails.project.dependency.resolution = {
+  // inherit Grails' default dependencies
+  inherits(&quot;global&quot;) {
+  }
+  log &quot;warn&quot; // log level of Ivy resolver, either &lsquo;error&rsquo;, &lsquo;warn&rsquo;, &lsquo;info&rsquo;, &lsquo;debug&rsquo; or &lsquo;verbose&rsquo;
+  repositories {</p>
+
+<pre><code>grailsPlugins()
+grailsHome()
+grailsCentral()
+</code></pre>
+
+<p>  }
+  dependencies {</p>
+
+<pre><code>// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+</code></pre>
+
+<p>  }
+  plugins {</p>
+
+<pre><code>build: ':joda-time:1.1'
+test ':fixtures:1.0.RC1.SNAPSHOT',
+  ':spock:0.4-groovy-1.7-SNAPSHOT'
+</code></pre>
+
+<p>  }
+}
+[/groovy]</p>
 
 <p>The scopes are in fact additive, so if you put all of your dependency declarations in the build scope they&rsquo;re automatically included in all other scopes.  In every other scope, by listing a dependency there it effectively adds it to that scope, and <em>removes</em> it from all other scopes.  That&rsquo;s why your deployed war file breaks.</p>
 
@@ -126,7 +144,7 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
     <id>http://rgeyer-octopress.github.io/blog/2010/08/19/hidden-danger-of-grails-plugins</id>
     <content type="html"><![CDATA[<p>As a new developer to Grails you&rsquo;re probably in awe over the vast number of very powerful plugins which are available to you.  Without writing a single line of your own code you can do all sorts of cool things like interact with Twitter, Facebook, Amazon&rsquo;s S3 storage system, Apple Push notifications, Spring Security, and the list goes on and on.  As of this writing there are 447 plugins available in the official Grails plugin repository.</p>
 
-<p>It is understandably tempting to leverage all of this code to simply bolt together an integrated solution which solves the problem you&rsquo;re facing.  But there is a downside to consuming someone else&rsquo;s code, particularly when you&rsquo;re doing test driven development.  Here are some things to consider before you pull the trigger and <em>grails install-plugin</em>.</p>
+<p>It is understandably tempting to leverage all of this code to simply bolt together an integrated solution which solves the problem you&rsquo;re facing.  But there is a downside to consuming someone else&rsquo;s code, particularly when you&rsquo;re doing test driven development.  Here are some things to consider before you pull the trigger and <i>grails install-plugin</i>.</p>
 
 <!--more-->
 
@@ -179,106 +197,150 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
 
 <p>The scenario is that I have Roles and Privileges as domain classes.  A role has many privileges, and any privilege may belong to one or more roles.  This is represented in domain classes pretty succinctly as;</p>
 
-<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Role.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.mockdomainlimitations&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">Role</span> <span class="o">{</span>
-</div><div class='line'>  <span class="kd">static</span> <span class="n">hasMany</span> <span class="o">=</span> <span class="o">[</span><span class="nl">privileges:</span> <span class="n">Privilege</span><span class="o">]&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  static constraints = {</span>
-</div><div class='line'><span class="s">  }</span>
-</div><div class='line'><span class="s">  String name</span>
-</div><div class='line'><span class="s">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">/grails-app/domain/com/nslms/mockdomainlimtations/Role.groovy</p>
 
-<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.mockdomainlimitations&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">Privilege</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  static constraints = {</span>
-</div><div class='line'><span class="s">  }&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">String</span> <span class="n">name</span>
-</div><div class='line'><span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+
+<p>[groovy]
+package com.nslms.mockdomainlimitations</p>
+
+<p>class Role {
+  static hasMany = [privileges: Privilege]</p>
+
+<p>  static constraints = {
+  }
+  String name
+}
+[/groovy]</p>
+
+<p class="filename">/grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy</p>
+
+
+<p>[groovy]
+package com.nslms.mockdomainlimitations</p>
+
+<p>class Privilege {</p>
+
+<p>  static constraints = {
+  }</p>
+
+<p>  String name
+}
+[/groovy]</p>
 
 <p>So I can access all the privileges which belong to a role pretty easily, but what if I want to know all roles which a particular privilege belongs to?  Easy enough, we can look that up in a variety of ways.  Below I show adding a new closure to the privilege domain class which uses the <a href="http://grails.org/doc/latest/ref/Domain%20Classes/withCriteria.html">withCriteria</a> functionality of GORM to return all roles which have this privilege in the privileges map.  The new closure is in the highlighted lines.</p>
 
-<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy (with new closure) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.mockdomainlimitations&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">Privilege</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  static constraints = {</span>
-</div><div class='line'><span class="s">  }&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">String</span> <span class="n">name</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  def getRolesWithThisPrivilege = {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">Role</span><span class="o">.</span><span class="na">withCriteria</span><span class="o">()</span> <span class="o">{</span>
-</div><div class='line'>  <span class="n">privileges</span> <span class="o">{</span>
-</div><div class='line'>    <span class="n">eq</span><span class="o">(</span><span class="s1">&#39;id&#39;</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span><span class="o">)</span>
-</div><div class='line'>  <span class="o">}</span>
-</div><div class='line'><span class="o">}</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>
-</div><div class='line'><span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">/grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy (with new closure)</p>
+
+
+<p>[groovy highlight=&ldquo;10,11,12,13,14,15,16&rdquo;]
+package com.nslms.mockdomainlimitations</p>
+
+<p>class Privilege {</p>
+
+<p>  static constraints = {
+  }</p>
+
+<p>  String name</p>
+
+<p>  def getRolesWithThisPrivilege = {</p>
+
+<pre><code>Role.withCriteria() {
+  privileges {
+    eq('id', this.id)
+  }
+}
+</code></pre>
+
+<p>  }
+}
+[/groovy]</p>
 
 <p>Now, if you&rsquo;re doing proper test driven development (you are doing TDD, right?!), you&rsquo;d probably already have a test written for this new closure that would look something like the highlighted lines of the test fixture below.  Notice lines 8 and 9 which are also highlighted to show that we&rsquo;re asking the framework to mock out the GORM methods on the role and privilege classes.</p>
 
-<p><figure class='code'><figcaption>/test/unit/com/nslms/mockdomainlimitaions/PrivilegeTests.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div><div data-line='29' class='line-number'></div><div data-line='30' class='line-number'></div><div data-line='31' class='line-number'></div><div data-line='32' class='line-number'></div><div data-line='33' class='line-number'></div><div data-line='34' class='line-number'></div><div data-line='35' class='line-number'></div><div data-line='36' class='line-number'></div><div data-line='37' class='line-number'></div><div data-line='38' class='line-number'></div><div data-line='39' class='line-number'></div><div data-line='40' class='line-number'></div><div data-line='41' class='line-number'></div><div data-line='42' class='line-number'></div><div data-line='43' class='line-number'></div><div data-line='44' class='line-number'></div><div data-line='45' class='line-number'></div><div data-line='46' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.mockdomainlimitations&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">grails.test.*</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class PrivilegeTests extends GrailsUnitTestCase {</span>
-</div><div class='line'><span class="s">  protected void setUp() {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kd">super</span><span class="o">.</span><span class="na">setUp</span><span class="o">()</span>
-</div><div class='line'><span class="n">MockUtils</span><span class="o">.</span><span class="na">mockDomain</span><span class="o">(</span><span class="n">Role</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-</div><div class='line'><span class="n">MockUtils</span><span class="o">.</span><span class="na">mockDomain</span><span class="o">(</span><span class="n">Privilege</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  protected void tearDown() {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kd">super</span><span class="o">.</span><span class="na">tearDown</span><span class="o">()</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  void testAbilityToGetAListOfRolesAPrivilegeBelongsTo() {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kt">def</span> <span class="n">role1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Role</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;Administrator&#39;</span><span class="o">)</span>
-</div><div class='line'><span class="kt">def</span> <span class="n">role2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Role</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;User&#39;</span><span class="o">)</span>
-</div><div class='line'> </div><div class='line'><span class="kt">def</span> <span class="n">priv1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Privilege</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;ReadAll&#39;</span><span class="o">).</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
-</div><div class='line'> </div><div class='line'><span class="n">role1</span><span class="o">.</span><span class="na">addToPrivileges</span><span class="o">(</span><span class="n">priv1</span><span class="o">)</span>
-</div><div class='line'><span class="n">role2</span><span class="o">.</span><span class="na">addToPrivileges</span><span class="o">(</span><span class="n">priv1</span><span class="o">)</span>
-</div><div class='line'> </div><div class='line'><span class="n">role1</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
-</div><div class='line'><span class="n">role2</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
-</div><div class='line'> </div><div class='line'><span class="kt">def</span> <span class="n">roleList</span> <span class="o">=</span> <span class="n">priv1</span><span class="o">.</span><span class="na">getRolesWithThisPrivilege</span><span class="o">()</span>
-</div><div class='line'> </div><div class='line'><span class="k">assert</span> <span class="n">roleList</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">2</span>
-</div><div class='line'><span class="k">assert</span> <span class="n">roleList</span> <span class="o">==</span> <span class="o">[</span><span class="n">role1</span><span class="o">,</span> <span class="n">role2</span><span class="o">]</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>
-</div><div class='line'><span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">/test/unit/com/nslms/mockdomainlimitaions/PrivilegeTests.groovy</p>
 
-<p>Even after you&rsquo;ve implemented <strong>getRolesWithThisPrivilege</strong> on the Privileges domain class though, you&rsquo;ll find your test still fails with an error that looks like the following.</p>
+
+<p>[groovy highlight=&ldquo;8,9,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32&rdquo;]
+package com.nslms.mockdomainlimitations</p>
+
+<p>import grails.test.*</p>
+
+<p>class PrivilegeTests extends GrailsUnitTestCase {
+  protected void setUp() {</p>
+
+<pre><code>super.setUp()
+MockUtils.mockDomain(Role.class)
+MockUtils.mockDomain(Privilege.class)
+</code></pre>
+
+<p>  }</p>
+
+<p>  protected void tearDown() {</p>
+
+<pre><code>super.tearDown()
+</code></pre>
+
+<p>  }</p>
+
+<p>  void testAbilityToGetAListOfRolesAPrivilegeBelongsTo() {</p>
+
+<pre><code>def role1 = new Role(name: 'Administrator')
+def role2 = new Role(name: 'User')
+
+def priv1 = new Privilege(name: 'ReadAll').save(flush: true)
+
+role1.addToPrivileges(priv1)
+role2.addToPrivileges(priv1)
+
+role1.save(flush: true)
+role2.save(flush: true)
+
+def roleList = priv1.getRolesWithThisPrivilege()
+
+assert roleList.size() == 2
+assert roleList == [role1, role2]
+</code></pre>
+
+<p>  }
+}
+[/groovy]</p>
+
+<p>Even after you&rsquo;ve implemented <b>getRolesWithThisPrivilege</b> on the Privileges domain class though, you&rsquo;ll find your test still fails with an error that looks like the following.</p>
 
 <p style="font-size: larger; font-style: italic; color: red;">No signature of method: com.nslms.mockdomainlimitations.Role.withCriteria() is applicable for argument types: (com.nslms.mockdomainlimitations.Privilege$_closure1_closure3) values: [com.nslms.mockdomainlimitations.Privilege$_closure1_closure3@8327473]</p>
 
 
 <p>In short, it&rsquo;s telling us that the <a href="http://grails.org/doc/latest/ref/Domain%20Classes/withCriteria.html">withCriteria</a> method of GORM isn&rsquo;t implemented in the context of our test.  Of course if you put the exact same code in an integration test you&rsquo;re golden.</p>
 
-<p><figure class='code'><figcaption>/test/integration/com/nslms/mockdomainlimitations/PrivilegeTest.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.mockdomainlimitations&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">PrivilegeTest</span> <span class="kd">extends</span> <span class="n">GroovyTestCase</span> <span class="o">{</span>
-</div><div class='line'>  <span class="kt">void</span> <span class="nf">testAbilityToGetAListOfRolesAPrivilegeBelongsTo</span><span class="o">()</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def role1 = new Role(name: &#39;Administrator&#39;)</span>
-</div><div class='line'><span class="s">def role2 = new Role(name: &#39;User&#39;)</span>
-</div><div class='line'> </div><div class='line'><span class="s">def priv1 = new Privilege(name: &#39;ReadAll&#39;).save(flush: true)</span>
-</div><div class='line'> </div><div class='line'><span class="s">role1.addToPrivileges(priv1)</span>
-</div><div class='line'><span class="s">role2.addToPrivileges(priv1)</span>
-</div><div class='line'> </div><div class='line'><span class="s">role1.save(flush: true)</span>
-</div><div class='line'><span class="s">role2.save(flush: true)</span>
-</div><div class='line'> </div><div class='line'><span class="s">def roleList = priv1.getRolesWithThisPrivilege()</span>
-</div><div class='line'> </div><div class='line'><span class="s">assert roleList.size() == 2</span>
-</div><div class='line'><span class="s">assert roleList == [role1, role2]</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  }</span>
-</div><div class='line'><span class="s">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">/test/integration/com/nslms/mockdomainlimitations/PrivilegeTest.groovy</p>
+
+
+<p>[groovy]
+package com.nslms.mockdomainlimitations</p>
+
+<p>class PrivilegeTest extends GroovyTestCase {
+  void testAbilityToGetAListOfRolesAPrivilegeBelongsTo() {</p>
+
+<pre><code>def role1 = new Role(name: 'Administrator')
+def role2 = new Role(name: 'User')
+
+def priv1 = new Privilege(name: 'ReadAll').save(flush: true)
+
+role1.addToPrivileges(priv1)
+role2.addToPrivileges(priv1)
+
+role1.save(flush: true)
+role2.save(flush: true)
+
+def roleList = priv1.getRolesWithThisPrivilege()
+
+assert roleList.size() == 2
+assert roleList == [role1, role2]
+</code></pre>
+
+<p>  }
+}
+[/groovy]</p>
 
 <p>With this in place, you can run a &ldquo;grails test-app -integration&rdquo; and the exact same test which failed during unit testing will succeed.  This is of course because the entire grails bootstrapping occurs, and all of the artifacts (like domain classes) are wired up fully by the framework.</p>
 
@@ -293,11 +355,9 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
 <p>Grab the project</p>
 
 
-<p>```</p>
-
-<p>git clone git://ec2.nslms.com/grails/blog_example_mock_limitations</p>
-
-<p>```</p>
+<p>[bash]
+git clone git://ec2.nslms.com/grails/blog_example_mock_limitations
+[/bash]</p>
 ]]></content>
   </entry>
   
@@ -332,8 +392,10 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
 <p>My first instinct to accomplish this was to use some of the properties of the grails app itself, and I found many examples which recommended this.  So, I happily set my app.context in application.properties to the path I wanted.</p>
 
 
-<p><figure class='code'><figcaption>application.properties (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div></pre></td><td class='main  properties'><pre><div class='line'><span class="na">app.context</span><span class="o">=</span><span class="s">/examples/MyExampleApp</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">application.properties (snippet)</p>
+
+
+<p>[groovy] app.context=/examples/MyExampleApp [/groovy]</p>
 
 <p>This works great when I do a grails run-app, I get the app deployed to http://localhost:8080/examples/MyExampleApp just like I wanted.  But, when I create a war and toss it in my Tomcat webapps directory, I still get the same old behavior of the application being deployed to the root of Tomcat with the same name as the war file.  So how the heck do I deploy my war into a sub directory of my Tomcat site?!</p>
 
@@ -343,25 +405,27 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
 <p>The secret lies in not simply dumping your war file into an existing "context" for Tomcat, but instead creating your own, and pointing that context to your war file. The first step toward this is to prepare a place for our webapp directories, outside of the Tomcat root webapp directory.  I choose /srv/tomcat-webapps but you're obviously welcome to put this anywhere you like.  So let's create the directory where we're going to deploy our first example app.</p>
 
 
-<p><code>
-mkdir -p /srv/tomcat-webapps/examples/MyExampleApp
-</code></p>
+<p>[bash]mkdir -p /srv/tomcat-webapps/examples/MyExampleApp[/bash]</p>
 
 <p>Now, we need to find the Catalina configuration directory for our Tomcat deployment.  On Ubuntu, which is the environment I'm using, this is at /etc/tomcat6/Catalina/localhost.  What you'll find there, are a number of XML files each one describes a "context".  You can define sub-contexts by using a special syntax in the filename which is just barely mentioned in passing in the <a href="http://tomcat.apache.org/tomcat-6.0-doc/config/context.html#Introduction">Tomcat docs</a>.  You can set a multi level context name by using the # character.  So lets create a new sub-context for our example app at the correct path.</p>
 
 
-<p><figure class='code'><figcaption>#!/bin/sh </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>cd /etc/tomcat6/Catalina/localhost
-</div><div class='line'>vim examples#MyExampleApp.xml</div></pre></td></tr></table></div></figure></p>
+<p>[bash highlight=&ldquo;2&rdquo;]cd /etc/tomcat6/Catalina/localhost
+vim examples#MyExampleApp.xml[/bash]</p>
 
 <p>Now we need to add the content to this context file which will tell Tomcat where to find the applications files. Remember back when we created a new directory for our tomcat webapps, this is where we'll use it.</p>
 
 
-<p><figure class='code'><figcaption>examples#MyExampleApp.xml </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div></pre></td><td class='main  xml'><pre><div class='line'><span class="nt">&lt;/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="nt">&lt;p&gt;</span><span class="ni">&amp;lt;</span>?xml version=<span class="ni">&amp;ldquo;</span>1.0<span class="ni">&amp;rdquo;</span> encoding=<span class="ni">&amp;ldquo;</span>UTF-8<span class="ni">&amp;rdquo;</span>?&gt;
-</div><div class='line'><span class="nt">&lt;context</span> <span class="na">antiresourcelocking=</span><span class="s">&quot;false&quot;</span>
-</div><div class='line'><span class="na">docbase=</span><span class="s">&quot;/srv/tomcat-webapps/examples/MyExampleApp&quot;</span> <span class="na">path=</span><span class="s">&quot;/examples/MyExampleApp&quot;</span> <span class="na">privileged=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="nt">&lt;p&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+
+
+<p class="filename">examples#MyExampleApp.xml</p>
+
+
+<p>[xml]
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;context antiresourcelocking=&quot;false&quot;
+docbase=&quot;/srv/tomcat-webapps/examples/MyExampleApp&quot; path=&quot;/examples/MyExampleApp&quot; privileged=&quot;true&quot;&gt;
+[/xml]</p>
 
 <p>Now if you restart Tomcat, and unzip your war file to /srv/tomcat-webapps/examples/MyExampleApp you should be able to navigate to http://&lt;yourserver&gt;:8080/examples/MyExampleApp and see your application!</p>
 
@@ -369,7 +433,7 @@ mkdir -p /srv/tomcat-webapps/examples/MyExampleApp
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Modularizing your Grails Application - Domain Classes]]></title>
+    <title type="html"><![CDATA[Modularizing Your Grails Application - Domain Classes]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2010/03/10/modularizing-your-grails-application-domain-classes/"/>
     <updated>2010-03-10T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2010/03/10/modularizing-your-grails-application-domain-classes</id>
@@ -387,12 +451,12 @@ mkdir -p /srv/tomcat-webapps/examples/MyExampleApp
 <h2>What won't work</h2>
 
 
-<p><strong>The RESTful JSON Service</strong></p>
+<p><b>The RESTful JSON Service</b></p>
 
 <p>My first thought was to deploy a 3rd application which would be internet visible and act as a proxy for all the database requests.  I could then query that application with REST and handle a JSON payload which would be my domain object.  This actually seemed pretty elegant since I wouldn't have to actually share any code between the Front End and Back End applications and I still got a well defined object on either end.  The problem of course is that all I get is the data for my domain class, and I don't have access to any of the functionality that GORM gives me "for free".  I'd have to duplicate search functionality, limits, grouping, sorting, and all sorts of other querying tools in my service.  That seemed like an awful lot of work for functionality that is offered by GORM and works very well!</p>
 
 
-<p><strong>Just JAR it man</strong></p>
+<p><b>Just JAR it man</b></p>
 
 <p>The next obvious conclusion is to just toss my domain classes into a library JAR file and reference that library in both of my other applications.  This way I actually have the whole domain class and access to the dynamic find methods and all that other good stuff.  But, how do you package these?  Do you compile the Groovy classes then package the .class files? Will the data source information have to be set for the domain class(es) in the JAR, or will the data source of the application referencing the library be used?</p>
 
@@ -410,132 +474,133 @@ mkdir -p /srv/tomcat-webapps/examples/MyExampleApp
 <p>It didn't take me long to discover that putting my reusable code into a <a href="http://grails.org/doc/latest/guide/12.%20Plug-ins.html" target="_blank">Grails Plugin</a> was the best and most scalable approach. For the sake of demonstration I'm going to take you through an example comment submission and administration application, kinda like blog comments.</p>
 
 
-<p><strong>The plugin project</strong></p>
+<p><b>The plugin project</b></p>
 
 <p>First, let's go ahead and create our plugin project.</p>
 
 
-<p><code>
-grails create-plugin Modular-DAL
-</code></p>
+<p>[bash]grails create-plugin Modular-DAL[/bash]</p>
 
 <p>Once you've got your shiny new plugin created, open it up with your favorite IDE (I use <a href="http://www.springsource.com/products/sts">Spring Source Tool Suite</a>) and add a new domain class that you're going to be sharing.</p>
 
 
-<p><code>
-grails create-domain-class com.nslms.modular.domain.Comment
-</code></p>
+<p>[bash]grails create-domain-class com.nslms.modular.domain.Comment[/bash]</p>
 
 <p>Now we specify some properties for our new shared domain class.</p>
 
 
-<p><figure class='code'><figcaption>Comment.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.modular.domain&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">Comment</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;static constraints = {</span>
-</div><div class='line'><span class="s">    name(blank:false)</span>
-</div><div class='line'><span class="s">    email(blank:false)</span>
-</div><div class='line'><span class="s">    comment(blank:false)</span>
-</div><div class='line'><span class="s">}</span>
-</div><div class='line'> </div><div class='line'><span class="s">String name </span>
-</div><div class='line'><span class="s">String email</span>
-</div><div class='line'><span class="s">String website</span>
-</div><div class='line'><span class="s">String comment</span>
-</div><div class='line'> </div><div class='line'><span class="s">Boolean isApproved = false</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">Comment.groovy</p>
+
+
+<p>[groovy]
+package com.nslms.modular.domain</p>
+
+<p>class Comment {</p>
+
+<pre><code>static constraints = {
+    name(blank:false)
+    email(blank:false)
+    comment(blank:false)
+}
+
+String name 
+String email
+String website
+String comment
+
+Boolean isApproved = false
+</code></pre>
+
+<p>}
+[/groovy]</p>
 
 <p>With our new shared domain class created, we want to package up our plugin so we can load it into the other projects which we'll be creating in a moment.</p>
 
 
-<p><code>
-grails package-plugin
-</code></p>
+<p>[bash]grails package-plugin[/bash]</p>
 
 <p>That's it, you've just created a (very small) module of your application which contains a shared domain class.  This could, of course, contain any number of domain classes, controllers, or services, views, javascript, css, etc. that would be used by other parts of your application, or by other applications.</p>
 
 
-<p><strong>The Front End</strong></p>
+<p><b>The Front End</b></p>
 
 <p>Now, lets create an application which will serve as the "front end" or externally facing form for collecting data.</p>
 
 
-<p><code>
-grails create-app Modular-FrontEnd
-</code></p>
+<p>[bash]grails create-app Modular-FrontEnd[/bash]</p>
 
 <p>Then the very important part of installing the plugin we just created</p>
 
 
-<p><code>
-grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
-</code></p>
+<p>[bash]grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip[/bash]</p>
 
 <p>Because you can <a href="#download-instructions">download</a> the project I created, I'm not going to go into excruciating detail about the controller and view(s) I setup in my front end, but sufficed to say I am accessing the "Comment" domain class that is supplied by the Modular-DAL plugin project!</p>
 
 
-<p><figure class='code'><figcaption>CommentsController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import com.nslms.modular.domain.*&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">CommentsController</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def index = { [comments: Comment.findAllByisApproved(true)] }</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">CommentsController.groovy (snippet)</p>
+
+
+<p>[groovy highlight=&ldquo;1,5&rdquo;]
+import com.nslms.modular.domain.*</p>
+
+<p>class CommentsController {</p>
+
+<pre><code>def index = { [comments: Comment.findAllByisApproved(true)] }
+</code></pre>
+
+<p>}
+[/groovy]</p>
 
 <p>The result of the front end app should be a list of comments which are approved (by the backend) and a submission form to allow you to submit new comments.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/frontend/comments" target="_blank">this</a>.</p>
 
 
-<p><strong>The Back End</strong></p>
+<p><b>The Back End</b></p>
 
 <p>Now we need to create the system which will allow you as the administrator to approve the comments submitted by the unwashed masses.</p>
 
 
-<p><code>
-grails create-app Modular-BackEnd
-</code></p>
+<p>[bash]grails create-app Modular-BackEnd[/bash]</p>
 
 <p>And install the plugin with the shared domain class.</p>
 
 
-<p><code>
-grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
-</code></p>
+<p>[bash]grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip[/bash]</p>
 
 <p>Again because you can <a href="#download-instructions">download</a> the project I created, here's just a snippet of the admin controller showing the juicy bits where we use the shared domain class</p>
 
 
-<p><figure class='code'><figcaption>AdminController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import com.nslms.modular.domain.*;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">AdminController</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def comments = { [comments: Comment.findAllByisApproved(false)] }</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
+<p class="filename">AdminController.groovy (snippet)</p>
+
+
+<p>[groovy highlight=&ldquo;1,5&rdquo;]
+import com.nslms.modular.domain.*;</p>
+
+<p>class AdminController {</p>
+
+<pre><code>def comments = { [comments: Comment.findAllByisApproved(false)] }
+</code></pre>
+
+<p>}
+[/groovy]</p>
 
 <p>The back end app should have a list of all unapproved comments, and a method to approve them.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/backend/admin/comments" target="_blank">this</a>.</p>
 
 
-<p><strong>Trying it out</strong></p>
+<p><b>Trying it out</b></p>
 
 <p>Now if you've followed along and created your own controllers and views, or <a href="#download-instructions">downloaded</a> my basic project, you're going to want to try running both the front end and back end at the same time, persisting data to a common datasource so that you can see the whole thing in action.  If you just use the grails run-app command, you'll find very quickly that you can only run one or the other project, but not both at the same time.  This is because they'll both be trying to run on the common Tomcat port (8080).  To overcome this, and run both apps at the same time, try the following starting from the Modular-FrontEnd directory.</p>
 
 
-<p>```</p>
-
-<p>grails -Dserver.port=8081 run-app
+<p>[bash]
+grails -Dserver.port=8081 run-app
 cd ../Modular-BackEnd
-grails -Dserver.port=8082 run-app</p>
-
-<p>```</p>
+grails -Dserver.port=8082 run-app
+[/bash]</p>
 
 <p>Now you should be able to access both applications at <a href="http://localhost:8081/FrontEnd">http://localhost:8081/FrontEnd</a> and <a href="http://localhost:8082/BackEnd">http://localhost:8082/BackEnd</a> respectively.</p>
 
 
-<p><b id="download-instructions">Download The Project(s)</strong></p>
+<p><b id="download-instructions">Download The Project(s)</b></p>
 
 <p>If you want to download the project(s) and follow along, fire up your favorite subversion client and export everything at <del datetime="2010-12-26T22:17:49+00:00"><a href="svn://linode.nslms.com/blog/grails/Modular">svn://linode.nslms.com/blog/grails/Modular</a></del> or download it <a href="http://www.nslms.com/downloads/Modular.zip">here</a>.  A couple things to note if you're grabbing my project, it's currently setup to use a MySQL database named "modular" running on the same system as the application.  If you don't already have MySQL setup, give <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> a look to get you started quickly.  Also, I didn't include the JDBC driver, go fetch it <a href="http://www.mysql.com/downloads/connector/j/">here</a> and drop it into the "lib" directory of both the FrontEnd and BackEnd applications.  Lastly, these projects are all written with Grails 1.2.1 so you'll have to be using 1.2.1 or newer.</p>
 
@@ -545,9 +610,9 @@ grails -Dserver.port=8082 run-app</p>
 <p>Grab the projects at</p>
 
 
-<p><code>
+<p>[bash]
 git clone git://ec2.nslms.com/grails/blog_example_modular
-</code></p>
+[/bash]</p>
 ]]></content>
   </entry>
   

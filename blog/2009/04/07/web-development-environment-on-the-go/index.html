@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Web development environment - "On The Go" - Ryans Octopress Blog</title>
+  <title>Web Development Environment - "on the Go" - Ryans Octopress Blog</title>
   <meta name="author" content="Ryan J. Geyer">
 
   
@@ -24,7 +24,7 @@
   <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -97,8 +97,6 @@
 
 
 <time datetime="2009-04-07T00:00:00-07:00" pubdate data-updated="true"></time>
-        
-         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
@@ -195,11 +193,15 @@
 
 <p>Of course, this presents a problem since the XAMPP install won&rsquo;t be looking in those directories for the databases and code.  So, to solve this I&rsquo;ve written another small batch script which lives in the &ldquo;shared&rdquo; directory.  This script uses the microsoft system tool <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx">Junction.exe</a> to create links of my shared directories in the location that XAMPP is looking.  The junction.exe file is in an &ldquo;Installers&rdquo; directory on the drive, though I should probably move it somewhere more logical.  Here&rsquo;s the script that deletes old junctions, and creates new ones.  You&rsquo;ll want to run this when you move from computer to computer, since the drive letter of the USB drive will likely change, and the junctions are to absolute paths.  I put this file in \ampp\shared and it uses relative paths, so that&rsquo;s important.</p>
 
-<p><figure class='code'><figcaption>refresh-junctions.bat </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div></pre></td><td class='main  bat'><pre><div class='line'><span class="k">for</span> <span class="n">/d</span> <span class="nv">%%A</span> in (htdocs*) <span class="k">do</span> <span class="s2">&quot;....\Portable\Program Files\junction\junction.exe&quot;</span> -d <span class="s2">&quot;..\xampp\%%A&quot;</span>
-</div><div class='line'><span class="k">for</span> <span class="n">/d</span> <span class="nv">%%A</span> in (htdocs*) <span class="k">do</span> <span class="s2">&quot;....\Portable\Program Files\junction\junction.exe&quot;</span> -s <span class="s2">&quot;..\xampp\%%A&quot;</span> <span class="s2">&quot;%%A&quot;</span>
-</div><div class='line'> </div><div class='line'><span class="k">for</span> <span class="n">/d</span> <span class="nv">%%A</span> in (mysql\data*) <span class="k">do</span> <span class="s2">&quot;....\Portable\Program Files\junction\junction.exe&quot;</span> -d <span class="s2">&quot;..\xampp\%%A&quot;</span>
-</div><div class='line'><span class="k">for</span> <span class="n">/d</span> <span class="nv">%%A</span> in (mysql\data*) <span class="k">do</span> <span class="s2">&quot;....\Portable\Program Files\junction\junction.exe&quot;</span> -s <span class="s2">&quot;..\xampp\%%A&quot;</span> <span class="s2">&quot;%%A&quot;</span>
-</div></pre></td></tr></table></div></figure></p>
+<h4>refresh-junctions.bat</h4>
+
+
+<p>[text toolbar=&ldquo;false&rdquo;]for /d %%A in (htdocs*) do &quot;&#8230;.\Portable\Program Files\junction\junction.exe&quot; -d &quot;..\xampp\%%A&quot;
+for /d %%A in (htdocs*) do &quot;&#8230;.\Portable\Program Files\junction\junction.exe&quot; -s &quot;..\xampp\%%A&quot; &quot;%%A&quot;</p>
+
+<p>for /d %%A in (mysql\data*) do &quot;&#8230;.\Portable\Program Files\junction\junction.exe&quot; -d &quot;..\xampp\%%A&quot;
+for /d %%A in (mysql\data*) do &quot;&#8230;.\Portable\Program Files\junction\junction.exe&quot; -s &quot;..\xampp\%%A&quot; &quot;%%A&quot;
+[/text]</p>
 
 <p>The requirement here of course is that you always create new sites by creating a directory in \ampp\shared\htdocs, and that any time you create a new database, you must move it&rsquo;s directory from \ampp\wampp\mysql\data&amp;lt;database&gt; to \ampp\shared\mysql\data&amp;lt;database&gt; then re-run the refresh-junctions.bat script while the MySQL server is not running.  But it&rsquo;s a fairly workable solution.</p>
 
@@ -243,24 +245,31 @@
 
 <p>My changes are to the X.bat and uninstall.bat files.  I instead called them ~cygwin-install-X.bat and ~cygwin-uninstall.bat and put them in the cygwin install directory at Portable\cygwin.  Here they are.</p>
 
-<p><figure class='code'><figcaption>~cygwin-install-X.bat </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div></pre></td><td class='main  bat'><pre><div class='line'><span class="k">for</span> <span class="n">/F</span> <span class="nv">%%A</span> in (<span class="s1">&#39;cd&#39;</span>) <span class="k">do</span> <span class="k">set</span> <span class="nv">WD</span><span class="o">=</span><span class="nv">%%A</span>
-</div><div class='line'>bin\mount -m <span class="p">|</span> <span class="n">bin</span>\sed s<span class="n">/mount/&quot;%WD%\/bin\/mount&quot;/</span> <span class="p">&gt;</span> <span class="n">tmp</span>\mount.log
-</div><div class='line'>bin\umount -c
-</div><div class='line'>bin\umount -A
-</div><div class='line'>bin\mount -bfu <span class="nv">%WD%</span>/ /
-</div><div class='line'>bin\mount -bfu <span class="nv">%WD%</span><span class="n">/bin</span> <span class="n">/usr/bin</span>
-</div><div class='line'>bin\mount -bfu <span class="nv">%WD%</span><span class="n">/lib</span> <span class="n">/usr/lib</span>
-</div><div class='line'> </div><div class='line'><span class="k">set</span> <span class="nv">path</span><span class="o">=</span><span class="nv">%path%</span>;<span class="nv">%WD%</span>\bin;<span class="nv">%WD%</span>\usr\X<span class="m">11</span>R<span class="m">6</span>\bin
-</div><div class='line'>start bin\rxvt.exe -title <span class="s2">&quot;&quot;</span> -bg <span class="s2">&quot;#fafad2&quot;</span> -fg <span class="s2">&quot;#000040&quot;</span> -color<span class="m">10</span> green<span class="m">4</span> -color<span class="m">14</span> brown -fn <span class="s2">&quot;Lucida Console-14&quot;</span> -geometry <span class="m">80</span>x<span class="m">58</span>+<span class="m">0</span>+<span class="m">0</span> -sl <span class="m">4000</span> -sr -tn rxvt -e <span class="n">/bin/bash</span> &mdash;login -i
-</div><div class='line'><span class="k">set</span> <span class="nv">DISPLAY</span><span class="o">=</span>localhost:0.<span class="m">0</span>
-</div><div class='line'>run usr\X<span class="m">11</span>R<span class="m">6</span>\bin\XWin -multiwindow -emulate<span class="m">3</span>buttons <span class="m">200</span>
-</div></pre></td></tr></table></div></figure></p>
+<h4>~cygwin-install-X.bat</h4>
 
-<p><figure class='code'><figcaption>~cygwin-uninstall.bat </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div></pre></td><td class='main  bat'><pre><div class='line'>bin\umount -c
-</div><div class='line'>bin\umount -A
-</div><div class='line'>bin\bash  tmp\mount.log
-</div><div class='line'>bin\rm    tmp\mount.log
-</div></pre></td></tr></table></div></figure></p>
+
+<p>[text]for /F %%A in (&lsquo;cd&rsquo;) do set WD=%%A
+bin\mount -m | bin\sed s/mount/&quot;%WD%\/bin\/mount&quot;/ &gt; tmp\mount.log
+bin\umount -c
+bin\umount -A
+bin\mount -bfu %WD%/ /
+bin\mount -bfu %WD%/bin /usr/bin
+bin\mount -bfu %WD%/lib /usr/lib</p>
+
+<p>set path=%path%;%WD%\bin;%WD%\usr\X11R6\bin
+start bin\rxvt.exe -title &quot;&quot; -bg &quot;#fafad2&quot; -fg &quot;#000040&quot; -color10 green4 -color14 brown -fn &quot;Lucida Console-14&quot; -geometry 80x58+0+0 -sl 4000 -sr -tn rxvt -e /bin/bash &mdash;login -i
+set DISPLAY=localhost:0.0
+run usr\X11R6\bin\XWin -multiwindow -emulate3buttons 200
+[/text]</p>
+
+<h4>~cygwin-uninstall.bat</h4>
+
+
+<p>[text]bin\umount -c
+bin\umount -A
+bin\bash  tmp\mount.log
+bin\rm    tmp\mount.log
+[/text]</p>
 
 <h2>Portable Source Control (SVN)</h2>
 
@@ -297,7 +306,7 @@
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/drupal/'>drupal</a>, <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/software-development/'>software development</a>
+    <a class='category' href='/blog/categories/software-development/'>Software Development</a>, <a class='category' href='/blog/categories/drupal/'>drupal</a>, <a class='category' href='/blog/categories/php/'>php</a>
   
 </span>
 
@@ -414,19 +423,6 @@
 
 </footer>
   
-
-<script type="text/javascript">
-      var disqus_shortname = 'randmu';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
 
 
 

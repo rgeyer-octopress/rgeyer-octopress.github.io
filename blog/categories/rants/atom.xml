@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: rants | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Rants | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/rants/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -49,7 +49,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Navigating Domain Registration - A tale of a near miss]]></title>
+    <title type="html"><![CDATA[Navigating Domain Registration - a Tale of a Near Miss]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/12/03/navigating-domain-registration-a-tale-of-a-near-miss/"/>
     <updated>2009-12-03T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/12/03/navigating-domain-registration-a-tale-of-a-near-miss</id>
@@ -91,7 +91,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[But I can't juggle]]></title>
+    <title type="html"><![CDATA[But I Can't Juggle]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/09/30/but-i-cant-juggle/"/>
     <updated>2009-09-30T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/09/30/but-i-cant-juggle</id>

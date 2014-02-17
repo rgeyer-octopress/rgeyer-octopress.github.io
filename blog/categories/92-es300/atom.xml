@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: 92 es300 | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: 92 ES300 | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/92-es300/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -164,7 +164,7 @@ What's worse, I probably didn't need to replace the cable at all.  As it turns o
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[How To - Headlight Oxidation Restoration]]></title>
+    <title type="html"><![CDATA[How to - Headlight Oxidation Restoration]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2010/09/14/how-to-headlight-oxidation-restoration/"/>
     <updated>2010-09-14T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2010/09/14/how-to-headlight-oxidation-restoration</id>

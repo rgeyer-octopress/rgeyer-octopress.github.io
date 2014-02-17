@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: photography | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Photography | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/photography/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -92,7 +92,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[You get what you pay for, or less!]]></title>
+    <title type="html"><![CDATA[You Get What You Pay for, or Less!]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/09/13/you-get-what-you-pay-for-or-less/"/>
     <updated>2009-09-13T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/09/13/you-get-what-you-pay-for-or-less</id>
@@ -127,7 +127,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Like a flash in the pan]]></title>
+    <title type="html"><![CDATA[Like a Flash in the Pan]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/09/07/like-a-flash-in-the-pan/"/>
     <updated>2009-09-07T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/09/07/like-a-flash-in-the-pan</id>
@@ -160,7 +160,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Of living insects, and dying electronics]]></title>
+    <title type="html"><![CDATA[Of Living Insects, and Dying Electronics]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/09/06/of-living-insects-and-dying-electronics/"/>
     <updated>2009-09-06T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/09/06/of-living-insects-and-dying-electronics</id>

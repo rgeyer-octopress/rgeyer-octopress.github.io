@@ -24,7 +24,7 @@
   <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -98,8 +98,6 @@
 
 <time datetime="2011-04-04T00:00:00-07:00" pubdate data-updated="true"></time>
         
-         | <a href="#disqus_thread">Comments</a>
-        
       </p>
     
   </header>
@@ -119,16 +117,18 @@
 
 <p>The first step to allowing IAM users to login is setting an alias for your AWS account.  Technically, this step is optional since you can use your account number to access the AWS console login for your account, but by providing a nickname for your account, you&rsquo;ll make it much easier for your users to remember.  It&rsquo;s the difference between <a href="https://123456789012.signin.aws.amazon.com/console/ec2/">https://123456789012.signin.aws.amazon.com/console/ec2/</a> and <a href="https://nickname.signin.aws.amazon.com/console/ec2/.">https://nickname.signin.aws.amazon.com/console/ec2/.</a>  Best of all, it&rsquo;s just a simple oneliner if you already have the IAM CLI tools installed.</p>
 
-<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>$ iam-accountaliascreate -a nickname
-</div></pre></td></tr></table></div></figure></p>
+<p>[bash]
+$ iam-accountaliascreate -a nickname
+[/bash]</p>
 
 <h2>Enabling login for a user</h2>
 
 
 <p>Once you&rsquo;ve created the account alias to make logging in much easier for your users, you&rsquo;ll want to grant them login permissions.  In this example, we&rsquo;re making the assumption there is already a user named <em>ryan.geyer</em>.</p>
 
-<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>$ iam-useraddloginprofile -u ryan.geyer -p supersecretpassword
-</div></pre></td></tr></table></div></figure></p>
+<p>[bash]
+$ iam-useraddloginprofile -u ryan.geyer -p supersecretpassword
+[/bash]</p>
 
 <p>That&rsquo;s it, now you can direct the user to <a href="https://nickname.signin.aws.amazon.com/console/ec2/">https://nickname.signin.aws.amazon.com/console/ec2/</a> and they can login with their own username and password.  Once they&rsquo;re logged in, they will only be able to access the AWS objects defined by the IAM policies for the groups to which they are assigned.</p>
 </div>
@@ -269,19 +269,6 @@
 
 </footer>
   
-
-<script type="text/javascript">
-      var disqus_shortname = 'randmu';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
 
 
 

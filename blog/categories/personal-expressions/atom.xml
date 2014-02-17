@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: personal expressions | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Personal Expressions | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/personal-expressions/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T20:50:04-08:00</updated>
+  <updated>2014-02-12T21:31:45-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Time is Money - What's your hourly rate?]]></title>
+    <title type="html"><![CDATA[Time Is Money - What's Your Hourly Rate?]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/02/16/time-is-money-whats-your-hourly-rate/"/>
     <updated>2011-02-16T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/02/16/time-is-money-whats-your-hourly-rate</id>
@@ -91,7 +91,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Today was a good day]]></title>
+    <title type="html"><![CDATA[Today Was a Good Day]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/01/05/today-was-a-good-day/"/>
     <updated>2011-01-05T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/01/05/today-was-a-good-day</id>
@@ -154,7 +154,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Sleep, sweet sweet sleep]]></title>
+    <title type="html"><![CDATA[Sleep, Sweet Sweet Sleep]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2010/08/01/sleep-sweet-sweet-sleep/"/>
     <updated>2010-08-01T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2010/08/01/sleep-sweet-sweet-sleep</id>
