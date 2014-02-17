@@ -15,10 +15,13 @@ Installing gems in the "normal way" does not work when you're trying to consume 
 
 Need to use the hack
 
-[code]
+```
+
 g = gem_package &quot;right_aws&quot; do
   action :nothing
 end
 
 g.run_action(:install)
-[/code]
+
+```
+

@@ -42,7 +42,7 @@ Since I've recently been engrossed in creating and refining reusable <a href="ht
 In order to do some tests, I created <a href="">ServerTemplate</a> which can be launched on AWS using RightScale that will immediately be able to start resizing images posted to it using my aforementioned PHP resizer.
 
 <h1>The experiment</h1>
-What I learned in short was...  This is a <b><em>HUGE</em></b> undertaking!  I also found that while any approach would probably be cost prohibitive, performing this resizing task using on-demand servers in the cloud is still the cheapest route by far.
+What I learned in short was...  This is a <strong><em>HUGE</em></strong> undertaking!  I also found that while any approach would probably be cost prohibitive, performing this resizing task using on-demand servers in the cloud is still the cheapest route by far.
 
 <h2>Assumptions</h2>
 First, some of the assertions for this exercise.

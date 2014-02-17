@@ -24,7 +24,7 @@ meta:
 ---
 As a new developer to Grails you're probably in awe over the vast number of very powerful plugins which are available to you.  Without writing a single line of your own code you can do all sorts of cool things like interact with Twitter, Facebook, Amazon's S3 storage system, Apple Push notifications, Spring Security, and the list goes on and on.  As of this writing there are 447 plugins available in the official Grails plugin repository.
 
-It is understandably tempting to leverage all of this code to simply bolt together an integrated solution which solves the problem you're facing.  But there is a downside to consuming someone else's code, particularly when you're doing test driven development.  Here are some things to consider before you pull the trigger and <i>grails install-plugin</i>.
+It is understandably tempting to leverage all of this code to simply bolt together an integrated solution which solves the problem you're facing.  But there is a downside to consuming someone else's code, particularly when you're doing test driven development.  Here are some things to consider before you pull the trigger and <em>grails install-plugin</em>.
 <!--more-->
 
 <h3>Using a cannon to kill a mosquito</h3>

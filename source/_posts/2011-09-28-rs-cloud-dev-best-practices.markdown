@@ -25,11 +25,11 @@ Let's face it, bigger is actually better when it comes to instance sizes.  Large
 
 I develop a lot for small Amazon EC2 t1.micro instances.  These instances are seriously restricted in terms of CPU capacity and memory.  As a result, simple activities like installing and compiling ruby gems can be very taxing and time consuming.  As a result, I tend to run significantly higher end instances while doing development.  Running a c1.medium in place of a t1.micro (when targetting a 32bit image) results in a lot less waiting while launching and terminating instances and testing configuration.  The added hourly cost of a faster instance should be more than offset by the optimized use of your time.
 
-<b>RS</b>
+<strong>RS</strong>
 Create a dev & prod RepoPath, keep dev at head/master
 
 
-<b>Any</b>
+<strong>Any</strong>
 Keep instances up and run scripts against them as operational scripts (or equiv).  On RS, use the rs_agent_dev only DL once option and dev/test on the box.
 
 Stop, Don't terminate.

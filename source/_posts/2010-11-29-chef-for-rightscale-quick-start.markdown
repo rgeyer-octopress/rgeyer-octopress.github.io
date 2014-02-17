@@ -40,9 +40,12 @@ While we're writing our recipes for use with RightScale we won't need to worry a
 
 I'm developing on a Mac and the only suitable installation method seems to be using Ruby Gems to install.  This mechanism should also work for most Linux and Debian machines which already have Ruby installed.
 
-[code lang="bash"]
+```
+
 sudo gem install chef
-[/code]
+
+```
+
 
 Be sure that you run this as root, or with sudo or Chef will get installed at ~/.gem and won't be in your $PATH or consequently accessible to other users.
 
@@ -53,7 +56,8 @@ First though, we need to configure knife.  Since we'll only be using knife to ac
 
 To create a simple configuration file for knife, just run knife config, and accept all of the defaults.
 
-[code lang="bash"]
+```
+
 knife configure
 No knife configuration file found
 Where should I put the config file? [~/.chef/knife.rb] 
@@ -76,7 +80,9 @@ WARN: Before generating instance data with Knife!
 WARN: 
 WARN: *****
 WARN: Configuration file written to /Users/rgeyer/.chef/knife.rb
-[/code]
+
+```
+
 
 You're safe to ignore the warnings since they only pertain to actually connecting to a Chef server, which we won't be doing.
 
@@ -100,53 +106,66 @@ The first step is to get the file structure of your Chef repository setup.  You 
 <h2>Clone the OpsCode repo</h2>
 OpsCode, (the folks behind Chef) have conveniently provided a public github repository that represents the skeleton of a fully operational Chef repository.  You can clone this repository to get you started.
 
-[code lang="bash"]
+```
+
 git clone git://github.com/opscode/chef-repo.git
-[/code]
+
+```
+
 
 Once you've cloned the skeleton repository, you'll want to configure git to use the new github repository we created earlier.  Here's where you'll use the SSH URL I told you to take note of.  Substitute that URL where you find &lt;ssh_url&gt; below.
 
-[code lang="bash"]
+```
+
 cd chef-repo/
 git remote rename origin opscode-github
 git remote add origin &lt;ssh_url&gt;
 git remote rm opscode-github
 git push origin master
-[/code]
+
+```
+
 
 <h2>Create cookbook</h2>
 With the repository skeleton all ready, we're going to want to create our first cookbook and add a recipe to it.
 
 Creating a cookbook is our first chance to use our freshly sharpened knife, like so.
 
-[code lang="bash"]
+```
+
 knife cookbook create my-first-cookbook -o cookbooks/
-[/code]
+
+```
+
 
 This should create a nice new cookbook skeleton directory at &lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook.
 
 With that done, let's put our first recipe in the cookbook.  Using your favorite IDE, create and save a file named <em>helloworld.rb</em> inside the new cookbook directory.
 
-<b>EDIT: Many have correctly pointed out that the hello world file should actually go in <i>&lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook/recipes</i>.  Thanks all for the feedback!</b>
+<strong>EDIT: Many have correctly pointed out that the hello world file should actually go in <em>&lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook/recipes</em>.  Thanks all for the feedback!</strong>
 
-<p class="filename">helloworld.rb</p>
-[ruby]
-log &quot;Hello World&quot;
-[/ruby]
+{% codeblock helloworld.rb lang:ruby %}
+
+log "Hello World"
+
+{% endcodeblock %}
+
 
 With the recipe created, we need to add it to our metadata file so that Chef and RightScale can know it's there.  Here's a copy of our default <em>metadata.rb</em> file.  The highlighted line is added to define the recipe we've added.
 
-<p class="filename">metadata.rb</p>
-[ruby highlight="8"]
-maintainer       &quot;YOUR_COMPANY_NAME&quot;
-maintainer_email &quot;YOUR_EMAIL&quot;
-license          &quot;All rights reserved&quot;
-description      &quot;Installs/Configures my-first-cookbook&quot;
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
-version          &quot;0.0.1&quot;
+{% codeblock metadata.rb lang:ruby mark:8 %}
 
-recipe &quot;my-first-cookbook::helloworld&quot;, &quot;My first recipe, prints Hello World to the RightScale dashboard&quot;
-[/ruby]
+maintainer       "YOUR_COMPANY_NAME"
+maintainer_email "YOUR_EMAIL"
+license          "All rights reserved"
+description      "Installs/Configures my-first-cookbook"
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
+version          "0.0.1"
+
+recipe "my-first-cookbook::helloworld", "My first recipe, prints Hello World to the RightScale dashboard"
+
+{% endcodeblock %}
+
 
 We only have one more step before we're ready to commit our new cookbook and recipe to our new git repository.
 
@@ -154,19 +173,25 @@ RightScale reads the metadata to determine which recipes are available in the re
 
 The contents of <em>metadata.json</em> are effectively the same as <em>metadata.rb</em>, but take heart, you only need maintain the <em>metadata.rb</em> file, then convert it using another Chef command.  To generate <em>metadata.json</em> from <em>metadata.rb</em> just run the following command.
 
-[code lang="bash"]
+```
+
 rake metadata
-[/code]
+
+```
+
 
 You can run this command either right at the root of your repository, or inside each cookbook.  If you run it from the root directory of your repository, it will convert all the metadata files in all of the cookbooks.
 
 Now we're ready to commit our repository and try out our new cookbook.
 
-[code lang="bash"]
+```
+
 git add cookbooks/
 git commit -am &quot;Added my-first-cookbook and helloworld recipe&quot;
 git push
-[/code]
+
+```
+
 
 <h1>RightScale Configuration</h1>
 I'm going to assume that you already have some familiarity with the RightScale dashboard, and creating things like ServerTemplates and RightScripts.
@@ -208,9 +233,12 @@ As stated before, Chef support in RightScale is still in Beta.  Because of this 
 <h2>Sanity Check Recipe</h2>
 If there are any syntax errors or anything else amiss in your repository, you'll find that not just the cookbook or recipe which you're working on is failing, but absolutely <strong><em>every</em></strong> recipe in your repo (or any other repo that's part of your RepoPath) will fail with this super informative error message.
 
-[code]
+```
+
 *ERROR&gt; Chef process failed with return code 1
-[/code]
+
+```
+
 
 Of course, you can also get that error message if you have some other problem in the recipe you're working on.
 

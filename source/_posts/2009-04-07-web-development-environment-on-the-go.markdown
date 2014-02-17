@@ -100,14 +100,16 @@ See my <a href="#File_Structure">File Structure</a> above..
 This way all of the web files for my individual websites and projects go in the "htdocs" directory, while the database data files go in the "mysql\data" directory, making them easy to find.
 
 Of course, this presents a problem since the XAMPP install won't be looking in those directories for the databases and code.  So, to solve this I've written another small batch script which lives in the "shared" directory.  This script uses the microsoft system tool <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx">Junction.exe</a> to create links of my shared directories in the location that XAMPP is looking.  The junction.exe file is in an "Installers" directory on the drive, though I should probably move it somewhere more logical.  Here's the script that deletes old junctions, and creates new ones.  You'll want to run this when you move from computer to computer, since the drive letter of the USB drive will likely change, and the junctions are to absolute paths.  I put this file in \ampp\shared and it uses relative paths, so that's important.
-<p class="filename">refresh-junctions.bat</p>
-[bash]
-for /d %%A in (htdocs\*) do &quot;..\..\Portable\Program Files\junction\junction.exe&quot; -d &quot;..\xampp\%%A&quot;
-for /d %%A in (htdocs\*) do &quot;..\..\Portable\Program Files\junction\junction.exe&quot; -s &quot;..\xampp\%%A&quot; &quot;%%A&quot;
+{% codeblock refresh-junctions.bat lang:bash %}
 
-for /d %%A in (mysql\data\*) do &quot;..\..\Portable\Program Files\junction\junction.exe&quot; -d &quot;..\xampp\%%A&quot;
-for /d %%A in (mysql\data\*) do &quot;..\..\Portable\Program Files\junction\junction.exe&quot; -s &quot;..\xampp\%%A&quot; &quot;%%A&quot;
-[/bash]
+for /d %%A in (htdocs\*) do "..\..\Portable\Program Files\junction\junction.exe" -d "..\xampp\%%A"
+for /d %%A in (htdocs\*) do "..\..\Portable\Program Files\junction\junction.exe" -s "..\xampp\%%A" "%%A"
+
+for /d %%A in (mysql\data\*) do "..\..\Portable\Program Files\junction\junction.exe" -d "..\xampp\%%A"
+for /d %%A in (mysql\data\*) do "..\..\Portable\Program Files\junction\junction.exe" -s "..\xampp\%%A" "%%A"
+
+{% endcodeblock %}
+
 
 The requirement here of course is that you always create new sites by creating a directory in \ampp\shared\htdocs, and that any time you create a new database, you must move it's directory from \ampp\wampp\mysql\data\&lt;database&gt; to \ampp\shared\mysql\data\&lt;database&gt; then re-run the refresh-junctions.bat script while the MySQL server is not running.  But it's a fairly workable solution.
 <h2>Integrated Development Environment (IDE)</h2>
@@ -137,10 +139,10 @@ On the surface it seems like it'd be easy to just install cygwin to a directory 
 
 My changes are to the X.bat and uninstall.bat files.  I instead called them ~cygwin-install-X.bat and ~cygwin-uninstall.bat and put them in the cygwin install directory at Portable\cygwin.  Here they are.
 
-<p class="filename">~cygwin-install-X.bat</p>
-[bash]
+{% codeblock ~cygwin-install-X.bat lang:bash %}
+
 for /F %%A in ('cd') do set WD=%%A
-bin\mount -m | bin\sed s/mount/&quot;%WD%\/bin\\/mount&quot;/ &gt; tmp\mount.log
+bin\mount -m | bin\sed s/mount/"%WD%\/bin\/mount"/ > tmp\mount.log
 bin\umount -c
 bin\umount -A
 bin\mount -bfu %WD%/ /
@@ -148,18 +150,22 @@ bin\mount -bfu %WD%/bin /usr/bin
 bin\mount -bfu %WD%/lib /usr/lib
 
 set path=%path%;%WD%\bin;%WD%\usr\X11R6\bin
-start bin\rxvt.exe -title &quot;&quot; -bg &quot;#fafad2&quot; -fg &quot;#000040&quot; -color10 green4 -color14 brown -fn &quot;Lucida Console-14&quot; -geometry 80x58+0+0 -sl 4000 -sr -tn rxvt -e /bin/bash --login -i
+start bin\rxvt.exe -title "" -bg "#fafad2" -fg "#000040" -color10 green4 -color14 brown -fn "Lucida Console-14" -geometry 80x58+0+0 -sl 4000 -sr -tn rxvt -e /bin/bash --login -i
 set DISPLAY=localhost:0.0
 run usr\X11R6\bin\XWin -multiwindow -emulate3buttons 200
-[/bash]
 
-<p class="filename">~cygwin-uninstall.bat</p>
-[bash]
+{% endcodeblock %}
+
+
+{% codeblock ~cygwin-uninstall.bat lang:bash %}
+
 bin\umount -c
 bin\umount -A
 bin\bash  tmp\mount.log
 bin\rm    tmp\mount.log
-[/bash]
+
+{% endcodeblock %}
+
 
 <h2>Portable Source Control (SVN)</h2>
 Lastly, you'll probably want to submit your changes to some sort of source control.  In my case I'm using Concurrent Versioning (CVS) or Subversion (SVN) for my source control, and both are handled nicely by the portable version of <a href="http://portableapps.com/node/13470" target="_blank">RapidSVN</a>.

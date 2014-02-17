@@ -21,15 +21,21 @@ This is significant because it allows you to give restricted access to users thr
 <h2>Naming your AWS account</h2>
 The first step to allowing IAM users to login is setting an alias for your AWS account.  Technically, this step is optional since you can use your account number to access the AWS console login for your account, but by providing a nickname for your account, you'll make it much easier for your users to remember.  It's the difference between https://123456789012.signin.aws.amazon.com/console/ec2/ and https://nickname.signin.aws.amazon.com/console/ec2/.  Best of all, it's just a simple oneliner if you already have the IAM CLI tools installed.
 
-[bash]
+```
+
 $ iam-accountaliascreate -a nickname
-[/bash]
+
+```
+
 
 <h2>Enabling login for a user</h2>
 Once you've created the account alias to make logging in much easier for your users, you'll want to grant them login permissions.  In this example, we're making the assumption there is already a user named <em>ryan.geyer</em>.
 
-[bash]
+```
+
 $ iam-useraddloginprofile -u ryan.geyer -p supersecretpassword
-[/bash]
+
+```
+
 
 That's it, now you can direct the user to https://nickname.signin.aws.amazon.com/console/ec2/ and they can login with their own username and password.  Once they're logged in, they will only be able to access the AWS objects defined by the IAM policies for the groups to which they are assigned.

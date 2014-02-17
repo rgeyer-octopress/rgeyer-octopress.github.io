@@ -46,37 +46,48 @@ Don't be too intimidated by the creating policies for more restrictive cases tho
 
 So lets write out our full control policy somewhere to disk so that we can use it later.
 
-<p class="filename">/tmp/fullcontrol_iam_policy.json</p>
-[code]
+{% codeblock /tmp/fullcontrol_iam_policy.json lang:bash %}
+
 {
-  &quot;Statement&quot;: [
+  "Statement": [
     {
-      &quot;Action&quot;: &quot;*&quot;,
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Resource&quot;: &quot;*&quot;
+      "Action": "*",
+      "Effect": "Allow",
+      "Resource": "*"
     }
   ]
 }
-[/code]
+
+{% endcodeblock %}
+
 
 With that out of the way, lets create a new IAM user group named <strong>RightScaleDash</strong> and upload our new policy file using the IAM CLI tools.
-[code]
+```
+
 $ iam-groupcreate -g RightScaleDash
 $ iam-groupuploadpolicy -g RightScaleDash -p FullControl -f /tmp/fullcontrol_iam_policy.json
-[/code]
+
+```
+
 
 Then, we create a new user named <strong>rsdash</strong> and assign the new user to the <strong>RightScaleDash</strong> group.  Note the <strong>-k</strong> parameter, this instructs the IAM CLI tools to create a new AWS key and secret pair.
-[code]
+```
+
 $ iam-usercreate -u rsdash -g RightScaleDash -k
-[/code]
+
+```
+
 
 Some things like signing your custom Amazon Machine Images (AMI's) require an x.509 certificate, and RightScale has a place for entering this type of "credential" as well, so we'll create a self signed one for this example.
-[code]
+```
+
 $ openssl genrsa -out iam.key 1024
 $ openssl req -new -key iam.key -out iam.csr
 $ openssl x509 -req -in iam.csr -signkey iam.key -out iam.pem
 $ iam-useraddcert -u rsdash -f iam.pem
-[/code]
+
+```
+
 
 That's really all there is to creating your service account.  Once you've set things up you aren't locked in to your choices either.  At any time you can go back and add or remove security policies using the IAM CLI.
 
