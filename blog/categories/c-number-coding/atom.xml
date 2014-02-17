@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: C# Coding | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: c# coding | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/c-number-coding/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-12T21:31:45-08:00</updated>
+  <updated>2014-02-16T21:03:27-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -68,7 +68,7 @@ if(System.ComponentModel.LicenseManager.UsageMode ==
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Microsoft's Tlbimp Creates Leaky BSTR Signatures]]></title>
+    <title type="html"><![CDATA[Microsoft's Tlbimp creates leaky BSTR signatures]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2008/03/13/microsofts-tlbimp-creates-leaky-bstr-signatures/"/>
     <updated>2008-03-13T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2008/03/13/microsofts-tlbimp-creates-leaky-bstr-signatures</id>

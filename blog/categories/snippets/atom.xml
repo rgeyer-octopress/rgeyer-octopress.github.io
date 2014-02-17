@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Snippets | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: snippets | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/snippets/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-12T21:31:45-08:00</updated>
+  <updated>2014-02-16T21:03:27-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Policy for an S3 Only Amazon IAM User]]></title>
+    <title type="html"><![CDATA[Policy for an S3 only Amazon IAM User]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
     <updated>2011-06-27T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
@@ -25,8 +25,9 @@
 
 <p>One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.</p>
 
-<p>[code]
-{
+<p>```</p>
+
+<p>{
   &ldquo;Statement&rdquo;: [</p>
 
 <pre><code>{
@@ -49,8 +50,9 @@
 </code></pre>
 
 <p>  ]
-}
-[/code]</p>
+}</p>
+
+<p>```</p>
 
 <p>This contains three simple IAM statements.</p>
 

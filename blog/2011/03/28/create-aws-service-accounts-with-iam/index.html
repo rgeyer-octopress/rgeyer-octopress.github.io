@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Create AWS Service Accounts With IAM - Ryans Octopress Blog</title>
+  <title>Create AWS Service Accounts with IAM - Ryans Octopress Blog</title>
   <meta name="author" content="Ryan J. Geyer">
 
   
@@ -24,7 +24,7 @@
   <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -98,6 +98,8 @@
 
 <time datetime="2011-03-28T00:00:00-07:00" pubdate data-updated="true"></time>
         
+         | <a href="#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -147,42 +149,32 @@
 
 <p>So lets write out our full control policy somewhere to disk so that we can use it later.</p>
 
-<p>[code]
-{
-  &quot;Statement&quot;: [</p>
-
-<pre><code>{
-  &amp;quot;Action&amp;quot;: &amp;quot;*&amp;quot;,
-  &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;,
-  &amp;quot;Resource&amp;quot;: &amp;quot;*&amp;quot;
-}
-</code></pre>
-
-<p>  ]
-}
-[/code]</p>
-
-<p class="filename">/tmp/fullcontrol_iam_policy.json</p>
-
+<p><figure class='code'><figcaption>/tmp/fullcontrol_iam_policy.json </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div></pre></td><td class='main  json'><pre><div class='line'><span class="p">{</span>
+</div><div class='line'>  <span class="nt">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+</div><div class='line'>    <span class="p">{</span>
+</div><div class='line'>      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="s2">&quot;<em>&quot;</span><span class="p">,</span>
+</div><div class='line'>      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+</div><div class='line'>      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;</em>&quot;</span>
+</div><div class='line'>    <span class="p">}</span>
+</div><div class='line'>  <span class="p">]</span>
+</div><div class='line'><span class="p">}</span>
+</div></pre></td></tr></table></div></figure></p>
 
 <p>With that out of the way, lets create a new IAM user group named <strong>RightScaleDash</strong> and upload our new policy file using the IAM CLI tools.
-[code]
-$ iam-groupcreate -g RightScaleDash
-$ iam-groupuploadpolicy -g RightScaleDash -p FullControl -f /tmp/fullcontrol_iam_policy.json
-[/code]</p>
+<figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>$ iam-groupcreate -g RightScaleDash
+</div><div class='line'>$ iam-groupuploadpolicy -g RightScaleDash -p FullControl -f /tmp/fullcontrol_iam_policy.json
+</div></pre></td></tr></table></div></figure></p>
 
 <p>Then, we create a new user named <strong>rsdash</strong> and assign the new user to the <strong>RightScaleDash</strong> group.  Note the <strong>-k</strong> parameter, this instructs the IAM CLI tools to create a new AWS key and secret pair.
-[code]
-$ iam-usercreate -u rsdash -g RightScaleDash -k
-[/code]</p>
+<figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>$ iam-usercreate -u rsdash -g RightScaleDash -k
+</div></pre></td></tr></table></div></figure></p>
 
 <p>Some things like signing your custom Amazon Machine Images (AMI&rsquo;s) require an x.509 certificate, and RightScale has a place for entering this type of &ldquo;credential&rdquo; as well, so we&rsquo;ll create a self signed one for this example.
-[code]
-$ openssl genrsa -out iam.key 1024
-$ openssl req -new -key iam.key -out iam.csr
-$ openssl x509 -req -in iam.csr -signkey iam.key -out iam.pem
-$ iam-useraddcert -u rsdash -f iam.pem
-[/code]</p>
+<figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>$ openssl genrsa -out iam.key 1024
+</div><div class='line'>$ openssl req -new -key iam.key -out iam.csr
+</div><div class='line'>$ openssl x509 -req -in iam.csr -signkey iam.key -out iam.pem
+</div><div class='line'>$ iam-useraddcert -u rsdash -f iam.pem
+</div></pre></td></tr></table></div></figure></p>
 
 <p>That&rsquo;s really all there is to creating your service account.  Once you&rsquo;ve set things up you aren&rsquo;t locked in to your choices either.  At any time you can go back and add or remove security policies using the IAM CLI.</p>
 
@@ -226,7 +218,7 @@ $ iam-useraddcert -u rsdash -f iam.pem
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/cloud-computing/'>Cloud computing</a>
+    <a class='category' href='/blog/categories/cloud-computing/'>cloud computing</a>
   
 </span>
 
@@ -343,6 +335,19 @@ $ iam-useraddcert -u rsdash -f iam.pem
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'randmu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

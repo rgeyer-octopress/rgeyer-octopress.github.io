@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Music | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: music | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/music/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-12T21:31:45-08:00</updated>
+  <updated>2014-02-16T21:03:27-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Music and the Boys]]></title>
+    <title type="html"><![CDATA[Music and the boys]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/02/02/music-and-the-boys/"/>
     <updated>2011-02-02T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/02/02/music-and-the-boys</id>

@@ -24,7 +24,7 @@
   <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -98,6 +98,8 @@
 
 <time datetime="2010-11-29T00:00:00-08:00" pubdate data-updated="true"></time>
         
+         | <a href="#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -123,9 +125,8 @@
 
 <p>I&rsquo;m developing on a Mac and the only suitable installation method seems to be using Ruby Gems to install.  This mechanism should also work for most Linux and Debian machines which already have Ruby installed.</p>
 
-<p>[code lang=&ldquo;bash&rdquo;]
-sudo gem install chef
-[/code]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>sudo gem install chef
+</div></pre></td></tr></table></div></figure></p>
 
 <p>Be sure that you run this as root, or with sudo or Chef will get installed at ~/.gem and won&rsquo;t be in your $PATH or consequently accessible to other users.</p>
 
@@ -138,30 +139,29 @@ sudo gem install chef
 
 <p>To create a simple configuration file for knife, just run knife config, and accept all of the defaults.</p>
 
-<p>[code lang=&ldquo;bash&rdquo;]
-knife configure
-No knife configuration file found
-Where should I put the config file? [~/.chef/knife.rb]
-Please enter the chef server URL: [<a href="http://localhost:4000">http://localhost:4000</a>]
-Please enter an existing username or clientname for the API: [rgeyer]
-Please enter the validation clientname: [chef-validator]
-Please enter the location of the validation key: [/etc/chef/validation.pem]
-Please enter the path to a chef repository (or leave blank):
-WARN: <strong><strong><em>
-WARN:
-WARN: You must place your client key in:
-WARN:   /Users/rgeyer/.chef/rgeyer.pem
-WARN: Before running commands with Knife!
-WARN:
-WARN: </em></strong></strong>
-WARN:
-WARN: You must place your validation key in:
-WARN:   /etc/chef/validation.pem
-WARN: Before generating instance data with Knife!
-WARN:
-WARN: *****
-WARN: Configuration file written to /Users/rgeyer/.chef/knife.rb
-[/code]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>knife configure
+</div><div class='line'>No knife configuration file found
+</div><div class='line'>Where should I put the config file? [~/.chef/knife.rb]
+</div><div class='line'>Please enter the chef server URL: [<a href="http://localhost:4000">http://localhost:4000</a>]
+</div><div class='line'>Please enter an existing username or clientname for the API: [rgeyer]
+</div><div class='line'>Please enter the validation clientname: [chef-validator]
+</div><div class='line'>Please enter the location of the validation key: [/etc/chef/validation.pem]
+</div><div class='line'>Please enter the path to a chef repository (or leave blank):
+</div><div class='line'>WARN: <strong><strong><em>
+</div><div class='line'>WARN:
+</div><div class='line'>WARN: You must place your client key in:
+</div><div class='line'>WARN:   /Users/rgeyer/.chef/rgeyer.pem
+</div><div class='line'>WARN: Before running commands with Knife!
+</div><div class='line'>WARN:
+</div><div class='line'>WARN: </em></strong></strong>
+</div><div class='line'>WARN:
+</div><div class='line'>WARN: You must place your validation key in:
+</div><div class='line'>WARN:   /etc/chef/validation.pem
+</div><div class='line'>WARN: Before generating instance data with Knife!
+</div><div class='line'>WARN:
+</div><div class='line'>WARN: *****
+</div><div class='line'>WARN: Configuration file written to /Users/rgeyer/.chef/knife.rb
+</div></pre></td></tr></table></div></figure></p>
 
 <p>You&rsquo;re safe to ignore the warnings since they only pertain to actually connecting to a Chef server, which we won&rsquo;t be doing.</p>
 
@@ -193,19 +193,17 @@ WARN: Configuration file written to /Users/rgeyer/.chef/knife.rb
 
 <p>OpsCode, (the folks behind Chef) have conveniently provided a public github repository that represents the skeleton of a fully operational Chef repository.  You can clone this repository to get you started.</p>
 
-<p>[code lang=&ldquo;bash&rdquo;]
-git clone git://github.com/opscode/chef-repo.git
-[/code]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>git clone git://github.com/opscode/chef-repo.git
+</div></pre></td></tr></table></div></figure></p>
 
 <p>Once you&rsquo;ve cloned the skeleton repository, you&rsquo;ll want to configure git to use the new github repository we created earlier.  Here&rsquo;s where you&rsquo;ll use the SSH URL I told you to take note of.  Substitute that URL where you find &lt;ssh_url&gt; below.</p>
 
-<p>[code lang=&ldquo;bash&rdquo;]
-cd chef-repo/
-git remote rename origin opscode-github
-git remote add origin &lt;ssh_url&gt;
-git remote rm opscode-github
-git push origin master
-[/code]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>cd chef-repo/
+</div><div class='line'>git remote rename origin opscode-github
+</div><div class='line'>git remote add origin &lt;ssh_url&gt;
+</div><div class='line'>git remote rm opscode-github
+</div><div class='line'>git push origin master
+</div></pre></td></tr></table></div></figure></p>
 
 <h2>Create cookbook</h2>
 
@@ -214,38 +212,28 @@ git push origin master
 
 <p>Creating a cookbook is our first chance to use our freshly sharpened knife, like so.</p>
 
-<p>[code lang=&ldquo;bash&rdquo;]
-knife cookbook create my-first-cookbook -o cookbooks/
-[/code]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>knife cookbook create my-first-cookbook -o cookbooks/
+</div></pre></td></tr></table></div></figure></p>
 
 <p>This should create a nice new cookbook skeleton directory at &lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook.</p>
 
 <p>With that done, let&rsquo;s put our first recipe in the cookbook.  Using your favorite IDE, create and save a file named <em>helloworld.rb</em> inside the new cookbook directory.</p>
 
-<p><b>EDIT: Many have correctly pointed out that the hello world file should actually go in <i>&lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook/recipes</i>.  Thanks all for the feedback!</b></p>
+<p><strong>EDIT: Many have correctly pointed out that the hello world file should actually go in <em>&lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook/recipes</em>.  Thanks all for the feedback!</strong></p>
 
-<p class="filename">helloworld.rb</p>
-
-
-<p>[code lang=&ldquo;ruby&rdquo;]
-log &quot;Hello World&quot;
-[/code]</p>
+<p><figure class='code'><figcaption>helloworld.rb </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div></pre></td><td class='main  rb'><pre><div class='line'><span class="n">log</span> <span class="s2">&quot;Hello World&quot;</span>
+</div></pre></td></tr></table></div></figure></p>
 
 <p>With the recipe created, we need to add it to our metadata file so that Chef and RightScale can know it&rsquo;s there.  Here&rsquo;s a copy of our default <em>metadata.rb</em> file.  The highlighted line is added to define the recipe we&rsquo;ve added.</p>
 
-<p class="filename">metadata.rb</p>
-
-
-<p>[code lang=&ldquo;ruby&rdquo; highlight=&ldquo;8&rdquo;]
-maintainer       &quot;YOUR_COMPANY_NAME&quot;
-maintainer_email &quot;YOUR_EMAIL&quot;
-license          &quot;All rights reserved&quot;
-description      &quot;Installs/Configures my-first-cookbook&quot;
-long_description IO.read(File.join(File.dirname(<strong>FILE</strong>), &lsquo;README.rdoc&rsquo;))
-version          &quot;0.0.1&quot;</p>
-
-<p>recipe &quot;my-first-cookbook::helloworld&quot;, &quot;My first recipe, prints Hello World to the RightScale dashboard&quot;
-[/code]</p>
+<p><figure class='code'><figcaption>metadata.rb </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div></pre></td><td class='main  rb'><pre><div class='line'><span class="n">maintainer</span>       <span class="s2">&quot;YOUR_COMPANY_NAME&quot;</span>
+</div><div class='line'><span class="n">maintainer_email</span> <span class="s2">&quot;YOUR_EMAIL&quot;</span>
+</div><div class='line'><span class="n">license</span>          <span class="s2">&quot;All rights reserved&quot;</span>
+</div><div class='line'><span class="n">description</span>      <span class="s2">&quot;Installs/Configures my-first-cookbook&quot;</span>
+</div><div class='line'><span class="n">long_description</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp"><strong>FILE</strong></span><span class="p">),</span> <span class="s1">&#39;README.rdoc&#39;</span><span class="p">))</span>
+</div><div class='line'><span class="n">version</span>          <span class="s2">&quot;0.0.1&quot;</span>
+</div><div class='line'> </div><div class='line'><span class="n">recipe</span> <span class="s2">&quot;my-first-cookbook::helloworld&quot;</span><span class="p">,</span> <span class="s2">&quot;My first recipe, prints Hello World to the RightScale dashboard&quot;</span>
+</div></pre></td></tr></table></div></figure></p>
 
 <p>We only have one more step before we&rsquo;re ready to commit our new cookbook and recipe to our new git repository.</p>
 
@@ -253,19 +241,17 @@ version          &quot;0.0.1&quot;</p>
 
 <p>The contents of <em>metadata.json</em> are effectively the same as <em>metadata.rb</em>, but take heart, you only need maintain the <em>metadata.rb</em> file, then convert it using another Chef command.  To generate <em>metadata.json</em> from <em>metadata.rb</em> just run the following command.</p>
 
-<p>[code lang=&ldquo;bash&rdquo;]
-rake metadata
-[/code]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>rake metadata
+</div></pre></td></tr></table></div></figure></p>
 
 <p>You can run this command either right at the root of your repository, or inside each cookbook.  If you run it from the root directory of your repository, it will convert all the metadata files in all of the cookbooks.</p>
 
 <p>Now we&rsquo;re ready to commit our repository and try out our new cookbook.</p>
 
-<p>[code lang=&ldquo;bash&rdquo;]
-git add cookbooks/
-git commit -am &quot;Added my-first-cookbook and helloworld recipe&quot;
-git push
-[/code]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>git add cookbooks/
+</div><div class='line'>git commit -am &quot;Added my-first-cookbook and helloworld recipe&quot;
+</div><div class='line'>git push
+</div></pre></td></tr></table></div></figure></p>
 
 <h1>RightScale Configuration</h1>
 
@@ -319,9 +305,8 @@ git push
 
 <p>If there are any syntax errors or anything else amiss in your repository, you&rsquo;ll find that not just the cookbook or recipe which you&rsquo;re working on is failing, but absolutely <strong><em>every</em></strong> recipe in your repo (or any other repo that&rsquo;s part of your RepoPath) will fail with this super informative error message.</p>
 
-<p>[code]
-*ERROR&gt; Chef process failed with return code 1
-[/code]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>*ERROR&gt; Chef process failed with return code 1
+</div></pre></td></tr></table></div></figure></p>
 
 <p>Of course, you can also get that error message if you have some other problem in the recipe you&rsquo;re working on.</p>
 
@@ -364,7 +349,7 @@ git push
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/cloud-computing/'>Cloud computing</a>
+    <a class='category' href='/blog/categories/cloud-computing/'>cloud computing</a>
   
 </span>
 
@@ -481,6 +466,19 @@ git push
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'randmu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

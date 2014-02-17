@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>RightScriptDiff - Maintain Your RightScripts Locally - Ryans Octopress Blog</title>
+  <title>RightScriptDiff - Maintain your RightScripts Locally - Ryans Octopress Blog</title>
   <meta name="author" content="Ryan J. Geyer">
 
   
@@ -24,7 +24,7 @@
   <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -98,6 +98,8 @@
 
 <time datetime="2010-08-02T00:00:00-07:00" pubdate data-updated="true"></time>
         
+         | <a href="#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -120,80 +122,59 @@
 
 <p>Here&rsquo;s an example of a successful run;</p>
 
-<p>[bash]
-Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
-Please enter the path to scripts stored locally&hellip;
-<em>.sh
-Grabbing all RightScripts for user: </em><strong><strong> on account: </strong></strong>*.  Be patient, this could take a while&hellip;
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</p>
-
-<pre><code>                             Dload  Upload   Total   Spent    Left  Speed
-</code></pre>
-
-<p>100  369k  100  369k    0     0   148k      0  0:00:02  0:00:02 &mdash;:&mdash;:&mdash;  182k
-Found 1 nodes:
-&mdash; NODE &mdash;</p>
-
-<p>Local copy of 236067-LDAP Install OpenLDAP.sh does not differ from RightScale copy.
-Found 1 nodes:
-&mdash; NODE &mdash;</p>
-
-<p>Local copy of 237784-LDAP Create Database.sh does not differ from RightScale copy.
-Found 1 nodes:
-&mdash; NODE &mdash;</p>
-
-<p>Local copy of 237788-LDAP Set Config Admin Details.sh does not differ from RightScale copy.
-Found 1 nodes:
-&mdash; NODE &mdash;</p>
-
-<p>Local copy of 237789-LDAP Tools Install.sh does not differ from RightScale copy.
-Found 1 nodes:
-&mdash; NODE &mdash;</p>
-
-<p>Local copy of 238408-LDAP Enable Schema(s).sh does not differ from RightScale copy.
-Found 1 nodes:
-&mdash; NODE &mdash;</p>
-
-<p>Local copy of 238454-LDAP DB S3 Backup.sh does not differ from RightScale copy.
-Found 1 nodes:
-&mdash; NODE &mdash;</p>
-
-<p>Local copy of 238480-LDAP DB S3 Restore.sh does not differ from RightScale copy.
-Found 1 nodes:
-&mdash; NODE &mdash;</p>
-
-<p>Local copy of 238481-LDAP DB S3 Enable Continuous Backup.sh does not differ from RightScale copy.
-Found 1 nodes:
-&mdash; NODE &mdash;</p>
-
-<p>Local copy of 238497-LDAP DB S3 Disable Continuous Backup.sh does not differ from RightScale copy.
-[/bash]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div><div data-line='29' class='line-number'></div><div data-line='30' class='line-number'></div><div data-line='31' class='line-number'></div><div data-line='32' class='line-number'></div><div data-line='33' class='line-number'></div><div data-line='34' class='line-number'></div><div data-line='35' class='line-number'></div><div data-line='36' class='line-number'></div><div data-line='37' class='line-number'></div><div data-line='38' class='line-number'></div><div data-line='39' class='line-number'></div><div data-line='40' class='line-number'></div><div data-line='41' class='line-number'></div><div data-line='42' class='line-number'></div><div data-line='43' class='line-number'></div><div data-line='44' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
+</div><div class='line'>Please enter the path to scripts stored locally&hellip;
+</div><div class='line'><em>.sh
+</div><div class='line'>Grabbing all RightScripts for user: </em><strong><strong> on account: </strong></strong>*.  Be patient, this could take a while&hellip;
+</div><div class='line'>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+</div><div class='line'>                                 Dload  Upload   Total   Spent    Left  Speed
+</div><div class='line'>100  369k  100  369k    0     0   148k      0  0:00:02  0:00:02 &mdash;:&mdash;:&mdash;  182k
+</div><div class='line'>Found 1 nodes:
+</div><div class='line'>&mdash; NODE &mdash;
+</div><div class='line'> </div><div class='line'>Local copy of 236067-LDAP Install OpenLDAP.sh does not differ from RightScale copy.
+</div><div class='line'>Found 1 nodes:
+</div><div class='line'>&mdash; NODE &mdash;
+</div><div class='line'> </div><div class='line'>Local copy of 237784-LDAP Create Database.sh does not differ from RightScale copy.
+</div><div class='line'>Found 1 nodes:
+</div><div class='line'>&mdash; NODE &mdash;
+</div><div class='line'> </div><div class='line'>Local copy of 237788-LDAP Set Config Admin Details.sh does not differ from RightScale copy.
+</div><div class='line'>Found 1 nodes:
+</div><div class='line'>&mdash; NODE &mdash;
+</div><div class='line'> </div><div class='line'>Local copy of 237789-LDAP Tools Install.sh does not differ from RightScale copy.
+</div><div class='line'>Found 1 nodes:
+</div><div class='line'>&mdash; NODE &mdash;
+</div><div class='line'> </div><div class='line'>Local copy of 238408-LDAP Enable Schema(s).sh does not differ from RightScale copy.
+</div><div class='line'>Found 1 nodes:
+</div><div class='line'>&mdash; NODE &mdash;
+</div><div class='line'> </div><div class='line'>Local copy of 238454-LDAP DB S3 Backup.sh does not differ from RightScale copy.
+</div><div class='line'>Found 1 nodes:
+</div><div class='line'>&mdash; NODE &mdash;
+</div><div class='line'> </div><div class='line'>Local copy of 238480-LDAP DB S3 Restore.sh does not differ from RightScale copy.
+</div><div class='line'>Found 1 nodes:
+</div><div class='line'>&mdash; NODE &mdash;
+</div><div class='line'> </div><div class='line'>Local copy of 238481-LDAP DB S3 Enable Continuous Backup.sh does not differ from RightScale copy.
+</div><div class='line'>Found 1 nodes:
+</div><div class='line'>&mdash; NODE &mdash;
+</div><div class='line'> </div><div class='line'>Local copy of 238497-LDAP DB S3 Disable Continuous Backup.sh does not differ from RightScale copy.
+</div></pre></td></tr></table></div></figure></p>
 
 <p>This is what it looks like when the scripts differ;</p>
 
-<p>[bash]
-Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
-Please enter the path to scripts stored locally&hellip;
-237784<em>.sh
-Grabbing all RightScripts for user: </em><strong><strong> on account: </strong></strong>*.  Be patient, this could take a while&hellip;
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</p>
-
-<pre><code>                             Dload  Upload   Total   Spent    Left  Speed
-</code></pre>
-
-<p>100  369k  100  369k    0     0   172k      0  0:00:02  0:00:02 &mdash;:&mdash;:&mdash;  220k
-Found 1 nodes:
-&mdash; NODE &mdash;</p>
-
-<p>Local copy of 237784-LDAP Create Database.sh differs from RightScale copy.. Diff below..</p>
-
-<pre><code>                              &amp;gt;  sed -i &amp;quot;s/@@DATABASE_TYPE@@/$DATABASE_TYPE/g&amp;quot; $tmp_file
-                              &amp;gt;  sed -i &amp;quot;s/@@DB_CHECKPOINT@@/$DB_CHECKPOINT/g&amp;quot; $tmp_file
-                              &amp;lt;
-</code></pre>
-
-<p>echo &quot;Finishing up&hellip;&quot;
-[/bash]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
+</div><div class='line'>Please enter the path to scripts stored locally&hellip;
+</div><div class='line'>237784<em>.sh
+</div><div class='line'>Grabbing all RightScripts for user: </em><strong><strong> on account: </strong></strong>*.  Be patient, this could take a while&hellip;
+</div><div class='line'>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+</div><div class='line'>                                 Dload  Upload   Total   Spent    Left  Speed
+</div><div class='line'>100  369k  100  369k    0     0   172k      0  0:00:02  0:00:02 &mdash;:&mdash;:&mdash;  220k
+</div><div class='line'>Found 1 nodes:
+</div><div class='line'>&mdash; NODE &mdash;
+</div><div class='line'> </div><div class='line'>Local copy of 237784-LDAP Create Database.sh differs from RightScale copy.. Diff below..
+</div><div class='line'>                                  &gt;  sed -i &quot;s/@@DATABASE_TYPE@@/$DATABASE_TYPE/g&quot; $tmp_file
+</div><div class='line'>                                  &gt;  sed -i &quot;s/@@DB_CHECKPOINT@@/$DB_CHECKPOINT/g&quot; $tmp_file
+</div><div class='line'>                                  &lt;
+</div><div class='line'>echo &quot;Finishing up&hellip;&quot;
+</div></pre></td></tr></table></div></figure></p>
 
 <p>As mentioned above RightScriptDiff requires three values, your RightScale account email address, password, and account number.  You might notice that in both instances above I did not need to provide them and was prompted only for the path to my scripts.  This is because I pre-defined my credentials and account before hand.   There are a couple ways to provide this to RightScriptDiff, you can call rsDiff.sh with parameters (-e|&mdash;email=)&lt;email-address&gt; (-p|&mdash;password=)&lt;password&gt; (-a|&mdash;account_id=)&lt;account_id&gt;, or you can rename the supplied rsDiffAuth.sh.example file, to rsDiffAuth.sh and put your credentials in there.</p>
 
@@ -201,15 +182,13 @@ Found 1 nodes:
 
 <p>You can download RightScriptDiff by running the following command.  I wrote it on OSX 10.6.4, but it should work on most flavors of linux as well.</p>
 
-<p>[bash]
-svn export <a href="https://linode.nslms.com/svn_ro/RightScriptDiff/">https://linode.nslms.com/svn_ro/RightScriptDiff/</a>
-[/bash]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>svn export <a href="https://linode.nslms.com/svn_ro/RightScriptDiff/">https://linode.nslms.com/svn_ro/RightScriptDiff/</a>
+</div></pre></td></tr></table></div></figure></p>
 
 <p><em><strong><span style="color: #ff0000;">* UPDATE: RightScriptDiff has a new home</span></strong></em></p>
 
-<p>[bash]
-git clone git://github.com/rgeyer/RightScriptDiff.git
-[/bash]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>git clone git://github.com/rgeyer/RightScriptDiff.git
+</div></pre></td></tr></table></div></figure></p>
 
 <p>Chances are pretty good I&rsquo;ll create a landing page for this, particularly if it becomes popular, so stay tuned here for updates!</p>
 </div>
@@ -239,7 +218,7 @@ git clone git://github.com/rgeyer/RightScriptDiff.git
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/cloud-computing/'>Cloud computing</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
+    <a class='category' href='/blog/categories/cloud-computing/'>cloud computing</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
   
 </span>
 
@@ -356,6 +335,19 @@ git clone git://github.com/rgeyer/RightScriptDiff.git
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'randmu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

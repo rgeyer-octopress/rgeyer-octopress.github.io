@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan J. Geyer">
 
   
-  <meta name="description" content="In my &quot;Day Job&quot;, we design and build our applications using Microsoft technologies. In particular, we&#8217;re using C#, Silverlight, and &hellip;">
+  <meta name="description" content="In my &quot;Day Job&quot;, we design and build our applications using Microsoft technologies. In particular, we're using C#, Silverlight, and IIS to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +24,7 @@
   <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -98,22 +98,24 @@
 
 <time datetime="2010-02-05T00:00:00-08:00" pubdate data-updated="true"></time>
         
+         | <a href="#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>In my &quot;Day Job&quot;, we design and build our applications using Microsoft technologies.  In particular, we&#8217;re using C#, Silverlight, and IIS to build and deploy our web applications.  This makes good sense because the vendors we use are well versed in the Microsoft technology, and like the IT infrastructure of a lot of medium and large companies Microsoft solutions are at the forefront.  It&#8217;s becoming apparent though that we&#8217;re going to have to consider our options and possibly embrace a different technology stack to properly scale and support the applications we&#8217;re building.</p>
+<div class="entry-content"><p>In my &quot;Day Job&quot;, we design and build our applications using Microsoft technologies.  In particular, we're using C#, Silverlight, and IIS to build and deploy our web applications.  This makes good sense because the vendors we use are well versed in the Microsoft technology, and like the IT infrastructure of a lot of medium and large companies Microsoft solutions are at the forefront.  It's becoming apparent though that we're going to have to consider our options and possibly embrace a different technology stack to properly scale and support the applications we're building.</p>
 
 
 
 
-<p>While I knew that Java servlets and the Spring Framework were the answers, credit goes to my boss <a href="http://www.linkedin.com/profile?viewProfile=&key=11181889">Scott Ellis</a> for really doing a deep dive into what technologies are on offer, and coming up with using Grails and Groovy as the best solution for us.  Which brings me to the reason for this blog post.  I&#8217;ve been spending some time playing around with Grails and Groovy, and familiarizing myself with the technology and what is on offer.  I intend to do a series of posts here about my discovery process, what problems I encounter, and how I resolve them.</p>
+<p>While I knew that Java servlets and the Spring Framework were the answers, credit goes to my boss <a href="http://www.linkedin.com/profile?viewProfile=&key=11181889">Scott Ellis</a> for really doing a deep dive into what technologies are on offer, and coming up with using Grails and Groovy as the best solution for us.  Which brings me to the reason for this blog post.  I've been spending some time playing around with Grails and Groovy, and familiarizing myself with the technology and what is on offer.  I intend to do a series of posts here about my discovery process, what problems I encounter, and how I resolve them.</p>
 
 
 
 
-<p>From the searching I&#8217;ve had to do in order to get answers or better understanding about the challenges I&#8217;ve faced, I think I have a chance to be a real resource to others who are just starting out with Grails and Groovy.  What&#8217;s more I&#8217;m writing from the perspective of a relative newbie to the Java world.  Stay tuned as you follow my journey into Grails and Groovy. <i><b>*Spoiler alert* - I like it, a LOT!</b></i></p>
+<p>From the searching I've had to do in order to get answers or better understanding about the challenges I've faced, I think I have a chance to be a real resource to others who are just starting out with Grails and Groovy.  What's more I'm writing from the perspective of a relative newbie to the Java world.  Stay tuned as you follow my journey into Grails and Groovy. <em><strong>*Spoiler alert* - I like it, a LOT!</strong></em></p>
 
 </div>
 
@@ -142,7 +144,7 @@
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/grails-slash-groovy/'>Grails/Groovy</a>, <a class='category' href='/blog/categories/reviews/'>Reviews</a>
+    <a class='category' href='/blog/categories/grails-slash-groovy/'>grails/groovy</a>, <a class='category' href='/blog/categories/reviews/'>reviews</a>
   
 </span>
 
@@ -259,6 +261,19 @@
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'randmu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

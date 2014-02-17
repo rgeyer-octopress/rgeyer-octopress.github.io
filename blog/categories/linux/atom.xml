@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linux | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: linux | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-12T21:31:45-08:00</updated>
+  <updated>2014-02-16T21:03:27-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How to Host Wordpress for Free]]></title>
+    <title type="html"><![CDATA[How to host Wordpress for Free]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/02/14/how-to-host-wordpress-for-free/"/>
     <updated>2011-02-14T00:00:00-08:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/02/14/how-to-host-wordpress-for-free</id>
@@ -117,7 +117,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[How to Resize Billions of Images in the Cloud]]></title>
+    <title type="html"><![CDATA[How to resize billions of images in the cloud]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud/"/>
     <updated>2010-11-01T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud</id>
@@ -158,7 +158,7 @@
 <h1>The experiment</h1>
 
 
-<p>What I learned in short was&hellip;  This is a <b><em>HUGE</em></b> undertaking!  I also found that while any approach would probably be cost prohibitive, performing this resizing task using on-demand servers in the cloud is still the cheapest route by far.</p>
+<p>What I learned in short was&hellip;  This is a <strong><em>HUGE</em></strong> undertaking!  I also found that while any approach would probably be cost prohibitive, performing this resizing task using on-demand servers in the cloud is still the cheapest route by far.</p>
 
 <h2>Assumptions</h2>
 
@@ -214,7 +214,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[RightScriptDiff - Maintain Your RightScripts Locally]]></title>
+    <title type="html"><![CDATA[RightScriptDiff - Maintain your RightScripts Locally]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2010/08/02/rightscriptdiff-maintain-your-rightscripts-locally/"/>
     <updated>2010-08-02T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2010/08/02/rightscriptdiff-maintain-your-rightscripts-locally</id>
@@ -235,8 +235,9 @@
 
 <p>Here&rsquo;s an example of a successful run;</p>
 
-<p>[bash]
-Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
+<p>```</p>
+
+<p>Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
 Please enter the path to scripts stored locally&hellip;
 <em>.sh
 Grabbing all RightScripts for user: </em><strong><strong> on account: </strong></strong>*.  Be patient, this could take a while&hellip;
@@ -281,13 +282,15 @@ Found 1 nodes:
 Found 1 nodes:
 &mdash; NODE &mdash;</p>
 
-<p>Local copy of 238497-LDAP DB S3 Disable Continuous Backup.sh does not differ from RightScale copy.
-[/bash]</p>
+<p>Local copy of 238497-LDAP DB S3 Disable Continuous Backup.sh does not differ from RightScale copy.</p>
+
+<p>```</p>
 
 <p>This is what it looks like when the scripts differ;</p>
 
-<p>[bash]
-Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
+<p>```</p>
+
+<p>Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
 Please enter the path to scripts stored locally&hellip;
 237784<em>.sh
 Grabbing all RightScripts for user: </em><strong><strong> on account: </strong></strong>*.  Be patient, this could take a while&hellip;
@@ -307,8 +310,9 @@ Found 1 nodes:
                               &amp;lt;
 </code></pre>
 
-<p>echo &quot;Finishing up&hellip;&quot;
-[/bash]</p>
+<p>echo &quot;Finishing up&hellip;&quot;</p>
+
+<p>```</p>
 
 <p>As mentioned above RightScriptDiff requires three values, your RightScale account email address, password, and account number.  You might notice that in both instances above I did not need to provide them and was prompted only for the path to my scripts.  This is because I pre-defined my credentials and account before hand.   There are a couple ways to provide this to RightScriptDiff, you can call rsDiff.sh with parameters (-e|&mdash;email=)&lt;email-address&gt; (-p|&mdash;password=)&lt;password&gt; (-a|&mdash;account_id=)&lt;account_id&gt;, or you can rename the supplied rsDiffAuth.sh.example file, to rsDiffAuth.sh and put your credentials in there.</p>
 
@@ -316,15 +320,19 @@ Found 1 nodes:
 
 <p>You can download RightScriptDiff by running the following command.  I wrote it on OSX 10.6.4, but it should work on most flavors of linux as well.</p>
 
-<p>[bash]
-svn export <a href="https://linode.nslms.com/svn_ro/RightScriptDiff/">https://linode.nslms.com/svn_ro/RightScriptDiff/</a>
-[/bash]</p>
+<p>```</p>
+
+<p>svn export <a href="https://linode.nslms.com/svn_ro/RightScriptDiff/">https://linode.nslms.com/svn_ro/RightScriptDiff/</a></p>
+
+<p>```</p>
 
 <p><em><strong><span style="color: #ff0000;">* UPDATE: RightScriptDiff has a new home</span></strong></em></p>
 
-<p>[bash]
-git clone git://github.com/rgeyer/RightScriptDiff.git
-[/bash]</p>
+<p>```</p>
+
+<p>git clone git://github.com/rgeyer/RightScriptDiff.git</p>
+
+<p>```</p>
 
 <p>Chances are pretty good I&rsquo;ll create a landing page for this, particularly if it becomes popular, so stay tuned here for updates!</p>
 ]]></content>
@@ -383,7 +391,7 @@ git clone git://github.com/rgeyer/RightScriptDiff.git
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Crashing at a New Pad]]></title>
+    <title type="html"><![CDATA[Crashing at a new pad]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2009/08/23/crashing-at-a-new-pad/"/>
     <updated>2009-08-23T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2009/08/23/crashing-at-a-new-pad</id>

@@ -24,7 +24,7 @@
   <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -98,6 +98,8 @@
 
 <time datetime="2011-01-03T00:00:00-08:00" pubdate data-updated="true"></time>
         
+         | <a href="#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -115,7 +117,7 @@
 <p>Straight from the <a href=http://grails.org/doc/latest/guide/3.%20Configuration.html#3.7.1 Configurations and Dependencies">Grails documentation</a> we have this.</p>
 
 <blockquote>
-Grails features 5 dependency resolution configurations (or &#8216;scopes&#8217;) which you can take advantage of:
+Grails features 5 dependency resolution configurations (or 'scopes') which you can take advantage of:
 -build: Dependencies for the build system only
 -compile: Dependencies for the compile step
 -runtime: Dependencies needed at runtime but not for compilation (see above)
@@ -135,86 +137,61 @@ Grails features 5 dependency resolution configurations (or &#8216;scopes&#8217;)
 
 <p>If you want the fixtures and joda time plugins loaded each time you do a compile, run-app, run-war, or war, and only include the spock plugin when you run test-app, you might assume your BuildConfig should look like this.</p>
 
-<p>[groovy highlight=&ldquo;27&rdquo;]
-grails.project.class.dir = &quot;target/classes&quot;
-grails.project.test.class.dir = &quot;target/test-classes&quot;
-grails.project.test.reports.dir = &quot;target/test-reports&quot;</p>
-
-<p>grails.project.dependency.resolution = {
-  // inherit Grails&#8217; default dependencies
-  inherits(&quot;global&quot;) {
-  }
-  log &quot;warn&quot; // log level of Ivy resolver, either &lsquo;error&rsquo;, &lsquo;warn&rsquo;, &lsquo;info&rsquo;, &lsquo;debug&rsquo; or &lsquo;verbose&rsquo;
-  repositories {</p>
-
-<pre><code>grailsPlugins()
-grailsHome()
-grailsCentral()
-</code></pre>
-
-<p>  }
-  dependencies {</p>
-
-<pre><code>// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-</code></pre>
-
-<p>  }
-  plugins {</p>
-
-<pre><code>build ':fixtures:1.0.RC1.SNAPSHOT',
-  ':joda-time:1.1'
-compile ':fixtures:1.0.RC1.SNAPSHOT',
-  ':joda-time:1.1'
-runtime ':fixtures:1.0.RC1.SNAPSHOT',
-  ':joda-time:1.1'    
-test ':fixtures:1.0.RC1.SNAPSHOT',
-  ':joda-time:1.1',
-  ':spock:0.4-groovy-1.7-SNAPSHOT'
-</code></pre>
-
-<p>  }
-}
-[/groovy]</p>
+<p><figure class='code'><figcaption>BuildConfig </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div><div data-line='29' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>grails.project.class.dir = &quot;target/classes&quot;
+</div><div class='line'>grails.project.test.class.dir = &quot;target/test-classes&quot;
+</div><div class='line'>grails.project.test.reports.dir = &quot;target/test-reports&quot;
+</div><div class='line'> </div><div class='line'>grails.project.dependency.resolution = {
+</div><div class='line'>  // inherit Grails' default dependencies
+</div><div class='line'>  inherits(&quot;global&quot;) {
+</div><div class='line'>  }
+</div><div class='line'>  log &quot;warn&quot; // log level of Ivy resolver, either &lsquo;error&rsquo;, &lsquo;warn&rsquo;, &lsquo;info&rsquo;, &lsquo;debug&rsquo; or &lsquo;verbose&rsquo;
+</div><div class='line'>  repositories {
+</div><div class='line'>    grailsPlugins()
+</div><div class='line'>    grailsHome()
+</div><div class='line'>    grailsCentral()
+</div><div class='line'>  }
+</div><div class='line'>  dependencies {
+</div><div class='line'>    // specify dependencies here under either &lsquo;build&rsquo;, &lsquo;compile&rsquo;, &lsquo;runtime&rsquo;, &lsquo;test&rsquo; or &lsquo;provided&rsquo; scopes eg.
+</div><div class='line'>  }
+</div><div class='line'>  plugins {
+</div><div class='line'>    build &lsquo;:fixtures:1.0.RC1.SNAPSHOT&rsquo;,
+</div><div class='line'>      &lsquo;:joda-time:1.1&rsquo;
+</div><div class='line'>    compile &lsquo;:fixtures:1.0.RC1.SNAPSHOT&rsquo;,
+</div><div class='line'>      &lsquo;:joda-time:1.1&rsquo;
+</div><div class='line'>    runtime &lsquo;:fixtures:1.0.RC1.SNAPSHOT&rsquo;,
+</div><div class='line'>      &lsquo;:joda-time:1.1&rsquo;  <br/>
+</div><div class='line'>    test &lsquo;:fixtures:1.0.RC1.SNAPSHOT&rsquo;,
+</div><div class='line'>      &lsquo;:joda-time:1.1&rsquo;,
+</div><div class='line'>      &lsquo;:spock:0.4-groovy-1.7-SNAPSHOT&rsquo;
+</div><div class='line'>  }
+</div><div class='line'>}</div></pre></td></tr></table></div></figure></p>
 
 <p>Notice the duplication across all configurations?  In fact only the test configuration is different with the addition of the spock plugin.  Intuitively this would make sense, even if a particular phase didn&rsquo;t really require the plugin by including it you make sure all of the dependencies are available; better safe than sorry, right?</p>
 
 <p>The problem is that these configurations interact with one another in subtle, and not clearly documented ways.  In actual fact what you&rsquo;ve done above is excluded all plugins from every phase but test.  To achieve the desired result your build config would need to look like this instead.</p>
 
-<p>[groovy highlight=&ldquo;19&rdquo;]</p>
-
-<p>grails.project.class.dir = &quot;target/classes&quot;
-grails.project.test.class.dir = &quot;target/test-classes&quot;
-grails.project.test.reports.dir = &quot;target/test-reports&quot;</p>
-
-<p>grails.project.dependency.resolution = {
-  // inherit Grails&#8217; default dependencies
-  inherits(&quot;global&quot;) {
-  }
-  log &quot;warn&quot; // log level of Ivy resolver, either &lsquo;error&rsquo;, &lsquo;warn&rsquo;, &lsquo;info&rsquo;, &lsquo;debug&rsquo; or &lsquo;verbose&rsquo;
-  repositories {</p>
-
-<pre><code>grailsPlugins()
-grailsHome()
-grailsCentral()
-</code></pre>
-
-<p>  }
-  dependencies {</p>
-
-<pre><code>// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-</code></pre>
-
-<p>  }
-  plugins {</p>
-
-<pre><code>build: ':joda-time:1.1'
-test ':fixtures:1.0.RC1.SNAPSHOT',
-  ':spock:0.4-groovy-1.7-SNAPSHOT'
-</code></pre>
-
-<p>  }
-}
-[/groovy]</p>
+<p><figure class='code'><figcaption>BuildConfig </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>grails.project.class.dir = &quot;target/classes&quot;
+</div><div class='line'>grails.project.test.class.dir = &quot;target/test-classes&quot;
+</div><div class='line'>grails.project.test.reports.dir = &quot;target/test-reports&quot;
+</div><div class='line'> </div><div class='line'>grails.project.dependency.resolution = {
+</div><div class='line'>  // inherit Grails' default dependencies
+</div><div class='line'>  inherits(&quot;global&quot;) {
+</div><div class='line'>  }
+</div><div class='line'>  log &quot;warn&quot; // log level of Ivy resolver, either &lsquo;error&rsquo;, &lsquo;warn&rsquo;, &lsquo;info&rsquo;, &lsquo;debug&rsquo; or &lsquo;verbose&rsquo;
+</div><div class='line'>  repositories {
+</div><div class='line'>    grailsPlugins()
+</div><div class='line'>    grailsHome()
+</div><div class='line'>    grailsCentral()
+</div><div class='line'>  }
+</div><div class='line'>  dependencies {
+</div><div class='line'>    // specify dependencies here under either &lsquo;build&rsquo;, &lsquo;compile&rsquo;, &lsquo;runtime&rsquo;, &lsquo;test&rsquo; or &lsquo;provided&rsquo; scopes eg.
+</div><div class='line'>  }
+</div><div class='line'>  plugins {
+</div><div class='line'>    build: &lsquo;:joda-time:1.1&rsquo;
+</div><div class='line'>    test &lsquo;:fixtures:1.0.RC1.SNAPSHOT&rsquo;,
+</div><div class='line'>      &lsquo;:spock:0.4-groovy-1.7-SNAPSHOT&rsquo;
+</div><div class='line'>  }
+</div><div class='line'>}</div></pre></td></tr></table></div></figure></p>
 
 <p>The scopes are in fact additive, so if you put all of your dependency declarations in the build scope they&rsquo;re automatically included in all other scopes.  In every other scope, by listing a dependency there it effectively adds it to that scope, and <em>removes</em> it from all other scopes.  That&rsquo;s why your deployed war file breaks.</p>
 
@@ -246,7 +223,7 @@ test ':fixtures:1.0.RC1.SNAPSHOT',
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/grails-slash-groovy/'>Grails/Groovy</a>
+    <a class='category' href='/blog/categories/grails-slash-groovy/'>grails/groovy</a>
   
 </span>
 
@@ -363,6 +340,19 @@ test ':fixtures:1.0.RC1.SNAPSHOT',
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'randmu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

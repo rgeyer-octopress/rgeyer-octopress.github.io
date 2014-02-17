@@ -4,7 +4,7 @@
   <title><![CDATA[Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-12T21:31:45-08:00</updated>
+  <updated>2014-02-16T21:03:27-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -67,7 +67,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Policy for an S3 Only Amazon IAM User]]></title>
+    <title type="html"><![CDATA[Policy for an S3 only Amazon IAM User]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
     <updated>2011-06-27T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
@@ -78,32 +78,28 @@
 
 <p>One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.</p>
 
-<p>[code]
-{
-  &ldquo;Statement&rdquo;: [</p>
-
-<pre><code>{
-  "Action": [
-    "s3:ListAllMyBuckets"
-  ],
-  "Effect": "Allow",
-  "Resource": "arn:aws:s3:::*"
-},
-{
-  "Action": "s3:*",
-  "Effect": "Allow",
-  "Resource": "arn:aws:s3:::bucket_name_here"
-},
-{
-  "Action": "s3:*",
-  "Effect": "Allow",
-  "Resource": "arn:aws:s3:::bucket_name_here/*"
-}
-</code></pre>
-
-<p>  ]
-}
-[/code]</p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>{
+</div><div class='line'>  &ldquo;Statement&rdquo;: [
+</div><div class='line'>    {
+</div><div class='line'>      &ldquo;Action&rdquo;: [
+</div><div class='line'>        &ldquo;s3:ListAllMyBuckets&rdquo;
+</div><div class='line'>      ],
+</div><div class='line'>      &ldquo;Effect&rdquo;: &ldquo;Allow&rdquo;,
+</div><div class='line'>      &ldquo;Resource&rdquo;: &ldquo;arn:aws:s3:::<em>&rdquo;
+</div><div class='line'>    },
+</div><div class='line'>    {
+</div><div class='line'>      &ldquo;Action&rdquo;: &ldquo;s3:</em>&rdquo;,
+</div><div class='line'>      &ldquo;Effect&rdquo;: &ldquo;Allow&rdquo;,
+</div><div class='line'>      &ldquo;Resource&rdquo;: &ldquo;arn:aws:s3:::bucket_name_here&rdquo;
+</div><div class='line'>    },
+</div><div class='line'>    {
+</div><div class='line'>      &ldquo;Action&rdquo;: &ldquo;s3:<em>&rdquo;,
+</div><div class='line'>      &ldquo;Effect&rdquo;: &ldquo;Allow&rdquo;,
+</div><div class='line'>      &ldquo;Resource&rdquo;: &ldquo;arn:aws:s3:::bucket_name_here/</em>&rdquo;
+</div><div class='line'>    }
+</div><div class='line'>  ]
+</div><div class='line'>}
+</div></pre></td></tr></table></div></figure></p>
 
 <p>This contains three simple IAM statements.</p>
 
@@ -121,7 +117,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[The Baby]]></title>
+    <title type="html"><![CDATA[The baby]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/24/the-baby/"/>
     <updated>2011-06-24T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/24/the-baby</id>
@@ -139,7 +135,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 13: NO WAY!]]></title>
+    <title type="html"><![CDATA[Potty Training Day 13:  NO WAY!]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/22/potty-training-day-13-no-way/"/>
     <updated>2011-06-22T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/22/potty-training-day-13-no-way</id>
@@ -156,7 +152,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 12: Old Hat]]></title>
+    <title type="html"><![CDATA[Potty Training Day 12:  Old Hat]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/20/potty-training-day-12-old-hat/"/>
     <updated>2011-06-20T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/20/potty-training-day-12-old-hat</id>
@@ -173,7 +169,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 11: Kicking Butt and Taking Names]]></title>
+    <title type="html"><![CDATA[Potty Training Day 11:  Kicking butt and taking names]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/17/potty-training-day-11-kicking-butt-and-taking-names/"/>
     <updated>2011-06-17T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/17/potty-training-day-11-kicking-butt-and-taking-names</id>
@@ -188,7 +184,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 10: Getting Better]]></title>
+    <title type="html"><![CDATA[Potty Training Day 10: Getting better]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/15/potty-training-day-10-getting-better/"/>
     <updated>2011-06-15T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/15/potty-training-day-10-getting-better</id>
@@ -201,7 +197,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 9: Set Back]]></title>
+    <title type="html"><![CDATA[Potty Training Day 9: Set back]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/13/potty-training-day-9-set-back/"/>
     <updated>2011-06-13T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/13/potty-training-day-9-set-back</id>
@@ -218,7 +214,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 8: Show Off ;)]]></title>
+    <title type="html"><![CDATA[Potty Training Day 8:  Show off ;)]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/10/potty-training-day-8-show-off/"/>
     <updated>2011-06-10T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/10/potty-training-day-8-show-off</id>
@@ -231,7 +227,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 7: Going Out]]></title>
+    <title type="html"><![CDATA[Potty Training Day 7:  Going out]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/08/potty-training-day-7-going-out/"/>
     <updated>2011-06-08T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/08/potty-training-day-7-going-out</id>
@@ -244,7 +240,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 6: Getting Smoother]]></title>
+    <title type="html"><![CDATA[Potty Training Day 6:  Getting Smoother]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/06/potty-training-day-6-getting-smoother/"/>
     <updated>2011-06-06T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/06/potty-training-day-6-getting-smoother</id>
@@ -257,7 +253,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 5: HELP!]]></title>
+    <title type="html"><![CDATA[Potty Training Day 5:  HELP!]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/03/potty-training-day-5-help/"/>
     <updated>2011-06-03T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/03/potty-training-day-5-help</id>
@@ -272,7 +268,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 4: Stubborn]]></title>
+    <title type="html"><![CDATA[Potty Training day 4: Stubborn]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/06/01/potty-training-day-4-stubborn/"/>
     <updated>2011-06-01T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/06/01/potty-training-day-4-stubborn</id>
@@ -285,7 +281,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 3: Clothes Are the Enemy]]></title>
+    <title type="html"><![CDATA[Potty Training Day 3: Clothes are the Enemy]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/05/04/potty-training-day-3-clothes-are-the-enemy/"/>
     <updated>2011-05-04T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/05/04/potty-training-day-3-clothes-are-the-enemy</id>
@@ -300,7 +296,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 2: Reality Settles In...]]></title>
+    <title type="html"><![CDATA[Potty Training Day 2: Reality settles in...]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/05/03/potty-training-day-2-reality-settles-in/"/>
     <updated>2011-05-03T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/05/03/potty-training-day-2-reality-settles-in</id>
@@ -332,11 +328,11 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Livin’ on the Edge]]></title>
+    <title type="html"><![CDATA[Livin’ On The Edge]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/04/20/livin-on-the-edge/"/>
     <updated>2011-04-20T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/04/20/livin-on-the-edge</id>
-    <content type="html"><![CDATA[<p><a href="http://www.nslms.com/wp-content/255790697_f288115839_m.jpg"><img src="http://www.nslms.com/wp-content/255790697_f288115839_m.jpg" alt="" title="255790697_f288115839_m" width="240" height="215" class="alignleft size-full wp-image-1082" /></a>When I was little livin&#8217; on the edge has changed so much over the years.  When I was a child, living on the edge meant walking on the highest point of a swing set and climbing to scary heights of a giant tree.  It meant playing in a vacant apartment to escape the heat, because I knew I would be in huge trouble taking my baby sister to the pool without my parent&rsquo;s permission.</p>
+    <content type="html"><![CDATA[<p><a href="http://www.nslms.com/wp-content/255790697_f288115839_m.jpg"><img src="http://www.nslms.com/wp-content/255790697_f288115839_m.jpg" alt="" title="255790697_f288115839_m" width="240" height="215" class="alignleft size-full wp-image-1082" /></a>When I was little livin' on the edge has changed so much over the years.  When I was a child, living on the edge meant walking on the highest point of a swing set and climbing to scary heights of a giant tree.  It meant playing in a vacant apartment to escape the heat, because I knew I would be in huge trouble taking my baby sister to the pool without my parent&rsquo;s permission.</p>
 
 <p>When I was a teen it meant talking back to my mom, staying out late, and that one time I drove my friend&rsquo;s car with her trying to cheer me on before I got my license.  It was when I tried to see just how long I could function well with little to no sleep, oh college days.  Yeah, I was that awesome culinary student that worked in a bakery, so there were days I would be up at 3:30am and wouldn&rsquo;t get to bed the following day till 1pm due to work, school and my dreamy boyfriend.</p>
 
@@ -347,7 +343,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[It All Comes Down to Poop]]></title>
+    <title type="html"><![CDATA[It all comes down to poop]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/04/15/it-all-comes-down-to-poop/"/>
     <updated>2011-04-15T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/04/15/it-all-comes-down-to-poop</id>
@@ -362,7 +358,7 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Caveman Communication]]></title>
+    <title type="html"><![CDATA[Caveman communication]]></title>
     <link href="http://rgeyer-octopress.github.io/blog/2011/04/13/caveman-communication/"/>
     <updated>2011-04-13T00:00:00-07:00</updated>
     <id>http://rgeyer-octopress.github.io/blog/2011/04/13/caveman-communication</id>
