@@ -119,16 +119,14 @@
 
 <p>The first step to allowing IAM users to login is setting an alias for your AWS account.  Technically, this step is optional since you can use your account number to access the AWS console login for your account, but by providing a nickname for your account, you&rsquo;ll make it much easier for your users to remember.  It&rsquo;s the difference between <a href="https://123456789012.signin.aws.amazon.com/console/ec2/">https://123456789012.signin.aws.amazon.com/console/ec2/</a> and <a href="https://nickname.signin.aws.amazon.com/console/ec2/.">https://nickname.signin.aws.amazon.com/console/ec2/.</a>  Best of all, it&rsquo;s just a simple oneliner if you already have the IAM CLI tools installed.</p>
 
-<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>$ iam-accountaliascreate -a nickname
-</div></pre></td></tr></table></div></figure></p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>$ iam-accountaliascreate -a nickname</div></pre></td></tr></table></div></figure></p>
 
 <h2>Enabling login for a user</h2>
 
 
 <p>Once you&rsquo;ve created the account alias to make logging in much easier for your users, you&rsquo;ll want to grant them login permissions.  In this example, we&rsquo;re making the assumption there is already a user named <em>ryan.geyer</em>.</p>
 
-<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>$ iam-useraddloginprofile -u ryan.geyer -p supersecretpassword
-</div></pre></td></tr></table></div></figure></p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>$ iam-useraddloginprofile -u ryan.geyer -p supersecretpassword</div></pre></td></tr></table></div></figure></p>
 
 <p>That&rsquo;s it, now you can direct the user to <a href="https://nickname.signin.aws.amazon.com/console/ec2/">https://nickname.signin.aws.amazon.com/console/ec2/</a> and they can login with their own username and password.  Once they&rsquo;re logged in, they will only be able to access the AWS objects defined by the IAM policies for the groups to which they are assigned.</p>
 </div>

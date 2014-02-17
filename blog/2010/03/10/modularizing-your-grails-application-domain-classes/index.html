@@ -233,7 +233,7 @@
 <p>Now if you've followed along and created your own controllers and views, or <a href="#download-instructions">downloaded</a> my basic project, you're going to want to try running both the front end and back end at the same time, persisting data to a common datasource so that you can see the whole thing in action.  If you just use the grails run-app command, you'll find very quickly that you can only run one or the other project, but not both at the same time.  This is because they'll both be trying to run on the common Tomcat port (8080).  To overcome this, and run both apps at the same time, try the following starting from the Modular-FrontEnd directory.</p>
 
 
-<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>grails -Dserver.port=8081 run-app
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>grails -Dserver.port=8081 run-app
 </div><div class='line'>cd ../Modular-BackEnd
 </div><div class='line'>grails -Dserver.port=8082 run-app
 </div></pre></td></tr></table></div></figure></p>

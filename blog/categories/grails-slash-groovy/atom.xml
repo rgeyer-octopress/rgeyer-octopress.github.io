@@ -4,7 +4,7 @@
   <title><![CDATA[Category: grails/groovy | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/grails-slash-groovy/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T21:03:27-08:00</updated>
+  <updated>2014-02-16T21:14:42-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -179,64 +179,82 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
 
 <p>The scenario is that I have Roles and Privileges as domain classes.  A role has many privileges, and any privilege may belong to one or more roles.  This is represented in domain classes pretty succinctly as;</p>
 
-<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Role.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.mockdomainlimitations&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">Role</span> <span class="o">{</span>
-</div><div class='line'>  <span class="kd">static</span> <span class="n">hasMany</span> <span class="o">=</span> <span class="o">[</span><span class="nl">privileges:</span> <span class="n">Privilege</span><span class="o">]&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  static constraints = {</span>
-</div><div class='line'><span class="s">  }</span>
-</div><div class='line'><span class="s">  String name</span>
-</div><div class='line'><span class="s">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Role.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">mockdomainlimitations</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class Role {</span>
+</div><div class='line'><span class="s">  static hasMany = [privileges: Privilege]&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="kd">static</span> <span class="n">constraints</span> <span class="o">=</span> <span class="o">{</span>
+</div><div class='line'>  <span class="o">}</span>
+</div><div class='line'>  <span class="n">String</span> <span class="n">name</span>
+</div><div class='line'><span class="o">}</span>
 </div></pre></td></tr></table></div></figure></p>
 
-<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.mockdomainlimitations&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">Privilege</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  static constraints = {</span>
-</div><div class='line'><span class="s">  }&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">mockdomainlimitations</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class Privilege {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="kd">static</span> <span class="n">constraints</span> <span class="o">=</span> <span class="o">{</span>
+</div><div class='line'>  <span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">String</span> <span class="n">name</span>
-</div><div class='line'><span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'><span class="o">}</span>
 </div></pre></td></tr></table></div></figure></p>
 
 <p>So I can access all the privileges which belong to a role pretty easily, but what if I want to know all roles which a particular privilege belongs to?  Easy enough, we can look that up in a variety of ways.  Below I show adding a new closure to the privilege domain class which uses the <a href="http://grails.org/doc/latest/ref/Domain%20Classes/withCriteria.html">withCriteria</a> functionality of GORM to return all roles which have this privilege in the privileges map.  The new closure is in the highlighted lines.</p>
 
-<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy (with new closure) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.mockdomainlimitations&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">Privilege</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  static constraints = {</span>
-</div><div class='line'><span class="s">  }&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">String</span> <span class="n">name</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  def getRolesWithThisPrivilege = {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">Role</span><span class="o">.</span><span class="na">withCriteria</span><span class="o">()</span> <span class="o">{</span>
-</div><div class='line'>  <span class="n">privileges</span> <span class="o">{</span>
-</div><div class='line'>    <span class="n">eq</span><span class="o">(</span><span class="s1">&#39;id&#39;</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span><span class="o">)</span>
-</div><div class='line'>  <span class="o">}</span>
-</div><div class='line'><span class="o">}</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+<p><figure class='code'><figcaption>/grails-app/domain/com/nslms/mockdomainlimtations/Privilege.groovy (with new closure) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">mockdomainlimitations</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class Privilege {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="kd">static</span> <span class="n">constraints</span> <span class="o">=</span> <span class="o">{</span>
+</div><div class='line'>  <span class="o">}&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  String name&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="kt">def</span> <span class="n">getRolesWithThisPrivilege</span> <span class="o">=</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;Role.withCriteria() {</span>
+</div><div class='line'><span class="s">  privileges {</span>
+</div><div class='line'><span class="s">    eq(&#39;id&#39;, this.id)</span>
+</div><div class='line'><span class="s">  }</span>
+</div><div class='line'><span class="s">}</span>
+</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>
-</div><div class='line'><span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'><span class="o">}</span>
 </div></pre></td></tr></table></div></figure></p>
 
 <p>Now, if you&rsquo;re doing proper test driven development (you are doing TDD, right?!), you&rsquo;d probably already have a test written for this new closure that would look something like the highlighted lines of the test fixture below.  Notice lines 8 and 9 which are also highlighted to show that we&rsquo;re asking the framework to mock out the GORM methods on the role and privilege classes.</p>
 
-<p><figure class='code'><figcaption>/test/unit/com/nslms/mockdomainlimitaions/PrivilegeTests.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div><div data-line='29' class='line-number'></div><div data-line='30' class='line-number'></div><div data-line='31' class='line-number'></div><div data-line='32' class='line-number'></div><div data-line='33' class='line-number'></div><div data-line='34' class='line-number'></div><div data-line='35' class='line-number'></div><div data-line='36' class='line-number'></div><div data-line='37' class='line-number'></div><div data-line='38' class='line-number'></div><div data-line='39' class='line-number'></div><div data-line='40' class='line-number'></div><div data-line='41' class='line-number'></div><div data-line='42' class='line-number'></div><div data-line='43' class='line-number'></div><div data-line='44' class='line-number'></div><div data-line='45' class='line-number'></div><div data-line='46' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.mockdomainlimitations&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">grails.test.*</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class PrivilegeTests extends GrailsUnitTestCase {</span>
-</div><div class='line'><span class="s">  protected void setUp() {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kd">super</span><span class="o">.</span><span class="na">setUp</span><span class="o">()</span>
-</div><div class='line'><span class="n">MockUtils</span><span class="o">.</span><span class="na">mockDomain</span><span class="o">(</span><span class="n">Role</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-</div><div class='line'><span class="n">MockUtils</span><span class="o">.</span><span class="na">mockDomain</span><span class="o">(</span><span class="n">Privilege</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  protected void tearDown() {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kd">super</span><span class="o">.</span><span class="na">tearDown</span><span class="o">()</span>
-</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  void testAbilityToGetAListOfRolesAPrivilegeBelongsTo() {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<p><figure class='code'><figcaption>/test/unit/com/nslms/mockdomainlimitaions/PrivilegeTests.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div><div data-line='29' class='line-number'></div><div data-line='30' class='line-number'></div><div data-line='31' class='line-number'></div><div data-line='32' class='line-number'></div><div data-line='33' class='line-number'></div><div data-line='34' class='line-number'></div><div data-line='35' class='line-number'></div><div data-line='36' class='line-number'></div><div data-line='37' class='line-number'></div><div data-line='38' class='line-number'></div><div data-line='39' class='line-number'></div><div data-line='40' class='line-number'></div><div data-line='41' class='line-number'></div><div data-line='42' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">mockdomainlimitations</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import grails.test.*&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">PrivilegeTests</span> <span class="kd">extends</span> <span class="n">GrailsUnitTestCase</span> <span class="o">{</span>
+</div><div class='line'>  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;super.setUp()</span>
+</div><div class='line'><span class="s">MockUtils.mockDomain(Role.class)</span>
+</div><div class='line'><span class="s">MockUtils.mockDomain(Privilege.class)</span>
+</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  }&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="kd">protected</span> <span class="kt">void</span> <span class="n">tearDown</span><span class="o">()</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;super.tearDown()</span>
+</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  }&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="kt">void</span> <span class="n">testAbilityToGetAListOfRolesAPrivilegeBelongsTo</span><span class="o">()</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def role1 = new Role(name: &#39;Administrator&#39;)</span>
+</div><div class='line'><span class="s">def role2 = new Role(name: &#39;User&#39;)</span>
+</div><div class='line'> </div><div class='line'><span class="s">def priv1 = new Privilege(name: &#39;ReadAll&#39;).save(flush: true)</span>
+</div><div class='line'> </div><div class='line'><span class="s">role1.addToPrivileges(priv1)</span>
+</div><div class='line'><span class="s">role2.addToPrivileges(priv1)</span>
+</div><div class='line'> </div><div class='line'><span class="s">role1.save(flush: true)</span>
+</div><div class='line'><span class="s">role2.save(flush: true)</span>
+</div><div class='line'> </div><div class='line'><span class="s">def roleList = priv1.getRolesWithThisPrivilege()</span>
+</div><div class='line'> </div><div class='line'><span class="s">assert roleList.size() == 2</span>
+</div><div class='line'><span class="s">assert roleList == [role1, role2]</span>
+</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>
+</div><div class='line'><span class="o">}</span>
+</div></pre></td></tr></table></div></figure></p>
+
+<p>Even after you&rsquo;ve implemented <strong>getRolesWithThisPrivilege</strong> on the Privileges domain class though, you&rsquo;ll find your test still fails with an error that looks like the following.</p>
+
+<p style="font-size: larger; font-style: italic; color: red;">No signature of method: com.nslms.mockdomainlimitations.Role.withCriteria() is applicable for argument types: (com.nslms.mockdomainlimitations.Privilege$_closure1_closure3) values: [com.nslms.mockdomainlimitations.Privilege$_closure1_closure3@8327473]</p>
+
+
+<p>In short, it&rsquo;s telling us that the <a href="http://grails.org/doc/latest/ref/Domain%20Classes/withCriteria.html">withCriteria</a> method of GORM isn&rsquo;t implemented in the context of our test.  Of course if you put the exact same code in an integration test you&rsquo;re golden.</p>
+
+<p><figure class='code'><figcaption>/test/integration/com/nslms/mockdomainlimitations/PrivilegeTest.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">mockdomainlimitations</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class PrivilegeTest extends GroovyTestCase {</span>
+</div><div class='line'><span class="s">  void testAbilityToGetAListOfRolesAPrivilegeBelongsTo() {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kt">def</span> <span class="n">role1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Role</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;Administrator&#39;</span><span class="o">)</span>
 </div><div class='line'><span class="kt">def</span> <span class="n">role2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Role</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;User&#39;</span><span class="o">)</span>
 </div><div class='line'> </div><div class='line'><span class="kt">def</span> <span class="n">priv1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Privilege</span><span class="o">(</span><span class="nl">name:</span> <span class="s1">&#39;ReadAll&#39;</span><span class="o">).</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
@@ -249,35 +267,7 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
 </div><div class='line'><span class="k">assert</span> <span class="n">roleList</span> <span class="o">==</span> <span class="o">[</span><span class="n">role1</span><span class="o">,</span> <span class="n">role2</span><span class="o">]</span>
 </div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>
-</div><div class='line'><span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</div></pre></td></tr></table></div></figure></p>
-
-<p>Even after you&rsquo;ve implemented <strong>getRolesWithThisPrivilege</strong> on the Privileges domain class though, you&rsquo;ll find your test still fails with an error that looks like the following.</p>
-
-<p style="font-size: larger; font-style: italic; color: red;">No signature of method: com.nslms.mockdomainlimitations.Role.withCriteria() is applicable for argument types: (com.nslms.mockdomainlimitations.Privilege$_closure1_closure3) values: [com.nslms.mockdomainlimitations.Privilege$_closure1_closure3@8327473]</p>
-
-
-<p>In short, it&rsquo;s telling us that the <a href="http://grails.org/doc/latest/ref/Domain%20Classes/withCriteria.html">withCriteria</a> method of GORM isn&rsquo;t implemented in the context of our test.  Of course if you put the exact same code in an integration test you&rsquo;re golden.</p>
-
-<p><figure class='code'><figcaption>/test/integration/com/nslms/mockdomainlimitations/PrivilegeTest.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div><div data-line='24' class='line-number'></div><div data-line='25' class='line-number'></div><div data-line='26' class='line-number'></div><div data-line='27' class='line-number'></div><div data-line='28' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.mockdomainlimitations&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">PrivilegeTest</span> <span class="kd">extends</span> <span class="n">GroovyTestCase</span> <span class="o">{</span>
-</div><div class='line'>  <span class="kt">void</span> <span class="nf">testAbilityToGetAListOfRolesAPrivilegeBelongsTo</span><span class="o">()</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def role1 = new Role(name: &#39;Administrator&#39;)</span>
-</div><div class='line'><span class="s">def role2 = new Role(name: &#39;User&#39;)</span>
-</div><div class='line'> </div><div class='line'><span class="s">def priv1 = new Privilege(name: &#39;ReadAll&#39;).save(flush: true)</span>
-</div><div class='line'> </div><div class='line'><span class="s">role1.addToPrivileges(priv1)</span>
-</div><div class='line'><span class="s">role2.addToPrivileges(priv1)</span>
-</div><div class='line'> </div><div class='line'><span class="s">role1.save(flush: true)</span>
-</div><div class='line'><span class="s">role2.save(flush: true)</span>
-</div><div class='line'> </div><div class='line'><span class="s">def roleList = priv1.getRolesWithThisPrivilege()</span>
-</div><div class='line'> </div><div class='line'><span class="s">assert roleList.size() == 2</span>
-</div><div class='line'><span class="s">assert roleList == [role1, role2]</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;  }</span>
-</div><div class='line'><span class="s">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'><span class="o">}</span>
 </div></pre></td></tr></table></div></figure></p>
 
 <p>With this in place, you can run a &ldquo;grails test-app -integration&rdquo; and the exact same test which failed during unit testing will succeed.  This is of course because the entire grails bootstrapping occurs, and all of the artifacts (like domain classes) are wired up fully by the framework.</p>
@@ -293,11 +283,9 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
 <p>Grab the project</p>
 
 
-<p>```</p>
-
-<p>git clone git://ec2.nslms.com/grails/blog_example_mock_limitations</p>
-
-<p>```</p>
+<p><code>
+git clone git://ec2.nslms.com/grails/blog_example_mock_limitations
+</code></p>
 ]]></content>
   </entry>
   
@@ -429,22 +417,20 @@ grails create-domain-class com.nslms.modular.domain.Comment
 <p>Now we specify some properties for our new shared domain class.</p>
 
 
-<p><figure class='code'><figcaption>Comment.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.modular.domain&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">Comment</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;static constraints = {</span>
-</div><div class='line'><span class="s">    name(blank:false)</span>
-</div><div class='line'><span class="s">    email(blank:false)</span>
-</div><div class='line'><span class="s">    comment(blank:false)</span>
-</div><div class='line'><span class="s">}</span>
-</div><div class='line'> </div><div class='line'><span class="s">String name </span>
-</div><div class='line'><span class="s">String email</span>
-</div><div class='line'><span class="s">String website</span>
-</div><div class='line'><span class="s">String comment</span>
-</div><div class='line'> </div><div class='line'><span class="s">Boolean isApproved = false</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+<p><figure class='code'><figcaption>Comment.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">modular</span><span class="o">.</span><span class="na">domain</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class Comment {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kd">static</span> <span class="n">constraints</span> <span class="o">=</span> <span class="o">{</span>
+</div><div class='line'>    <span class="n">name</span><span class="o">(</span><span class="nl">blank:</span><span class="kc">false</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">email</span><span class="o">(</span><span class="nl">blank:</span><span class="kc">false</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">comment</span><span class="o">(</span><span class="nl">blank:</span><span class="kc">false</span><span class="o">)</span>
+</div><div class='line'><span class="o">}</span>
+</div><div class='line'> </div><div class='line'><span class="n">String</span> <span class="n">name</span>
+</div><div class='line'><span class="n">String</span> <span class="n">email</span>
+</div><div class='line'><span class="n">String</span> <span class="n">website</span>
+</div><div class='line'><span class="n">String</span> <span class="n">comment</span>
+</div><div class='line'> </div><div class='line'><span class="n">Boolean</span> <span class="n">isApproved</span> <span class="o">=</span> <span class="kc">false</span>
+</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
 </div></pre></td></tr></table></div></figure></p>
 
 <p>With our new shared domain class created, we want to package up our plugin so we can load it into the other projects which we'll be creating in a moment.</p>
@@ -476,13 +462,11 @@ grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
 <p>Because you can <a href="#download-instructions">download</a> the project I created, I'm not going to go into excruciating detail about the controller and view(s) I setup in my front end, but sufficed to say I am accessing the "Comment" domain class that is supplied by the Modular-DAL plugin project!</p>
 
 
-<p><figure class='code'><figcaption>CommentsController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import com.nslms.modular.domain.*&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">CommentsController</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def index = { [comments: Comment.findAllByisApproved(true)] }</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+<p><figure class='code'><figcaption>CommentsController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">import</span> <span class="nn">com.nslms.modular.domain.*</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class CommentsController {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kt">def</span> <span class="n">index</span> <span class="o">=</span> <span class="o">{</span> <span class="o">[</span><span class="nl">comments:</span> <span class="n">Comment</span><span class="o">.</span><span class="na">findAllByisApproved</span><span class="o">(</span><span class="kc">true</span><span class="o">)]</span> <span class="o">}</span>
+</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
 </div></pre></td></tr></table></div></figure></p>
 
 <p>The result of the front end app should be a list of comments which are approved (by the backend) and a submission form to allow you to submit new comments.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/frontend/comments" target="_blank">this</a>.</p>
@@ -507,13 +491,11 @@ grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
 <p>Again because you can <a href="#download-instructions">download</a> the project I created, here's just a snippet of the admin controller showing the juicy bits where we use the shared domain class</p>
 
 
-<p><figure class='code'><figcaption>AdminController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import com.nslms.modular.domain.*;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">AdminController</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def comments = { [comments: Comment.findAllByisApproved(false)] }</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+<p><figure class='code'><figcaption>AdminController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">import</span> <span class="nn">com.nslms.modular.domain.*</span><span class="o">;&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class AdminController {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kt">def</span> <span class="n">comments</span> <span class="o">=</span> <span class="o">{</span> <span class="o">[</span><span class="nl">comments:</span> <span class="n">Comment</span><span class="o">.</span><span class="na">findAllByisApproved</span><span class="o">(</span><span class="kc">false</span><span class="o">)]</span> <span class="o">}</span>
+</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
 </div></pre></td></tr></table></div></figure></p>
 
 <p>The back end app should have a list of all unapproved comments, and a method to approve them.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/backend/admin/comments" target="_blank">this</a>.</p>
@@ -524,9 +506,8 @@ grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
 <p>Now if you've followed along and created your own controllers and views, or <a href="#download-instructions">downloaded</a> my basic project, you're going to want to try running both the front end and back end at the same time, persisting data to a common datasource so that you can see the whole thing in action.  If you just use the grails run-app command, you'll find very quickly that you can only run one or the other project, but not both at the same time.  This is because they'll both be trying to run on the common Tomcat port (8080).  To overcome this, and run both apps at the same time, try the following starting from the Modular-FrontEnd directory.</p>
 
 
-<p>```</p>
-
-<p>grails -Dserver.port=8081 run-app
+<p>```
+grails -Dserver.port=8081 run-app
 cd ../Modular-BackEnd
 grails -Dserver.port=8082 run-app</p>
 

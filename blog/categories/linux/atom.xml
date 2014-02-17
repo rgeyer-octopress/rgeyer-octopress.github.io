@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T21:03:27-08:00</updated>
+  <updated>2014-02-16T21:14:42-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -235,9 +235,8 @@
 
 <p>Here&rsquo;s an example of a successful run;</p>
 
-<p>```</p>
-
-<p>Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
+<p>```
+Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
 Please enter the path to scripts stored locally&hellip;
 <em>.sh
 Grabbing all RightScripts for user: </em><strong><strong> on account: </strong></strong>*.  Be patient, this could take a while&hellip;
@@ -282,15 +281,13 @@ Found 1 nodes:
 Found 1 nodes:
 &mdash; NODE &mdash;</p>
 
-<p>Local copy of 238497-LDAP DB S3 Disable Continuous Backup.sh does not differ from RightScale copy.</p>
-
-<p>```</p>
+<p>Local copy of 238497-LDAP DB S3 Disable Continuous Backup.sh does not differ from RightScale copy.
+```</p>
 
 <p>This is what it looks like when the scripts differ;</p>
 
-<p>```</p>
-
-<p>Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
+<p>```
+Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
 Please enter the path to scripts stored locally&hellip;
 237784<em>.sh
 Grabbing all RightScripts for user: </em><strong><strong> on account: </strong></strong>*.  Be patient, this could take a while&hellip;
@@ -310,9 +307,8 @@ Found 1 nodes:
                               &amp;lt;
 </code></pre>
 
-<p>echo &quot;Finishing up&hellip;&quot;</p>
-
-<p>```</p>
+<p>echo &quot;Finishing up&hellip;&quot;
+```</p>
 
 <p>As mentioned above RightScriptDiff requires three values, your RightScale account email address, password, and account number.  You might notice that in both instances above I did not need to provide them and was prompted only for the path to my scripts.  This is because I pre-defined my credentials and account before hand.   There are a couple ways to provide this to RightScriptDiff, you can call rsDiff.sh with parameters (-e|&mdash;email=)&lt;email-address&gt; (-p|&mdash;password=)&lt;password&gt; (-a|&mdash;account_id=)&lt;account_id&gt;, or you can rename the supplied rsDiffAuth.sh.example file, to rsDiffAuth.sh and put your credentials in there.</p>
 
@@ -320,19 +316,15 @@ Found 1 nodes:
 
 <p>You can download RightScriptDiff by running the following command.  I wrote it on OSX 10.6.4, but it should work on most flavors of linux as well.</p>
 
-<p>```</p>
-
-<p>svn export <a href="https://linode.nslms.com/svn_ro/RightScriptDiff/">https://linode.nslms.com/svn_ro/RightScriptDiff/</a></p>
-
-<p>```</p>
+<p><code>
+svn export https://linode.nslms.com/svn_ro/RightScriptDiff/
+</code></p>
 
 <p><em><strong><span style="color: #ff0000;">* UPDATE: RightScriptDiff has a new home</span></strong></em></p>
 
-<p>```</p>
-
-<p>git clone git://github.com/rgeyer/RightScriptDiff.git</p>
-
-<p>```</p>
+<p><code>
+git clone git://github.com/rgeyer/RightScriptDiff.git
+</code></p>
 
 <p>Chances are pretty good I&rsquo;ll create a landing page for this, particularly if it becomes popular, so stay tuned here for updates!</p>
 ]]></content>

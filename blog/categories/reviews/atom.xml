@@ -4,7 +4,7 @@
   <title><![CDATA[Category: reviews | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/reviews/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T21:03:27-08:00</updated>
+  <updated>2014-02-16T21:14:42-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -93,22 +93,20 @@ grails create-domain-class com.nslms.modular.domain.Comment
 <p>Now we specify some properties for our new shared domain class.</p>
 
 
-<p><figure class='code'><figcaption>Comment.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div><div data-line='20' class='line-number'></div><div data-line='21' class='line-number'></div><div data-line='22' class='line-number'></div><div data-line='23' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;package com.nslms.modular.domain&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">Comment</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;static constraints = {</span>
-</div><div class='line'><span class="s">    name(blank:false)</span>
-</div><div class='line'><span class="s">    email(blank:false)</span>
-</div><div class='line'><span class="s">    comment(blank:false)</span>
-</div><div class='line'><span class="s">}</span>
-</div><div class='line'> </div><div class='line'><span class="s">String name </span>
-</div><div class='line'><span class="s">String email</span>
-</div><div class='line'><span class="s">String website</span>
-</div><div class='line'><span class="s">String comment</span>
-</div><div class='line'> </div><div class='line'><span class="s">Boolean isApproved = false</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+<p><figure class='code'><figcaption>Comment.groovy </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div><div data-line='13' class='line-number'></div><div data-line='14' class='line-number'></div><div data-line='15' class='line-number'></div><div data-line='16' class='line-number'></div><div data-line='17' class='line-number'></div><div data-line='18' class='line-number'></div><div data-line='19' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">nslms</span><span class="o">.</span><span class="na">modular</span><span class="o">.</span><span class="na">domain</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class Comment {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kd">static</span> <span class="n">constraints</span> <span class="o">=</span> <span class="o">{</span>
+</div><div class='line'>    <span class="n">name</span><span class="o">(</span><span class="nl">blank:</span><span class="kc">false</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">email</span><span class="o">(</span><span class="nl">blank:</span><span class="kc">false</span><span class="o">)</span>
+</div><div class='line'>    <span class="n">comment</span><span class="o">(</span><span class="nl">blank:</span><span class="kc">false</span><span class="o">)</span>
+</div><div class='line'><span class="o">}</span>
+</div><div class='line'> </div><div class='line'><span class="n">String</span> <span class="n">name</span>
+</div><div class='line'><span class="n">String</span> <span class="n">email</span>
+</div><div class='line'><span class="n">String</span> <span class="n">website</span>
+</div><div class='line'><span class="n">String</span> <span class="n">comment</span>
+</div><div class='line'> </div><div class='line'><span class="n">Boolean</span> <span class="n">isApproved</span> <span class="o">=</span> <span class="kc">false</span>
+</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
 </div></pre></td></tr></table></div></figure></p>
 
 <p>With our new shared domain class created, we want to package up our plugin so we can load it into the other projects which we'll be creating in a moment.</p>
@@ -140,13 +138,11 @@ grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
 <p>Because you can <a href="#download-instructions">download</a> the project I created, I'm not going to go into excruciating detail about the controller and view(s) I setup in my front end, but sufficed to say I am accessing the "Comment" domain class that is supplied by the Modular-DAL plugin project!</p>
 
 
-<p><figure class='code'><figcaption>CommentsController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import com.nslms.modular.domain.*&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">CommentsController</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def index = { [comments: Comment.findAllByisApproved(true)] }</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+<p><figure class='code'><figcaption>CommentsController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">import</span> <span class="nn">com.nslms.modular.domain.*</span><span class="o">&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class CommentsController {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kt">def</span> <span class="n">index</span> <span class="o">=</span> <span class="o">{</span> <span class="o">[</span><span class="nl">comments:</span> <span class="n">Comment</span><span class="o">.</span><span class="na">findAllByisApproved</span><span class="o">(</span><span class="kc">true</span><span class="o">)]</span> <span class="o">}</span>
+</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
 </div></pre></td></tr></table></div></figure></p>
 
 <p>The result of the front end app should be a list of comments which are approved (by the backend) and a submission form to allow you to submit new comments.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/frontend/comments" target="_blank">this</a>.</p>
@@ -171,13 +167,11 @@ grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
 <p>Again because you can <a href="#download-instructions">download</a> the project I created, here's just a snippet of the admin controller showing the juicy bits where we use the shared domain class</p>
 
 
-<p><figure class='code'><figcaption>AdminController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div><div data-line='9' class='line-number'></div><div data-line='10' class='line-number'></div><div data-line='11' class='line-number'></div><div data-line='12' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="o">&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;import com.nslms.modular.domain.*;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">class</span> <span class="nc">AdminController</span> <span class="o">{&lt;</span><span class="s">/p&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;pre&gt;&lt;code&gt;def comments = { [comments: Comment.findAllByisApproved(false)] }</span>
-</div><div class='line'><span class="s">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="s">/pre&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+<p><figure class='code'><figcaption>AdminController.groovy (snippet) </figcaption><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div><div data-line='6' class='line-number'></div><div data-line='7' class='line-number'></div><div data-line='8' class='line-number'></div></pre></td><td class='main  groovy'><pre><div class='line'><span class="kn">import</span> <span class="nn">com.nslms.modular.domain.*</span><span class="o">;&lt;</span><span class="s">/p&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="s">&lt;p&gt;class AdminController {&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kt">def</span> <span class="n">comments</span> <span class="o">=</span> <span class="o">{</span> <span class="o">[</span><span class="nl">comments:</span> <span class="n">Comment</span><span class="o">.</span><span class="na">findAllByisApproved</span><span class="o">(</span><span class="kc">false</span><span class="o">)]</span> <span class="o">}</span>
+</div><div class='line'><span class="o">&lt;</span><span class="s">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
 </div></pre></td></tr></table></div></figure></p>
 
 <p>The back end app should have a list of all unapproved comments, and a method to approve them.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/backend/admin/comments" target="_blank">this</a>.</p>
@@ -188,9 +182,8 @@ grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
 <p>Now if you've followed along and created your own controllers and views, or <a href="#download-instructions">downloaded</a> my basic project, you're going to want to try running both the front end and back end at the same time, persisting data to a common datasource so that you can see the whole thing in action.  If you just use the grails run-app command, you'll find very quickly that you can only run one or the other project, but not both at the same time.  This is because they'll both be trying to run on the common Tomcat port (8080).  To overcome this, and run both apps at the same time, try the following starting from the Modular-FrontEnd directory.</p>
 
 
-<p>```</p>
-
-<p>grails -Dserver.port=8081 run-app
+<p>```
+grails -Dserver.port=8081 run-app
 cd ../Modular-BackEnd
 grails -Dserver.port=8082 run-app</p>
 

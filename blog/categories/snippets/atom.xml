@@ -4,7 +4,7 @@
   <title><![CDATA[Category: snippets | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/snippets/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-16T21:03:27-08:00</updated>
+  <updated>2014-02-16T21:14:42-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -25,9 +25,8 @@
 
 <p>One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.</p>
 
-<p>```</p>
-
-<p>{
+<p>```
+{
   &ldquo;Statement&rdquo;: [</p>
 
 <pre><code>{
@@ -50,9 +49,8 @@
 </code></pre>
 
 <p>  ]
-}</p>
-
-<p>```</p>
+}
+```</p>
 
 <p>This contains three simple IAM statements.</p>
 

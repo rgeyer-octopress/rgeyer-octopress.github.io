@@ -160,21 +160,21 @@
 </div><div class='line'><span class="p">}</span>
 </div></pre></td></tr></table></div></figure></p>
 
-<p>With that out of the way, lets create a new IAM user group named <strong>RightScaleDash</strong> and upload our new policy file using the IAM CLI tools.
-<figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>$ iam-groupcreate -g RightScaleDash
-</div><div class='line'>$ iam-groupuploadpolicy -g RightScaleDash -p FullControl -f /tmp/fullcontrol_iam_policy.json
-</div></pre></td></tr></table></div></figure></p>
+<p>With that out of the way, lets create a new IAM user group named <strong>RightScaleDash</strong> and upload our new policy file using the IAM CLI tools.</p>
 
-<p>Then, we create a new user named <strong>rsdash</strong> and assign the new user to the <strong>RightScaleDash</strong> group.  Note the <strong>-k</strong> parameter, this instructs the IAM CLI tools to create a new AWS key and secret pair.
-<figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>$ iam-usercreate -u rsdash -g RightScaleDash -k
-</div></pre></td></tr></table></div></figure></p>
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>$ iam-groupcreate -g RightScaleDash
+</div><div class='line'>$ iam-groupuploadpolicy -g RightScaleDash -p FullControl -f /tmp/fullcontrol_iam_policy.json</div></pre></td></tr></table></div></figure></p>
 
-<p>Some things like signing your custom Amazon Machine Images (AMI&rsquo;s) require an x.509 certificate, and RightScale has a place for entering this type of &ldquo;credential&rdquo; as well, so we&rsquo;ll create a self signed one for this example.
-<figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div><div data-line='5' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'> </div><div class='line'>$ openssl genrsa -out iam.key 1024
+<p>Then, we create a new user named <strong>rsdash</strong> and assign the new user to the <strong>RightScaleDash</strong> group.  Note the <strong>-k</strong> parameter, this instructs the IAM CLI tools to create a new AWS key and secret pair.</p>
+
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>$ iam-usercreate -u rsdash -g RightScaleDash -k</div></pre></td></tr></table></div></figure></p>
+
+<p>Some things like signing your custom Amazon Machine Images (AMI&rsquo;s) require an x.509 certificate, and RightScale has a place for entering this type of &ldquo;credential&rdquo; as well, so we&rsquo;ll create a self signed one for this example.</p>
+
+<p><figure class='code'><div class='highlight'><table><tr><td class='line-numbers' aria-hidden='true'><pre><div data-line='1' class='line-number'></div><div data-line='2' class='line-number'></div><div data-line='3' class='line-number'></div><div data-line='4' class='line-number'></div></pre></td><td class='main  plain'><pre><div class='line'>$ openssl genrsa -out iam.key 1024
 </div><div class='line'>$ openssl req -new -key iam.key -out iam.csr
 </div><div class='line'>$ openssl x509 -req -in iam.csr -signkey iam.key -out iam.pem
-</div><div class='line'>$ iam-useraddcert -u rsdash -f iam.pem
-</div></pre></td></tr></table></div></figure></p>
+</div><div class='line'>$ iam-useraddcert -u rsdash -f iam.pem</div></pre></td></tr></table></div></figure></p>
 
 <p>That&rsquo;s really all there is to creating your service account.  Once you&rsquo;ve set things up you aren&rsquo;t locked in to your choices either.  At any time you can go back and add or remove security policies using the IAM CLI.</p>
 
