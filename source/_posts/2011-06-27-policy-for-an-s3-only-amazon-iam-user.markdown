@@ -20,6 +20,7 @@ meta:
   _headspace_description: A simple Amazon IAM policy to allow a user full access to
     a single S3 bucket
   _edit_last: '1'
+comments: true
 ---
 Now that Amazon's Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href="http://www.nslms.com/2011/04/04/enabling-aws-console-login-for-iam-users/">login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.
 <!--more-->
