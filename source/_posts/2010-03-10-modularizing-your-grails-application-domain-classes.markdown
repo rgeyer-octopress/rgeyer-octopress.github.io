@@ -96,7 +96,7 @@ class CommentsController {
 }
 {% endcodeblock %}
 
-<p>The result of the front end app should be a list of comments which are approved (by the backend) and a submission form to allow you to submit new comments.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/frontend/comments" target="_blank">this</a>.</p>
+<p>The result of the front end app should be a list of comments which are approved (by the backend) and a submission form to allow you to submit new comments. <!-- Kinda like <a href="http://www.nslms.com/grails/examples/modular/frontend/comments" target="_blank">this</a>. --></p>
 
 <strong>The Back End</strong>
 <p>Now we need to create the system which will allow you as the administrator to approve the comments submitted by the unwashed masses.</p>
@@ -119,7 +119,7 @@ class AdminController {
 }
 {% endcodeblock %}
 
-<p>The back end app should have a list of all unapproved comments, and a method to approve them.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/backend/admin/comments" target="_blank">this</a>.</p>
+<p>The back end app should have a list of all unapproved comments, and a method to approve them.  <!--Kinda like <a href="http://www.nslms.com/grails/examples/modular/backend/admin/comments" target="_blank">this</a>.--></p>
 
 <strong>Trying it out</strong>
 <p>Now if you've followed along and created your own controllers and views, or <a href="#download-instructions">downloaded</a> my basic project, you're going to want to try running both the front end and back end at the same time, persisting data to a common datasource so that you can see the whole thing in action.  If you just use the grails run-app command, you'll find very quickly that you can only run one or the other project, but not both at the same time.  This is because they'll both be trying to run on the common Tomcat port (8080).  To overcome this, and run both apps at the same time, try the following starting from the Modular-FrontEnd directory.</p>
