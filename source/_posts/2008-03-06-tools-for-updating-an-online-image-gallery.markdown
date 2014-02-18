@@ -18,7 +18,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/cjCBgT
   _sexybookmarks_permaHash: bb1e4109f05eed571f8ca5f49850a606
 ---
-Not long ago I shared my bash script for <a href="http://www.nslms.com/2008/02/20/image-thumbnail-generating-script/">creating thumbnails</a> and manageable sized "big" images for an image gallery, or other image store.  Well, today I had to update an existing gallery with a pretty significant number of new images.  It occurred to me that I'd like to only convert new images rather than re-converting the whole lot.  Then, I'd like to simply upload the new files to my server in some automated way.
+Not long ago I shared my bash script for <a href=http://blog.ryangeyer.com/blog/2008/02/20/image-thumbnail-generating-script/>creating thumbnails</a> and manageable sized "big" images for an image gallery, or other image store.  Well, today I had to update an existing gallery with a pretty significant number of new images.  It occurred to me that I'd like to only convert new images rather than re-converting the whole lot.  Then, I'd like to simply upload the new files to my server in some automated way.
 
 So here's the tools to do it.  It assumes you have the same layout for your pictures on your local drive as I do, which is as follows.
 <ul>

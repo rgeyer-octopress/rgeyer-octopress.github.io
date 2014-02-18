@@ -26,7 +26,7 @@ It's now the end of my first full week back at work since I attended the 2010 Cl
 
 <!--more-->
 
-You see, a few weeks before the conference, RightScale announced a contest for the best ServerTemplate published to their public <a href="http://www.rightscale.com/library/">library</a>.  Three winners would be announced at the RightScale User Conference and be thanked for their contribution with a shiny new iPad.  I couldn't resist submitting my <a href="http://www.nslms.com/2010/10/25/rightscale-crowd-sources-value-add-content/">own work</a> for a chance to win.
+You see, a few weeks before the conference, RightScale announced a contest for the best ServerTemplate published to their public <a href="http://www.rightscale.com/library/">library</a>.  Three winners would be announced at the RightScale User Conference and be thanked for their contribution with a shiny new iPad.  I couldn't resist submitting my <a href=http://blog.ryangeyer.com/blog/2010/10/25/rightscale-crowd-sources-value-add-content/>own work</a> for a chance to win.
 
 If you follow me on <a href="http://twitter.com/#!/rjgeyer">Twitter</a> you already saw this.
 [twitter_status_by_id id="29593902654"]

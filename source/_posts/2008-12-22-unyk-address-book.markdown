@@ -24,7 +24,7 @@ meta:
 ---
 I just received an email today from one of my contacts on <a href="https://www.linkedin.com/">LinkedIn</a>.  It was an invitation to join this new <a href="http://www.unyk.com/">UNYK</a> Address Book application which is apparently in beta.
 
-I think I've made it clear that I'm a <a href="http://www.nslms.com/2008/09/09/livin-on-the-web/">big fan</a> of anything which centralizes my information and allows me to access it through a web browser from anywhere, so I checked it out.
+I think I've made it clear that I'm a <a href=http://blog.ryangeyer.com/blog/2008/09/09/livin-on-the-web/>big fan</a> of anything which centralizes my information and allows me to access it through a web browser from anywhere, so I checked it out.
 
 Overall, it looks quite promising.  It will harvest your existing contacts from several different locations (Yahoo!, Google, LinkedIn, Microsoft Outlook, MSN, etc.) and consolidate them.  When you sign up you provide your personal and professional contact information, and this in turn keeps your contact record up to date for anyone who has you in their address book.  Their premise is that everyone will eventually use them to manage their contact information, and therefore your address book will always be "automatically" up to date, because all of your contacts will have updated their information with UNYK.
 

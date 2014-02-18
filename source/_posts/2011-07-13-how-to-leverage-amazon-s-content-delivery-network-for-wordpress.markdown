@@ -31,7 +31,7 @@ One of the best ways you can improve this performance is to serve those things f
 
 The first step is going to be setting up the S3 bucket where you're going to host your files.
 
-Since we're going to be handing over access to the AWS API for S3 to a Wordpress plugin, we should create a new <a href="http://www.nslms.com/2011/03/28/create-aws-service-accounts-with-iam/">IAM Service Account</a> and set up a <a href="http://www.nslms.com/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">security policy</a> which restricts that accounts access to only the S3 bucket we setup.
+Since we're going to be handing over access to the AWS API for S3 to a Wordpress plugin, we should create a new <a href=http://blog.ryangeyer.com/blog/2011/03/28/create-aws-service-accounts-with-iam/>IAM Service Account</a> and set up a <a href=http://blog.ryangeyer.com/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/>security policy</a> which restricts that accounts access to only the S3 bucket we setup.
 
 The next thing we want to do is upload all of the content from our /wp-include and /wp-content directories up to the bucket we created.
 

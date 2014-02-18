@@ -36,6 +36,6 @@ Picture this, you get behind the wheel of the $360k car that you'd like to buy, 
 
 Isn't that what it's really about anyway?  These cars aren't built so that only real estate moguls and CEO's can own and drive them.  No!  They're designed to be driven FAST, on a track by a talented and appreciative driver.  So why not give your average Joe the ability to get into one of these vehicles, someone who would really cherish the privilege and (hopefully) have some respect for traffic laws and be able to control the vehicle on the street, someone like ME!
 
-It might even cut down on the number of <a href="http://www.nslms.com/2008/03/05/with-great-power-comes/">incompetent and unexperienced</a> drivers that get behind the wheel of these monsters.
+It might even cut down on the number of <a href=http://blog.ryangeyer.com/blog/2008/03/05/with-great-power-comes/>incompetent and unexperienced</a> drivers that get behind the wheel of these monsters.
 
 Just a thought.  Manufacturers are you listening?  I'll take delivery of my Ford GT as soon as you realize how good this would be for business.  ;-)

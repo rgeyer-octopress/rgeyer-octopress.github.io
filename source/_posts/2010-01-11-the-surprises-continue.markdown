@@ -18,7 +18,7 @@ meta:
 ---
 With things starting to slow down with my work schedule, I was actually able to take this weekend off!  I got to relax quite a lot, spend some time with the family, and spend a little time in the garage with the Caddy.
 
-You may remember from my last <a href="http://www.nslms.com/2009/12/02/opening-pandoras-box/">last update</a> about the Cadillac, that I had a few outstanding mysteries to try to resolve.
+You may remember from my last <a href=http://blog.ryangeyer.com/blog/2009/12/02/opening-pandoras-box/>last update</a> about the Cadillac, that I had a few outstanding mysteries to try to resolve.
 
 <a href="http://www.flickr.com/photos/rgeyer/4267105812/" title="Damper Bolts by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4059/4267105812_bf50f303a7_m.jpg" width="180" height="240" alt="Damper Bolts" class="alignright" /></a>First, let's talk about the "easy" one, the Harmonic Balancer/Dampener.  You see, it seemed have been bent or damaged at some point, since one side of it was closer to the engine than the other.  This created a situation where it would "wobble" on the crank as the engine was running not cool!  As was preparing to remove it, I pulled some of the bolts which hold the crank pulley onto the dampener.  What I noticed is that when I removed the first bolt, which happened to be in the spot on the dampener where it was "pushed out", that the dampener seemed to start returning to it's original shape.  After completely removing the bolts, and using a pry bar the dampener was back to it's original shape!  Turns out that someone before me replaced one of the pulley bolts with a bolt that was nearly twice as long, and it was pushing on the dampener causing the problem I observed! 
 

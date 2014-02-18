@@ -20,7 +20,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/d9DJU5
   _sexybookmarks_permaHash: 5fe6baf8ff8b951264b00a58c13f4ba5
 ---
-Okay, if you thought the idea of a lightweight <a href="http://www.nslms.com/2008/11/03/45l-duramax-saturn-sky/">sports car</a> with a big diesel v8 was exciting, consider this.
+Okay, if you thought the idea of a lightweight <a href=http://blog.ryangeyer.com/blog/2008/11/03/45l-duramax-saturn-sky/>sports car</a> with a big diesel v8 was exciting, consider this.
 
 There is a kit car company out there named <a href="http://www.factoryfive.com/index.html">Factory Five</a> that makes various kit cars.  Cobra replicas, hot rods, and perhaps most interestingly, a "build it yourself" <a href="http://www.factoryfive.com/gtmhome.html">super car</a>.
 

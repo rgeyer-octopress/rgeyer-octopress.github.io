@@ -12,7 +12,7 @@ meta:
   _syntaxhighlighter_encoded: '1'
   _edit_last: '1'
 ---
-Last week, I told you how you can use Amazon's Identity and Access Management (IAM) offering to better secure the services and tools you use to manage your AWS environment with <a href="http://www.nslms.com/2011/03/28/create-aws-ser…ounts-with-iam/">service accounts</a>.  Well on February 14th IAM got that much sweeter when they opened up the ability for IAM users to login to the AWS Console.
+Last week, I told you how you can use Amazon's Identity and Access Management (IAM) offering to better secure the services and tools you use to manage your AWS environment with <a href=http://blog.ryangeyer.com/blog/2011/03/28/create-aws-ser…ounts-with-iam/>service accounts</a>.  Well on February 14th IAM got that much sweeter when they opened up the ability for IAM users to login to the AWS Console.
 <!--more-->
 
 In the previous blog post we covered how to create users and get an AWS Access Key ID and AWS Secret Access Key to use with the AWS API.  Well the IAM also offers the ability to allow those users to log into the AWS console.

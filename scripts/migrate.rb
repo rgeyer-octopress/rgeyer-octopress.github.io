@@ -63,6 +63,13 @@ def enable_comments(everything)
   everything
 end
 
+def convert_hrefs(everything)
+  # Posts
+  everything.gsub!(/"http:\/\/www\.nslms\.com\/([0-9]{4}\/[0-9]{2}\/[0-9]{2}\/.*?)"/, "http://blog.ryangeyer.com/blog/\\1")
+
+  everything
+end
+
 Dir.glob("../source/_posts/*.markdown").each do |file|
   puts "File: #{file}"
   str = ""
@@ -71,7 +78,8 @@ Dir.glob("../source/_posts/*.markdown").each do |file|
   end
   str = convert_codeblocks(str)
   str = styles(str)
-  str = enable_comments(str)
+#  str = enable_comments(str)
+  str = convert_hrefs(str)
   File.open(file, "w+") do |f|
     f.write(str)
   end
