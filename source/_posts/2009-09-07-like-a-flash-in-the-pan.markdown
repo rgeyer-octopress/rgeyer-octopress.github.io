@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Like a flash in the pan
+comments: true
 categories:
 - Photography
 tags:

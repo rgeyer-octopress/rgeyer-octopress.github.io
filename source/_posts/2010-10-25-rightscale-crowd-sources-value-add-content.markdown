@@ -1,6 +1,7 @@
 ---
 layout: post
 title: RightScale crowd sources value-add content
+comments: true
 categories:
 - Cloud computing
 tags:

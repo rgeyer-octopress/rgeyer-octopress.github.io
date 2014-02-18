@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The upgrade begins
+comments: true
 categories:
 - PC Upgrade
 - Worklogs

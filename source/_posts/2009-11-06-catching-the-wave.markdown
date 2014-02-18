@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Catching the Wave
+comments: true
 categories:
 - Cloud computing
 - Reviews

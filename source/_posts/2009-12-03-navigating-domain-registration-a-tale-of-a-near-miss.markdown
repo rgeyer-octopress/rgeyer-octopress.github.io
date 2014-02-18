@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Navigating Domain Registration - A tale of a near miss
+comments: true
 categories:
 - News
 - Rants

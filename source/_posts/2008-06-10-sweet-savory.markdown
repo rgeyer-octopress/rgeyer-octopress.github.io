@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Sweet ~= Savory
+comments: true
 categories:
 - Funny
 tags:

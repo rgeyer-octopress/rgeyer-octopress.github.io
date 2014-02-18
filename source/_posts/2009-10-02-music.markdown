@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Music
+comments: true
 categories:
 - Music
 - Quincy

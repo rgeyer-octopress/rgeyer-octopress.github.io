@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Check out my new ride!
+comments: true
 categories:
 - Rants
 - Supercars

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Coping with the many phases of Chef Runtime
+comments: true
 categories: []
 tags:
 - linkedin

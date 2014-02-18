@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The X is dead.. Long live the X!!
+comments: true
 categories:
 - Cars
 - Worklogs

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Taking Route 53 to Optimized Website Performance
+comments: true
 categories:
 - Cloud computing
 tags:

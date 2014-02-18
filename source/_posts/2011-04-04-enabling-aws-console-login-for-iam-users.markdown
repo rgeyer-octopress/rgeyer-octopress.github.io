@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Enabling AWS Console Login for IAM Users
+comments: true
 categories: []
 tags:
 - linkedin

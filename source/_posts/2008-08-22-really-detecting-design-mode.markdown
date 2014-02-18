@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Really Detecting Design Mode
+comments: true
 categories:
 - C# coding
 tags:

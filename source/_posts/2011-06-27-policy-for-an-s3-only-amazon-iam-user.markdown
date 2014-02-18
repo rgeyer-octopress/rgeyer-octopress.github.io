@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Policy for an S3 only Amazon IAM User
+comments: true
 categories:
 - Cloud computing
 - Snippets

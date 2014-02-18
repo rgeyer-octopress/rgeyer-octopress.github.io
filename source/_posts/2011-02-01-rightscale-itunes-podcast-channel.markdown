@@ -1,6 +1,7 @@
 ---
 layout: post
 title: RightScale iTunes Podcast Channel
+comments: true
 categories: []
 tags:
 - linkedin

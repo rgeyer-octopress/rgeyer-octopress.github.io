@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Time is Money - What's your hourly rate?
+comments: true
 categories:
 - Personal Expressions
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What Grooves You?
+comments: true
 categories:
 - Grails/Groovy
 - Reviews

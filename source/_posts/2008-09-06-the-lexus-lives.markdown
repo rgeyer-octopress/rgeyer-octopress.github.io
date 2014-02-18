@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Lexus Lives!
+comments: true
 categories:
 - 92 ES300
 - Worklogs

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How I would improve RightScale's ServerTemplates
+comments: true
 categories:
 - Cloud computing
 tags:

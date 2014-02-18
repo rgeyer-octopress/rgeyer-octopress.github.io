@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Epiphanies
+comments: true
 categories:
 - Parenting
 - Personal Expressions

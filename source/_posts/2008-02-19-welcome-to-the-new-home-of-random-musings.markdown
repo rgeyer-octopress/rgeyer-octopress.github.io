@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Welcome to the new home of Random Musings
+comments: true
 categories:
 - News
 tags:

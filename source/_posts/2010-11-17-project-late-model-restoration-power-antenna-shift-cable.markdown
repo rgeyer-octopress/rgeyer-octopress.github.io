@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Project Late Model Restoration - Power Antenna & Shift Cable
+comments: true
 categories:
 - 92 ES300
 - Worklogs

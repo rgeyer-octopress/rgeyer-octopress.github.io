@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Appearance
+comments: true
 categories:
 - Personal Expressions
 tags: []

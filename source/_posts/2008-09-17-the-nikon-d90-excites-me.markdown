@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Nikon D90 Excites Me
+comments: true
 categories:
 - Photography
 - Videography

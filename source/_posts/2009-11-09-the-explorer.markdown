@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Explorer
+comments: true
 categories:
 - Cars
 - Personal Expressions

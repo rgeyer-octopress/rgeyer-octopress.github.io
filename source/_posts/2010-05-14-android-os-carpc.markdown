@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Android OS CarPC?
+comments: true
 categories:
 - Cars
 - Linux

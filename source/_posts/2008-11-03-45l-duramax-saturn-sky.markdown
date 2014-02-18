@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 4.5L Duramax - Saturn Sky
+comments: true
 categories:
 - Bio Diesel
 - Concept Projects

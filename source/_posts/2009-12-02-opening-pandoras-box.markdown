@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Opening Pandora's Box
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 - Worklogs

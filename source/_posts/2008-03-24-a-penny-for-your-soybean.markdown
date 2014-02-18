@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A penny for your soybean?
+comments: true
 categories:
 - Bio Diesel
 tags:

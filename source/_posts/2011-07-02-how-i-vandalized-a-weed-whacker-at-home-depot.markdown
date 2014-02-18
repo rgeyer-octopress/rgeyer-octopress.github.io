@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How I Vandalized a Weed Whacker at Home Depot
+comments: true
 categories:
 - Funny
 tags:

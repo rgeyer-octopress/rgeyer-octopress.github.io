@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 7:  Going out'
+comments: true
 categories:
 - Parenting
 tags: []

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Renewed passion
+comments: true
 categories:
 - Personal Expressions
 tags:

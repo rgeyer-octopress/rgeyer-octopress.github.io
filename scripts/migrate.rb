@@ -57,6 +57,12 @@ def styles(everything)
   everything
 end
 
+def enable_comments(everything)
+  everything.gsub!(/(title:.*?)$/, "\\1\ncomments: true")
+
+  everything
+end
+
 Dir.glob("../source/_posts/*.markdown").each do |file|
   puts "File: #{file}"
   str = ""
@@ -65,6 +71,7 @@ Dir.glob("../source/_posts/*.markdown").each do |file|
   end
   str = convert_codeblocks(str)
   str = styles(str)
+  str = enable_comments(str)
   File.open(file, "w+") do |f|
     f.write(str)
   end

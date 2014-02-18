@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Mystery Solved!
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 - Worklogs

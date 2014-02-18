@@ -1,6 +1,7 @@
 ---
 layout: post
 title: RS & Cloud Dev best practices
+comments: true
 categories: []
 tags: []
 status: draft
@@ -11,6 +12,7 @@ meta:
   Hide SexyBookmarks: '0'
   _headspace_description: ''
   _headspace_page_title: ''
+comments: true
   _edit_last: '1'
 ---
 I am often asked about best practices for developing, testing and debugging ServerTemplates.  This is my attempt to condense some of the best and most useful bits to make it easier for developers to create and publish some awesome templates.

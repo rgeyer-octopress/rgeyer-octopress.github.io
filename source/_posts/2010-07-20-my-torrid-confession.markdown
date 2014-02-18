@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My torrid confession...
+comments: true
 categories: []
 tags: []
 status: publish

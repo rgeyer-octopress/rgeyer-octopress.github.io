@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to become a Cloud Computing Rockstar
+comments: true
 categories:
 - Cloud computing
 tags:

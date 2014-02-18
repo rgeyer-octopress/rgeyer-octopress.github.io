@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Barbie and me
+comments: true
 categories:
 - Personal Expressions
 tags:

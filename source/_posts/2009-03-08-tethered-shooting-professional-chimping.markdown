@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tethered Shooting - Professional Chimping?
+comments: true
 categories:
 - Photography
 - Rants

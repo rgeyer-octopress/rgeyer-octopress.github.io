@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Oh Holy Entertainment!
+comments: true
 categories:
 - Personal Expressions
 tags:

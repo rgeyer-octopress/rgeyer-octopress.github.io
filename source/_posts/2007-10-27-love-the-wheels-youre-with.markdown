@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Love the wheels you're with
+comments: true
 categories:
 - Cars
 tags:

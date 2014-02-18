@@ -1,6 +1,7 @@
 ---
 layout: post
 title: An Ob-NOx-ious truth
+comments: true
 categories:
 - Bio Diesel
 - Emissions

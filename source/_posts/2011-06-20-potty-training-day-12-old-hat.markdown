@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 12:  Old Hat'
+comments: true
 categories:
 - Parenting
 tags: []

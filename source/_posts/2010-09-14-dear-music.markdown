@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Dear Music
+comments: true
 categories:
 - Music
 tags:

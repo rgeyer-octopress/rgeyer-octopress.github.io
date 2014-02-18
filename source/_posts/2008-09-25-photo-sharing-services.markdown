@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Photo Sharing Services
+comments: true
 categories:
 - Cloud computing
 - Photography

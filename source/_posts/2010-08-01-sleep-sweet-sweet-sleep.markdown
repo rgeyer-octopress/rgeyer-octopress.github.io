@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Sleep, sweet sweet sleep
+comments: true
 categories:
 - Parenting
 - Personal Expressions

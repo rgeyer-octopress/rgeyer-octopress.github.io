@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Super Special Chuck in 3D.. Riiiight
+comments: true
 categories:
 - Funny
 - Photography

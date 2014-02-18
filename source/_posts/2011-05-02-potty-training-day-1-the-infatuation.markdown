@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 1: The Infatuation'
+comments: true
 categories:
 - Parenting
 tags: []

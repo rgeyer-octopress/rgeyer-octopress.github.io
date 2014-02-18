@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My First Post
+comments: true
 categories:
 - News
 tags: []

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Pregnant Weight Rant
+comments: true
 categories:
 - Parenting
 - Rants

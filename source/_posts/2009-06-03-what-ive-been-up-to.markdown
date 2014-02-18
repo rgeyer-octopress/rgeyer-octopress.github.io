@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What I've been up to...
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 tags:

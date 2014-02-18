@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Its the grid.. bitches
+comments: true
 categories: []
 tags:
 - linkedin

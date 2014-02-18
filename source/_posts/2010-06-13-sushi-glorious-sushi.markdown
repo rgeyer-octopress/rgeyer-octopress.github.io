@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Sushi, glorious sushi!
+comments: true
 categories:
 - Parenting
 - Personal Expressions

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How do you remember that much?
+comments: true
 categories:
 - Personal Expressions
 tags:

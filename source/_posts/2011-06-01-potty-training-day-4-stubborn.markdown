@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training day 4: Stubborn'
+comments: true
 categories:
 - Parenting
 tags: []

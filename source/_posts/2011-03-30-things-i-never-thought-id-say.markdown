@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Things I never thought I’d say
+comments: true
 categories:
 - Parenting
 tags: []

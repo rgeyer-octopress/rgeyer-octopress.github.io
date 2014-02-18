@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to host Wordpress for Free
+comments: true
 categories:
 - Cloud computing
 - Linux

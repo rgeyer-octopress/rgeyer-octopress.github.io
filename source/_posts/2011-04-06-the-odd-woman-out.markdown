@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The odd woman out
+comments: true
 categories:
 - Parenting
 tags: []

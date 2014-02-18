@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Controversial Kinetic Sculpture
+comments: true
 categories:
 - Art &amp; Multimedia
 tags:

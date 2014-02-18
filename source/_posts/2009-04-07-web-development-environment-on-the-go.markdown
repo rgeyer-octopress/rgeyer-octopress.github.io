@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Web development environment - "On The Go"
+comments: true
 categories:
 - drupal
 - php

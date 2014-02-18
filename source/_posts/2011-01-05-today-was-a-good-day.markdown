@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Today was a good day
+comments: true
 categories:
 - Personal Expressions
 tags: []

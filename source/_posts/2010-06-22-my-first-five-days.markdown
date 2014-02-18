@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My first five days...
+comments: true
 categories:
 - Parenting
 - Personal Expressions

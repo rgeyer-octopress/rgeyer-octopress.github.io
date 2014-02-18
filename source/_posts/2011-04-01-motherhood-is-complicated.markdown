@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Motherhood is complicated
+comments: true
 categories:
 - Parenting
 tags: []

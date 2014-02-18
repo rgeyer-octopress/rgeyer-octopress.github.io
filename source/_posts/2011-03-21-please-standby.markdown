@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Please Standby...
+comments: true
 categories: []
 tags:
 - linkedin

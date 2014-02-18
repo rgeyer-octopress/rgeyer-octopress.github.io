@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 11:  Kicking butt and taking names'
+comments: true
 categories:
 - Parenting
 tags: []

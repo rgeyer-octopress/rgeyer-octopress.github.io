@@ -1,6 +1,7 @@
 ---
 layout: post
 title: I dub thee "Bionic Caddy"
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 - Worklogs

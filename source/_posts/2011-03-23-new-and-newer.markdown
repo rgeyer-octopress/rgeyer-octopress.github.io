@@ -1,6 +1,7 @@
 ---
 layout: post
 title: New and Newer
+comments: true
 categories:
 - Parenting
 tags: []

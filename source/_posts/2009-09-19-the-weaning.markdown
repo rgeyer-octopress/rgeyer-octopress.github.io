@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Weaning
+comments: true
 categories:
 - Parenting
 - Quincy

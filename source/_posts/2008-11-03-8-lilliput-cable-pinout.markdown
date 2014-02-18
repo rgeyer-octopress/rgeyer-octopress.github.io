@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 8" Lilliput cable pinout
+comments: true
 categories:
 - Worklogs
 tags:

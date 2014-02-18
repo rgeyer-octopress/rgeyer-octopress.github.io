@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Image thumbnail generating script
+comments: true
 categories:
 - Linux
 tags:

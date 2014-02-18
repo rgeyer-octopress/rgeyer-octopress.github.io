@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Grails Domain Mocking Limitations
+comments: true
 categories:
 - Grails/Groovy
 tags:

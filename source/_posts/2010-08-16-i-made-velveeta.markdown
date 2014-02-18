@@ -1,6 +1,7 @@
 ---
 layout: post
 title: I Made Velveeta
+comments: true
 categories:
 - Parenting
 - Personal Expressions

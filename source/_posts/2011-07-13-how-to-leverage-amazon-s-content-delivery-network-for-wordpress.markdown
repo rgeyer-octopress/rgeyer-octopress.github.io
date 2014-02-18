@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to Leverage Amazon's Content Delivery Network for Wordpress
+comments: true
 categories:
 - Cloud computing
 tags:

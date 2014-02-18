@@ -1,6 +1,7 @@
 ---
 layout: post
 title: With great power comes?
+comments: true
 categories:
 - Rants
 tags:

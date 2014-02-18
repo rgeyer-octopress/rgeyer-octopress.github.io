@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Music and the boys
+comments: true
 categories:
 - Music
 - Parenting

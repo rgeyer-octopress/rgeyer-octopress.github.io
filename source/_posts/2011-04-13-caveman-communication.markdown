@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Caveman communication
+comments: true
 categories:
 - Parenting
 tags: []

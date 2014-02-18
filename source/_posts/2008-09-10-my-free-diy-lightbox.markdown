@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My free DIY lightbox
+comments: true
 categories:
 - Photography
 tags:

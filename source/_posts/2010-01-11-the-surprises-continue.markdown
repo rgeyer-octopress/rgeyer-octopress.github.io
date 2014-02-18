@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Surprises Continue
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 - Worklogs

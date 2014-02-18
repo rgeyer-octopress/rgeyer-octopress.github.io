@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Trying to stay interesting
+comments: true
 categories: []
 tags: []
 status: draft

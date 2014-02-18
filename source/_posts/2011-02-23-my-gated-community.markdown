@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My gated community
+comments: true
 categories:
 - Parenting
 tags:

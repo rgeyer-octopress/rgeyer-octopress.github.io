@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 10: Getting better'
+comments: true
 categories:
 - Parenting
 tags: []

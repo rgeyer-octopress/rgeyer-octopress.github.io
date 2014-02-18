@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Grails and Tomcat6 - Deployment Notes
+comments: true
 categories:
 - Grails/Groovy
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Salted OpenLDAP Passwords w/ Grails & Spring Security
+comments: true
 categories: []
 tags:
 - linkedin

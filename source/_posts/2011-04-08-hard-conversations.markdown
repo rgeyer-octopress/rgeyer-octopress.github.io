@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hard conversations
+comments: true
 categories:
 - Parenting
 tags: []

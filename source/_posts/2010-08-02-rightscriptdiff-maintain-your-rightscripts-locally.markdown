@@ -1,6 +1,7 @@
 ---
 layout: post
 title: RightScriptDiff - Maintain your RightScripts Locally
+comments: true
 categories:
 - Cloud computing
 - Linux

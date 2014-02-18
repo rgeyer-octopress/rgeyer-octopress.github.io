@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How To - Headlight Oxidation Restoration
+comments: true
 categories:
 - 92 ES300
 tags:

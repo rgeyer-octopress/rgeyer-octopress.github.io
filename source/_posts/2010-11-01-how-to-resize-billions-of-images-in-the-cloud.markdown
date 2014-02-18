@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to resize billions of images in the cloud
+comments: true
 categories:
 - Cloud computing
 - Linux

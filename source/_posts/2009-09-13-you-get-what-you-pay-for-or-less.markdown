@@ -1,6 +1,7 @@
 ---
 layout: post
 title: You get what you pay for, or less!
+comments: true
 categories:
 - Photography
 - Reviews

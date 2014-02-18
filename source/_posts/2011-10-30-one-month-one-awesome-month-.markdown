@@ -1,6 +1,7 @@
 ---
 layout: post
 title: One month!  One awesome month!
+comments: true
 categories: []
 tags: []
 status: draft

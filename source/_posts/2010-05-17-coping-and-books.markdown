@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Coping and books
+comments: true
 categories:
 - Personal Expressions
 tags:

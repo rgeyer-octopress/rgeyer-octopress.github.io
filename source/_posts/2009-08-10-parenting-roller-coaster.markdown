@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Parenting Roller Coaster
+comments: true
 categories:
 - Family
 tags: []

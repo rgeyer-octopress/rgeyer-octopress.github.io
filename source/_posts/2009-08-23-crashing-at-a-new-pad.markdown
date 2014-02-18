@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Crashing at a new pad
+comments: true
 categories:
 - Linux
 - Reviews

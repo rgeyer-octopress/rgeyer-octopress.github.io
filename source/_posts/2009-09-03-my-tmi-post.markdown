@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My TMI Post
+comments: true
 categories:
 - Rants
 tags: []

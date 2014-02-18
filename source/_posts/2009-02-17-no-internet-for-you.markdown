@@ -1,6 +1,7 @@
 ---
 layout: post
 title: No Internet For You!
+comments: true
 categories:
 - News
 tags:

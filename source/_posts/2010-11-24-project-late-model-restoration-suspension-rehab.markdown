@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Project Late Model Restoration - Suspension Rehab
+comments: true
 categories:
 - 92 ES300
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! '''67 Caddy Day 1 - Triage'
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Linux 1080p HTPC
+comments: true
 categories:
 - Linux
 - Worklogs

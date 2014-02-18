@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Of living insects, and dying electronics
+comments: true
 categories:
 - Photography
 - Quincy

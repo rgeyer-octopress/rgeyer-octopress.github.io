@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hidden Danger of Grails Plugins
+comments: true
 categories:
 - Grails/Groovy
 tags:

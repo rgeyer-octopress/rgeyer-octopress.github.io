@@ -1,6 +1,7 @@
 ---
 layout: post
 title: PHPUnit Quick Start
+comments: true
 categories: []
 tags:
 - linkedin

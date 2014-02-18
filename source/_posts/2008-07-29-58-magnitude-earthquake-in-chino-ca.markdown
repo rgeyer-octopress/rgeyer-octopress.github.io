@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 5.8 Magnitude Earthquake in Chino, CA
+comments: true
 categories:
 - News
 tags:

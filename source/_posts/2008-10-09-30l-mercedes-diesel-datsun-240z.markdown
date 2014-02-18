@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 3.0L Mercedes Diesel - Datsun 240z
+comments: true
 categories:
 - Bio Diesel
 - Concept Projects

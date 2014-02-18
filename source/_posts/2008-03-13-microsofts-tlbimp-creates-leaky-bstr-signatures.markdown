@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Microsoft's Tlbimp creates leaky BSTR signatures
+comments: true
 categories:
 - C# coding
 tags:

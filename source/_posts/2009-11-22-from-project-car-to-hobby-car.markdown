@@ -1,6 +1,7 @@
 ---
 layout: post
 title: From Project Car to Hobby Car
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 - Personal Expressions

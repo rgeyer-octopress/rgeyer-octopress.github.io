@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Modularizing your Grails Application - Domain Classes
+comments: true
 categories:
 - Grails/Groovy
 - Reviews

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ultimate Gearhead Office Chairs
+comments: true
 categories: []
 tags:
 - linkedin

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Add Agility to Dev & Test with the Cloud - Managed by RightScale
+comments: true
 categories:
 - Cloud computing
 tags:

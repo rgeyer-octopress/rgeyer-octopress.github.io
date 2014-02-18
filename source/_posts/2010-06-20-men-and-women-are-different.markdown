@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Men and Women are different
+comments: true
 categories:
 - Parenting
 - Personal Expressions

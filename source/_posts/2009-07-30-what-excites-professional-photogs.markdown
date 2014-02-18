@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What Excites Professional Photogs?
+comments: true
 categories:
 - Photography
 - twitter

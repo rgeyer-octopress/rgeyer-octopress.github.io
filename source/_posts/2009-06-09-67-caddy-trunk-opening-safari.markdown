@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! '''67 Caddy - Trunk Opening Safari'
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 tags:

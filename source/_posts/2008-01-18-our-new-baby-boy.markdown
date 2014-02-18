@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Our new baby boy
+comments: true
 categories:
 - Quincy
 tags:

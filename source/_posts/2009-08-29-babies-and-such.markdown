@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Babies and Such
+comments: true
 categories:
 - Family
 - Quincy

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Livin' on the web
+comments: true
 categories:
 - Cloud computing
 tags:

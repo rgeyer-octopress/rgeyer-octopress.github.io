@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 8:  Show off ;)'
+comments: true
 categories:
 - Parenting
 tags: []

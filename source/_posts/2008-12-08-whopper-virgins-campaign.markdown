@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Whopper Virgins Campaign
+comments: true
 categories:
 - Rants
 tags:

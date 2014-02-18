@@ -1,6 +1,7 @@
 ---
 layout: post
 title: It all comes down to poop
+comments: true
 categories:
 - Parenting
 tags: []

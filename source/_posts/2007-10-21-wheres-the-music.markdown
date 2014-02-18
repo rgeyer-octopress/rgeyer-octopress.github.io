@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Where's the music?
+comments: true
 categories:
 - Rants
 tags:

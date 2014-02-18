@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Doctor, Sir.  Parenthood is messy and I love it! ;-)
+comments: true
 categories:
 - Funny
 - Parenting

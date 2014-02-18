@@ -1,6 +1,7 @@
 ---
 layout: post
 title: I'm becoming one of this moms and it scares me
+comments: true
 categories: []
 tags: []
 status: draft

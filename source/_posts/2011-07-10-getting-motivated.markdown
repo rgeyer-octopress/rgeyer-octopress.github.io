@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Getting Motivated
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 tags: []

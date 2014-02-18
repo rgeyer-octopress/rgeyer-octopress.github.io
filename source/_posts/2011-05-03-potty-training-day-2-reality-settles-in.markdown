@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 2: Reality settles in...'
+comments: true
 categories:
 - Parenting
 tags: []

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Managing production and development environments using Version Control
+comments: true
 categories: []
 tags:
 - linkedin

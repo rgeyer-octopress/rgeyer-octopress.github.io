@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 3: Clothes are the Enemy'
+comments: true
 categories:
 - Parenting
 tags: []

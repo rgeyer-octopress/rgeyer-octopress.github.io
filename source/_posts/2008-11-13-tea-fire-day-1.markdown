@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tea Fire - Day 1
+comments: true
 categories:
 - Tea Fire
 tags:

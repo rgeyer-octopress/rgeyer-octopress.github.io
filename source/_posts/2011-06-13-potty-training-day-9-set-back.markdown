@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 9: Set back'
+comments: true
 categories:
 - Parenting
 tags: []

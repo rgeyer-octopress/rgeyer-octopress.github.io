@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Fitting Grails in an Active Directory and NTLM SSO Groove
+comments: true
 categories:
 - Grails/Groovy
 - Reviews

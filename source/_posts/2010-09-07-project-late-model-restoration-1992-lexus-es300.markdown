@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Project - Late Model Restoration 1992 Lexus ES300
+comments: true
 categories:
 - 92 ES300
 tags:

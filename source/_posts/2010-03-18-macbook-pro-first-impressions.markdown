@@ -1,6 +1,7 @@
 ---
 layout: post
 title: MacBook Pro - First Impressions
+comments: true
 categories:
 - Hardware
 - Reviews

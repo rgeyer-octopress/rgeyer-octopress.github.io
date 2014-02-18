@@ -1,6 +1,7 @@
 ---
 layout: post
 title: I'll gladly pay you Tuesday for water today.
+comments: true
 categories:
 - Photography
 - Rants

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Grails Plugin Dependencies
+comments: true
 categories:
 - Grails/Groovy
 tags:

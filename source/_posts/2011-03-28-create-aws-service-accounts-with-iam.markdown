@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Create AWS Service Accounts with IAM
+comments: true
 categories:
 - Cloud computing
 tags:

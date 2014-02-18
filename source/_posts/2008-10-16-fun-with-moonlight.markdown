@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Fun with moonlight
+comments: true
 categories:
 - Photography
 tags:

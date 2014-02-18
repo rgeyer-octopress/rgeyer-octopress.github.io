@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Have your classic, and drive it too
+comments: true
 categories:
 - Cars
 tags:

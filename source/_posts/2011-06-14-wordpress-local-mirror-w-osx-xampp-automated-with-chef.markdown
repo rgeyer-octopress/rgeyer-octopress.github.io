@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Wordpress local mirror w/ OSX XAMPP, automated with Chef
+comments: true
 categories: []
 tags:
 - linkedin

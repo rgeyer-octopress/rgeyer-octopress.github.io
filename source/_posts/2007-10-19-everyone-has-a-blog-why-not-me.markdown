@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Everyone has a blog, why not me?
+comments: true
 categories:
 - News
 tags:

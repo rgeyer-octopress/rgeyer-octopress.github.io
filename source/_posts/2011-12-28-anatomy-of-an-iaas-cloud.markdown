@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Anatomy of an IaaS Cloud
+comments: true
 categories: []
 tags: []
 status: draft
@@ -9,6 +10,7 @@ published: false
 meta:
   _headspace_description: ''
   _headspace_page_title: ''
+comments: true
   Hide OgTags: '0'
   Hide SexyBookmarks: '0'
   _edit_last: '1'

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Corvette ZR1 Owners - Schooled
+comments: true
 categories:
 - Supercars
 tags:

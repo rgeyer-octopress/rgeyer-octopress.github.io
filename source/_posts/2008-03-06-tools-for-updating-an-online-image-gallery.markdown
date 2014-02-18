@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tools for updating an online image gallery
+comments: true
 categories:
 - Linux
 tags:

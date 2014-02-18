@@ -1,6 +1,7 @@
 ---
 layout: post
 title: But I can't juggle
+comments: true
 categories:
 - Family
 - Rants

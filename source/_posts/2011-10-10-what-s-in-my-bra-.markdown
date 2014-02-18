@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What's in my bra?
+comments: true
 categories: []
 tags: []
 status: draft

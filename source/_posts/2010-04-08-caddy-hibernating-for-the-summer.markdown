@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Caddy - Hibernating for the summer?
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 - Worklogs

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: WGA Strike, A national emergency
+comments: true
 categories:
 - Rants
 tags:

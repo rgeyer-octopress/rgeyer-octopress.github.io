@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My First 64bit PC
+comments: true
 categories:
 - PC Upgrade
 - Worklogs

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The sleeper has awakened!
+comments: true
 categories:
 - News
 tags:

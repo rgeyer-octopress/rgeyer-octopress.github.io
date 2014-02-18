@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 6:  Getting Smoother'
+comments: true
 categories:
 - Parenting
 tags: []

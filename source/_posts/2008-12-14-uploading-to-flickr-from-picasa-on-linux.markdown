@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Uploading to Flickr from Picasa on Linux
+comments: true
 categories:
 - Linux
 - Photography

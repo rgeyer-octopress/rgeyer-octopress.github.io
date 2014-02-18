@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Potty party time
+comments: true
 categories: []
 tags: []
 status: draft

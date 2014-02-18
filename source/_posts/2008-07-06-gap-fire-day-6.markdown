@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Gap Fire - Day 6
+comments: true
 categories:
 - Gap Gire
 tags:

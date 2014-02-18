@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Me and my iPhone
+comments: true
 categories:
 - iPhone
 - Linux

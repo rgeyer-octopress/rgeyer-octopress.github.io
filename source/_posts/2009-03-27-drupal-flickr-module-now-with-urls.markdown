@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Drupal Flickr Module.  Now with URLs!
+comments: true
 categories:
 - drupal
 - php

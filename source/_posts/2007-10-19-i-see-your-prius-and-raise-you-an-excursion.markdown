@@ -1,6 +1,7 @@
 ---
 layout: post
 title: I see your Prius, and raise you an Excursion.
+comments: true
 categories:
 - Bio Diesel
 - Emissions

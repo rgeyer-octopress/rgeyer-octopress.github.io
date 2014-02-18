@@ -1,6 +1,7 @@
 ---
 layout: post
 title: UNYK Address Book
+comments: true
 categories:
 - Cloud computing
 - Rants

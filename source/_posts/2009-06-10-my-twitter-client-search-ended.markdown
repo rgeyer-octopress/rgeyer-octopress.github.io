@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My Twitter Client Search - Ended
+comments: true
 categories:
 - Cloud computing
 - Linux

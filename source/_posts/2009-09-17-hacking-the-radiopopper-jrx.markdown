@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hacking the RadioPopper JrX
+comments: true
 categories:
 - Photography
 - Worklogs

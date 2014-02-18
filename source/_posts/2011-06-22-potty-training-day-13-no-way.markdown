@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Potty Training Day 13:  NO WAY!'
+comments: true
 categories:
 - Parenting
 tags: []

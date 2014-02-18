@@ -1,6 +1,7 @@
 ---
 layout: post
 title: No More Guesswork
+comments: true
 categories:
 - 1967 Cadillac Sedan Deville
 - Worklogs

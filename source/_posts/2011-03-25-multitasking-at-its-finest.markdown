@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Multitasking at it’s finest
+comments: true
 categories:
 - Parenting
 tags: []

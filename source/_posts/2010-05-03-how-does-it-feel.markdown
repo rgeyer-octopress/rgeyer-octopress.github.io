@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How does it feel?
+comments: true
 categories:
 - Personal Expressions
 tags:

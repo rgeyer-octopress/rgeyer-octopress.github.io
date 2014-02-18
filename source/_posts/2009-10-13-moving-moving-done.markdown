@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Moving, Moving, Done!
+comments: true
 categories:
 - Family
 tags: []

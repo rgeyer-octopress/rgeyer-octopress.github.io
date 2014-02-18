@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Apples? Sure, sign me up!
+comments: true
 categories:
 - Hardware
 tags:

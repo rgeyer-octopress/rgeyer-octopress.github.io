@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Caveman instincts
+comments: true
 categories:
 - News
 - Personal Expressions

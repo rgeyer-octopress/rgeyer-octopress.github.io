@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Chef makes record of config
+comments: true
 categories: []
 tags:
 - linkedin

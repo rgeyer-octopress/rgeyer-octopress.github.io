@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Fedora Bash History Meme
+comments: true
 categories:
 - Linux
 tags:

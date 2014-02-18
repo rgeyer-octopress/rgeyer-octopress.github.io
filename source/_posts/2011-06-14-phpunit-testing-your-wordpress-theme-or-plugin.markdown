@@ -1,6 +1,7 @@
 ---
 layout: post
 title: PHPUnit testing your Wordpress Theme or Plugin
+comments: true
 categories: []
 tags:
 - linkedin

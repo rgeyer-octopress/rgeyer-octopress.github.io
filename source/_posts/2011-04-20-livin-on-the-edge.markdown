@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Livin’ On The Edge
+comments: true
 categories:
 - Parenting
 tags: []
