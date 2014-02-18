@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: cloud computing | Ryans Octopress Blog]]></title>
-  <link href="http://www.nslms.com/blog/categories/cloud-computing/atom.xml" rel="self"/>
-  <link href="http://www.nslms.com/"/>
-  <updated>2014-02-17T22:00:13-08:00</updated>
-  <id>http://www.nslms.com/</id>
+  <link href="http://blog.ryangeyer.com/blog/categories/cloud-computing/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-17T22:19:20-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Policy for an S3 only Amazon IAM User]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
     <updated>2011-06-27T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
     <content type="html"><![CDATA[<p>Now that Amazon&rsquo;s Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href=http://blog.ryangeyer.com/blog/2011/04/04/enabling-aws-console-login-for-iam-users/>login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.</p>
 
 <!--more-->
@@ -69,9 +69,9 @@
   
   <entry>
     <title type="html"><![CDATA[Taking Route 53 to Optimized Website Performance]]></title>
-    <link href="http://www.nslms.com/blog/2011/04/11/taking-route-53-to-optimized-website-performance/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/04/11/taking-route-53-to-optimized-website-performance/"/>
     <updated>2011-04-11T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/04/11/taking-route-53-to-optimized-website-performance</id>
+    <id>http://blog.ryangeyer.com/blog/2011/04/11/taking-route-53-to-optimized-website-performance</id>
     <content type="html"><![CDATA[<p>When Amazon announced it&rsquo;s Authoritative DNS service, cheekily named Route 53 a few things popped into my head immediately.  First, this should be a much easier way to get the effects of Dynamic DNS which we were currently leveraging <a href="http://www.dnsmadeeasy.com/">DNS Made Easy</a> for.  Secondly, I wonder how much of a performance boost using it might provide.</p>
 
 <!--more-->
@@ -102,9 +102,9 @@
   
   <entry>
     <title type="html"><![CDATA[Create AWS Service Accounts with IAM]]></title>
-    <link href="http://www.nslms.com/blog/2011/03/28/create-aws-service-accounts-with-iam/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/03/28/create-aws-service-accounts-with-iam/"/>
     <updated>2011-03-28T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/03/28/create-aws-service-accounts-with-iam</id>
+    <id>http://blog.ryangeyer.com/blog/2011/03/28/create-aws-service-accounts-with-iam</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been making use of Amazon Web Services (AWS) quite a lot lately.  In order to really enjoy the benefits of Cloud Computing (automation, agility, etc) I&rsquo;ve had to use a number of tools to interact with AWS on my behalf.</p>
 
 <p>All of these external tools ask for the same thing to enable them to make AWS API calls, your AWS Access Key ID, and your AWS Secret Access Key.  Common practice is usually to just hand over the main set of these credentials, but there is a better (more secure) way, using Amazon Identity and Access Management (IAM).</p>
@@ -203,9 +203,9 @@ $ iam-useraddcert -u rsdash -f iam.pem
   
   <entry>
     <title type="html"><![CDATA[How to host Wordpress for Free]]></title>
-    <link href="http://www.nslms.com/blog/2011/02/14/how-to-host-wordpress-for-free/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/02/14/how-to-host-wordpress-for-free/"/>
     <updated>2011-02-14T00:00:00-08:00</updated>
-    <id>http://www.nslms.com/blog/2011/02/14/how-to-host-wordpress-for-free</id>
+    <id>http://blog.ryangeyer.com/blog/2011/02/14/how-to-host-wordpress-for-free</id>
     <content type="html"><![CDATA[<p>If you&rsquo;re looking to start a blog to promote your business, or boost your presence on the internet, you&rsquo;ve probably heard of <a href="http://wordpress.org">Wordpress</a>.</p>
 
 <p>You may also have heard about the <a href="http://en.support.wordpress.com/com-vs-org/">benefits</a> of hosting your own instance of Wordpress, but you&rsquo;re intimidated by the idea of setting up and maintaining your own server, or trusting your business to a shared hosting solution.</p>
@@ -306,9 +306,9 @@ $ iam-useraddcert -u rsdash -f iam.pem
   
   <entry>
     <title type="html"><![CDATA[Chef for RightScale Quick Start]]></title>
-    <link href="http://www.nslms.com/blog/2010/11/29/chef-for-rightscale-quick-start/"/>
+    <link href="http://blog.ryangeyer.com/blog/2010/11/29/chef-for-rightscale-quick-start/"/>
     <updated>2010-11-29T00:00:00-08:00</updated>
-    <id>http://www.nslms.com/blog/2010/11/29/chef-for-rightscale-quick-start</id>
+    <id>http://blog.ryangeyer.com/blog/2010/11/29/chef-for-rightscale-quick-start</id>
     <content type="html"><![CDATA[<p>For the past few weeks I have been getting down and dirty writing Chef recipes for use in RightScale.</p>
 
 <p>With Chef support still in beta on RightScale, and me being a complete Chef newbie it&rsquo;s I&rsquo;m still on the front side of the learning curve.</p>

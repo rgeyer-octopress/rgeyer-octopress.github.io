@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Ryans Octopress Blog]]></title>
-  <link href="http://www.nslms.com/atom.xml" rel="self"/>
-  <link href="http://www.nslms.com/"/>
-  <updated>2014-02-17T22:00:13-08:00</updated>
-  <id>http://www.nslms.com/</id>
+  <link href="http://blog.ryangeyer.com/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-17T22:19:20-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How I Vandalized a Weed Whacker at Home Depot]]></title>
-    <link href="http://www.nslms.com/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/"/>
     <updated>2011-07-02T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot</id>
+    <id>http://blog.ryangeyer.com/blog/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot</id>
     <content type="html"><![CDATA[<p>So we&rsquo;ve been renting a house for a bit over a year and a half.  As a techie and an obsessive tinkerer, this means an excuse to start buying tools and other things in the name of &ldquo;maintaining the house&rdquo;.</p>
 
 <h1>How it all began</h1>
@@ -68,9 +68,9 @@
   
   <entry>
     <title type="html"><![CDATA[Policy for an S3 only Amazon IAM User]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
     <updated>2011-06-27T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
     <content type="html"><![CDATA[<p>Now that Amazon&rsquo;s Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href=http://blog.ryangeyer.com/blog/2011/04/04/enabling-aws-console-login-for-iam-users/>login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.</p>
 
 <!--more-->
@@ -117,9 +117,9 @@
   
   <entry>
     <title type="html"><![CDATA[The baby]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/24/the-baby/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/24/the-baby/"/>
     <updated>2011-06-24T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/24/the-baby</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/24/the-baby</id>
     <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/rgeyer/5630016717/" title="Tate by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5307/5630016717_87e53254bb_m.jpg" width="161" height="240" alt="Tate" class="alignright"/></a>
 I know I have been talking soooo much about my eldest son, the amazing three year old that has accomplished sooo much in the potty training arena.  I have to say a few things about my baby boy.</p>
 
@@ -135,9 +135,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 13:  NO WAY!]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/22/potty-training-day-13-no-way/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/22/potty-training-day-13-no-way/"/>
     <updated>2011-06-22T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/22/potty-training-day-13-no-way</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/22/potty-training-day-13-no-way</id>
     <content type="html"><![CDATA[<p>He&rsquo;s being all awesome and doing all he can on his own.  I had no idea he would do so well.</p>
 
 <p>I mean I knew he could do it but I had no idea he would just embrace the process so willingly and be so self sufficient.</p>
@@ -152,9 +152,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 12:  Old Hat]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/20/potty-training-day-12-old-hat/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/20/potty-training-day-12-old-hat/"/>
     <updated>2011-06-20T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/20/potty-training-day-12-old-hat</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/20/potty-training-day-12-old-hat</id>
     <content type="html"><![CDATA[<p>We did the scariest thing ever!  We took both boys grocery shopping while one was diaperless!  Scary stuff, huh?  We went grocery shopping without both boys last week, yes we were big chickens, so what!</p>
 
 <p>My big boy was doing well all day with the potty training, you know acting like he&rsquo;s been doing this for years.  He even had attitude with me when I asked if he needed to use the potty, he rolled his eyes and told me I was silly since he had just peed a few minutes ago.  <em>Epic</em>.</p>
@@ -169,9 +169,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 11:  Kicking butt and taking names]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/17/potty-training-day-11-kicking-butt-and-taking-names/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/17/potty-training-day-11-kicking-butt-and-taking-names/"/>
     <updated>2011-06-17T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/17/potty-training-day-11-kicking-butt-and-taking-names</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/17/potty-training-day-11-kicking-butt-and-taking-names</id>
     <content type="html"><![CDATA[<p>Yeah, my son was a rock start today.</p>
 
 <p>He proudly would announce that he used the potty all by himself, with a dance.  Yes, I had to escort him back to the bathroom to wash his hands and wash my own hands since I high fived him with glee before remembering that he can&rsquo;t turn the faucet on by himself.</p>
@@ -184,9 +184,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 10: Getting better]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/15/potty-training-day-10-getting-better/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/15/potty-training-day-10-getting-better/"/>
     <updated>2011-06-15T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/15/potty-training-day-10-getting-better</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/15/potty-training-day-10-getting-better</id>
     <content type="html"><![CDATA[<p>Yesterday was horrid, just horrid as everyone was struggling with the emotional turmoil of the accidents.  Yes, even the baby realized that everyone was having a hard time.  It&rsquo;s amazing how your child has an accident and you try to focus all your energy on making it right and yet you, as a mother, find the time to beat yourself up for dropping the ball and possibly not give your kid enough time and attention.</p>
 
 <p>Today, we are getting better, much better.  My son started the day with an accident and a shower and I had a load of laundry to do before doing anything.  We followed it up with being my son then being way too confident with his bladder control and having a moment where he forgot to take his pants off while peeing.  From that point on he was showing his prowess, kicking butt and taking names and kept things dry everywhere but in the potty.</p>
@@ -197,9 +197,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 9: Set back]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/13/potty-training-day-9-set-back/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/13/potty-training-day-9-set-back/"/>
     <updated>2011-06-13T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/13/potty-training-day-9-set-back</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/13/potty-training-day-9-set-back</id>
     <content type="html"><![CDATA[<p>My potty training star and his little brother were in rare form and all they want is to cling to me and make demands.  I think I was just worn out and the boys just like to go full throttle, meaning I was a big baby on this day.  My toddler was in a mouthy mood and my baby was dealing with the teething woes along with me being tired and in some kind of allergy stupor, it was a bad combination.</p>
 
 <p>The potty training was great until we had words when he just wasn&rsquo;t willing to sit on the potty for a minute to be sure he was ok.  It went down hill fast after that point.  He had an accident, he was upset with himself.  I cleaned him up in a hurry, not a big deal, well I didn&rsquo;t think so until I took his favorite pajamas and he cried.  I hurried and got him in another favorite outfit and he was still in tears.  The baby was screaming his head off as I put him in the pack n play to keep him out of the mess I was cleaning.  My baby doesn&rsquo;t understand why I wouldn&rsquo;t want him clinging to my side, ready to bolt to get into some kind of mess.</p>
@@ -214,9 +214,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 8:  Show off ;)]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/10/potty-training-day-8-show-off/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/10/potty-training-day-8-show-off/"/>
     <updated>2011-06-10T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/10/potty-training-day-8-show-off</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/10/potty-training-day-8-show-off</id>
     <content type="html"><![CDATA[<p>We had a great day and when it came to today&rsquo;s outing, we stretched it out over two hours and the first thing our potty training star did was map out the potty available and tried it out.</p>
 
 <p>Yeah, he is awesome.</p>
@@ -227,9 +227,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 7:  Going out]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/08/potty-training-day-7-going-out/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/08/potty-training-day-7-going-out/"/>
     <updated>2011-06-08T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/08/potty-training-day-7-going-out</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/08/potty-training-day-7-going-out</id>
     <content type="html"><![CDATA[<p>We have survived so far.  Heck, it has been smooth sailing considering how hard and rough this journey could be.  I love to stay home and frankly my toddler prefers to stay home unless we are going to visit his Nana or go to a park but we need to try going out.  We needed a kiddie pool to survive the heat wave we were dealing with (and by we, I mean me).  So I asked my mom to come with us, as I was too big of a baby to even consider going on this trip with my boys on my own.</p>
 
 <p>We went to the store and though the toys were a distraction we some how made it out with my toddler dry and with only a few tears and a kiddie pool.  We forced the pool in my van with the help of a kind gentleman that saw us struggling to put it in the vehicle.  We got home and got the boys out of the car and then celebrated on our &lsquo;dry run&rsquo; with our own little pool party.</p>
@@ -240,9 +240,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 6:  Getting Smoother]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/06/potty-training-day-6-getting-smoother/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/06/potty-training-day-6-getting-smoother/"/>
     <updated>2011-06-06T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/06/potty-training-day-6-getting-smoother</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/06/potty-training-day-6-getting-smoother</id>
     <content type="html"><![CDATA[<p>I had been letting my toddler run around in underwear as clothes seemed to be such an huge challenge.  I had so many things going for us so we tried clothes again.  My toddler did fantastic.</p>
 
 <p>We spent more time outside which meant that he had to trek into the house to use the potty.  We were putting stickers on the chart, eating our candy treats, high fiving, doing dances.  Life is good.</p>
@@ -253,9 +253,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 5:  HELP!]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/03/potty-training-day-5-help/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/03/potty-training-day-5-help/"/>
     <updated>2011-06-03T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/03/potty-training-day-5-help</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/03/potty-training-day-5-help</id>
     <content type="html"><![CDATA[<p>I thought I had this process under control, well as under control as you can get.  My toddler boy rarely had any accidents.  He did a dance, we high fived with each success.  I felt good until I started getting more and more attitude from my toddler.</p>
 
 <p>Then I turned to the interwebs for advice.  I went to a couple baby boards that I have been a part of for a while and discovered that I was doing almost everything right.  Yay, I think.  Then one of incredible ladies on one of the baby boards I frequented asked if I used a timer to alert my toddler it was time to check if he had to use the potty.  Oh my goodness!  Using this technique meant less attitude from my toddler as he felt more in control.  It meant less time outs for my toddler as his hissy fits were massive and were terrible displays of disrespect for me.  It meant we were back on the same page.</p>
@@ -268,9 +268,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training day 4: Stubborn]]></title>
-    <link href="http://www.nslms.com/blog/2011/06/01/potty-training-day-4-stubborn/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/06/01/potty-training-day-4-stubborn/"/>
     <updated>2011-06-01T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/06/01/potty-training-day-4-stubborn</id>
+    <id>http://blog.ryangeyer.com/blog/2011/06/01/potty-training-day-4-stubborn</id>
     <content type="html"><![CDATA[<p>Now day four was a good day minus the attitude.  I&rsquo;m not sure who&rsquo;s attitude was worse my toddler&rsquo;s or my own in response to his attitude but we both showed that we are very stubborn.  He made it clear that he was busy playing or eating (slowest eater in the house here) and just couldn&rsquo;t be bothered to check to see if he needed to use the potty while I kept checking with him and encouraging him to sit on the potty.</p>
 
 <p>I then had flashes of what my future was going to be like when he is a teenager and I panicked.  I did my best to keep my cool but these visions of him telling me he was too busy to clean his room and that the newest video game was much more important than bathing.  Then having fights over why he couldn&rsquo;t borrow the car after not doing his chores and being disrespectful.  These are scary, scary thoughts.</p>
@@ -281,9 +281,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 3: Clothes are the Enemy]]></title>
-    <link href="http://www.nslms.com/blog/2011/05/04/potty-training-day-3-clothes-are-the-enemy/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/05/04/potty-training-day-3-clothes-are-the-enemy/"/>
     <updated>2011-05-04T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/05/04/potty-training-day-3-clothes-are-the-enemy</id>
+    <id>http://blog.ryangeyer.com/blog/2011/05/04/potty-training-day-3-clothes-are-the-enemy</id>
     <content type="html"><![CDATA[<p>Day three of the potty training process for toddler boy was no easy feat.  We threw too many curve balls at the kid.  We dressed him completely and moved the potty from the play room to the bathroom which is really far apart.</p>
 
 <p>We then learned that toddler boy&rsquo;s shirts are way too long to be able to pull down said shorts and underwear in a hurry.  We also learned that the run from the sun room to the bathroom is really way too long to have to remember that you have to do more than simply sit on the potty and pee.</p>
@@ -296,9 +296,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 2: Reality settles in...]]></title>
-    <link href="http://www.nslms.com/blog/2011/05/03/potty-training-day-2-reality-settles-in/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/05/03/potty-training-day-2-reality-settles-in/"/>
     <updated>2011-05-03T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/05/03/potty-training-day-2-reality-settles-in</id>
+    <id>http://blog.ryangeyer.com/blog/2011/05/03/potty-training-day-2-reality-settles-in</id>
     <content type="html"><![CDATA[<p>So yesterday was all excitement and squealing and today I realized that keeping both boys taken care of and potty training the eldest while keeping the baby, literally out of the potty is going to be a huge undertaking.  My toddler still expects me to high five him every time he does anything potty training related and his little brother still needs to be included.  Here I thought just taking care of the boys full time was going to be a HUGE challenge, it isn&rsquo;t anything compared to potty training and caring for both boys.</p>
 
 <p>It&rsquo;s like the time my then boyfriend flaked on his plans with me to hang out with the boys.  The reality hit that I was in a relationship and there will be bumps in the road.  Oh and that cute thing when he stopped talking to me when a nice car drives by, becoming less cute.</p>
@@ -311,9 +311,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Potty Training Day 1: The Infatuation]]></title>
-    <link href="http://www.nslms.com/blog/2011/05/02/potty-training-day-1-the-infatuation/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/05/02/potty-training-day-1-the-infatuation/"/>
     <updated>2011-05-02T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/05/02/potty-training-day-1-the-infatuation</id>
+    <id>http://blog.ryangeyer.com/blog/2011/05/02/potty-training-day-1-the-infatuation</id>
     <content type="html"><![CDATA[<p>Potty training is an ongoing conversation in my household, it only make sense as I have three year old in diapers.  I talk to my mom about potty training.  I talk to my husband about potty training.  Hell, I have talked to my toddler about potty training daily if not during every time I go to the bathroom.  Yes, it&rsquo;s true you have kids and stay home with them and you have company every time you use the toilet.</p>
 
 <p>So this week my son came up to me asking to use his personal potty.  I was elated!  I squealed and jumped up and down and when he asked for his big boy underwear I clapped and screamed!   My son was excited to get so much attention and for the rest of the day was in big boy underwear, like daddy.  We talked about stickers and I gave him candy.</p>
@@ -328,9 +328,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Livin’ On The Edge]]></title>
-    <link href="http://www.nslms.com/blog/2011/04/20/livin-on-the-edge/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/04/20/livin-on-the-edge/"/>
     <updated>2011-04-20T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/04/20/livin-on-the-edge</id>
+    <id>http://blog.ryangeyer.com/blog/2011/04/20/livin-on-the-edge</id>
     <content type="html"><![CDATA[<p><a href=http://blog.ryangeyer.com/images/255790697_f288115839_m.jpg><img src=http://blog.ryangeyer.com/images/255790697_f288115839_m.jpg alt="" title="255790697_f288115839_m" width="240" height="215" class="alignleft size-full wp-image-1082" /></a>When I was little livin' on the edge has changed so much over the years.  When I was a child, living on the edge meant walking on the highest point of a swing set and climbing to scary heights of a giant tree.  It meant playing in a vacant apartment to escape the heat, because I knew I would be in huge trouble taking my baby sister to the pool without my parent&rsquo;s permission.</p>
 
 <p>When I was a teen it meant talking back to my mom, staying out late, and that one time I drove my friend&rsquo;s car with her trying to cheer me on before I got my license.  It was when I tried to see just how long I could function well with little to no sleep, oh college days.  Yeah, I was that awesome culinary student that worked in a bakery, so there were days I would be up at 3:30am and wouldn&rsquo;t get to bed the following day till 1pm due to work, school and my dreamy boyfriend.</p>
@@ -343,9 +343,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[It all comes down to poop]]></title>
-    <link href="http://www.nslms.com/blog/2011/04/15/it-all-comes-down-to-poop/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/04/15/it-all-comes-down-to-poop/"/>
     <updated>2011-04-15T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/04/15/it-all-comes-down-to-poop</id>
+    <id>http://blog.ryangeyer.com/blog/2011/04/15/it-all-comes-down-to-poop</id>
     <content type="html"><![CDATA[<p>Let&rsquo;s talk about how often moms &lsquo;get&rsquo; to talk about poop.  First we talk about poop all of the time when we are pregnant, or the lack there of due to all the iron we are taking.  Then as we get closer to delivery then we are amazed with the amount of &lsquo;cleansing&rsquo; our body does.</p>
 
 <p>When we have our beautiful baby then we are very concerned about the number of wet and dirty diapers.  You even beg your child when jaundiced to just poop a few more times that particular day.  You even proudly show the chart you&rsquo;ve been using to record all the naps and wet and dirty diapers the first time you go and see the pediatrician.</p>
@@ -358,9 +358,9 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   
   <entry>
     <title type="html"><![CDATA[Caveman communication]]></title>
-    <link href="http://www.nslms.com/blog/2011/04/13/caveman-communication/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/04/13/caveman-communication/"/>
     <updated>2011-04-13T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/04/13/caveman-communication</id>
+    <id>http://blog.ryangeyer.com/blog/2011/04/13/caveman-communication</id>
     <content type="html"><![CDATA[<p><img src="http://farm6.staticflickr.com/5100/5426078103_39b904bda7_n_d.jpg" style="float: right" />
 You would think that being the only girl in the house that I would not be surprised with the grunting that goes on here.  I mean my husband has been known to nod at me and grunt and I would know that means, &ldquo;Why yes I would love another beer sweetie.&rdquo; and that a long grunt with eyes closed while at the dinner table and eating a dinner I made means, &ldquo;Oh my goodness honey, you out did yourself.  The cabernet savignion bouquet paired with the fillet mignion and the red wine reduction sauce is outstanding with your roasted garlic mashed potatoes.&rdquo;.</p>
 
@@ -376,9 +376,9 @@ You would think that being the only girl in the house that I would not be surpri
   
   <entry>
     <title type="html"><![CDATA[Taking Route 53 to Optimized Website Performance]]></title>
-    <link href="http://www.nslms.com/blog/2011/04/11/taking-route-53-to-optimized-website-performance/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/04/11/taking-route-53-to-optimized-website-performance/"/>
     <updated>2011-04-11T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2011/04/11/taking-route-53-to-optimized-website-performance</id>
+    <id>http://blog.ryangeyer.com/blog/2011/04/11/taking-route-53-to-optimized-website-performance</id>
     <content type="html"><![CDATA[<p>When Amazon announced it&rsquo;s Authoritative DNS service, cheekily named Route 53 a few things popped into my head immediately.  First, this should be a much easier way to get the effects of Dynamic DNS which we were currently leveraging <a href="http://www.dnsmadeeasy.com/">DNS Made Easy</a> for.  Secondly, I wonder how much of a performance boost using it might provide.</p>
 
 <!--more-->

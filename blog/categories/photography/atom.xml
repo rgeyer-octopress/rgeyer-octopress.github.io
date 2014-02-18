@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: photography | Ryans Octopress Blog]]></title>
-  <link href="http://www.nslms.com/blog/categories/photography/atom.xml" rel="self"/>
-  <link href="http://www.nslms.com/"/>
-  <updated>2014-02-17T22:00:13-08:00</updated>
-  <id>http://www.nslms.com/</id>
+  <link href="http://blog.ryangeyer.com/blog/categories/photography/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-17T22:19:20-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Long Live the Nikon SB600]]></title>
-    <link href="http://www.nslms.com/blog/2011/01/10/long-live-the-nikon-sb600/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/01/10/long-live-the-nikon-sb600/"/>
     <updated>2011-01-10T00:00:00-08:00</updated>
-    <id>http://www.nslms.com/blog/2011/01/10/long-live-the-nikon-sb600</id>
+    <id>http://blog.ryangeyer.com/blog/2011/01/10/long-live-the-nikon-sb600</id>
     <content type="html"><![CDATA[<p><img src="http://farm6.static.flickr.com/5121/5198512555_a35bc75da3.jpg" width="500" height="334" alt="Nikon SB600 Repair" class="aligncenter" /></p>
 
 <p>It&rsquo;s been a bit over a year since I <a href=http://blog.ryangeyer.com/blog/2009/09/07/like-a-flash-in-the-pan/>dropped my Nikon SB600</a>, rendering it useless.  When it happened I was able to disassemble the flash and identify the part which was damaged, but being a relative layman when it comes to circuit board components I didn&rsquo;t know what to replace it with.</p>
@@ -58,9 +58,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hacking the RadioPopper JrX]]></title>
-    <link href="http://www.nslms.com/blog/2009/09/17/hacking-the-radiopopper-jrx/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/09/17/hacking-the-radiopopper-jrx/"/>
     <updated>2009-09-17T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2009/09/17/hacking-the-radiopopper-jrx</id>
+    <id>http://blog.ryangeyer.com/blog/2009/09/17/hacking-the-radiopopper-jrx</id>
     <content type="html"><![CDATA[<p>Okay I know what you're thinking, and no I didn't figure out how to turn a <a href="http://shop.radiopopper.com/radiopopperjrxreceiverbasicusca.aspx" target="_blank">basic reciever</a> into a <a href="http://shop.radiopopper.com/radiopopperjrxreceiverstudiousca.aspx" target="_blank">studio receiver</a>, but sadly, I'm simply not that cool.  What I did do however was open the boxes for my two new RadioPopper JrX Studio receivers, put batteries in them, test them (oohh pretty), then instantly void their warranties.  Why you ask?  Because I can.  Also because there were just a couple design choices which weren't convenient for me so I wanted to tweak them to fit my workflow and needs a little better.</p>
 
 
@@ -93,9 +93,9 @@
   
   <entry>
     <title type="html"><![CDATA[You get what you pay for, or less!]]></title>
-    <link href="http://www.nslms.com/blog/2009/09/13/you-get-what-you-pay-for-or-less/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/09/13/you-get-what-you-pay-for-or-less/"/>
     <updated>2009-09-13T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2009/09/13/you-get-what-you-pay-for-or-less</id>
+    <id>http://blog.ryangeyer.com/blog/2009/09/13/you-get-what-you-pay-for-or-less</id>
     <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/rgeyer/3917686231/"><img src="http://farm4.static.flickr.com/3518/3917686231_f6e83b6b44_m.jpg" alt="Phoenix Flash" class="alignright" /></a>So you likely know that I recently dropped and broke my <a href=http://blog.ryangeyer.com/blog/2009/09/07/like-a-flash-in-the-pan/>Nikon SB600 flash</a>.  Disappointed as I was about this, I was already thinking of how I'd replace it.  My searches for Nikon compatible flashes had always included these apparently super affordable Phoenix flashes.  Now, of course, I was always very suspicious of these for a couple of reasons.  First, in all the auctions and other sites selling these I never saw information indicating if this had ANY manual control, and there was never a picture of the rear panel of the unit!  Second, there weren't really any reviews of it online.  I found a few, but usually it was on something like Amazon where it was fairly apparent that those reviewing were (at best) uninformed users who wouldn't know the difference between a "good" flash and a bad one.</p>
 
 
@@ -128,9 +128,9 @@
   
   <entry>
     <title type="html"><![CDATA[Like a flash in the pan]]></title>
-    <link href="http://www.nslms.com/blog/2009/09/07/like-a-flash-in-the-pan/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/09/07/like-a-flash-in-the-pan/"/>
     <updated>2009-09-07T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2009/09/07/like-a-flash-in-the-pan</id>
+    <id>http://blog.ryangeyer.com/blog/2009/09/07/like-a-flash-in-the-pan</id>
     <content type="html"><![CDATA[<p>Welp, my Nikon SB600, which I've had for about a year and a half now has officially been declared dead.  After <a href=http://blog.ryangeyer.com/blog/2009/09/06/of-living-insects-and-dying-electronics/>dropping it yesterday</a> it simply wouldn't turn on anymore.  I popped it open today hoping to discover what went wrong, after getting it pretty well apart, I noticed this.</p>
 
 
@@ -161,9 +161,9 @@
   
   <entry>
     <title type="html"><![CDATA[Of living insects, and dying electronics]]></title>
-    <link href="http://www.nslms.com/blog/2009/09/06/of-living-insects-and-dying-electronics/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/09/06/of-living-insects-and-dying-electronics/"/>
     <updated>2009-09-06T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2009/09/06/of-living-insects-and-dying-electronics</id>
+    <id>http://blog.ryangeyer.com/blog/2009/09/06/of-living-insects-and-dying-electronics</id>
     <content type="html"><![CDATA[<p align="center"><a href="http://www.flickr.com/photos/rgeyer/3895334606/"><img src="http://farm4.static.flickr.com/3453/3895334606_94697a15ef.jpg" alt="Butterfly enjoying oranges" /></a></p>
 
 

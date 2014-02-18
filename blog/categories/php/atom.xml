@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: php | Ryans Octopress Blog]]></title>
-  <link href="http://www.nslms.com/blog/categories/php/atom.xml" rel="self"/>
-  <link href="http://www.nslms.com/"/>
-  <updated>2014-02-17T22:00:13-08:00</updated>
-  <id>http://www.nslms.com/</id>
+  <link href="http://blog.ryangeyer.com/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-17T22:19:20-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to resize billions of images in the cloud]]></title>
-    <link href="http://www.nslms.com/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud/"/>
+    <link href="http://blog.ryangeyer.com/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud/"/>
     <updated>2010-11-01T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud</id>
+    <id>http://blog.ryangeyer.com/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud</id>
     <content type="html"><![CDATA[<p>As I was clearing out my RSS reader a few days back, I stopped to read a post on the Flickr dev blog about the &ldquo;new&rdquo; <a href="http://code.flickr.com/blog/2010/10/26/the-not-so-new-image-size-medium-640/">640px image size</a>.  In the article they lament that they wished they had made &ldquo;Large&rdquo; copies of all uploaded images because it would make generating the new 640px size easier.</p>
 
 <p>This got me thinking, what if they did want to convert every image ever uploaded to this new size and cache it?  How would they do it? How much would it cost?  The more I thought about it, the more curious I became, so I launched a little research project to see what I could find out, and to show how I would work through the problem.</p>
@@ -112,9 +112,9 @@
   
   <entry>
     <title type="html"><![CDATA[Web development environment - "On The Go"]]></title>
-    <link href="http://www.nslms.com/blog/2009/04/07/web-development-environment-on-the-go/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/04/07/web-development-environment-on-the-go/"/>
     <updated>2009-04-07T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2009/04/07/web-development-environment-on-the-go</id>
+    <id>http://blog.ryangeyer.com/blog/2009/04/07/web-development-environment-on-the-go</id>
     <content type="html"><![CDATA[<p>Over the past few weeks I&rsquo;ve been spending most of my spare time developing a couple of web sites.  These sites are based on the Drupal CMS written in PHP.  And I&rsquo;ve taken a bit of a crash course in Drupal module design.</p>
 
 <p>When I set out developing these, I faced a challenge that I&rsquo;d been aware of, but managed to avoid in the past.  How do I work on these projects in a predictable, constant environment, and still bring my code with me to work on my home machine, work machine, laptop, and anything else I happen to sit down in front of?</p>
@@ -290,9 +290,9 @@
   
   <entry>
     <title type="html"><![CDATA[Drupal Flickr Module.  Now with URLs!]]></title>
-    <link href="http://www.nslms.com/blog/2009/03/27/drupal-flickr-module-now-with-urls/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/03/27/drupal-flickr-module-now-with-urls/"/>
     <updated>2009-03-27T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2009/03/27/drupal-flickr-module-now-with-urls</id>
+    <id>http://blog.ryangeyer.com/blog/2009/03/27/drupal-flickr-module-now-with-urls</id>
     <content type="html"><![CDATA[<p>Okay, so I've been a bit preoccupied with a couple projects which have slowed my efforts at blogging etc.</p>
 
 

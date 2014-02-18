@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: emissions | Ryans Octopress Blog]]></title>
-  <link href="http://www.nslms.com/blog/categories/emissions/atom.xml" rel="self"/>
-  <link href="http://www.nslms.com/"/>
-  <updated>2014-02-17T22:00:13-08:00</updated>
-  <id>http://www.nslms.com/</id>
+  <link href="http://blog.ryangeyer.com/blog/categories/emissions/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-17T22:19:20-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[An Ob-NOx-ious truth]]></title>
-    <link href="http://www.nslms.com/blog/2007/10/29/an-ob-nox-ious-truth/"/>
+    <link href="http://blog.ryangeyer.com/blog/2007/10/29/an-ob-nox-ious-truth/"/>
     <updated>2007-10-29T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2007/10/29/an-ob-nox-ious-truth</id>
+    <id>http://blog.ryangeyer.com/blog/2007/10/29/an-ob-nox-ious-truth</id>
     <content type="html"><![CDATA[<p>In <a href="http://qwikrex.blogspot.com/2007/10/i-see-your-prius-and-raise-you.html">a recent post</a> I extolled the benefits of running even a large vehicle on biodiesel.  I focused mostly on the CO2 emissions, since that is the big buzz word, and the commonly known greenhouse gas.</p>
 
 <p>I failed to discuss other emissions from such an engine and fuel combination.  I&rsquo;d like to talk about that now.</p>
@@ -36,9 +36,9 @@
   
   <entry>
     <title type="html"><![CDATA[I see your Prius, and raise you an Excursion.]]></title>
-    <link href="http://www.nslms.com/blog/2007/10/19/i-see-your-prius-and-raise-you-an-excursion/"/>
+    <link href="http://blog.ryangeyer.com/blog/2007/10/19/i-see-your-prius-and-raise-you-an-excursion/"/>
     <updated>2007-10-19T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2007/10/19/i-see-your-prius-and-raise-you-an-excursion</id>
+    <id>http://blog.ryangeyer.com/blog/2007/10/19/i-see-your-prius-and-raise-you-an-excursion</id>
     <content type="html"><![CDATA[<p>So, for probably the past 8 or 9 years, I&rsquo;ve been infatuated with diesel engines.  Ever since I was introduced to an early 90&rsquo;s Dodge Ram 2500 with the 12 valve Cummins motor.  I was impressed with the sound of the motor, the apparent torrent of torque and horsepower, and the remarkable fuel economy considering it&rsquo;s size.</p>
 
 <p>Ever since, I&rsquo;ve lusted after vehicles with diesel engines.  However, I&rsquo;m also a bit of a &ldquo;gear head&rdquo; and have a bit of an addiction to performance, particularly the kind associated with small, light vehicles with a reasonable amount of horsepower, and excellent handling.  I&rsquo;ve also never really had a &ldquo;need&rdquo; for one of the vehicles that usually have optional diesel motors as they are usually very large and meant to do serious industrial type work.</p>

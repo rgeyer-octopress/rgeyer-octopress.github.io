@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: hardware | Ryans Octopress Blog]]></title>
-  <link href="http://www.nslms.com/blog/categories/hardware/atom.xml" rel="self"/>
-  <link href="http://www.nslms.com/"/>
-  <updated>2014-02-17T22:00:13-08:00</updated>
-  <id>http://www.nslms.com/</id>
+  <link href="http://blog.ryangeyer.com/blog/categories/hardware/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-17T22:19:20-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[MacBook Pro - First Impressions]]></title>
-    <link href="http://www.nslms.com/blog/2010/03/18/macbook-pro-first-impressions/"/>
+    <link href="http://blog.ryangeyer.com/blog/2010/03/18/macbook-pro-first-impressions/"/>
     <updated>2010-03-18T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2010/03/18/macbook-pro-first-impressions</id>
+    <id>http://blog.ryangeyer.com/blog/2010/03/18/macbook-pro-first-impressions</id>
     <content type="html"><![CDATA[<p>I just took delivery of my latest new computer from my employer. &nbsp;This time, instead of another run of the mill IBM compatible laptop or desktop it was a fancy new 17&quot; MacBook Pro. &nbsp;We&#39;re developing software which we&#39;re supporting in Safari using the Silverlight plugin and I needed to be able to develop and test in that native environment.</p>
 
 
@@ -34,9 +34,9 @@
   
   <entry>
     <title type="html"><![CDATA[Apples? Sure, sign me up!]]></title>
-    <link href="http://www.nslms.com/blog/2007/10/24/apples-sure-sign-me-up/"/>
+    <link href="http://blog.ryangeyer.com/blog/2007/10/24/apples-sure-sign-me-up/"/>
     <updated>2007-10-24T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2007/10/24/apples-sure-sign-me-up</id>
+    <id>http://blog.ryangeyer.com/blog/2007/10/24/apples-sure-sign-me-up</id>
     <content type="html"><![CDATA[<p>I grew up with computers.  I used a TRS-80, and probably one of every family of macintoshes.  However, I eventually defected to IBM Compatible PC&rsquo;s, and Microsoft Windows around the age of 14-ish.  I&rsquo;ve been a &ldquo;PC&rdquo; guy ever since.  Usually running Windows, but preferring to run a lot of my personal hardware on various flavors of Linux.</p>
 
 <p>Welp, the time has come for me to reconsider Apple Mac&rsquo;s.  In particular, I really want a 15" MacBook Pro.  It&rsquo;s got intel hardware and processors, a sexy case, every built-in technology I could want including BlueTooth, and a BSD based OS.  What more could a geek want?</p>

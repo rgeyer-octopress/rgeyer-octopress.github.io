@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: news | Ryans Octopress Blog]]></title>
-  <link href="http://www.nslms.com/blog/categories/news/atom.xml" rel="self"/>
-  <link href="http://www.nslms.com/"/>
-  <updated>2014-02-17T22:00:13-08:00</updated>
-  <id>http://www.nslms.com/</id>
+  <link href="http://blog.ryangeyer.com/blog/categories/news/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-17T22:19:20-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Navigating Domain Registration - A tale of a near miss]]></title>
-    <link href="http://www.nslms.com/blog/2009/12/03/navigating-domain-registration-a-tale-of-a-near-miss/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/12/03/navigating-domain-registration-a-tale-of-a-near-miss/"/>
     <updated>2009-12-03T00:00:00-08:00</updated>
-    <id>http://www.nslms.com/blog/2009/12/03/navigating-domain-registration-a-tale-of-a-near-miss</id>
+    <id>http://blog.ryangeyer.com/blog/2009/12/03/navigating-domain-registration-a-tale-of-a-near-miss</id>
     <content type="html"><![CDATA[<p>The story you are about to read is true, not even the names have been changed so as to fully implicate the accused.</p>
 
 <p>First, a teensy bit of background.  I conduct a lot of transactions online, and do most of my business electronically.  I own three of my own domains, and manage a fourth for a friend, as well as hosting all of them on my own <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a>.  As such I feel I&rsquo;ve become pretty attuned to possible scams, phishing attempts, and other ne'er-do-wells.  That is, until last week.</p>
@@ -57,9 +57,9 @@
   
   <entry>
     <title type="html"><![CDATA[Caveman instincts]]></title>
-    <link href="http://www.nslms.com/blog/2009/11/06/caveman-instincts/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/11/06/caveman-instincts/"/>
     <updated>2009-11-06T00:00:00-08:00</updated>
-    <id>http://www.nslms.com/blog/2009/11/06/caveman-instincts</id>
+    <id>http://blog.ryangeyer.com/blog/2009/11/06/caveman-instincts</id>
     <content type="html"><![CDATA[<p>So as you may have already read, we moved from our apartment into a modest house.  This was necessary for a number of reasons, not the least of which were our toddler growing up and needing more space, and the fact that I&rsquo;m working 90%+ from home and needed an office.  A couple of side benefits for me were getting a nice small(ish) lawn in the back yard, and a garage.</p>
 
 <p>Lets talk about the lawn first.  At our apartment, we had a small patch of dirt that was maybe 5' x 8' that we did clean up and laid sod.  For a few weeks it was GREAT and looked fantastic.  I&rsquo;d water it regularly and mow it every week, it was great and I had a huge sense of pride and accomplishment in it.  However, due to the way the sun shined (or didn&rsquo;t as the case may be) the grass didn&rsquo;t last long and I was immensely mournful when it met with it&rsquo;s eventual demise.</p>
@@ -74,9 +74,9 @@
   
   <entry>
     <title type="html"><![CDATA[The sleeper has awakened!]]></title>
-    <link href="http://www.nslms.com/blog/2009/11/02/the-sleeper-has-awakened/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/11/02/the-sleeper-has-awakened/"/>
     <updated>2009-11-02T00:00:00-08:00</updated>
-    <id>http://www.nslms.com/blog/2009/11/02/the-sleeper-has-awakened</id>
+    <id>http://blog.ryangeyer.com/blog/2009/11/02/the-sleeper-has-awakened</id>
     <content type="html"><![CDATA[<p>Man, nearly two months without a post here.  Google Analytics tells me I'm only disappointing about two dozen people, so to you my loyal readers, accept my humblest apologies.  But, I do have an excuse or two!</p>
 
 
@@ -109,9 +109,9 @@
   
   <entry>
     <title type="html"><![CDATA[My First Post]]></title>
-    <link href="http://www.nslms.com/blog/2009/08/01/my-first-post/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/08/01/my-first-post/"/>
     <updated>2009-08-01T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2009/08/01/my-first-post</id>
+    <id>http://blog.ryangeyer.com/blog/2009/08/01/my-first-post</id>
     <content type="html"><![CDATA[<p>I guess it is only right to introduce myself.  I am a twenty something year old woman that has been happily married for seven years.  We have been blessed with remarkable baby boy.  I am a multicultural person that enjoys and embraces all that I am made up of.  I have had many an up hill battle and I believe it has aided in who I am and so far I love who that is.
 I believe my entries on this will be a bit different than by incredible husband&rsquo;s as I am not an engineer, so only a little will be about photography, cars, and I have little to nothing to talk about computers.  Oh and because I am a girl.  LOL!   So to those that may be just discovering my rantings enjoy the ride.</p>
 ]]></content>
@@ -119,9 +119,9 @@ I believe my entries on this will be a bit different than by incredible husband&
   
   <entry>
     <title type="html"><![CDATA[No Internet For You!]]></title>
-    <link href="http://www.nslms.com/blog/2009/02/17/no-internet-for-you/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/02/17/no-internet-for-you/"/>
     <updated>2009-02-17T00:00:00-08:00</updated>
-    <id>http://www.nslms.com/blog/2009/02/17/no-internet-for-you</id>
+    <id>http://blog.ryangeyer.com/blog/2009/02/17/no-internet-for-you</id>
     <content type="html"><![CDATA[<p>You might have noticed a little change to the look of the site.  Until the 23rd of February it&rsquo;ll continue to look this way.  You can see some detail in the right column, and in the following paragraphs.  :&ndash;)</p>
 
 <p>There is a little piece of legislation that&rsquo;s been passed in New Zealand which could set precedence for similar laws elsewhere.  In short, this legislation says that any copyright holder can accuse an internet user of copyright infringement or theft, and their ISP is compelled to disconnect them without any burden of proof.</p>

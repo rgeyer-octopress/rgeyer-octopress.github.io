@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://www.nslms.com/sitemap.xml 
+Sitemap: http://blog.ryangeyer.com/sitemap.xml 

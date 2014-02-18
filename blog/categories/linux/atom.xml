@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: linux | Ryans Octopress Blog]]></title>
-  <link href="http://www.nslms.com/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://www.nslms.com/"/>
-  <updated>2014-02-17T22:00:13-08:00</updated>
-  <id>http://www.nslms.com/</id>
+  <link href="http://blog.ryangeyer.com/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-17T22:19:20-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to host Wordpress for Free]]></title>
-    <link href="http://www.nslms.com/blog/2011/02/14/how-to-host-wordpress-for-free/"/>
+    <link href="http://blog.ryangeyer.com/blog/2011/02/14/how-to-host-wordpress-for-free/"/>
     <updated>2011-02-14T00:00:00-08:00</updated>
-    <id>http://www.nslms.com/blog/2011/02/14/how-to-host-wordpress-for-free</id>
+    <id>http://blog.ryangeyer.com/blog/2011/02/14/how-to-host-wordpress-for-free</id>
     <content type="html"><![CDATA[<p>If you&rsquo;re looking to start a blog to promote your business, or boost your presence on the internet, you&rsquo;ve probably heard of <a href="http://wordpress.org">Wordpress</a>.</p>
 
 <p>You may also have heard about the <a href="http://en.support.wordpress.com/com-vs-org/">benefits</a> of hosting your own instance of Wordpress, but you&rsquo;re intimidated by the idea of setting up and maintaining your own server, or trusting your business to a shared hosting solution.</p>
@@ -118,9 +118,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to resize billions of images in the cloud]]></title>
-    <link href="http://www.nslms.com/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud/"/>
+    <link href="http://blog.ryangeyer.com/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud/"/>
     <updated>2010-11-01T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud</id>
+    <id>http://blog.ryangeyer.com/blog/2010/11/01/how-to-resize-billions-of-images-in-the-cloud</id>
     <content type="html"><![CDATA[<p>As I was clearing out my RSS reader a few days back, I stopped to read a post on the Flickr dev blog about the &ldquo;new&rdquo; <a href="http://code.flickr.com/blog/2010/10/26/the-not-so-new-image-size-medium-640/">640px image size</a>.  In the article they lament that they wished they had made &ldquo;Large&rdquo; copies of all uploaded images because it would make generating the new 640px size easier.</p>
 
 <p>This got me thinking, what if they did want to convert every image ever uploaded to this new size and cache it?  How would they do it? How much would it cost?  The more I thought about it, the more curious I became, so I launched a little research project to see what I could find out, and to show how I would work through the problem.</p>
@@ -215,9 +215,9 @@
   
   <entry>
     <title type="html"><![CDATA[RightScriptDiff - Maintain your RightScripts Locally]]></title>
-    <link href="http://www.nslms.com/blog/2010/08/02/rightscriptdiff-maintain-your-rightscripts-locally/"/>
+    <link href="http://blog.ryangeyer.com/blog/2010/08/02/rightscriptdiff-maintain-your-rightscripts-locally/"/>
     <updated>2010-08-02T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2010/08/02/rightscriptdiff-maintain-your-rightscripts-locally</id>
+    <id>http://blog.ryangeyer.com/blog/2010/08/02/rightscriptdiff-maintain-your-rightscripts-locally</id>
     <content type="html"><![CDATA[<p>If you&rsquo;re running servers in the cloud, particularly on Amazon&rsquo;s AWS and haven&rsquo;t heard about <a href="http://www.rightscale.com">RightScale</a> you owe it to yourself to check them out.  I&rsquo;ve been using their tools for launching and managing linux servers on AWS.  They allow you to automate all of the tasks to launch a new box, and even run regular operational tasks, all with the use of RightScripts.</p>
 
 <p>RightScripts are just glorified shell scripts which get downloaded from RightScale to your linux server running in any of the clouds they support, and executed with the parameters that you specify in the RightScale dashboard for that RightScript.  Of course, as you start to get into more complex scenarios you&rsquo;re likely to start writing and testing your scripts locally before saving them in the RightScale dashboard.  That&rsquo;s where RightScriptDiff comes in.</p>
@@ -332,9 +332,9 @@ git clone git://github.com/rgeyer/RightScriptDiff.git
   
   <entry>
     <title type="html"><![CDATA[Android OS CarPC?]]></title>
-    <link href="http://www.nslms.com/blog/2010/05/14/android-os-carpc/"/>
+    <link href="http://blog.ryangeyer.com/blog/2010/05/14/android-os-carpc/"/>
     <updated>2010-05-14T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2010/05/14/android-os-carpc</id>
+    <id>http://blog.ryangeyer.com/blog/2010/05/14/android-os-carpc</id>
     <content type="html"><![CDATA[<p>Generally speaking, I don&rsquo;t actively participate in the weekly <a href="http://thecarchat.com/">#carchat</a> on Twitter, but I do occasionally glean a few points as I watch it stream across my Twitter timeline.</p>
 
 <p>Take for instance this week&rsquo;s #carchat where I saw <a href="http://twitter.com/banovsky">@banovsky</a> say the following.
@@ -384,9 +384,9 @@ git clone git://github.com/rgeyer/RightScriptDiff.git
   
   <entry>
     <title type="html"><![CDATA[Crashing at a new pad]]></title>
-    <link href="http://www.nslms.com/blog/2009/08/23/crashing-at-a-new-pad/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/08/23/crashing-at-a-new-pad/"/>
     <updated>2009-08-23T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2009/08/23/crashing-at-a-new-pad</id>
+    <id>http://blog.ryangeyer.com/blog/2009/08/23/crashing-at-a-new-pad</id>
     <content type="html"><![CDATA[<p>If you&rsquo;re reading this, it means that the DNS records have replicated and Random Musings is now fully hosted on my shiny <a href="http://www.linode.com/">Linode VPS</a>!</p>
 
 <p>I&rsquo;ve been steadily growing out of my previous hosting solution over on <a href="http://www.hostmysite.com/">Host My Site</a>.  All things being equal they&rsquo;ve served me very well, but running Wordpress started to demand more memory than they&rsquo;d allocate for a shared hosting customer.  Then there&rsquo;s the limited functionality of the PHP stack which I was starting to run up against quite regularly.</p>

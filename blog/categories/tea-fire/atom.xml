@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tea fire | Ryans Octopress Blog]]></title>
-  <link href="http://www.nslms.com/blog/categories/tea-fire/atom.xml" rel="self"/>
-  <link href="http://www.nslms.com/"/>
-  <updated>2014-02-17T22:00:13-08:00</updated>
-  <id>http://www.nslms.com/</id>
+  <link href="http://blog.ryangeyer.com/blog/categories/tea-fire/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-17T22:19:20-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Tea Fire - Day 1]]></title>
-    <link href="http://www.nslms.com/blog/2008/11/13/tea-fire-day-1/"/>
+    <link href="http://blog.ryangeyer.com/blog/2008/11/13/tea-fire-day-1/"/>
     <updated>2008-11-13T00:00:00-08:00</updated>
-    <id>http://www.nslms.com/blog/2008/11/13/tea-fire-day-1</id>
+    <id>http://blog.ryangeyer.com/blog/2008/11/13/tea-fire-day-1</id>
     <content type="html"><![CDATA[<p><img src="http://farm4.static.flickr.com/3227/3028415039_f94c6874bb.jpg" alt="Tea Fire" />
 Just became aware of the Tea Fire after driving home.</p>
 

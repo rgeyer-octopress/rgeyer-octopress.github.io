@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: twitter | Ryans Octopress Blog]]></title>
-  <link href="http://www.nslms.com/blog/categories/twitter/atom.xml" rel="self"/>
-  <link href="http://www.nslms.com/"/>
-  <updated>2014-02-17T22:00:13-08:00</updated>
-  <id>http://www.nslms.com/</id>
+  <link href="http://blog.ryangeyer.com/blog/categories/twitter/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-17T22:19:20-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[What Excites Professional Photogs?]]></title>
-    <link href="http://www.nslms.com/blog/2009/07/30/what-excites-professional-photogs/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/07/30/what-excites-professional-photogs/"/>
     <updated>2009-07-30T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2009/07/30/what-excites-professional-photogs</id>
+    <id>http://blog.ryangeyer.com/blog/2009/07/30/what-excites-professional-photogs</id>
     <content type="html"><![CDATA[<p><img src="http://farm3.static.flickr.com/2659/3756315543_22ba3d06b5.jpg" alt="Just some eye candy" class="alignright"/> Okay, so this is almost two months overdue, but I wanted to share an observation and thought process I had courtesy of one of the professional photographers I follow on <a href="http://twitter.com/rjgeyer">Twitter</a>; <a href="http://twitter.com/AcmePhoto">AcmePhoto</a>.</p>
 
 <p>The tweet was something along the lines of &ldquo;I&rsquo;ve got plenty of fireworks photos, so I left the SLR behind&rdquo;.  This was in reference to the July 4th fireworks display this year.</p>
@@ -36,9 +36,9 @@
   
   <entry>
     <title type="html"><![CDATA[My Twitter Client Search - Ended]]></title>
-    <link href="http://www.nslms.com/blog/2009/06/10/my-twitter-client-search-ended/"/>
+    <link href="http://blog.ryangeyer.com/blog/2009/06/10/my-twitter-client-search-ended/"/>
     <updated>2009-06-10T00:00:00-07:00</updated>
-    <id>http://www.nslms.com/blog/2009/06/10/my-twitter-client-search-ended</id>
+    <id>http://blog.ryangeyer.com/blog/2009/06/10/my-twitter-client-search-ended</id>
     <content type="html"><![CDATA[<p style="text-align: center;"><a href="http://www.flickr.com/photos/rgeyer/3613715245/"><img class="aligncenter" longdesc="http://www.flickr.com/photos/rgeyer/3613715245/" src="http://farm4.static.flickr.com/3377/3613715245_c590a530d3.jpg" alt="" /></a></p>
 
 
