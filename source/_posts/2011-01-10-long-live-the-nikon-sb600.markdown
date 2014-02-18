@@ -23,7 +23,7 @@ meta:
 
 It's been a bit over a year since I <a href="http://www.nslms.com/2009/09/07/like-a-flash-in-the-pan/">dropped my Nikon SB600</a>, rendering it useless.  When it happened I was able to disassemble the flash and identify the part which was damaged, but being a relative layman when it comes to circuit board components I didn't know what to replace it with.
 
-Apparently though, I wasn't the only person to damage their SB600.  Nor was I the only one who popped out the jewelers screwdriver and did a post mortem.  <a href="http://www.nslms.com/2009/09/07/like-a-flash-in-the-pan/#comment-963">David</a> identified the part as a small inductor, and even provided the digikey part number that was the best fit to replace it.
+Apparently though, I wasn't the only person to damage their SB600.  Nor was I the only one who popped out the jewelers screwdriver and did a post mortem.  <a href="http://www.nslms.com/2009/09/07/like-a-flash-in-the-pan/#comment-299074576">David</a> identified the part as a small inductor, and even provided the digikey part number that was the best fit to replace it.
 <!--more-->
 
 Armed with the knowledge that someone else had repaired their strobe which suffered a similar fate, I felt empowered to take on the project myself.  I ordered up half a dozen of the component from DigiKey and started psyching myself up for the project.
