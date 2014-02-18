@@ -4,7 +4,7 @@
   <title><![CDATA[Category: reviews | Ryans Octopress Blog]]></title>
   <link href="http://rgeyer-octopress.github.io/blog/categories/reviews/atom.xml" rel="self"/>
   <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-17T21:08:45-08:00</updated>
+  <updated>2014-02-17T21:25:27-08:00</updated>
   <id>http://rgeyer-octopress.github.io/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -145,7 +145,7 @@ grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
 </div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
 </div></pre></td></tr></table></div></figure></p>
 
-<p>The result of the front end app should be a list of comments which are approved (by the backend) and a submission form to allow you to submit new comments.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/frontend/comments" target="_blank">this</a>.</p>
+<p>The result of the front end app should be a list of comments which are approved (by the backend) and a submission form to allow you to submit new comments. <!-- Kinda like <a href="http://www.nslms.com/grails/examples/modular/frontend/comments" target="_blank">this</a>. --></p>
 
 
 <p><strong>The Back End</strong></p>
@@ -174,7 +174,7 @@ grails install-plugin ../Modular-DAL/grails-modular-dal-0.1.zip
 </div><div class='line'> </div><div class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
 </div></pre></td></tr></table></div></figure></p>
 
-<p>The back end app should have a list of all unapproved comments, and a method to approve them.  Kinda like <a href="http://www.nslms.com/grails/examples/modular/backend/admin/comments" target="_blank">this</a>.</p>
+<p>The back end app should have a list of all unapproved comments, and a method to approve them.  <!--Kinda like <a href="http://www.nslms.com/grails/examples/modular/backend/admin/comments" target="_blank">this</a>.--></p>
 
 
 <p><strong>Trying it out</strong></p>
