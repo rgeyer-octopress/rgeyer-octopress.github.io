@@ -74,22 +74,22 @@ The RightScale management tool, and this ServerTemplate offer all sorts of cool 
 <li>Sign up for a RightScale <a href="http://www.rightscale.com/products/free_edition.php">Free Developer Edition</a></li>
 <li>Enter your AWS credentials into the RightScale dashboard using <a href="http://support.rightscale.com/index.php?title=03-Tutorials/01-RightScale/3._Upgrade_Your_Account/1.7_Add_AWS_Credentials_to_the_Dashboard">these</a> directions</li>
 <li>Browse to my <a href="https://my.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">All-In-One ServerTemplate</a> and click "Import"</li>
-<a href="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.25.23-PM.png"><img src="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.25.23-PM-300x220.png" alt="" title="Import ServerTemplate" width="300" height="220" class="size-medium wp-image-1026" /></a>
+<a href=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.25.23-PM.png><img src=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.25.23-PM-300x220.png alt="" title="Import ServerTemplate" width="300" height="220" class="size-medium wp-image-1026" /></a>
 <li>Click "Add to Deployment"</li>
-<a href="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.05.02-PM.png"><img src="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.05.02-PM-300x87.png" alt="" title="Add to Deployment" width="300" height="87" class="alignnone size-medium wp-image-1024" /></a>
+<a href=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.05.02-PM.png><img src=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.05.02-PM-300x87.png alt="" title="Add to Deployment" width="300" height="87" class="alignnone size-medium wp-image-1024" /></a>
 <li>Pick the AWS Cloud closest to you and click "OK"</li>
 <li>Change the "Instance Type" dropdown to "t1.micro", and select the "default" Security Group from the dropdown.  You can also provide you server a name, then click "Add"</li>
-<a href="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.04.40-PM.png"><img src="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.04.40-PM-300x288.png" alt="" title="Server Details" width="300" height="288" class="alignnone size-medium wp-image-1023" /></a>
+<a href=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.04.40-PM.png><img src=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.04.40-PM-300x288.png alt="" title="Server Details" width="300" height="288" class="alignnone size-medium wp-image-1023" /></a>
 <li>Click the "Play" button, provide inputs for the Database Administrator password, Postfix DB password, and EBS volume size, then click "Save and Launch"</li>
-<a href="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.17.24-PM.png"><img src="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.17.24-PM-300x124.png" alt="" title="Launch Server" width="300" height="124" class="alignnone size-medium wp-image-1033" /></a>
-<a href="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.13.36-PM.png"><img src="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.13.36-PM-269x300.png" alt="" title="Server Inputs" width="269" height="300" class="alignnone size-medium wp-image-1025" /></a>
+<a href=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.17.24-PM.png><img src=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.17.24-PM-300x124.png alt="" title="Launch Server" width="300" height="124" class="alignnone size-medium wp-image-1033" /></a>
+<a href=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.13.36-PM.png><img src=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.13.36-PM-269x300.png alt="" title="Server Inputs" width="269" height="300" class="alignnone size-medium wp-image-1025" /></a>
 <p>And now.. We wait.. Until the instance is up and running..</p>
 <li>Click on the server's nickname, then navigate to the "Scripts" tab</li>
 <li>Run the "rjg_utils::aio_ebs_volume_enable_continuous_backup" operational script to make sure your server is backed up daily</li>
 <li>Run the "app_wordpress::deploy" operational script to setup Wordpress for your domain</li>
-<a href="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.45.33-PM.png"><img src="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-1.45.33-PM-300x151.png" alt="" title="Wordpress Deploy Inputs" width="300" height="151" class="alignnone size-medium wp-image-1036" /></a>
+<a href=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.45.33-PM.png><img src=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.45.33-PM-300x151.png alt="" title="Wordpress Deploy Inputs" width="300" height="151" class="alignnone size-medium wp-image-1036" /></a>
 <li>Navigate to your websites URL (we used http://ec2.ryangeyer.com in this example) and setup your Wordpress preferences</li>
-<a href="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-2.27.07-PM.png"><img src="http://www.nslms.com/wp-content/Screen-shot-2011-02-11-at-2.27.07-PM-300x285.png" alt="" title="Configure Wordpress" width="300" height="285" class="alignnone size-medium wp-image-1044" /></a>
+<a href=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-2.27.07-PM.png><img src=http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-2.27.07-PM-300x285.png alt="" title="Configure Wordpress" width="300" height="285" class="alignnone size-medium wp-image-1044" /></a>
 <li>Start Blogging!</li>
 </ol>
 

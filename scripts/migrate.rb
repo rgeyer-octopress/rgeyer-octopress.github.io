@@ -70,6 +70,9 @@ def convert_hrefs(everything)
   # Categories
   everything.gsub!(/"http:\/\/www\.nslms\.com\/category\/(.*?)"/, "http://blog.ryangeyer.com/blog/categories/\\1")
 
+  # Images
+  everything.gsub!(/"http:\/\/www\.nslms\.com\/wp-content\/(.*?)"/, "http://blog.ryangeyer.com/images/\\1")
+
   everything
 end
 
