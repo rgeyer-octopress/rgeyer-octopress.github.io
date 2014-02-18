@@ -10,7 +10,6 @@ published: false
 meta:
   _headspace_description: ''
   _headspace_page_title: ''
-comments: true
   Hide OgTags: '0'
   Hide SexyBookmarks: '0'
   _edit_last: '1'

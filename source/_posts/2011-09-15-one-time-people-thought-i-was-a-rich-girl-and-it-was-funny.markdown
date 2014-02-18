@@ -10,7 +10,6 @@ published: false
 meta:
   _headspace_description: ''
   _headspace_page_title: ''
-comments: true
   _edit_last: '2'
 ---
 I am a woman from modest means, I have been for as long as I can remember and it has never bothered me.  My parents were young and never given a hand out of any sort when they decided to marry immediately after high school and start a family.  They weren't shunned but money wasn't handed out.  

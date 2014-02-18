@@ -22,7 +22,6 @@ meta:
   _sexybookmarks_permaHash: 4f3fcd9289e1ad70de0ee9a344598ab8
   _headspace_description: ''
   _headspace_page_title: ''
-comments: true
   Hide OgTags: '0'
   Hide SexyBookmarks: '0'
 ---
