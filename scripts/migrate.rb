@@ -68,7 +68,7 @@ def convert_hrefs(everything)
   everything.gsub!(/"http:\/\/www\.nslms\.com\/([0-9]{4}\/[0-9]{2}\/[0-9]{2}\/.*?)"/, "http://blog.ryangeyer.com/blog/\\1")
 
   # Categories
-  everything.gsub!(/"http:\/\/www\.nslms\.com\/category\/(.*?)"/, "http://blog.ryangeyer.com/blog/\\1")
+  everything.gsub!(/"http:\/\/www\.nslms\.com\/category\/(.*?)"/, "http://blog.ryangeyer.com/blog/categories/\\1")
 
   everything
 end
@@ -81,7 +81,6 @@ Dir.glob("../source/_posts/*.markdown").each do |file|
   end
   str = convert_codeblocks(str)
   str = styles(str)
-# I didn't make this idempotent, so only do it once.
 #  str = enable_comments(str)
   str = convert_hrefs(str)
   File.open(file, "w+") do |f|
