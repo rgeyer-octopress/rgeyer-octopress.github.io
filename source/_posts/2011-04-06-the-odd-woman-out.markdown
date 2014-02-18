@@ -11,7 +11,9 @@ published: true
 meta:
   _edit_last: '1'
 ---
-[flickr size="medium" float="center"]5516009764[/flickr]
+<center>
+<img src="http://farm6.staticflickr.com/5296/5516009764_75aa430e1f_d.jpg" />
+</center>
 That's me, I am the odd woman out in my home.  I have two boys and my husband and often it feels like an all boy house as I cuddle in my favorite spot on the couch and attempt to read something girly.  I'm happy to have my boys, they are awesome, I wouldn't trade either of them for a girl ever.  I find that all the boys get kind of quiet as my husband works on something techie, car related, or yard work related in their presence. 
 
 Now that my 3 year old is becoming aware of everything and wants to talk about everything he likes to remind me that I'm different.  I'm shorter than my husband, by over a foot, I have curly hair he has straight hair, etc.  His newest epiphany?   Penises.  Good times, let me tell you.

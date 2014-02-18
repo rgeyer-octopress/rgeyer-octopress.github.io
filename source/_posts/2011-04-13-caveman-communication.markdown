@@ -11,8 +11,7 @@ published: true
 meta:
   _edit_last: '1'
 ---
-[flickr size="small" float="right"]5426078103[/flickr]
-
+<img src="http://farm6.staticflickr.com/5100/5426078103_39b904bda7_n_d.jpg" style="float: right" />
 You would think that being the only girl in the house that I would not be surprised with the grunting that goes on here.  I mean my husband has been known to nod at me and grunt and I would know that means, "Why yes I would love another beer sweetie." and that a long grunt with eyes closed while at the dinner table and eating a dinner I made means, "Oh my goodness honey, you out did yourself.  The cabernet savignion bouquet paired with the fillet mignion and the red wine reduction sauce is outstanding with your roasted garlic mashed potatoes.".  
 
 I learned quickly what my first son was trying to communicate with grunts and hand gestures when he was an infant.  He was much more focused on learning and mastering physical milestones, he was all about stacking blocks and figuring out how to use his legos before one.  
