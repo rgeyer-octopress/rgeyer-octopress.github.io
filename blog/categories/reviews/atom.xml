@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: reviews | Ryans Octopress Blog]]></title>
-  <link href="http://rgeyer-octopress.github.io/blog/categories/reviews/atom.xml" rel="self"/>
-  <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-17T21:57:49-08:00</updated>
-  <id>http://rgeyer-octopress.github.io/</id>
+  <link href="http://www.nslms.com/blog/categories/reviews/atom.xml" rel="self"/>
+  <link href="http://www.nslms.com/"/>
+  <updated>2014-02-17T22:00:13-08:00</updated>
+  <id>http://www.nslms.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[MacBook Pro - First Impressions]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/03/18/macbook-pro-first-impressions/"/>
+    <link href="http://www.nslms.com/blog/2010/03/18/macbook-pro-first-impressions/"/>
     <updated>2010-03-18T00:00:00-07:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/03/18/macbook-pro-first-impressions</id>
+    <id>http://www.nslms.com/blog/2010/03/18/macbook-pro-first-impressions</id>
     <content type="html"><![CDATA[<p>I just took delivery of my latest new computer from my employer. &nbsp;This time, instead of another run of the mill IBM compatible laptop or desktop it was a fancy new 17&quot; MacBook Pro. &nbsp;We&#39;re developing software which we&#39;re supporting in Safari using the Silverlight plugin and I needed to be able to develop and test in that native environment.</p>
 
 
@@ -34,9 +34,9 @@
   
   <entry>
     <title type="html"><![CDATA[Modularizing your Grails Application - Domain Classes]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/03/10/modularizing-your-grails-application-domain-classes/"/>
+    <link href="http://www.nslms.com/blog/2010/03/10/modularizing-your-grails-application-domain-classes/"/>
     <updated>2010-03-10T00:00:00-08:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/03/10/modularizing-your-grails-application-domain-classes</id>
+    <id>http://www.nslms.com/blog/2010/03/10/modularizing-your-grails-application-domain-classes</id>
     <content type="html"><![CDATA[<p>This is the second installment of my <a href=http://blog.ryangeyer.com/blog/2010/02/05/what-grooves-you/>What Grooves You?</a> series of posts, this time discussing how to modularize your Grails application.  While Grails does an awesome job of enforcing <a href="http://www.grails.org/Developer+-+Spring+MVC+Integration">MVC</a> once your application reaches a certain size, or you have multiple applications which may have shared components, you're going to have to start thinking about how your going to modularize the reusable parts of your code.</p>
 
 
@@ -210,9 +210,9 @@ git clone git://ec2.nslms.com/grails/blog_example_modular
   
   <entry>
     <title type="html"><![CDATA[Fitting Grails in an Active Directory and NTLM SSO Groove]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/02/10/fitting-grails-in-an-active-directory-and-ntml-sso-groove/"/>
+    <link href="http://www.nslms.com/blog/2010/02/10/fitting-grails-in-an-active-directory-and-ntml-sso-groove/"/>
     <updated>2010-02-10T00:00:00-08:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/02/10/fitting-grails-in-an-active-directory-and-ntml-sso-groove</id>
+    <id>http://www.nslms.com/blog/2010/02/10/fitting-grails-in-an-active-directory-and-ntml-sso-groove</id>
     <content type="html"><![CDATA[<p>This is my first installment in the <a href=http://blog.ryangeyer.com/blog/2010/02/05/what-grooves-you/>What Grooves You?</a> series of posts, and it deals with the first thing you're going to need to consider if you are deploying your Grails/Groovy applications in the average corporate IT infrastructure, Single Sign On with Active Directory and NTLM.  Like it or not, because all of our existing applications are based on Microsoft technologies our users have gotten used to just going to the URL for the application they intend to use and being instantly recognized and authenticated.  Forcing them to sign in again, or worse still forcing them to setup a new username and password for your system would be completely unacceptable!  Below, I'll take you through the steps I took to solve this problem, including the detours that cost me time!</p>
 
 
@@ -423,9 +423,9 @@ You can also download a copy of the Spring Source STS project I used for this ap
   
   <entry>
     <title type="html"><![CDATA[What Grooves You?]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/02/05/what-grooves-you/"/>
+    <link href="http://www.nslms.com/blog/2010/02/05/what-grooves-you/"/>
     <updated>2010-02-05T00:00:00-08:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/02/05/what-grooves-you</id>
+    <id>http://www.nslms.com/blog/2010/02/05/what-grooves-you</id>
     <content type="html"><![CDATA[<p>In my &quot;Day Job&quot;, we design and build our applications using Microsoft technologies.  In particular, we're using C#, Silverlight, and IIS to build and deploy our web applications.  This makes good sense because the vendors we use are well versed in the Microsoft technology, and like the IT infrastructure of a lot of medium and large companies Microsoft solutions are at the forefront.  It's becoming apparent though that we're going to have to consider our options and possibly embrace a different technology stack to properly scale and support the applications we're building.</p>
 
 
@@ -443,9 +443,9 @@ You can also download a copy of the Spring Source STS project I used for this ap
   
   <entry>
     <title type="html"><![CDATA[Catching the Wave]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2009/11/06/catching-the-wave/"/>
+    <link href="http://www.nslms.com/blog/2009/11/06/catching-the-wave/"/>
     <updated>2009-11-06T00:00:00-08:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2009/11/06/catching-the-wave</id>
+    <id>http://www.nslms.com/blog/2009/11/06/catching-the-wave</id>
     <content type="html"><![CDATA[<p>I am something of a Google Zealot, I was using the search engine back before many people knew what it was and haven&rsquo;t strayed since.  I&rsquo;ve been using GMail for the better part of two years, and it handles ALL of my incoming mail, I even forward all of the emails from my self hosted domains to it.  I use Google Docs for everything, including writing and storing invoices for my consulting work and any of my other &ldquo;office&rdquo; needs.  And I use Google Voice daily for business phone calls.  We used Google Maps to find and track rental homes, and it helped us find the place we&rsquo;re living in now.  Google Analytics keeps a finger on the pulse of the (itty bitty) traffic on this site.  Google Reader is my RSS reader of choice, which I use almost strictly through a gadget on my iGoogle homepage along with tgadget for Twitter.  I sync my iPhone with Google Calendar, and wouldn&rsquo;t know what I&rsquo;m doing any particular day without it.  You get the idea.  :&ndash;)</p>
 
 <p>So you can imagine that when I heard about Google Wave, I instantly signed up to receive an early invite.  And as you can probably also imagine, I was super disappointed when the first set of invites went out to the public, and I didn&rsquo;t get mine!  I watched as many of the people I follow on Twitter announced that they&rsquo;d received their invite, and were happily getting started with Google Wave.  Of course, many of them were reporting serious usability issues and disappointments but I was never-the-less anxious to get my peek at it.  After a few short weeks I managed to trade a Google Voice invite for a Google Wave invite.</p>

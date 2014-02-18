@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: grails/groovy | Ryans Octopress Blog]]></title>
-  <link href="http://rgeyer-octopress.github.io/blog/categories/grails-slash-groovy/atom.xml" rel="self"/>
-  <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-17T21:57:49-08:00</updated>
-  <id>http://rgeyer-octopress.github.io/</id>
+  <link href="http://www.nslms.com/blog/categories/grails-slash-groovy/atom.xml" rel="self"/>
+  <link href="http://www.nslms.com/"/>
+  <updated>2014-02-17T22:00:13-08:00</updated>
+  <id>http://www.nslms.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Grails Plugin Dependencies]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2011/01/03/grails-plugin-dependencies/"/>
+    <link href="http://www.nslms.com/blog/2011/01/03/grails-plugin-dependencies/"/>
     <updated>2011-01-03T00:00:00-08:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2011/01/03/grails-plugin-dependencies</id>
+    <id>http://www.nslms.com/blog/2011/01/03/grails-plugin-dependencies</id>
     <content type="html"><![CDATA[<p>You just finished adding a shiny new plugin to your Grails project, and build some functionality around it.  You excitedly push it out to your deployment site and you&rsquo;re greeted with a NoClassDefException.  If this has happened to you, the complex and murky plugin dependency handling of Grails may be to blame.</p>
 
 <!--more-->
@@ -121,9 +121,9 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
   
   <entry>
     <title type="html"><![CDATA[Hidden Danger of Grails Plugins]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/08/19/hidden-danger-of-grails-plugins/"/>
+    <link href="http://www.nslms.com/blog/2010/08/19/hidden-danger-of-grails-plugins/"/>
     <updated>2010-08-19T00:00:00-07:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/08/19/hidden-danger-of-grails-plugins</id>
+    <id>http://www.nslms.com/blog/2010/08/19/hidden-danger-of-grails-plugins</id>
     <content type="html"><![CDATA[<p>As a new developer to Grails you&rsquo;re probably in awe over the vast number of very powerful plugins which are available to you.  Without writing a single line of your own code you can do all sorts of cool things like interact with Twitter, Facebook, Amazon&rsquo;s S3 storage system, Apple Push notifications, Spring Security, and the list goes on and on.  As of this writing there are 447 plugins available in the official Grails plugin repository.</p>
 
 <p>It is understandably tempting to leverage all of this code to simply bolt together an integrated solution which solves the problem you&rsquo;re facing.  But there is a downside to consuming someone else&rsquo;s code, particularly when you&rsquo;re doing test driven development.  Here are some things to consider before you pull the trigger and <em>grails install-plugin</em>.</p>
@@ -172,9 +172,9 @@ Grails features 5 dependency resolution configurations (or 'scopes') which you c
   
   <entry>
     <title type="html"><![CDATA[Grails Domain Mocking Limitations]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/07/27/grails-domain-mocking-limitations/"/>
+    <link href="http://www.nslms.com/blog/2010/07/27/grails-domain-mocking-limitations/"/>
     <updated>2010-07-27T00:00:00-07:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/07/27/grails-domain-mocking-limitations</id>
+    <id>http://www.nslms.com/blog/2010/07/27/grails-domain-mocking-limitations</id>
     <content type="html"><![CDATA[<p>So, I just threw out most of this morning trying to figure out why something which clearly <em>should</em> work was blowing up my unit test on a grails app.  To spare you the same pain I&rsquo;m documenting it here.</p>
 
 <p>The scenario is that I have Roles and Privileges as domain classes.  A role has many privileges, and any privilege may belong to one or more roles.  This is represented in domain classes pretty succinctly as;</p>
@@ -291,9 +291,9 @@ git clone git://ec2.nslms.com/grails/blog_example_mock_limitations
   
   <entry>
     <title type="html"><![CDATA[Grails and Tomcat6 - Deployment Notes]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/03/31/grails-and-tomcat6-deployment-notes/"/>
+    <link href="http://www.nslms.com/blog/2010/03/31/grails-and-tomcat6-deployment-notes/"/>
     <updated>2010-03-31T00:00:00-07:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/03/31/grails-and-tomcat6-deployment-notes</id>
+    <id>http://www.nslms.com/blog/2010/03/31/grails-and-tomcat6-deployment-notes</id>
     <content type="html"><![CDATA[<p>Things have been busy, and I haven't had the time to devote to writing updates on either the Caddy, or my work in Grails.  But enough complaining, to pass the time until I can get some more quality content here, I wanted to share this little gem that took me entirely too long to figure out.</p>
 
 
@@ -358,9 +358,9 @@ mkdir -p /srv/tomcat-webapps/examples/MyExampleApp
   
   <entry>
     <title type="html"><![CDATA[Modularizing your Grails Application - Domain Classes]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/03/10/modularizing-your-grails-application-domain-classes/"/>
+    <link href="http://www.nslms.com/blog/2010/03/10/modularizing-your-grails-application-domain-classes/"/>
     <updated>2010-03-10T00:00:00-08:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/03/10/modularizing-your-grails-application-domain-classes</id>
+    <id>http://www.nslms.com/blog/2010/03/10/modularizing-your-grails-application-domain-classes</id>
     <content type="html"><![CDATA[<p>This is the second installment of my <a href=http://blog.ryangeyer.com/blog/2010/02/05/what-grooves-you/>What Grooves You?</a> series of posts, this time discussing how to modularize your Grails application.  While Grails does an awesome job of enforcing <a href="http://www.grails.org/Developer+-+Spring+MVC+Integration">MVC</a> once your application reaches a certain size, or you have multiple applications which may have shared components, you're going to have to start thinking about how your going to modularize the reusable parts of your code.</p>
 
 

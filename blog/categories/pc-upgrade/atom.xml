@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: pc upgrade | Ryans Octopress Blog]]></title>
-  <link href="http://rgeyer-octopress.github.io/blog/categories/pc-upgrade/atom.xml" rel="self"/>
-  <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-17T21:57:49-08:00</updated>
-  <id>http://rgeyer-octopress.github.io/</id>
+  <link href="http://www.nslms.com/blog/categories/pc-upgrade/atom.xml" rel="self"/>
+  <link href="http://www.nslms.com/"/>
+  <updated>2014-02-17T22:00:13-08:00</updated>
+  <id>http://www.nslms.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[My First 64bit PC]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2008/10/23/my-first-64bit-pc/"/>
+    <link href="http://www.nslms.com/blog/2008/10/23/my-first-64bit-pc/"/>
     <updated>2008-10-23T00:00:00-07:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2008/10/23/my-first-64bit-pc</id>
+    <id>http://www.nslms.com/blog/2008/10/23/my-first-64bit-pc</id>
     <content type="html"><![CDATA[<p>Time for the second installment of my worklog for my <a href=http://blog.ryangeyer.com/blog/2008/09/05/the-upgrade-begins/>PC Upgrade</a>.</p>
 
 <p>Well, I actually received all the bits from UPS Monday (is it Thursday already? sheesh).  I actually assembled the thing Monday afternoon/evening, and have been slowly installing software and getting it up to speed.</p>
@@ -47,9 +47,9 @@
   
   <entry>
     <title type="html"><![CDATA[The upgrade begins]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2008/09/05/the-upgrade-begins/"/>
+    <link href="http://www.nslms.com/blog/2008/09/05/the-upgrade-begins/"/>
     <updated>2008-09-05T00:00:00-07:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2008/09/05/the-upgrade-begins</id>
+    <id>http://www.nslms.com/blog/2008/09/05/the-upgrade-begins</id>
     <content type="html"><![CDATA[<p>I just placed the first of two orders for the components to my new desktop machine!</p>
 
 <p>This upgrade is sorely overdue, the last time I got a &ldquo;new&rdquo; machine was about 3 years ago and it was antiquated then.  So I&rsquo;m going from my 2.4GHZ P4 with 1GB RAM and an assortment of various drives to this new beast I&rsquo;m building.</p>

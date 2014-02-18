@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: worklogs | Ryans Octopress Blog]]></title>
-  <link href="http://rgeyer-octopress.github.io/blog/categories/worklogs/atom.xml" rel="self"/>
-  <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-17T21:57:49-08:00</updated>
-  <id>http://rgeyer-octopress.github.io/</id>
+  <link href="http://www.nslms.com/blog/categories/worklogs/atom.xml" rel="self"/>
+  <link href="http://www.nslms.com/"/>
+  <updated>2014-02-17T22:00:13-08:00</updated>
+  <id>http://www.nslms.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Project Late Model Restoration - Power Antenna & Shift Cable]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/11/17/project-late-model-restoration-power-antenna-shift-cable/"/>
+    <link href="http://www.nslms.com/blog/2010/11/17/project-late-model-restoration-power-antenna-shift-cable/"/>
     <updated>2010-11-17T00:00:00-08:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/11/17/project-late-model-restoration-power-antenna-shift-cable</id>
+    <id>http://www.nslms.com/blog/2010/11/17/project-late-model-restoration-power-antenna-shift-cable</id>
     <content type="html"><![CDATA[<p>So there I was, minding my own business, driving the Lexus from point A to point B.  When I arrived at my destination, I turned off the ignition, and as it had done thousands of times before the power antenna began reeling back into the rear fender, but then it happened&hellip;  I heard a horrible CLUNK, then a persistent grinding sound that simply wouldn&rsquo;t go away.</p>
 
 <p>I tried turning the ignition back on, hoping that the antenna might have only slipped on one tooth and cycling it would get everything back on track, but it was not to be.  With the antenna stuck just a little past half way erected, I removed the trunk interior panel that covers the power antenna motor, and disconnected the power.</p>
@@ -67,9 +67,9 @@ What's worse, I probably didn't need to replace the cable at all.  As it turns o
   
   <entry>
     <title type="html"><![CDATA[Caddy - Hibernating for the summer?]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/04/08/caddy-hibernating-for-the-summer/"/>
+    <link href="http://www.nslms.com/blog/2010/04/08/caddy-hibernating-for-the-summer/"/>
     <updated>2010-04-08T00:00:00-07:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/04/08/caddy-hibernating-for-the-summer</id>
+    <id>http://www.nslms.com/blog/2010/04/08/caddy-hibernating-for-the-summer</id>
     <content type="html"><![CDATA[<p>Time for a quick update on the Cadillac.  Last time you read about the caddy, I shared my <a href=http://blog.ryangeyer.com/blog/2010/03/11/i-dub-thee-bionic-caddy/>discovery</a> that it had the rather desirable "Switch Pitch" variation of the Turbo 400 transmission.  As such, I decided it was best to have it examined before I put the car back together.  I took it over to Alphonso's Transmission in Goleta, hoping that it just needed to be cleaned up, and perhaps have a few smaller parts repaired or replaced.  Unfortunately, this was not to be.  As he started dismantling the transmission he very quickly discovered that the main forward band was broken, the forward drum was burnt, and the 2/3 clutch pack was nearly worn down to the steel.  So, the only real choice at that point was to go ahead and rebuild the transmission completely.</p>
 
 
@@ -97,9 +97,9 @@ What's worse, I probably didn't need to replace the cable at all.  As it turns o
   
   <entry>
     <title type="html"><![CDATA[I dub thee "Bionic Caddy"]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/03/11/i-dub-thee-bionic-caddy/"/>
+    <link href="http://www.nslms.com/blog/2010/03/11/i-dub-thee-bionic-caddy/"/>
     <updated>2010-03-11T00:00:00-08:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/03/11/i-dub-thee-bionic-caddy</id>
+    <id>http://www.nslms.com/blog/2010/03/11/i-dub-thee-bionic-caddy</id>
     <content type="html"><![CDATA[<p>It&#39;s been a while since I&#39;ve provided an update about the progress of on the Caddy. &nbsp;Mostly because things have been slow due to a busy work and family schedule. &nbsp;Here&#39;s the rundown of what I have gotten done though.</p>
 
 
@@ -131,9 +131,9 @@ What's worse, I probably didn't need to replace the cable at all.  As it turns o
   
   <entry>
     <title type="html"><![CDATA[Mystery Solved!]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/02/02/mystery-solved/"/>
+    <link href="http://www.nslms.com/blog/2010/02/02/mystery-solved/"/>
     <updated>2010-02-02T00:00:00-08:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/02/02/mystery-solved</id>
+    <id>http://www.nslms.com/blog/2010/02/02/mystery-solved</id>
     <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/rgeyer/4326832460/" title="Culprit by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4017/4326832460_9568d6b705.jpg" width="500" height="335" alt="Culprit" class="alignright" /></a>Well there she is, the source of my clunk!  And, the way it's sitting in there explains why the engine wouldn't turn past TDC as well since that thing woulda been right in the way.  So far as I can tell it's a small(ish) washer that got folded in half.  You can see a few more shots of it over in my <a href="http://www.flickr.com/photos/rgeyer/sets/72157623338455858/">Flickr set</a>.  What remains a bit of a mystery is how it got there.  I'm guessing it entered through the intake, and it's possible it was sitting on top of the throttle blades of the carb.  Tough to say if it was there when I got it, or if I managed to drop it there while I was working.</p>
 
 
@@ -156,9 +156,9 @@ What's worse, I probably didn't need to replace the cable at all.  As it turns o
   
   <entry>
     <title type="html"><![CDATA[Engine Autopsy]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2010/02/01/engine-autopsy/"/>
+    <link href="http://www.nslms.com/blog/2010/02/01/engine-autopsy/"/>
     <updated>2010-02-01T00:00:00-08:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2010/02/01/engine-autopsy</id>
+    <id>http://www.nslms.com/blog/2010/02/01/engine-autopsy</id>
     <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/rgeyer/4323196620/" title="Engine Removal by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4034/4323196620_ce4b21e310.jpg" width="500" height="335" alt="Cadillac 429 on Hoist" class="aligncenter" /></a></p>
 
 <p>I got the engine out of the Caddy this weekend!  The first lesson I learned is that I should have either removed all of the pulleys and water pump, or removed the front clip of the car.  I had a TON of trouble getting the motor out past the radiator core support!  In fact, I wound up yanking the water pump off while the motor was in limbo just to buy myself a few more inches of clearance.</p>

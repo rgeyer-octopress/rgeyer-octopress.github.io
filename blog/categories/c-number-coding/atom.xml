@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: c# coding | Ryans Octopress Blog]]></title>
-  <link href="http://rgeyer-octopress.github.io/blog/categories/c-number-coding/atom.xml" rel="self"/>
-  <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-17T21:57:49-08:00</updated>
-  <id>http://rgeyer-octopress.github.io/</id>
+  <link href="http://www.nslms.com/blog/categories/c-number-coding/atom.xml" rel="self"/>
+  <link href="http://www.nslms.com/"/>
+  <updated>2014-02-17T22:00:13-08:00</updated>
+  <id>http://www.nslms.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Really Detecting Design Mode]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2008/08/22/really-detecting-design-mode/"/>
+    <link href="http://www.nslms.com/blog/2008/08/22/really-detecting-design-mode/"/>
     <updated>2008-08-22T00:00:00-07:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2008/08/22/really-detecting-design-mode</id>
+    <id>http://www.nslms.com/blog/2008/08/22/really-detecting-design-mode</id>
     <content type="html"><![CDATA[<p>I recently had to deal with the problem of ADO.NET data access occurring on user controls, and forms in the Visual Studio design view.  Now the data access depended upon a connection string in the App.config file and consequently, when run from Visual Studio it could not connect to the database since the connection string wasn&rsquo;t available.</p>
 
 <p>So, I proceeded to do some searching on the problem.  I very quickly discovered the <a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.component.designmode.aspx">DesignMode</a> flag for components, and thought I&rsquo;d found my solution.</p>
@@ -69,9 +69,9 @@ if(System.ComponentModel.LicenseManager.UsageMode ==
   
   <entry>
     <title type="html"><![CDATA[Microsoft's Tlbimp creates leaky BSTR signatures]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2008/03/13/microsofts-tlbimp-creates-leaky-bstr-signatures/"/>
+    <link href="http://www.nslms.com/blog/2008/03/13/microsofts-tlbimp-creates-leaky-bstr-signatures/"/>
     <updated>2008-03-13T00:00:00-07:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2008/03/13/microsofts-tlbimp-creates-leaky-bstr-signatures</id>
+    <id>http://www.nslms.com/blog/2008/03/13/microsofts-tlbimp-creates-leaky-bstr-signatures</id>
     <content type="html"><![CDATA[<p>This one confounded me when I first discovered it, and I&rsquo;ve recently been reminded about it.  For the sake of remembering the details, and hopefully helping someone else out I&rsquo;m going to document it here.</p>
 
 <p>The problem is this.  When you have a COM library that you need to use from a C# app, you import it as a reference.  In the background the Microsoft.NET wizards do their magic by running the <a href="http://msdn2.microsoft.com/en-us/library/tt0cf3sx(VS.80).aspx">Tlbimp.exe</a> to generate a managed DLL with all of the objects and interfaces from the COM library.  You proceed to use the code that Microsoft so conveniently converted for you fully confident that all is well.</p>

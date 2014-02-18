@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: software development | Ryans Octopress Blog]]></title>
-  <link href="http://rgeyer-octopress.github.io/blog/categories/software-development/atom.xml" rel="self"/>
-  <link href="http://rgeyer-octopress.github.io/"/>
-  <updated>2014-02-17T21:57:49-08:00</updated>
-  <id>http://rgeyer-octopress.github.io/</id>
+  <link href="http://www.nslms.com/blog/categories/software-development/atom.xml" rel="self"/>
+  <link href="http://www.nslms.com/"/>
+  <updated>2014-02-17T22:00:13-08:00</updated>
+  <id>http://www.nslms.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Web development environment - "On The Go"]]></title>
-    <link href="http://rgeyer-octopress.github.io/blog/2009/04/07/web-development-environment-on-the-go/"/>
+    <link href="http://www.nslms.com/blog/2009/04/07/web-development-environment-on-the-go/"/>
     <updated>2009-04-07T00:00:00-07:00</updated>
-    <id>http://rgeyer-octopress.github.io/blog/2009/04/07/web-development-environment-on-the-go</id>
+    <id>http://www.nslms.com/blog/2009/04/07/web-development-environment-on-the-go</id>
     <content type="html"><![CDATA[<p>Over the past few weeks I&rsquo;ve been spending most of my spare time developing a couple of web sites.  These sites are based on the Drupal CMS written in PHP.  And I&rsquo;ve taken a bit of a crash course in Drupal module design.</p>
 
 <p>When I set out developing these, I faced a challenge that I&rsquo;d been aware of, but managed to avoid in the past.  How do I work on these projects in a predictable, constant environment, and still bring my code with me to work on my home machine, work machine, laptop, and anything else I happen to sit down in front of?</p>
