@@ -25,7 +25,7 @@ meta:
 ---
 <a href="http://www.flickr.com/photos/rgeyer/5059833839/" title="Lexus New Kicks by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4110/5059833839_71184e12f9_z.jpg" width="640" height="361" alt="Lexus New Kicks" class="aligncenter" /></a>
 
-When I announced <a href=http://blog.ryangeyer.com/blog/2010/09/07/project-late-model-restoration-1992-lexus-es300/>project late model restoration</a>, I mentioned the badly worn front suspension as one of the main things that needed attention.  Truth be told, the state of the suspension was really the catalyst for starting this project.
+When I announced <a href="{{ root_url }}/2010/09/07/project-late-model-restoration-1992-lexus-es300/">project late model restoration</a>, I mentioned the badly worn front suspension as one of the main things that needed attention.  Truth be told, the state of the suspension was really the catalyst for starting this project.
 <!--more-->
 
 While performing other repairs I had noticed that the rubber bushings that anchor the lower a-arms were badly deteriorated.  I was beginning to question the safety of the vehicle, so I put a plan in place to get the suspension back into shape.

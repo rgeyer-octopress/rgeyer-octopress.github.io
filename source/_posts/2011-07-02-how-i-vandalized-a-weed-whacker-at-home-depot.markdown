@@ -60,4 +60,4 @@ Then it's back to the garden center to return the screw I "borrowed", and back t
 
 I am now happy to report that I now have a fully operational weed whacker again, thanks to a quick covert operation in our local Home Depot!
 
-<img src="http://farm6.static.flickr.com/5195/5896209886_a0125d52d5_z.jpg" width="640" height="361" alt="weedwacker"/>
+<img src="http://farm6.staticflickr.com/5195/5896209886_a0125d52d5_d.jpg" width="500" height="282" alt="weedwacker"/>

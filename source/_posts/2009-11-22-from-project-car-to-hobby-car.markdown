@@ -25,6 +25,6 @@ Take my latest project for instance.  I had to replace the water pump since it (
 
 Now, however I get to really take my time.  Identify the issues, order all of the right parts in advance, and even pick and choose the superior brands and have them mail ordered.  I have time while the parts are in transit to clean everything up that I'm working on, removing rust, dirt, and old gasket material.  Maybe even do some cosmetic things like painting.  No hurry, I don't "need" the car to be running to get me to work or take care of my family.  I get to work on it at my own pace.  I find that it's actually <em>relaxing</em>, rather than stressful.  How novel!
 
-No doubt, the fact that I'm also able to work in a <a href=http://blog.ryangeyer.com/blog/2009/11/06/caveman-instincts/>garage</a> contributes to the overall satisfaction, but I think a lot of the enjoyment comes from being able to take my time and do the job right, with no looming deadline.
+No doubt, the fact that I'm also able to work in a <a href="{{ root_url }}/2009/11/06/caveman-instincts/">garage</a> contributes to the overall satisfaction, but I think a lot of the enjoyment comes from being able to take my time and do the job right, with no looming deadline.
 
 So for all you guys out there with project cars, consider buying a reliable daily driver, and make your project car a hobby car.  This is advice that older, wiser gearheads have given me in the past, and I never quite understood it, until now!

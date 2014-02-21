@@ -22,7 +22,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/dkVKqN
   _sexybookmarks_permaHash: 4a85e1108efa487f39fc51b39fade3fc
 ---
-Time for the second installment of my worklog for my <a href=http://blog.ryangeyer.com/blog/2008/09/05/the-upgrade-begins/>PC Upgrade</a>.
+Time for the second installment of my worklog for my <a href="{{ root_url }}/2008/09/05/the-upgrade-begins/">PC Upgrade</a>.
 
 Well, I actually received all the bits from UPS Monday (is it Thursday already? sheesh).  I actually assembled the thing Monday afternoon/evening, and have been slowly installing software and getting it up to speed.
 

@@ -22,7 +22,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/bpwWFM
   _sexybookmarks_permaHash: ec5688593fda09239c560eec658871a3
 ---
-When I performed my search for the perfect <a href=http://blog.ryangeyer.com/blog/2008/09/25/photo-sharing-services/>photo sharing</a> solution, I fell in love with the Picasa desktop application.  I even discovered that there is a linux version.  However, as you'd likely expect, it didn't really play nice as far as uploading photos to any photo sharing site other than Google's Picasa Web Albums.
+When I performed my search for the perfect <a href="{{ root_url }}/2008/09/25/photo-sharing-services/">photo sharing</a> solution, I fell in love with the Picasa desktop application.  I even discovered that there is a linux version.  However, as you'd likely expect, it didn't really play nice as far as uploading photos to any photo sharing site other than Google's Picasa Web Albums.
 
 On windows, there is a great solution called <a href="http://jerryong.com/blog/2008/06/picasa2flickr-uploads-your-picasa-photos-directly-to-flickr/">picasa2flickr</a> which passes the desired photo's to the windows <a href="http://www.flickr.com/tools/uploadr/">Flickr Uploader</a>.  Again, for obvious reasons, this doesn't work well on linux.
 

@@ -65,10 +65,10 @@ end
 
 def convert_hrefs(everything)
   # Posts
-  everything.gsub!(/"http:\/\/www\.nslms\.com\/([0-9]{4}\/[0-9]{2}\/[0-9]{2}\/.*?)"/, "http://blog.ryangeyer.com/blog/\\1")
+  everything.gsub!(/"http:\/\/www\.nslms\.com\/([0-9]{4}\/[0-9]{2}\/[0-9]{2}\/.*?)"/, "http://blog.ryangeyer.com/\\1")
 
   # Categories
-  everything.gsub!(/"http:\/\/www\.nslms\.com\/category\/(.*?)"/, "http://blog.ryangeyer.com/blog/categories/\\1")
+  everything.gsub!(/"http:\/\/www\.nslms\.com\/category\/(.*?)"/, "http://blog.ryangeyer.com/categories/\\1")
 
   # Images
   everything.gsub!(/"http:\/\/www\.nslms\.com\/wp-content\/(.*?)"/, "http://blog.ryangeyer.com/images/\\1")

@@ -1,0 +1,366 @@
+@import "compass";
+/*@include global-reset;*/
+@include reset-html5;
+@import "custom/fonts";
+@import "base/_theme.scss";
+@import "base/_typography.scss";
+@import "base/_solarized.scss";
+@import "partials/_syntax.scss";
+
+.basic-alignment {
+  &.left { float: left; margin-right: 1.5em; }
+  &.right { float: right; margin-left: 1.5em; }
+  &.center { display:block; margin: 0 auto 1.5em; }
+  &.left, &.right { margin-bottom: .8em; }
+}
+
+/*
+Theme Name: ryangeyer_com
+Theme URI: http://ryangeyer.com/
+Description:
+Author: Ryan J. Geyer <me@ryangeyer.com>
+Version: 0.1
+License: GNU General Public License
+License URI: license.txt
+Tags:
+*/
+
+body
+{
+  margin: auto;
+  background-color: #F3CB9C;
+  background-image: url('images/orangegreygradhoriz.png');
+  background-repeat: repeat-y;
+  background-position: center;
+
+  color: #666;
+  font-family: 'Rokkitt', serif;
+  font-style: normal;
+  font-weight: 100;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: lighter;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  color: #045D88;
+}
+
+h2 {
+  color: #D77300;
+}
+
+h3 {
+  color: #834600;
+}
+
+h4 {
+  color: #045D88;
+}
+
+a {
+  text-decoration: none;
+  color: #013853;
+}
+
+a:hover {
+  color: #53B0DD;
+  text-decoration: underline;
+}
+
+.topbg
+{
+  margin-top: -0.5em;
+  padding: 0;
+  background-color: #F3AB57;
+  width: 100%;
+  border-bottom: 1px solid #834600;
+}
+
+.bottombg
+{
+  background-color: #F3AB57;
+  width: 100%;
+  z-index: -1;
+  border-top: 1px solid #834600;
+}
+
+.header, .body, .footer {
+  width: 960px;
+  margin: auto;
+  padding: 0.5em;
+}
+
+.header .title {
+  margin-top: 1em;
+}
+
+.header .title h1,
+.header .title h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.header .title h1 {
+  font-size: 56px;
+}
+
+.body {
+  margin-top: 0;
+  clear: both;
+}
+
+.content {
+  clear: both;
+  float: left;
+}
+
+.navside {
+  float: left;
+}
+
+.navtop {
+  width: 100%;
+  padding: 0;
+  margin: -0.75em 0 0 0;
+  height: 2em;
+  min-height: 2em;
+}
+
+.header .widgets {
+  height: 100%;
+  position: relative;
+}
+
+.header .widgets ul {
+  list-style: none;
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  padding: 0 0 0 1em;
+  width: 100%;
+}
+
+.header .widgets li {
+  height: 2em;
+}
+
+.social-links {
+  width: 100%;
+  /*height: 3em;*/
+  margin: auto;
+  text-align: center;
+}
+
+.social-links img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0;
+  vertical-align: bottom;
+}
+
+.social-links img:hover {
+  vertical-align: top;
+}
+
+.navtop ul
+{
+  padding: 0;
+  margin: 0;
+  display: inline;
+  list-style: none;
+}
+
+.navtop li
+{
+  background: #1D4D62 url('images/32pxvertgrad-comp.png') repeat-x top left;
+  height: 1em;
+  /*width: 5em;*/
+  float: left;
+  color: #D77300;
+  margin: 0.25em;
+  padding: 0.25em;
+  border: 1px solid #F3CB9C;
+  letter-spacing: 0;
+  word-spacing: 0;
+  -moz-border-radius: 0 0 1em 1em;
+  -webkit-border-radius: 0 0 1em 1em;
+  -khtml-border-radius: 0 0 1em 1em;
+  border-radius: 0 0 1em 1em;
+  text-align: center;
+}
+
+.navtop li a
+{
+  padding: 0.25em;
+  color: #D77300;
+}
+
+.navtop li.current_page_item, .navtop li:hover
+{
+  background: #90C4DD url('images/32pxvertgrad-comp-active.png') repeat-x top left;
+  color: #834600;
+  border: 1px solid #834600;
+  border-top: 1px solid #F3CB9C;
+}
+
+.navtop li.first {
+  margin-left: 0;
+}
+
+div.search
+{
+  margin: auto;
+  background-image: url('images/find-right.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 100%
+}
+
+div.search input {
+  float: left;
+}
+
+div.search input[type=text]
+{
+  margin-left: 26px;
+  width: 70%;
+}
+
+div.search input[type=submit] {
+
+}
+
+.header {
+  margin-top: 0.5em;
+  height: 7.5em;
+  max-height: 7.5em;
+}
+
+.header h2,
+.header h3{
+  color: #834600;
+  font-family: "Rokkitt", serif;
+  font-weight: normal;
+  margin: 0;
+}
+
+.header div {
+  float: left;
+  display: inline;
+}
+
+aside.sidebar {
+  margin: 0;
+  padding: 0 0 0 1em;
+}
+
+aside.sidebar section {
+  padding: 0 1.1em 1.1em 1em;
+  margin: 0 0 1em 0;
+  background-color: white;
+  color: #834600;
+  border: 1px solid #045D88;
+}
+
+aside.sidebar section{
+  margin-top: 0;
+}
+
+aside.sidebar section h1 {
+  font-size: 1.5em;
+  font-family: "Rokkitt", serif;
+  margin: 0 -0.70em 0.5em -0.70em;
+  padding: 0 0.25em;
+  background: #90C4DD url('images/32pxvertgrad-comp-active.png') repeat-x top left;
+  color: white;
+  border-bottom: 1px solid #045D88;
+}
+
+.dunnoyet {
+  background-color: white;
+  padding: 1em;
+  margin: 0 0 2em 0;
+  border: 1px solid #045D88;
+}
+
+.dunnoyet .postinfo img {
+  height: 64px;
+  width: 64px;
+  float: left;
+  margin: 0 1em 1em 0;
+  padding: 0.5em;
+  border: 1px solid #90c4DD;
+}
+
+.dunnoyet .postinfo h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.dunnoyet .postinfo .details {
+  font-size: 1.25em;
+  margin: 0 -0.85em;
+  padding: 0.5em;
+  clear:both;
+  background: #045D88;
+  color: white;
+}
+
+.dunnoyet .postinfo .details a {
+  color: #F3AB57;
+}
+
+.dunnoyet .copy {
+  font-size: 1.25em;
+  clear: both;
+}
+
+.dunnoyet .copy h1 {
+  color: #53B0DD;
+  /*font-size: 32px;*/
+}
+
+.footer {
+  clear: both;
+}
+
+.button {
+  border-color: white;
+  color: #045D88;
+  background-color: #90C4DD;
+}
+
+.comments textarea {
+  width: 100%;
+  height: 14em;
+}
+
+.inactive {
+  color: #808080;
+}
+
+#nav-below {
+  margin: 0 0 2em 0;
+}
+
+/* Palette color codes */
+/* Feel free to copy&paste color codes to your application */
+/* http://colorschemedesigner.com/#0D21TIIqVzFII */
+
+.primary-1 { background-color: #D77300 }
+.primary-2 { background-color: #9B672B }
+.primary-3 { background-color: #834600 }
+.primary-4 { background-color: #F3AB57 }
+.primary-5 { background-color: #F3CB9C }
+
+.complement-1 { background-color: #045D88 }
+.complement-2 { background-color: #1D4C62 }
+.complement-3 { background-color: #013853 }
+.complement-4 { background-color: #53B0DD }
+.complement-5 { background-color: #90C4DD }
+
+/* end */

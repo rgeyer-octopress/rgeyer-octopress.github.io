@@ -93,7 +93,7 @@ So now that we've set up our new user, let's configure RightScale to use it.
 These steps are very easy, I'm going to describe how you would change the credentials for an existing RightScale account since adding your credentials for the first time is handled by the RightScale setup wizard.
 
 Once you've logged in, hover over the <em>Clouds</em> menu, then under <em>AWS Global</em> click the <em>Credentials</em> link.
-<a href=http://blog.ryangeyer.com/images/Screen-shot-2011-03-21-at-3.21.13-PM.png><img src=http://blog.ryangeyer.com/images/Screen-shot-2011-03-21-at-3.21.13-PM-300x97.png alt="" title="Screen shot 2011-03-21 at 3.21.13 PM" width="300" height="97" class="size-medium wp-image-1168" /></a>
+<a href="/images/Screen-shot-2011-03-21-at-3.21.13-PM.png"><img src="/images/Screen-shot-2011-03-21-at-3.21.13-PM-300x97.png" alt="" title="Screen shot 2011-03-21 at 3.21.13 PM" width="300" height="97" class="size-medium wp-image-1168" /></a>
 
 On the next page, click <em>Edit</em> then enter the newly created credentials into the appropriate fields.
 

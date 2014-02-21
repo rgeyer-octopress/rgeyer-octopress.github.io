@@ -37,7 +37,7 @@ Admittedly however, my response was not based on any particular facts or prior r
 
 [twitter_status_by_id id="13883614504"]
 
-That was pretty much it for that conversation, I was running out the door to head home from work, and there didn't seem to be a lot of activity on that conversation topic.  But the brief exchange did get me thinking.  I'm going to be tackling the challenge of updating my CarPC and installing it in the <a href=http://blog.ryangeyer.com/blog/categories/1967-cadillac-sedan-deville/>Caddy</a> at some point in the future, and it might make sense to consider my options in the Mobile OS arena.  With that, I decided to refine my understanding a bit.
+That was pretty much it for that conversation, I was running out the door to head home from work, and there didn't seem to be a lot of activity on that conversation topic.  But the brief exchange did get me thinking.  I'm going to be tackling the challenge of updating my CarPC and installing it in the <a href="{{ root_url }}/categories/1967-cadillac-sedan-deville/">Caddy</a> at some point in the future, and it might make sense to consider my options in the Mobile OS arena.  With that, I decided to refine my understanding a bit.
 
 What I found, was actually quite disappointing!  It seems that a lot of folks in the car computing community have given this topic a lot of consideration, starting all the way back when Android was first announced.  The first several links of <a href="http://www.google.com/search?q=android+carpc">the search</a> I did were all links back to the <a href="http://www.mp3car.com/vbulletin/">mp3car.com forums</a>, and I observed a few common threads.
 

@@ -17,7 +17,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/crE8jR
   _sexybookmarks_permaHash: 13b0c115475da55d794e37e1d152a4da
 ---
-Having discovered that both of the motor mount nuts were <a href=http://blog.ryangeyer.com/blog/2010/01/11/the-surprises-continue/>missing</a> the Cadillac had earned a stay of execution.  Early last week I purchased a new set of fasteners for only a dollar!  After installing them I had expected to just start the car up and see if the "clunk" sound had gone away.  Imagine my surprise when it cranked over and over and over, and over again without starting up!
+Having discovered that both of the motor mount nuts were <a href="{{ root_url }}/2010/01/11/the-surprises-continue/">missing</a> the Cadillac had earned a stay of execution.  Early last week I purchased a new set of fasteners for only a dollar!  After installing them I had expected to just start the car up and see if the "clunk" sound had gone away.  Imagine my surprise when it cranked over and over and over, and over again without starting up!
 
 I'll spare you all of the details of troubleshooting the no start issue, but suffice to say I replaced my ignition coil, and second guessed myself countless times on the proper firing order and timing for this engine.  At the end of the day, (I think) the timing was retarded by nearly a whole cylinder and one of the terminals of the coil wire was smashed.
 

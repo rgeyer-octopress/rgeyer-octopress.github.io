@@ -16,7 +16,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/as9ptg
   _sexybookmarks_permaHash: 7973261f3914a0ca5c42d110f37d3def
 ---
-So when I bought the Caddy, I knew it had a cooling system issue.  The previous owner had diagnosed it as a <a href=http://blog.ryangeyer.com/blog/2009/06/04/67-caddy-day-1-triage/>leaking water pump</a>, so that's where I started.  Little did I know what lay in store for me!
+So when I bought the Caddy, I knew it had a cooling system issue.  The previous owner had diagnosed it as a <a href="{{ root_url }}/2009/06/04/67-caddy-day-1-triage/">leaking water pump</a>, so that's where I started.  Little did I know what lay in store for me!
 
 First, the 429 Cadillac motor which is in the 67' Deville was only made for about two years, and in very low volume.  As such, there is hardly any aftermarket parts available for it.  I spent about two weeks trying to track down a water pump before finally finding one on eBay.  One of the biggest issues was that I could not tell if the pump was a one, or two inlet pump.  None of the illustrations showed any difference between the two.  I finally was able to track down a Cardone part number, and find actual photographs of the parts.  Turns out I had a one inlet pump.
 

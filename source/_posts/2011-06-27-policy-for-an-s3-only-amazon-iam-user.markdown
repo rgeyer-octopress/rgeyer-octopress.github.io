@@ -23,7 +23,7 @@ meta:
   _edit_last: '1'
 comments: true
 ---
-Now that Amazon's Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href=http://blog.ryangeyer.com/blog/2011/04/04/enabling-aws-console-login-for-iam-users/>login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.
+Now that Amazon's Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href="{{ root_url }}/2011/04/04/enabling-aws-console-login-for-iam-users/">login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.
 <!--more-->
 One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.
 

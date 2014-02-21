@@ -1,0 +1,37 @@
+{% if index %}
+  {% assign article = post %}
+{% else %}
+  {% assign article = page %}
+{% endif %}
+
+{% capture tags_size %}{{ article.tags | size }}{% endcapture %}
+{% capture categories_size %}{{ article.categories | size }}{% endcapture %}
+
+<div class="dunnoyet">
+  <div class="postinfo">
+    <img src="http://1.gravatar.com/avatar/fbe50efc70040d38a98613cf9d6ef38a?s=64&d=identicon&r=G" />
+    <h1><a href="{{ root_url }}{{ article.url }}" rel="bookmark" title="{{ article.title }}">{% if site.titlecase %}{{ article.title | titlecase }}{% else %}{{ article.title }}{% endif %}</a></h1>
+    <div class="details">
+      Posted by {{ site.author }}{% if categories_size != "0" %} in {{ article.categories | category_links }}{% endif %} on {{ article.date | ordinalize }}
+    </div>
+  </div>
+  <div class="copy">
+    {% if index %}
+      {{ content | excerpt }}
+      {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
+      {% if excerpted == 'true' %}
+        <a rel="full-article" href="{{ root_url }}{{ article.url  }}">{{ site.excerpt_link }}</a>
+      {% endif %}
+    {% else %}
+      {{ content }}
+    {% endif %}
+
+    {% capture tags_size %}{{ article.tags | size }}{% endcapture %}
+    {% if tags_size != "0" %}
+    <div class="tags">
+      <img src="/images/tag_orange.png" />
+      {{ article.tags | join:',' }}
+    </div>
+    {% endif %}
+  </div>
+</div>
