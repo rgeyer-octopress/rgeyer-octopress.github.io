@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Art &amp; Multimedia | Ryans Octopress Blog]]></title>
+  <link href="http://blog.ryangeyer.com/categories/art-and-multimedia/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-20T23:34:16-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
+  <author>
+    <name><![CDATA[Ryan J. Geyer]]></name>
+    <email><![CDATA[me@ryangeyer.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Controversial Kinetic Sculpture]]></title>
+    <link href="http://blog.ryangeyer.com/2007/11/16/controversial-kinetic-sculpture/"/>
+    <updated>2007-11-16T00:00:00-08:00</updated>
+    <id>http://blog.ryangeyer.com/2007/11/16/controversial-kinetic-sculpture</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s been entirely too long since I&rsquo;ve made a blog entry, and I&rsquo;ve got a lot of stuff lined up when I finally get a few free minutes.<br /><br />In the meantime, this was sent to me, and I found it very interesting, if only from a technical and art perspective.  There is a lot of controversy over the inventor/artists use of the analogy of &ldquo;life&rdquo; and &ldquo;evolution&rdquo;.  I&rsquo;m not willing to throw my hat into that circle, and I&rsquo;m looking at this as a purely academic and scientific pursuit.  You&rsquo;re welcome to feel differently.<br /><br />I submit for your consideration &ldquo;<a href="http://www.ted.com/index.php/talks/view/id/162">The art of creating creatures</a>&rdquo;.</p>
+]]></content>
+  </entry>
+  
+</feed>

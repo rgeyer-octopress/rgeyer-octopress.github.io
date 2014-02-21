@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: C# coding | Ryans Octopress Blog]]></title>
+  <link href="http://blog.ryangeyer.com/categories/c-number-coding/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-20T23:34:16-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
+  <author>
+    <name><![CDATA[Ryan J. Geyer]]></name>
+    <email><![CDATA[me@ryangeyer.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Really Detecting Design Mode]]></title>
+    <link href="http://blog.ryangeyer.com/2008/08/22/really-detecting-design-mode/"/>
+    <updated>2008-08-22T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2008/08/22/really-detecting-design-mode</id>
+    <content type="html"><![CDATA[<p>I recently had to deal with the problem of ADO.NET data access occurring on user controls, and forms in the Visual Studio design view.  Now the data access depended upon a connection string in the App.config file and consequently, when run from Visual Studio it could not connect to the database since the connection string wasn&rsquo;t available.</p>
+
+<p>So, I proceeded to do some searching on the problem.  I very quickly discovered the <a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.component.designmode.aspx">DesignMode</a> flag for components, and thought I&rsquo;d found my solution.</p>
+
+<p>I promptly added the following to the UserControl that was blowing up when I opened it in the Designer.</p>
+
+<pre lang="csharp" line="1">
+public UserControlCtor()
+{
+     InitializeComponent();
+     if(!DesignMode)
+     {
+          // Do the data access here.
+     }
+}
+</pre>
+
+
+<p>I quickly discovered however, that the DesignMode flag wasn&rsquo;t set until AFTER the constructor had run, and the parent object set the DesignMode flag on this control.  Okay, simple enough we just move it to the OnLoad event for the UserControl right?  Well, yes that would probably work in most cases however in our application this practice of doing data access in the constructors was rampant and therefore the dozen or so UserControls that were placed on this UserControl had the same problem.  I&rsquo;d need to make the this change to&hellip; well&hellip; pretty much every UserControl in the application.  While that&rsquo;s something that should happen, right now we cannot afford the <a href="http://www.martinfowler.com/bliki/TechnicalDebt.html">technical debt</a> to fix it.</p>
+
+<p>Fortunately, all of our ADO.NET access in this application is abstracted into a library class which does all the data access, and handles things like opening and closing/disposing the database connection and just generally insulating users from the complexities of using ADO.NET.  That&rsquo;s the obvious candidate for the best place to filter design or runtime mode and either run the data access or not.</p>
+
+<p>But wait, a helper class in the app won&rsquo;t have a DesignMode flag and besides, how would it get set, you say?  Well, in my travels looking for ways to detect that the code is running in design mode, I stumbled across several solutions.  The most intriguing of which is the <a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.licensemanager.usagemode.aspx">UsageMode</a> flag.  This can be checked in any class at any time and gives you an accurate gauge of what mode your code is running in.</p>
+
+<p>So, in the few methods that do the data access in our ADO.NET abstracting class, I simply do the following.</p>
+
+<pre lang="csharp" line="1">
+if(System.ComponentModel.LicenseManager.UsageMode ==
+   System.ComponentModel.LicenseUsageMode.Designtime)
+     return;
+</pre>
+
+
+<p>This checks to see if we&rsquo;re in design mode or not, and if we are simply bails out of the method effectively skipping the data access and solving our problem.  Pretty cool eh?</p>
+
+<p>I found several suggestions on how to detect design mode, they pretty much consisted of the following.</p>
+
+<ol>
+  <li><a href="http://www.euforik.com/blog/post/2008/07/Knowing-if-youre-in-design-mode.aspx">Check the DesignMode Flag</a>
+  </li>
+  <li><a href="http://devintelligence.com/blogs/netadventures/archive/2005/04/29/620.aspx">Check if the current process is Visual Studio</a>
+  </li>
+  <li><a href="http://www.devnewsgroups.net/group/microsoft.public.dotnet.framework.windowsforms/topic4403.aspx">Check the UsageMode Flag</a>
+  </li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Microsoft's Tlbimp creates leaky BSTR signatures]]></title>
+    <link href="http://blog.ryangeyer.com/2008/03/13/microsofts-tlbimp-creates-leaky-bstr-signatures/"/>
+    <updated>2008-03-13T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2008/03/13/microsofts-tlbimp-creates-leaky-bstr-signatures</id>
+    <content type="html"><![CDATA[<p>This one confounded me when I first discovered it, and I&rsquo;ve recently been reminded about it.  For the sake of remembering the details, and hopefully helping someone else out I&rsquo;m going to document it here.</p>
+
+<p>The problem is this.  When you have a COM library that you need to use from a C# app, you import it as a reference.  In the background the Microsoft.NET wizards do their magic by running the <a href="http://msdn2.microsoft.com/en-us/library/tt0cf3sx(VS.80).aspx">Tlbimp.exe</a> to generate a managed DLL with all of the objects and interfaces from the COM library.  You proceed to use the code that Microsoft so conveniently converted for you fully confident that all is well.</p>
+
+<p>But it&rsquo;s not.  See, suppose your COM library has a method that returns a <strong>BSTR</strong> via an [out] parameter, or perhaps it defines an interface for a listener your managed code must implement.  Suddenly there is the potential for a serious memory leak!</p>
+
+<p>See, a <strong>BSTR</strong> in unmanaged code aren&rsquo;t just any normal string.  <strong>BSTR</strong>&rsquo;s are allocated by the system by calling <strong>SysAllocString</strong> and subsequently released by calling <strong>SysFreeString</strong>.  This poses a problem for managed code if you aren&rsquo;t careful.  Take the following listener interface for example.</p>
+
+<p style="font-family: italic; font-size: 10px">*Interface names and GUID's changed to protect the innocent</p>
+
+
+
+
+<pre line="1" lang="idl">
+interface IImplementMeListener : IDispatch{
+[
+id(0x000000C9)
+]
+HRESULT _stdcall notify([in] TEventType eventType, [in] BSTR data );
+};</pre>
+
+
+<p>The Tlbimp.exe generates a managed assembly with the following signature for this same method.</p>
+
+<pre line="1" lang="csharp">
+[ComImport, TypeLibType((short) 0x10c0), Guid("00000000-0000-0000-0000-000000000000")]
+public interface IImplementMeListener
+{
+    [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType=MethodCodeType.Runtime), DispId(0xc9)]
+    void notify([In, ComAliasName("ExampleLib.TEventType")] TEventType eventType,
+        [In, MarshalAs(UnmanagedType.BStr)] string data);
+}</pre>
+
+
+<p>Which means when you implement this interface in your managed class, you&rsquo;ll just have <strong>String</strong> as the data type for the second parameter.  Which might look like this.</p>
+
+<pre line="1" lang="csharp">
+class MyManagedListener : ExampleLib.IImplementMeListener{
+    public void notify(ExampleLib.TEventType eventType, String data)
+    {
+        DoSomethingWithData(data);
+    }
+}</pre>
+
+
+<p>So this is what happens.</p>
+
+<p>1) Your COM library allocates the string to pass into your listener using <strong>SysAllocString</strong>.</p>
+
+<p>2) Your COM library passes the newly allocated string into your managed app by calling the <strong>notify</strong> method of your listener.</p>
+
+<p>3) Your managed app does whatever it&rsquo;s going to do with the string, then returns.</p>
+
+<p>Normally in a fully managed app this would be no problem, when the reference count to the string finally reaches 0, the garbage collector sweeps it up and the memory is reclaimed.  However, in this case we have a problem.  The COM library allocated the string, and passed it into your managed app, and it&rsquo;s responsibility for that string ends there.  The expectation is that the client will release the <strong>BSTR</strong> by calling <strong>SysFreeString</strong>.  Clearly we can&rsquo;t explicitly do that to the managed <strong>String</strong> type.</p>
+
+<p>So what do we do?  We rewrite the part of the assembly that Tlbimp.exe made for us, and adjust our listener implementation slightly.</p>
+
+<p>This is how I did it, though there may be better ways.</p>
+
+<p>1) Use a disassembler to view the code of the Tlbimp.exe generated assembly for your COM library.  I used, <a href="http://www.aisto.com/roeder/dotnet/">Lutz&rsquo;s Reflector</a>.</p>
+
+<p>2) Copy the code for the entire library into a *.cs file, then change just the signature of the method you&rsquo;re concerned with.</p>
+
+<p>The new signature should look like this.</p>
+
+<pre line="1" lang="csharp">
+[ComImport, Guid("00000000-0000-0000-0000-000000000000"), TypeLibType((short) 0x10c0)]
+public interface IImplementMeListener
+{
+[MethodImpl(MethodImplOptions.InternalCall, MethodCodeType=MethodCodeType.Runtime), DispId(0xc9)]
+    void notify([In, ComAliasName("ExampleLib.TEventType")] TEventType eventType,
+        [In] IntPtr data);
+}</pre>
+
+
+<p>And your implementing class changes to this.</p>
+
+<pre line="1" lang="csharp">
+class MyManagedListener : ExampleLib.IImplementMeListener{
+    public void notify(ExampleLib.TEventType eventType, IntPtr data)
+    {
+        String dataStr = Marshal.PtrToStringBSTR(data);
+        DoSomethingWithData(dataStr);
+        Marshal.FreeBSTR(data);
+    }
+}</pre>
+
+
+<p>This is not particularly tricky wizardry.  All we&rsquo;re doing is marshaling the input value from the library as an <strong>IntPtr</strong> instead of a managed <strong>String</strong>.  This allows us to explicitly release it using the <strong>System.Runtime.InteropServices.Marshal.FreeBSTR</strong> method, just like the library expects us to do.</p>
+
+<p>Hopefully, this will save you some hastle, and avoid a potentially large memory leak.</p>
+]]></content>
+  </entry>
+  
+</feed>

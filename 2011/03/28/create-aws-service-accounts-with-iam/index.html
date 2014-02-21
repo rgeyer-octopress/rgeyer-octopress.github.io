@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Create AWS Service Accounts with IAM - Ryans Octopress Blog</title>
+  <meta name="author" content="Ryan J. Geyer">
+  <link rel="author" href="humans.txt">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  
+    
+  
+  <meta name="description" content="I&rsquo;ve been making use of Amazon Web Services (AWS) quite a lot lately. In order to really enjoy the benefits of Cloud Computing (automation, &hellip;">
+  
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.ryangeyer.com/2011/03/28/create-aws-service-accounts-with-iam/">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
+  <meta name="og:type" content="website" />
+  <meta name="og:site_name" content="Ryans Octopress Blog" />
+  <meta name="og:title" content="Create AWS Service Accounts with IAM" />
+  <meta name="og:description" content="I&rsquo;ve been making use of Amazon Web Services (AWS) quite a lot lately. In order to really enjoy the benefits of Cloud Computing (automation, &hellip;" />
+  <meta name="og:url" content="http://blog.ryangeyer.com/2011/03/28/create-aws-service-accounts-with-iam/"/>
+  <meta name="url" content="http://blog.ryangeyer.com/2011/03/28/create-aws-service-accounts-with-iam/">
+  
+  <meta name="subject" content="Cloud computing"/>
+  <meta name="category" content="Cloud computing"/>
+  
+  <meta name="distribution" content="global">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2840005-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">Ryans Octopress Blog</a>
+    <ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/archives">Archives</a></li>
+    </ul>
+    <ul class="nav" data-subscription="rss">
+      <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+      
+    </ul>
+      
+    <form class="navbar-form" action="http://google.com/search" method="get">
+      <fieldset role="search">
+        <input type="hidden" name="q" value="site:blog.ryangeyer.com" />
+        <input class="span2" type="text" name="q" results="0" placeholder="Search"/>
+      </fieldset>
+    </form>
+      
+    
+  </div>
+</div>
+</nav>
+  <div class="wrapper_single">
+    <div class="container">
+      <article class="span8 offset2" role="article">
+        <div class="article-format">
+
+  <header>
+    
+      <h1 class="entry-title">Create AWS Service Accounts With IAM</h1>
+    
+    
+      <p class="meta">
+        
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-28T00:00:00-07:00" pubdate data-updated="true"></time> - 
+        
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/cloud-computing/'>Cloud computing</a>
+  
+</span>
+
+
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve been making use of Amazon Web Services (AWS) quite a lot lately.  In order to really enjoy the benefits of Cloud Computing (automation, agility, etc) I&rsquo;ve had to use a number of tools to interact with AWS on my behalf.</p>
+
+<p>All of these external tools ask for the same thing to enable them to make AWS API calls, your AWS Access Key ID, and your AWS Secret Access Key.  Common practice is usually to just hand over the main set of these credentials, but there is a better (more secure) way, using Amazon Identity and Access Management (IAM).</p>
+
+<!--more-->
+
+
+
+
+<h2>What is IAM?</h2>
+
+
+<p>In September 2010, amidst very little fanfare (as is the Amazon way) Amazon released their Identity and Access Management offering.  To this day, the IAM is still technically in Beta, but it is stable tested offering.</p>
+
+<p>As of this writing, you can only interact with the IAM via the API.  Amazon also makes a nice set of command line tools available which work equally well in Windows or *nix (including mac OSX) environments.</p>
+
+<p>IAM is a set of tools which allow you to create user groups with defined security policies, as well as unique AWS users with their own credentials who can be assigned to those groups.</p>
+
+<p>This is an extraordinarily powerful tool for managing your use of AWS.  No longer is every request to AWS made as your super user account, but you can assign particular users their own credentials to more easily control and audit what they&rsquo;re doing in your AWS environment.</p>
+
+<p>This concept extends to services and tools you might use to manage your AWS environment as well.  Rather than handing over your super user credentials, you can create a unique key and secret pair for each management tool you use, effectively isolating that service.</p>
+
+<p>Now it&rsquo;s true that you can already create many sets of credentials, and invalidate old ones using the <a href="http://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key">Security Credentials</a> link off of your account management in AWS, but these are all still super user credentials.  They still have the same level of access (full control) and any audit information for objects created by those keys show up as the super user.</p>
+
+<p>With IAM you can restrict a set of credentials using an <a href="http://awspolicygen.s3.amazonaws.com/policygen.html">AWS policy</a>, to only the specific AWS API calls you want to allow that user to make, and the objects they create or interact with get audit data showing their username.  This makes it possible to know who (or which service) did what to objects inside your AWS environment.</p>
+
+<p>Do you use a tool like <a href="https://addons.mozilla.org/en-US/firefox/addon/amazon-s3-organizers3fox/">S3 Fox</a> to manage the contents of your S3 buckets?  You can create a unique user and policy which allows access only to S3 calls, or even narrow it to a particular bucket, or filenames!</p>
+
+<p>So, how exactly do you do that?  To best explain it, I&rsquo;m going to walk through the steps necessary to create a new group and user, and then use those new credentials with RightScale my favorite tool for automating AWS.</p>
+
+<h2>Prerequisites</h2>
+
+
+<p>Before we get started, you&rsquo;ll need to go ahead and download the <a href="http://aws.amazon.com/developertools/AWS-Identity-and-Access-Management/4143">IAM Command Line Toolkit</a> (IAM CLI) and add the bin directory to your PATH environment variable.  Once you&rsquo;ve done that, you&rsquo;re ready to follow the steps below.</p>
+
+<h2>Creating a Service Account</h2>
+
+
+<p>The first thing we&rsquo;ll want to do is create a security policy which we will apply to the service account.  Since RightScale helps to manage nearly every aspect of the AWS, the policy document is going to be quite simple, and will grant full access to all services.</p>
+
+<p>Don&rsquo;t be too intimidated by the creating policies for more restrictive cases though, the <a href="http://awspolicygen.s3.amazonaws.com/policygen.html">Policy Generator</a> makes it easy.</p>
+
+<p>So lets write out our full control policy somewhere to disk so that we can use it later.</p>
+
+<figure class='code'><figcaption><span>/tmp/fullcontrol_iam_policy.json </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">{</span>
+</span><span class='line'>  <span class="s2">&quot;Statement&quot;</span>: <span class="o">[</span>
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>      <span class="s2">&quot;Action&quot;</span>: <span class="s2">&quot;*&quot;</span>,
+</span><span class='line'>      <span class="s2">&quot;Effect&quot;</span>: <span class="s2">&quot;Allow&quot;</span>,
+</span><span class='line'>      <span class="s2">&quot;Resource&quot;</span>: <span class="s2">&quot;*&quot;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>  <span class="o">]</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>With that out of the way, lets create a new IAM user group named <strong>RightScaleDash</strong> and upload our new policy file using the IAM CLI tools.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ iam-groupcreate -g RightScaleDash
+</span><span class='line'>$ iam-groupuploadpolicy -g RightScaleDash -p FullControl -f /tmp/fullcontrol_iam_policy.json</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, we create a new user named <strong>rsdash</strong> and assign the new user to the <strong>RightScaleDash</strong> group.  Note the <strong>-k</strong> parameter, this instructs the IAM CLI tools to create a new AWS key and secret pair.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ iam-usercreate -u rsdash -g RightScaleDash -k</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Some things like signing your custom Amazon Machine Images (AMI&rsquo;s) require an x.509 certificate, and RightScale has a place for entering this type of &ldquo;credential&rdquo; as well, so we&rsquo;ll create a self signed one for this example.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ openssl genrsa -out iam.key 1024
+</span><span class='line'>$ openssl req -new -key iam.key -out iam.csr
+</span><span class='line'>$ openssl x509 -req -in iam.csr -signkey iam.key -out iam.pem
+</span><span class='line'>$ iam-useraddcert -u rsdash -f iam.pem</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&rsquo;s really all there is to creating your service account.  Once you&rsquo;ve set things up you aren&rsquo;t locked in to your choices either.  At any time you can go back and add or remove security policies using the IAM CLI.</p>
+
+<p>So now that we&rsquo;ve set up our new user, let&rsquo;s configure RightScale to use it.</p>
+
+<h2>RightScale Configuration</h2>
+
+
+<p>These steps are very easy, I&rsquo;m going to describe how you would change the credentials for an existing RightScale account since adding your credentials for the first time is handled by the RightScale setup wizard.</p>
+
+<p>Once you&rsquo;ve logged in, hover over the <em>Clouds</em> menu, then under <em>AWS Global</em> click the <em>Credentials</em> link.
+<a href="/images/Screen-shot-2011-03-21-at-3.21.13-PM.png"><img src="/images/Screen-shot-2011-03-21-at-3.21.13-PM-300x97.png" alt="" title="Screen shot 2011-03-21 at 3.21.13 PM" width="300" height="97" class="size-medium wp-image-1168" /></a></p>
+
+<p>On the next page, click <em>Edit</em> then enter the newly created credentials into the appropriate fields.</p>
+
+<p>That&rsquo;s it, you&rsquo;ve just configured your RightScale account to use it&rsquo;s very own AWS credentials!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-28T00:00:00-07:00" pubdate data-updated="true"></time> - 
+      
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/cloud-computing/'>Cloud computing</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ryangeyer.com/2011/03/28/create-aws-service-accounts-with-iam/" data-via="rjgeyer" data-counturl="http://blog.ryangeyer.com/2011/03/28/create-aws-service-accounts-with-iam/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    
+      <a class="pull-left" href="/2011/03/25/multitasking-at-its-finest/" title="Previous Post: Multitasking at it’s finest">&laquo; Multitasking at it’s finest</a>
+    
+    
+      <a class="pull-right" href="/2011/03/30/things-i-never-thought-id-say/" title="Next Post: Things I never thought I’d say">Things I never thought I’d say &raquo;</a>
+    
+  </footer>
+
+</div>
+
+        
+          <div class="article-format">
+            <h1>Comments</h1>
+            <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+          </div>
+        
+      </article>
+    </div>
+  </div>
+  <div id="footer-widgets">
+  <div class="container">
+    <div class="row">
+  <div class="span3">
+    <h2>recent posts</h2>
+    <ul class="recent_posts">
+      
+        <li>
+          <a href="/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">Policy for an S3 only Amazon IAM User</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/24/the-baby/">The baby</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13:  NO WAY!</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12:  Old Hat</a>
+        </li>
+      
+    </ul>
+    <h2><a href="/blog/archives">archives</a></h2>
+  </div>
+  <div class="span3">
+    
+
+  </div>
+  <div class="span4">
+    
+<h2>twitter</h2>
+<a href="https://twitter.com/rjgeyer" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @rjgeyer</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div class="tweet" data-twitter-user="rjgeyer">
+</div>
+
+
+  </div>
+  <div class="span2">
+    <h2>found on</h2>
+
+<a href="https://github.com/rgeyer/" rel="tooltip" title="Github"><img class="social_icon" title="Github" alt="github icon" src="/images/glyphicons_381_github.png"></a>
+
+
+
+<a href="http://stackoverflow.com/users/1305386/" rel="tooltip" title="Stack Overflow"><img class="social_icon" title="Stack Overflow" alt="stack overflow icon" src="/images/glyphicons_400_stack_overflow.png"></a>
+
+
+
+<a href="http://www.linkedin.com/in/rjgeyer" rel="tooltip" title="Linkedin"><img class="social_icon" title="Linkedin" alt="Linkedin icon" src="/images/glyphicons_377_linked_in.png"></a>
+
+
+
+<a href="http://twitter.com/rjgeyer" rel="tooltip" title="Twitter"><img class="social_icon" title="Twitter" alt="Twitter icon" src="/images/glyphicons_391_twitter_t.png"></a>
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://plus.google.com/+RyanGeyerCycles?rel=author" rel="tooltip" title="Google Plus"><img class="social_icon" title="Google Plus" alt="Google Plus icon" src="/images/glyphicons_386_google_plus.png"></a>
+
+
+
+<a href="http://www.quora.com/Ryan-Geyer" rel="tooltip" title="Quora"><img class="social_icon" title="Quora" alt="Quora icon" src="/images/glyphicons_385_quora.png"></a>
+
+
+
+<h2>contact at</h2>
+<a href="mailto:me@ryangeyer.com">me@ryangeyer.com</a>
+
+
+  </div>
+</div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-left">
+  <a href="/">Ryans Octopress Blog</a>
+  - Copyright &copy; 2014 - Ryan J. Geyer
+</p>
+<p class="pull-right">
+  <span>Powered by <a href="http://octopress.org/">Octopress</a>.</span>
+  
+    <span>Designed by <a href="http://www.AdrianArtiles.com">Adrian Artiles</a>.</span>
+  
+</p>
+
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.7.2.min.js" type="text/javascript"><\/script>')</script>
+<script src="/javascripts/libs/bootstrap.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.tweet.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.instagram.js" type="text/javascript"></script>
+<script src="/javascripts/libs/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="/javascripts/custom.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'octopressgithubpages';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.ryangeyer.com/2011/03/28/create-aws-service-accounts-with-iam/';
+        var disqus_url = 'http://blog.ryangeyer.com/2011/03/28/create-aws-service-accounts-with-iam/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

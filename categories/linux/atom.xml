@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | Ryans Octopress Blog]]></title>
+  <link href="http://blog.ryangeyer.com/categories/linux/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-02-20T23:34:16-08:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
+  <author>
+    <name><![CDATA[Ryan J. Geyer]]></name>
+    <email><![CDATA[me@ryangeyer.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to host Wordpress for Free]]></title>
+    <link href="http://blog.ryangeyer.com/2011/02/14/how-to-host-wordpress-for-free/"/>
+    <updated>2011-02-14T00:00:00-08:00</updated>
+    <id>http://blog.ryangeyer.com/2011/02/14/how-to-host-wordpress-for-free</id>
+    <content type="html"><![CDATA[<p>If you&rsquo;re looking to start a blog to promote your business, or boost your presence on the internet, you&rsquo;ve probably heard of <a href="http://wordpress.org">Wordpress</a>.</p>
+
+<p>You may also have heard about the <a href="http://en.support.wordpress.com/com-vs-org/">benefits</a> of hosting your own instance of Wordpress, but you&rsquo;re intimidated by the idea of setting up and maintaining your own server, or trusting your business to a shared hosting solution.</p>
+
+<p>What if I told you that I&rsquo;ve got a solution that&rsquo;ll let you run your Wordpress blog, on your very own server, with automated backups and disaster recover, completely free?</p>
+
+<p>Wait wait! I know it sounds too good to be true, but don&rsquo;t leave just yet, hear me out&hellip;</p>
+
+<!--more-->
+
+
+
+
+<h2>Amazon AWS Free Tier</h2>
+
+
+<p>First, let me be straight with you.  When I say &ldquo;free&rdquo; I&rsquo;m referring to the <a href="http://aws.amazon.com/free/">free tier</a> of Amazon&rsquo;s virtual computing and storage platform AWS.</p>
+
+<p>This free tier allows you to run their smallest instance free for one year.  In practice you actually end up paying them a very small sum (around $0.12 average for me thus far) each month for transfer costs to run a low to medium traffic blog.</p>
+
+<p>After your first year of free usage has expried, it&rsquo;ll start to cost around $15 per month to keep using the same size instance.</p>
+
+<h2>Managed by RightScale</h2>
+
+
+<p>You may be looking at AWS and thinking that setting up your own server, and keeping it running and backed up would be a daunting task, and it can be.  That&rsquo;s where <a href="http://www.rightscale.com/">RightScale</a> comes into the picture.</p>
+
+<p>RightScale offers a <a href="http://www.rightscale.com/products/free_edition.php">Free Developer Edition</a> that gives you access to their shared library of ServerTemplates.</p>
+
+<p>In that library is one little gem that I published, expressly for the purpose of running a server that hosts my blog, a few sites for other domains I own, as well as all of the email traffic for my various domains.</p>
+
+<p>In fact, you&rsquo;re reading this right now from a server running from <a href="http://www.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">this ServerTemplate</a>.</p>
+
+<h2>Full Disclosure</h2>
+
+
+<p>Before I give you the skinny on how to start using these tools to host a Wordpress blog on your own virtual server, a few warnings are in order.</p>
+
+<p>I am using <a href="http://www.opscode.com/chef/">Opscode Chef</a> to configure the server.  Chef support is currently in <em><strong>Beta</strong></em> on RightScale, meaning that they do not recommend you use it to configure and manage &ldquo;Production&rdquo; servers.</p>
+
+<p>It also means that there can be some hiccups when you&rsquo;re launching and configuring a server with this ServerTemplate.</p>
+
+<p>So, don&rsquo;t be surprised if the first time you launch your server, it doesn&rsquo;t work.  Try launching a second time.</p>
+
+<p>Lastly, I can&rsquo;t take any responsibility for any loss of self esteem, data, productivity, or sanity.  You have been warned.</p>
+
+<p>That said, I&rsquo;m using this server to run the very blog you&rsquo;re reading, and I haven&rsquo;t had any significant glitches yet.  RightScale is working as we speak to improve their support for Chef and things will only get better from here.</p>
+
+<p>Haven&rsquo;t scared you off yet? Okay, good..  Here we go..</p>
+
+<h2>20 Minute Quickstart</h2>
+
+
+<p>The RightScale management tool, and this ServerTemplate offer all sorts of cool functionality which we can explore later, but if you&rsquo;re in a hurry to get started here&rsquo;s all you need to know.</p>
+
+<ol>
+<li>Go sign up for an <a href="http://aws.amazon.com/">AWS Account</a></li>
+<li>Sign up for a RightScale <a href="http://www.rightscale.com/products/free_edition.php">Free Developer Edition</a></li>
+<li>Enter your AWS credentials into the RightScale dashboard using <a href="http://support.rightscale.com/index.php?title=03-Tutorials/01-RightScale/3._Upgrade_Your_Account/1.7_Add_AWS_Credentials_to_the_Dashboard">these</a> directions</li>
+<li>Browse to my <a href="https://my.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">All-In-One ServerTemplate</a> and click "Import"</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.25.23-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.25.23-PM-300x220.png" alt="" title="Import ServerTemplate" width="300" height="220" class="size-medium wp-image-1026" /></a>
+<li>Click "Add to Deployment"</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.05.02-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.05.02-PM-300x87.png" alt="" title="Add to Deployment" width="300" height="87" class="alignnone size-medium wp-image-1024" /></a>
+<li>Pick the AWS Cloud closest to you and click "OK"</li>
+<li>Change the "Instance Type" dropdown to "t1.micro", and select the "default" Security Group from the dropdown.  You can also provide you server a name, then click "Add"</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.04.40-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.04.40-PM-300x288.png" alt="" title="Server Details" width="300" height="288" class="alignnone size-medium wp-image-1023" /></a>
+<li>Click the "Play" button, provide inputs for the Database Administrator password, Postfix DB password, and EBS volume size, then click "Save and Launch"</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.17.24-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.17.24-PM-300x124.png" alt="" title="Launch Server" width="300" height="124" class="alignnone size-medium wp-image-1033" /></a>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.13.36-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.13.36-PM-269x300.png" alt="" title="Server Inputs" width="269" height="300" class="alignnone size-medium wp-image-1025" /></a>
+<p>And now.. We wait.. Until the instance is up and running..</p>
+<li>Click on the server's nickname, then navigate to the "Scripts" tab</li>
+<li>Run the "rjg_utils::aio_ebs_volume_enable_continuous_backup" operational script to make sure your server is backed up daily</li>
+<li>Run the "app_wordpress::deploy" operational script to setup Wordpress for your domain</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.45.33-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.45.33-PM-300x151.png" alt="" title="Wordpress Deploy Inputs" width="300" height="151" class="alignnone size-medium wp-image-1036" /></a>
+<li>Navigate to your websites URL (we used http://ec2.ryangeyer.com in this example) and setup your Wordpress preferences</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-2.27.07-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-2.27.07-PM-300x285.png" alt="" title="Configure Wordpress" width="300" height="285" class="alignnone size-medium wp-image-1044" /></a>
+<li>Start Blogging!</li>
+</ol>
+
+
+
+
+<h2>What's Next?</h2>
+
+
+<p>That&rsquo;s really all there is to it.  As I mentioned the ServerTemplate does a number of other cool things, which you can read about in it&rsquo;s <a href="http://www.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">description</a>.</p>
+
+<p>The best part is that because this ServerTemplate is what I use for my own blog and email hosting duties, you can be sure that I&rsquo;ll keep it up to date, secure, and be adding features fairly regularly.</p>
+
+<h2>Drop me a note</h2>
+
+
+<p>If you followed these directions, or if you&rsquo;re using this ServerTemplate, or if you&rsquo;re having trouble, by all means drop me a note in the comments here.</p>
+
+<p>I&rsquo;ll be happy to answer any questions I can, and I&rsquo;d love to get a sense for how many people are out there running servers based on this template, it&rsquo;ll keep me motivated to publish more stuff in the public ServerTemplate library!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to resize billions of images in the cloud]]></title>
+    <link href="http://blog.ryangeyer.com/2010/11/01/how-to-resize-billions-of-images-in-the-cloud/"/>
+    <updated>2010-11-01T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2010/11/01/how-to-resize-billions-of-images-in-the-cloud</id>
+    <content type="html"><![CDATA[<p>As I was clearing out my RSS reader a few days back, I stopped to read a post on the Flickr dev blog about the &ldquo;new&rdquo; <a href="http://code.flickr.com/blog/2010/10/26/the-not-so-new-image-size-medium-640/">640px image size</a>.  In the article they lament that they wished they had made &ldquo;Large&rdquo; copies of all uploaded images because it would make generating the new 640px size easier.</p>
+
+<p>This got me thinking, what if they did want to convert every image ever uploaded to this new size and cache it?  How would they do it? How much would it cost?  The more I thought about it, the more curious I became, so I launched a little research project to see what I could find out, and to show how I would work through the problem.</p>
+
+<h1>Approach</h1>
+
+
+<h2>How to resize?</h2>
+
+
+<p>I tried searching to find out exactly how Flickr is resizing their images, but it is apparently a well kept secret.  There was a fair amount of speculation that they use Lanczos resampling, and my own research suggested it was a strong choice for quality resizing, so I chose to use it for the purposes of this experiment.</p>
+
+<p>I wrote a very quick PHP script that uses ImageMagick with the Lanczos &ldquo;filter&rdquo; to do the work.  This resizer was built with this particular experiment in mind, but it is fairly flexible.  If you POST an image, and a value &ldquo;largestDimInPx&rdquo; it will resize the image and send it back as the response to the HTTP POST, thus the &ldquo;RESTFul&rdquo; name.  The resizer also accepts an array of parameters which it sends back in the HTTP header.  So if you were actually taking on a mass resizing project like we&rsquo;re proposing, you can pass the unique ID of the photo in your system and get it back when the resize is complete.</p>
+
+<p>You can find the code for it over on my <a href="http://github.com/rgeyer/RESTful-PHP-Resizer">GitHub</a>.</p>
+
+<h2>Just how many images we talkin'?</h2>
+
+
+<p>Another carefully guarded secret it seems, is the total number of images that Flickr is currently hosting.  I did a lot of searching and tried a few naughty tricks to see if I could get the API or website to tell me, but it was to no avail.</p>
+
+<p>Some previous &ldquo;official&rdquo; numbers were as high as 6 <em>billion</em> images.  So for the purposes of my test I assumed that they had 10 <em>billion</em> images that they wanted to resize to this new 640px image size.</p>
+
+<h2>CPU Cycles - Pick your poison</h2>
+
+
+<p>I have to assume that Flickr has a pretty impressive infrastructure built out, and that they have a huge amount of processing power at their disposal.  Still, to accomplish something like this it&rsquo;s unlikely that they&rsquo;d reallocate existing resources.  The task is too monumental to just have a couple servers work at it.</p>
+
+<p>I also have to assume that they&rsquo;re carefully optimizing their servers so that they don&rsquo;t have to build and maintain more than necessary.  So that begs the question, how do you get the processing horsepower necessary to convert all of these images?</p>
+
+<p>Since I&rsquo;ve recently been engrossed in creating and refining reusable <a href="http://www.rightscale.com/library/">RightScale ServerTemplates<a /> for our own servers in the </a><a href="http://aws.amazon.com/">AWS cloud</a>, my thoughts for a solution instantly gravitated toward launching a bunch of servers in the cloud for this purpose then terminating them when the task was done.  What I didn&rsquo;t know is if this made more sense than, say, buying a bunch of servers and configuring them to do the same task.</p>
+
+<p>In order to do some tests, I created <a href="">ServerTemplate</a> which can be launched on AWS using RightScale that will immediately be able to start resizing images posted to it using my aforementioned PHP resizer.</p>
+
+<h1>The experiment</h1>
+
+
+<p>What I learned in short was&hellip;  This is a <strong><em>HUGE</em></strong> undertaking!  I also found that while any approach would probably be cost prohibitive, performing this resizing task using on-demand servers in the cloud is still the cheapest route by far.</p>
+
+<h2>Assumptions</h2>
+
+
+<p>First, some of the assertions for this exercise.</p>
+
+<ul>
+  <li>The server(s) performing the resize task will be of the <a href="http://aws.amazon.com/ec2/instance-types/">m1.large</a> type from AWS</li>
+  <li>Flickr has 10 <em>billion</em> images to convert</li>
+  <li>Those images are (on average 12MP and about 4MB</li>
+  <li>The images are being resized so that the largest dimension is 640px</li>
+</ul>
+
+
+<p>You&rsquo;ll also find that as I describe the results, and the costs they represent, I conveniently exclude data transfer from my numbers.  This is actually intentional.  My goal is to compare just CPU time.</p>
+
+<p>Yes, bandwidth has a tangible cost when you use it in the cloud.  But the same is true for a bare metal server doing the same task, not to mention the networking hardware which must be acquired, configured, and maintained.  So for the purposes of this experiment, only the cost of CPU cycles is really being examined.</p>
+
+<h2>Findings</h2>
+
+
+<p>With my new m1.large instance launched in the AWS cloud, and exposing the resizer service, I did a few tests to get a feel for just how long it would take to do all of this resizing.  What I found out pretty quickly was that the actual task of resizing the image actually only took around 1 second, sometimes less!  It should come as no surprise that the real time consumer in the process was I/O bandwidth.</p>
+
+<p>Over my home cable connection (measures at 3.5Mbps up and 11.83Mbps down), using Firefox to post and FireBug to measure, it took an average of 12 seconds to complete the process of posting the image and receiving the response.  If I removed the overhead of Firefox and simply used a bash script and cURL, that dropped considerably to 8 seconds.</p>
+
+<p>In an effort to get a &ldquo;best case scenario&rdquo; measurement, I copied the file to be resized onto the AWS instance, and ran the same cURL command locally.  On what can be effectively called &ldquo;infinite&rdquo; bandwidth, the process of posting, resizing, and fetching the result took about 2 seconds.</p>
+
+<h2>The tortoise and the hare</h2>
+
+
+<p>One very tangible benefit to using the cloud for this purpose though is the time to market for such a huge task.  You can imagine that if Flickr did decide to go ahead with this, they wouldn&rsquo;t really want to announce that they&rsquo;ve started but that the process will take many months, or even years.  Assuming again that the per image resize time is 2 seconds, it would take one server just over 633 <strong>years</strong> to convert all of the images.  Something tells me that wouldn&rsquo;t exactly go over well.</p>
+
+<p>Say that they wanted to convert all of the images in one week, at 2 seconds per image for 10B images, it would require just over 33,000 servers to convert that many images in the cloud.  What&rsquo;s more is that it would take effectively &ldquo;no time&rdquo; to deploy that many servers, use them for a week, then terminate them.  Try rolling out that many real, bare metal servers in that timeframe!</p>
+
+<h2>What's it gonna cost?</h2>
+
+
+<p>You might look at those results and think that these times are fairly reasonable.  However, if you take these figures and start multiplying them by ludicrously large numbers (like 10 <em>billion</em> for example), those reasonable numbers start to look very unreasonable.</p>
+
+<p>Using these results, and (as I stated before) only accounting for CPU time, it would cost approximately $1.9M for Flickr to convert all of their images in the cloud.  That is assuming that they&rsquo;re connecting to the servers with effectively infinite bandwidth, ensuring that the upload and download transfer times for the image were less than 1 second (combined!).  Seems like a lot of money, but then it&rsquo;s a lot of images!</p>
+
+<p>Compare that though, to building out a farm of bare metal servers to do the same task.  We&rsquo;ve already established that we&rsquo;d need a little over 33,000 servers to be able to convert all of the images in a week.  If we just take the lowest configuration Dell rack mounted server, the <a href="http://configure.us.dell.com/dellstore/config.aspx?c=us&cs=555&l=en&oc=MLB1931&s=biz">R-415</a> at a retail price of $4531, it would cost just over $149M, just for the hardware.  Worse still, the Dell doesn&rsquo;t actually have as much processing horsepower as an AWS m1.large does, so you&rsquo;d probably significantly effect the time per image.</p>
+
+<h1>Conclusion</h1>
+
+
+<p>At the end of the day, any approach for converting all of those images would be cost prohibitive, and I&rsquo;m betting Flickr won&rsquo;t be taking on this project.  Still, if I had to accomplish this task for real, I think I&rsquo;ve demonstrated fairly convincingly that doing it in the cloud with on demand computing power is totally the way to go.</p>
+
+<p>I&rsquo;m not a mathematician or a statistician, and I did paint this topic with very broad strokes.  You can check my work with the simple <a href="https://spreadsheets.google.com/ccc?key=0AroG_EaGJ08tdHM5Z0syaWJBbkZkWnFqN3c2bFZ6OUE&hl=en">Google Spreadsheet</a> I created to track my results.  If this were an actual task, I&rsquo;d be a bit more precise, but I wanted to show the differences between the approaches, without getting into too much minutia.</p>
+
+<p>That said, discussion about factors I may have missed are welcome, I think you&rsquo;ll find that the delta in price for just the CPU horsepower between the cloud and a bare metal solution more than absorb any real differences I may have excluded.  ;&ndash;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[RightScriptDiff - Maintain your RightScripts Locally]]></title>
+    <link href="http://blog.ryangeyer.com/2010/08/02/rightscriptdiff-maintain-your-rightscripts-locally/"/>
+    <updated>2010-08-02T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2010/08/02/rightscriptdiff-maintain-your-rightscripts-locally</id>
+    <content type="html"><![CDATA[<p>If you&rsquo;re running servers in the cloud, particularly on Amazon&rsquo;s AWS and haven&rsquo;t heard about <a href="http://www.rightscale.com">RightScale</a> you owe it to yourself to check them out.  I&rsquo;ve been using their tools for launching and managing linux servers on AWS.  They allow you to automate all of the tasks to launch a new box, and even run regular operational tasks, all with the use of RightScripts.</p>
+
+<p>RightScripts are just glorified shell scripts which get downloaded from RightScale to your linux server running in any of the clouds they support, and executed with the parameters that you specify in the RightScale dashboard for that RightScript.  Of course, as you start to get into more complex scenarios you&rsquo;re likely to start writing and testing your scripts locally before saving them in the RightScale dashboard.  That&rsquo;s where RightScriptDiff comes in.</p>
+
+<!--more-->
+
+
+<p>The only way to create or edit a RightScript as of this writing is through the RightScale dashboard.  So you&rsquo;re typing your script into a nice big textarea, where you can&rsquo;t tab for indents or any of the other benefits you get from an editor like vim, emacs, or even <em>gasp</em> notepad.exe.  As a result I started to write, and even test my scripts locally before I ever committed them to RightScale.</p>
+
+<p>Going this route of course adds a fair amount of overhead to the process.  You have to remember which scripts you&rsquo;ve edited, then copy/paste them into the RightScale dashboard to update the script in their system.  After a while I found I couldn&rsquo;t keep up with the overhead, and I needed to find some good way to compare my local copies of scripts with the ones in my RightScale dashboard.</p>
+
+<p>Thus was born RightScriptDiff.  By supplying RightScriptDiff with your username, password, and account id for RightScale along with a path to a directory containing your local scripts, it will use the RightScale API to compare your local copy against the one stored in your RightScale account.  If you&rsquo;re thinking &ldquo;why don&rsquo;t you just synchronize the script using the API&rdquo;, you&rsquo;re on the right track.  Sadly, the API doesn&rsquo;t (yet) support RightScripts for anything but viewing, here&rsquo;s hoping they open up that functionality a bit.</p>
+
+<p>In order for RightScriptDiff to compare your local files, they must be named with a specific pattern, namely &lt;rightscript_id&gt;&ndash;&lt;rightscript_name&gt;.sh.  Actually, the script name and the <em>.sh extension are optional, but that&rsquo;s the convention I use so it&rsquo;s easier to identify them.  You can pass (almost) any argument to RightScriptDiff that you can to the &ldquo;ls&rdquo; command in </em>nix and OSX, so something like <em>relative/path/to/RightScripts/*.sh</em> is totally acceptable.  This means you can also target just a single script if you&rsquo;d like.  RightScriptDiff uses the RightScript_ID section of the filename to look up the script using the RightScript API, then compares the script against your local copy.  If they&rsquo;re the same, you get a happy success message that there is no difference.  If the files are different, a side by side diff is shown.</p>
+
+<p>Here&rsquo;s an example of a successful run;</p>
+
+<p>```
+Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
+Please enter the path to scripts stored locally&hellip;
+<em>.sh
+Grabbing all RightScripts for user: </em><strong><strong> on account: </strong></strong>*.  Be patient, this could take a while&hellip;
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</p>
+
+<pre><code>                             Dload  Upload   Total   Spent    Left  Speed
+</code></pre>
+
+<p>100  369k  100  369k    0     0   148k      0  0:00:02  0:00:02 &mdash;:&mdash;:&mdash;  182k
+Found 1 nodes:
+&mdash; NODE &mdash;</p>
+
+<p>Local copy of 236067-LDAP Install OpenLDAP.sh does not differ from RightScale copy.
+Found 1 nodes:
+&mdash; NODE &mdash;</p>
+
+<p>Local copy of 237784-LDAP Create Database.sh does not differ from RightScale copy.
+Found 1 nodes:
+&mdash; NODE &mdash;</p>
+
+<p>Local copy of 237788-LDAP Set Config Admin Details.sh does not differ from RightScale copy.
+Found 1 nodes:
+&mdash; NODE &mdash;</p>
+
+<p>Local copy of 237789-LDAP Tools Install.sh does not differ from RightScale copy.
+Found 1 nodes:
+&mdash; NODE &mdash;</p>
+
+<p>Local copy of 238408-LDAP Enable Schema(s).sh does not differ from RightScale copy.
+Found 1 nodes:
+&mdash; NODE &mdash;</p>
+
+<p>Local copy of 238454-LDAP DB S3 Backup.sh does not differ from RightScale copy.
+Found 1 nodes:
+&mdash; NODE &mdash;</p>
+
+<p>Local copy of 238480-LDAP DB S3 Restore.sh does not differ from RightScale copy.
+Found 1 nodes:
+&mdash; NODE &mdash;</p>
+
+<p>Local copy of 238481-LDAP DB S3 Enable Continuous Backup.sh does not differ from RightScale copy.
+Found 1 nodes:
+&mdash; NODE &mdash;</p>
+
+<p>Local copy of 238497-LDAP DB S3 Disable Continuous Backup.sh does not differ from RightScale copy.
+```</p>
+
+<p>This is what it looks like when the scripts differ;</p>
+
+<p>```
+Ryan-Geyers-MacBook-Pro:RightScripts rgeyer$ rsDiff.sh
+Please enter the path to scripts stored locally&hellip;
+237784<em>.sh
+Grabbing all RightScripts for user: </em><strong><strong> on account: </strong></strong>*.  Be patient, this could take a while&hellip;
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</p>
+
+<pre><code>                             Dload  Upload   Total   Spent    Left  Speed
+</code></pre>
+
+<p>100  369k  100  369k    0     0   172k      0  0:00:02  0:00:02 &mdash;:&mdash;:&mdash;  220k
+Found 1 nodes:
+&mdash; NODE &mdash;</p>
+
+<p>Local copy of 237784-LDAP Create Database.sh differs from RightScale copy.. Diff below..</p>
+
+<pre><code>                              &amp;gt;  sed -i &amp;quot;s/@@DATABASE_TYPE@@/$DATABASE_TYPE/g&amp;quot; $tmp_file
+                              &amp;gt;  sed -i &amp;quot;s/@@DB_CHECKPOINT@@/$DB_CHECKPOINT/g&amp;quot; $tmp_file
+                              &amp;lt;
+</code></pre>
+
+<p>echo &quot;Finishing up&hellip;&quot;
+```</p>
+
+<p>As mentioned above RightScriptDiff requires three values, your RightScale account email address, password, and account number.  You might notice that in both instances above I did not need to provide them and was prompted only for the path to my scripts.  This is because I pre-defined my credentials and account before hand.   There are a couple ways to provide this to RightScriptDiff, you can call rsDiff.sh with parameters (-e|&mdash;email=)&lt;email-address&gt; (-p|&mdash;password=)&lt;password&gt; (-a|&mdash;account_id=)&lt;account_id&gt;, or you can rename the supplied rsDiffAuth.sh.example file, to rsDiffAuth.sh and put your credentials in there.</p>
+
+<p>After developing this, I discovered that I had edited one of my script files locally and the change wasn&rsquo;t reflected in my RightScale dashboard, so it&rsquo;s already proved useful to me.  Hopefully this helps some other sysadmins building our their RightScale managed clouds.</p>
+
+<p>You can download RightScriptDiff by running the following command.  I wrote it on OSX 10.6.4, but it should work on most flavors of linux as well.</p>
+
+<p><code>
+svn export https://linode.nslms.com/svn_ro/RightScriptDiff/
+</code></p>
+
+<p><em><strong><span style="color: #ff0000;">* UPDATE: RightScriptDiff has a new home</span></strong></em></p>
+
+<p><code>
+git clone git://github.com/rgeyer/RightScriptDiff.git
+</code></p>
+
+<p>Chances are pretty good I&rsquo;ll create a landing page for this, particularly if it becomes popular, so stay tuned here for updates!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android OS CarPC?]]></title>
+    <link href="http://blog.ryangeyer.com/2010/05/14/android-os-carpc/"/>
+    <updated>2010-05-14T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2010/05/14/android-os-carpc</id>
+    <content type="html"><![CDATA[<p>Generally speaking, I don&rsquo;t actively participate in the weekly <a href="http://thecarchat.com/">#carchat</a> on Twitter, but I do occasionally glean a few points as I watch it stream across my Twitter timeline.</p>
+
+<p>Take for instance this week&rsquo;s #carchat where I saw <a href="http://twitter.com/banovsky">@banovsky</a> say the following.
+[twitter_status_by_id id=&ldquo;13882824556&rdquo;]</p>
+
+<p>Now, I&rsquo;ve built a CarPC and have some familiarity with the topic, and on the surface this seemed like a REALLY good idea, so I excitedly replied.
+[twitter_status_by_id id=&ldquo;13883363838&rdquo;]</p>
+
+<p>And apparently <a href="http://twitter.com/bprosperi">@bprosperi</a> agreed;
+[twitter_status_by_id id=&ldquo;13883473947&rdquo;]</p>
+
+<p>Admittedly however, my response was not based on any particular facts or prior research, it just sounded like a novel idea.  So when I was challenged, I honestly didn&rsquo;t have anything particularly intelligent to say.
+[twitter_status_by_id id=&ldquo;13883392253&rdquo;]</p>
+
+<p>[twitter_status_by_id id=&ldquo;13883614504&rdquo;]</p>
+
+<p>That was pretty much it for that conversation, I was running out the door to head home from work, and there didn&rsquo;t seem to be a lot of activity on that conversation topic.  But the brief exchange did get me thinking.  I&rsquo;m going to be tackling the challenge of updating my CarPC and installing it in the <a href="/categories/1967-cadillac-sedan-deville/">Caddy</a> at some point in the future, and it might make sense to consider my options in the Mobile OS arena.  With that, I decided to refine my understanding a bit.</p>
+
+<p>What I found, was actually quite disappointing!  It seems that a lot of folks in the car computing community have given this topic a lot of consideration, starting all the way back when Android was first announced.  The first several links of <a href="http://www.google.com/search?q=android+carpc">the search</a> I did were all links back to the <a href="http://www.mp3car.com/vbulletin/">mp3car.com forums</a>, and I observed a few common threads.</p>
+
+<h3>Screensize</h3>
+
+
+<p>Android is hyper focused on small mobile devices (read teeny screens), so while it&rsquo;s very touch centric, which is good for car computing, existing apps will not scale well to the standard 7" car computing touchscreen.  Which means that any software which would be properly useful in a car, on the Android OS, would have to be built exclusively for that purpose.  That seems fine on the surface, but it excludes you from the primary Android market, and creates a new niche which may be extraordinarily small, if it takes off at all.</p>
+
+<h3>Level of interactivity</h3>
+
+
+<p>Android expects the user to be engaged and actively interacting with the device.  This is a reasonable expectation for a mobile phone that you&rsquo;ll use to play games, use social networking, web browse, etc.  But the car computing use case is VERY different, you want to be able to interact with the device with as little cognitive overhead as possible.  This is the reason that the use of mobile phones is being outlawed in many states.  So again, you&rsquo;d have to build something exclusively for car computing, on a platform with an entirely different focus.</p>
+
+<h3>Pay it back</h3>
+
+
+<p>Android is based on Linux, but it is not true to the spirit and intent of Free Open Source Software (FOSS).  Android has reinvented the wheel many times over, and created subsystems which do (almost) the same thing as a similar subsystem already available in Linux, but in a way that&rsquo;s only useful on a mobile device.  Fundamentally, this makes sense, since the problems they&rsquo;re trying to solve are rather specific to the application.  The problem though, is that none of that work done to &ldquo;enhance&rdquo; the FOSS software upon which Android is based is of any use to anyone but the Android team.</p>
+
+<p>This problem would be even further compounded if Android OS were used in the context it was brought up by <a href="http://twitter.com/sandbarmark">@sandbarmark</a> for #carchat.
+[twitter_status_by_id id=&ldquo;13882779065&rdquo;]</p>
+
+<p>Can you imagine?  Let&rsquo;s suppose GM does decide to adopt the Android OS, and turn it into their own version of Ford&rsquo;s wildly popular <a href="http://www.fordvehicles.com/technology/sync/">Sync</a> entertainment system.  Chances are they&rsquo;re going to take the already very device specific Android OS, take a few key pieces from it, and write their own application suite on top of it.  This would mean MORE duplicated work which would likely prove to be only useful to GM, and not to the Android community at large, or the Linux community to which it owes it&rsquo;s existence!</p>
+
+<h3>My Conclusion</h3>
+
+
+<p>While at first blush, the idea of an &ldquo;open&rdquo; mobile OS powering in car entertainment devices seemed very attractive I don&rsquo;t think it&rsquo;s the answer.  If GM is going to pursue building some software and hardware for in car entertainment, they should take a serious look at simply building on top of Linux, rather than having to work around the mobile-device-centric limitations of Android.  Plus, if they did it right, the entire Linux community could benefit from their efforts.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Crashing at a new pad]]></title>
+    <link href="http://blog.ryangeyer.com/2009/08/23/crashing-at-a-new-pad/"/>
+    <updated>2009-08-23T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2009/08/23/crashing-at-a-new-pad</id>
+    <content type="html"><![CDATA[<p>If you&rsquo;re reading this, it means that the DNS records have replicated and Random Musings is now fully hosted on my shiny <a href="http://www.linode.com/">Linode VPS</a>!</p>
+
+<p>I&rsquo;ve been steadily growing out of my previous hosting solution over on <a href="http://www.hostmysite.com/">Host My Site</a>.  All things being equal they&rsquo;ve served me very well, but running Wordpress started to demand more memory than they&rsquo;d allocate for a shared hosting customer.  Then there&rsquo;s the limited functionality of the PHP stack which I was starting to run up against quite regularly.</p>
+
+<p>I have to say I&rsquo;m SUPER pleased with <a href="http://www.linode.com">Linode</a> so far.  I signed up for it on the 21st, and by today I&rsquo;ve got it completely setup hosting web and email for three domains, with another on the way.  I was worried that it would cost me money, but when I account for the other hosting accounts I&rsquo;ll be able to close I wind up money ahead.  Sweet!</p>
+
+<p>Hopefully this change will be seamless to ya&rsquo;ll, might notice an increase in speed.  Let me know if you see anything &ldquo;odd&rdquo;.  :&ndash;)</p>
+]]></content>
+  </entry>
+  
+</feed>

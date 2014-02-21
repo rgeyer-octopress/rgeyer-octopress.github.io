@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Web development environment - "On The Go" - Ryans Octopress Blog</title>
+  <meta name="author" content="Ryan J. Geyer">
+  <link rel="author" href="humans.txt">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  
+    
+  
+  <meta name="description" content="Over the past few weeks I&rsquo;ve been spending most of my spare time developing a couple of web sites.  These sites are based on the Drupal CMS &hellip;">
+  
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.ryangeyer.com/2009/04/07/web-development-environment-on-the-go/">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
+  <meta name="og:type" content="website" />
+  <meta name="og:site_name" content="Ryans Octopress Blog" />
+  <meta name="og:title" content="Web development environment - "On The Go"" />
+  <meta name="og:description" content="Over the past few weeks I&rsquo;ve been spending most of my spare time developing a couple of web sites.  These sites are based on the Drupal CMS &hellip;" />
+  <meta name="og:url" content="http://blog.ryangeyer.com/2009/04/07/web-development-environment-on-the-go/"/>
+  <meta name="url" content="http://blog.ryangeyer.com/2009/04/07/web-development-environment-on-the-go/">
+  
+  <meta name="subject" content="Software Developmentdrupalphp"/>
+  <meta name="category" content="Software Developmentdrupalphp"/>
+  
+  <meta name="distribution" content="global">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2840005-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">Ryans Octopress Blog</a>
+    <ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/archives">Archives</a></li>
+    </ul>
+    <ul class="nav" data-subscription="rss">
+      <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+      
+    </ul>
+      
+    <form class="navbar-form" action="http://google.com/search" method="get">
+      <fieldset role="search">
+        <input type="hidden" name="q" value="site:blog.ryangeyer.com" />
+        <input class="span2" type="text" name="q" results="0" placeholder="Search"/>
+      </fieldset>
+    </form>
+      
+    
+  </div>
+</div>
+</nav>
+  <div class="wrapper_single">
+    <div class="container">
+      <article class="span8 offset2" role="article">
+        <div class="article-format">
+
+  <header>
+    
+      <h1 class="entry-title">Web Development Environment - "on the Go"</h1>
+    
+    
+      <p class="meta">
+        
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-07T00:00:00-07:00" pubdate data-updated="true"></time> - 
+        
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/software-development/'>Software Development</a>, <a class='category' href='/categories/drupal/'>drupal</a>, <a class='category' href='/categories/php/'>php</a>
+  
+</span>
+
+
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Over the past few weeks I&rsquo;ve been spending most of my spare time developing a couple of web sites.  These sites are based on the Drupal CMS written in PHP.  And I&rsquo;ve taken a bit of a crash course in Drupal module design.</p>
+
+<p>When I set out developing these, I faced a challenge that I&rsquo;d been aware of, but managed to avoid in the past.  How do I work on these projects in a predictable, constant environment, and still bring my code with me to work on my home machine, work machine, laptop, and anything else I happen to sit down in front of?</p>
+
+<p>This blog post is about how I&rsquo;ve accomplished this so far.  Read more after the break&hellip;</p>
+
+<h2><!--more-->Portable Storage Device</h2>
+
+
+<p>Your first inclination will probably be to install these tools on a USB thumb drive that you can easily store in your pocket.  And you&rsquo;d be in good company, this was my first choice too.  However, after getting everything going, I quickly realized that it simply wasn&rsquo;t fast enough.  Others have reported different results, and a lot has to do with the particular device, and the file system (NTFS is best).</p>
+
+<p>That said, I chose to go a different route, with fewer unknowns, and picked up a <a href="http://freeagent.seagate.com/en-us/hard-drive/portable-hard-drive/Free-Agent.html">Seagate FreeAgent Go 250GB USB harddrive</a>.  I picked it up with a docking port from our local Costco for $80 and it eliminates concerns I had about performance.</p>
+
+<h2><a name="File_Structure">File Structure</a></h2>
+
+
+<p>Throughout the rest of this article, I&rsquo;m going to refer to files in my file structure, so I may as well show it to you so that these references can make sense.  This probably isn&rsquo;t the best layout, but it&rsquo;s what works for me.</p>
+
+<ul>
+    <li>FreeAgent Go Root
+<ul>
+    <li>ampp
+<ul>
+    <li>lampp</li>
+    <li>wampp</li>
+    <li>shared
+<ul>
+    <li>htdocs
+<ul>
+    <li>&lt;code&gt;</li>
+</ul>
+</li>
+    <li>mysql
+<ul>
+    <li>data
+<ul>
+    <li>&lt;databases&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+    <li>Portable
+<ul></ul>
+</li>
+    <li>cygwin</li>
+    <li>libs
+<ul>
+    <li>java-runtime
+<ul>
+    <li>jre1.6.0_06</li>
+</ul>
+</li>
+</ul>
+</li>
+    <li>Program Files
+<ul></ul>
+</li>
+    <li>7-ZipPortable</li>
+    <li>eclipse</li>
+    <li>FirefoxPortable</li>
+    <li>junction</li>
+    <li>Rapidsvn</li>
+    <li>soapui-2.5.1</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Foundation (AMPP)</h2>
+
+
+<p>The first thing we&rsquo;re going to needed is a good Apache, MySQL, PHP setup.  For this I did some quick googling and stumbled upon XAMPP.  This is an Apache Friends project that packages all the server side components I need.  You can check them out, and download it over at their <a href="http://www.apachefriends.org/en/xampp.html">site</a>.</p>
+
+<p>I just downloaded the zip file, and extracted it to my drive at \ampp\wampp.  If you don&rsquo;t unzip this project to the root of your device, you&rsquo;ll need to run the &ldquo;setup_xampp.bat&rdquo; batch script supplied.</p>
+
+<h2>Shared Source &amp; Database Files</h2>
+
+
+<p>For the sake of organization, and the ability to run this system on both Windows and Linux boxes (see notes below about linux), I&rsquo;m keeping my htdocs and MySQL database files outside of the normal directory structure of the XAMPP installation.</p>
+
+<p>See my <a href="#File_Structure">File Structure</a> above..</p>
+
+<p>This way all of the web files for my individual websites and projects go in the &ldquo;htdocs&rdquo; directory, while the database data files go in the &ldquo;mysql\data&rdquo; directory, making them easy to find.</p>
+
+<p>Of course, this presents a problem since the XAMPP install won&rsquo;t be looking in those directories for the databases and code.  So, to solve this I&rsquo;ve written another small batch script which lives in the &ldquo;shared&rdquo; directory.  This script uses the microsoft system tool <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx">Junction.exe</a> to create links of my shared directories in the location that XAMPP is looking.  The junction.exe file is in an &ldquo;Installers&rdquo; directory on the drive, though I should probably move it somewhere more logical.  Here&rsquo;s the script that deletes old junctions, and creates new ones.  You&rsquo;ll want to run this when you move from computer to computer, since the drive letter of the USB drive will likely change, and the junctions are to absolute paths.  I put this file in \ampp\shared and it uses relative paths, so that&rsquo;s important.</p>
+
+<figure class='code'><figcaption><span>refresh-junctions.bat </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="k">for</span> /d %%A in <span class="o">(</span>htdocs<span class="se">\*</span><span class="o">)</span> <span class="k">do</span> <span class="s2">&quot;..\..\Portable\Program Files\junction\junction.exe&quot;</span> -d <span class="s2">&quot;..\xampp\%%A&quot;</span>
+</span><span class='line'><span class="k">for</span> /d %%A in <span class="o">(</span>htdocs<span class="se">\*</span><span class="o">)</span> <span class="k">do</span> <span class="s2">&quot;..\..\Portable\Program Files\junction\junction.exe&quot;</span> -s <span class="s2">&quot;..\xampp\%%A&quot;</span> <span class="s2">&quot;%%A&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">for</span> /d %%A in <span class="o">(</span>mysql<span class="se">\d</span>ata<span class="se">\*</span><span class="o">)</span> <span class="k">do</span> <span class="s2">&quot;..\..\Portable\Program Files\junction\junction.exe&quot;</span> -d <span class="s2">&quot;..\xampp\%%A&quot;</span>
+</span><span class='line'><span class="k">for</span> /d %%A in <span class="o">(</span>mysql<span class="se">\d</span>ata<span class="se">\*</span><span class="o">)</span> <span class="k">do</span> <span class="s2">&quot;..\..\Portable\Program Files\junction\junction.exe&quot;</span> -s <span class="s2">&quot;..\xampp\%%A&quot;</span> <span class="s2">&quot;%%A&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The requirement here of course is that you always create new sites by creating a directory in \ampp\shared\htdocs, and that any time you create a new database, you must move it&rsquo;s directory from \ampp\wampp\mysql\data&amp;lt;database&gt; to \ampp\shared\mysql\data&amp;lt;database&gt; then re-run the refresh-junctions.bat script while the MySQL server is not running.  But it&rsquo;s a fairly workable solution.</p>
+
+<h2>Integrated Development Environment (IDE)</h2>
+
+
+<p>Okay, so we&rsquo;ve got a nice predictable, repeatable hosting environment.  Now to  write some code!</p>
+
+<p>My personal choice of IDE is Eclipse with the PHP Development Tools (PDT).  Eclipse is by it&rsquo;s nature portable since it&rsquo;s a Java application, and the installation for the PDT is just to unzip it to a drive.  There are a couple of pitfalls though, and here&rsquo;s what I&rsquo;ve done to overcome them.</p>
+
+<p>First, since Eclipse does require the Java runtime you have two choices.</p>
+
+<ol>
+    <li>Make sure that a current JVM is installed on any machine you intend to run your portable environment on.</li>
+    <li>Carry a copy of the JVM with you!</li>
+</ol>
+
+
+<p>I chose #2, and used instructions found <a href="http://www.jonlee.ca/how-to-run-eclipse-or-aptana-from-usb-drive/" target="_blank">here</a> to do it.  Basically, store a copy of the JVM on your disk and edit the Eclipse startup batch script to use your portable copy.  In my case, the JVM is in the Portable/libs/java-runtime directory as shown in my <a href="#File_Structure">File Structure</a> above.</p>
+
+<p>Secondly, I thought it would be a good idea to just store my workspace on the portable drive as well, so I could keep all my settings with me.  Thus far I haven&rsquo;t found an elegant way to do this, since it apparently uses absolute paths for projects.  So instead I keep a workspace on each system I work on that has the settings.  I hope to find a better solution to this, and if I do I&rsquo;ll post it here.</p>
+
+<h2>Portable Firefox Browser &amp; Plugins</h2>
+
+
+<p>Alright, so now we&rsquo;ve got a web server to show our code, a nice IDE to write code in.  What we need is a predictable way to view it all.  You could install your favorite browser on every computer you interact with, or you could bring it with you!  In my case, Firefox is my very favorite browser so I used <a href="http://portableapps.com/apps/internet/firefox_portable" target="_blank">Firefox Portable</a> so that I can take it and all my configuration preferences as well as Firefox Add-Ons with me.  My core set of Add-Ons which I find invaluable are..</p>
+
+<ul>
+    <li><a href="http://getfirebug.com/" target="_blank">Firebug</a></li>
+    <li><a href="https://addons.mozilla.org/en-US/firefox/addon/35" target="_blank">IE View</a></li>
+    <li><a href="https://addons.mozilla.org/en-US/firefox/addon/60" target="_blank">Web Developer</a></li>
+</ul>
+
+
+<h2>Portable *NIX tools with Cygwin</h2>
+
+
+<p>So we&rsquo;ve written some code in our portable IDE, we&rsquo;ve tested it out using our portable web server and Firefox browser and we&rsquo;re satisfied with the results, and want to upload them to our production server.  My very favorite method of doing so is over RSYNC so I transfer only what&rsquo;s changed, and it&rsquo;s secure.  In order to do that, I usually use cygwin.</p>
+
+<p>On the surface it seems like it&rsquo;d be easy to just install cygwin to a directory on your portable drive.  And in part, it is.  You can simply install to that directory, and you&rsquo;re all set.  Problem is as soon as you move it to another computer, and that computer assigns your drive a different drive letter, everything breaks down real quick.  Some quick google searching revealed a way to make this work.  I had to make some minor tweaks in order to fit within my <a href="#File_Structure">File Structure</a> but you can find the inspiration for my changes <a href="http://www.dam.brown.edu/people/sezer/software/cygwin/" target="_blank">here</a>.</p>
+
+<p>My changes are to the X.bat and uninstall.bat files.  I instead called them ~cygwin-install-X.bat and ~cygwin-uninstall.bat and put them in the cygwin install directory at Portable\cygwin.  Here they are.</p>
+
+<figure class='code'><figcaption><span>~cygwin-install-X.bat </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="k">for</span> /F %%A in <span class="o">(</span><span class="s1">&#39;cd&#39;</span><span class="o">)</span> <span class="k">do </span><span class="nb">set </span><span class="nv">WD</span><span class="o">=</span>%%A
+</span><span class='line'>bin<span class="se">\m</span>ount -m | bin<span class="se">\s</span>ed s/mount/<span class="s2">&quot;%WD%\/bin\/mount&quot;</span>/ &gt; tmp<span class="se">\m</span>ount.log
+</span><span class='line'>bin<span class="se">\u</span>mount -c
+</span><span class='line'>bin<span class="se">\u</span>mount -A
+</span><span class='line'>bin<span class="se">\m</span>ount -bfu %WD%/ /
+</span><span class='line'>bin<span class="se">\m</span>ount -bfu %WD%/bin /usr/bin
+</span><span class='line'>bin<span class="se">\m</span>ount -bfu %WD%/lib /usr/lib
+</span><span class='line'>
+</span><span class='line'><span class="nb">set </span><span class="nv">path</span><span class="o">=</span>%path%;%WD%<span class="se">\b</span>in;%WD%<span class="se">\u</span>sr<span class="se">\X</span>11R6<span class="se">\b</span>in
+</span><span class='line'>start bin<span class="se">\r</span>xvt.exe -title <span class="s2">&quot;&quot;</span> -bg <span class="s2">&quot;#fafad2&quot;</span> -fg <span class="s2">&quot;#000040&quot;</span> -color10 green4 -color14 brown -fn <span class="s2">&quot;Lucida Console-14&quot;</span> -geometry 80x58+0+0 -sl 4000 -sr -tn rxvt -e /bin/bash --login -i
+</span><span class='line'><span class="nb">set </span><span class="nv">DISPLAY</span><span class="o">=</span>localhost:0.0
+</span><span class='line'>run usr<span class="se">\X</span>11R6<span class="se">\b</span>in<span class="se">\X</span>Win -multiwindow -emulate3buttons 200
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>~cygwin-uninstall.bat </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bin<span class="se">\u</span>mount -c
+</span><span class='line'>bin<span class="se">\u</span>mount -A
+</span><span class='line'>bin<span class="se">\b</span>ash  tmp<span class="se">\m</span>ount.log
+</span><span class='line'>bin<span class="se">\r</span>m    tmp<span class="se">\m</span>ount.log
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<h2>Portable Source Control (SVN)</h2>
+
+
+<p>Lastly, you&rsquo;ll probably want to submit your changes to some sort of source control.  In my case I&rsquo;m using Concurrent Versioning (CVS) or Subversion (SVN) for my source control, and both are handled nicely by the portable version of <a href="http://portableapps.com/node/13470" target="_blank">RapidSVN</a>.</p>
+
+<p>So there you have it, my end to end solution for doing web development from a portable flash drive on any windows box you happen to come across.  My original intention was to be able to just plug this drive into any windows OR linux box and work, but I have some kinks to work out with the linux solution.  Watch this space for more on that as I develop it.</p>
+
+<p>Hopefully this helps you if you&rsquo;re trying to setup a nice portable webdev environment!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-07T00:00:00-07:00" pubdate data-updated="true"></time> - 
+      
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/software-development/'>Software Development</a>, <a class='category' href='/categories/drupal/'>drupal</a>, <a class='category' href='/categories/php/'>php</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ryangeyer.com/2009/04/07/web-development-environment-on-the-go/" data-via="rjgeyer" data-counturl="http://blog.ryangeyer.com/2009/04/07/web-development-environment-on-the-go/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    
+      <a class="pull-left" href="/2009/03/27/drupal-flickr-module-now-with-urls/" title="Previous Post: Drupal Flickr Module.  Now with URLs!">&laquo; Drupal Flickr Module.  Now with URLs!</a>
+    
+    
+      <a class="pull-right" href="/2009/06/03/what-ive-been-up-to/" title="Next Post: What I've been up to...">What I've been up to... &raquo;</a>
+    
+  </footer>
+
+</div>
+
+        
+          <div class="article-format">
+            <h1>Comments</h1>
+            <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+          </div>
+        
+      </article>
+    </div>
+  </div>
+  <div id="footer-widgets">
+  <div class="container">
+    <div class="row">
+  <div class="span3">
+    <h2>recent posts</h2>
+    <ul class="recent_posts">
+      
+        <li>
+          <a href="/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">Policy for an S3 only Amazon IAM User</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/24/the-baby/">The baby</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13:  NO WAY!</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12:  Old Hat</a>
+        </li>
+      
+    </ul>
+    <h2><a href="/blog/archives">archives</a></h2>
+  </div>
+  <div class="span3">
+    
+
+  </div>
+  <div class="span4">
+    
+<h2>twitter</h2>
+<a href="https://twitter.com/rjgeyer" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @rjgeyer</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div class="tweet" data-twitter-user="rjgeyer">
+</div>
+
+
+  </div>
+  <div class="span2">
+    <h2>found on</h2>
+
+<a href="https://github.com/rgeyer/" rel="tooltip" title="Github"><img class="social_icon" title="Github" alt="github icon" src="/images/glyphicons_381_github.png"></a>
+
+
+
+<a href="http://stackoverflow.com/users/1305386/" rel="tooltip" title="Stack Overflow"><img class="social_icon" title="Stack Overflow" alt="stack overflow icon" src="/images/glyphicons_400_stack_overflow.png"></a>
+
+
+
+<a href="http://www.linkedin.com/in/rjgeyer" rel="tooltip" title="Linkedin"><img class="social_icon" title="Linkedin" alt="Linkedin icon" src="/images/glyphicons_377_linked_in.png"></a>
+
+
+
+<a href="http://twitter.com/rjgeyer" rel="tooltip" title="Twitter"><img class="social_icon" title="Twitter" alt="Twitter icon" src="/images/glyphicons_391_twitter_t.png"></a>
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://plus.google.com/+RyanGeyerCycles?rel=author" rel="tooltip" title="Google Plus"><img class="social_icon" title="Google Plus" alt="Google Plus icon" src="/images/glyphicons_386_google_plus.png"></a>
+
+
+
+<a href="http://www.quora.com/Ryan-Geyer" rel="tooltip" title="Quora"><img class="social_icon" title="Quora" alt="Quora icon" src="/images/glyphicons_385_quora.png"></a>
+
+
+
+<h2>contact at</h2>
+<a href="mailto:me@ryangeyer.com">me@ryangeyer.com</a>
+
+
+  </div>
+</div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-left">
+  <a href="/">Ryans Octopress Blog</a>
+  - Copyright &copy; 2014 - Ryan J. Geyer
+</p>
+<p class="pull-right">
+  <span>Powered by <a href="http://octopress.org/">Octopress</a>.</span>
+  
+    <span>Designed by <a href="http://www.AdrianArtiles.com">Adrian Artiles</a>.</span>
+  
+</p>
+
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.7.2.min.js" type="text/javascript"><\/script>')</script>
+<script src="/javascripts/libs/bootstrap.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.tweet.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.instagram.js" type="text/javascript"></script>
+<script src="/javascripts/libs/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="/javascripts/custom.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'octopressgithubpages';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.ryangeyer.com/2009/04/07/web-development-environment-on-the-go/';
+        var disqus_url = 'http://blog.ryangeyer.com/2009/04/07/web-development-environment-on-the-go/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
