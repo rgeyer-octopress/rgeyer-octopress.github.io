@@ -1,6 +1,6 @@
 #custom filters for Octopress
 require './plugins/backtick_code_block'
-require 'jekyll-page-hooks'
+require './plugins/post_filters'
 require './plugins/raw'
 require './plugins/date'
 require 'rubypants'
@@ -8,23 +8,33 @@ require 'rubypants'
 module OctopressFilters
   include BacktickCodeBlock
   include TemplateWrapper
-  def pre_filter(input, ext)
-    input = render_code_block(input, ext)
+  def pre_filter(input)
+    input = render_code_block(input)
+    input.gsub /(<figure.+?>.+?<\/figure>)/m do
+      safe_wrap($1)
+    end
+  end
+  def post_filter(input)
+    input = unwrap(input)
+    RubyPants.new(input).to_html
   end
 end
 
 module Jekyll
-  class ContentFilters < PageHooks
+  class ContentFilters < PostFilter
     include OctopressFilters
     def pre_render(post)
       if post.ext.match('html|textile|markdown|md|haml|slim|xml')
-        post.content = pre_filter(post.content, post.ext)
+        post.content = pre_filter(post.content)
+      end
+    end
+    def post_render(post)
+      if post.ext.match('html|textile|markdown|md|haml|slim|xml')
+        post.content = post_filter(post.content)
       end
     end
   end
 end
-
-
 
 
 module OctopressLiquidFilters

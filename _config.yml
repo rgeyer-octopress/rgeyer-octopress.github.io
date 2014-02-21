@@ -98,3 +98,18 @@ google_analytics_tracking_id: UA-2840005-7
 
 # Facebook Like
 facebook_like: true
+
+# Stack Overflow - FoxSlide Theme
+stackoverflow_user: 1305386
+
+# LinkedIn - FoxSlide Theme
+linkedin_user: in/rjgeyer
+
+# Quora - FoxSlide Theme
+quora_user: Ryan-Geyer
+
+# Email - FoxSlide Theme
+email: me@ryangeyer.com
+
+# Instagram - FoxSlide Theme
+#instagram_user: rjgeyer

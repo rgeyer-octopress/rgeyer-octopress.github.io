@@ -1,8 +1,6 @@
 require "rubygems"
 require "bundler/setup"
 require "stringex"
-require "guard"
-require "guard/cli"
 
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
@@ -27,7 +25,12 @@ posts_dir       = "_posts"    # directory for blog files
 themes_dir      = ".themes"   # directory for blog files
 new_post_ext    = "markdown"  # default new post file extension when using the new_post task
 new_page_ext    = "markdown"  # default new page file extension when using the new_page task
+server_port     = "4000"      # port for preview server eg. localhost:4000
 
+if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
+  puts '## Set the codepage to 65001 for Windows machines'
+  `chcp 65001`
+end
 
 desc "Initial setup for Octopress: copies the default theme into the path of Jekyll's generator. Rake install defaults to rake install[classic] to install a different theme run rake install[some_theme_name]"
 task :install, :theme do |t, args|
@@ -54,24 +57,40 @@ task :generate do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
   puts "## Generating Site with Jekyll"
   system "compass compile --css-dir #{source_dir}/stylesheets"
-  system "jekyll build"
+  system "jekyll"
 end
 
 desc "Watch the site and regenerate when it changes"
-task :watch, :drafts do |t, args|
+task :watch do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  ENV['JEKYLL_DRAFTS'] = 'true' if args.drafts
-  system "compass compile"
-  system "guard"
+  puts "Starting to watch source with Jekyll and Compass."
+  system "compass compile --css-dir #{source_dir}/stylesheets" unless File.exist?("#{source_dir}/stylesheets/screen.css")
+  jekyllPid = Process.spawn({"OCTOPRESS_ENV"=>"preview"}, "jekyll --auto")
+  compassPid = Process.spawn("compass watch")
+
+  trap("INT") {
+    [jekyllPid, compassPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
+    exit 0
+  }
+
+  [jekyllPid, compassPid].each { |pid| Process.wait(pid) }
 end
 
 desc "preview the site in a web browser"
-task :preview, :drafts do |t, args|
+task :preview do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  ENV['JEKYLL_DRAFTS'] = 'true' if args.drafts
-  ENV['JEKYLL_SERVE'] = 'true'
-  system "compass compile"
-  system "guard"
+  puts "Starting to watch source with Jekyll and Compass. Starting Rack on port #{server_port}"
+  system "compass compile --css-dir #{source_dir}/stylesheets" unless File.exist?("#{source_dir}/stylesheets/screen.css")
+  jekyllPid = Process.spawn({"OCTOPRESS_ENV"=>"preview"}, "jekyll --auto")
+  compassPid = Process.spawn("compass watch")
+  rackupPid = Process.spawn("rackup --port #{server_port}")
+
+  trap("INT") {
+    [jekyllPid, compassPid, rackupPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
+    exit 0
+  }
+
+  [jekyllPid, compassPid, rackupPid].each { |pid| Process.wait(pid) }
 end
 
 # usage rake new_post[my-new-post] or rake new_post['my new post'] or rake new_post (defaults to "new-post")
@@ -93,7 +112,7 @@ task :new_post, :title do |t, args|
     post.puts "---"
     post.puts "layout: post"
     post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
-    post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
+    post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %z')}"
     post.puts "comments: true"
     post.puts "categories: "
     post.puts "---"
@@ -169,7 +188,7 @@ task :update_style, :theme do |t, args|
   mv "sass", "sass.old"
   puts "## Moved styles into sass.old/"
   cp_r "#{themes_dir}/"+theme+"/sass/", "sass"
-  cp_r "sass.old/custom/.", "sass/custom"
+  cp_r "sass/custom/.", "sass.old/custom"
   puts "## Updated Sass ##"
 end
 
@@ -233,7 +252,7 @@ desc "deploy public directory to github pages"
 multitask :push do
   puts "## Deploying branch to Github Pages "
   puts "## Pulling any updates from Github Pages "
-  cd "#{deploy_dir}" do
+  cd "#{deploy_dir}" do 
     system "git pull"
   end
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
@@ -242,7 +261,7 @@ multitask :push do
   cp_r "#{public_dir}/.", deploy_dir
   cd "#{deploy_dir}" do
     system "git add -A"
-    puts "\n## Commiting: Site updated at #{Time.now.utc}"
+    puts "\n## Committing: Site updated at #{Time.now.utc}"
     message = "Site updated at #{Time.now.utc}"
     system "git commit -m \"#{message}\""
     puts "\n## Pushing generated #{deploy_dir} website"
@@ -292,7 +311,7 @@ task :setup_github_pages, :repo do |t, args|
     repo_url = args.repo
   else
     puts "Enter the read/write url for your repository"
-    puts "(For example, 'git@github.com:your_username/your_username.github.io)"
+    puts "(For example, 'git@github.com:your_username/your_username.github.io.git)"
     puts "           or 'https://github.com/your_username/your_username.github.io')"
     repo_url = get_stdin("Repository url: ")
   end
@@ -322,10 +341,8 @@ task :setup_github_pages, :repo do |t, args|
       end
     end
   end
-  url = "http://#{user}.github.io"
-  url += "/#{project}" unless project == ''
   jekyll_config = IO.read('_config.yml')
-  jekyll_config.sub!(/^url:.*$/, "url: #{url}")
+  jekyll_config.sub!(/^url:.*$/, "url: #{blog_url(user, project)}")
   File.open('_config.yml', 'w') do |f|
     f.write jekyll_config
   end
@@ -345,7 +362,7 @@ task :setup_github_pages, :repo do |t, args|
       f.write rakefile
     end
   end
-  puts "\n---\n## Now you can deploy to #{url} with `rake deploy` ##"
+  puts "\n---\n## Now you can deploy to #{repo_url} with `rake deploy` ##"
 end
 
 def ok_failed(condition)
@@ -368,6 +385,16 @@ def ask(message, valid_options)
     answer = get_stdin(message)
   end
   answer
+end
+
+def blog_url(user, project)
+  url = if File.exists?('source/CNAME')
+    "http://#{IO.read('source/CNAME').strip}"
+  else
+    "http://#{user}.github.io"
+  end
+  url += "/#{project}" unless project == ''
+  url
 end
 
 desc "list tasks"
