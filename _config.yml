@@ -4,7 +4,7 @@
 
 url: http://blog.ryangeyer.com
 title: Random Musings
-subtitle: 
+subtitle:
 author: Ryan J. Geyer
 simple_search: http://google.com/search
 description:
@@ -90,7 +90,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name: octopressgithubpages
+disqus_short_name: randmu
 disqus_show_comment_count: true
 
 # Google Analytics

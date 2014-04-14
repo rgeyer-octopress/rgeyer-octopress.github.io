@@ -1,3 +1,13 @@
+When cloning to a new machine or directory;
+http://weishi.github.io/blog/2013/07/24/setup-an-existing-octopress-repository-after-git-clone/
+
+git clone git@github.com:username/username.github.io.git
+git checkout source
+mkdir _deploy
+cd _deploy
+git init
+git remote add -t master -f origin git@github.com:username/username.github.io.git
+
 ## What is Octopress?
 
 Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
