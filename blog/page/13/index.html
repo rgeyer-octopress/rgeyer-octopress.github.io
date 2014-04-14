@@ -63,6 +63,135 @@
 
   <header>
     
+      <h1 class="entry-title"><a href="/2008/12/14/uploading-to-flickr-from-picasa-on-linux/">Uploading to Flickr From Picasa on Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-14T00:00:00-08:00" pubdate data-updated="true"></time> - 
+        
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/linux/'>Linux</a>, <a class='category' href='/categories/photography/'>Photography</a>
+  
+</span>
+
+
+        
+         | <a href="/2008/12/14/uploading-to-flickr-from-picasa-on-linux/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When I performed my search for the perfect <a href="/2008/09/25/photo-sharing-services/">photo sharing</a> solution, I fell in love with the Picasa desktop application.  I even discovered that there is a linux version.  However, as you&rsquo;d likely expect, it didn&rsquo;t really play nice as far as uploading photos to any photo sharing site other than Google&rsquo;s Picasa Web Albums.</p>
+
+<p>On windows, there is a great solution called <a href="http://jerryong.com/blog/2008/06/picasa2flickr-uploads-your-picasa-photos-directly-to-flickr/">picasa2flickr</a> which passes the desired photo&rsquo;s to the windows <a href="http://www.flickr.com/tools/uploadr/">Flickr Uploader</a>.  Again, for obvious reasons, this doesn&rsquo;t work well on linux.</p>
+
+<p>So, having determined that it wasn&rsquo;t worth my time to pursue trying to get Flickr uploads working from Picasa on Linux, I started evaluating many of the other native options on linux, such as digikam and fspot.  While these more easily uploaded to Flickr, and had open API&rsquo;s, none of them worked quite the way I wanted, so I abandoned my search for a good solution.</p>
+
+<p>Then, on a whim I did a Google search just a couple hours after Andy O&#8217;Neill made a <a href="http://ultrahigh.org/2008/12/09/picflick-picasa-to-flickr-export-on-linux/">blog post</a> about a button he wrote to import photos to Flickr from the Linux version of Picasa, named picflick.</p>
+
+<p>I eagerly (re)installed Picasa3 on my Gentoo box using a beta ebuild found <a href="http://bugs.gentoo.org/show_bug.cgi?id=240406">here</a>.  Then installed his button.</p>
+
+<p>After playing with it for a bit, I realized a few things didn&rsquo;t quite jive for me.</p>
+
+<p>1) The script automatically resizes the image before uploading it to Flickr.  I prefer to upload all of my images at their original resolution, so this was a bit of a road block for me.</p>
+
+<p>2) The script used a Perl module to upload to Flickr.  For the life of me, I couldn&rsquo;t seem to figure out how to get it authorized with my Flickr account to actually permit uploads.  I&rsquo;m sure if I spent a bit more time and read a few more manuals I could have gotten it right, but it didn&rsquo;t quite work &ldquo;out-of-the-box&rdquo; for me.</p>
+
+<p>3) I&rsquo;d prefer to see the progress being made, rather than the beeps and tray notifications that Andy&rsquo;s script provided.</p>
+
+<p>So, I stole the key part of his script, the part which translates Windows paths to *nix ones, and broke down the rest to simply pass the photos on to my preferred linux Flickr uploader, <a href="http://kflickr.sourceforge.net/wikka.php?wakka=Kflickr">KFlickr</a></p>
+
+<p>Here&rsquo;s the contents of my script, including the win2native function written by Andy.</p>
+
+<pre lang="bash" line="1">
+#!/bin/bash
+
+DEBUG=1     # debug to $LOG
+LOG=/tmp/picflick.log
+PICASA_WINE_DIR="$HOME/.google\/picasa\/3.0\/drive_c"  # Relative to $HOME
+PICASA_WINE_DIR_NATIVE=`echo $PICASA_WINE_DIR |sed 's|\\\\||g'`
+
+function debug() {
+        if [ $DEBUG -eq 1 ]; then
+                echo "$*" >> $LOG
+        fi
+}
+
+# wine2native(): convert wine filename to native linux filenames
+# Arguments: _name_ of variable which holds path
+# Example: wine2native file  # not wine2native $file
+function wine2native() {
+        VAR=$1
+        eval "VAL=\$$1"
+        debug "Wine path: $VAL"
+        # use '|' to delimit the paths
+        VAL=`echo "$VAL" | \
+                sed "s|C:|$PICASA_WINE_DIR|" | \
+                sed 's|\\\\|/|g'`
+        debug "Source file: $VAL"
+        eval "$VAR=\$VAL"
+}
+
+# check we have the required dependencies
+which kflickr > /dev/null || die "You need to install kflickr"
+
+file=$1
+wine2native file
+DIR=`dirname "$file"`
+EXT=${file##*.}
+debug "START_UPLOAD"
+for file in "$@"; do
+        wine2native file
+        KFLICKR="$KFLICKR $file"
+done
+
+debug "Launching kflickr with the following args $KFLICKR"
+kflickr $KFLICKR
+
+debug "Done"
+</pre>
+
+
+<p>Now when I click the &ldquo;Flickr&rdquo; button in Picasa, it brings up the KFlickr app with all the pictures I selected ready to upload.  Thanks for the inspiration, and code bits to make this work Andy, I was too lazy to actually figure out what was necessary to pull the image paths from Picasa and use them.</p>
+</div>
+  
+  
+
+
+</div>
+</article>
+
+
+    <article class="post"><div class="article-format">
+
+  <header>
+    
       <h1 class="entry-title"><a href="/2008/12/08/whopper-virgins-campaign/">Whopper Virgins Campaign</a></h1>
     
     
@@ -766,105 +895,6 @@ posted in
 </div>
 </article>
 
-
-    <article class="post"><div class="article-format">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/2008/09/17/the-nikon-d90-excites-me/">The Nikon D90 Excites Me</a></h1>
-    
-    
-      <p class="meta">
-        
-  
-
-
-  
-    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
-  
-
- - 
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-09-17T00:00:00-07:00" pubdate data-updated="true"></time> - 
-        
-
-posted in
-<span class="categories">
-  
-    <a class='category' href='/categories/photography/'>Photography</a>, <a class='category' href='/categories/videography/'>Videography</a>
-  
-</span>
-
-
-        
-         | <a href="/2008/09/17/the-nikon-d90-excites-me/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Okay, so it&rsquo;s not news that the new <a href="http://nikonusa.com/Find-Your-Nikon/Product/Digital-SLR/25446/D90.html">Nikon D90</a> digital SLR has been announced.</p>
-
-<p>The camera is the following (new) features crammed into a body with the same footprint as the D80.</p>
-
-<ul>
-  <li>12.3MP CMOS sensor</li>
-  <li>3 inch screen with &#8220;Live View&#8221;</li>
-  <li>Built in support for GPS geo-tagging in your EXIF data (GPS receiver sold seperately)</li>
-  <li>D-Movie mode for up to 5 minutes of 720p video</li>
-  <li>Probably some other stuff that escaped my notice or didn&#8217;t seem important to me</li>
-</ul>
-
-
-
-
-<h3>12.3MP CMOS sensor</h3>
-
-
-<p>No surprise here, it&rsquo;s a higher MP sensor, and is a CMOS sensor rather than a CCD sensor.  To be honest, I&rsquo;m not clear on the differences between the two, but CMOS sensors are what are in all the newer cameras, as well as my HDV camcorder.</p>
-
-<h3>3 inch screen with &#8220;Live View&#8221;</h3>
-
-
-<p>You simply can&rsquo;t argue that a bigger screen is better, and the addition of &ldquo;Live View&rdquo; (basically the ability to use the screen as a viewfinder, like your point-and-shoot digicam) is pretty cool too.</p>
-
-<h3>Built in GPS geo-tagging support</h3>
-
-
-<p>Also pretty cool and allows you to show exactly where photos were taken, though there are ways to do this with some existing dSLR&rsquo;s.  Doesn&rsquo;t really do much for me since I&rsquo;m rarely taking photos in any really exciting places.</p>
-
-<h3>D-Movie mode</h3>
-
-
-<p>Yup, you can record up to 5 minutes of 720p video with mono sound with the D90.  There is a lot of controversy about this ability, and many are calling it a gimmick.</p>
-
-<p>Now, with all that said, I&rsquo;m not ready to go out and trade my D80 in for one.  &ldquo;But I thought you said you were excited.&rdquo;, I can hear you saying..</p>
-
-<p>Well, yes..  I&rsquo;m very VERY intrigued by the D-Movie mode.  Now, as it&rsquo;s implemented in the D90 I&rsquo;d rather use my Sony HDR-HC1 camcorder to capture video to tape, but the idea of similar resolution captured through a nice Nikon VR lens with the ability to use nice depth of field tricks is very VERY exciting to me.  There have been people who&rsquo;ve speculated that Nikon may make the transition into a full fledged video camera using the technology from this camera.  If they do, and they keep it affordable (say, under $2k), I&rsquo;d be first in line for one!</p>
-
-<p>Meanwhile, I&rsquo;m looking into building an adapter that will allow me to attach my SLR lenses to my little camcorder to get depth of field (DOF), but I&rsquo;d much prefer having something that does this sort of thing by design!</p>
-
-<p>If you&rsquo;re curious about the &ldquo;DOF adapter&rdquo;, I just recently discovered that such a thing existed from a <a href="http://strobist.blogspot.com/2008/08/labor-day-weekend-speedlinks.html">labor day post</a> over at <a href="http://www.strobist.blogspot.com/">Strobist</a>.</p>
-</div>
-  
-  
-
-
-</div>
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/12/" class="prev">Prev</a>
@@ -882,6 +912,10 @@ posted in
     <ul class="recent_posts">
       
         <li>
+          <a href="/2014/04/13/out-of-hibernation/">Out of hibernation?</a>
+        </li>
+      
+        <li>
           <a href="/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
         </li>
       
@@ -895,10 +929,6 @@ posted in
       
         <li>
           <a href="/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13:  NO WAY!</a>
-        </li>
-      
-        <li>
-          <a href="/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12:  Old Hat</a>
         </li>
       
     </ul>

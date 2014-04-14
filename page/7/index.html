@@ -144,6 +144,78 @@
 
   <header>
     
+      <h1 class="entry-title"><a href="/2010/06/13/how-do-you-remember-that-much/">How Do You Remember That Much?</a></h1>
+    
+    
+      <p class="meta">
+        
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-13T00:00:00-07:00" pubdate data-updated="true"></time> - 
+        
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/personal-expressions/'>Personal Expressions</a>
+  
+</span>
+
+
+        
+         | <a href="/2010/06/13/how-do-you-remember-that-much/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve been asked this question numerous times and usually shrug and say, &ldquo;I don&rsquo;t know.  I just do.&rdquo;</p>
+
+<p>I have been teased for years by my husband as I have memories, vivid memories, from two years old if not younger.  I have asked my mom about them and she is always caught off guard when I give specific details and she can remember said incident.  Every now and again I catch my father off guard with my memory.  My sister has told me that it shouldn&rsquo;t be possible and yet I catch her off guard with the accuracy of my memories.</p>
+
+<p>Last night I clutched my husband&rsquo;s hand watching Grey&rsquo;s Anatomy season finale, and he kept asking me if I should be watching it due to some of my life experiences.  Too many bad experiences through family with guns, which is a cruel irony considering only one family member owned a gun and it was only for the sport of hunting.  Then in attempts to prevent me waking him up with nightmares he sat and chit chatted with me to see why I was upset when I was upset.</p>
+
+<p>Maybe that is why my memories are so vivid from so long ago.  So many traumatic or dramatic things occurred throughout my childhood so it is hard not to remember some of the simple aspects of my life around said memories.   My husband shook his head as I explained that when I was very young I was convinced that much of life wasn&rsquo;t real, couldn&rsquo;t be because those kinds of things don&rsquo;t happen around little kids.  He shook his head because he was disturbed by my recounting of some of the sadder or scarier memories.  My parents did all they could to protect me but sadly no matter how hard they tried, life happened and I saw things and experienced things beyond their control.</p>
+
+<p>Maybe this is why the life of a stay at home mom looked so attractive when we were dating, and I was 19 years old, why marriage was an amazing and exciting when I was 20.  Maybe this is why after eight years of marriage, and nearly two children later (T will be an outside baby soon) I consider my life beautiful and amazing and incredibly exciting.  I had already lived a very full and exciting life and was ready to slow the hell down.</p>
+
+<p>Yes, I remember that, in great detail.  I remember using my smurf vacuum I got when I was two in my grandfather&rsquo;s house.  I remember the original lay out so well that when I walked through his remodeled home nearly a decade later I was able to show my mother how it used to be laid out to a T.  Then recount my memory of my great aunt in the kitchen cooking.</p>
+
+<p>Yeah, I keep hoping I will continue to add to my vivid memories, even though things  aren&rsquo;t as traumatic or dramatic.  I&rsquo;m loving the calm that has occurred in my life, and I hope it continues.</p>
+</div>
+  
+  
+
+
+</div>
+
+      </article>
+    
+    
+      <article class="span4">
+        <div class="article-format">
+
+  <header>
+    
       <h1 class="entry-title"><a href="/2010/06/06/have-your-classic-and-drive-it-too/">Have Your Classic, and Drive It Too</a></h1>
     
     
@@ -831,151 +903,6 @@ posted in
 
       </article>
     
-    
-      <article class="span4">
-        <div class="article-format">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/2010/03/31/grails-and-tomcat6-deployment-notes/">Grails and Tomcat6 - Deployment Notes</a></h1>
-    
-    
-      <p class="meta">
-        
-  
-
-
-  
-    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
-  
-
- - 
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-03-31T00:00:00-07:00" pubdate data-updated="true"></time> - 
-        
-
-posted in
-<span class="categories">
-  
-    <a class='category' href='/categories/grails-slash-groovy/'>Grails/Groovy</a>
-  
-</span>
-
-
-        
-         | <a href="/2010/03/31/grails-and-tomcat6-deployment-notes/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Things have been busy, and I haven&#8217;t had the time to devote to writing updates on either the Caddy, or my work in Grails.  But enough complaining, to pass the time until I can get some more quality content here, I wanted to share this little gem that took me entirely too long to figure out.</p>
-
-
-
-
-<p>I wanted to be able to deploy my grails applications to a sub context, or sub directory of the root of my site.  This way I could leave my blog at the root of my domain, and categorize my grails apps a bit.  Take the following example.  Suppose I wanted to deploy a bunch of example grails apps in a subdirectory named &#8220;examples&#8221; off of the root of my web host.  Something like http://&lt;yourserver&gt;/examples/&lt;your-app-name&gt;.  This is how I was able to finally accomplish it.</p>
-
-
-
-
-<h2>Deploy to a Tomcat Sub-Context</h2>
-
-
-<p>If you&#8217;re a Tomcat guru this is all going to seem elementary, and it is, but it was superbly difficult for me to mine the information I needed from the web, so I&#8217;m sharing what I&#8217;ve learned here.  If, on the other hand, you&#8217;re a Tomcat newbie like me, you hopefully have a running instance of the Tomcat service.  If you don&#8217;t there are a number of great tutorials, including the official <a href="http://tomcat.apache.org/tomcat-6.0-doc/appdev/installation.html">installation guide</a>.</p>
-
-
-
-
-<p>Most of the stuff that you&#8217;ll read out there says that to deploy your grails app, you just upload your *.war file to the Tomcat &#8220;webapps&#8221; directory and you&#8217;re in business.  This is true, but of course when you do this, you just end up with a URL that looks like http://&lt;yourserver&gt;:8080/&lt;your-app-name&gt;.  Now, this is fine if you only intend to deploy a few apps and you dont mind that application being at the root for your domain/server name.  But we&#8217;re trying to put our apps in a sub directory of our site, off of the root.</p>
-
-
-
-
-<p>My first instinct to accomplish this was to use some of the properties of the grails app itself, and I found many examples which recommended this.  So, I happily set my app.context in application.properties to the path I wanted.</p>
-
-
-
-
-<figure class='code'><figcaption><span>application.properties (snippet) </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='groovy'><span class='line'> <span class="n">app</span><span class="o">.</span><span class="na">context</span><span class="o">=</span><span class="s">/examples/</span><span class="n">MyExampleApp</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<p>This works great when I do a grails run-app, I get the app deployed to http://localhost:8080/examples/MyExampleApp just like I wanted.  But, when I create a war and toss it in my Tomcat webapps directory, I still get the same old behavior of the application being deployed to the root of Tomcat with the same name as the war file.  So how the heck do I deploy my war into a sub directory of my Tomcat site?!</p>
-
-
-
-
-<p>The secret lies in not simply dumping your war file into an existing &#8220;context&#8221; for Tomcat, but instead creating your own, and pointing that context to your war file. The first step toward this is to prepare a place for our webapp directories, outside of the Tomcat root webapp directory.  I choose /srv/tomcat-webapps but you&#8217;re obviously welcome to put this anywhere you like.  So let&#8217;s create the directory where we&#8217;re going to deploy our first example app.</p>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir -p /srv/tomcat-webapps/examples/MyExampleApp</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<p>Now, we need to find the Catalina configuration directory for our Tomcat deployment.  On Ubuntu, which is the environment I&#8217;m using, this is at /etc/tomcat6/Catalina/localhost.  What you&#8217;ll find there, are a number of XML files each one describes a &#8220;context&#8221;.  You can define sub-contexts by using a special syntax in the filename which is just barely mentioned in passing in the <a href="http://tomcat.apache.org/tomcat-6.0-doc/config/context.html#Introduction">Tomcat docs</a>.  You can set a multi level context name by using the # character.  So lets create a new sub-context for our example app at the correct path.</p>
-
-
-
-
-<figure class='code'><figcaption><span>#!/bin/sh mark:2 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> /etc/tomcat6/Catalina/localhost
-</span><span class='line'>vim examples#MyExampleApp.xml
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<p>Now we need to add the content to this context file which will tell Tomcat where to find the applications files. Remember back when we created a new directory for our tomcat webapps, this is where we&#8217;ll use it.</p>
-
-
-
-
-<figure class='code'><figcaption><span>examples#MyExampleApp.xml </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-</span><span class='line'><span class="nt">&lt;context</span> <span class="na">antiresourcelocking=</span><span class="s">&quot;false&quot;</span>
-</span><span class='line'><span class="na">docbase=</span><span class="s">&quot;/srv/tomcat-webapps/examples/MyExampleApp&quot;</span> <span class="na">path=</span><span class="s">&quot;/examples/MyExampleApp&quot;</span> <span class="na">privileged=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<p>Now if you restart Tomcat, and unzip your war file to /srv/tomcat-webapps/examples/MyExampleApp you should be able to navigate to http://&lt;yourserver&gt;:8080/examples/MyExampleApp and see your application!</p>
-
-</div>
-  
-  
-
-
-</div>
-
-      </article>
-    
     </div>
       <div class="row">
         <ul class="pager">
@@ -1003,6 +930,10 @@ posted in
     <ul class="recent_posts">
       
         <li>
+          <a href="/2014/04/13/out-of-hibernation/">Out of hibernation?</a>
+        </li>
+      
+        <li>
           <a href="/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
         </li>
       
@@ -1016,10 +947,6 @@ posted in
       
         <li>
           <a href="/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13:  NO WAY!</a>
-        </li>
-      
-        <li>
-          <a href="/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12:  Old Hat</a>
         </li>
       
     </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Random Musings]]></title>
   <link href="http://blog.ryangeyer.com/atom.xml" rel="self"/>
   <link href="http://blog.ryangeyer.com/"/>
-  <updated>2014-04-13T18:50:29-07:00</updated>
+  <updated>2014-04-13T18:59:26-07:00</updated>
   <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Out of hibernation?]]></title>
+    <link href="http://blog.ryangeyer.com/2014/04/13/out-of-hibernation/"/>
+    <updated>2014-04-13T18:52:50-07:00</updated>
+    <id>http://blog.ryangeyer.com/2014/04/13/out-of-hibernation</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s been over two years since I&rsquo;ve blogged anything.  That&rsquo;s a looong time.</p>
+
+<p>You may notice that the blog looks a little different (if you can remember over two years ago)
+which is because I&rsquo;ve adopted a Jekyll/Octopress based blog platform instead of
+dragging Wordpress along.  The result should be a fair bit faster also.</p>
+
+<p>You&rsquo;ll likely also notice that the familiar domain name of &ldquo;nslms.com&rdquo; has been
+traded in favor of a much more canonically familiar &ldquo;blog.ryangeyer.com&rdquo;, it should
+make me, and my blog a little easier to find.</p>
+
+<p>Stay tuned for more (if I can shake off the lazy).</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How I Vandalized a Weed Whacker at Home Depot]]></title>
@@ -393,39 +412,6 @@ You would think that being the only girl in the house that I would not be surpri
 <p>My eldest loves learning new words and regularly amazes me.  Of late he loves to say, &ldquo;I suppose.&rdquo;, and uses the perfect inflection when saying it.  He uses other fantastic phrases and only likes to use them when he understands their meaning and asks you to say it so he can get the pronunciation down pat then put his own spin on it.  My favorite is when someone is trying to talk about something and they don&rsquo;t understand a word he uses, he then says it perfectly in an exasperated tone that says, &lsquo;duh.&rsquo;.  Yes my children are a wee bit snobby.</p>
 
 <p>So I have the caveman, short hand communication down pat with my guys and the one that is the biggest fan of communicating with grunts is the big one, you know, my husband and their father.  Who would have guessed?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Taking Route 53 to Optimized Website Performance]]></title>
-    <link href="http://blog.ryangeyer.com/2011/04/11/taking-route-53-to-optimized-website-performance/"/>
-    <updated>2011-04-11T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/04/11/taking-route-53-to-optimized-website-performance</id>
-    <content type="html"><![CDATA[<p>When Amazon announced it&rsquo;s Authoritative DNS service, cheekily named Route 53 a few things popped into my head immediately.  First, this should be a much easier way to get the effects of Dynamic DNS which we were currently leveraging <a href="http://www.dnsmadeeasy.com/">DNS Made Easy</a> for.  Secondly, I wonder how much of a performance boost using it might provide.</p>
-
-<!--more-->
-
-
-<p>Amazon&rsquo;s entire model for providing services through AWS is predicated on the idea of distributing load.  They have several availability zones for computing and storage, they have a Content Delivery Network (CDN) which will deliver your static web content to users at blazing speeds because it&rsquo;s coming from a data center as close to them as possible.</p>
-
-<p>So why wouldn&rsquo;t that persist to their new DNS offering?</p>
-
-<p>Turns out I wasn&rsquo;t the only one wondering this.  Brant recently revealed some performance and stability findings in a <a href="http://x-pose.org/2011/02/amazon-route-53-benchmark-comparisons/">blog post</a> about Route 53.</p>
-
-<h2>How does it improve speed?</h2>
-
-
-<p>With the increasing focus on the speed of websites, everything is getting optimized.  Image sizes, whitespace in your CSS and JS files, the number of additional files you load, etc.  Each of these techniques strips a millisecond or two off of the time it takes your browser to find and download all of the components which make up the page you&rsquo;re looking at.</p>
-
-<p>But there is another facet of browsing the web which takes time, the DNS lookup.  See, your browser has no idea which server to send the request for &ldquo;www.google.com&rdquo; to, since servers are identified not by their domain or hostnames, but by their IP address.  DNS is used to translate the hostname you enter into your browser, into an IP address which can be used to actually locate the server.</p>
-
-<p>Of course, this lookup takes time, and if you have lots of components on your page, perhaps even some from other servers, this time could add up.</p>
-
-<p>Google launched a recursive DNS service for this some time back.  By using the recursive (think &ldquo;cached&rdquo;) servers you could drastically improve your DNS lookup times which is demonstrated quite well in <a href="http://code.google.com/speed/public-dns/docs/performance.html">this FAQ</a> for the service.</p>
-
-<p>The downside of course is that you only get the benefit if you change your computers network settings to use the Google DNS servers, and since the DNS data is cached it can lag behind when changes are made to the authoritative DNS records.</p>
-
-<p>On the other hand, if you use Route 53 as the authority for your DNS records, every internet user will benefit from the performance boost of making a DNS request to a much closer (and faster) DNS server.  Sweet!</p>
 ]]></content>
   </entry>
   
