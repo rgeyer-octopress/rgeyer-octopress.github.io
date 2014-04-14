@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Chef for RightScale Quick Start - Ryans Octopress Blog</title>
+  <meta name="author" content="Ryan J. Geyer">
+  <link rel="author" href="humans.txt">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  
+    
+  
+  <meta name="description" content="For the past few weeks I have been getting down and dirty writing Chef recipes for use in RightScale. With Chef support still in beta on RightScale &hellip;">
+  
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.ryangeyer.com/2010/11/29/chef-for-rightscale-quick-start/">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
+  <meta name="og:type" content="website" />
+  <meta name="og:site_name" content="Ryans Octopress Blog" />
+  <meta name="og:title" content="Chef for RightScale Quick Start" />
+  <meta name="og:description" content="For the past few weeks I have been getting down and dirty writing Chef recipes for use in RightScale. With Chef support still in beta on RightScale &hellip;" />
+  <meta name="og:url" content="http://blog.ryangeyer.com/2010/11/29/chef-for-rightscale-quick-start/"/>
+  <meta name="url" content="http://blog.ryangeyer.com/2010/11/29/chef-for-rightscale-quick-start/">
+  
+  <meta name="subject" content="Cloud computing"/>
+  <meta name="category" content="Cloud computing"/>
+  
+  <meta name="distribution" content="global">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2840005-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">Ryans Octopress Blog</a>
+    <ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/archives">Archives</a></li>
+    </ul>
+    <ul class="nav" data-subscription="rss">
+      <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+      
+    </ul>
+      
+    <form class="navbar-form" action="http://google.com/search" method="get">
+      <fieldset role="search">
+        <input type="hidden" name="q" value="site:blog.ryangeyer.com" />
+        <input class="span2" type="text" name="q" results="0" placeholder="Search"/>
+      </fieldset>
+    </form>
+      
+    
+  </div>
+</div>
+</nav>
+  <div class="wrapper_single">
+    <div class="container">
+      <article class="span8 offset2" role="article">
+        <div class="article-format">
+
+  <header>
+    
+      <h1 class="entry-title">Chef for RightScale Quick Start</h1>
+    
+    
+      <p class="meta">
+        
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-29T00:00:00-08:00" pubdate data-updated="true"></time> - 
+        
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/cloud-computing/'>Cloud computing</a>
+  
+</span>
+
+
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For the past few weeks I have been getting down and dirty writing Chef recipes for use in RightScale.</p>
+
+<p>With Chef support still in beta on RightScale, and me being a complete Chef newbie it&rsquo;s I&rsquo;m still on the front side of the learning curve.</p>
+
+<p>If you&rsquo;re just getting started with Chef for RightScale, you might benefit from this quick start and some of the lessons I learned while getting started.</p>
+
+<h1>Mise en place</h1>
+
+
+<p>While you could just open up Notepad or TextEdit and start writing your Chef recipes, there are a few resources that will make the experience much more enjoyable.</p>
+
+<h2>Install Chef</h2>
+
+
+<p>The first thing you&rsquo;re going to want to do is install the Chef Ruby Gem.  This will add all of the libraries and binaries for Chef.</p>
+
+<p>While we&rsquo;re writing our recipes for use with RightScale we won&rsquo;t need to worry about using the Chef Server, Chef Solo, or Chef Client, so don&rsquo;t bother configuring any of those.</p>
+
+<p>I&rsquo;m developing on a Mac and the only suitable installation method seems to be using Ruby Gems to install.  This mechanism should also work for most Linux and Debian machines which already have Ruby installed.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gem install chef</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Be sure that you run this as root, or with sudo or Chef will get installed at ~/.gem and won&rsquo;t be in your $PATH or consequently accessible to other users.</p>
+
+<h2>Sharpen your knives</h2>
+
+
+<p>Now that you have all of the Chef goodies installed, you&rsquo;ll have a binary named &ldquo;knife&rdquo;.  The knife is a utility which we&rsquo;ll be using as we develop our cookbooks and recipes which you&rsquo;ll see later.</p>
+
+<p>First though, we need to configure knife.  Since we&rsquo;ll only be using knife to act locally on our recipes and cookbooks we don&rsquo;t need to give it legit values for a Chef server, but we do need to complete the configuration step to satisfy knife and prevent it from crashing when we use it.</p>
+
+<p>To create a simple configuration file for knife, just run knife config, and accept all of the defaults.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>knife configure
+</span><span class='line'>No knife configuration file found
+</span><span class='line'>Where should I put the config file? [~/.chef/knife.rb] 
+</span><span class='line'>Please enter the chef server URL: [http://localhost:4000] 
+</span><span class='line'>Please enter an existing username or clientname for the API: [rgeyer] 
+</span><span class='line'>Please enter the validation clientname: [chef-validator] 
+</span><span class='line'>Please enter the location of the validation key: [/etc/chef/validation.pem] 
+</span><span class='line'>Please enter the path to a chef repository (or leave blank): 
+</span><span class='line'>WARN: *****
+</span><span class='line'>WARN: 
+</span><span class='line'>WARN: You must place your client key in:
+</span><span class='line'>WARN:   /Users/rgeyer/.chef/rgeyer.pem
+</span><span class='line'>WARN: Before running commands with Knife!
+</span><span class='line'>WARN: 
+</span><span class='line'>WARN: *****
+</span><span class='line'>WARN: 
+</span><span class='line'>WARN: You must place your validation key in:
+</span><span class='line'>WARN:   /etc/chef/validation.pem
+</span><span class='line'>WARN: Before generating instance data with Knife!
+</span><span class='line'>WARN: 
+</span><span class='line'>WARN: *****
+</span><span class='line'>WARN: Configuration file written to /Users/rgeyer/.chef/knife.rb</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You&rsquo;re safe to ignore the warnings since they only pertain to actually connecting to a Chef server, which we won&rsquo;t be doing.</p>
+
+<p>That&rsquo;s it for installing and configuring Chef if you&rsquo;re using it with RightScale!</p>
+
+<h2>Prepare your pantry</h2>
+
+
+<p>Once you get going with Chef you&rsquo;re going to need to store your cookbooks somewhere for RightScale to find them and run them.</p>
+
+<p>RightScale will use svn or git repositories, as well as simply downloading a tar or zip file, but my personal preference is to use a git repository.</p>
+
+<p>The quickest and easiest way to get started with git is to head over to <a href="https://github.com/">github</a> and sign up for a free account.</p>
+
+<p>Once you&rsquo;re setup, go ahead and create the repository we&rsquo;ll be using for our Chef cookbooks, and note the SSH URL to your new repository.  It should look something like <em>git@github.com:&lt;github_username&gt;/&lt;repo_name&gt;.git</em>.  Write it down or keep the browser window open so you can reference it later.</p>
+
+<h1>Heat things up</h1>
+
+
+<p>Now that you&rsquo;ve got your <a href="http://en.wikipedia.org/wiki/Mise_en_place">mise en place</a> it&rsquo;s time to get cooking for RightScale with Chef.</p>
+
+<h2>Create your repo</h2>
+
+
+<p>The first step is to get the file structure of your Chef repository setup.  You could just take a look at an existing repository like the <a href="https://github.com/opscode/cookbooks">opscode</a> cookbooks, or RightScale&rsquo;s <a href="https://github.com/rightscale/cookbooks_public">public repository</a> and replicate it manually, but there is a better way.</p>
+
+<h2>Clone the OpsCode repo</h2>
+
+
+<p>OpsCode, (the folks behind Chef) have conveniently provided a public github repository that represents the skeleton of a fully operational Chef repository.  You can clone this repository to get you started.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/opscode/chef-repo.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Once you&rsquo;ve cloned the skeleton repository, you&rsquo;ll want to configure git to use the new github repository we created earlier.  Here&rsquo;s where you&rsquo;ll use the SSH URL I told you to take note of.  Substitute that URL where you find &lt;ssh_url&gt; below.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd chef-repo/
+</span><span class='line'>git remote rename origin opscode-github
+</span><span class='line'>git remote add origin &lt;ssh_url&gt;
+</span><span class='line'>git remote rm opscode-github
+</span><span class='line'>git push origin master</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<h2>Create cookbook</h2>
+
+
+<p>With the repository skeleton all ready, we&rsquo;re going to want to create our first cookbook and add a recipe to it.</p>
+
+<p>Creating a cookbook is our first chance to use our freshly sharpened knife, like so.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>knife cookbook create my-first-cookbook -o cookbooks/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This should create a nice new cookbook skeleton directory at &lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook.</p>
+
+<p>With that done, let&rsquo;s put our first recipe in the cookbook.  Using your favorite IDE, create and save a file named <em>helloworld.rb</em> inside the new cookbook directory.</p>
+
+<p><strong>EDIT: Many have correctly pointed out that the hello world file should actually go in <em>&lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook/recipes</em>.  Thanks all for the feedback!</strong></p>
+
+<figure class='code'><figcaption><span>helloworld.rb </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">log</span> <span class="s2">&quot;Hello World&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>With the recipe created, we need to add it to our metadata file so that Chef and RightScale can know it&rsquo;s there.  Here&rsquo;s a copy of our default <em>metadata.rb</em> file.  The highlighted line is added to define the recipe we&rsquo;ve added.</p>
+
+<figure class='code'><figcaption><span>metadata.rb mark:8 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">maintainer</span>       <span class="s2">&quot;YOUR_COMPANY_NAME&quot;</span>
+</span><span class='line'><span class="n">maintainer_email</span> <span class="s2">&quot;YOUR_EMAIL&quot;</span>
+</span><span class='line'><span class="n">license</span>          <span class="s2">&quot;All rights reserved&quot;</span>
+</span><span class='line'><span class="n">description</span>      <span class="s2">&quot;Installs/Configures my-first-cookbook&quot;</span>
+</span><span class='line'><span class="n">long_description</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">),</span> <span class="s1">&#39;README.rdoc&#39;</span><span class="p">))</span>
+</span><span class='line'><span class="n">version</span>          <span class="s2">&quot;0.0.1&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">recipe</span> <span class="s2">&quot;my-first-cookbook::helloworld&quot;</span><span class="p">,</span> <span class="s2">&quot;My first recipe, prints Hello World to the RightScale dashboard&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We only have one more step before we&rsquo;re ready to commit our new cookbook and recipe to our new git repository.</p>
+
+<p>RightScale reads the metadata to determine which recipes are available in the repository, and which inputs are available for those recipes.  The file that RightScale evaluates though is a json file named <em>metadata.json</em>.</p>
+
+<p>The contents of <em>metadata.json</em> are effectively the same as <em>metadata.rb</em>, but take heart, you only need maintain the <em>metadata.rb</em> file, then convert it using another Chef command.  To generate <em>metadata.json</em> from <em>metadata.rb</em> just run the following command.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake metadata</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can run this command either right at the root of your repository, or inside each cookbook.  If you run it from the root directory of your repository, it will convert all the metadata files in all of the cookbooks.</p>
+
+<p>Now we&rsquo;re ready to commit our repository and try out our new cookbook.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git add cookbooks/
+</span><span class='line'>git commit -am &quot;Added my-first-cookbook and helloworld recipe&quot;
+</span><span class='line'>git push</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<h1>RightScale Configuration</h1>
+
+
+<p>I&rsquo;m going to assume that you already have some familiarity with the RightScale dashboard, and creating things like ServerTemplates and RightScripts.</p>
+
+<p>What I&rsquo;m going to cover here are steps are necessary to start using Chef with your ServerTemplates.</p>
+
+<h2>Tell RightScale about your Repo</h2>
+
+
+<p>The first thing you need to start using your cookbooks in RightScale is to tell the RightScale dashboard where to find your repo.  To do that, you need to create a new <em>RepoPath</em> in the designer.</p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216898582/" title="Screen shot 2010-11-28 at 7.33.05 PM by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5128/5216898582_2c0d17f8d8_z.jpg" width="640" height="359" alt="Screen shot 2010-11-28 at 7.33.05 PM" /></a></p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216898726/" title="Screen shot 2010-11-28 at 7.33.35 PM by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5205/5216898726_cbc1351324_z.jpg" width="640" height="359" alt="Screen shot 2010-11-28 at 7.33.35 PM" /></a></p>
+
+<p>When you&rsquo;re adding the RepoPath, for the URL field, supply the &ldquo;Git Read-Only URL&rdquo; for your repository, and make sure to specify the path to your cookbooks as <em>cookbooks</em>.</p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216310951/" title="Screen shot 2010-11-28 at 7.34.37 PM by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4104/5216310951_0400b36fd8_z.jpg" width="640" height="440" alt="Screen shot 2010-11-28 at 7.34.37 PM" /></a></p>
+
+<h2>Add your RepoPath to a ServerTemplate</h2>
+
+
+<p>Now that you&rsquo;ve added your repo to the RightScale dashboard, you need to add that RepoPath to a ServerTemplate.  To do that, open the ServerTemplate you want to run Chef cookbooks on, and click the edit pencil on the <em>Repos</em> tab.</p>
+
+<p>Then select the RepoPath we just made, and click OK.</p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216937566/" title="Screen shot 2010-11-28 at 7.56.33 PM by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5128/5216937566_30f703fb4b_z.jpg" width="640" height="440" alt="Screen shot 2010-11-28 at 7.56.33 PM" /></a></p>
+
+<h2>Add a recipe to your ServerTemplate</h2>
+
+
+<p>Our very last step is to add our helloworld recipe to a our ServerTemplate so that we can run it on one of our instances.  Go back to the <em>Scripts</em> tab, and in the script category of your choosing, click <em>Add Recipe</em> and select the helloworld recipe.</p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216369965/" title="Screen shot 2010-11-28 at 8.02.27 PM by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4083/5216369965_469cafb59b_z.jpg" width="640" height="440" alt="Screen shot 2010-11-28 at 8.02.27 PM" /></a></p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216958398/" title="Screen shot 2010-11-28 at 8.02.34 PM by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5127/5216958398_b087c4abb2_z.jpg" width="640" height="440" alt="Screen shot 2010-11-28 at 8.02.34 PM" /></a></p>
+
+<p>From an instance running with the ServerTemplate we just modified, we can run the recipe, and see &ldquo;Hello World&rdquo; appear in the RightScale dashboard.</p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216405207/" title="Screen shot 2010-11-28 at 8.18.58 PM by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4088/5216405207_bfa688f098_z.jpg" width="640" height="440" alt="Screen shot 2010-11-28 at 8.18.58 PM" /></a></p>
+
+<h1>Tips & Tricks</h1>
+
+
+<p>As stated before, Chef support in RightScale is still in Beta.  Because of this there are some gotchas to watch out for.</p>
+
+<h2>Sanity Check Recipe</h2>
+
+
+<p>If there are any syntax errors or anything else amiss in your repository, you&rsquo;ll find that not just the cookbook or recipe which you&rsquo;re working on is failing, but absolutely <strong><em>every</em></strong> recipe in your repo (or any other repo that&rsquo;s part of your RepoPath) will fail with this super informative error message.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>*ERROR&gt; Chef process failed with return code 1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Of course, you can also get that error message if you have some other problem in the recipe you&rsquo;re working on.</p>
+
+<p>Because of this I find it useful to keep a &ldquo;smoke test&rdquo; recipe in my repo, and assigned to the operational scripts on my ServerTemplate when I&rsquo;m doing Chef development.  This recipe should be something simple that you know will always succeed, assuming that everything else is in order.</p>
+
+<p>The helloworld recipe that we created in this exercise is actually a perfect choice for this purpose.</p>
+
+<h1>Taste Test</h1>
+
+
+<p>So there it is, everything you need to know to get started using Chef on RightScale condensed from my few weeks of experience.  I hope it helps you get started configuring your server instances with Chef, which brings a whole new dimension of power and flexibility to the RightScale ServerTemplates.</p>
+
+<p>I&rsquo;m excited to see how Chef support progresses and makes it to <em>production</em> status.</p>
+
+<p>If you&rsquo;re hungry for more info, check out some of the early documentation available about using Chef in RightScale <a href="http://support.rightscale.com/index.php?title=09-Clouds/Multi_Cloud/Chef">here</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-29T00:00:00-08:00" pubdate data-updated="true"></time> - 
+      
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/cloud-computing/'>Cloud computing</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ryangeyer.com/2010/11/29/chef-for-rightscale-quick-start/" data-via="rjgeyer" data-counturl="http://blog.ryangeyer.com/2010/11/29/chef-for-rightscale-quick-start/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    
+      <a class="pull-left" href="/2010/11/24/project-late-model-restoration-suspension-rehab/" title="Previous Post: Project Late Model Restoration - Suspension Rehab">&laquo; Project Late Model Restoration - Suspension Rehab</a>
+    
+    
+      <a class="pull-right" href="/2011/01/03/grails-plugin-dependencies/" title="Next Post: Grails Plugin Dependencies">Grails Plugin Dependencies &raquo;</a>
+    
+  </footer>
+
+</div>
+
+        
+          <div class="article-format">
+            <h1>Comments</h1>
+            <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+          </div>
+        
+      </article>
+    </div>
+  </div>
+  <div id="footer-widgets">
+  <div class="container">
+    <div class="row">
+  <div class="span3">
+    <h2>recent posts</h2>
+    <ul class="recent_posts">
+      
+        <li>
+          <a href="/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">Policy for an S3 only Amazon IAM User</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/24/the-baby/">The baby</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13:  NO WAY!</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12:  Old Hat</a>
+        </li>
+      
+    </ul>
+    <h2><a href="/blog/archives">archives</a></h2>
+  </div>
+  <div class="span3">
+    <h2>social stuff</h2>
+<center>
+  <script type="text/javascript" src="http://twittercounter.com/embed/?username=rjgeyer&style=avatar"></script><noscript><a href="http://twittercounter.com/rjgeyer">Ryan Geyer on Twitter Counter.com</a></noscript>
+
+  <iframe src="http://widgets.klout.com/badge/rjgeyer?size=m" style="border:0" scrolling="no" allowTransparency="true" frameBorder="0" width="160px" height="78px"></iframe>
+
+  <a href="http://www.linkedin.com/pub/1/828/328" ><img src="http://www.linkedin.com/img/webpromo/btn_viewmy_120x33.gif" width="120" height="33" border="0" alt="View Ryan Geyer's profile on LinkedIn"></a>
+</center>
+
+  </div>
+  <div class="span4">
+    
+<a class="twitter-timeline" href="https://twitter.com/rjgeyer" data-widget-id="436931274691706882">Tweets by @rjgeyer</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+  </div>
+  <div class="span2">
+    <h2>found on</h2>
+
+<a href="https://github.com/rgeyer/" rel="tooltip" title="Github"><img class="social_icon" title="Github" alt="github icon" src="/images/glyphicons_381_github.png"></a>
+
+
+
+<a href="http://stackoverflow.com/users/1305386/" rel="tooltip" title="Stack Overflow"><img class="social_icon" title="Stack Overflow" alt="stack overflow icon" src="/images/glyphicons_400_stack_overflow.png"></a>
+
+
+
+<a href="http://www.linkedin.com/in/rjgeyer" rel="tooltip" title="Linkedin"><img class="social_icon" title="Linkedin" alt="Linkedin icon" src="/images/glyphicons_377_linked_in.png"></a>
+
+
+
+<a href="http://twitter.com/rjgeyer" rel="tooltip" title="Twitter"><img class="social_icon" title="Twitter" alt="Twitter icon" src="/images/glyphicons_391_twitter_t.png"></a>
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://plus.google.com/+RyanGeyerCycles?rel=author" rel="tooltip" title="Google Plus"><img class="social_icon" title="Google Plus" alt="Google Plus icon" src="/images/glyphicons_386_google_plus.png"></a>
+
+
+
+<a href="http://www.quora.com/Ryan-Geyer" rel="tooltip" title="Quora"><img class="social_icon" title="Quora" alt="Quora icon" src="/images/glyphicons_385_quora.png"></a>
+
+
+
+<h2>contact at</h2>
+<a href="mailto:me@ryangeyer.com">me@ryangeyer.com</a>
+
+
+  </div>
+</div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-left">
+  <a href="/">Ryans Octopress Blog</a>
+  - Copyright &copy; 2014 - Ryan J. Geyer
+</p>
+<p class="pull-right">
+  <span>Powered by <a href="http://octopress.org/">Octopress</a>.</span>
+  
+    <span>Designed by <a href="http://www.AdrianArtiles.com">Adrian Artiles</a>.</span>
+  
+</p>
+
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.7.2.min.js" type="text/javascript"><\/script>')</script>
+<script src="/javascripts/libs/bootstrap.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.tweet.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.instagram.js" type="text/javascript"></script>
+<script src="/javascripts/libs/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="/javascripts/custom.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'octopressgithubpages';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.ryangeyer.com/2010/11/29/chef-for-rightscale-quick-start/';
+        var disqus_url = 'http://blog.ryangeyer.com/2010/11/29/chef-for-rightscale-quick-start/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

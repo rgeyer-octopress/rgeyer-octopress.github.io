@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Linux 1080p HTPC - Ryans Octopress Blog</title>
+  <meta name="author" content="Ryan J. Geyer">
+  <link rel="author" href="humans.txt">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  
+    
+  
+  <meta name="description" content="So, I finally broke down and built a HTPC (home theater personal computer). Actually, I bought it in late December, and have had it mostly up and &hellip;">
+  
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.ryangeyer.com/2008/02/25/linux-1080p-htpc/">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ryans Octopress Blog" type="application/atom+xml">
+  <meta name="og:type" content="website" />
+  <meta name="og:site_name" content="Ryans Octopress Blog" />
+  <meta name="og:title" content="Linux 1080p HTPC" />
+  <meta name="og:description" content="So, I finally broke down and built a HTPC (home theater personal computer). Actually, I bought it in late December, and have had it mostly up and &hellip;" />
+  <meta name="og:url" content="http://blog.ryangeyer.com/2008/02/25/linux-1080p-htpc/"/>
+  <meta name="url" content="http://blog.ryangeyer.com/2008/02/25/linux-1080p-htpc/">
+  
+  <meta name="subject" content="LinuxWorklogs"/>
+  <meta name="category" content="LinuxWorklogs"/>
+  
+  <meta name="distribution" content="global">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2840005-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">Ryans Octopress Blog</a>
+    <ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/archives">Archives</a></li>
+    </ul>
+    <ul class="nav" data-subscription="rss">
+      <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+      
+    </ul>
+      
+    <form class="navbar-form" action="http://google.com/search" method="get">
+      <fieldset role="search">
+        <input type="hidden" name="q" value="site:blog.ryangeyer.com" />
+        <input class="span2" type="text" name="q" results="0" placeholder="Search"/>
+      </fieldset>
+    </form>
+      
+    
+  </div>
+</div>
+</nav>
+  <div class="wrapper_single">
+    <div class="container">
+      <article class="span8 offset2" role="article">
+        <div class="article-format">
+
+  <header>
+    
+      <h1 class="entry-title">Linux 1080p HTPC</h1>
+    
+    
+      <p class="meta">
+        
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-25T00:00:00-08:00" pubdate data-updated="true"></time> - 
+        
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/linux/'>Linux</a>, <a class='category' href='/categories/worklogs/'>Worklogs</a>
+  
+</span>
+
+
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So, I finally broke down and built a HTPC (home theater personal computer).  Actually, I bought it in late December, and have had it mostly up and running since about the middle of January, but I&rsquo;m just getting the chance to post about it now.</p>
+
+<p>I knew from the start I wanted to run Gentoo Linux with MythTV, and I must say it was an adventure getting it all working.  I&rsquo;ve outlined the details of the build for anyone interested in doing something similar, or who might just be curious.</p>
+
+<h3>The hardware</h3>
+
+
+<p><a href="http://www.newegg.com/product/product.aspx?Item=N82E16813128072"> GIGABYTE GA-73PVM-S2H</a>
+<a href="http://www.newegg.com/product/product.aspx?Item=N82E16822148230"> Seagate Barracuda 7200.10 ST3160815AS 160GB
+</a><a href="http://www.newegg.com/product/product.aspx?Item=N82E16819116040"> Intel Celeron 420 Conroe-L 1.6GHz 512KB L2 Cache</a>
+<a href="http://www.newegg.com/product/product.aspx?Item=N82E16820134114"> Kingston 1GB 240-Pin DDR2</a>
+<a href="http://www.newegg.com/product/product.aspx?Item=N82E16827106070"> Lite-On Black DVDRW</a>
+<a href="http://www.newegg.com/product/product.aspx?Item=N82E16880125001"> eDATA DEC-200B Vista Certified Infrared Remote</a></p>
+
+<p>I already had a low profile desktop case sitting around which I used for the project, so that&rsquo;s not included.  Total without the case was just under $300.  I later added two <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16826104027">Logitech ChillStream</a> game controllers for playing console game emulators.</p>
+
+<p>The motherboard was chosen because it had &ldquo;everything&rdquo; I needed onboard and didn&rsquo;t cost a fortune.  I needed HDMI out for my new <a href="http://www.sharpusa.com/products/ModelLanding/0,1058,1922,00.html">Sharp Aquos 42&#8221; HDTV</a> so I could have a clean digital signal at the full 1920x1080 resolution.</p>
+
+<p>The other stuff should be fairly obvious, I had to have a processor, drive, memory, and of course since this is an HTPC, a remote control.  Since I wasn&rsquo;t planning on doing anything particularly processor intensive (see goals) and I was going to be accessing nearly all my media over the network a fire breathing processor and giant hard drive weren&rsquo;t necessary.</p>
+
+<h3>Goals</h3>
+
+
+<p>I wasn&rsquo;t interested in a TV tuner or using this as a PVR/DVR, nor archiving DVD&rsquo;s.  I wanted this to replace the DVD changer in my existing HTIAB (home theater in a box) and be able to play DVD&rsquo;s upscaled to 1080p.  Also I wanted to be able to play video captured on my <a href="http://www.camcorderinfo.com/content/Sony-HCR-HC1-Review.htm">Sony HDR-HC1 HD camcorder</a> at it&rsquo;s native resolution.</p>
+
+<p>Secondary things would be playing my fairly sizable MP3 music collection, looking at pictures, and other cool stuff you can do with a computer connected to your television.</p>
+
+<h3>Wrestling with the feral Gentoo</h3>
+
+
+<p>Since I was dealing with &ldquo;bleeding edge&rdquo; hardware at least with the motherboard chipset and the remote control, getting Gentoo linux up and running with support for all of my hardware would be a challenge.</p>
+
+<p>After a fair amount of googling, and plenty of trial and error, I was able to get things working.  For the sake of reference, I&rsquo;ll document the highlights of getting things going.</p>
+
+<p>1) The 2007.0 Live CD wouldn&rsquo;t recognize my SATA DVDR drive unless I booted it with &ldquo;gentoo all-generic-ide&rdquo;, and set the sata controller to &ldquo;IDE&rdquo; in the bios.</p>
+
+<p>2) The latest nvidia driver available in portage (100.14.19) didn&rsquo;t seem to properly support my video hardware, so I downloaded the latest from the nvidia website (169.07) which seemed to work much better.  I actually went so far as to make my own custom ebuild for it.</p>
+
+<p>3) The latest lirc available in portage (0.8.2-r2) didn&rsquo;t seem to properly support my MCE2 USB style remote control.  At the time 0.8.3_pre1 was masked as unstable, but it did the trick</p>
+
+<p>4) Getting the ChillStream&rsquo;s to be recognized by the kernel was interesting too.  A kernel module (xpad) exists that is meant to support these type of controls with the XBOX-360 style.  However, a patch was necessary to properly support these.  It just added the PID to the source to support this controller.  They work great now.  :&ndash;)</p>
+
+<h3>Results</h3>
+
+
+<p>So, after all that did I reach my goals?</p>
+
+<p>Yes, and then some!  Below is a list of the highlights of functionality, but in all this project was quite a success.  And I think the functionality is impressive considering the bargain price!</p>
+
+<p>One of the things which came as a pleasant surprise was getting MythGame setup with some emulators of old consoles I&rsquo;d played.  It&rsquo;s amazingly nostalgic to play some of those Nintendo games!</p>
+
+<p>What works
+* MythFrontend at 1080p over HDMI (should show modelines)
+* MythVideo/DVD playing any video I like at native resolution
+* xine playing DVD&rsquo;s at 1080p
+* MythGallery
+* Audio out through TOSLINK optical output, passing along AC3/Dolby Digital &amp; DTS
+* MythMusic to play MP3 files from the network
+* MCE Remote Control to run MythFrontend
+* MythGame</p>
+
+<p>What doesn&rsquo;t
+* Audio out through HDMI</p>
+
+<h3>Future plans</h3>
+
+
+<p>Now that the HD DVD vs Bluray war is apparently <a href="http://www.tacp.toshiba.com/news/newsarticle.asp?newsid=198">over</a> when the drive prices come down a bit more, I intend to put a Blueray drive in this.  I suspect I&rsquo;ll need a more powerful processor to successfully play a movie though.  I&rsquo;m sure that linux will have limited or non existent support for the format for some time to come as well, so we&rsquo;ll see how that plays out.  The hardware is mostly up to the task though, and represents a bargain compared to the several pieces of equipment that would have been required to do the same stuff.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-25T00:00:00-08:00" pubdate data-updated="true"></time> - 
+      
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/linux/'>Linux</a>, <a class='category' href='/categories/worklogs/'>Worklogs</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ryangeyer.com/2008/02/25/linux-1080p-htpc/" data-via="rjgeyer" data-counturl="http://blog.ryangeyer.com/2008/02/25/linux-1080p-htpc/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    
+      <a class="pull-left" href="/2008/02/20/image-thumbnail-generating-script/" title="Previous Post: Image thumbnail generating script">&laquo; Image thumbnail generating script</a>
+    
+    
+      <a class="pull-right" href="/2008/03/05/with-great-power-comes/" title="Next Post: With great power comes?">With great power comes? &raquo;</a>
+    
+  </footer>
+
+</div>
+
+        
+          <div class="article-format">
+            <h1>Comments</h1>
+            <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+          </div>
+        
+      </article>
+    </div>
+  </div>
+  <div id="footer-widgets">
+  <div class="container">
+    <div class="row">
+  <div class="span3">
+    <h2>recent posts</h2>
+    <ul class="recent_posts">
+      
+        <li>
+          <a href="/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">Policy for an S3 only Amazon IAM User</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/24/the-baby/">The baby</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13:  NO WAY!</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/20/potty-training-day-12-old-hat/">Potty Training Day 12:  Old Hat</a>
+        </li>
+      
+    </ul>
+    <h2><a href="/blog/archives">archives</a></h2>
+  </div>
+  <div class="span3">
+    <h2>social stuff</h2>
+<center>
+  <script type="text/javascript" src="http://twittercounter.com/embed/?username=rjgeyer&style=avatar"></script><noscript><a href="http://twittercounter.com/rjgeyer">Ryan Geyer on Twitter Counter.com</a></noscript>
+
+  <iframe src="http://widgets.klout.com/badge/rjgeyer?size=m" style="border:0" scrolling="no" allowTransparency="true" frameBorder="0" width="160px" height="78px"></iframe>
+
+  <a href="http://www.linkedin.com/pub/1/828/328" ><img src="http://www.linkedin.com/img/webpromo/btn_viewmy_120x33.gif" width="120" height="33" border="0" alt="View Ryan Geyer's profile on LinkedIn"></a>
+</center>
+
+  </div>
+  <div class="span4">
+    
+<a class="twitter-timeline" href="https://twitter.com/rjgeyer" data-widget-id="436931274691706882">Tweets by @rjgeyer</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+  </div>
+  <div class="span2">
+    <h2>found on</h2>
+
+<a href="https://github.com/rgeyer/" rel="tooltip" title="Github"><img class="social_icon" title="Github" alt="github icon" src="/images/glyphicons_381_github.png"></a>
+
+
+
+<a href="http://stackoverflow.com/users/1305386/" rel="tooltip" title="Stack Overflow"><img class="social_icon" title="Stack Overflow" alt="stack overflow icon" src="/images/glyphicons_400_stack_overflow.png"></a>
+
+
+
+<a href="http://www.linkedin.com/in/rjgeyer" rel="tooltip" title="Linkedin"><img class="social_icon" title="Linkedin" alt="Linkedin icon" src="/images/glyphicons_377_linked_in.png"></a>
+
+
+
+<a href="http://twitter.com/rjgeyer" rel="tooltip" title="Twitter"><img class="social_icon" title="Twitter" alt="Twitter icon" src="/images/glyphicons_391_twitter_t.png"></a>
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://plus.google.com/+RyanGeyerCycles?rel=author" rel="tooltip" title="Google Plus"><img class="social_icon" title="Google Plus" alt="Google Plus icon" src="/images/glyphicons_386_google_plus.png"></a>
+
+
+
+<a href="http://www.quora.com/Ryan-Geyer" rel="tooltip" title="Quora"><img class="social_icon" title="Quora" alt="Quora icon" src="/images/glyphicons_385_quora.png"></a>
+
+
+
+<h2>contact at</h2>
+<a href="mailto:me@ryangeyer.com">me@ryangeyer.com</a>
+
+
+  </div>
+</div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-left">
+  <a href="/">Ryans Octopress Blog</a>
+  - Copyright &copy; 2014 - Ryan J. Geyer
+</p>
+<p class="pull-right">
+  <span>Powered by <a href="http://octopress.org/">Octopress</a>.</span>
+  
+    <span>Designed by <a href="http://www.AdrianArtiles.com">Adrian Artiles</a>.</span>
+  
+</p>
+
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.7.2.min.js" type="text/javascript"><\/script>')</script>
+<script src="/javascripts/libs/bootstrap.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.tweet.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.instagram.js" type="text/javascript"></script>
+<script src="/javascripts/libs/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="/javascripts/custom.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'octopressgithubpages';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.ryangeyer.com/2008/02/25/linux-1080p-htpc/';
+        var disqus_url = 'http://blog.ryangeyer.com/2008/02/25/linux-1080p-htpc/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
