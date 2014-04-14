@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Worklogs | Ryans Octopress Blog]]></title>
+  <title><![CDATA[Category: Worklogs | Random Musings]]></title>
   <link href="http://blog.ryangeyer.com/categories/worklogs/atom.xml" rel="self"/>
   <link href="http://blog.ryangeyer.com/"/>
-  <updated>2014-04-13T18:11:12-07:00</updated>
+  <updated>2014-04-13T18:50:29-07:00</updated>
   <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
