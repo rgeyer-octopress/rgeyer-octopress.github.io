@@ -1,4 +1,3 @@
-date: 2011-06-08 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 7:  Going out'

@@ -1,4 +1,3 @@
-date: 2009-08-02 00:00:00 -0700
 ---
 layout: post
 title: 67 Caddy - New Kicks

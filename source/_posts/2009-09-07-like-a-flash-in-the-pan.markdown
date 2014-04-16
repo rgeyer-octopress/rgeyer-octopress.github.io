@@ -1,4 +1,3 @@
-date: 2009-09-07 00:00:00 -0700
 ---
 layout: post
 title: Like a flash in the pan

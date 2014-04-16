@@ -1,4 +1,3 @@
-date: 2010-03-31 00:00:00 -0700
 ---
 layout: post
 title: Grails and Tomcat6 - Deployment Notes

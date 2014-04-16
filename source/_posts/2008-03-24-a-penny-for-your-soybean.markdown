@@ -1,4 +1,3 @@
-date: 2008-03-24 00:00:00 -0700
 ---
 layout: post
 title: A penny for your soybean?

@@ -1,4 +1,3 @@
-date: 2011-03-28 00:00:00 -0700
 ---
 layout: post
 title: Create AWS Service Accounts with IAM

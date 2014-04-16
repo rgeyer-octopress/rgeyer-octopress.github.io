@@ -1,4 +1,3 @@
-date: 2010-11-17 00:00:00 -0700
 ---
 layout: post
 title: Add Agility to Dev & Test with the Cloud - Managed by RightScale

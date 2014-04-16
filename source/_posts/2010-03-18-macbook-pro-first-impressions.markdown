@@ -1,4 +1,3 @@
-date: 2010-03-18 00:00:00 -0700
 ---
 layout: post
 title: MacBook Pro - First Impressions

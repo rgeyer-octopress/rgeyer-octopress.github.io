@@ -1,4 +1,3 @@
-date: 2010-03-11 00:00:00 -0700
 ---
 layout: post
 title: I dub thee "Bionic Caddy"

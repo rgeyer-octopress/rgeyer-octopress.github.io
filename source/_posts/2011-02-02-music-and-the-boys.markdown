@@ -1,4 +1,3 @@
-date: 2011-02-02 00:00:00 -0700
 ---
 layout: post
 title: Music and the boys

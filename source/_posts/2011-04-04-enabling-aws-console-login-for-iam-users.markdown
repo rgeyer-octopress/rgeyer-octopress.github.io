@@ -1,4 +1,3 @@
-date: 2011-04-04 00:00:00 -0700
 ---
 layout: post
 title: Enabling AWS Console Login for IAM Users

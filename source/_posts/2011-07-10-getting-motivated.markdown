@@ -1,4 +1,3 @@
-date: 2011-07-10 00:00:00 -0700
 ---
 layout: post
 title: Getting Motivated

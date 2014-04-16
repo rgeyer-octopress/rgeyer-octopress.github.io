@@ -1,4 +1,3 @@
-date: 2009-07-30 00:00:00 -0700
 ---
 layout: post
 title: What Excites Professional Photogs?

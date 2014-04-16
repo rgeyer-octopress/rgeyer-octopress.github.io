@@ -1,4 +1,3 @@
-date: 2007-10-20 00:00:00 -0700
 ---
 layout: post
 title: Oh Holy Entertainment!

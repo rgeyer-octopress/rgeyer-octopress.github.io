@@ -1,4 +1,3 @@
-date: 2010-01-24 00:00:00 -0700
 ---
 layout: post
 title: No More Guesswork

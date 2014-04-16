@@ -1,4 +1,3 @@
-date: 2010-05-17 00:00:00 -0700
 ---
 layout: post
 title: Coping and books

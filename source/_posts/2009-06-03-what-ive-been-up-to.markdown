@@ -1,4 +1,3 @@
-date: 2009-06-03 00:00:00 -0700
 ---
 layout: post
 title: What I've been up to...

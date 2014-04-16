@@ -1,4 +1,3 @@
-date: 2010-02-10 00:00:00 -0700
 ---
 layout: post
 title: Fitting Grails in an Active Directory and NTLM SSO Groove

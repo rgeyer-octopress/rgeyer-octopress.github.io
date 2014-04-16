@@ -1,4 +1,3 @@
-date: 2009-09-13 00:00:00 -0700
 ---
 layout: post
 title: You get what you pay for, or less!

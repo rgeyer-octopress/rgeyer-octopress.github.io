@@ -1,4 +1,3 @@
-date: 2010-02-05 00:00:00 -0700
 ---
 layout: post
 title: What Grooves You?

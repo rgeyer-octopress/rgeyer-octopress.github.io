@@ -1,4 +1,3 @@
-date: 2010-06-20 00:00:00 -0700
 ---
 layout: post
 title: Men and Women are different

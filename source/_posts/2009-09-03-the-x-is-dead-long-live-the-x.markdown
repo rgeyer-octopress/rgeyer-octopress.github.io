@@ -1,4 +1,3 @@
-date: 2009-09-03 00:00:00 -0700
 ---
 layout: post
 title: The X is dead.. Long live the X!!

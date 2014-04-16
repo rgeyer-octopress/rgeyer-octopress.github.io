@@ -1,4 +1,3 @@
-date: 2009-09-11 00:00:00 -0700
 ---
 layout: post
 title: Appearance

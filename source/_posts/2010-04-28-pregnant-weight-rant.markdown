@@ -1,4 +1,3 @@
-date: 2010-04-28 00:00:00 -0700
 ---
 layout: post
 title: Pregnant Weight Rant

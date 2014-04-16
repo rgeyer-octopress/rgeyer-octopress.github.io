@@ -1,4 +1,3 @@
-date: 2011-03-21 00:00:00 -0700
 ---
 layout: post
 title: Please Standby...

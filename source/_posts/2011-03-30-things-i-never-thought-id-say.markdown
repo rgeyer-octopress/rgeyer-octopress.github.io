@@ -1,4 +1,3 @@
-date: 2011-03-30 00:00:00 -0700
 ---
 layout: post
 title: Things I never thought I’d say

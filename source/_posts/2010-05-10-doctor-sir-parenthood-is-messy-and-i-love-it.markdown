@@ -1,4 +1,3 @@
-date: 2010-05-10 00:00:00 -0700
 ---
 layout: post
 title: Doctor, Sir.  Parenthood is messy and I love it! ;-)

@@ -1,4 +1,3 @@
-date: 2011-04-11 00:00:00 -0700
 ---
 layout: post
 title: Taking Route 53 to Optimized Website Performance

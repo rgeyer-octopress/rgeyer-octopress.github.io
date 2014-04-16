@@ -1,4 +1,3 @@
-date: 2007-10-27 00:00:00 -0700
 ---
 layout: post
 title: Love the wheels you're with

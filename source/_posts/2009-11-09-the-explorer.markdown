@@ -1,4 +1,3 @@
-date: 2009-11-09 00:00:00 -0700
 ---
 layout: post
 title: The Explorer

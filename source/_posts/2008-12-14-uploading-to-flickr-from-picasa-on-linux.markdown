@@ -1,4 +1,3 @@
-date: 2008-12-14 00:00:00 -0700
 ---
 layout: post
 title: Uploading to Flickr from Picasa on Linux

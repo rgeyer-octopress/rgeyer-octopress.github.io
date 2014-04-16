@@ -1,4 +1,3 @@
-date: 2008-11-18 00:00:00 -0700
 ---
 layout: post
 title: 4.5L Duramax - GTM Supercar

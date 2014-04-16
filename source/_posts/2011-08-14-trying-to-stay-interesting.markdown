@@ -1,4 +1,3 @@
-date: 2011-08-14 00:00:00 -0700
 ---
 layout: post
 title: Trying to stay interesting

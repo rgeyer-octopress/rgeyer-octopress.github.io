@@ -1,4 +1,3 @@
-date: 2008-07-29 00:00:00 -0700
 ---
 layout: post
 title: 5.8 Magnitude Earthquake in Chino, CA

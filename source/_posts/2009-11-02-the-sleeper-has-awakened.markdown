@@ -1,4 +1,3 @@
-date: 2009-11-02 00:00:00 -0700
 ---
 layout: post
 title: The sleeper has awakened!

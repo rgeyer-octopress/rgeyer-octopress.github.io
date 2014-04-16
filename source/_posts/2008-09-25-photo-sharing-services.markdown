@@ -1,4 +1,3 @@
-date: 2008-09-25 00:00:00 -0700
 ---
 layout: post
 title: Photo Sharing Services

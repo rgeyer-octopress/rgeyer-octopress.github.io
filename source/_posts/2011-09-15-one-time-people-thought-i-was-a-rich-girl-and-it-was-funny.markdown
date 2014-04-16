@@ -1,4 +1,3 @@
-date: 2011-09-15 00:00:00 -0700
 ---
 layout: post
 title: One time people thought I was a rich girl and it was funny

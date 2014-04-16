@@ -1,4 +1,3 @@
-date: 2009-12-03 00:00:00 -0700
 ---
 layout: post
 title: Navigating Domain Registration - A tale of a near miss

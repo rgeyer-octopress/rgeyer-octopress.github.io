@@ -1,4 +1,3 @@
-date: 2008-06-10 00:00:00 -0700
 ---
 layout: post
 title: Sweet ~= Savory

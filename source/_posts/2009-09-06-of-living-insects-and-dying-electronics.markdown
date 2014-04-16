@@ -1,4 +1,3 @@
-date: 2009-09-06 00:00:00 -0700
 ---
 layout: post
 title: Of living insects, and dying electronics

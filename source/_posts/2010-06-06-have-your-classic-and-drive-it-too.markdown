@@ -1,4 +1,3 @@
-date: 2010-06-06 00:00:00 -0700
 ---
 layout: post
 title: Have your classic, and drive it too

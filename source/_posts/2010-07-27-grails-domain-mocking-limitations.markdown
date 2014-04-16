@@ -1,4 +1,3 @@
-date: 2010-07-27 00:00:00 -0700
 ---
 layout: post
 title: Grails Domain Mocking Limitations

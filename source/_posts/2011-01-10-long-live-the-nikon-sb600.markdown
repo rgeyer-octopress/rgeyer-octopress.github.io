@@ -1,4 +1,3 @@
-date: 2011-01-10 00:00:00 -0700
 ---
 layout: post
 title: Long Live the Nikon SB600

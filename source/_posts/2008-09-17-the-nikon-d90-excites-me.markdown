@@ -1,4 +1,3 @@
-date: 2008-09-17 00:00:00 -0700
 ---
 layout: post
 title: The Nikon D90 Excites Me

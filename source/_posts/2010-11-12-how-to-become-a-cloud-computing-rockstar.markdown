@@ -1,4 +1,3 @@
-date: 2010-11-12 00:00:00 -0700
 ---
 layout: post
 title: How to become a Cloud Computing Rockstar

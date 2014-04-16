@@ -1,4 +1,3 @@
-date: 2011-11-03 00:00:00 -0700
 ---
 layout: post
 title: I'm becoming one of this moms and it scares me

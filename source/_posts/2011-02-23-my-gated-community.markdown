@@ -1,4 +1,3 @@
-date: 2011-02-23 00:00:00 -0700
 ---
 layout: post
 title: My gated community

@@ -1,4 +1,3 @@
-date: 2010-06-22 00:00:00 -0700
 ---
 layout: post
 title: My first five days...

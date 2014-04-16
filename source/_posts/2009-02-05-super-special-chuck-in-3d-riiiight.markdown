@@ -1,4 +1,3 @@
-date: 2009-02-05 00:00:00 -0700
 ---
 layout: post
 title: Super Special Chuck in 3D.. Riiiight

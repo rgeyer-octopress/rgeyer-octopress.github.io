@@ -1,4 +1,3 @@
-date: 2011-06-14 00:00:00 -0700
 ---
 layout: post
 title: PHPUnit testing your Wordpress Theme or Plugin

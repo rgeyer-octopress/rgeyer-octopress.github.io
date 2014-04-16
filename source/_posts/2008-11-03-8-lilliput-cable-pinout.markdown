@@ -1,4 +1,3 @@
-date: 2008-11-03 00:00:00 -0700
 ---
 layout: post
 title: 8" Lilliput cable pinout

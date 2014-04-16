@@ -1,4 +1,3 @@
-date: 2010-09-07 00:00:00 -0700
 ---
 layout: post
 title: Project - Late Model Restoration 1992 Lexus ES300

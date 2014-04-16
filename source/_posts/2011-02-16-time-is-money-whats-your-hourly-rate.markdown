@@ -1,4 +1,3 @@
-date: 2011-02-16 00:00:00 -0700
 ---
 layout: post
 title: Time is Money - What's your hourly rate?

@@ -1,4 +1,3 @@
-date: 2011-07-13 00:00:00 -0700
 ---
 layout: post
 title: How to Leverage Amazon's Content Delivery Network for Wordpress

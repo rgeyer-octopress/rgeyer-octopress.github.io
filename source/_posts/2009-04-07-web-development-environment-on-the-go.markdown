@@ -1,4 +1,3 @@
-date: 2009-04-07 00:00:00 -0700
 ---
 layout: post
 title: Web development environment - "On The Go"

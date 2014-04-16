@@ -1,4 +1,3 @@
-date: 2008-10-16 00:00:00 -0700
 ---
 layout: post
 title: Fun with moonlight

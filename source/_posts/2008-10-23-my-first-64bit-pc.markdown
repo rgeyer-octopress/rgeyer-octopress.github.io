@@ -1,4 +1,3 @@
-date: 2008-10-23 00:00:00 -0700
 ---
 layout: post
 title: My First 64bit PC

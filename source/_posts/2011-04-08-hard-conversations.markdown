@@ -1,4 +1,3 @@
-date: 2011-04-08 00:00:00 -0700
 ---
 layout: post
 title: Hard conversations

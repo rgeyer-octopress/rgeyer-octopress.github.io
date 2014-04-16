@@ -1,4 +1,3 @@
-date: 2011-05-01 00:00:00 -0700
 ---
 layout: post
 title: Chef makes record of config

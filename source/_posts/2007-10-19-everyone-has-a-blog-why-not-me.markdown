@@ -1,4 +1,3 @@
-date: 2007-10-19 00:00:00 -0700
 ---
 layout: post
 title: Everyone has a blog, why not me?

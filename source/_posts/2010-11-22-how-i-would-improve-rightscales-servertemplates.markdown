@@ -1,4 +1,3 @@
-date: 2010-11-22 00:00:00 -0700
 ---
 layout: post
 title: How I would improve RightScale's ServerTemplates

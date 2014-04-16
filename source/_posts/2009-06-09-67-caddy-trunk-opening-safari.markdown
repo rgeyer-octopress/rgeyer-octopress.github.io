@@ -1,4 +1,3 @@
-date: 2009-06-09 00:00:00 -0700
 ---
 layout: post
 title: ! '''67 Caddy - Trunk Opening Safari'

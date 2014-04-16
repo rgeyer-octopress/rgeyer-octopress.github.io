@@ -1,4 +1,3 @@
-date: 2011-06-01 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training day 4: Stubborn'

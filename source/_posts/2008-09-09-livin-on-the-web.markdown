@@ -1,4 +1,3 @@
-date: 2008-09-09 00:00:00 -0700
 ---
 layout: post
 title: Livin' on the web

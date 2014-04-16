@@ -1,4 +1,3 @@
-date: 2011-02-01 00:00:00 -0700
 ---
 layout: post
 title: RightScale iTunes Podcast Channel

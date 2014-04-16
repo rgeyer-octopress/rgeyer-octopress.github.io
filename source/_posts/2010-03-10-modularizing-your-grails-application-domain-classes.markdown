@@ -1,4 +1,3 @@
-date: 2010-03-10 00:00:00 -0700
 ---
 layout: post
 title: Modularizing your Grails Application - Domain Classes

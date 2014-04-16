@@ -1,4 +1,3 @@
-date: 2009-02-12 00:00:00 -0700
 ---
 layout: post
 title: I'll gladly pay you Tuesday for water today.

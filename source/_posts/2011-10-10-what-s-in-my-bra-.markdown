@@ -1,4 +1,3 @@
-date: 2011-10-10 00:00:00 -0700
 ---
 layout: post
 title: What's in my bra?

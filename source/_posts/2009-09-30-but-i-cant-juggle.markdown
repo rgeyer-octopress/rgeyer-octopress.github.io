@@ -1,4 +1,3 @@
-date: 2009-09-30 00:00:00 -0700
 ---
 layout: post
 title: But I can't juggle

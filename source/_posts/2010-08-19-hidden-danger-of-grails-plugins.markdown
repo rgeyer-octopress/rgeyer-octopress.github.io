@@ -1,4 +1,3 @@
-date: 2010-08-19 00:00:00 -0700
 ---
 layout: post
 title: Hidden Danger of Grails Plugins

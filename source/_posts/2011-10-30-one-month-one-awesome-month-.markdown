@@ -1,4 +1,3 @@
-date: 2011-10-30 00:00:00 -0700
 ---
 layout: post
 title: One month!  One awesome month!

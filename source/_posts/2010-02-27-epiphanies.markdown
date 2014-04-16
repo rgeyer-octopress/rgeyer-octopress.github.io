@@ -1,4 +1,3 @@
-date: 2010-02-27 00:00:00 -0700
 ---
 layout: post
 title: Epiphanies

@@ -1,4 +1,3 @@
-date: 2010-11-24 00:00:00 -0700
 ---
 layout: post
 title: Project Late Model Restoration - Suspension Rehab

@@ -1,4 +1,3 @@
-date: 2008-11-13 00:00:00 -0700
 ---
 layout: post
 title: Tea Fire - Day 1

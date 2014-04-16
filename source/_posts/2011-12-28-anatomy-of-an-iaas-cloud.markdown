@@ -1,4 +1,3 @@
-date: 2011-12-28 00:00:00 -0700
 ---
 layout: post
 title: Anatomy of an IaaS Cloud

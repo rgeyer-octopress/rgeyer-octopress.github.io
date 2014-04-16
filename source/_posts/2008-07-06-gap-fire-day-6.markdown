@@ -1,4 +1,3 @@
-date: 2008-07-06 00:00:00 -0700
 ---
 layout: post
 title: Gap Fire - Day 6

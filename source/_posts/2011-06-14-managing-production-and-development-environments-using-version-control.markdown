@@ -1,4 +1,3 @@
-date: 2011-06-14 00:00:00 -0700
 ---
 layout: post
 title: Managing production and development environments using Version Control

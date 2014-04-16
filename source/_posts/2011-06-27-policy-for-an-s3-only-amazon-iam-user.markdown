@@ -1,4 +1,3 @@
-date: 2011-06-27 00:00:00 -0700
 ---
 layout: post
 title: Policy for an S3 only Amazon IAM User

@@ -1,4 +1,3 @@
-date: 2011-02-14 00:00:00 -0700
 ---
 layout: post
 title: How to host Wordpress for Free

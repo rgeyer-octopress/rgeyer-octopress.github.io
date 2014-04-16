@@ -1,4 +1,3 @@
-date: 2011-04-01 00:00:00 -0700
 ---
 layout: post
 title: Motherhood is complicated

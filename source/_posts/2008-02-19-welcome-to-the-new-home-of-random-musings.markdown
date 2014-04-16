@@ -1,4 +1,3 @@
-date: 2008-02-19 00:00:00 -0700
 ---
 layout: post
 title: Welcome to the new home of Random Musings

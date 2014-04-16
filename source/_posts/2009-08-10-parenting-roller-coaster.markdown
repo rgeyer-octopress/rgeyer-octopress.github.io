@@ -1,4 +1,3 @@
-date: 2009-08-10 00:00:00 -0700
 ---
 layout: post
 title: Parenting Roller Coaster

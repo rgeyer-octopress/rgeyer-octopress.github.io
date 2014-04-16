@@ -1,4 +1,3 @@
-date: 2011-09-28 00:00:00 -0700
 ---
 layout: post
 title: RS & Cloud Dev best practices

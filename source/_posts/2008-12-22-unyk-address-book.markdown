@@ -1,4 +1,3 @@
-date: 2008-12-22 00:00:00 -0700
 ---
 layout: post
 title: UNYK Address Book

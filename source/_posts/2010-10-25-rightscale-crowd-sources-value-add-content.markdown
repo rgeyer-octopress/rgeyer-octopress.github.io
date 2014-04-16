@@ -1,4 +1,3 @@
-date: 2010-10-25 00:00:00 -0700
 ---
 layout: post
 title: RightScale crowd sources value-add content

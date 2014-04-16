@@ -1,4 +1,3 @@
-date: 2009-08-23 00:00:00 -0700
 ---
 layout: post
 title: Crashing at a new pad

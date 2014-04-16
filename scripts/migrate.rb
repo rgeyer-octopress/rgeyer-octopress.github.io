@@ -83,6 +83,10 @@ def add_date(everything, date)
   puts everything.match(/---.*date.*---/m)
 end
 
+def fix_date_on_first_line(everything)
+  everything.sub!(/date\: [0-9]{4}-[0-9]{2}-[0-9]{2} 00:00:00 -0700\n/, '')
+end
+
 Dir.glob("../source/_posts/*.markdown").each do |file|
   puts "File: #{file}"
   str = ""
@@ -93,7 +97,8 @@ Dir.glob("../source/_posts/*.markdown").each do |file|
   #str = styles(str)
   #str = enable_comments(str)
   #str = convert_hrefs(str)
-  add_date(str, file.match('[0-9]{4}-[0-9]{2}-[0-9]{2}'))
+  #add_date(str, file.match('[0-9]{4}-[0-9]{2}-[0-9]{2}'))
+  fix_date_on_first_line(str)
   File.open(file, "w+") do |f|
     f.write(str)
   end

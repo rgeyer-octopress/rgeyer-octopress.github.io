@@ -1,4 +1,3 @@
-date: 2010-11-29 00:00:00 -0700
 ---
 layout: post
 title: Chef for RightScale Quick Start

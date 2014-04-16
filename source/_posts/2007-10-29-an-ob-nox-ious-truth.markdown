@@ -1,4 +1,3 @@
-date: 2007-10-29 00:00:00 -0700
 ---
 layout: post
 title: An Ob-NOx-ious truth

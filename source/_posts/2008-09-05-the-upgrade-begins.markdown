@@ -1,4 +1,3 @@
-date: 2008-09-05 00:00:00 -0700
 ---
 layout: post
 title: The upgrade begins

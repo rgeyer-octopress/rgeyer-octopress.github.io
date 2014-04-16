@@ -1,4 +1,3 @@
-date: 2010-04-08 00:00:00 -0700
 ---
 layout: post
 title: Caddy - Hibernating for the summer?

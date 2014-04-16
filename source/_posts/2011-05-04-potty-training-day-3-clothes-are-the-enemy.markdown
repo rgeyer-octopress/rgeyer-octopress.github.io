@@ -1,4 +1,3 @@
-date: 2011-05-04 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 3: Clothes are the Enemy'

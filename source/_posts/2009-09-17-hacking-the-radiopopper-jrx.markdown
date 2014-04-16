@@ -1,4 +1,3 @@
-date: 2009-09-17 00:00:00 -0700
 ---
 layout: post
 title: Hacking the RadioPopper JrX

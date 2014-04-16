@@ -1,4 +1,3 @@
-date: 2010-08-02 00:00:00 -0700
 ---
 layout: post
 title: RightScriptDiff - Maintain your RightScripts Locally

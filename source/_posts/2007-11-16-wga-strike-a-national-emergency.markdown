@@ -1,4 +1,3 @@
-date: 2007-11-16 00:00:00 -0700
 ---
 layout: post
 title: WGA Strike, A national emergency

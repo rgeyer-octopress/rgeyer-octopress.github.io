@@ -1,4 +1,3 @@
-date: 2008-01-18 00:00:00 -0700
 ---
 layout: post
 title: Our new baby boy

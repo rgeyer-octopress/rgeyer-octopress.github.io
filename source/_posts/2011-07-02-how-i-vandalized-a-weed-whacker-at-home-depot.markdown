@@ -1,4 +1,3 @@
-date: 2011-07-02 00:00:00 -0700
 ---
 layout: post
 title: How I Vandalized a Weed Whacker at Home Depot

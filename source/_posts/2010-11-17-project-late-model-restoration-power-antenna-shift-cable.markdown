@@ -1,4 +1,3 @@
-date: 2010-11-17 00:00:00 -0700
 ---
 layout: post
 title: Project Late Model Restoration - Power Antenna & Shift Cable

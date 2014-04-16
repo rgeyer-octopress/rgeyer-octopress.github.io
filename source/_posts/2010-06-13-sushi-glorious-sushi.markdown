@@ -1,4 +1,3 @@
-date: 2010-06-13 00:00:00 -0700
 ---
 layout: post
 title: Sushi, glorious sushi!

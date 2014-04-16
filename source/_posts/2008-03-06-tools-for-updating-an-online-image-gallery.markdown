@@ -1,4 +1,3 @@
-date: 2008-03-06 00:00:00 -0700
 ---
 layout: post
 title: Tools for updating an online image gallery

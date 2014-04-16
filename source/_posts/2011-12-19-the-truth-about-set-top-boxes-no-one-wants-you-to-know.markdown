@@ -1,4 +1,3 @@
-date: 2011-12-19 00:00:00 -0700
 ---
 layout: post
 title: The truth about set-top boxes no one wants you to know

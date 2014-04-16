@@ -1,4 +1,3 @@
-date: 2009-08-29 00:00:00 -0700
 ---
 layout: post
 title: Babies and Such

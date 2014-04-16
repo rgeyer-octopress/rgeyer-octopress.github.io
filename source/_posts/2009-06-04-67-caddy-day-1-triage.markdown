@@ -1,4 +1,3 @@
-date: 2009-06-04 00:00:00 -0700
 ---
 layout: post
 title: ! '''67 Caddy Day 1 - Triage'

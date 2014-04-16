@@ -1,4 +1,3 @@
-date: 2009-10-13 00:00:00 -0700
 ---
 layout: post
 title: Moving, Moving, Done!

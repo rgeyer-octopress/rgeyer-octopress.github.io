@@ -1,4 +1,3 @@
-date: 2011-06-15 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 10: Getting better'

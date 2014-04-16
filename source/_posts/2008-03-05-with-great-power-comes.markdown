@@ -1,4 +1,3 @@
-date: 2008-03-05 00:00:00 -0700
 ---
 layout: post
 title: With great power comes?

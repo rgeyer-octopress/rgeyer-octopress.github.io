@@ -1,4 +1,3 @@
-date: 2007-10-19 00:00:00 -0700
 ---
 layout: post
 title: I see your Prius, and raise you an Excursion.

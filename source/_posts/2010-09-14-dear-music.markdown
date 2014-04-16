@@ -1,4 +1,3 @@
-date: 2010-09-14 00:00:00 -0700
 ---
 layout: post
 title: Dear Music

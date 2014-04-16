@@ -1,4 +1,3 @@
-date: 2011-05-03 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 2: Reality settles in...'

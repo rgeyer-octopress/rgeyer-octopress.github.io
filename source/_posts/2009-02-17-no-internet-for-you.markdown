@@ -1,4 +1,3 @@
-date: 2009-02-17 00:00:00 -0700
 ---
 layout: post
 title: No Internet For You!

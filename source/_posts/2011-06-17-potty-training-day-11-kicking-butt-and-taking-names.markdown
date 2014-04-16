@@ -1,4 +1,3 @@
-date: 2011-06-17 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 11:  Kicking butt and taking names'

@@ -1,4 +1,3 @@
-date: 2009-02-20 00:00:00 -0700
 ---
 layout: post
 title: Me and my iPhone

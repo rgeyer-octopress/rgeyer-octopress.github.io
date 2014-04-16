@@ -1,4 +1,3 @@
-date: 2008-02-20 00:00:00 -0700
 ---
 layout: post
 title: Image thumbnail generating script

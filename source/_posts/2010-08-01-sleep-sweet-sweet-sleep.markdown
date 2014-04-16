@@ -1,4 +1,3 @@
-date: 2010-08-01 00:00:00 -0700
 ---
 layout: post
 title: Sleep, sweet sweet sleep

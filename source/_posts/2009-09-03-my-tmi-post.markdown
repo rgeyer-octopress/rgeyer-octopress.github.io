@@ -1,4 +1,3 @@
-date: 2009-09-03 00:00:00 -0700
 ---
 layout: post
 title: My TMI Post
