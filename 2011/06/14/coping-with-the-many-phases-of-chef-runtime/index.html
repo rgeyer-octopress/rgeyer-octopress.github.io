@@ -1,0 +1,37 @@
+<h2>date: 2011-06-14 00:00:00 -0700</h2>
+
+<p>layout: post
+title: Coping with the many phases of Chef Runtime
+comments: true
+categories: []
+tags:
+&ndash; linkedin
+status: draft
+type: post
+published: false
+meta:
+  <em>edit_last: &lsquo;1&rsquo;
+  </em>syntaxhighlighter_encoded: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-06-14 00:00:00 -0700</h2>
+
+<p>Installing gems in the &ldquo;normal way&rdquo; does not work when you&rsquo;re trying to consume those gems using libraries/providers/definitions/recipes in the same chef runlist.</p>
+
+<p>Need to use the hack</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>g = gem_package &quot;right_aws&quot; do
+</span><span class='line'>  action :nothing
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>g.run_action(:install)
+</span></code></pre></td></tr></table></div></figure>
+
+
+

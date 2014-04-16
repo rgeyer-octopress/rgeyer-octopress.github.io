@@ -1,0 +1,127 @@
+<h2>date: 2011-06-14 00:00:00 -0700</h2>
+
+<p>layout: post
+title: Its the grid.. bitches
+comments: true
+categories: []
+tags:
+&ndash; linkedin
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-06-14 00:00:00 -0700</h2>
+
+<h2>Problem domain</h2>
+
+
+<p>I&rsquo;ve got a huge collection of addresses, need to geocode them, then compare them to polygons representing US Census tracts to find the tract an address belongs to.  For Geo targeted marketing and foreign language speakers.</p>
+
+<h2>Local solution</h2>
+
+
+<ul>
+    <li>Pull addresses from list</li>
+
+
+    <li>foreach address
+<ul>
+    <li>geocode</li>
+    <li>store coords in db</li>
+</ul>
+/foreach</li>
+
+    <li>Pull coords without census tract from list</li>
+
+    <li>foreach coords
+<ul>
+    <li>locate within census tract</li>
+    <li>store tract in db</li>
+</ul>
+/foreach</li>
+
+</ul>
+
+
+
+
+<h3>Problems with this approach</h3>
+
+
+<p>Biggest problem is that the code was very static &amp; inflexible, heavily dependent upon my local machines environment, and can not be executed by the data owners.  They&rsquo;d have to tell me new addresses are in the DB, and ask me to run the geocoding routine</p>
+
+<h3>Things that weren&#8217;t exactly problems</h3>
+
+
+<p>Speed&hellip;  It wasn&rsquo;t &ldquo;fast&rdquo; but I could also get things done as quickly as I needed to.
+Size of data&hellip; I&rsquo;m exchanging two floats, and a 7 character string, not a lot of heavy lifting
+Compute intensive.. The worst part is the (find a point in a poly) which is pretty trivial trig for any processor</p>
+
+<h2>Enter the cloud/grid</h2>
+
+
+
+
+<h3>Why the grid?</h3>
+
+
+<p>distributed &ndash; lots of data fast
+available &ndash; online, so anyone (whom I authorize) can use it without having to work through me.
+scalable &ndash; I may only have a few hundred addresses to deal with right now, but if I suddenly had hundreds of thousands, I&rsquo;d be stuck!
+Just freakin cool &ndash; I get to work with awesome technology, and share my experiences here!</p>
+
+<h3>How the grid?</h3>
+
+
+
+
+<h4>Job Producer</h4>
+
+
+<p>Can run anywhere, it&rsquo;s role is to break the job up into atomic units, upload any necessary data, and populate an input queue with jobs.</p>
+
+<ul>
+    <li>Read all addresses w/o coords from db</li>
+    <li>create work unit with address, unique id from db, and some config data</li>
+    <li>push work unit to input queue</li>
+</ul>
+
+
+
+
+<h4>Server Array</h4>
+
+
+<p>Role is to monitor input queue for grid, and launch worker instances as necessary</p>
+
+<h4>Grid worker</h4>
+
+
+<p>A ruby gem available to premium RightScale accounts, monitors input queue, pops work items off, processes them using your application class (described below), pushes output, audit, and error information into consumer queues</p>
+
+<h5>Configuration bits</h5>
+
+
+
+
+<h4>Grid application</h4>
+
+
+<p>Ideally just a ruby class which implements do_work(message_env, message) that is called by the grid worker</p>
+
+<p>What is the message param?</p>
+
+<h4>Job Consumer</h4>
+
+
+<p>Consumes data in the output, audit, and error queues, doing something useful with the job results.</p>
+
+<h3>Some homework/challenges</h3>
+
+
+<p>Easily identifying &amp; troubleshooting errors &ndash; lots of logging available, and pushed to S3 buckets and all sorts of good stuff.  A bit difficult to consume
+Measuring time spent on a single &ldquo;job&rdquo; (many job units)
+Measuring each job unit &amp; displaying/consuming that information easily
+Performance tuning &ndash; Instance size, instance quantity, number of application instances (workers) per worker node</p>

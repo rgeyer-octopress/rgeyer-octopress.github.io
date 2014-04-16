@@ -4,7 +4,7 @@
   <title><![CDATA[Random Musings]]></title>
   <link href="http://blog.ryangeyer.com/atom.xml" rel="self"/>
   <link href="http://blog.ryangeyer.com/"/>
-  <updated>2014-04-13T20:33:21-07:00</updated>
+  <updated>2014-04-16T09:34:32-07:00</updated>
   <id>http://blog.ryangeyer.com/</id>
   <author>
     <name><![CDATA[Ryan J. Geyer]]></name>
@@ -33,11 +33,441 @@ make me, and my blog a little easier to find.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[How I Vandalized a Weed Whacker at Home Depot]]></title>
+    <title type="html"><![CDATA[Anatomy Of An Iaas Cloud]]></title>
+    <link href="http://blog.ryangeyer.com/2011/12/28/anatomy-of-an-iaas-cloud/"/>
+    <updated>2011-12-28T00:00:00-08:00</updated>
+    <id>http://blog.ryangeyer.com/2011/12/28/anatomy-of-an-iaas-cloud</id>
+    <content type="html"><![CDATA[<h2>date: 2011-12-28 00:00:00 -0700</h2>
+
+<p>layout: post
+title: Anatomy of an IaaS Cloud
+comments: true
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  <em>headspace_description: &lsquo;&rsquo;
+  </em>headspace_page_title: &lsquo;&rsquo;
+  Hide OgTags: &lsquo;0&rsquo;
+  Hide SexyBookmarks: &lsquo;0&rsquo;
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-12-28 00:00:00 -0700</h2>
+
+<p>Multi Tenent for Hardware (KVM, Xen, ESXi)</p>
+
+<p>Ridillin for your Hypervisor (OpenStack, CloudStack, Euca, RAX, AWS)</p>
+
+<p>Unification and Automation (RightScale)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Truth About Set Top Boxes No One Wants You To Know]]></title>
+    <link href="http://blog.ryangeyer.com/2011/12/19/the-truth-about-set-top-boxes-no-one-wants-you-to-know/"/>
+    <updated>2011-12-19T00:00:00-08:00</updated>
+    <id>http://blog.ryangeyer.com/2011/12/19/the-truth-about-set-top-boxes-no-one-wants-you-to-know</id>
+    <content type="html"><![CDATA[<h2>date: 2011-12-19 00:00:00 -0700</h2>
+
+<p>layout: post
+title: The truth about set-top boxes no one wants you to know
+comments: true
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  <em>headspace_description: &lsquo;&rsquo;
+  </em>headspace_page_title: &lsquo;&rsquo;
+  Hide OgTags: &lsquo;0&rsquo;
+  Hide SexyBookmarks: &lsquo;0&rsquo;
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-12-19 00:00:00 -0700</h2>
+
+<p>None of them are really full featured, they&rsquo;re all crippled it some way by the content providers that you&rsquo;re really interested in using! :(</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[I M Becoming One Of This Moms And It Scares Me]]></title>
+    <link href="http://blog.ryangeyer.com/2011/11/03/i-m-becoming-one-of-this-moms-and-it-scares-me/"/>
+    <updated>2011-11-03T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/11/03/i-m-becoming-one-of-this-moms-and-it-scares-me</id>
+    <content type="html"><![CDATA[<h2>date: 2011-11-03 00:00:00 -0700</h2>
+
+<p>layout: post
+title: I&rsquo;m becoming one of this moms and it scares me
+comments: true
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: &lsquo;2&rsquo;</p>
+
+<h2>date: 2011-11-03 00:00:00 -0700</h2>
+
+<p>I&rsquo;m a fan of letting my children learn and grown on their own in a controlled environment where I can easily jump in and help or correct or protect my children at any given second.  We call it free range children with a side of helicopter parenting.</p>
+
+<p>I&rsquo;m attempting to loosen my reigns on my children of late.  I&rsquo;m also trying to do more activities and learning that my chores will be there when I get to them.  We have been making trips to the library so the boys can do structured social time.  Yeah, that&rsquo;s what I tell myself I&rsquo;m doing when we go to story time.  My eldest loves it and gets oh so excited when the Librarian encourages audience activity, it is awesome.  My youngest doesn&rsquo;t quite get the full library ettiquet, but who can blame the 17 month old, seriously.</p>
+
+<p>Today my eldest squealed with excitement during the songs they sing during story time while my youngest kept chanting &ldquo;Bwabwa&rdquo;, brother for baby speak, and demanded that I let him sit with him.  I let him go hovering close by, thinking that the 17 month old may be getting library protocol.  Nope.  No, my baby decided that the circle was merely an theatre for him to show his awesome dance moves which caused the Librarian to get nervous and remind me of story time rules.</p>
+
+<p>This means I got to quickly leap down into the &lsquo;reading well&rsquo; and grab my child who was pissed I interrupted his greatest preformance ever while my big boy hid his face and shushed us as we worked our way out of the &lsquo;reading well&rsquo;.  I&rsquo;m that parent guys, the crazy helicopter parent with free range children.  How will we survive this?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[One Month One Awesome Month]]></title>
+    <link href="http://blog.ryangeyer.com/2011/10/30/one-month-one-awesome-month-/"/>
+    <updated>2011-10-30T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/10/30/one-month-one-awesome-month-</id>
+    <content type="html"><![CDATA[<h2>date: 2011-10-30 00:00:00 -0700</h2>
+
+<p>layout: post
+title: One month!  One awesome month!
+comments: true
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  Hide OgTags: &lsquo;0&rsquo;
+  Hide SexyBookmarks: &lsquo;0&rsquo;
+  _edit_last: &lsquo;2&rsquo;</p>
+
+<h2>date: 2011-10-30 00:00:00 -0700</h2>
+
+<p>We have hit the point in the potty training experience where my eldest has deemed potty training fun and he hasn&rsquo;t had a single accident what so ever in a whole month.  One whole month!!!   Know we need to do something extra special for big biggie such a big accomplishment but fir now I&rsquo;m going to bask in his awesomeness.  He is awesome!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Potty Party Time]]></title>
+    <link href="http://blog.ryangeyer.com/2011/10/16/potty-party-time/"/>
+    <updated>2011-10-16T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/10/16/potty-party-time</id>
+    <content type="html"><![CDATA[<h2>date: 2011-10-16 00:00:00 -0700</h2>
+
+<p>layout: post
+title: Potty party time
+comments: true
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: &lsquo;2&rsquo;</p>
+
+<h2>date: 2011-10-16 00:00:00 -0700</h2>
+
+<p>It is amazing how much of my world still revolves around the bathroom.  The potty training process began four months ago and yet I have a constant party going on in the bathroom.  I&rsquo;m talking full on cheering, song singing, and dancing occurs on the regular.  I&rsquo;m not quite sure when the potty training party will end as every time either my eldest or I go to the bathroom it become a comical experience.</p>
+
+<p>Things I&rsquo;ve learned in the past few months are:
+The empty bathtub is a fantastic place to put a curious one year old while your three year old is using the potty.</p>
+
+<p>Nursery rhymes are the perfect length for hand washing and checking to see if you child has to pee.</p>
+
+<p>Hand washing is fun with three, or at least it is to toddlers.  Personally, I think it&rsquo;s the entire water activity table thing.</p>
+
+<p>There is a fun dance to do even when just drying your hands, don let anyone tell you otherwise.</p>
+
+<p>See, I told you potty training can be party time. :&ndash;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What S In My Bra]]></title>
+    <link href="http://blog.ryangeyer.com/2011/10/10/what-s-in-my-bra-/"/>
+    <updated>2011-10-10T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/10/10/what-s-in-my-bra-</id>
+    <content type="html"><![CDATA[<h2>date: 2011-10-10 00:00:00 -0700</h2>
+
+<p>layout: post
+title: What&rsquo;s in my bra?
+comments: true
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: &lsquo;2&rsquo;</p>
+
+<h2>date: 2011-10-10 00:00:00 -0700</h2>
+
+<p>I have breastfed for some 36 months of life between my two kids.  The end result is I find interesting stuff in my bra on the daily.  So far I&rsquo;ve found:  Cheerios, gold fish crackers, raisins, almonds, granola, cards, kosher salt (my faultnas i foolishly put a small ramikin of it within my baby&rsquo;s reach),and keys to name a few.</p>
+
+<p>The apple sticker had me giggling hysterically in the Victoria Secret dressing room as I attempted to shove my boobs into an overly padded bra that was a cup size too small.  The apple sticker, it was a gala, fluttering slowly to the floor out of my bra added a &ldquo;You are so a mom now&rdquo; vibe to bra shopping I have yet to experience till that moment.  Oh and the overstuffed sausage look when it comes to sexy underwear is not sexy, even when you are shooting for lots of fabulous cleavage.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rs Cloud Dev Best Practices]]></title>
+    <link href="http://blog.ryangeyer.com/2011/09/28/rs-cloud-dev-best-practices/"/>
+    <updated>2011-09-28T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/09/28/rs-cloud-dev-best-practices</id>
+    <content type="html"><![CDATA[<h2>date: 2011-09-28 00:00:00 -0700</h2>
+
+<p>layout: post
+title: RS &amp; Cloud Dev best practices
+comments: true
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  Hide OgTags: &lsquo;0&rsquo;
+  Hide SexyBookmarks: &lsquo;0&rsquo;
+  <em>headspace_description: &lsquo;&rsquo;
+  </em>headspace_page_title: &lsquo;&rsquo;
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-09-28 00:00:00 -0700</h2>
+
+<p>I am often asked about best practices for developing, testing and debugging ServerTemplates.  This is my attempt to condense some of the best and most useful bits to make it easier for developers to create and publish some awesome templates.</p>
+
+<p>I&rsquo;m going to break this down into two categories.  First will be general guidelines applicable to any ServerTemplate, and the second will be more focused on ServerTemplates which use Chef for configuration management.</p>
+
+<h1>Launch once test many</h1>
+
+
+<p>One of the early pitfalls I fell victim to was relaunching my server instance for each change to each script when testing.  As you might imagine this practice can be excruciatingly time consuming!  With that in mind here are some tips on how to reduce the time between making a script change and testing it on a running instance.</p>
+
+<h2>Super size me</h2>
+
+
+<p>Let&rsquo;s face it, bigger is actually better when it comes to instance sizes.  Larger instances are provisioned and boot faster, they run your installation and configuration routines faster and they just generally make your life easier.</p>
+
+<p>I develop a lot for small Amazon EC2 t1.micro instances.  These instances are seriously restricted in terms of CPU capacity and memory.  As a result, simple activities like installing and compiling ruby gems can be very taxing and time consuming.  As a result, I tend to run significantly higher end instances while doing development.  Running a c1.medium in place of a t1.micro (when targetting a 32bit image) results in a lot less waiting while launching and terminating instances and testing configuration.  The added hourly cost of a faster instance should be more than offset by the optimized use of your time.</p>
+
+<p><strong>RS</strong>
+Create a dev &amp; prod RepoPath, keep dev at head/master</p>
+
+<p><strong>Any</strong>
+Keep instances up and run scripts against them as operational scripts (or equiv).  On RS, use the rs_agent_dev only DL once option and dev/test on the box.</p>
+
+<p>Stop, Don&rsquo;t terminate.</p>
+
+<p>::File, not File</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[One Time People Thought I Was A Rich Girl And It Was Funny]]></title>
+    <link href="http://blog.ryangeyer.com/2011/09/15/one-time-people-thought-i-was-a-rich-girl-and-it-was-funny/"/>
+    <updated>2011-09-15T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/09/15/one-time-people-thought-i-was-a-rich-girl-and-it-was-funny</id>
+    <content type="html"><![CDATA[<h2>date: 2011-09-15 00:00:00 -0700</h2>
+
+<p>layout: post
+title: One time people thought I was a rich girl and it was funny
+comments: true
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  <em>headspace_description: &lsquo;&rsquo;
+  </em>headspace_page_title: &lsquo;&rsquo;
+  _edit_last: &lsquo;2&rsquo;</p>
+
+<h2>date: 2011-09-15 00:00:00 -0700</h2>
+
+<p>I am a woman from modest means, I have been for as long as I can remember and it has never bothered me.  My parents were young and never given a hand out of any sort when they decided to marry immediately after high school and start a family.  They weren&rsquo;t shunned but money wasn&rsquo;t handed out.</p>
+
+<p>My life has been modest and I don&rsquo;t think I understood how poor I was as a child until I went through a culinary program at a local city college.  I went in eager to learn, excited to work with all the fancy equipment that I saw on tv.  I went home after the first week completed, eyes wide open and told my mom, &ldquo;We&rsquo;re poor.&rdquo;.</p>
+
+<p>It was amazing how real this words became to me, it wasn&rsquo;t like I was never around those that had more than we did, but I never really cared, I simply figured that was just a different way we were all different.  It wasn&rsquo;t just the magnificent equipment and the amazing amounts of food I was surrounded by in culinary school that let me know I came from a modest home but also the talks about travel I was surrounded by blew my mind.  People around my age, I was only 17 when I started the program, talking about travels to NYC, France, Italy, Spain, all over the globe and it blew me away.  I expected to hear these kinds of stories from my older classmates but not the young ones.</p>
+
+<p>Ironic isn&rsquo;t it?  I spent the majority of my life surrounded by people with means, it was common place for my classmates to flash their newest acquisition in plastic when I was in junior high.  I often rolled my eyes and tried to focus on what I was supposed to be learning.  Yet the gravity of my economic status didn&rsquo;t hit me till I was in college.</p>
+
+<p>The funny part was I guess I was quiet around my classmates in college at first so I was perceived as a snob, and a rich one at that.  People didn&rsquo;t include me in conversations because I didn&rsquo;t get working hard like them, or at least they didn&rsquo;t think so.  Because I was mostly raised in the beautiful town referred to as the &lsquo;American Rivera&rsquo; and wasn&rsquo;t paying exorbadent amounts to rent a closet, and wasn&rsquo;t working while in college; some were convinced I had to come from a great means.  It wasn&rsquo;t until much later that people talked to me and realized quite the opposite.  They found that I was down to earth, friendly, and humble.  I still laugh about the time people thought I was a rich girl.  Though that rep followed me into the work force as the men I worked with in the kitchen teased me as I only had one job while many of them had two, three and one had four jobs.  That rep I accepted because I was a bi</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[]]></title>
+    <link href="http://blog.ryangeyer.com/2011/08/16/"/>
+    <updated>2011-08-16T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/08/</id>
+    <content type="html"><![CDATA[<h2>date: 2011-08-16 00:00:00 -0700</h2>
+
+<p>layout: post
+title: &lsquo;&rsquo;
+comments: true
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: &lsquo;2&rsquo;</p>
+
+<h2>date: 2011-08-16 00:00:00 -0700</h2>
+
+<p>My beloved and I just celebrated out nine year anniversary last month.  I still can&rsquo;t believe that I have been married to my husband for nine years.  I can&rsquo;t believe that we have been in a relationship with each other for ten years.  Where does the time go?</p>
+
+<p>When we met I was only 19, just finished college, just got my driver&rsquo;s license.  My husband was only 20 and dreamy as ever.  Within a couple weeks we were planning our wedding.  Yes, we were one of those sappy couples and shortly after realizing that we really like each other we asked a lot of tough questions like if each one of us wanted kids, how many kids, how to handle money, ect.  When we realized that we were compatible in principles and in what we wanted in life for the long haul, we dreamed and planned.  Then a year later, we were married, blissfully.</p>
+
+<p>Now, nine years after saying I do, we have two wonderful little boys and I do believe that my mister got even more dreamy.  I am thankful for the life we have together, just the four of us and hope for many more years with my beautiful little family.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Trying To Stay Interesting]]></title>
+    <link href="http://blog.ryangeyer.com/2011/08/14/trying-to-stay-interesting/"/>
+    <updated>2011-08-14T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/08/14/trying-to-stay-interesting</id>
+    <content type="html"><![CDATA[<h2>date: 2011-08-14 00:00:00 -0700</h2>
+
+<p>layout: post
+title: Trying to stay interesting
+comments: true
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: &lsquo;2&rsquo;</p>
+
+<h2>date: 2011-08-14 00:00:00 -0700</h2>
+
+<p>I have been a stay at home mom for a little over a year now and my world seriously revolves around the needs and wants of my children and errands and chores from 8-5 every day, if not longer.  My focus is interacting, teaching, and molding the young minds left in my care until they are grown by my standards.  This includes learning how to play keep the playdoh out of the baby&rsquo;s mouth and out of electronics.  Learning about a huge selection of good music and learning what they prefer.   The result?  This once ever so interesting woman that had interesting things to say is so tired and most of my ideas are hibernating by the time I get a chance to have a real adult conversation.</p>
+
+<p>This means that when my ever so intelligent husband gets home he is often greeted by our adorable boys with open arms and squeals of joy while I take a deep breath and prepare to be a listening ear.  Now, I love and adore my husband and he is an very intelligent man, like bordering on genius intelligent, so there is a degree of preparing myself to hear what he has to say.  When your day is filled with nursery rhymes and instructing your children on what is and is not acceptable, like no, shoving your brother off the couch is not ok even if you feel like he&rsquo;s taking up too much room, my great and hilarious epiphanies have faded in the background.</p>
+
+<p>My husband comes home eager to talk about his day at work, he loves his job, and I am thankful for it.  I seriously make mental notes while he talks about things I could learn more about, I have even been known to google something he has mentioned in passing.  I try to participate but my background is in culinary arts, dental practices, and the very basic HR and management principles while my husband is all about code, security and cloud computing.  We hit a common ground with cars and technology but we are on different plains there too, thankfully there are a slew of other topics we talk about but at the end of the day I am so knee deep in potty training, diaper changing, and all things childcaring related I am just happy to hear an adult talk to me about adult things.</p>
+
+<p>Every day I attempt to watch the news, maybe a documentary, something that is relevant or up to date but it is an attempt.  I fall asleep during the late night news, I&rsquo;m half awake for the early morning news while stealing a little more sleep after nursing my youngest before my eldest wakes up.  I try to watch the evening news while making and serving dinner to my boys.  I look at the news sites both national and local but Lordy that only lasts a few minutes too.  The running joke with my mom about movies or shows we watch streaming is that though I may have &lsquo;watched&rsquo; said thing a couple of times, I have yet to watch it completely.</p>
+
+<p>I&rsquo;m trying to stay interesting to myself and that is a feat within it&rsquo;s self.  I&rsquo;m going to do it, I&rsquo;m determined to do it, now if only we could get an extra five hours in a day I would be golden.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How To Leverage Amazon S Content Delivery Network For Wordpress]]></title>
+    <link href="http://blog.ryangeyer.com/2011/07/13/how-to-leverage-amazon-s-content-delivery-network-for-wordpress/"/>
+    <updated>2011-07-13T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/07/13/how-to-leverage-amazon-s-content-delivery-network-for-wordpress</id>
+    <content type="html"><![CDATA[<h2>date: 2011-07-13 00:00:00 -0700</h2>
+
+<p>layout: post
+title: How to Leverage Amazon&rsquo;s Content Delivery Network for Wordpress
+comments: true
+categories:
+&ndash; Cloud computing
+tags:
+&ndash; amazon
+&ndash; amazon s3
+&ndash; aws
+&ndash; cdn
+&ndash; content delivery network
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-07-13 00:00:00 -0700</h2>
+
+<p>For visitors to your blog, one of the biggest factors that contributes to the load time of the page is the static content.  Stuff like pictures, CSS, Javascript files, etc.</p>
+
+<p>One of the best ways you can improve this performance is to serve those things from a Content Delivery Network (CDN).  Follow along as I show you how to configure your Wordpress blog to use Amazon S3 as a CDN for delivering static content!</p>
+
+<!--more-->
+
+
+
+
+<h1>What you&#8217;ll need</h1>
+
+
+<ul>
+    <li>An Amazon AWS account</li>
+    <li>The <a href="http://wordpress.org/extend/plugins/tantan-s3/">Amazon S3</a> plugin for Wordpress</li>
+    <li>The <a href="http://wordpress.org/extend/plugins/ossdl-cdn-off-linker/">CDN Offlinker</a> plugin for Wordpress</li>
+</ul>
+
+
+<p>The first step is going to be setting up the S3 bucket where you&rsquo;re going to host your files.</p>
+
+<p>Since we&rsquo;re going to be handing over access to the AWS API for S3 to a Wordpress plugin, we should create a new <a href="http://blog.ryangeyer.com/2011/03/28/create-aws-service-accounts-with-iam/">IAM Service Account</a> and set up a <a href="http://blog.ryangeyer.com/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">security policy</a> which restricts that accounts access to only the S3 bucket we setup.</p>
+
+<p>The next thing we want to do is upload all of the content from our /wp-include and /wp-content directories up to the bucket we created.</p>
+
+<p>Make sure to &ldquo;Make Public&rdquo; everything you uploaded.</p>
+
+<p>Once we&rsquo;ve done that, we can go enable our Wordpress plugins.  First enable Amazon S3 plugin.</p>
+
+<p>Wordpress Admin &ndash;> Settings &ndash;> Media &ndash;> Set the path for media</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Getting Motivated]]></title>
+    <link href="http://blog.ryangeyer.com/2011/07/10/getting-motivated/"/>
+    <updated>2011-07-10T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/07/10/getting-motivated</id>
+    <content type="html"><![CDATA[<h2>date: 2011-07-10 00:00:00 -0700</h2>
+
+<p>layout: post
+title: Getting Motivated
+comments: true
+categories:
+&ndash; 1967 Cadillac Sedan Deville
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-07-10 00:00:00 -0700</h2>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How I Vandalized A Weed Whacker At Home Depot]]></title>
     <link href="http://blog.ryangeyer.com/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/"/>
     <updated>2011-07-02T00:00:00-07:00</updated>
     <id>http://blog.ryangeyer.com/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot</id>
-    <content type="html"><![CDATA[<p>So we&rsquo;ve been renting a house for a bit over a year and a half.  As a techie and an obsessive tinkerer, this means an excuse to start buying tools and other things in the name of &ldquo;maintaining the house&rdquo;.</p>
+    <content type="html"><![CDATA[<h2>date: 2011-07-02 00:00:00 -0700</h2>
+
+<p>layout: post
+title: How I Vandalized a Weed Whacker at Home Depot
+comments: true
+categories:
+&ndash; Funny
+tags:
+&ndash; cheap fix
+&ndash; diy
+&ndash; electric weed whacker
+&ndash; home depot
+&ndash; screwdriver
+&ndash; tool department
+&ndash; vandal
+&ndash; vandalism
+&ndash; weed whacker
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-07-02 00:00:00 -0700</h2>
+
+<p>So we&rsquo;ve been renting a house for a bit over a year and a half.  As a techie and an obsessive tinkerer, this means an excuse to start buying tools and other things in the name of &ldquo;maintaining the house&rdquo;.</p>
 
 <h1>How it all began</h1>
 
@@ -86,11 +516,42 @@ make me, and my blog a little easier to find.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Policy for an S3 only Amazon IAM User]]></title>
+    <title type="html"><![CDATA[Policy For An S3 Only Amazon Iam User]]></title>
     <link href="http://blog.ryangeyer.com/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
     <updated>2011-06-27T00:00:00-07:00</updated>
     <id>http://blog.ryangeyer.com/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
-    <content type="html"><![CDATA[<p>Now that Amazon&rsquo;s Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href="http://blog.ryangeyer.com/2011/04/04/enabling-aws-console-login-for-iam-users/">login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.</p>
+    <content type="html"><![CDATA[<h2>date: 2011-06-27 00:00:00 -0700</h2>
+
+<p>layout: post
+title: Policy for an S3 only Amazon IAM User
+comments: true
+categories:
+&ndash; Cloud computing
+&ndash; Snippets
+tags:
+&ndash; access management
+&ndash; amazon
+&ndash; aws
+&ndash; cloud computing
+&ndash; iam
+&ndash; linkedin
+&ndash; policy
+&ndash; s3
+status: publish
+type: post
+published: true
+meta:
+  _headspace_description: A simple Amazon IAM policy to allow a user full access to</p>
+
+<pre><code>a single S3 bucket
+</code></pre>
+
+<p>  _edit_last: &lsquo;1&rsquo;
+comments: true</p>
+
+<h2>date: 2011-06-27 00:00:00 -0700</h2>
+
+<p>Now that Amazon&rsquo;s Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href="http://blog.ryangeyer.com/2011/04/04/enabling-aws-console-login-for-iam-users/">login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.</p>
 
 <!--more-->
 
@@ -157,11 +618,27 @@ make me, and my blog a little easier to find.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[The baby]]></title>
+    <title type="html"><![CDATA[The Baby]]></title>
     <link href="http://blog.ryangeyer.com/2011/06/24/the-baby/"/>
     <updated>2011-06-24T00:00:00-07:00</updated>
     <id>http://blog.ryangeyer.com/2011/06/24/the-baby</id>
-    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/rgeyer/5630016717/" title="Tate by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5307/5630016717_87e53254bb_m.jpg" width="161" height="240" alt="Tate" class="alignright"/></a>
+    <content type="html"><![CDATA[<h2>date: 2011-06-24 00:00:00 -0700</h2>
+
+<p>layout: post
+title: The baby
+comments: true
+categories:
+&ndash; Parenting
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-06-24 00:00:00 -0700</h2>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5630016717/" title="Tate by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5307/5630016717_87e53254bb_m.jpg" width="161" height="240" alt="Tate" class="alignright"/></a>
 I know I have been talking soooo much about my eldest son, the amazing three year old that has accomplished sooo much in the potty training arena.  I have to say a few things about my baby boy.</p>
 
 <p>I am in awe over this child and know that I will be trying to keep up with him for the rest of my life.  He is a climber.  Like, the kid doesn&rsquo;t walk yet (buries head in sand over the steps he ran and walked randomly) and yet he climbs everything he can get his hands on.  We like to go to a park that has the little play ground and the big play ground.  My baby boy has shown his climbing prowess by climbing the big play ground trying to keep up with his brother that is nearly 2.5 years older than him.</p>
@@ -175,11 +652,27 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 13:  NO WAY!]]></title>
+    <title type="html"><![CDATA[Potty Training Day 13 No Way]]></title>
     <link href="http://blog.ryangeyer.com/2011/06/22/potty-training-day-13-no-way/"/>
     <updated>2011-06-22T00:00:00-07:00</updated>
     <id>http://blog.ryangeyer.com/2011/06/22/potty-training-day-13-no-way</id>
-    <content type="html"><![CDATA[<p>He&rsquo;s being all awesome and doing all he can on his own.  I had no idea he would do so well.</p>
+    <content type="html"><![CDATA[<h2>date: 2011-06-22 00:00:00 -0700</h2>
+
+<p>layout: post
+title: ! &lsquo;Potty Training Day 13:  NO WAY!&rsquo;
+comments: true
+categories:
+&ndash; Parenting
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-06-22 00:00:00 -0700</h2>
+
+<p>He&rsquo;s being all awesome and doing all he can on his own.  I had no idea he would do so well.</p>
 
 <p>I mean I knew he could do it but I had no idea he would just embrace the process so willingly and be so self sufficient.</p>
 
@@ -192,11 +685,27 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 12:  Old Hat]]></title>
+    <title type="html"><![CDATA[Potty Training Day 12 Old Hat]]></title>
     <link href="http://blog.ryangeyer.com/2011/06/20/potty-training-day-12-old-hat/"/>
     <updated>2011-06-20T00:00:00-07:00</updated>
     <id>http://blog.ryangeyer.com/2011/06/20/potty-training-day-12-old-hat</id>
-    <content type="html"><![CDATA[<p>We did the scariest thing ever!  We took both boys grocery shopping while one was diaperless!  Scary stuff, huh?  We went grocery shopping without both boys last week, yes we were big chickens, so what!</p>
+    <content type="html"><![CDATA[<h2>date: 2011-06-20 00:00:00 -0700</h2>
+
+<p>layout: post
+title: ! &lsquo;Potty Training Day 12:  Old Hat&rsquo;
+comments: true
+categories:
+&ndash; Parenting
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-06-20 00:00:00 -0700</h2>
+
+<p>We did the scariest thing ever!  We took both boys grocery shopping while one was diaperless!  Scary stuff, huh?  We went grocery shopping without both boys last week, yes we were big chickens, so what!</p>
 
 <p>My big boy was doing well all day with the potty training, you know acting like he&rsquo;s been doing this for years.  He even had attitude with me when I asked if he needed to use the potty, he rolled his eyes and told me I was silly since he had just peed a few minutes ago.  <em>Epic</em>.</p>
 
@@ -209,11 +718,27 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 11:  Kicking butt and taking names]]></title>
+    <title type="html"><![CDATA[Potty Training Day 11 Kicking Butt And Taking Names]]></title>
     <link href="http://blog.ryangeyer.com/2011/06/17/potty-training-day-11-kicking-butt-and-taking-names/"/>
     <updated>2011-06-17T00:00:00-07:00</updated>
     <id>http://blog.ryangeyer.com/2011/06/17/potty-training-day-11-kicking-butt-and-taking-names</id>
-    <content type="html"><![CDATA[<p>Yeah, my son was a rock start today.</p>
+    <content type="html"><![CDATA[<h2>date: 2011-06-17 00:00:00 -0700</h2>
+
+<p>layout: post
+title: ! &lsquo;Potty Training Day 11:  Kicking butt and taking names&rsquo;
+comments: true
+categories:
+&ndash; Parenting
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-06-17 00:00:00 -0700</h2>
+
+<p>Yeah, my son was a rock start today.</p>
 
 <p>He proudly would announce that he used the potty all by himself, with a dance.  Yes, I had to escort him back to the bathroom to wash his hands and wash my own hands since I high fived him with glee before remembering that he can&rsquo;t turn the faucet on by himself.</p>
 
@@ -224,194 +749,31 @@ I know I have been talking soooo much about my eldest son, the amazing three yea
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Potty Training Day 10: Getting better]]></title>
+    <title type="html"><![CDATA[Potty Training Day 10 Getting Better]]></title>
     <link href="http://blog.ryangeyer.com/2011/06/15/potty-training-day-10-getting-better/"/>
     <updated>2011-06-15T00:00:00-07:00</updated>
     <id>http://blog.ryangeyer.com/2011/06/15/potty-training-day-10-getting-better</id>
-    <content type="html"><![CDATA[<p>Yesterday was horrid, just horrid as everyone was struggling with the emotional turmoil of the accidents.  Yes, even the baby realized that everyone was having a hard time.  It&rsquo;s amazing how your child has an accident and you try to focus all your energy on making it right and yet you, as a mother, find the time to beat yourself up for dropping the ball and possibly not give your kid enough time and attention.</p>
+    <content type="html"><![CDATA[<h2>date: 2011-06-15 00:00:00 -0700</h2>
+
+<p>layout: post
+title: ! &lsquo;Potty Training Day 10: Getting better&rsquo;
+comments: true
+categories:
+&ndash; Parenting
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: &lsquo;1&rsquo;</p>
+
+<h2>date: 2011-06-15 00:00:00 -0700</h2>
+
+<p>Yesterday was horrid, just horrid as everyone was struggling with the emotional turmoil of the accidents.  Yes, even the baby realized that everyone was having a hard time.  It&rsquo;s amazing how your child has an accident and you try to focus all your energy on making it right and yet you, as a mother, find the time to beat yourself up for dropping the ball and possibly not give your kid enough time and attention.</p>
 
 <p>Today, we are getting better, much better.  My son started the day with an accident and a shower and I had a load of laundry to do before doing anything.  We followed it up with being my son then being way too confident with his bladder control and having a moment where he forgot to take his pants off while peeing.  From that point on he was showing his prowess, kicking butt and taking names and kept things dry everywhere but in the potty.</p>
 
 <p>You are so happy you stumbled over this blog right now.  I mean, I can just see the techie followers of my husband wondering what in the hell they came across.  You can thank my ever so wonderful husband for sharing this space with his stay at home mom wife to share the joys of pees and poops and lactating boobies and other fantastical bodily functions.  Go ahead, take a minute to thank him. :-P</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Potty Training Day 9: Set back]]></title>
-    <link href="http://blog.ryangeyer.com/2011/06/13/potty-training-day-9-set-back/"/>
-    <updated>2011-06-13T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/06/13/potty-training-day-9-set-back</id>
-    <content type="html"><![CDATA[<p>My potty training star and his little brother were in rare form and all they want is to cling to me and make demands.  I think I was just worn out and the boys just like to go full throttle, meaning I was a big baby on this day.  My toddler was in a mouthy mood and my baby was dealing with the teething woes along with me being tired and in some kind of allergy stupor, it was a bad combination.</p>
-
-<p>The potty training was great until we had words when he just wasn&rsquo;t willing to sit on the potty for a minute to be sure he was ok.  It went down hill fast after that point.  He had an accident, he was upset with himself.  I cleaned him up in a hurry, not a big deal, well I didn&rsquo;t think so until I took his favorite pajamas and he cried.  I hurried and got him in another favorite outfit and he was still in tears.  The baby was screaming his head off as I put him in the pack n play to keep him out of the mess I was cleaning.  My baby doesn&rsquo;t understand why I wouldn&rsquo;t want him clinging to my side, ready to bolt to get into some kind of mess.</p>
-
-<p>The stress of this event along with me not getting my much needed 5-10 minutes of quiet on my own and me not feeling spectacular was building up.  My solution?  Take the boys on a walk, of course!  I needed to get some endorphins going and my toddler needed another outing sans diaper and my baby needed some sunshine.  We went on said walk and came back to the house in a better mood, or so I thought.  I asked my toddler to sit on the potty a couple times.  Sadly he refused and announced he could do it by himself.  Cue accident number two while he made it to the potty he forgot getting his pants off first.</p>
-
-<p>There were tears and panic from both my husband and toddler at this point.  I had to stop a nursing session with my baby and take over just so things would calm down.  When everyone was cleaned up and calmed down I sat and cried.  This is the easy stuff guys, and as they get older it is only going to get harder.  I want to be an awesome mom and today I didn&rsquo;t feel like an awesome mom.  I know there are going to be hard days but when you are in the thick of it, holy crap this job is so hard.</p>
-
-<p>The day ended on a good note and I needed that.  I&rsquo;ll try to be an awesome mom again tomorrow.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Potty Training Day 8:  Show off ;)]]></title>
-    <link href="http://blog.ryangeyer.com/2011/06/10/potty-training-day-8-show-off/"/>
-    <updated>2011-06-10T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/06/10/potty-training-day-8-show-off</id>
-    <content type="html"><![CDATA[<p>We had a great day and when it came to today&rsquo;s outing, we stretched it out over two hours and the first thing our potty training star did was map out the potty available and tried it out.</p>
-
-<p>Yeah, he is awesome.</p>
-
-<p>He didn&rsquo;t have a single accident and was even applauding himself by the time we got home.  He is a bit of show off. :&ndash;)  I&rsquo;m so proud of my big boy.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Potty Training Day 7:  Going out]]></title>
-    <link href="http://blog.ryangeyer.com/2011/06/08/potty-training-day-7-going-out/"/>
-    <updated>2011-06-08T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/06/08/potty-training-day-7-going-out</id>
-    <content type="html"><![CDATA[<p>We have survived so far.  Heck, it has been smooth sailing considering how hard and rough this journey could be.  I love to stay home and frankly my toddler prefers to stay home unless we are going to visit his Nana or go to a park but we need to try going out.  We needed a kiddie pool to survive the heat wave we were dealing with (and by we, I mean me).  So I asked my mom to come with us, as I was too big of a baby to even consider going on this trip with my boys on my own.</p>
-
-<p>We went to the store and though the toys were a distraction we some how made it out with my toddler dry and with only a few tears and a kiddie pool.  We forced the pool in my van with the help of a kind gentleman that saw us struggling to put it in the vehicle.  We got home and got the boys out of the car and then celebrated on our &lsquo;dry run&rsquo; with our own little pool party.</p>
-
-<p>I think we are doing well (and by we, I mean my toddler) is doing an awesome job.  We got out of the house!  :throws confetti:</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Potty Training Day 6:  Getting Smoother]]></title>
-    <link href="http://blog.ryangeyer.com/2011/06/06/potty-training-day-6-getting-smoother/"/>
-    <updated>2011-06-06T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/06/06/potty-training-day-6-getting-smoother</id>
-    <content type="html"><![CDATA[<p>I had been letting my toddler run around in underwear as clothes seemed to be such an huge challenge.  I had so many things going for us so we tried clothes again.  My toddler did fantastic.</p>
-
-<p>We spent more time outside which meant that he had to trek into the house to use the potty.  We were putting stickers on the chart, eating our candy treats, high fiving, doing dances.  Life is good.</p>
-
-<p>I&rsquo;m now realizing that one day we will have to go out as a family, with my little boy in underwear.  It has to happen.  It will happen.  I am afraid.  This process has gotten smoother but we are about to add a new challenge.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Potty Training Day 5:  HELP!]]></title>
-    <link href="http://blog.ryangeyer.com/2011/06/03/potty-training-day-5-help/"/>
-    <updated>2011-06-03T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/06/03/potty-training-day-5-help</id>
-    <content type="html"><![CDATA[<p>I thought I had this process under control, well as under control as you can get.  My toddler boy rarely had any accidents.  He did a dance, we high fived with each success.  I felt good until I started getting more and more attitude from my toddler.</p>
-
-<p>Then I turned to the interwebs for advice.  I went to a couple baby boards that I have been a part of for a while and discovered that I was doing almost everything right.  Yay, I think.  Then one of incredible ladies on one of the baby boards I frequented asked if I used a timer to alert my toddler it was time to check if he had to use the potty.  Oh my goodness!  Using this technique meant less attitude from my toddler as he felt more in control.  It meant less time outs for my toddler as his hissy fits were massive and were terrible displays of disrespect for me.  It meant we were back on the same page.</p>
-
-<p>Thank goodness when I needed help I was not only given the key tip to make life better for all of us but I also was reassured that I was using the techniques needed.  This meant that my mobile baby was also given more attention and we could focus more on learning and playing.</p>
-
-<p>Yay for help.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Potty Training day 4: Stubborn]]></title>
-    <link href="http://blog.ryangeyer.com/2011/06/01/potty-training-day-4-stubborn/"/>
-    <updated>2011-06-01T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/06/01/potty-training-day-4-stubborn</id>
-    <content type="html"><![CDATA[<p>Now day four was a good day minus the attitude.  I&rsquo;m not sure who&rsquo;s attitude was worse my toddler&rsquo;s or my own in response to his attitude but we both showed that we are very stubborn.  He made it clear that he was busy playing or eating (slowest eater in the house here) and just couldn&rsquo;t be bothered to check to see if he needed to use the potty while I kept checking with him and encouraging him to sit on the potty.</p>
-
-<p>I then had flashes of what my future was going to be like when he is a teenager and I panicked.  I did my best to keep my cool but these visions of him telling me he was too busy to clean his room and that the newest video game was much more important than bathing.  Then having fights over why he couldn&rsquo;t borrow the car after not doing his chores and being disrespectful.  These are scary, scary thoughts.</p>
-
-<p>We survived the day, we still liked each other, we still loved each other.  I had a glimpse of my toddler becoming a big boy and I am happy we have a long way till we get there.  He&rsquo;s just a stubborn person like his mama.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Potty Training Day 3: Clothes are the Enemy]]></title>
-    <link href="http://blog.ryangeyer.com/2011/05/04/potty-training-day-3-clothes-are-the-enemy/"/>
-    <updated>2011-05-04T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/05/04/potty-training-day-3-clothes-are-the-enemy</id>
-    <content type="html"><![CDATA[<p>Day three of the potty training process for toddler boy was no easy feat.  We threw too many curve balls at the kid.  We dressed him completely and moved the potty from the play room to the bathroom which is really far apart.</p>
-
-<p>We then learned that toddler boy&rsquo;s shirts are way too long to be able to pull down said shorts and underwear in a hurry.  We also learned that the run from the sun room to the bathroom is really way too long to have to remember that you have to do more than simply sit on the potty and pee.</p>
-
-<p>Clothes complicate things, a lot.  I mean I know getting dressed for a date with my mister is a hard one to figure out.   Where are we going?  What are we doing?  How much walking will I have to do?  What if we change our plans?  Will I look under or over dressed for said possible change?  Clothes are the enemy, I mean, aren&rsquo;t the clothes the ones that let us know if we are getting a little fluffy?</p>
-
-<p>I get it and I totally agree little man, clothes are the enemy.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Potty Training Day 2: Reality settles in...]]></title>
-    <link href="http://blog.ryangeyer.com/2011/05/03/potty-training-day-2-reality-settles-in/"/>
-    <updated>2011-05-03T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/05/03/potty-training-day-2-reality-settles-in</id>
-    <content type="html"><![CDATA[<p>So yesterday was all excitement and squealing and today I realized that keeping both boys taken care of and potty training the eldest while keeping the baby, literally out of the potty is going to be a huge undertaking.  My toddler still expects me to high five him every time he does anything potty training related and his little brother still needs to be included.  Here I thought just taking care of the boys full time was going to be a HUGE challenge, it isn&rsquo;t anything compared to potty training and caring for both boys.</p>
-
-<p>It&rsquo;s like the time my then boyfriend flaked on his plans with me to hang out with the boys.  The reality hit that I was in a relationship and there will be bumps in the road.  Oh and that cute thing when he stopped talking to me when a nice car drives by, becoming less cute.</p>
-
-<p>My son is showing that he is self aware.  I was eating breakfast and nursing his brother and then he came up to me squealing that he did it again.  I thought this was simply a ploy to get more candy because quite frankly my toddler is smart enough to play on my sleep deprived memory to get a sugar fix.  Nope.  He used the potty on his own, he peed a little on a tile next to his potty but mostly made the potty without so much as a word from me.</p>
-
-<p>He&rsquo;s doing it without me!!!  I squealed and clapped.  I cleaned up the mess then took my little troop to the bathroom to flush what was in the potty in the big toilet.  We celebrated as my toddler flushed the toilet.  Then we all washed our hands.  We marched back to the living room with a clean potty chair and put a sticker on the chart.  My big boy got the candy he wanted and put the potty chair back together in the play room.  We are getting there!  :&ndash;)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Potty Training Day 1: The Infatuation]]></title>
-    <link href="http://blog.ryangeyer.com/2011/05/02/potty-training-day-1-the-infatuation/"/>
-    <updated>2011-05-02T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/05/02/potty-training-day-1-the-infatuation</id>
-    <content type="html"><![CDATA[<p>Potty training is an ongoing conversation in my household, it only make sense as I have three year old in diapers.  I talk to my mom about potty training.  I talk to my husband about potty training.  Hell, I have talked to my toddler about potty training daily if not during every time I go to the bathroom.  Yes, it&rsquo;s true you have kids and stay home with them and you have company every time you use the toilet.</p>
-
-<p>So this week my son came up to me asking to use his personal potty.  I was elated!  I squealed and jumped up and down and when he asked for his big boy underwear I clapped and screamed!   My son was excited to get so much attention and for the rest of the day was in big boy underwear, like daddy.  We talked about stickers and I gave him candy.</p>
-
-<p>It was like the beginning of a relationship where my son screaming, &ldquo;I have to poop!&rdquo; when he actually had to pee and did outside was adorable.  I was just happy he was learning when he should be on the potty.</p>
-
-<p>It&rsquo;s kind of like how I thought it was adorable when my husband, then crush, paused conversations to figure out what was making that fantastic diesel sound.  Or would be giving me an adoring gaze which was interrupted by the Cobra replica that we saw at the intersection we were stopped at.  Then the conversation was no longer about what our life may be if we got married but the money it cost to build a Cobra and if he could fit in it.  I was infatuated with how passionate he was.  You get the point.</p>
-
-<p>Day one was all about the infatuation with the idea of my toddler being potty trained, and my son feeling like he was a big boy like his daddy.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Livin’ On The Edge]]></title>
-    <link href="http://blog.ryangeyer.com/2011/04/20/livin-on-the-edge/"/>
-    <updated>2011-04-20T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/04/20/livin-on-the-edge</id>
-    <content type="html"><![CDATA[<p><a href="http://blog.ryangeyer.com/images/255790697_f288115839_m.jpg"><img src="http://blog.ryangeyer.com/images/255790697_f288115839_m.jpg" alt="" title="255790697_f288115839_m" width="240" height="215" class="alignleft size-full wp-image-1082" /></a>When I was little livin&#8217; on the edge has changed so much over the years.  When I was a child, living on the edge meant walking on the highest point of a swing set and climbing to scary heights of a giant tree.  It meant playing in a vacant apartment to escape the heat, because I knew I would be in huge trouble taking my baby sister to the pool without my parent&rsquo;s permission.</p>
-
-<p>When I was a teen it meant talking back to my mom, staying out late, and that one time I drove my friend&rsquo;s car with her trying to cheer me on before I got my license.  It was when I tried to see just how long I could function well with little to no sleep, oh college days.  Yeah, I was that awesome culinary student that worked in a bakery, so there were days I would be up at 3:30am and wouldn&rsquo;t get to bed the following day till 1pm due to work, school and my dreamy boyfriend.</p>
-
-<p>When I was in my twenties it meant having crazy make out sessions with my husband everywhere, yeah I&rsquo;m a wild child, crazy newlywed me and yeah we grossed out our sisters on numerous occasions.  Or the fantastic time we went to a wine festival and followed up that afternoon of drinking with going home and drinking more wine and eating of fine cheeses and fruit.  Wild and crazy I tell ya!!</p>
-
-<p>Now as a mother, living on the edge is a whole new world.  When I had one child, living on the edge was coming home late for his evening nursing session or letting him run around naked for more than half an hour.  Now living on the edge is changing my toddler on the floor and spacing on closing the gate to keep my baby away from the dirty diaper I have removed.  It&rsquo;s also when I hear an pause in the constant chatter from both boys and don&rsquo;t immediately jump up and check on what mischief they may be getting into with each other, you know like tearing apart their play room to the point beyond recognition.  Like right now, I&rsquo;m so living on the edge as I have not followed my baby crawling to the office where my dreamy, adorable, and thank goodness patient husband is busy working.  How things have changed.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[It all comes down to poop]]></title>
-    <link href="http://blog.ryangeyer.com/2011/04/15/it-all-comes-down-to-poop/"/>
-    <updated>2011-04-15T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/04/15/it-all-comes-down-to-poop</id>
-    <content type="html"><![CDATA[<p>Let&rsquo;s talk about how often moms &lsquo;get&rsquo; to talk about poop.  First we talk about poop all of the time when we are pregnant, or the lack there of due to all the iron we are taking.  Then as we get closer to delivery then we are amazed with the amount of &lsquo;cleansing&rsquo; our body does.</p>
-
-<p>When we have our beautiful baby then we are very concerned about the number of wet and dirty diapers.  You even beg your child when jaundiced to just poop a few more times that particular day.  You even proudly show the chart you&rsquo;ve been using to record all the naps and wet and dirty diapers the first time you go and see the pediatrician.</p>
-
-<p>Then there are the conversations about poop, wet diapers, and frequency that you have with other moms.  When you child starts to eat solids, you start to panic due to the length of time between poopy diapers.  Then you conversation includes, what foods help your nearly toothless wonder to poop.  How about what foods to avoid when you are still having to change poopy diapers.  I also love the hysterical moments that I&rsquo;ve dealt with and didn&rsquo;t warn my husband about the effect the blue rice crispy treat had on my toddler&rsquo;s dirty diaper.</p>
-
-<p>I would have never thought that I would have long in depth conversations about my sons bowel movements.  I do now have those conversations with more people than I ever dreamed of. Heck, now that I&rsquo;m trying to convince my eldest son to potty train, we talk about pee and poop every single diaper change.  Heck, now my son brings up the topic of poop to me on a daily basis.  I have a feeling I will continue to talk about poop for the rest of my life, personally I blame Dr. Oz.  He started it.  I mean who else but he encouraged us to look in to toilet after we pooped.  Yep, I blame him.  :-P</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Caveman communication]]></title>
-    <link href="http://blog.ryangeyer.com/2011/04/13/caveman-communication/"/>
-    <updated>2011-04-13T00:00:00-07:00</updated>
-    <id>http://blog.ryangeyer.com/2011/04/13/caveman-communication</id>
-    <content type="html"><![CDATA[<p><img src="http://farm6.staticflickr.com/5100/5426078103_39b904bda7_n_d.jpg" style="float: right" />
-You would think that being the only girl in the house that I would not be surprised with the grunting that goes on here.  I mean my husband has been known to nod at me and grunt and I would know that means, &ldquo;Why yes I would love another beer sweetie.&rdquo; and that a long grunt with eyes closed while at the dinner table and eating a dinner I made means, &ldquo;Oh my goodness honey, you out did yourself.  The cabernet savignion bouquet paired with the fillet mignion and the red wine reduction sauce is outstanding with your roasted garlic mashed potatoes.&rdquo;.</p>
-
-<p>I learned quickly what my first son was trying to communicate with grunts and hand gestures when he was an infant.  He was much more focused on learning and mastering physical milestones, he was all about stacking blocks and figuring out how to use his legos before one.</p>
-
-<p>Now, with my second son I am often in awe over how well he communicates already as an infant.  He is a great mimic and sounds like he is using words.  No, this isn&rsquo;t the delusion of a proud mom.  I have had other people confirm that he is trying to imitate words being said and he is pretty darn good at it.  My son has his clear and concise way of communicating when he wants to eat, play, and crawl.  I officially can&rsquo;t say he didn&rsquo;t tell me when he needs or wants something.</p>
-
-<p>My eldest loves learning new words and regularly amazes me.  Of late he loves to say, &ldquo;I suppose.&rdquo;, and uses the perfect inflection when saying it.  He uses other fantastic phrases and only likes to use them when he understands their meaning and asks you to say it so he can get the pronunciation down pat then put his own spin on it.  My favorite is when someone is trying to talk about something and they don&rsquo;t understand a word he uses, he then says it perfectly in an exasperated tone that says, &lsquo;duh.&rsquo;.  Yes my children are a wee bit snobby.</p>
-
-<p>So I have the caveman, short hand communication down pat with my guys and the one that is the biggest fan of communicating with grunts is the big one, you know, my husband and their father.  Who would have guessed?</p>
 ]]></content>
   </entry>
   
