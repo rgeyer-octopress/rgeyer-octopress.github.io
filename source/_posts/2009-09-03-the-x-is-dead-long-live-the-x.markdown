@@ -1,3 +1,4 @@
+date: 2009-09-03 00:00:00 -0700
 ---
 layout: post
 title: The X is dead.. Long live the X!!
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/bRJMHx
   _sexybookmarks_permaHash: 0ba8aaef9e808793930821d78c51889a
+date: 2009-09-03 00:00:00 -0700
 ---
 <p><a href="http://www.flickr.com/photos/rgeyer/3885537837/"><img src="http://farm3.static.flickr.com/2447/3885537837_5c7f7db8fb_m.jpg" class="alignright" alt="The X behind the van" /></a>
 Well, it's finally done.  Today I hauled the last bit of the Explorer to the junk yard.  By this point, all that was left was really the front suspension, the frame, and the shell of the body.  It was not a straight forward experience though, lemme tell you the story.</p>

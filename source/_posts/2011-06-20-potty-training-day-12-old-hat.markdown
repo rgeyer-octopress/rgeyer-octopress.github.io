@@ -1,3 +1,4 @@
+date: 2011-06-20 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 12:  Old Hat'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-06-20 00:00:00 -0700
 ---
 We did the scariest thing ever!  We took both boys grocery shopping while one was diaperless!  Scary stuff, huh?  We went grocery shopping without both boys last week, yes we were big chickens, so what!
 

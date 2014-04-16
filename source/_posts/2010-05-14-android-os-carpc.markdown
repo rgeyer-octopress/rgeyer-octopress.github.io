@@ -1,3 +1,4 @@
+date: 2010-05-14 00:00:00 -0700
 ---
 layout: post
 title: Android OS CarPC?
@@ -20,6 +21,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/aHcpTv
   _sexybookmarks_permaHash: 58b7b350ef6b6765457552233fcc95b0
+date: 2010-05-14 00:00:00 -0700
 ---
 Generally speaking, I don't actively participate in the weekly <a href="http://thecarchat.com/">#carchat</a> on Twitter, but I do occasionally glean a few points as I watch it stream across my Twitter timeline.
 

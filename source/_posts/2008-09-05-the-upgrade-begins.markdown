@@ -1,3 +1,4 @@
+date: 2008-09-05 00:00:00 -0700
 ---
 layout: post
 title: The upgrade begins
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/dmpEFr
   _sexybookmarks_permaHash: a4baaf9b09a3cc048b2c1f5f0400ecac
+date: 2008-09-05 00:00:00 -0700
 ---
 I just placed the first of two orders for the components to my new desktop machine!
 

@@ -1,3 +1,4 @@
+date: 2008-07-05 00:00:00 -0700
 ---
 layout: post
 title: Gap Fire - Day 5
@@ -13,6 +14,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/dwLkRm
   _sexybookmarks_permaHash: 213cfce2dee0ffceacb854ce000c9a17
+date: 2008-07-05 00:00:00 -0700
 ---
 As many of you may know, we live in Goleta California.  Over the past 5 days a wild fire has been raging in the foothills of Goleta.
 

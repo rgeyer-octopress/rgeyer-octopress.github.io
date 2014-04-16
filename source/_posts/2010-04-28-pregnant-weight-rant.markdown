@@ -1,3 +1,4 @@
+date: 2010-04-28 00:00:00 -0700
 ---
 layout: post
 title: Pregnant Weight Rant
@@ -16,6 +17,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/djDrFr
   _sexybookmarks_permaHash: 39eaadd6117c12c12e765f93ac180fef
+date: 2010-04-28 00:00:00 -0700
 ---
 <p><a href="http://www.flickr.com/photos/rgeyer/4369302088/" title="Tate Maternity by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4013/4369302088_65d899576b_m.jpg" width="240" height="166" alt="Tate Maternity" class="alignright" /></a>Now let it be said that I am not skinny, I haven't been skinny for years.  Heck I haven't weight 100lbs since puberty struck and I'm ok with that.  Thankfully I am happy with my body and I see room for improvement.  I am thrilled to say that the hubs is sweet on my current figure and has been a fan of my body for the entirety of our marriage.  I just hate how the topic of weight and size keeps coming up at the oddest times, I mean I'm at work and someone will ask me how my weight is going.  Um, I am in my third trimester in my second pregnancy, why the heck is it your business what my weight is?  Why is it now that I am carrying and supporting another life it's ok for you to ask and then have an opinion about the fact that I am actually still down from the weight I was when I found out I was pregnant?!?  I'm not sure if this hormonal woman is ok with either response to this piece of information.  People may tell me, 'Good for you!' :gives person blank stare: Are you trying to break it to me that you thought I was fat?  Are you just not a fan of women gaining weight to sustain healthy life?  Am I ready too much 'jelly' for you?  Last time I looked in the mirror I looked good, darn good.  Last time I walked down the street to get somewhere I get smiles, from men and women appreciating that my form is to sustain another life.  Smiles because I'm happy and confident in who and what I am which is obvious in the way I hold myself.</p>
 

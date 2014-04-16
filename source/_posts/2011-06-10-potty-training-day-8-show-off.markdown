@@ -1,3 +1,4 @@
+date: 2011-06-10 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 8:  Show off ;)'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-06-10 00:00:00 -0700
 ---
 We had a great day and when it came to today's outing, we stretched it out over two hours and the first thing our potty training star did was map out the potty available and tried it out.
 

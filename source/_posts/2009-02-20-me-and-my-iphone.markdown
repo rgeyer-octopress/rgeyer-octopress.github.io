@@ -1,3 +1,4 @@
+date: 2009-02-20 00:00:00 -0700
 ---
 layout: post
 title: Me and my iPhone
@@ -17,6 +18,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cRLdba
   _sexybookmarks_permaHash: 7eaa9be17ebbe31fa99d7d40488d3c55
+date: 2009-02-20 00:00:00 -0700
 ---
 <p>Well, I'm not exactly what you'd call an early adopter, and I've only recently rediscovered a place in my heart for <a href="{{ root_url }}/2007/10/24/apples-sure-sign-me-up/" target="_blank">Apple based computing devices</a>.</p>
 <p>That said, there was a lot of internal debate an struggle when it came time for me to upgrade from my Cingular 8525 HTC/Phone/PDA device.  Initially, I was convinced that I wanted the newest HTC <a href="http://www.wireless.att.com/cell-phone-service/cell-phone-details/?device=HTC+FUZE(TM)&amp;q_sku=sku3090226" target="_blank">the Fuze</a>, since it was a logical upgrade from what I had.  But there was just soooo much hype about the iPhone, I had to give it a fair shake.  Fortunately, my sister and brother-in-law each got one a few weeks before my wife and I were due to upgrade.  I got a real good chance to check them out.  After seeing the HUGE amount of apps, and overall support that existed for them, the choice was easy.  Sign me up, I'm a lemming..</p>

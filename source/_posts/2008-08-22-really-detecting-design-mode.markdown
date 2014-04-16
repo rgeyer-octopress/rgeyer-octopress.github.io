@@ -1,3 +1,4 @@
+date: 2008-08-22 00:00:00 -0700
 ---
 layout: post
 title: Really Detecting Design Mode
@@ -13,6 +14,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cdzwxx
   _sexybookmarks_permaHash: b1d518eb4e3e9cdee59fdb8ae68036af
+date: 2008-08-22 00:00:00 -0700
 ---
 I recently had to deal with the problem of ADO.NET data access occurring on user controls, and forms in the Visual Studio design view.  Now the data access depended upon a connection string in the App.config file and consequently, when run from Visual Studio it could not connect to the database since the connection string wasn't available.
 

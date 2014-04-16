@@ -1,3 +1,4 @@
+date: 2009-07-30 00:00:00 -0700
 ---
 layout: post
 title: What Excites Professional Photogs?
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/bPlKE1
   _sexybookmarks_permaHash: f57faf49a45940c97f26f9049559c625
+date: 2009-07-30 00:00:00 -0700
 ---
 <img src="http://farm3.static.flickr.com/2659/3756315543_22ba3d06b5.jpg" alt="Just some eye candy" class="alignright"/> Okay, so this is almost two months overdue, but I wanted to share an observation and thought process I had courtesy of one of the professional photographers I follow on <a href="http://twitter.com/rjgeyer">Twitter</a>; <a href="http://twitter.com/AcmePhoto">AcmePhoto</a>.  
 

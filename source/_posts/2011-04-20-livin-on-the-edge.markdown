@@ -1,3 +1,4 @@
+date: 2011-04-20 00:00:00 -0700
 ---
 layout: post
 title: Livin’ On The Edge
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-04-20 00:00:00 -0700
 ---
 <a href="/images/255790697_f288115839_m.jpg"><img src="/images/255790697_f288115839_m.jpg" alt="" title="255790697_f288115839_m" width="240" height="215" class="alignleft size-full wp-image-1082" /></a>When I was little livin' on the edge has changed so much over the years.  When I was a child, living on the edge meant walking on the highest point of a swing set and climbing to scary heights of a giant tree.  It meant playing in a vacant apartment to escape the heat, because I knew I would be in huge trouble taking my baby sister to the pool without my parent's permission.
 

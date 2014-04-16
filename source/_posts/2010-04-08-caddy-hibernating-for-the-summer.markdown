@@ -1,3 +1,4 @@
+date: 2010-04-08 00:00:00 -0700
 ---
 layout: post
 title: Caddy - Hibernating for the summer?
@@ -18,6 +19,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/b6a09f
   _edit_last: '1'
   _sexybookmarks_permaHash: b03f62b20efb83cbd62c689aaf2f6c8d
+date: 2010-04-08 00:00:00 -0700
 ---
 <p>Time for a quick update on the Cadillac.  Last time you read about the caddy, I shared my <a href="{{ root_url }}/2010/03/11/i-dub-thee-bionic-caddy/">discovery</a> that it had the rather desirable "Switch Pitch" variation of the Turbo 400 transmission.  As such, I decided it was best to have it examined before I put the car back together.  I took it over to Alphonso's Transmission in Goleta, hoping that it just needed to be cleaned up, and perhaps have a few smaller parts repaired or replaced.  Unfortunately, this was not to be.  As he started dismantling the transmission he very quickly discovered that the main forward band was broken, the forward drum was burnt, and the 2/3 clutch pack was nearly worn down to the steel.  So, the only real choice at that point was to go ahead and rebuild the transmission completely.</p>
 

@@ -1,3 +1,4 @@
+date: 2008-10-23 00:00:00 -0700
 ---
 layout: post
 title: My First 64bit PC
@@ -21,6 +22,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/dkVKqN
   _sexybookmarks_permaHash: 4a85e1108efa487f39fc51b39fade3fc
+date: 2008-10-23 00:00:00 -0700
 ---
 Time for the second installment of my worklog for my <a href="{{ root_url }}/2008/09/05/the-upgrade-begins/">PC Upgrade</a>.
 

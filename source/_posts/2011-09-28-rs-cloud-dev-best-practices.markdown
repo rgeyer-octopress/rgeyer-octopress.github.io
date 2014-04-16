@@ -1,3 +1,4 @@
+date: 2011-09-28 00:00:00 -0700
 ---
 layout: post
 title: RS & Cloud Dev best practices
@@ -13,6 +14,7 @@ meta:
   _headspace_description: ''
   _headspace_page_title: ''
   _edit_last: '1'
+date: 2011-09-28 00:00:00 -0700
 ---
 I am often asked about best practices for developing, testing and debugging ServerTemplates.  This is my attempt to condense some of the best and most useful bits to make it easier for developers to create and publish some awesome templates.
 

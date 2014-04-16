@@ -1,3 +1,4 @@
+date: 2011-06-14 00:00:00 -0700
 ---
 layout: post
 title: Salted OpenLDAP Passwords w/ Grails & Spring Security
@@ -10,6 +11,7 @@ type: post
 published: false
 meta:
   _edit_last: '1'
+date: 2011-06-14 00:00:00 -0700
 ---
 Have to use the LdapShaPassword<whateveritsnameis> bean to create and hash it properly.  Correct size hash is ___
 

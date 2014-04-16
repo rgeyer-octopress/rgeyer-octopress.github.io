@@ -1,3 +1,4 @@
+date: 2010-09-14 00:00:00 -0700
 ---
 layout: post
 title: Dear Music
@@ -17,6 +18,7 @@ meta:
   _sexybookmarks_shortUrl: http://b2l.me/arw5ft
   _wp_old_slug: ''
   _sexybookmarks_permaHash: a4226086db7ab3f3eef33130f819abd9
+date: 2010-09-14 00:00:00 -0700
 ---
 Dear Music,
 

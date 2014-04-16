@@ -1,3 +1,4 @@
+date: 2008-11-13 00:00:00 -0700
 ---
 layout: post
 title: Tea Fire - Day 1
@@ -20,6 +21,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/ba12GG
   _sexybookmarks_permaHash: c70492ca815ebf92d84f8974ed930a55
+date: 2008-11-13 00:00:00 -0700
 ---
 <img src="http://farm4.static.flickr.com/3227/3028415039_f94c6874bb.jpg" alt="Tea Fire" />
 Just became aware of the Tea Fire after driving home.

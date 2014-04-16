@@ -1,3 +1,4 @@
+date: 2010-08-19 00:00:00 -0700
 ---
 layout: post
 title: Hidden Danger of Grails Plugins
@@ -22,6 +23,7 @@ meta:
   _sexybookmarks_shortUrl: http://b2l.me/ajgvrb
   _wp_old_slug: ''
   _sexybookmarks_permaHash: b0cfe18198b31e90101522742f567c60
+date: 2010-08-19 00:00:00 -0700
 ---
 As a new developer to Grails you're probably in awe over the vast number of very powerful plugins which are available to you.  Without writing a single line of your own code you can do all sorts of cool things like interact with Twitter, Facebook, Amazon's S3 storage system, Apple Push notifications, Spring Security, and the list goes on and on.  As of this writing there are 447 plugins available in the official Grails plugin repository.
 

@@ -1,3 +1,4 @@
+date: 2011-10-10 00:00:00 -0700
 ---
 layout: post
 title: What's in my bra?
@@ -9,6 +10,7 @@ type: post
 published: false
 meta:
   _edit_last: '2'
+date: 2011-10-10 00:00:00 -0700
 ---
 I have breastfed for some 36 months of life between my two kids.  The end result is I find interesting stuff in my bra on the daily.  So far I've found:  Cheerios, gold fish crackers, raisins, almonds, granola, cards, kosher salt (my faultnas i foolishly put a small ramikin of it within my baby's reach),and keys to name a few.  
 

@@ -1,3 +1,4 @@
+date: 2011-07-02 00:00:00 -0700
 ---
 layout: post
 title: How I Vandalized a Weed Whacker at Home Depot
@@ -19,6 +20,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-07-02 00:00:00 -0700
 ---
 So we've been renting a house for a bit over a year and a half.  As a techie and an obsessive tinkerer, this means an excuse to start buying tools and other things in the name of "maintaining the house".
 

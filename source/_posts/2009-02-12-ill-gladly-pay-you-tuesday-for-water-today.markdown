@@ -1,3 +1,4 @@
+date: 2009-02-12 00:00:00 -0700
 ---
 layout: post
 title: I'll gladly pay you Tuesday for water today.
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/df6qYN
   _sexybookmarks_permaHash: b8a889d5c555df20130af8c535b84987
+date: 2009-02-12 00:00:00 -0700
 ---
 <img src="http://farm4.static.flickr.com/3417/3275378663_b66c4238e6.jpg" alt="" />
 

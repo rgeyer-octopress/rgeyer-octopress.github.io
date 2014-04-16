@@ -1,3 +1,4 @@
+date: 2010-07-18 00:00:00 -0700
 ---
 layout: post
 title: Renewed passion
@@ -15,6 +16,7 @@ meta:
     to repair it'
   _edit_last: '1'
   _sexybookmarks_permaHash: 764c1bb49a19350125b979f100e1c697
+date: 2010-07-18 00:00:00 -0700
 ---
 I attempted a day of rest yesterday as it was one of my last days when my husband was easily available while I recovered from my c-section.  I ended up watching a lot of the new food channel (Anyone else feel like this is a more cooking focused fine living network?  Anyone?) and found my self getting a bit excited at the thought of getting back in the kitchen.  
 

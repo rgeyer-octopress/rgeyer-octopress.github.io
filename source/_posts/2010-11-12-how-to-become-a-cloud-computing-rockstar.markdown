@@ -1,3 +1,4 @@
+date: 2010-11-12 00:00:00 -0700
 ---
 layout: post
 title: How to become a Cloud Computing Rockstar
@@ -21,6 +22,7 @@ meta:
   _sexybookmarks_shortUrl: http://b2l.me/a476ej
   _wp_old_slug: ''
   _sexybookmarks_permaHash: bee1d75011b792db670410f31c1501c0
+date: 2010-11-12 00:00:00 -0700
 ---
 It's now the end of my first full week back at work since I attended the 2010 Cloud Expo and RightScale User Conference, and I'm still feeling the motivation and enthusiasm I picked up there.
 

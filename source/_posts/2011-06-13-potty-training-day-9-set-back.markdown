@@ -1,3 +1,4 @@
+date: 2011-06-13 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 9: Set back'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-06-13 00:00:00 -0700
 ---
 My potty training star and his little brother were in rare form and all they want is to cling to me and make demands.  I think I was just worn out and the boys just like to go full throttle, meaning I was a big baby on this day.  My toddler was in a mouthy mood and my baby was dealing with the teething woes along with me being tired and in some kind of allergy stupor, it was a bad combination.  
 

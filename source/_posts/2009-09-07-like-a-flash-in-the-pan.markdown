@@ -1,3 +1,4 @@
+date: 2009-09-07 00:00:00 -0700
 ---
 layout: post
 title: Like a flash in the pan
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/aWnnZi
   _sexybookmarks_permaHash: d6487094faa0deb088099fc7992781bb
+date: 2009-09-07 00:00:00 -0700
 ---
 <p>Welp, my Nikon SB600, which I've had for about a year and a half now has officially been declared dead.  After <a href="{{ root_url }}/2009/09/06/of-living-insects-and-dying-electronics/">dropping it yesterday</a> it simply wouldn't turn on anymore.  I popped it open today hoping to discover what went wrong, after getting it pretty well apart, I noticed this.</p>
 

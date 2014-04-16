@@ -1,3 +1,4 @@
+date: 2010-05-03 00:00:00 -0700
 ---
 layout: post
 title: How does it feel?
@@ -17,6 +18,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/bSYGVm
   _sexybookmarks_permaHash: ae3fb0936ee3e6abfcb283f73f982852
   _oembed_436dd9917c8fd227aafb9aeb526f1aa8: ! '{{unknown}}'
+date: 2010-05-03 00:00:00 -0700
 ---
 I get this question often.  May it be about how it feels to be mixed in race, being in an 'interracial' marriage (not sure about that definition as both my husband and I are Caucasian but if the Mexican and African American throws you off :shrugs:), being married, being a mom, being pregnant, and being sick.  I get this question often.  
 

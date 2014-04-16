@@ -1,3 +1,4 @@
+date: 2008-09-05 00:00:00 -0700
 ---
 layout: post
 title: Corvette ZR1 Owners - Schooled
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/doPIMK
   _sexybookmarks_permaHash: a233dfb8e8f5905df5ab173ebd80cfe0
+date: 2008-09-05 00:00:00 -0700
 ---
 Okay, so I've been a little bit out of the loop on the new Corvette ZR1 in spite of being a Motor Trend subscriber.
 

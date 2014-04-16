@@ -1,3 +1,4 @@
+date: 2009-08-29 00:00:00 -0700
 ---
 layout: post
 title: Babies and Such
@@ -14,6 +15,7 @@ meta:
   syntaxhighlighter_encoded: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cnDQaJ
   _sexybookmarks_permaHash: 7a9d3730d638ec76bd8554eff907bddc
+date: 2009-08-29 00:00:00 -0700
 ---
 <a href="http://www.flickr.com/photos/rgeyer/3869457186/"><img src="http://farm3.static.flickr.com/2598/3869457186_2a3a0a67c6_m.jpg" class="alignleft" alt="Quincy the Thinker" /></a>
 <p>Once you have one child often family and friends wonder when and if you will have another.  In the hubs and my case, most know that we want another child.  The debate soon after having our son, literally a couple hours after delivering our son, of who would take care of him the next time we would be in L&amp;D.   The other question that came up for the entire first year of our son's life was when we would start trying, I had hoped to wait for 4-5yrs. while my husband wanted our children closer in age 2-3yrs apart.  We had plans.</p>

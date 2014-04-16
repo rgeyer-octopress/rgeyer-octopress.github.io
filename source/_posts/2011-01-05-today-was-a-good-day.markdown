@@ -1,3 +1,4 @@
+date: 2011-01-05 00:00:00 -0700
 ---
 layout: post
 title: Today was a good day
@@ -12,6 +13,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/dWq5qe
   _sexybookmarks_permaHash: f47565636ec6d67b0f79b482f5e31b35
+date: 2011-01-05 00:00:00 -0700
 ---
 We all mark good days on different scales.  My good day may be different from yours, and I know my husband's good day is different from others (geeks have different definitions of most things in life).  
 

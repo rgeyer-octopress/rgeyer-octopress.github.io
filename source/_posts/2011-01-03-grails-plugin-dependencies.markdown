@@ -1,3 +1,4 @@
+date: 2011-01-03 00:00:00 -0700
 ---
 layout: post
 title: Grails Plugin Dependencies
@@ -17,6 +18,7 @@ meta:
   _syntaxhighlighter_encoded: '1'
   _sexybookmarks_shortUrl: http://bit.ly/h7tXAn
   _sexybookmarks_permaHash: 5b3289ff16214c230780f28d6aa22e3c
+date: 2011-01-03 00:00:00 -0700
 ---
 You just finished adding a shiny new plugin to your Grails project, and build some functionality around it.  You excitedly push it out to your deployment site and you're greeted with a NoClassDefException.  If this has happened to you, the complex and murky plugin dependency handling of Grails may be to blame.
 <!--more-->

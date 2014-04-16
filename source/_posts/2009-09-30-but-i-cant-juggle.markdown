@@ -1,3 +1,4 @@
+date: 2009-09-30 00:00:00 -0700
 ---
 layout: post
 title: But I can't juggle
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cbY5bq
   _sexybookmarks_permaHash: 779690b3cb560a70cd1d5e417666ab43
+date: 2009-09-30 00:00:00 -0700
 ---
 Of late the hubs and I have been trying to do everything at once.  Weaning our son, and encouraging him to sleep in his own bed.  Both of us have been crazy busy with our jobs.  We have been searching for a new home to rent.  I have been attempting to get in better shape so as to be able to keep up with a baby boy and keep my health in check to the best of my abilities.  We keep trying to keep our home clean, which seems to only last for a moment after cleaning.  Trying to really take the time to catch up with each other and making sure both of us are really getting the down time that we need.  It simply has been crazy.  
 

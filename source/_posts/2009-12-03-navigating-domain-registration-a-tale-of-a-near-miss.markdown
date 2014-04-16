@@ -1,3 +1,4 @@
+date: 2009-12-03 00:00:00 -0700
 ---
 layout: post
 title: Navigating Domain Registration - A tale of a near miss
@@ -23,6 +24,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cNpv5A
   _sexybookmarks_permaHash: cb14ee833d9c9ee765bf03a6b97d374d
+date: 2009-12-03 00:00:00 -0700
 ---
 The story you are about to read is true, not even the names have been changed so as to fully implicate the accused.
 

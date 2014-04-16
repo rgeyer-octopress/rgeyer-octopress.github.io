@@ -1,3 +1,4 @@
+date: 2011-12-19 00:00:00 -0700
 ---
 layout: post
 title: The truth about set-top boxes no one wants you to know
@@ -13,5 +14,6 @@ meta:
   Hide OgTags: '0'
   Hide SexyBookmarks: '0'
   _edit_last: '1'
+date: 2011-12-19 00:00:00 -0700
 ---
 None of them are really full featured, they're all crippled it some way by the content providers that you're really interested in using! :(

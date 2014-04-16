@@ -1,3 +1,4 @@
+date: 2011-02-02 00:00:00 -0700
 ---
 layout: post
 title: Music and the boys
@@ -17,6 +18,7 @@ meta:
   _sexybookmarks_permaHash: 3a3bbdce0df1f1c3dda098329a2554de
   _sexybookmarks_shortUrl: http://bit.ly/ePOTgY
   _edit_last: '1'
+date: 2011-02-02 00:00:00 -0700
 ---
 Both my boys seem to have interest in music, singing, drumming, and dancing.  Due to the chance meeting of my beloved and I being an affair he was DJing this is very dear to my heart.  We are a music loving household.
 

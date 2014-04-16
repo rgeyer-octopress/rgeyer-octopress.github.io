@@ -1,3 +1,4 @@
+date: 2008-09-17 00:00:00 -0700
 ---
 layout: post
 title: The Nikon D90 Excites Me
@@ -17,6 +18,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/b8g17V
   _sexybookmarks_permaHash: 7a7a02571ee230f9fb647c694de47271
+date: 2008-09-17 00:00:00 -0700
 ---
 Okay, so it's not news that the new <a href="http://nikonusa.com/Find-Your-Nikon/Product/Digital-SLR/25446/D90.html">Nikon D90</a> digital SLR has been announced.
 

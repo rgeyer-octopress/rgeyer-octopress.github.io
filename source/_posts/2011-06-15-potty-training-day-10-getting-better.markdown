@@ -1,3 +1,4 @@
+date: 2011-06-15 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 10: Getting better'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-06-15 00:00:00 -0700
 ---
 Yesterday was horrid, just horrid as everyone was struggling with the emotional turmoil of the accidents.  Yes, even the baby realized that everyone was having a hard time.  It's amazing how your child has an accident and you try to focus all your energy on making it right and yet you, as a mother, find the time to beat yourself up for dropping the ball and possibly not give your kid enough time and attention.  
 

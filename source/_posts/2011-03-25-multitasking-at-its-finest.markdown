@@ -1,3 +1,4 @@
+date: 2011-03-25 00:00:00 -0700
 ---
 layout: post
 title: Multitasking at it’s finest
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-03-25 00:00:00 -0700
 ---
 My mom is one of the finest multitaskers, she did fantastic job of raising my sister and I as a single parent.  I watched her on numerous occasions doing a million different tasks at once and doing so with a smile.  I have no idea how she did it but she did it well.
 

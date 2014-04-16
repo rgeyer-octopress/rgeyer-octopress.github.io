@@ -1,3 +1,4 @@
+date: 2011-04-08 00:00:00 -0700
 ---
 layout: post
 title: Hard conversations
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-04-08 00:00:00 -0700
 ---
 We all have them, some are easier than other but they all have their own level of awkwardness no matter how many times we rehearse what we are going to say.
 

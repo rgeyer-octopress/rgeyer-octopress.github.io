@@ -1,3 +1,4 @@
+date: 2009-10-02 00:00:00 -0700
 ---
 layout: post
 title: Music
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/aaUoip
   _sexybookmarks_permaHash: 6ee1f01362f7a2bfe3c519ef7916f11f
+date: 2009-10-02 00:00:00 -0700
 ---
 <p><a href="http://www.flickr.com/photos/rgeyer/3075892157/" target="_blank"><img src="http://farm4.static.flickr.com/3138/3075892157_40c4001af8.jpg" alt="Paradigmn Mini Monitor Speaker" class="alignright"/></a>Today on my lovely morning walk I was listening to my favorite Pandora station and heard the Isley Brothers 'Footsteps in the Dark' and all that kept playing in my head is 'It was a good day' by Ice Cube.  I then recalled all the times I would get excited over a 'new' song and my mother would immediately let me know that either it was sampled from another song or a remake of a song that I should listen to.  In the beginning I would fight valiantly determined to prove that she was wrong, but in a short period of time she would prove she was right and in this process she imparted a great respect of 'older' music.</p>
 

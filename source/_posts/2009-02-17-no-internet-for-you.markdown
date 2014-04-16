@@ -1,3 +1,4 @@
+date: 2009-02-17 00:00:00 -0700
 ---
 layout: post
 title: No Internet For You!
@@ -14,6 +15,7 @@ meta:
   syntaxhighlighter_encoded: '1'
   _sexybookmarks_shortUrl: http://bit.ly/aiEg0P
   _sexybookmarks_permaHash: df2d3175687aaff71477a37d08607f78
+date: 2009-02-17 00:00:00 -0700
 ---
 You might have noticed a little change to the look of the site.  Until the 23rd of February it'll continue to look this way.  You can see some detail in the right column, and in the following paragraphs.  :-)
 

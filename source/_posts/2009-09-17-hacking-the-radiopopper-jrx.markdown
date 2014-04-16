@@ -1,3 +1,4 @@
+date: 2009-09-17 00:00:00 -0700
 ---
 layout: post
 title: Hacking the RadioPopper JrX
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9CloGr
   _sexybookmarks_permaHash: af578d1ee3a13c7f63de5dd1e6a387a2
+date: 2009-09-17 00:00:00 -0700
 ---
 <p>Okay I know what you're thinking, and no I didn't figure out how to turn a <a href="http://shop.radiopopper.com/radiopopperjrxreceiverbasicusca.aspx" target="_blank">basic reciever</a> into a <a href="http://shop.radiopopper.com/radiopopperjrxreceiverstudiousca.aspx" target="_blank">studio receiver</a>, but sadly, I'm simply not that cool.  What I did do however was open the boxes for my two new RadioPopper JrX Studio receivers, put batteries in them, test them (oohh pretty), then instantly void their warranties.  Why you ask?  Because I can.  Also because there were just a couple design choices which weren't convenient for me so I wanted to tweak them to fit my workflow and needs a little better.</p>
 

@@ -1,3 +1,4 @@
+date: 2010-05-28 00:00:00 -0700
 ---
 layout: post
 title: Barbie and me
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/xnsz7
   _sexybookmarks_permaHash: 128704a5e54c519cca28d9168dd90704
+date: 2010-05-28 00:00:00 -0700
 ---
 My relationship with Barbie was an interesting one.  I was only given a single Black barbie, I'm not sure if there were Latina barbies when I was little.  My Aunt (the educated career woman) made sure they had curly hair and were professionals that I could look up to.  My Aunt even took it to another level and usually bought me a book with the doll she bought me in hopes I would be more fascinated with reading than playing with the warped ideal of beauty our society encourages us to buy into at a young age.  Well done Auntie, well done.  I did get in fact get bored with that doll in a hurry and continued my love affair with books for many, many more years.
 

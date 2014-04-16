@@ -1,3 +1,4 @@
+date: 2011-12-28 00:00:00 -0700
 ---
 layout: post
 title: Anatomy of an IaaS Cloud
@@ -13,6 +14,7 @@ meta:
   Hide OgTags: '0'
   Hide SexyBookmarks: '0'
   _edit_last: '1'
+date: 2011-12-28 00:00:00 -0700
 ---
 Multi Tenent for Hardware (KVM, Xen, ESXi)
 

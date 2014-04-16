@@ -1,3 +1,4 @@
+date: 2009-09-06 00:00:00 -0700
 ---
 layout: post
 title: Of living insects, and dying electronics
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/d8wvGp
   _sexybookmarks_permaHash: 5f18d93752eb256987615a8f4488bc70
+date: 2009-09-06 00:00:00 -0700
 ---
 <p align="center"><a href="http://www.flickr.com/photos/rgeyer/3895334606/"><img src="http://farm4.static.flickr.com/3453/3895334606_94697a15ef.jpg" alt="Butterfly enjoying oranges" /></a></p>
 <p>

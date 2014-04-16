@@ -1,3 +1,4 @@
+date: 2011-02-14 00:00:00 -0700
 ---
 layout: post
 title: How to host Wordpress for Free
@@ -25,6 +26,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_permaHash: 0fd9a7655b2dedeccd2a46d4037290a2
   _sexybookmarks_shortUrl: http://bit.ly/dKsWl5
+date: 2011-02-14 00:00:00 -0700
 ---
 If you're looking to start a blog to promote your business, or boost your presence on the internet, you've probably heard of <a href="http://wordpress.org">Wordpress</a>.
 

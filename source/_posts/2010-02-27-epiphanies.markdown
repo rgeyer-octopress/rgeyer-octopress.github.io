@@ -1,3 +1,4 @@
+date: 2010-02-27 00:00:00 -0700
 ---
 layout: post
 title: Epiphanies
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cM4u25
   _sexybookmarks_permaHash: 9cd2da72cacc90ea1707d008352acb19
+date: 2010-02-27 00:00:00 -0700
 ---
 I have been having a whole lot of epiphanies of late.  Be it about the new chores I have to take care of, I'm still figuring all that out but to be honest I am really getting the hang of them.  I am still learning to change with Q's wants and needs.  I'm sure all these years of learning and growing with the hubs has helped me a great deal.  I'm still trying to figure out life and the meaning of it for me and my role as mother, wife, friend, sister, daughter and grand daughter.  I'm thinking that I may have to continue to experiment.  
 

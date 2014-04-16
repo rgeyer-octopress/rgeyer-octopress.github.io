@@ -1,3 +1,4 @@
+date: 2008-03-13 00:00:00 -0700
 ---
 layout: post
 title: Microsoft's Tlbimp creates leaky BSTR signatures
@@ -16,6 +17,7 @@ published: true
 meta:
   _sexybookmarks_shortUrl: http://bit.ly/cchcxv
   _sexybookmarks_permaHash: 4f51339ae6fbad1ee6d7194d8766bc7f
+date: 2008-03-13 00:00:00 -0700
 ---
 This one confounded me when I first discovered it, and I've recently been reminded about it.  For the sake of remembering the details, and hopefully helping someone else out I'm going to document it here.
 

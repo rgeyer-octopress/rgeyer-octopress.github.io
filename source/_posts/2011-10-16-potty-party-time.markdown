@@ -1,3 +1,4 @@
+date: 2011-10-16 00:00:00 -0700
 ---
 layout: post
 title: Potty party time
@@ -9,6 +10,7 @@ type: post
 published: false
 meta:
   _edit_last: '2'
+date: 2011-10-16 00:00:00 -0700
 ---
 It is amazing how much of my world still revolves around the bathroom.  The potty training process began four months ago and yet I have a constant party going on in the bathroom.  I'm talking full on cheering, song singing, and dancing occurs on the regular.  I'm not quite sure when the potty training party will end as every time either my eldest or I go to the bathroom it become a comical experience.
 

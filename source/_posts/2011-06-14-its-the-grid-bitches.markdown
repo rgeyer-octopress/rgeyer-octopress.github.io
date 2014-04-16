@@ -1,3 +1,4 @@
+date: 2011-06-14 00:00:00 -0700
 ---
 layout: post
 title: Its the grid.. bitches
@@ -10,6 +11,7 @@ type: post
 published: false
 meta:
   _edit_last: '1'
+date: 2011-06-14 00:00:00 -0700
 ---
 <h2>Problem domain</h2>
 I've got a huge collection of addresses, need to geocode them, then compare them to polygons representing US Census tracts to find the tract an address belongs to.  For Geo targeted marketing and foreign language speakers.

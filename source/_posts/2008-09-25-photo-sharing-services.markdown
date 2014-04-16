@@ -1,3 +1,4 @@
+date: 2008-09-25 00:00:00 -0700
 ---
 layout: post
 title: Photo Sharing Services
@@ -21,6 +22,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/aPYYXU
   _sexybookmarks_permaHash: 6769cb13dbc39ed6558b7ce3a73396df
+date: 2008-09-25 00:00:00 -0700
 ---
 Since I became a dad, and bought a dSLR I've been trying to figure out the best way to store and share my pictures of my son, and other interesting stuff I shoot.  As far as securely storing it locally, I have a sizable RAID setup that handles redundantly storing my pictures on two drives, but it's the sharing part that I've had some trouble with.
 

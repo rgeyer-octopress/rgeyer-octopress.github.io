@@ -1,3 +1,4 @@
+date: 2011-05-04 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 3: Clothes are the Enemy'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-05-04 00:00:00 -0700
 ---
 Day three of the potty training process for toddler boy was no easy feat.  We threw too many curve balls at the kid.  We dressed him completely and moved the potty from the play room to the bathroom which is really far apart.
 

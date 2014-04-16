@@ -1,3 +1,4 @@
+date: 2009-03-27 00:00:00 -0700
 ---
 layout: post
 title: Drupal Flickr Module.  Now with URLs!
@@ -19,6 +20,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9uoCWA
   _sexybookmarks_permaHash: ec682a6b92fa453f3ff4403edfb56b52
+date: 2009-03-27 00:00:00 -0700
 ---
 <p>Okay, so I've been a bit preoccupied with a couple projects which have slowed my efforts at blogging etc.</p>
 <p>In both cases, I've been working on websites that leverage the PHP based Drupal CMS.&nbsp; One of those projects is over at <a href="http://www.chasejarvisshoeproject.com">http://www.chasejarvisshoeproject.com</a>.&nbsp; That site is basically a small community forum for some folks that are sending a pair of shoes around the world, and taking pictures of them in various locations and situations.&nbsp; Pretty cool.&nbsp; The result of this effort is a Flickr photo pool and a good time.</p>

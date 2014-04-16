@@ -1,3 +1,4 @@
+date: 2008-02-20 00:00:00 -0700
 ---
 layout: post
 title: Image thumbnail generating script
@@ -23,6 +24,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/b0wScF
   _sexybookmarks_permaHash: b1fed3eb86b0791225af1c49ccbb7298
+date: 2008-02-20 00:00:00 -0700
 ---
 I have often wished that I could easily convert several images to a smaller size simultaneously.  This is useful for batch resizing images for thumbnails, galleries, or use on the web.
 

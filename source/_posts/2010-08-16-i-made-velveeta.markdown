@@ -1,3 +1,4 @@
+date: 2010-08-16 00:00:00 -0700
 ---
 layout: post
 title: I Made Velveeta
@@ -20,6 +21,7 @@ meta:
   _sexybookmarks_shortUrl: http://b2l.me/ahrjsg
   _wp_old_slug: ''
   _sexybookmarks_permaHash: 571c2389877b6d25c585929534fd082e
+date: 2010-08-16 00:00:00 -0700
 ---
 I attended a city college culinary program, which means I know a little about food.  I learned the basics of the culinary world, things like mother sauces, cuts of meat, basics of pastries, ect.  I'm a foodie.  I love food, like it and love to play with it and experiment.  Thankfully my husband enjoys my experiments, eating and helping me cook and inspiring me.
 <!--more-->

@@ -1,3 +1,4 @@
+date: 2011-02-23 00:00:00 -0700
 ---
 layout: post
 title: My gated community
@@ -19,6 +20,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/feu3m8
   _sexybookmarks_permaHash: 74a97df161f47dae3e603362ee8b619d
+date: 2011-02-23 00:00:00 -0700
 ---
 Moving on up!  Ok, not really.  My youngest little man is mobile and moving at ridiculous speeds.  When I went to his four month appointment his physician mentioned that I should have the baby gates up and prepared to keep baby boy from any and all possible dangerous incidents, well all that wouldn't involve my toddler, his amazing big brother.  I realized the child safety latches on cabinets and doors and outlet covers that we keep in place for our toddler isn't enough for our newly mobile baby.  
 

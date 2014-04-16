@@ -1,3 +1,4 @@
+date: 2009-04-07 00:00:00 -0700
 ---
 layout: post
 title: Web development environment - "On The Go"
@@ -25,6 +26,7 @@ meta:
   syntaxhighlighter_encoded: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cFAt0n
   _sexybookmarks_permaHash: 385fe6cc410d6bc31b9a796dca853cd8
+date: 2009-04-07 00:00:00 -0700
 ---
 Over the past few weeks I've been spending most of my spare time developing a couple of web sites.  These sites are based on the Drupal CMS written in PHP.  And I've taken a bit of a crash course in Drupal module design.
 

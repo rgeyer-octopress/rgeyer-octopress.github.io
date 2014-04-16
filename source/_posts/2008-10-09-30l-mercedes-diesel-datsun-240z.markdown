@@ -1,3 +1,4 @@
+date: 2008-10-09 00:00:00 -0700
 ---
 layout: post
 title: 3.0L Mercedes Diesel - Datsun 240z
@@ -20,6 +21,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/dxJDx7
   _sexybookmarks_permaHash: 354a20fc199f035c0558d0e4b1eebd4e
+date: 2008-10-09 00:00:00 -0700
 ---
 I tend to have lots of ideas about project cars that I think are pretty cool.  The chances are I won't ever build any of them, but I figured I could start documenting them here just for fun, or on the odd chance that somebody reads my ideas and decides to build one of them.
 

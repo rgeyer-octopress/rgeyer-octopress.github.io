@@ -1,3 +1,4 @@
+date: 2010-06-22 00:00:00 -0700
 ---
 layout: post
 title: My first five days...
@@ -18,6 +19,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/5thgd
   _sexybookmarks_permaHash: 5cf1c1bbe5e103e8d694f12c36a242d3
+date: 2010-06-22 00:00:00 -0700
 ---
 My first five days home with both my boys and my husband were a bit of a whirl wind.  Slowly my mom has shortened her visits here to help, trying to give our newly extended family more space.  When writing these posts I heard Captain Kirk from the original Star Trek with beeps and all.  I feel as if I have entered a strange and exciting new world.  Each day offering new ideas and new lessons of an alien land.  
 <!--more-->

@@ -1,3 +1,4 @@
+date: 2008-11-18 00:00:00 -0700
 ---
 layout: post
 title: 4.5L Duramax - GTM Supercar
@@ -19,6 +20,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/d9DJU5
   _sexybookmarks_permaHash: 5fe6baf8ff8b951264b00a58c13f4ba5
+date: 2008-11-18 00:00:00 -0700
 ---
 Okay, if you thought the idea of a lightweight <a href="{{ root_url }}/2008/11/03/45l-duramax-saturn-sky/">sports car</a> with a big diesel v8 was exciting, consider this.
 

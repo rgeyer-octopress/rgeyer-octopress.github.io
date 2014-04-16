@@ -1,3 +1,4 @@
+date: 2011-03-30 00:00:00 -0700
 ---
 layout: post
 title: Things I never thought I’d say
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-03-30 00:00:00 -0700
 ---
 I was told on numerous occasions by the veterans of motherhood that you'd be amazed with the strange things you will, not may, but <em>will</em> say.  It's completely true.  I was amazed by the truth of it when i had my first child, but the things that have come out of my mouth since having my second, dear lord!  They are so out there that even I find myself repeating them out of shock and amazement.
 

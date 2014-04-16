@@ -76,16 +76,24 @@ def convert_hrefs(everything)
   everything
 end
 
+def add_date(everything, date)
+  unless everything.match(/---.*date.*---/m)
+    everything.gsub!('---',"date: #{date} 00:00:00 -0700\n---")
+  end
+  puts everything.match(/---.*date.*---/m)
+end
+
 Dir.glob("../source/_posts/*.markdown").each do |file|
   puts "File: #{file}"
   str = ""
   File.open(file, "r+") do |f|
     str = f.read
   end
-  str = convert_codeblocks(str)
-  str = styles(str)
-#  str = enable_comments(str)
-  str = convert_hrefs(str)
+  #str = convert_codeblocks(str)
+  #str = styles(str)
+  #str = enable_comments(str)
+  #str = convert_hrefs(str)
+  add_date(str, file.match('[0-9]{4}-[0-9]{2}-[0-9]{2}'))
   File.open(file, "w+") do |f|
     f.write(str)
   end

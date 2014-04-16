@@ -1,3 +1,4 @@
+date: 2009-11-22 00:00:00 -0700
 ---
 layout: post
 title: From Project Car to Hobby Car
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/dfPBMh
   _sexybookmarks_permaHash: 06964785be152a8c1f0171f65f579dc9
+date: 2009-11-22 00:00:00 -0700
 ---
 I've owned quite a number of cars in my relatively short driving history thus-far.  And a lot of them have been what I consider a "Project Car".  Now to me, that always meant a car which is pretty much your daily driver, but which gets lots of attention on evenings and weekends to either upgrade or (more commonly) repair it.  These wrenching sessions were ALWAYS labored and rushed because, well, I had to drive the car to work the next day, or the coming Monday morning.  This made working on the cars stressful, and burdensome, like a chore rather than a past time or enjoyable hobby.
 

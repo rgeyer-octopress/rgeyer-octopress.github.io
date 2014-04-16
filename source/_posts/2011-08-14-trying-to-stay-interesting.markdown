@@ -1,3 +1,4 @@
+date: 2011-08-14 00:00:00 -0700
 ---
 layout: post
 title: Trying to stay interesting
@@ -9,6 +10,7 @@ type: post
 published: false
 meta:
   _edit_last: '2'
+date: 2011-08-14 00:00:00 -0700
 ---
 I have been a stay at home mom for a little over a year now and my world seriously revolves around the needs and wants of my children and errands and chores from 8-5 every day, if not longer.  My focus is interacting, teaching, and molding the young minds left in my care until they are grown by my standards.  This includes learning how to play keep the playdoh out of the baby's mouth and out of electronics.  Learning about a huge selection of good music and learning what they prefer.   The result?  This once ever so interesting woman that had interesting things to say is so tired and most of my ideas are hibernating by the time I get a chance to have a real adult conversation.
 

@@ -1,3 +1,4 @@
+date: 2011-04-04 00:00:00 -0700
 ---
 layout: post
 title: Enabling AWS Console Login for IAM Users
@@ -11,6 +12,7 @@ published: true
 meta:
   _syntaxhighlighter_encoded: '1'
   _edit_last: '1'
+date: 2011-04-04 00:00:00 -0700
 ---
 Last week, I told you how you can use Amazon's Identity and Access Management (IAM) offering to better secure the services and tools you use to manage your AWS environment with <a href="{{ root_url }}/2011/03/28/create-aws-ser…ounts-with-iam/">service accounts</a>.  Well on February 14th IAM got that much sweeter when they opened up the ability for IAM users to login to the AWS Console.
 <!--more-->

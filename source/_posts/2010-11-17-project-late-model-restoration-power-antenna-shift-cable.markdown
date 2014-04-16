@@ -1,3 +1,4 @@
+date: 2010-11-17 00:00:00 -0700
 ---
 layout: post
 title: Project Late Model Restoration - Power Antenna & Shift Cable
@@ -20,6 +21,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/a5yfyy
   _sexybookmarks_permaHash: ccd69a2b4aa3a289f40e1c2695b920ff
+date: 2010-11-17 00:00:00 -0700
 ---
 So there I was, minding my own business, driving the Lexus from point A to point B.  When I arrived at my destination, I turned off the ignition, and as it had done thousands of times before the power antenna began reeling back into the rear fender, but then it happened...  I heard a horrible CLUNK, then a persistent grinding sound that simply wouldn't go away.
 

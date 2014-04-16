@@ -1,3 +1,4 @@
+date: 2010-06-20 00:00:00 -0700
 ---
 layout: post
 title: Men and Women are different
@@ -13,6 +14,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/48yr5
   _sexybookmarks_permaHash: 5cf94a1df6f1e0c0d274c130eb447007
+date: 2010-06-20 00:00:00 -0700
 ---
 Yes, I know the obvious differences, body parts, hair growth, DNA.  My husband and I are different, he is a good foot taller than me, has straight hair, is fair and has dreamy blue green eyes.  I'm short, olive, with dark brown eyes, you get the point. I have been reminded time and time again how different my husband and I are.  We are a happy fit, we have a good rhythm and work nicely together.  
 

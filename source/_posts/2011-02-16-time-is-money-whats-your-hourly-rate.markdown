@@ -1,3 +1,4 @@
+date: 2011-02-16 00:00:00 -0700
 ---
 layout: post
 title: Time is Money - What's your hourly rate?
@@ -21,6 +22,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_permaHash: 388c214ae2473c7b0f691ee825fe2b46
   _sexybookmarks_shortUrl: http://bit.ly/fsJBWC
+date: 2011-02-16 00:00:00 -0700
 ---
 You've heard the colloquialism that "Time is Money" right?  Perhaps you agree, or perhaps you just scoff at the sentiment.
 

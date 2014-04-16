@@ -1,3 +1,4 @@
+date: 2011-01-10 00:00:00 -0700
 ---
 layout: post
 title: Long Live the Nikon SB600
@@ -18,6 +19,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/dUwaVB
   _sexybookmarks_permaHash: 8c6fdc66ed7df5abe471e4ae933d8341
+date: 2011-01-10 00:00:00 -0700
 ---
 <img src="http://farm6.static.flickr.com/5121/5198512555_a35bc75da3.jpg" width="500" height="334" alt="Nikon SB600 Repair" class="aligncenter" />
 

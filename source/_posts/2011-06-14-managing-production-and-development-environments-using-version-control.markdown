@@ -1,3 +1,4 @@
+date: 2011-06-14 00:00:00 -0700
 ---
 layout: post
 title: Managing production and development environments using Version Control
@@ -10,6 +11,7 @@ type: post
 published: false
 meta:
   _edit_last: '1'
+date: 2011-06-14 00:00:00 -0700
 ---
 Use branches or tags on config files to easily permit many environments of a web app.
 

@@ -1,3 +1,4 @@
+date: 2009-11-06 00:00:00 -0700
 ---
 layout: post
 title: Caveman instincts
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/a3X4qw
   _sexybookmarks_permaHash: 7bd59d8f749fffb2954c584d2dcf879d
+date: 2009-11-06 00:00:00 -0700
 ---
 So as you may have already read, we moved from our apartment into a modest house.  This was necessary for a number of reasons, not the least of which were our toddler growing up and needing more space, and the fact that I'm working 90%+ from home and needed an office.  A couple of side benefits for me were getting a nice small(ish) lawn in the back yard, and a garage.
 

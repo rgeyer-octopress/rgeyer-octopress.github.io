@@ -1,3 +1,4 @@
+date: 2009-06-09 00:00:00 -0700
 ---
 layout: post
 title: ! '''67 Caddy - Trunk Opening Safari'
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cKPF85
   _sexybookmarks_permaHash: 0e0f44789291d2e7532cc33862e98a1f
+date: 2009-06-09 00:00:00 -0700
 ---
 <img src="http://farm4.static.flickr.com/3396/3613325576_22b72bc80c.jpg" alt="" width="500" height="335" />
 

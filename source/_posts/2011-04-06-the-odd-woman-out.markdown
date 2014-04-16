@@ -1,3 +1,4 @@
+date: 2011-04-06 00:00:00 -0700
 ---
 layout: post
 title: The odd woman out
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-04-06 00:00:00 -0700
 ---
 <center>
 <img src="http://farm6.staticflickr.com/5296/5516009764_75aa430e1f_d.jpg" />

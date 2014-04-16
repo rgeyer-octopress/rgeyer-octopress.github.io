@@ -1,3 +1,4 @@
+date: 2010-09-14 00:00:00 -0700
 ---
 layout: post
 title: How To - Headlight Oxidation Restoration
@@ -21,6 +22,7 @@ meta:
   _sexybookmarks_shortUrl: http://b2l.me/ar3qcu
   _wp_old_slug: ''
   _sexybookmarks_permaHash: 2c32fa73dccf097e6e9b9cbb66236788
+date: 2010-09-14 00:00:00 -0700
 ---
 <a href="http://www.flickr.com/photos/rgeyer/4966004876/" title="Headlight Restoration by qwikrex, on Flickr" target="_blank"><img src="http://farm5.static.flickr.com/4092/4966004876_dcdb5a37a0.jpg" width="500" height="334" alt="Headlight Restoration" class="aligncenter" /></a>
 A common affliction to older cars is that the headlights begin to become dull, or yellow over time.  This had happened to our 1992 Lexus ES300 pictured above.  To be fair, the passenger headlight is a little cloudier since I had done a little bit of wet sanding before I took the photo, more on that later though.

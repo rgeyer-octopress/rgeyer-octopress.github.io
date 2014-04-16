@@ -1,3 +1,4 @@
+date: 2010-05-17 00:00:00 -0700
 ---
 layout: post
 title: Coping and books
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/atBpuj
   _sexybookmarks_permaHash: 8611b1735ede0985657cc97ba1efdd7a
+date: 2010-05-17 00:00:00 -0700
 ---
 There are a multitude of ways people like to cope with the stresses of life.  Life seems to be getting more and more stressful.  I know my life has, as a parent, a spouse, life just seems to be a on going juggling act.  I just remember watching my mother as a single parent in wonder, in awe over how she did everything she did on her own.  I later on learned the amazing accomplishments my grandmother's succeeded in.  Then there are my great grandmother's, how one had 13 children I may never know just like I may never fully comprehend how she did so in a two bedroom home with one bathroom.  I wonder how they coped.
 

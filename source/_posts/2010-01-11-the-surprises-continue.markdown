@@ -1,3 +1,4 @@
+date: 2010-01-11 00:00:00 -0700
 ---
 layout: post
 title: The Surprises Continue
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9raama
   _sexybookmarks_permaHash: df57bb8df427a7b11341b18c9e1c51fb
+date: 2010-01-11 00:00:00 -0700
 ---
 With things starting to slow down with my work schedule, I was actually able to take this weekend off!  I got to relax quite a lot, spend some time with the family, and spend a little time in the garage with the Caddy.
 

@@ -1,3 +1,4 @@
+date: 2010-03-31 00:00:00 -0700
 ---
 layout: post
 title: Grails and Tomcat6 - Deployment Notes
@@ -20,6 +21,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/aSnNNw
   _sexybookmarks_permaHash: 73c90b7c1f632d295297c5abd5039c28
+date: 2010-03-31 00:00:00 -0700
 ---
 <p>Things have been busy, and I haven't had the time to devote to writing updates on either the Caddy, or my work in Grails.  But enough complaining, to pass the time until I can get some more quality content here, I wanted to share this little gem that took me entirely too long to figure out.</p>
 

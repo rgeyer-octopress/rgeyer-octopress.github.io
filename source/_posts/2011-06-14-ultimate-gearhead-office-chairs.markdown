@@ -1,3 +1,4 @@
+date: 2011-06-14 00:00:00 -0700
 ---
 layout: post
 title: Ultimate Gearhead Office Chairs
@@ -10,6 +11,7 @@ type: post
 published: false
 meta:
   _edit_last: '1'
+date: 2011-06-14 00:00:00 -0700
 ---
 Have you shopped for an office chair lately? Survive the sticker shock?  Do you want to know how I build something much more comfortable, and totally unique using stuff I had lying around?  Read on!
 <!--more-->

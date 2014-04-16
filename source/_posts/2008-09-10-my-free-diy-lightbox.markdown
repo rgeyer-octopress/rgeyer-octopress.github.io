@@ -1,3 +1,4 @@
+date: 2008-09-10 00:00:00 -0700
 ---
 layout: post
 title: My free DIY lightbox
@@ -18,6 +19,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/bBc5SO
   _sexybookmarks_permaHash: ea08afe74b98e1a2e44f1930eb49f5c9
+date: 2008-09-10 00:00:00 -0700
 ---
 <img src="http://farm4.static.flickr.com/3169/2846276120_2d543fceff.jpg" alt="Cool image captured with my free light box" />
 

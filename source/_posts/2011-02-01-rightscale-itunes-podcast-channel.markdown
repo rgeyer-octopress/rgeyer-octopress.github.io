@@ -1,3 +1,4 @@
+date: 2011-02-01 00:00:00 -0700
 ---
 layout: post
 title: RightScale iTunes Podcast Channel
@@ -13,6 +14,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/eiODOl
   _wp_old_slug: ''
   _sexybookmarks_permaHash: 2ea6367563bf5957a26f668ca2295851
+date: 2011-02-01 00:00:00 -0700
 ---
 If you're like me, every time you get an invitation for one of the RightScale webinars you're super excited and sign up right away, anxious to see what they have prepared.  Perhaps like me you also manage to forget, and the reminder from your calendar application of choice doesn't pop up.
 <!--more-->

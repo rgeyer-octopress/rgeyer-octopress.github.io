@@ -1,3 +1,4 @@
+date: 2010-06-13 00:00:00 -0700
 ---
 layout: post
 title: Sushi, glorious sushi!
@@ -17,6 +18,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/3g35p
   _sexybookmarks_permaHash: 6deff86d244ab82fa7e390eaec63b93d
+date: 2010-06-13 00:00:00 -0700
 ---
 There are a few things I miss when pregnant.  I miss a ice cold pilsner on a hot day.  The full bouquet of an well balanced cabernet savigion.  The crisp, acidic flavor of a well chilled savignion blanc.  Even the syrupy sweet nearly effervescent flavor of an ice wine.  Tequilla, oh how I love it straight up or mixed in a margarita on the rocks with a salted rim and lots of spicy Mexican food.  I miss these things when I am pregnant but I can easily live without, the hubs is welcome to enjoy without me and in front of me, no big deal.
 

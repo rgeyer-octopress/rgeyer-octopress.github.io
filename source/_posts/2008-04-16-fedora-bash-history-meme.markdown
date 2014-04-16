@@ -1,3 +1,4 @@
+date: 2008-04-16 00:00:00 -0700
 ---
 layout: post
 title: Fedora Bash History Meme
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9W6i5j
   _sexybookmarks_permaHash: 16adc2689b65c3738d57275c3fa14093
+date: 2008-04-16 00:00:00 -0700
 ---
 I just learned about a Bash History Meme originated at <a href="http://planet.fedoraproject.org/">Planet Fedora</a> from a <a href="http://basildoncoder.com/blog/">blog</a> I read regularly.
 

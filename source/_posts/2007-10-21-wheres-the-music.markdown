@@ -1,3 +1,4 @@
+date: 2007-10-21 00:00:00 -0700
 ---
 layout: post
 title: Where's the music?
@@ -25,6 +26,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9VRs23
   _sexybookmarks_permaHash: c7a54cf9569363676e318d655856bf56
+date: 2007-10-21 00:00:00 -0700
 ---
 My wife and I recently visited a Starbucks in town, and I noticed that in place of the usual CD's featuring the music they're currently subjecting us to, instead I noticed a plastic card, in the height and width of a CD, but only about as thick as a credit card.
 

@@ -1,3 +1,4 @@
+date: 2011-09-15 00:00:00 -0700
 ---
 layout: post
 title: One time people thought I was a rich girl and it was funny
@@ -11,6 +12,7 @@ meta:
   _headspace_description: ''
   _headspace_page_title: ''
   _edit_last: '2'
+date: 2011-09-15 00:00:00 -0700
 ---
 I am a woman from modest means, I have been for as long as I can remember and it has never bothered me.  My parents were young and never given a hand out of any sort when they decided to marry immediately after high school and start a family.  They weren't shunned but money wasn't handed out.  
 

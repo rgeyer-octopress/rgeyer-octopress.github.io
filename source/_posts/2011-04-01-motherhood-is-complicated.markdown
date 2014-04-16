@@ -1,3 +1,4 @@
+date: 2011-04-01 00:00:00 -0700
 ---
 layout: post
 title: Motherhood is complicated
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-04-01 00:00:00 -0700
 ---
 <img src="http://farm6.staticflickr.com/5286/5252684361_93eb9b398c_d.jpg" style="float: right"/>
 You know those moments when you are ready for a change, something big that will put some pep in your step?  I have an afro.  It has taken years to get it this long.  My boys know nothing but me with braids or wearing my afro big.  Every now and again I consider chopping it short like it was on my wedding day or for fun to straighten my hair for a minute or dying my hair.  When I consider this I wonder how my boys would respond, if they would recognize me as their mom or if they would be upset by such a drastic change.

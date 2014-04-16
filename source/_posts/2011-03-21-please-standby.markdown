@@ -1,3 +1,4 @@
+date: 2011-03-21 00:00:00 -0700
 ---
 layout: post
 title: Please Standby...
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-03-21 00:00:00 -0700
 ---
 You may (or may not) have noticed that there has not been much activity here over the past couple months.  There are a number of reasons for that, but I'll spare you the excuses.  I'm here to tell you that things are about to change.
 <!--more-->

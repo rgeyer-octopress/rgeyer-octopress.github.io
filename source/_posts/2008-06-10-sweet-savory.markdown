@@ -1,3 +1,4 @@
+date: 2008-06-10 00:00:00 -0700
 ---
 layout: post
 title: Sweet ~= Savory
@@ -12,6 +13,7 @@ published: true
 meta:
   _sexybookmarks_shortUrl: http://bit.ly/9kTcoN
   _sexybookmarks_permaHash: 3f52b186d6d3022fe72aba826e9fada7
+date: 2008-06-10 00:00:00 -0700
 ---
 So my wife and I have this meal tonight.  It consists of one of those <a href="http://www.bertolli.us/classicdinners.aspx">Bertolli dinners in a bag</a>, a salad and some bread, accompanied by the recommended wine pairing (Chianti).
 

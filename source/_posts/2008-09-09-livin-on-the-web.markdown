@@ -1,3 +1,4 @@
+date: 2008-09-09 00:00:00 -0700
 ---
 layout: post
 title: Livin' on the web
@@ -19,6 +20,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/boGNlC
   _sexybookmarks_permaHash: 5c7ec8c50a6b76289b26495bf6d7d8ae
+date: 2008-09-09 00:00:00 -0700
 ---
 Over the past couple of months, I've been transitioning a lot of my normal computing activities to the internet.  What I mean by this, is where I used to use some software based solution for something that had to be installed on every computer I used, or had to be used on only a single computer I'm now using a web based solution.
 

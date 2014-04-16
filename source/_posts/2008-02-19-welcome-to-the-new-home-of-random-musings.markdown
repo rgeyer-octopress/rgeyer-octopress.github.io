@@ -1,3 +1,4 @@
+date: 2008-02-19 00:00:00 -0700
 ---
 layout: post
 title: Welcome to the new home of Random Musings
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/ah1HMr
   _sexybookmarks_permaHash: b02a99e200a07315ca0ed171aa8127c4
+date: 2008-02-19 00:00:00 -0700
 ---
 So here we are.  I used www.blogger.com for a while to host my blog, and it treated me fairly well, but I found it lacked features and customization that I'd started to expect from my blogging solution.
 

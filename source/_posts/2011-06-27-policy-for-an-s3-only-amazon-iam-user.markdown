@@ -1,3 +1,4 @@
+date: 2011-06-27 00:00:00 -0700
 ---
 layout: post
 title: Policy for an S3 only Amazon IAM User
@@ -22,6 +23,7 @@ meta:
     a single S3 bucket
   _edit_last: '1'
 comments: true
+date: 2011-06-27 00:00:00 -0700
 ---
 Now that Amazon's Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href="{{ root_url }}/2011/04/04/enabling-aws-console-login-for-iam-users/">login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.
 <!--more-->

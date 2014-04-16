@@ -1,3 +1,4 @@
+date: 2009-08-23 00:00:00 -0700
 ---
 layout: post
 title: Crashing at a new pad
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9CIJRd
   _sexybookmarks_permaHash: 1db4fb0ce14518ed486040d72f9dd59f
+date: 2009-08-23 00:00:00 -0700
 ---
 If you're reading this, it means that the DNS records have replicated and Random Musings is now fully hosted on my shiny <a href="http://www.linode.com/">Linode VPS</a>!
 

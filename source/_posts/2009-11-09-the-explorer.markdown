@@ -1,3 +1,4 @@
+date: 2009-11-09 00:00:00 -0700
 ---
 layout: post
 title: The Explorer
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/d4ZRVE
   _sexybookmarks_permaHash: f6f5447c829863b20b25776c422dee32
+date: 2009-11-09 00:00:00 -0700
 ---
 When I first discovered the Explorer it was in my Spanish class during a video group project presentation we were doing.  One group accidentally left in a part when they were cruising around in their Eddie Bauer Explorer singing along with the Spice Girls, What you Want.  ::chills::  Ewwww.  I thought it was cheesy then when the song was at it's height and it still annoys me to this day.  
 

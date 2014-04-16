@@ -1,3 +1,4 @@
+date: 2009-09-03 00:00:00 -0700
 ---
 layout: post
 title: My TMI Post
@@ -13,6 +14,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/aPPorI
   _sexybookmarks_permaHash: 505790e3f16852afba749049502f61e0
+date: 2009-09-03 00:00:00 -0700
 ---
 Warning:  This post may be a bit, um, private or sensitive but it must be said.  
 

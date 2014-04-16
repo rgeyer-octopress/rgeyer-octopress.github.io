@@ -1,3 +1,4 @@
+date: 2009-08-10 00:00:00 -0700
 ---
 layout: post
 title: Parenting Roller Coaster
@@ -13,6 +14,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cWDmzT
   _sexybookmarks_permaHash: 19dc02f5df9c75a5e89d31f1d386626e
+date: 2009-08-10 00:00:00 -0700
 ---
 I completed my first full day in a long time at work Wednesday and was greeted at the door by my precious son who felt a little warm.  I figured that my very warm apartment was the issue, and just decided to keep a close eye on him.  After being home for a few hours it had cooled down quite a bit in our home and yet DS was still very warm.  We took his temperature and he was indeed feverish.  We immediately gave him tylenol and together, the hubs and I kept a close eye on him.
 

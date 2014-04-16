@@ -1,3 +1,4 @@
+date: 2010-02-01 00:00:00 -0700
 ---
 layout: post
 title: Engine Autopsy
@@ -18,6 +19,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/d5BQDg
   _sexybookmarks_permaHash: 748e1b796aee68bec95708ebcbce57ee
+date: 2010-02-01 00:00:00 -0700
 ---
 <a href="http://www.flickr.com/photos/rgeyer/4323196620/" title="Engine Removal by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4034/4323196620_ce4b21e310.jpg" width="500" height="335" alt="Cadillac 429 on Hoist" class="aligncenter" /></a>
 

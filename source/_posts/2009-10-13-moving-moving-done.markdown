@@ -1,3 +1,4 @@
+date: 2009-10-13 00:00:00 -0700
 ---
 layout: post
 title: Moving, Moving, Done!
@@ -13,6 +14,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9EyI2N
   _sexybookmarks_permaHash: e4f056675e214589a1107b6a8fda273a
+date: 2009-10-13 00:00:00 -0700
 ---
 <p><a href="http://www.flickr.com/photos/rgeyer/4009626349/" title="Moving Boxes by qwikrex, on Flickr"><img src="http://farm3.static.flickr.com/2605/4009626349_27b238c45e.jpg" width="363" height="500" alt="Moving Boxes" class="alignright" /></a>I was raised as a sort of nomad.  I have moved multiple times during my life, went to 5 elementary schools.  I was used to it.  It was always due to circumstance, trying to make a better life for the family.  I got used to being the new girl.  I just completed my third move as a married woman, my first move as a mom.</p>
 

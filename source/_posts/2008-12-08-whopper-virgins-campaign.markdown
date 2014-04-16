@@ -1,3 +1,4 @@
+date: 2008-12-08 00:00:00 -0700
 ---
 layout: post
 title: Whopper Virgins Campaign
@@ -16,6 +17,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/bA7UMC
   _sexybookmarks_permaHash: 8c0c44ff1dc7e813fd9a04fb39497e9a
+date: 2008-12-08 00:00:00 -0700
 ---
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,124,0" width="512" height="350" id="whoppervirgins" align="middle"> <param name="allowScriptAccess" value="always" />  <param name="allowFullScreen" value="false" />  <param name="movie" value="http://www.whoppervirgins.com/widget.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#000000" />	<embed src="http://www.whoppervirgins.com/widget.swf" quality="high" bgcolor="#000000" width="512" height="350" name="whoppervirgins" align="middle" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /> </object>
 

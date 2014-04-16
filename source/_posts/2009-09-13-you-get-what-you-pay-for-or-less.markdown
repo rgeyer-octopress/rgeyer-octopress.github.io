@@ -1,3 +1,4 @@
+date: 2009-09-13 00:00:00 -0700
 ---
 layout: post
 title: You get what you pay for, or less!
@@ -21,6 +22,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/bRdBeX
   _sexybookmarks_permaHash: 73a408f2d460fe7f5227c3888a07f76f
+date: 2009-09-13 00:00:00 -0700
 ---
 <p><a href="http://www.flickr.com/photos/rgeyer/3917686231/"><img src="http://farm4.static.flickr.com/3518/3917686231_f6e83b6b44_m.jpg" alt="Phoenix Flash" class="alignright" /></a>So you likely know that I recently dropped and broke my <a href="{{ root_url }}/2009/09/07/like-a-flash-in-the-pan/">Nikon SB600 flash</a>.  Disappointed as I was about this, I was already thinking of how I'd replace it.  My searches for Nikon compatible flashes had always included these apparently super affordable Phoenix flashes.  Now, of course, I was always very suspicious of these for a couple of reasons.  First, in all the auctions and other sites selling these I never saw information indicating if this had ANY manual control, and there was never a picture of the rear panel of the unit!  Second, there weren't really any reviews of it online.  I found a few, but usually it was on something like Amazon where it was fairly apparent that those reviewing were (at best) uninformed users who wouldn't know the difference between a "good" flash and a bad one.</p>
 

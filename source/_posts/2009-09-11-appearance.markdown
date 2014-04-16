@@ -1,3 +1,4 @@
+date: 2009-09-11 00:00:00 -0700
 ---
 layout: post
 title: Appearance
@@ -13,6 +14,7 @@ meta:
   syntaxhighlighter_encoded: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9QQY3D
   _sexybookmarks_permaHash: 6584208f2433bae9050a8c12ea1c0960
+date: 2009-09-11 00:00:00 -0700
 ---
 Appearance, it is a topic that comes up regularly.  We all wish it wasn't what we are judged by but it is.  My question, or rant, is why does everyone need to fit in a box?
 

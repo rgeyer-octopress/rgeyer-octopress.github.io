@@ -1,3 +1,4 @@
+date: 2011-04-13 00:00:00 -0700
 ---
 layout: post
 title: Caveman communication
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-04-13 00:00:00 -0700
 ---
 <img src="http://farm6.staticflickr.com/5100/5426078103_39b904bda7_n_d.jpg" style="float: right" />
 You would think that being the only girl in the house that I would not be surprised with the grunting that goes on here.  I mean my husband has been known to nod at me and grunt and I would know that means, "Why yes I would love another beer sweetie." and that a long grunt with eyes closed while at the dinner table and eating a dinner I made means, "Oh my goodness honey, you out did yourself.  The cabernet savignion bouquet paired with the fillet mignion and the red wine reduction sauce is outstanding with your roasted garlic mashed potatoes.".  

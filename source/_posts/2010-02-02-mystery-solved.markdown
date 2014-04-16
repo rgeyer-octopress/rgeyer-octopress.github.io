@@ -1,3 +1,4 @@
+date: 2010-02-02 00:00:00 -0700
 ---
 layout: post
 title: Mystery Solved!
@@ -17,6 +18,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/beenCz
   _sexybookmarks_permaHash: 64865be0fbcbfd2e592868f914ce8831
+date: 2010-02-02 00:00:00 -0700
 ---
 <p><a href="http://www.flickr.com/photos/rgeyer/4326832460/" title="Culprit by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4017/4326832460_9568d6b705.jpg" width="500" height="335" alt="Culprit" class="alignright" /></a>Well there she is, the source of my clunk!  And, the way it's sitting in there explains why the engine wouldn't turn past TDC as well since that thing woulda been right in the way.  So far as I can tell it's a small(ish) washer that got folded in half.  You can see a few more shots of it over in my <a href="http://www.flickr.com/photos/rgeyer/sets/72157623338455858/">Flickr set</a>.  What remains a bit of a mystery is how it got there.  I'm guessing it entered through the intake, and it's possible it was sitting on top of the throttle blades of the carb.  Tough to say if it was there when I got it, or if I managed to drop it there while I was working.</p>
 

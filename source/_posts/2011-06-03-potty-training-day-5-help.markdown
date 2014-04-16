@@ -1,3 +1,4 @@
+date: 2011-06-03 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 5:  HELP!'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-06-03 00:00:00 -0700
 ---
 I thought I had this process under control, well as under control as you can get.  My toddler boy rarely had any accidents.  He did a dance, we high fived with each success.  I felt good until I started getting more and more attitude from my toddler.
 

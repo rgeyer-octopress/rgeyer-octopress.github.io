@@ -1,3 +1,4 @@
+date: 2009-11-06 00:00:00 -0700
 ---
 layout: post
 title: Catching the Wave
@@ -16,6 +17,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/bH9LrD
   _sexybookmarks_permaHash: 769e45162d590c417623512011a9ab7d
+date: 2009-11-06 00:00:00 -0700
 ---
 I am something of a Google Zealot, I was using the search engine back before many people knew what it was and haven't strayed since.  I've been using GMail for the better part of two years, and it handles ALL of my incoming mail, I even forward all of the emails from my self hosted domains to it.  I use Google Docs for everything, including writing and storing invoices for my consulting work and any of my other "office" needs.  And I use Google Voice daily for business phone calls.  We used Google Maps to find and track rental homes, and it helped us find the place we're living in now.  Google Analytics keeps a finger on the pulse of the (itty bitty) traffic on this site.  Google Reader is my RSS reader of choice, which I use almost strictly through a gadget on my iGoogle homepage along with tgadget for Twitter.  I sync my iPhone with Google Calendar, and wouldn't know what I'm doing any particular day without it.  You get the idea.  :-)
 

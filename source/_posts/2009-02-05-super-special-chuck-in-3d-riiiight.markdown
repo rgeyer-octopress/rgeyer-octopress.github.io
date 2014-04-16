@@ -1,3 +1,4 @@
+date: 2009-02-05 00:00:00 -0700
 ---
 layout: post
 title: Super Special Chuck in 3D.. Riiiight
@@ -17,6 +18,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/aOp7mx
   _sexybookmarks_permaHash: d01de3f6c0df82bff1dbd969cff94fec
+date: 2009-02-05 00:00:00 -0700
 ---
 <img src="http://farm4.static.flickr.com/3362/3256305901_2c6444914c.jpg" alt="" />
 

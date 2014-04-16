@@ -1,3 +1,4 @@
+date: 2011-07-13 00:00:00 -0700
 ---
 layout: post
 title: How to Leverage Amazon's Content Delivery Network for Wordpress
@@ -15,6 +16,7 @@ type: post
 published: false
 meta:
   _edit_last: '1'
+date: 2011-07-13 00:00:00 -0700
 ---
 For visitors to your blog, one of the biggest factors that contributes to the load time of the page is the static content.  Stuff like pictures, CSS, Javascript files, etc.
 

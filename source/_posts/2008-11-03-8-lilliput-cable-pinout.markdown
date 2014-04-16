@@ -1,3 +1,4 @@
+date: 2008-11-03 00:00:00 -0700
 ---
 layout: post
 title: 8" Lilliput cable pinout
@@ -17,6 +18,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/biclyG
   _sexybookmarks_permaHash: 5b7b70659acd7e3e264fade611cd1d54
+date: 2008-11-03 00:00:00 -0700
 ---
 So we just recently got a new sectional.  In order to make space for it, we put our old recliner sofa in the back of my truck, and hauled it away.  Of course, this meant I had to remove my car pc from the back of my explorer.  Unfortunately, I didn't tidy up the loose cables that were left behind before we put the couch in.
 

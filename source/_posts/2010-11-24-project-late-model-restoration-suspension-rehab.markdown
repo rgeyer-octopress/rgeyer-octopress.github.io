@@ -1,3 +1,4 @@
+date: 2010-11-24 00:00:00 -0700
 ---
 layout: post
 title: Project Late Model Restoration - Suspension Rehab
@@ -22,6 +23,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/a6ztfx
   _sexybookmarks_permaHash: a836302dce74356a04e00b828e21a7ea
+date: 2010-11-24 00:00:00 -0700
 ---
 <a href="http://www.flickr.com/photos/rgeyer/5059833839/" title="Lexus New Kicks by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4110/5059833839_71184e12f9_z.jpg" width="640" height="361" alt="Lexus New Kicks" class="aligncenter" /></a>
 

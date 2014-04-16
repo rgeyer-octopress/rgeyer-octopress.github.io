@@ -1,3 +1,4 @@
+date: 2010-10-25 00:00:00 -0700
 ---
 layout: post
 title: RightScale crowd sources value-add content
@@ -20,6 +21,7 @@ meta:
   _sexybookmarks_shortUrl: http://b2l.me/a2nwef
   _wp_old_slug: ''
   _sexybookmarks_permaHash: 02bb385ea316dcd24e980a38147360ae
+date: 2010-10-25 00:00:00 -0700
 ---
 RightScale is definitely doing the whole "social media thing" right.  They're active on <a href="http://twitter.com/rightscale">Twitter</a> and <a href="http://www.facebook.com/RightScale">Facebook</a>.  The CEO <a href=http://blog.rightscale.com/">blogs</a>, they have a community <a href="http://forums.rightscale.com/">forum</a> and the very nature of their product encourages users to interact and share with one another.  Clearly they've ticked all of the big social media checkboxes, but their latest announcement is sheer evil genius!
 <!--more-->

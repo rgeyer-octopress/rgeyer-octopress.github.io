@@ -1,3 +1,4 @@
+date: 2011-11-03 00:00:00 -0700
 ---
 layout: post
 title: I'm becoming one of this moms and it scares me
@@ -9,6 +10,7 @@ type: post
 published: false
 meta:
   _edit_last: '2'
+date: 2011-11-03 00:00:00 -0700
 ---
 I'm a fan of letting my children learn and grown on their own in a controlled environment where I can easily jump in and help or correct or protect my children at any given second.  We call it free range children with a side of helicopter parenting.  
 

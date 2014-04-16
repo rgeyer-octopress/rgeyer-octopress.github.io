@@ -1,3 +1,4 @@
+date: 2007-10-29 00:00:00 -0700
 ---
 layout: post
 title: An Ob-NOx-ious truth
@@ -19,6 +20,7 @@ meta:
   blogger_permalink: /2007/10/ob-nox-ious-truth.html
   _sexybookmarks_shortUrl: http://bit.ly/9BOE7t
   _sexybookmarks_permaHash: 629cd30281868322a2a72e884f32ab6c
+date: 2007-10-29 00:00:00 -0700
 ---
 In <a href="http://qwikrex.blogspot.com/2007/10/i-see-your-prius-and-raise-you.html">a recent post</a> I extolled the benefits of running even a large vehicle on biodiesel.  I focused mostly on the CO2 emissions, since that is the big buzz word, and the commonly known greenhouse gas.
 

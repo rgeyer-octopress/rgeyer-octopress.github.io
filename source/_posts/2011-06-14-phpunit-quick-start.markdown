@@ -1,3 +1,4 @@
+date: 2011-06-14 00:00:00 -0700
 ---
 layout: post
 title: PHPUnit Quick Start
@@ -11,6 +12,7 @@ published: false
 meta:
   _edit_last: '1'
   _syntaxhighlighter_encoded: '1'
+date: 2011-06-14 00:00:00 -0700
 ---
 ```
 

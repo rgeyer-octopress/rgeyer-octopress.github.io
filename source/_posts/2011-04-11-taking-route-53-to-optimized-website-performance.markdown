@@ -1,3 +1,4 @@
+date: 2011-04-11 00:00:00 -0700
 ---
 layout: post
 title: Taking Route 53 to Optimized Website Performance
@@ -11,6 +12,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-04-11 00:00:00 -0700
 ---
 When Amazon announced it's Authoritative DNS service, cheekily named Route 53 a few things popped into my head immediately.  First, this should be a much easier way to get the effects of Dynamic DNS which we were currently leveraging <a href="http://www.dnsmadeeasy.com/">DNS Made Easy</a> for.  Secondly, I wonder how much of a performance boost using it might provide.
 <!--more-->

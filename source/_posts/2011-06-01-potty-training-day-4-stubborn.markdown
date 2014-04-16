@@ -1,3 +1,4 @@
+date: 2011-06-01 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training day 4: Stubborn'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-06-01 00:00:00 -0700
 ---
 Now day four was a good day minus the attitude.  I'm not sure who's attitude was worse my toddler's or my own in response to his attitude but we both showed that we are very stubborn.  He made it clear that he was busy playing or eating (slowest eater in the house here) and just couldn't be bothered to check to see if he needed to use the potty while I kept checking with him and encouraging him to sit on the potty.
 

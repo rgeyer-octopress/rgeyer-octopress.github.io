@@ -1,3 +1,4 @@
+date: 2008-03-11 00:00:00 -0700
 ---
 layout: post
 title: Check out my new ride!
@@ -17,6 +18,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/aT6pNZ
   _sexybookmarks_permaHash: 4ad0344a9dc019bfb1c17ed292fad8e5
+date: 2008-03-11 00:00:00 -0700
 ---
 <img src="http://farm6.static.flickr.com/5016/5449168507_97423bc6a9_o.jpg" width="436" height="275" alt="fordgt" />
 

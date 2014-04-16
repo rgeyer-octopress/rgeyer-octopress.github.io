@@ -1,3 +1,4 @@
+date: 2010-06-13 00:00:00 -0700
 ---
 layout: post
 title: How do you remember that much?
@@ -13,6 +14,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/3gxpz
   _sexybookmarks_permaHash: d5b0597b2c092fb6b72b2cd0ad3a6882
+date: 2010-06-13 00:00:00 -0700
 ---
 I've been asked this question numerous times and usually shrug and say, "I don't know.  I just do."  
 

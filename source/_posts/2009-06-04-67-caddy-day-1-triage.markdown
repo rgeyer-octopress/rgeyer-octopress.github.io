@@ -1,3 +1,4 @@
+date: 2009-06-04 00:00:00 -0700
 ---
 layout: post
 title: ! '''67 Caddy Day 1 - Triage'
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cY75rk
   _sexybookmarks_permaHash: e1dcbc632c44eea1f55202c5ada97aec
+date: 2009-06-04 00:00:00 -0700
 ---
 <img src="http://farm4.static.flickr.com/3568/3595435555_174acd7282.jpg" width="500" height="334" alt="Day 1" />
 

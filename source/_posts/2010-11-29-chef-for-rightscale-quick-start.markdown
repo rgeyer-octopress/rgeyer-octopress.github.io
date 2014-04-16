@@ -1,3 +1,4 @@
+date: 2010-11-29 00:00:00 -0700
 ---
 layout: post
 title: Chef for RightScale Quick Start
@@ -24,6 +25,7 @@ meta:
   _headspace_page_title: ''
   Hide OgTags: '0'
   Hide SexyBookmarks: '0'
+date: 2010-11-29 00:00:00 -0700
 ---
 For the past few weeks I have been getting down and dirty writing Chef recipes for use in RightScale.
 

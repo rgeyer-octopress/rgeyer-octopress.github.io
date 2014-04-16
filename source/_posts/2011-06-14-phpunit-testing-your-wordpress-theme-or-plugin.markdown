@@ -1,3 +1,4 @@
+date: 2011-06-14 00:00:00 -0700
 ---
 layout: post
 title: PHPUnit testing your Wordpress Theme or Plugin
@@ -10,6 +11,7 @@ type: post
 published: false
 meta:
   _edit_last: '1'
+date: 2011-06-14 00:00:00 -0700
 ---
 Add this bad boy as an external to your project http://codex.wordpress.org/Automated_Testing
 

@@ -1,3 +1,4 @@
+date: 2011-05-03 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 2: Reality settles in...'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-05-03 00:00:00 -0700
 ---
 So yesterday was all excitement and squealing and today I realized that keeping both boys taken care of and potty training the eldest while keeping the baby, literally out of the potty is going to be a huge undertaking.  My toddler still expects me to high five him every time he does anything potty training related and his little brother still needs to be included.  Here I thought just taking care of the boys full time was going to be a HUGE challenge, it isn't anything compared to potty training and caring for both boys.  
 

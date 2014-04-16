@@ -1,3 +1,4 @@
+date: 2011-05-02 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 1: The Infatuation'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-05-02 00:00:00 -0700
 ---
 Potty training is an ongoing conversation in my household, it only make sense as I have three year old in diapers.  I talk to my mom about potty training.  I talk to my husband about potty training.  Hell, I have talked to my toddler about potty training daily if not during every time I go to the bathroom.  Yes, it's true you have kids and stay home with them and you have company every time you use the toilet.
 

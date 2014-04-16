@@ -1,3 +1,4 @@
+date: 2010-03-11 00:00:00 -0700
 ---
 layout: post
 title: I dub thee "Bionic Caddy"
@@ -20,6 +21,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9ElUsI
   _sexybookmarks_permaHash: a581682235bfc5c1113f41ba624ba847
+date: 2010-03-11 00:00:00 -0700
 ---
 <p>It&#39;s been a while since I&#39;ve provided an update about the progress of on the Caddy. &nbsp;Mostly because things have been slow due to a busy work and family schedule. &nbsp;Here&#39;s the rundown of what I have gotten done though.</p>
 <p>I have rebuilt the carb, and realized that a broken vacuum pot on the carb was actually only used to crack the throttle open a bit and increase the idle RPM when the A/C was running. &nbsp;Since the A/C system is not holding pressure, and looks like it hasn&#39;t in many many years, I went ahead and removed this &quot;extra&quot; part. &nbsp;Hopefully this&#39;ll fix the hesitation problem that I detected on the few short drives I took. &nbsp;</p>

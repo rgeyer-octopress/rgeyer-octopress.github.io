@@ -1,3 +1,4 @@
+date: 2011-06-14 00:00:00 -0700
 ---
 layout: post
 title: Amazon GPU instance - Bcrypt Cypher provider
@@ -10,6 +11,7 @@ type: post
 published: false
 meta:
   _edit_last: '1'
+date: 2011-06-14 00:00:00 -0700
 ---
 A lot of things have been said about how the new Amazon GPU cluster compute instance could be a serious threat for brute force password cracking, but what if you were to fight fire with fire?
 

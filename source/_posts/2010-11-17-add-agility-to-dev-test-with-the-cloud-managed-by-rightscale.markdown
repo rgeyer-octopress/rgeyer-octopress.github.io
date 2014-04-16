@@ -1,3 +1,4 @@
+date: 2010-11-17 00:00:00 -0700
 ---
 layout: post
 title: Add Agility to Dev & Test with the Cloud - Managed by RightScale
@@ -19,6 +20,7 @@ meta:
   _sexybookmarks_shortUrl: http://b2l.me/a5zda6
   _wp_old_slug: ''
   _sexybookmarks_permaHash: be5a15455a20b1b9537f2e961fe4b3b6
+date: 2010-11-17 00:00:00 -0700
 ---
 Whether you are a small development company with a tight budget, or an established enterprise with some trepidation about wading into the murky waters of cloud computing, RightScale just made it easier to empowering your development and test teams with cloud computing.
 

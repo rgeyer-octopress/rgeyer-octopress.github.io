@@ -1,3 +1,4 @@
+date: 2009-11-02 00:00:00 -0700
 ---
 layout: post
 title: The sleeper has awakened!
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/ami40L
   _sexybookmarks_permaHash: f699ca3caffa1eff3a0ddaf4d738e5ac
+date: 2009-11-02 00:00:00 -0700
 ---
 <p>Man, nearly two months without a post here.  Google Analytics tells me I'm only disappointing about two dozen people, so to you my loyal readers, accept my humblest apologies.  But, I do have an excuse or two!</p>
 

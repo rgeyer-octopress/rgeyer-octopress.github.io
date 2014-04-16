@@ -1,3 +1,4 @@
+date: 2010-03-10 00:00:00 -0700
 ---
 layout: post
 title: Modularizing your Grails Application - Domain Classes
@@ -20,6 +21,7 @@ meta:
   _syntaxhighlighter_encoded: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9vaoly
   _sexybookmarks_permaHash: 6a10d86a8a6b0bba0c5316c6ff15d5de
+date: 2010-03-10 00:00:00 -0700
 ---
 <p>This is the second installment of my <a href="{{ root_url }}/2010/02/05/what-grooves-you/">What Grooves You?</a> series of posts, this time discussing how to modularize your Grails application.  While Grails does an awesome job of enforcing <a href="http://www.grails.org/Developer+-+Spring+MVC+Integration">MVC</a> once your application reaches a certain size, or you have multiple applications which may have shared components, you're going to have to start thinking about how your going to modularize the reusable parts of your code.</p>
 <!--more-->

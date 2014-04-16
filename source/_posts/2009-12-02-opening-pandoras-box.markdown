@@ -1,3 +1,4 @@
+date: 2009-12-02 00:00:00 -0700
 ---
 layout: post
 title: Opening Pandora's Box
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/as9ptg
   _sexybookmarks_permaHash: 7973261f3914a0ca5c42d110f37d3def
+date: 2009-12-02 00:00:00 -0700
 ---
 So when I bought the Caddy, I knew it had a cooling system issue.  The previous owner had diagnosed it as a <a href="{{ root_url }}/2009/06/04/67-caddy-day-1-triage/">leaking water pump</a>, so that's where I started.  Little did I know what lay in store for me!
 

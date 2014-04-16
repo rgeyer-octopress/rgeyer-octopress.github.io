@@ -1,3 +1,4 @@
+date: 2009-08-02 00:00:00 -0700
 ---
 layout: post
 title: 67 Caddy - New Kicks
@@ -16,6 +17,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9lbGWm
   _sexybookmarks_permaHash: 0f0a15c294239c86c0af4a4e8c42566e
+date: 2009-08-02 00:00:00 -0700
 ---
 <p><a href="http://www.flickr.com/photos/rgeyer/3781867519/"><img src="http://farm3.static.flickr.com/2625/3781867519_b067ff0486_m.jpg" class="alignright" alt="Forte F36 20x8.5 +15mm Offset on 1967 Cadillac Deville Sedan Hardtop" /></a>
 

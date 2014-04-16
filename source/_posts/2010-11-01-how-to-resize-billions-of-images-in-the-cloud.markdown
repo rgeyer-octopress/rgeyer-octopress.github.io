@@ -1,3 +1,4 @@
+date: 2010-11-01 00:00:00 -0700
 ---
 layout: post
 title: How to resize billions of images in the cloud
@@ -16,6 +17,7 @@ meta:
   _sexybookmarks_shortUrl: http://b2l.me/a3jrav
   _wp_old_slug: ''
   _sexybookmarks_permaHash: 403dae2fa06719cbfda274c387b2d88c
+date: 2010-11-01 00:00:00 -0700
 ---
 As I was clearing out my RSS reader a few days back, I stopped to read a post on the Flickr dev blog about the "new" <a href="http://code.flickr.com/blog/2010/10/26/the-not-so-new-image-size-medium-640/">640px image size</a>.  In the article they lament that they wished they had made "Large" copies of all uploaded images because it would make generating the new 640px size easier.
 

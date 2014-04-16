@@ -1,3 +1,4 @@
+date: 2010-11-22 00:00:00 -0700
 ---
 layout: post
 title: How I would improve RightScale's ServerTemplates
@@ -13,6 +14,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/a6rcxk
   _sexybookmarks_permaHash: e769d5a1f7cfe847e377b81b04936dbb
+date: 2010-11-22 00:00:00 -0700
 ---
 One of RightScale's key differentiators from other cloud management platforms is the concept of the ServerTemplate.
 

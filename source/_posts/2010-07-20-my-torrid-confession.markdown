@@ -1,3 +1,4 @@
+date: 2010-07-20 00:00:00 -0700
 ---
 layout: post
 title: My torrid confession...
@@ -12,6 +13,7 @@ meta:
   _sexybookmarks_shortUrl: ! 'File: /data/app/webapp/functions.php<br />Line: 43<br
     />Message: Table ''b2l_shrinker.phurl_urls'' doesn''t exist'
   _sexybookmarks_permaHash: da1725e9ec9548e1822231f28af11899
+date: 2010-07-20 00:00:00 -0700
 ---
 I LOVE the Gilmore Girls.  I love the cheesy storyline, I love the silly romances, the silly friendships.  I love all the dysfunctional relationships that somehow come to a nearly peaceful resting place within an hour.  I loved the relation ship between Lorlei and Rori.  I felt a kinship with their relationship as it was reminiscent of the relationship between my mother, my sister, and I.  We have comical relationships, we play off each other and crack each other up daily, though we had more of a George Lopez, Chris Rock playful antics than what they had.   
 

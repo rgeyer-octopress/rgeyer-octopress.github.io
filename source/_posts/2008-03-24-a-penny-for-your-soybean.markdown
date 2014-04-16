@@ -1,3 +1,4 @@
+date: 2008-03-24 00:00:00 -0700
 ---
 layout: post
 title: A penny for your soybean?
@@ -13,6 +14,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/dcq6GI
   _sexybookmarks_permaHash: 2097302b3a77d739162cf0d823dc4134
   _edit_last: '1'
+date: 2008-03-24 00:00:00 -0700
 ---
 <img src="http://farm6.static.flickr.com/5051/5449777902_4025f2b249_o.jpg" width="283" height="423" alt="soybeans" class="alignleft" />
 

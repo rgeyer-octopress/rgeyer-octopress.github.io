@@ -1,3 +1,4 @@
+date: 2010-08-02 00:00:00 -0700
 ---
 layout: post
 title: RightScriptDiff - Maintain your RightScripts Locally
@@ -22,6 +23,7 @@ meta:
   _syntaxhighlighter_encoded: '1'
   _sexybookmarks_shortUrl: http://b2l.me/aemxqq
   _sexybookmarks_permaHash: 370ff92d5aa793f192c0c3a5d603e7d3
+date: 2010-08-02 00:00:00 -0700
 ---
 If you're running servers in the cloud, particularly on Amazon's AWS and haven't heard about <a href="http://www.rightscale.com">RightScale</a> you owe it to yourself to check them out.  I've been using their tools for launching and managing linux servers on AWS.  They allow you to automate all of the tasks to launch a new box, and even run regular operational tasks, all with the use of RightScripts.
 

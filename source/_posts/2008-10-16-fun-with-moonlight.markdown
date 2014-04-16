@@ -1,3 +1,4 @@
+date: 2008-10-16 00:00:00 -0700
 ---
 layout: post
 title: Fun with moonlight
@@ -18,6 +19,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/9hq9wH
   _sexybookmarks_permaHash: 8657969328e7c670ac2d658c04b10621
+date: 2008-10-16 00:00:00 -0700
 ---
 <a href="http://www.flickr.com/photos/rgeyer/2943100497/" title="dsc_0049.jpg by qwikrex, on Flickr"><img src="http://farm4.static.flickr.com/3059/2943100497_099d85aa92.jpg" width="500" height="334" alt="dsc_0049.jpg" /></a>
 

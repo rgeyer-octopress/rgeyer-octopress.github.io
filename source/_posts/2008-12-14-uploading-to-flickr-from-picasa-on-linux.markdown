@@ -1,3 +1,4 @@
+date: 2008-12-14 00:00:00 -0700
 ---
 layout: post
 title: Uploading to Flickr from Picasa on Linux
@@ -21,6 +22,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/bpwWFM
   _sexybookmarks_permaHash: ec5688593fda09239c560eec658871a3
+date: 2008-12-14 00:00:00 -0700
 ---
 When I performed my search for the perfect <a href="{{ root_url }}/2008/09/25/photo-sharing-services/">photo sharing</a> solution, I fell in love with the Picasa desktop application.  I even discovered that there is a linux version.  However, as you'd likely expect, it didn't really play nice as far as uploading photos to any photo sharing site other than Google's Picasa Web Albums.
 

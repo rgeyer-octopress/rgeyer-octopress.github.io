@@ -1,3 +1,4 @@
+date: 2009-06-03 00:00:00 -0700
 ---
 layout: post
 title: What I've been up to...
@@ -15,6 +16,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/bW56aX
   _sexybookmarks_permaHash: fb129b6e7aad25366746bc427fef6705
+date: 2009-06-03 00:00:00 -0700
 ---
 <p style="text-align: center;"><img class="aligncenter" src="http://farm4.static.flickr.com/3585/3425699318_0ee89b2b55.jpg" alt="" width="500" height="335" /></p>
 

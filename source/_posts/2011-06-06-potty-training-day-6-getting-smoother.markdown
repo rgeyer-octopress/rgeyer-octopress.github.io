@@ -1,3 +1,4 @@
+date: 2011-06-06 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 6:  Getting Smoother'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-06-06 00:00:00 -0700
 ---
 I had been letting my toddler run around in underwear as clothes seemed to be such an huge challenge.  I had so many things going for us so we tried clothes again.  My toddler did fantastic.  
 

@@ -1,3 +1,4 @@
+date: 2008-11-03 00:00:00 -0700
 ---
 layout: post
 title: 4.5L Duramax - Saturn Sky
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/aYN3DO
   _sexybookmarks_permaHash: 25ee2b947d853b7831f7995c107e1424
+date: 2008-11-03 00:00:00 -0700
 ---
 Since the first time I saw the Saturn Sky Roadster I fell in love with it.  Though, with my particular passion for diesel I'd love to see one with a diesel motor.
 

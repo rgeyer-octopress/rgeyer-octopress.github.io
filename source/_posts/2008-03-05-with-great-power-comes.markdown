@@ -1,3 +1,4 @@
+date: 2008-03-05 00:00:00 -0700
 ---
 layout: post
 title: With great power comes?
@@ -15,6 +16,7 @@ meta:
   _sexybookmarks_shortUrl: http://bit.ly/cn87eM
   _sexybookmarks_permaHash: 62968fcfad5dbf0183fb83f236b636ef
   _edit_last: '1'
+date: 2008-03-05 00:00:00 -0700
 ---
 I've been noticing a trend lately in modern cars.  Everything is getting exponentially faster and more powerful, and meanwhile more affordable.
 

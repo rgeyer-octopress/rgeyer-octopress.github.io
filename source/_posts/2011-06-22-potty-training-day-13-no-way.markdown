@@ -1,3 +1,4 @@
+date: 2011-06-22 00:00:00 -0700
 ---
 layout: post
 title: ! 'Potty Training Day 13:  NO WAY!'
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-06-22 00:00:00 -0700
 ---
 He's being all awesome and doing all he can on his own.  I had no idea he would do so well.
 

@@ -1,3 +1,4 @@
+date: 2009-06-10 00:00:00 -0700
 ---
 layout: post
 title: My Twitter Client Search - Ended
@@ -21,6 +22,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/chPmaT
   _sexybookmarks_permaHash: 7132a528bf8c8c015d21534bcb905ed4
+date: 2009-06-10 00:00:00 -0700
 ---
 <p style="text-align: center;"><a href="http://www.flickr.com/photos/rgeyer/3613715245/"><img class="aligncenter" longdesc="http://www.flickr.com/photos/rgeyer/3613715245/" src="http://farm4.static.flickr.com/3377/3613715245_c590a530d3.jpg" alt="" /></a></p>
 <p style="text-align: left;">Okay, so as you may already know I'm a big fan of any software solution that does what I need in a portable and platform agnostic way, particularly if it does it "<a href="{{ root_url }}/categories/cloud-computing/">in the cloud</a>".</p>

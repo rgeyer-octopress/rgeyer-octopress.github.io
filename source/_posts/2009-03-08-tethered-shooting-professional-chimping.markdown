@@ -1,3 +1,4 @@
+date: 2009-03-08 00:00:00 -0700
 ---
 layout: post
 title: Tethered Shooting - Professional Chimping?
@@ -22,6 +23,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/dALCj3
   _sexybookmarks_permaHash: 86db042d7f9c9466ed0794bb8ad62b3f
+date: 2009-03-08 00:00:00 -0700
 ---
 <p>Okay, first..&nbsp; This post/rant was inspired by a few tweets from Chase Jarvis.&nbsp; That said, I'm not throwing stones, or trying to start a fight.&nbsp; The topic just got me thinking and I&nbsp;wanted to share my train of thought.&nbsp; Chase, and any other professional who shots tethered, I'm actually jealous.&nbsp; I&nbsp;wish I&nbsp;could shoot tethered.</p>
 <p>Read more after the break...<!--more--></p>

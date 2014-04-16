@@ -1,3 +1,4 @@
+date: 2011-04-15 00:00:00 -0700
 ---
 layout: post
 title: It all comes down to poop
@@ -10,6 +11,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+date: 2011-04-15 00:00:00 -0700
 ---
 Let's talk about how often moms 'get' to talk about poop.  First we talk about poop all of the time when we are pregnant, or the lack there of due to all the iron we are taking.  Then as we get closer to delivery then we are amazed with the amount of 'cleansing' our body does.
 

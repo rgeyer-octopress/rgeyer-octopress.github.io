@@ -1,3 +1,4 @@
+date: 2008-07-06 00:00:00 -0700
 ---
 layout: post
 title: Gap Fire - Day 6
@@ -13,6 +14,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/b4OixJ
   _sexybookmarks_permaHash: d7ea102eefaa26442a3fa36d791fe473
+date: 2008-07-06 00:00:00 -0700
 ---
 Well, we visited the apartment yesterday afternoon, and found that the wind had reversed and the fire line had moved back nearly to the peak of the foothills behind our neighborhood.  Consequently, the smoke and ash too had receded and were being blow in the opposite direction.  In fact, it looked almost like a normal sunny afternoon!
 

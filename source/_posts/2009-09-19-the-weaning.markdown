@@ -1,3 +1,4 @@
+date: 2009-09-19 00:00:00 -0700
 ---
 layout: post
 title: The Weaning
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/b4hc7E
   _sexybookmarks_permaHash: c4baeea56bec20bd86217c2fa7cfdc72
+date: 2009-09-19 00:00:00 -0700
 ---
 Yep, here I go talking about boobies again.
 I am currently awake at the wondrous hour of 3am because my beautiful precious son is awake and has nursing needs but I announced that I am done breastfeeding my son and want a break.  I explained to my ever loving husband that Thursday night will be the last time our son will nurse because I just can't handle the draining of my energy and the lack of sleep, I just couldn't do it anymore.  

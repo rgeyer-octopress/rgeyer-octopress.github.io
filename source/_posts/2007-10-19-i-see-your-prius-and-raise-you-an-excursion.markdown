@@ -1,3 +1,4 @@
+date: 2007-10-19 00:00:00 -0700
 ---
 layout: post
 title: I see your Prius, and raise you an Excursion.
@@ -20,6 +21,7 @@ meta:
   blogger_permalink: /2007/10/i-see-your-prius-and-raise-you.html
   _sexybookmarks_shortUrl: http://bit.ly/alWGA3
   _sexybookmarks_permaHash: 003e1c6393396c699036966dd6bd54c0
+date: 2007-10-19 00:00:00 -0700
 ---
 So, for probably the past 8 or 9 years, I've been infatuated with diesel engines.  Ever since I was introduced to an early 90's Dodge Ram 2500 with the 12 valve Cummins motor.  I was impressed with the sound of the motor, the apparent torrent of torque and horsepower, and the remarkable fuel economy considering it's size.
 

@@ -1,3 +1,4 @@
+date: 2010-06-06 00:00:00 -0700
 ---
 layout: post
 title: Have your classic, and drive it too
@@ -17,6 +18,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/zrwg7
   _sexybookmarks_permaHash: 173905c1962c9e998375c6a162766f63
+date: 2010-06-06 00:00:00 -0700
 ---
 I grew up in the 80's, not a terribly exciting time in automobile history.  In addition, my family, while sharing great stories about cool cars in their past, never owned anything particularly exiting while I was a kid.  Maybe the coolest car was the Volvo 145 Estate which we owned when I was very young.
 

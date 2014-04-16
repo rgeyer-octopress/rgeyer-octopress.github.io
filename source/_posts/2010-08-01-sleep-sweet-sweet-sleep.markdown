@@ -1,3 +1,4 @@
+date: 2010-08-01 00:00:00 -0700
 ---
 layout: post
 title: Sleep, sweet sweet sleep
@@ -16,6 +17,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/ad9xp4
   _sexybookmarks_permaHash: 66f2e9f4d3fb1fa4f4da0333fed1e5bb
+date: 2010-08-01 00:00:00 -0700
 ---
 I remember being young and fighting every single nap time in preschool, daycare, and kindergarten.  I remember whimpering when my parents held true to my 8:30pm bedtime.  I just wanted to stay up and play with the adults, I didn't get why I had to go to bed.  I imagined that my parents were having candy and ice cream parties.  I could hear soft jazz playing in the living room and muffled conversations that had a healthy sprinkling of laughter, singing and silly noises.  I felt like I was missing out on so much.  It wasn't until Jr. High that I started to stay up late for school work and honestly I thought I was a grown up for not complaining.  Then high school I stayed up for cram sessions, reports, homework and started to get that sleep was a valuable commodity.  Still I would stay up Friday and Saturday in attempts to spend time with my mom and grandmother or with my friends.  I had a strict curfew, one that my mom would tell my friends and their parents so that they knew she meant business.
 <!--more-->

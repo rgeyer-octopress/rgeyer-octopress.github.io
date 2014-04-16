@@ -1,3 +1,4 @@
+date: 2008-07-29 00:00:00 -0700
 ---
 layout: post
 title: 5.8 Magnitude Earthquake in Chino, CA
@@ -14,6 +15,7 @@ meta:
   syntaxhighlighter_encoded: '1'
   _sexybookmarks_shortUrl: http://bit.ly/b3QXmd
   _sexybookmarks_permaHash: 5fb7ff5fd5f5bea3ab07d840a0e47361
+date: 2008-07-29 00:00:00 -0700
 ---
 Just felt <a href="http://quake.wr.usgs.gov/recenteqs/Quakes/ci14383980.html">this</a> earthquake here in Santa Barbara.
 

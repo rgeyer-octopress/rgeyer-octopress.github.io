@@ -1,3 +1,4 @@
+date: 2010-07-27 00:00:00 -0700
 ---
 layout: post
 title: Grails Domain Mocking Limitations
@@ -19,6 +20,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://b2l.me/ac4762
   _sexybookmarks_permaHash: 08e1d8557445d384e4230add558783f1
+date: 2010-07-27 00:00:00 -0700
 ---
 So, I just threw out most of this morning trying to figure out why something which clearly <em>should</em> work was blowing up my unit test on a grails app.  To spare you the same pain I'm documenting it here.
 

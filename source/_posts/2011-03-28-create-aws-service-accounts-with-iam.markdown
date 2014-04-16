@@ -1,3 +1,4 @@
+date: 2011-03-28 00:00:00 -0700
 ---
 layout: post
 title: Create AWS Service Accounts with IAM
@@ -12,6 +13,7 @@ published: true
 meta:
   _edit_last: '1'
   _syntaxhighlighter_encoded: '1'
+date: 2011-03-28 00:00:00 -0700
 ---
 I've been making use of Amazon Web Services (AWS) quite a lot lately.  In order to really enjoy the benefits of Cloud Computing (automation, agility, etc) I've had to use a number of tools to interact with AWS on my behalf.
 

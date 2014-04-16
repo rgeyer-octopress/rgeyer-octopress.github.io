@@ -1,3 +1,4 @@
+date: 2008-12-22 00:00:00 -0700
 ---
 layout: post
 title: UNYK Address Book
@@ -21,6 +22,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/ant3Nt
   _sexybookmarks_permaHash: c20f854f95518e65c6880e6ee855aa77
+date: 2008-12-22 00:00:00 -0700
 ---
 I just received an email today from one of my contacts on <a href="https://www.linkedin.com/">LinkedIn</a>.  It was an invitation to join this new <a href="http://www.unyk.com/">UNYK</a> Address Book application which is apparently in beta.
 

@@ -1,3 +1,4 @@
+date: 2007-10-24 00:00:00 -0700
 ---
 layout: post
 title: Apples? Sure, sign me up!
@@ -22,6 +23,7 @@ meta:
   syntaxhighlighter_encoded: '1'
   _sexybookmarks_shortUrl: http://bit.ly/cTFy2e
   _sexybookmarks_permaHash: 298c5c4959b49a1e289cc6222608c562
+date: 2007-10-24 00:00:00 -0700
 ---
 I grew up with computers.  I used a TRS-80, and probably one of every family of macintoshes.  However, I eventually defected to IBM Compatible PC's, and Microsoft Windows around the age of 14-ish.  I've been a "PC" guy ever since.  Usually running Windows, but preferring to run a lot of my personal hardware on various flavors of Linux.
 

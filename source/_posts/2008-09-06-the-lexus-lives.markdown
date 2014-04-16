@@ -1,3 +1,4 @@
+date: 2008-09-06 00:00:00 -0700
 ---
 layout: post
 title: The Lexus Lives!
@@ -14,6 +15,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/b5RDhV
   _sexybookmarks_permaHash: d572e7827dcf52e7e458f140f3cb16b0
+date: 2008-09-06 00:00:00 -0700
 ---
 This Labor Day weekend I finally put the finishing touches on my wife's Lexus ES300.  You see, about 5 weeks earlier I had started the seemingly simple task of removing the cylinder heads, and replacing them with a rebuilt pair I had practically stolen from a seller on eBay.
 

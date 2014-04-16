@@ -1,3 +1,4 @@
+date: 2010-02-05 00:00:00 -0700
 ---
 layout: post
 title: What Grooves You?
@@ -17,6 +18,7 @@ meta:
   _edit_last: '1'
   _sexybookmarks_shortUrl: http://bit.ly/ck8ZMO
   _sexybookmarks_permaHash: ce5fc80aa010e2a62a9c345699775221
+date: 2010-02-05 00:00:00 -0700
 ---
 <p>In my &quot;Day Job&quot;, we design and build our applications using Microsoft technologies.  In particular, we're using C#, Silverlight, and IIS to build and deploy our web applications.  This makes good sense because the vendors we use are well versed in the Microsoft technology, and like the IT infrastructure of a lot of medium and large companies Microsoft solutions are at the forefront.  It's becoming apparent though that we're going to have to consider our options and possibly embrace a different technology stack to properly scale and support the applications we're building.</p>
 
