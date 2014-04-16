@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Fitting Grails in an Active Directory and NTLM SSO Groove - Random Musings</title>
+  <meta name="author" content="Ryan J. Geyer">
+  <link rel="author" href="humans.txt">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  
+    
+  
+  <meta name="description" content="This is my first installment in the What Grooves You? series of posts, and it deals with the first thing you&#8217;re going to need to consider if &hellip;">
+  
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.ryangeyer.com/2010/02/09/fitting-grails-in-an-active-directory-and-ntml-sso-groove/">
+  <link href="/favicon.png" rel="icon">
+  <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Random Musings" type="application/atom+xml">
+  <meta name="og:type" content="website" />
+  <meta name="og:site_name" content="Random Musings" />
+  <meta name="og:title" content="Fitting Grails in an Active Directory and NTLM SSO Groove" />
+  <meta name="og:description" content="This is my first installment in the What Grooves You? series of posts, and it deals with the first thing you&#8217;re going to need to consider if &hellip;" />
+  <meta name="og:url" content="http://blog.ryangeyer.com/2010/02/09/fitting-grails-in-an-active-directory-and-ntml-sso-groove/"/>
+  <meta name="url" content="http://blog.ryangeyer.com/2010/02/09/fitting-grails-in-an-active-directory-and-ntml-sso-groove/">
+  
+  <meta name="subject" content="Grails/GroovyReviews"/>
+  <meta name="category" content="Grails/GroovyReviews"/>
+  
+  <meta name="distribution" content="global">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2840005-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">Random Musings</a>
+    <ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/archives">Archives</a></li>
+    </ul>
+    <ul class="nav" data-subscription="rss">
+      <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+      
+    </ul>
+      
+    <form class="navbar-form" action="http://google.com/search" method="get">
+      <fieldset role="search">
+        <input type="hidden" name="q" value="site:blog.ryangeyer.com" />
+        <input class="span2" type="text" name="q" results="0" placeholder="Search"/>
+      </fieldset>
+    </form>
+      
+    
+  </div>
+</div>
+</nav>
+  <div class="wrapper_single">
+    <div class="container">
+      <article class="span8 offset2" role="article">
+        <div class="article-format">
+
+  <header>
+    
+      <h1 class="entry-title">Fitting Grails in an Active Directory and NTLM SSO Groove</h1>
+    
+    
+      <p class="meta">
+        
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-09T23:00:00-08:00" pubdate data-updated="true">Feb 9<span>th</span>, 2010</time> - 
+        
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/grails-slash-groovy/'>Grails/Groovy</a>, <a class='category' href='/categories/reviews/'>Reviews</a>
+  
+</span>
+
+
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is my first installment in the <a href="/2010/02/05/what-grooves-you/">What Grooves You?</a> series of posts, and it deals with the first thing you&#8217;re going to need to consider if you are deploying your Grails/Groovy applications in the average corporate IT infrastructure, Single Sign On with Active Directory and NTLM.  Like it or not, because all of our existing applications are based on Microsoft technologies our users have gotten used to just going to the URL for the application they intend to use and being instantly recognized and authenticated.  Forcing them to sign in again, or worse still forcing them to setup a new username and password for your system would be completely unacceptable!  Below, I&#8217;ll take you through the steps I took to solve this problem, including the detours that cost me time!</p>
+
+
+<!--more-->
+
+
+
+
+<p>Throughout this post I&#8217;ll be referring to domain objects, controllers, and views which would have been created by running the <a href="http://www.grails.org/AcegiSecurity+Plugin+-+LDAP+Tutorial">Acegi LDAP tutorial</a>.  So if you want to follow along, go walk through the tutorial, then come back here to see how we tweak it.  Be sure to take the &#8220;optional&#8221; step of creating the views and controllers for the auth domains, you&#8217;ll need it not only in the tutorial, but also for some customization we&#8217;ll be doing later.
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>grails generate-manager</span></code></pre></td></tr></table></div></figure>
+
+
+You can also download a copy of the Spring Source STS project I used for this application <a href="http://www.nslms.com/downloads/GrailsInActiveDirectoryGroove.zip">here</a>.
+</p>
+
+
+
+
+<h2>LDAP Single Identity but not Single Sign On</h2>
+
+
+<p>As I started searching to figure out how to authenticate my users, everything seemed to point to using the <a href="http://grails.org/plugin/acegi">Acegi Plugin</a> for Grails, and using it with LDAP, tweaked to talk to Active Directory.  So, I started down this path and followed the <a href="http://www.grails.org/AcegiSecurity+Plugin+-+LDAP+Tutorial">LDAP tutorial</a> for the Acegi plugin.  Without a lot of trouble I got this working by following the steps in the tutorial, though I did make a couple significant changes to the SecurityConfig.groovy file to make it play nice with Active Directory</p>
+
+
+
+
+<figure class='code'><figcaption><span>SecurityConfig.groovy mark:14,17,18 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">security</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// see DefaultSecurityConfig.groovy for all settable/overridable properties</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">active</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="n">useLdap</span> <span class="o">=</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="n">ldapRetrieveDatabaseRoles</span> <span class="o">=</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="n">ldapRetrieveGroupRoles</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span class='line'>  <span class="n">ldapServer</span> <span class="o">=</span> <span class="s1">&#39;ldap://&lt;your-domain-controller&gt;&#39;</span>
+</span><span class='line'>  <span class="n">ldapManagerDn</span> <span class="o">=</span> <span class="s1">&#39;&lt;your-service-account-dn&gt;&#39;</span>
+</span><span class='line'>  <span class="n">ldapManagerPassword</span> <span class="o">=</span> <span class="s1">&#39;&lt;your-service-account-password&gt;&#39;</span>
+</span><span class='line'>  <span class="n">ldapSearchBase</span> <span class="o">=</span> <span class="s1">&#39;OU=People,DC=yourdomain,DC=com&#39;</span>
+</span><span class='line'>  <span class="n">ldapSearchFilter</span> <span class="o">=</span> <span class="s1">&#39;(sAMAccountName={0})&#39;</span>
+</span><span class='line'>  <span class="n">ldapSearchSubtree</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span class='line'>  <span class="n">ldapGroupSearchBase</span> <span class="o">=</span> <span class="s1">&#39;CN=Users,DC=yourdomain,DC=com&#39;</span>
+</span><span class='line'>  <span class="n">ldapGroupSearchFilter</span> <span class="o">=</span> <span class="s1">&#39;member={0}&#39;</span>
+</span><span class='line'>  <span class="n">ldapUsePassword</span> <span class="o">=</span> <span class="kc">false</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">loginUserDomainClass</span> <span class="o">=</span> <span class="s2">&quot;User&quot;</span>
+</span><span class='line'>  <span class="n">authorityDomainClass</span> <span class="o">=</span> <span class="s2">&quot;Role&quot;</span>
+</span><span class='line'>  <span class="n">requestMapClass</span> <span class="o">=</span> <span class="s2">&quot;Requestmap&quot;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<p>By setting ldapSearchFilter to &#8216;(sAMAccountName={0})&#8217;, we&#8217;re telling the Acegi plugin to look for the field in Active Directory that stores the username, this means that users can login just like they&#8217;re used to by using their Active Directory user name and password.</p>
+
+
+
+
+<p>The ldapGroupSearchBase and ldapGroupSearchFilter are set such that any domain user groups that a user is a member of become Acegi &#8220;Roles&#8221; which can be used to determine if a user has authority to do stuff in the application.</p>
+
+
+
+
+<p>Setting ldapUsePassword to false is important too.  What we&#8217;re telling the Acegi plugin is not to extract the users password from Active Directory.  If you don&#8217;t set this to false, you&#8217;ll get a lovely exception which isn&#8217;t particularly useful, <strong><em>java.lang.IllegalArgumentException: Cannot pass null or empty values to constructor</em><em></em></strong>.  What this is trying to tell you is that the users password is null, which is correct since the default setting for the Acegi plugin is to try to extract the users password from Active Directory, and we haven&#8217;t told Acegi what attribute Active Directory stores the password in.  By setting ldapUsePassword to false, the plugin provides a bogus password for the user details, and we&#8217;re able to proceed without incident.</p>
+
+
+
+
+<p>So, great!  If you&#8217;ve made these changes and followed the steps in the tutorial to add a user  to the application domain with the same username as your Active Directory user you can authenticate users with the username and password they&#8217;re already using to login to their computer, we have a single identity for this person.  But remember, our users are used to simply going to a URL and not being prompted to login.  How do we reproduce that experience?</p>
+
+
+
+
+<h2>NTLM Really Single Sign On</h2>
+
+
+<p>Having realized that using Active Directory/LDAP authentication works, but isn&#8217;t an actual single sign on solution I started looking into the other settings in the <a href="http://www.grails.org/AcegiSecurity+Plugin+-+Customizing+with+SecurityConfig">SecurityConfig.groovy</a> file.  Turns out there is an NTLM option, but no corresponding tutorial!  Here&#8217;s my configuration for using NTLM.
+</p>
+
+
+
+
+<figure class='code'><figcaption><span>SecurityConfig.groovy </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">security</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// see DefaultSecurityConfig.groovy for all settable/overridable properties</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">active</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="n">useNtlm</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span class='line'>  <span class="n">ntlm</span><span class="o">.</span><span class="na">stripDomain</span> <span class="o">=</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="n">ntlm</span><span class="o">.</span><span class="na">defaultDomain</span> <span class="o">=</span> <span class="s2">&quot;yourdomain.com&quot;</span>
+</span><span class='line'>  <span class="n">ntlm</span><span class="o">.</span><span class="na">netbiosWINS</span> <span class="o">=</span> <span class="s2">&quot;&lt;your-domain-controller-ip&gt;&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">loginUserDomainClass</span> <span class="o">=</span> <span class="s2">&quot;User&quot;</span>
+</span><span class='line'>  <span class="n">authorityDomainClass</span> <span class="o">=</span> <span class="s2">&quot;Role&quot;</span>
+</span><span class='line'>  <span class="n">requestMapClass</span> <span class="o">=</span> <span class="s2">&quot;Requestmap&quot;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<p>Nothing really outstanding here, I chose to set ntlm.stripDomain to false, so that the users name is not prefixed by the domain, I.E. DOMAIN\username.  Also ntlm.defaultDomain and ntlm.netbiosWINS are both required, and I found that the ntlm.netbiosWINS works better if you actually give it the IP address of your domain controller, rather than the DNS name.</p>
+
+
+
+
+<p>With NTLM configured, our Grails app now accepts the users cached authentication from their windows session.  True single sign on!</p>
+
+
+
+
+<h2>Securing the Security Controllers and BootStrapping</h2>
+
+
+<p>Now we&#8217;ve got an application which will use NTLM to authenticate the user, we restrict access using the requestmap, and we add users and their roles using the user and role controllers.  The problem, of course is that if you deploy this application anyone can go right to http://yourdomain.com/sso-app/user and add themselves as a user with any roles they see fit!  So we need to make sure that our security controllers are secured, and that there is an authorized user that can get in to add users and roles.</p>
+
+
+<p><strong>Securing the Security Controllers</strong></p>
+
+<p>The first thing we&#8217;re going to want to do is secure our authentication controllers.  My preference is to do this with annotations on the controllers, so lets secure the UserController and RoleController with annotations.  Shown below we annotate them to show that the &#8220;ROLE_USER_ADMINISTRATOR&#8221; role is necessary to access any of the pages for either controller.
+</p>
+
+
+
+
+<figure class='code'><figcaption><span>UserController.groovy mark:1,3 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="kn">import</span> <span class="nn">org.codehaus.groovy.grails.plugins.springsecurity.Secured</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Secured</span><span class="o">([</span><span class="s2">&quot;ROLE_USER_ADMINISTRATOR&quot;</span><span class="o">])</span>
+</span><span class='line'><span class="cm">/**</span>
+</span><span class='line'><span class="cm"> * User controller.</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'><span class="kd">class</span> <span class="nc">UserController</span> <span class="o">{</span>
+</span><span class='line'>  <span class="cm">/* Snip */</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>RoleController.groovy mark:1,3 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="kn">import</span> <span class="nn">org.codehaus.groovy.grails.plugins.springsecurity.Secured</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Secured</span><span class="o">([</span><span class="s2">&quot;ROLE_USER_ADMINISTRATOR&quot;</span><span class="o">])</span>
+</span><span class='line'><span class="cm">/**</span>
+</span><span class='line'><span class="cm"> * Authority Controller.</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'><span class="kd">class</span> <span class="nc">RoleController</span> <span class="o">{</span>
+</span><span class='line'>  <span class="cm">/* Snip */</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Enabling the @Secured annotation</strong></p>
+
+<p>Now if you were simply to run the application like this, you&#8217;d find that you can still freely navigate to /user and /role without having to be authenticated, that&#8217;s because we are still configured to use the Requestmap to restrict access to specific parts of our application.  To configure this for use with annotations instead, we only need to make a couple of small changes to the SecurityConfig.groovy file.</p>
+
+
+
+
+<figure class='code'><figcaption><span>SecurityConfig.groovy mark:14,16,17 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">security</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// see DefaultSecurityConfig.groovy for all settable/overridable properties</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">active</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="n">useNtlm</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span class='line'>  <span class="n">ntlm</span><span class="o">.</span><span class="na">stripDomain</span> <span class="o">=</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="n">ntlm</span><span class="o">.</span><span class="na">defaultDomain</span> <span class="o">=</span> <span class="s2">&quot;yourdomain.com&quot;</span>
+</span><span class='line'>  <span class="n">ntlm</span><span class="o">.</span><span class="na">netbiosWINS</span> <span class="o">=</span> <span class="s2">&quot;&lt;your-domain-controller-ip&gt;&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">loginUserDomainClass</span> <span class="o">=</span> <span class="s2">&quot;User&quot;</span>
+</span><span class='line'>  <span class="n">authorityDomainClass</span> <span class="o">=</span> <span class="s2">&quot;Role&quot;</span>
+</span><span class='line'>  <span class="c1">//requestMapClass = &quot;Requestmap&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">userRequestMapDomainClass</span> <span class="o">=</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="n">useControllerAnnotations</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<p>Setting useControllerAnnotations to true gives the @Secured annotations on the user and role controllers meaning.  By setting userRequestMapDomainClass to false we tell the Acegi security plugin to not even query for restrictions in the database, but to use only the static configuration defined by the annotations.  We also delete the requestMapClass line.  I commented it here instead of deleting it so it can be highlighted as a change in the file, but we&#8217;re not quite done with the requestmap yet.  Now that we&#8217;ve configured our application not to use the request map we can delete the controller, domain, and views for it.  Go ahead and delete the following files.
+
+<ul>
+  <li>/grails-app/controller/RequestmapController.groovy</li>
+  <li>/grails-app/domain/Requestmap.groovy</li>
+  <li>/grails-app/views/requestmap/*</li>
+</ul>
+</p>
+
+
+<p><strong>BootStrapping</strong></p>
+
+<p>Now that we have our app secured, and we&#8217;re using annotations to restrict access we need to make sure that some user can successfully login after we first deploy our application.  Otherwise no one will be able to access the pages to add new users!  So we use boot strapping to add a user administrator who can add more users and roles for the application.</p>
+
+
+
+
+<figure class='code'><figcaption><span>BootStrap.groovy </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="kd">class</span> <span class="nc">BootStrap</span> <span class="o">{</span>
+</span><span class='line'>  <span class="kt">def</span> <span class="n">authenticateService</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="kt">def</span> <span class="n">init</span> <span class="o">=</span> <span class="o">{</span> <span class="n">servletContext</span> <span class="o">-&gt;</span>
+</span><span class='line'>      <span class="kt">def</span> <span class="n">role</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Role</span><span class="o">(</span><span class="nl">authority:</span> <span class="s1">&#39;ROLE_USER_ADMINISTRATOR&#39;</span><span class="o">,</span> <span class="nl">description:</span><span class="s1">&#39;User Administrator&#39;</span><span class="o">)</span>
+</span><span class='line'>      <span class="n">role</span><span class="o">.</span><span class="na">save</span><span class="o">()</span>
+</span><span class='line'>      <span class="kt">def</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="nl">username:</span> <span class="s1">&#39;admin&#39;</span><span class="o">,</span>
+</span><span class='line'>              <span class="nl">userRealName:</span> <span class="s1">&#39;Administrator&#39;</span><span class="o">,</span>
+</span><span class='line'>              <span class="nl">passwd:</span> <span class="n">authenticateService</span><span class="o">.</span><span class="na">encodePassword</span><span class="o">(</span><span class="s1">&#39;foobar&#39;</span><span class="o">),</span>
+</span><span class='line'>              <span class="nl">enabled:</span> <span class="kc">true</span><span class="o">,</span>
+</span><span class='line'>              <span class="nl">description:</span> <span class="s1">&#39;&#39;</span><span class="o">,</span>
+</span><span class='line'>              <span class="nl">email:</span> <span class="s1">&#39;&#39;</span><span class="o">,</span>
+</span><span class='line'>              <span class="nl">emailShow:</span> <span class="kc">false</span><span class="o">)</span>
+</span><span class='line'>      <span class="n">user</span><span class="o">.</span><span class="na">addToAuthorities</span><span class="o">(</span><span class="n">role</span><span class="o">)</span>
+</span><span class='line'>      <span class="n">user</span><span class="o">.</span><span class="na">save</span><span class="o">()</span>
+</span><span class='line'>     <span class="o">}</span>
+</span><span class='line'>     <span class="kt">def</span> <span class="n">destroy</span> <span class="o">=</span> <span class="o">{</span>
+</span><span class='line'>     <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<p>So there you have it, an application which allows users to connect using their cached authentication using NTLM, uses annotations to secure your controllers, and actually allows access to at least one user once it&#8217;s deployed.  Now, there are still some weaknesses.  Particularly the level of permissions you can assign is limited to roles, I.E. &#8220;Administrator&#8221;, &#8220;User&#8221;, &#8220;Reporting User&#8221;, &#8220;User Administrator&#8221;, etc.  Also in a corporate environment, having to go through this configuration for every grails app, and adding users and assigning their roles for each app can be tedious.  I&#8217;ll be looking into improving these things with Acegi ACL&#8217;s and possibly using a centralized database for users and roles in future articles so stay tuned!</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+
+  
+    <span class="byline author vcard">by <a href="https://plus.google.com/+RyanGeyerCycles?rel=author"><span class="fn">Ryan J. Geyer</span></a></span>
+  
+
+ - 
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-09T23:00:00-08:00" pubdate data-updated="true">Feb 9<span>th</span>, 2010</time> - 
+      
+
+posted in
+<span class="categories">
+  
+    <a class='category' href='/categories/grails-slash-groovy/'>Grails/Groovy</a>, <a class='category' href='/categories/reviews/'>Reviews</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.ryangeyer.com/2010/02/09/fitting-grails-in-an-active-directory-and-ntml-sso-groove/" data-via="rjgeyer" data-counturl="http://blog.ryangeyer.com/2010/02/09/fitting-grails-in-an-active-directory-and-ntml-sso-groove/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    
+      <a class="pull-left" href="/2010/02/04/what-grooves-you/" title="Previous Post: What Grooves You?">&laquo; What Grooves You?</a>
+    
+    
+      <a class="pull-right" href="/2010/02/26/epiphanies/" title="Next Post: Epiphanies">Epiphanies &raquo;</a>
+    
+  </footer>
+
+</div>
+
+        
+          <div class="article-format">
+            <h1>Comments</h1>
+            <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+          </div>
+        
+      </article>
+    </div>
+  </div>
+  <div id="footer-widgets">
+  <div class="container">
+    <div class="row">
+  <div class="span3">
+    <h2>recent posts</h2>
+    <ul class="recent_posts">
+      
+        <li>
+          <a href="/2014/04/13/out-of-hibernation/">Out of hibernation?</a>
+        </li>
+      
+        <li>
+          <a href="/2011/07/02/how-i-vandalized-a-weed-whacker-at-home-depot/">How I Vandalized a Weed Whacker at Home Depot</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/27/policy-for-an-s3-only-amazon-iam-user/">Policy for an S3 only Amazon IAM User</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/24/the-baby/">The baby</a>
+        </li>
+      
+        <li>
+          <a href="/2011/06/22/potty-training-day-13-no-way/">Potty Training Day 13:  NO WAY!</a>
+        </li>
+      
+    </ul>
+    <h2><a href="/blog/archives">archives</a></h2>
+  </div>
+  <div class="span3">
+    <h2>social stuff</h2>
+<center>
+  <script type="text/javascript" src="http://twittercounter.com/embed/?username=rjgeyer&style=avatar"></script><noscript><a href="http://twittercounter.com/rjgeyer">Ryan Geyer on Twitter Counter.com</a></noscript>
+
+  <iframe src="http://widgets.klout.com/badge/rjgeyer?size=m" style="border:0" scrolling="no" allowTransparency="true" frameBorder="0" width="160px" height="78px"></iframe>
+
+  <a href="http://www.linkedin.com/pub/1/828/328" ><img src="http://www.linkedin.com/img/webpromo/btn_viewmy_120x33.gif" width="120" height="33" border="0" alt="View Ryan Geyer's profile on LinkedIn"></a>
+</center>
+
+  </div>
+  <div class="span4">
+    
+<a class="twitter-timeline" href="https://twitter.com/rjgeyer" data-widget-id="436931274691706882">Tweets by @rjgeyer</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+  </div>
+  <div class="span2">
+    <h2>found on</h2>
+
+<a href="https://github.com/rgeyer/" rel="tooltip" title="Github"><img class="social_icon" title="Github" alt="github icon" src="/images/glyphicons_381_github.png"></a>
+
+
+
+<a href="http://stackoverflow.com/users/1305386/" rel="tooltip" title="Stack Overflow"><img class="social_icon" title="Stack Overflow" alt="stack overflow icon" src="/images/glyphicons_400_stack_overflow.png"></a>
+
+
+
+<a href="http://www.linkedin.com/in/rjgeyer" rel="tooltip" title="Linkedin"><img class="social_icon" title="Linkedin" alt="Linkedin icon" src="/images/glyphicons_377_linked_in.png"></a>
+
+
+
+<a href="http://twitter.com/rjgeyer" rel="tooltip" title="Twitter"><img class="social_icon" title="Twitter" alt="Twitter icon" src="/images/glyphicons_391_twitter_t.png"></a>
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://plus.google.com/+RyanGeyerCycles?rel=author" rel="tooltip" title="Google Plus"><img class="social_icon" title="Google Plus" alt="Google Plus icon" src="/images/glyphicons_386_google_plus.png"></a>
+
+
+
+<a href="http://www.quora.com/Ryan-Geyer" rel="tooltip" title="Quora"><img class="social_icon" title="Quora" alt="Quora icon" src="/images/glyphicons_385_quora.png"></a>
+
+
+
+<h2>contact at</h2>
+<a href="mailto:me@ryangeyer.com">me@ryangeyer.com</a>
+
+
+  </div>
+</div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-left">
+  <a href="/">Random Musings</a>
+  - Copyright &copy; 2014 - Ryan J. Geyer
+</p>
+<p class="pull-right">
+  <span>Powered by <a href="http://octopress.org/">Octopress</a>.</span>
+  
+    <span>Designed by <a href="http://www.AdrianArtiles.com">Adrian Artiles</a>.</span>
+  
+</p>
+
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.7.2.min.js" type="text/javascript"><\/script>')</script>
+<script src="/javascripts/libs/bootstrap.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.tweet.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.instagram.js" type="text/javascript"></script>
+<script src="/javascripts/libs/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="/javascripts/custom.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'randmu';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.ryangeyer.com/2010/02/09/fitting-grails-in-an-active-directory-and-ntml-sso-groove/';
+        var disqus_url = 'http://blog.ryangeyer.com/2010/02/09/fitting-grails-in-an-active-directory-and-ntml-sso-groove/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

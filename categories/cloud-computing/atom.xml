@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Cloud computing | Random Musings]]></title>
+  <link href="http://blog.ryangeyer.com/categories/cloud-computing/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-04-16T09:43:38-07:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
+  <author>
+    <name><![CDATA[Ryan J. Geyer]]></name>
+    <email><![CDATA[me@ryangeyer.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Policy for an S3 only Amazon IAM User]]></title>
+    <link href="http://blog.ryangeyer.com/2011/06/27/policy-for-an-s3-only-amazon-iam-user/"/>
+    <updated>2011-06-27T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/06/27/policy-for-an-s3-only-amazon-iam-user</id>
+    <content type="html"><![CDATA[<p>Now that Amazon&rsquo;s Identity and Access Management (<a href="http://aws.amazon.com/iam/">IAM</a>) is more widely known, and you can use your IAM credentials to <a href="/2011/04/04/enabling-aws-console-login-for-iam-users/">login to the AWS Console</a>, you might be wondering how to really leverage the IAM offering.</p>
+
+<!--more-->
+
+
+<p>One really good use for IAM is allowing access for specific users to specific S3 buckets.  This is what the IAM policy would look like.</p>
+
+<p>```
+{
+  &ldquo;Statement&rdquo;: [</p>
+
+<pre><code>{
+  "Action": [
+    "s3:ListAllMyBuckets"
+  ],
+  "Effect": "Allow",
+  "Resource": "arn:aws:s3:::*"
+},
+{
+  "Action": "s3:*",
+  "Effect": "Allow",
+  "Resource": "arn:aws:s3:::bucket_name_here"
+},
+{
+  "Action": "s3:*",
+  "Effect": "Allow",
+  "Resource": "arn:aws:s3:::bucket_name_here/*"
+}
+</code></pre>
+
+<p>  ]
+}
+```</p>
+
+<p>This contains three simple IAM statements.</p>
+
+<ol>
+<li>The s3:ListAllMyBuckets for the entirety of S3 (arn:aws:s3:::*)</li>
+<li>Full control of the specified bucket (bucket_name_here, in this case)</li>
+<li>Ful control of the contents of the specified bucket</li>
+</ol>
+
+
+<p>Sadly, there is no way to limit a user to which buckets are listed, instead you have to let them see all buckets which is accomplished by the first statement.</p>
+
+<p>The second and third statement gives the user full control of the bucket itself, and it&rsquo;s contents respectively.  Assign this policy directly to a user, or a group that the user belongs to, and you&rsquo;re all set!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Taking Route 53 to Optimized Website Performance]]></title>
+    <link href="http://blog.ryangeyer.com/2011/04/11/taking-route-53-to-optimized-website-performance/"/>
+    <updated>2011-04-11T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/04/11/taking-route-53-to-optimized-website-performance</id>
+    <content type="html"><![CDATA[<p>When Amazon announced it&rsquo;s Authoritative DNS service, cheekily named Route 53 a few things popped into my head immediately.  First, this should be a much easier way to get the effects of Dynamic DNS which we were currently leveraging <a href="http://www.dnsmadeeasy.com/">DNS Made Easy</a> for.  Secondly, I wonder how much of a performance boost using it might provide.</p>
+
+<!--more-->
+
+
+<p>Amazon&rsquo;s entire model for providing services through AWS is predicated on the idea of distributing load.  They have several availability zones for computing and storage, they have a Content Delivery Network (CDN) which will deliver your static web content to users at blazing speeds because it&rsquo;s coming from a data center as close to them as possible.</p>
+
+<p>So why wouldn&rsquo;t that persist to their new DNS offering?</p>
+
+<p>Turns out I wasn&rsquo;t the only one wondering this.  Brant recently revealed some performance and stability findings in a <a href="http://x-pose.org/2011/02/amazon-route-53-benchmark-comparisons/">blog post</a> about Route 53.</p>
+
+<h2>How does it improve speed?</h2>
+
+
+<p>With the increasing focus on the speed of websites, everything is getting optimized.  Image sizes, whitespace in your CSS and JS files, the number of additional files you load, etc.  Each of these techniques strips a millisecond or two off of the time it takes your browser to find and download all of the components which make up the page you&rsquo;re looking at.</p>
+
+<p>But there is another facet of browsing the web which takes time, the DNS lookup.  See, your browser has no idea which server to send the request for &ldquo;www.google.com&rdquo; to, since servers are identified not by their domain or hostnames, but by their IP address.  DNS is used to translate the hostname you enter into your browser, into an IP address which can be used to actually locate the server.</p>
+
+<p>Of course, this lookup takes time, and if you have lots of components on your page, perhaps even some from other servers, this time could add up.</p>
+
+<p>Google launched a recursive DNS service for this some time back.  By using the recursive (think &ldquo;cached&rdquo;) servers you could drastically improve your DNS lookup times which is demonstrated quite well in <a href="http://code.google.com/speed/public-dns/docs/performance.html">this FAQ</a> for the service.</p>
+
+<p>The downside of course is that you only get the benefit if you change your computers network settings to use the Google DNS servers, and since the DNS data is cached it can lag behind when changes are made to the authoritative DNS records.</p>
+
+<p>On the other hand, if you use Route 53 as the authority for your DNS records, every internet user will benefit from the performance boost of making a DNS request to a much closer (and faster) DNS server.  Sweet!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Create AWS Service Accounts with IAM]]></title>
+    <link href="http://blog.ryangeyer.com/2011/03/28/create-aws-service-accounts-with-iam/"/>
+    <updated>2011-03-28T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2011/03/28/create-aws-service-accounts-with-iam</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been making use of Amazon Web Services (AWS) quite a lot lately.  In order to really enjoy the benefits of Cloud Computing (automation, agility, etc) I&rsquo;ve had to use a number of tools to interact with AWS on my behalf.</p>
+
+<p>All of these external tools ask for the same thing to enable them to make AWS API calls, your AWS Access Key ID, and your AWS Secret Access Key.  Common practice is usually to just hand over the main set of these credentials, but there is a better (more secure) way, using Amazon Identity and Access Management (IAM).</p>
+
+<!--more-->
+
+
+
+
+<h2>What is IAM?</h2>
+
+
+<p>In September 2010, amidst very little fanfare (as is the Amazon way) Amazon released their Identity and Access Management offering.  To this day, the IAM is still technically in Beta, but it is stable tested offering.</p>
+
+<p>As of this writing, you can only interact with the IAM via the API.  Amazon also makes a nice set of command line tools available which work equally well in Windows or *nix (including mac OSX) environments.</p>
+
+<p>IAM is a set of tools which allow you to create user groups with defined security policies, as well as unique AWS users with their own credentials who can be assigned to those groups.</p>
+
+<p>This is an extraordinarily powerful tool for managing your use of AWS.  No longer is every request to AWS made as your super user account, but you can assign particular users their own credentials to more easily control and audit what they&rsquo;re doing in your AWS environment.</p>
+
+<p>This concept extends to services and tools you might use to manage your AWS environment as well.  Rather than handing over your super user credentials, you can create a unique key and secret pair for each management tool you use, effectively isolating that service.</p>
+
+<p>Now it&rsquo;s true that you can already create many sets of credentials, and invalidate old ones using the <a href="http://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key">Security Credentials</a> link off of your account management in AWS, but these are all still super user credentials.  They still have the same level of access (full control) and any audit information for objects created by those keys show up as the super user.</p>
+
+<p>With IAM you can restrict a set of credentials using an <a href="http://awspolicygen.s3.amazonaws.com/policygen.html">AWS policy</a>, to only the specific AWS API calls you want to allow that user to make, and the objects they create or interact with get audit data showing their username.  This makes it possible to know who (or which service) did what to objects inside your AWS environment.</p>
+
+<p>Do you use a tool like <a href="https://addons.mozilla.org/en-US/firefox/addon/amazon-s3-organizers3fox/">S3 Fox</a> to manage the contents of your S3 buckets?  You can create a unique user and policy which allows access only to S3 calls, or even narrow it to a particular bucket, or filenames!</p>
+
+<p>So, how exactly do you do that?  To best explain it, I&rsquo;m going to walk through the steps necessary to create a new group and user, and then use those new credentials with RightScale my favorite tool for automating AWS.</p>
+
+<h2>Prerequisites</h2>
+
+
+<p>Before we get started, you&rsquo;ll need to go ahead and download the <a href="http://aws.amazon.com/developertools/AWS-Identity-and-Access-Management/4143">IAM Command Line Toolkit</a> (IAM CLI) and add the bin directory to your PATH environment variable.  Once you&rsquo;ve done that, you&rsquo;re ready to follow the steps below.</p>
+
+<h2>Creating a Service Account</h2>
+
+
+<p>The first thing we&rsquo;ll want to do is create a security policy which we will apply to the service account.  Since RightScale helps to manage nearly every aspect of the AWS, the policy document is going to be quite simple, and will grant full access to all services.</p>
+
+<p>Don&rsquo;t be too intimidated by the creating policies for more restrictive cases though, the <a href="http://awspolicygen.s3.amazonaws.com/policygen.html">Policy Generator</a> makes it easy.</p>
+
+<p>So lets write out our full control policy somewhere to disk so that we can use it later.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/tmp/fullcontrol_iam_policy.json </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">{</span>
+</span><span class='line'>  &amp;ldquo;Statement&amp;rdquo;: <span class="o">[</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;<span class="o">{</span>
+</span><span class='line'>  <span class="s2">&quot;Action&quot;</span>: <span class="s2">&quot;*&quot;</span>,
+</span><span class='line'>  <span class="s2">&quot;Effect&quot;</span>: <span class="s2">&quot;Allow&quot;</span>,
+</span><span class='line'>  <span class="s2">&quot;Resource&quot;</span>: <span class="s2">&quot;*&quot;</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  <span class="o">]</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>With that out of the way, lets create a new IAM user group named <strong>RightScaleDash</strong> and upload our new policy file using the IAM CLI tools.</p>
+
+<p><code>
+$ iam-groupcreate -g RightScaleDash
+$ iam-groupuploadpolicy -g RightScaleDash -p FullControl -f /tmp/fullcontrol_iam_policy.json
+</code></p>
+
+<p>Then, we create a new user named <strong>rsdash</strong> and assign the new user to the <strong>RightScaleDash</strong> group.  Note the <strong>-k</strong> parameter, this instructs the IAM CLI tools to create a new AWS key and secret pair.</p>
+
+<p><code>
+$ iam-usercreate -u rsdash -g RightScaleDash -k
+</code></p>
+
+<p>Some things like signing your custom Amazon Machine Images (AMI&rsquo;s) require an x.509 certificate, and RightScale has a place for entering this type of &ldquo;credential&rdquo; as well, so we&rsquo;ll create a self signed one for this example.</p>
+
+<p><code>
+$ openssl genrsa -out iam.key 1024
+$ openssl req -new -key iam.key -out iam.csr
+$ openssl x509 -req -in iam.csr -signkey iam.key -out iam.pem
+$ iam-useraddcert -u rsdash -f iam.pem
+</code></p>
+
+<p>That&rsquo;s really all there is to creating your service account.  Once you&rsquo;ve set things up you aren&rsquo;t locked in to your choices either.  At any time you can go back and add or remove security policies using the IAM CLI.</p>
+
+<p>So now that we&rsquo;ve set up our new user, let&rsquo;s configure RightScale to use it.</p>
+
+<h2>RightScale Configuration</h2>
+
+
+<p>These steps are very easy, I&rsquo;m going to describe how you would change the credentials for an existing RightScale account since adding your credentials for the first time is handled by the RightScale setup wizard.</p>
+
+<p>Once you&rsquo;ve logged in, hover over the <em>Clouds</em> menu, then under <em>AWS Global</em> click the <em>Credentials</em> link.
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-03-21-at-3.21.13-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-03-21-at-3.21.13-PM-300x97.png" alt="" title="Screen shot 2011-03-21 at 3.21.13 PM" width="300" height="97" class="size-medium wp-image-1168" /></a></p>
+
+<p>On the next page, click <em>Edit</em> then enter the newly created credentials into the appropriate fields.</p>
+
+<p>That&rsquo;s it, you&rsquo;ve just configured your RightScale account to use it&rsquo;s very own AWS credentials!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to host Wordpress for Free]]></title>
+    <link href="http://blog.ryangeyer.com/2011/02/13/how-to-host-wordpress-for-free/"/>
+    <updated>2011-02-13T23:00:00-08:00</updated>
+    <id>http://blog.ryangeyer.com/2011/02/13/how-to-host-wordpress-for-free</id>
+    <content type="html"><![CDATA[<p>If you&rsquo;re looking to start a blog to promote your business, or boost your presence on the internet, you&rsquo;ve probably heard of <a href="http://wordpress.org">Wordpress</a>.</p>
+
+<p>You may also have heard about the <a href="http://en.support.wordpress.com/com-vs-org/">benefits</a> of hosting your own instance of Wordpress, but you&rsquo;re intimidated by the idea of setting up and maintaining your own server, or trusting your business to a shared hosting solution.</p>
+
+<p>What if I told you that I&rsquo;ve got a solution that&rsquo;ll let you run your Wordpress blog, on your very own server, with automated backups and disaster recover, completely free?</p>
+
+<p>Wait wait! I know it sounds too good to be true, but don&rsquo;t leave just yet, hear me out&hellip;</p>
+
+<!--more-->
+
+
+
+
+<h2>Amazon AWS Free Tier</h2>
+
+
+<p>First, let me be straight with you.  When I say &ldquo;free&rdquo; I&rsquo;m referring to the <a href="http://aws.amazon.com/free/">free tier</a> of Amazon&rsquo;s virtual computing and storage platform AWS.</p>
+
+<p>This free tier allows you to run their smallest instance free for one year.  In practice you actually end up paying them a very small sum (around $0.12 average for me thus far) each month for transfer costs to run a low to medium traffic blog.</p>
+
+<p>After your first year of free usage has expried, it&rsquo;ll start to cost around $15 per month to keep using the same size instance.</p>
+
+<h2>Managed by RightScale</h2>
+
+
+<p>You may be looking at AWS and thinking that setting up your own server, and keeping it running and backed up would be a daunting task, and it can be.  That&rsquo;s where <a href="http://www.rightscale.com/">RightScale</a> comes into the picture.</p>
+
+<p>RightScale offers a <a href="http://www.rightscale.com/products/free_edition.php">Free Developer Edition</a> that gives you access to their shared library of ServerTemplates.</p>
+
+<p>In that library is one little gem that I published, expressly for the purpose of running a server that hosts my blog, a few sites for other domains I own, as well as all of the email traffic for my various domains.</p>
+
+<p>In fact, you&rsquo;re reading this right now from a server running from <a href="http://www.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">this ServerTemplate</a>.</p>
+
+<h2>Full Disclosure</h2>
+
+
+<p>Before I give you the skinny on how to start using these tools to host a Wordpress blog on your own virtual server, a few warnings are in order.</p>
+
+<p>I am using <a href="http://www.opscode.com/chef/">Opscode Chef</a> to configure the server.  Chef support is currently in <em><strong>Beta</strong></em> on RightScale, meaning that they do not recommend you use it to configure and manage &ldquo;Production&rdquo; servers.</p>
+
+<p>It also means that there can be some hiccups when you&rsquo;re launching and configuring a server with this ServerTemplate.</p>
+
+<p>So, don&rsquo;t be surprised if the first time you launch your server, it doesn&rsquo;t work.  Try launching a second time.</p>
+
+<p>Lastly, I can&rsquo;t take any responsibility for any loss of self esteem, data, productivity, or sanity.  You have been warned.</p>
+
+<p>That said, I&rsquo;m using this server to run the very blog you&rsquo;re reading, and I haven&rsquo;t had any significant glitches yet.  RightScale is working as we speak to improve their support for Chef and things will only get better from here.</p>
+
+<p>Haven&rsquo;t scared you off yet? Okay, good..  Here we go..</p>
+
+<h2>20 Minute Quickstart</h2>
+
+
+<p>The RightScale management tool, and this ServerTemplate offer all sorts of cool functionality which we can explore later, but if you&rsquo;re in a hurry to get started here&rsquo;s all you need to know.</p>
+
+<ol>
+<li>Go sign up for an <a href="http://aws.amazon.com/">AWS Account</a></li>
+<li>Sign up for a RightScale <a href="http://www.rightscale.com/products/free_edition.php">Free Developer Edition</a></li>
+<li>Enter your AWS credentials into the RightScale dashboard using <a href="http://support.rightscale.com/index.php?title=03-Tutorials/01-RightScale/3._Upgrade_Your_Account/1.7_Add_AWS_Credentials_to_the_Dashboard">these</a> directions</li>
+<li>Browse to my <a href="https://my.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">All-In-One ServerTemplate</a> and click "Import"</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.25.23-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.25.23-PM-300x220.png" alt="" title="Import ServerTemplate" width="300" height="220" class="size-medium wp-image-1026" /></a>
+<li>Click "Add to Deployment"</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.05.02-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.05.02-PM-300x87.png" alt="" title="Add to Deployment" width="300" height="87" class="alignnone size-medium wp-image-1024" /></a>
+<li>Pick the AWS Cloud closest to you and click "OK"</li>
+<li>Change the "Instance Type" dropdown to "t1.micro", and select the "default" Security Group from the dropdown.  You can also provide you server a name, then click "Add"</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.04.40-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.04.40-PM-300x288.png" alt="" title="Server Details" width="300" height="288" class="alignnone size-medium wp-image-1023" /></a>
+<li>Click the "Play" button, provide inputs for the Database Administrator password, Postfix DB password, and EBS volume size, then click "Save and Launch"</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.17.24-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.17.24-PM-300x124.png" alt="" title="Launch Server" width="300" height="124" class="alignnone size-medium wp-image-1033" /></a>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.13.36-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.13.36-PM-269x300.png" alt="" title="Server Inputs" width="269" height="300" class="alignnone size-medium wp-image-1025" /></a>
+<p>And now.. We wait.. Until the instance is up and running..</p>
+<li>Click on the server's nickname, then navigate to the "Scripts" tab</li>
+<li>Run the "rjg_utils::aio_ebs_volume_enable_continuous_backup" operational script to make sure your server is backed up daily</li>
+<li>Run the "app_wordpress::deploy" operational script to setup Wordpress for your domain</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.45.33-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-1.45.33-PM-300x151.png" alt="" title="Wordpress Deploy Inputs" width="300" height="151" class="alignnone size-medium wp-image-1036" /></a>
+<li>Navigate to your websites URL (we used http://ec2.ryangeyer.com in this example) and setup your Wordpress preferences</li>
+<a href="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-2.27.07-PM.png"><img src="http://blog.ryangeyer.com/images/Screen-shot-2011-02-11-at-2.27.07-PM-300x285.png" alt="" title="Configure Wordpress" width="300" height="285" class="alignnone size-medium wp-image-1044" /></a>
+<li>Start Blogging!</li>
+</ol>
+
+
+
+
+<h2>What's Next?</h2>
+
+
+<p>That&rsquo;s really all there is to it.  As I mentioned the ServerTemplate does a number of other cool things, which you can read about in it&rsquo;s <a href="http://www.rightscale.com/library/server_templates/Web-LAMP-Email-Postfix-vhost-A/17057">description</a>.</p>
+
+<p>The best part is that because this ServerTemplate is what I use for my own blog and email hosting duties, you can be sure that I&rsquo;ll keep it up to date, secure, and be adding features fairly regularly.</p>
+
+<h2>Drop me a note</h2>
+
+
+<p>If you followed these directions, or if you&rsquo;re using this ServerTemplate, or if you&rsquo;re having trouble, by all means drop me a note in the comments here.</p>
+
+<p>I&rsquo;ll be happy to answer any questions I can, and I&rsquo;d love to get a sense for how many people are out there running servers based on this template, it&rsquo;ll keep me motivated to publish more stuff in the public ServerTemplate library!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Chef for RightScale Quick Start]]></title>
+    <link href="http://blog.ryangeyer.com/2010/11/28/chef-for-rightscale-quick-start/"/>
+    <updated>2010-11-28T23:00:00-08:00</updated>
+    <id>http://blog.ryangeyer.com/2010/11/28/chef-for-rightscale-quick-start</id>
+    <content type="html"><![CDATA[<p>For the past few weeks I have been getting down and dirty writing Chef recipes for use in RightScale.</p>
+
+<p>With Chef support still in beta on RightScale, and me being a complete Chef newbie it&rsquo;s I&rsquo;m still on the front side of the learning curve.</p>
+
+<p>If you&rsquo;re just getting started with Chef for RightScale, you might benefit from this quick start and some of the lessons I learned while getting started.</p>
+
+<h1>Mise en place</h1>
+
+
+<p>While you could just open up Notepad or TextEdit and start writing your Chef recipes, there are a few resources that will make the experience much more enjoyable.</p>
+
+<h2>Install Chef</h2>
+
+
+<p>The first thing you&rsquo;re going to want to do is install the Chef Ruby Gem.  This will add all of the libraries and binaries for Chef.</p>
+
+<p>While we&rsquo;re writing our recipes for use with RightScale we won&rsquo;t need to worry about using the Chef Server, Chef Solo, or Chef Client, so don&rsquo;t bother configuring any of those.</p>
+
+<p>I&rsquo;m developing on a Mac and the only suitable installation method seems to be using Ruby Gems to install.  This mechanism should also work for most Linux and Debian machines which already have Ruby installed.</p>
+
+<p><code>
+sudo gem install chef
+</code></p>
+
+<p>Be sure that you run this as root, or with sudo or Chef will get installed at ~/.gem and won&rsquo;t be in your $PATH or consequently accessible to other users.</p>
+
+<h2>Sharpen your knives</h2>
+
+
+<p>Now that you have all of the Chef goodies installed, you&rsquo;ll have a binary named &ldquo;knife&rdquo;.  The knife is a utility which we&rsquo;ll be using as we develop our cookbooks and recipes which you&rsquo;ll see later.</p>
+
+<p>First though, we need to configure knife.  Since we&rsquo;ll only be using knife to act locally on our recipes and cookbooks we don&rsquo;t need to give it legit values for a Chef server, but we do need to complete the configuration step to satisfy knife and prevent it from crashing when we use it.</p>
+
+<p>To create a simple configuration file for knife, just run knife config, and accept all of the defaults.</p>
+
+<p><code>
+knife configure
+No knife configuration file found
+Where should I put the config file? [~/.chef/knife.rb]
+Please enter the chef server URL: [http://localhost:4000]
+Please enter an existing username or clientname for the API: [rgeyer]
+Please enter the validation clientname: [chef-validator]
+Please enter the location of the validation key: [/etc/chef/validation.pem]
+Please enter the path to a chef repository (or leave blank):
+WARN: *****
+WARN:
+WARN: You must place your client key in:
+WARN:   /Users/rgeyer/.chef/rgeyer.pem
+WARN: Before running commands with Knife!
+WARN:
+WARN: *****
+WARN:
+WARN: You must place your validation key in:
+WARN:   /etc/chef/validation.pem
+WARN: Before generating instance data with Knife!
+WARN:
+WARN: *****
+WARN: Configuration file written to /Users/rgeyer/.chef/knife.rb
+</code></p>
+
+<p>You&rsquo;re safe to ignore the warnings since they only pertain to actually connecting to a Chef server, which we won&rsquo;t be doing.</p>
+
+<p>That&rsquo;s it for installing and configuring Chef if you&rsquo;re using it with RightScale!</p>
+
+<h2>Prepare your pantry</h2>
+
+
+<p>Once you get going with Chef you&rsquo;re going to need to store your cookbooks somewhere for RightScale to find them and run them.</p>
+
+<p>RightScale will use svn or git repositories, as well as simply downloading a tar or zip file, but my personal preference is to use a git repository.</p>
+
+<p>The quickest and easiest way to get started with git is to head over to <a href="https://github.com/">github</a> and sign up for a free account.</p>
+
+<p>Once you&rsquo;re setup, go ahead and create the repository we&rsquo;ll be using for our Chef cookbooks, and note the SSH URL to your new repository.  It should look something like <em>git@github.com:&lt;github_username&gt;/&lt;repo_name&gt;.git</em>.  Write it down or keep the browser window open so you can reference it later.</p>
+
+<h1>Heat things up</h1>
+
+
+<p>Now that you&rsquo;ve got your <a href="http://en.wikipedia.org/wiki/Mise_en_place">mise en place</a> it&rsquo;s time to get cooking for RightScale with Chef.</p>
+
+<h2>Create your repo</h2>
+
+
+<p>The first step is to get the file structure of your Chef repository setup.  You could just take a look at an existing repository like the <a href="https://github.com/opscode/cookbooks">opscode</a> cookbooks, or RightScale&rsquo;s <a href="https://github.com/rightscale/cookbooks_public">public repository</a> and replicate it manually, but there is a better way.</p>
+
+<h2>Clone the OpsCode repo</h2>
+
+
+<p>OpsCode, (the folks behind Chef) have conveniently provided a public github repository that represents the skeleton of a fully operational Chef repository.  You can clone this repository to get you started.</p>
+
+<p><code>
+git clone git://github.com/opscode/chef-repo.git
+</code></p>
+
+<p>Once you&rsquo;ve cloned the skeleton repository, you&rsquo;ll want to configure git to use the new github repository we created earlier.  Here&rsquo;s where you&rsquo;ll use the SSH URL I told you to take note of.  Substitute that URL where you find &lt;ssh_url&gt; below.</p>
+
+<p><code>
+cd chef-repo/
+git remote rename origin opscode-github
+git remote add origin &amp;lt;ssh_url&amp;gt;
+git remote rm opscode-github
+git push origin master
+</code></p>
+
+<h2>Create cookbook</h2>
+
+
+<p>With the repository skeleton all ready, we&rsquo;re going to want to create our first cookbook and add a recipe to it.</p>
+
+<p>Creating a cookbook is our first chance to use our freshly sharpened knife, like so.</p>
+
+<p><code>
+knife cookbook create my-first-cookbook -o cookbooks/
+</code></p>
+
+<p>This should create a nice new cookbook skeleton directory at &lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook.</p>
+
+<p>With that done, let&rsquo;s put our first recipe in the cookbook.  Using your favorite IDE, create and save a file named <em>helloworld.rb</em> inside the new cookbook directory.</p>
+
+<p><strong>EDIT: Many have correctly pointed out that the hello world file should actually go in <em>&lt;path_to_your_repo&gt;/cookbooks/my-first-cookbook/recipes</em>.  Thanks all for the feedback!</strong></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>helloworld.rb </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">log</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Hello</span> <span class="no">World</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>With the recipe created, we need to add it to our metadata file so that Chef and RightScale can know it&rsquo;s there.  Here&rsquo;s a copy of our default <em>metadata.rb</em> file.  The highlighted line is added to define the recipe we&rsquo;ve added.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>metadata.rb mark:8 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">maintainer</span>       <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">YOUR_COMPANY_NAME</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
+</span><span class='line'><span class="n">maintainer_email</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">YOUR_EMAIL</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
+</span><span class='line'><span class="n">license</span>          <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
+</span><span class='line'><span class="n">description</span>      <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Installs</span><span class="o">/</span><span class="no">Configures</span> <span class="n">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">cookbook</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
+</span><span class='line'><span class="n">long_description</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="no">FILE</span><span class="o">&lt;</span><span class="sr">/strong&gt;), &amp;lsquo;README.rdoc&amp;rsquo;))</span>
+</span><span class='line'><span class="sr">version          &amp;ldquo;0.0.1&amp;rdquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">recipe</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="ss">cookbook</span><span class="p">:</span><span class="ss">:helloworld</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">My</span> <span class="n">first</span> <span class="n">recipe</span><span class="p">,</span> <span class="n">prints</span> <span class="no">Hello</span> <span class="no">World</span> <span class="n">to</span> <span class="n">the</span> <span class="no">RightScale</span> <span class="n">dashboard</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>We only have one more step before we&rsquo;re ready to commit our new cookbook and recipe to our new git repository.</p>
+
+<p>RightScale reads the metadata to determine which recipes are available in the repository, and which inputs are available for those recipes.  The file that RightScale evaluates though is a json file named <em>metadata.json</em>.</p>
+
+<p>The contents of <em>metadata.json</em> are effectively the same as <em>metadata.rb</em>, but take heart, you only need maintain the <em>metadata.rb</em> file, then convert it using another Chef command.  To generate <em>metadata.json</em> from <em>metadata.rb</em> just run the following command.</p>
+
+<p><code>
+rake metadata
+</code></p>
+
+<p>You can run this command either right at the root of your repository, or inside each cookbook.  If you run it from the root directory of your repository, it will convert all the metadata files in all of the cookbooks.</p>
+
+<p>Now we&rsquo;re ready to commit our repository and try out our new cookbook.</p>
+
+<p><code>
+git add cookbooks/
+git commit -am &amp;quot;Added my-first-cookbook and helloworld recipe&amp;quot;
+git push
+</code></p>
+
+<h1>RightScale Configuration</h1>
+
+
+<p>I&rsquo;m going to assume that you already have some familiarity with the RightScale dashboard, and creating things like ServerTemplates and RightScripts.</p>
+
+<p>What I&rsquo;m going to cover here are steps are necessary to start using Chef with your ServerTemplates.</p>
+
+<h2>Tell RightScale about your Repo</h2>
+
+
+<p>The first thing you need to start using your cookbooks in RightScale is to tell the RightScale dashboard where to find your repo.  To do that, you need to create a new <em>RepoPath</em> in the designer.</p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216898582/" title="Screen shot 2010-11-28 at 7.33.05 PM by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5128/5216898582_2c0d17f8d8_z.jpg" width="640" height="359" alt="Screen shot 2010-11-28 at 7.33.05 PM" /></a></p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216898726/" title="Screen shot 2010-11-28 at 7.33.35 PM by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5205/5216898726_cbc1351324_z.jpg" width="640" height="359" alt="Screen shot 2010-11-28 at 7.33.35 PM" /></a></p>
+
+<p>When you&rsquo;re adding the RepoPath, for the URL field, supply the &ldquo;Git Read-Only URL&rdquo; for your repository, and make sure to specify the path to your cookbooks as <em>cookbooks</em>.</p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216310951/" title="Screen shot 2010-11-28 at 7.34.37 PM by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4104/5216310951_0400b36fd8_z.jpg" width="640" height="440" alt="Screen shot 2010-11-28 at 7.34.37 PM" /></a></p>
+
+<h2>Add your RepoPath to a ServerTemplate</h2>
+
+
+<p>Now that you&rsquo;ve added your repo to the RightScale dashboard, you need to add that RepoPath to a ServerTemplate.  To do that, open the ServerTemplate you want to run Chef cookbooks on, and click the edit pencil on the <em>Repos</em> tab.</p>
+
+<p>Then select the RepoPath we just made, and click OK.</p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216937566/" title="Screen shot 2010-11-28 at 7.56.33 PM by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5128/5216937566_30f703fb4b_z.jpg" width="640" height="440" alt="Screen shot 2010-11-28 at 7.56.33 PM" /></a></p>
+
+<h2>Add a recipe to your ServerTemplate</h2>
+
+
+<p>Our very last step is to add our helloworld recipe to a our ServerTemplate so that we can run it on one of our instances.  Go back to the <em>Scripts</em> tab, and in the script category of your choosing, click <em>Add Recipe</em> and select the helloworld recipe.</p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216369965/" title="Screen shot 2010-11-28 at 8.02.27 PM by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4083/5216369965_469cafb59b_z.jpg" width="640" height="440" alt="Screen shot 2010-11-28 at 8.02.27 PM" /></a></p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216958398/" title="Screen shot 2010-11-28 at 8.02.34 PM by qwikrex, on Flickr"><img src="http://farm6.static.flickr.com/5127/5216958398_b087c4abb2_z.jpg" width="640" height="440" alt="Screen shot 2010-11-28 at 8.02.34 PM" /></a></p>
+
+<p>From an instance running with the ServerTemplate we just modified, we can run the recipe, and see &ldquo;Hello World&rdquo; appear in the RightScale dashboard.</p>
+
+<p><a href="http://www.flickr.com/photos/rgeyer/5216405207/" title="Screen shot 2010-11-28 at 8.18.58 PM by qwikrex, on Flickr"><img src="http://farm5.static.flickr.com/4088/5216405207_bfa688f098_z.jpg" width="640" height="440" alt="Screen shot 2010-11-28 at 8.18.58 PM" /></a></p>
+
+<h1>Tips & Tricks</h1>
+
+
+<p>As stated before, Chef support in RightScale is still in Beta.  Because of this there are some gotchas to watch out for.</p>
+
+<h2>Sanity Check Recipe</h2>
+
+
+<p>If there are any syntax errors or anything else amiss in your repository, you&rsquo;ll find that not just the cookbook or recipe which you&rsquo;re working on is failing, but absolutely <strong><em>every</em></strong> recipe in your repo (or any other repo that&rsquo;s part of your RepoPath) will fail with this super informative error message.</p>
+
+<p><code>
+*ERROR&amp;gt; Chef process failed with return code 1
+</code></p>
+
+<p>Of course, you can also get that error message if you have some other problem in the recipe you&rsquo;re working on.</p>
+
+<p>Because of this I find it useful to keep a &ldquo;smoke test&rdquo; recipe in my repo, and assigned to the operational scripts on my ServerTemplate when I&rsquo;m doing Chef development.  This recipe should be something simple that you know will always succeed, assuming that everything else is in order.</p>
+
+<p>The helloworld recipe that we created in this exercise is actually a perfect choice for this purpose.</p>
+
+<h1>Taste Test</h1>
+
+
+<p>So there it is, everything you need to know to get started using Chef on RightScale condensed from my few weeks of experience.  I hope it helps you get started configuring your server instances with Chef, which brings a whole new dimension of power and flexibility to the RightScale ServerTemplates.</p>
+
+<p>I&rsquo;m excited to see how Chef support progresses and makes it to <em>production</em> status.</p>
+
+<p>If you&rsquo;re hungry for more info, check out some of the early documentation available about using Chef in RightScale <a href="http://support.rightscale.com/index.php?title=09-Clouds/Multi_Cloud/Chef">here</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

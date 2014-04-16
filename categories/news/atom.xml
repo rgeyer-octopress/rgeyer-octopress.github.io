@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: News | Random Musings]]></title>
+  <link href="http://blog.ryangeyer.com/categories/news/atom.xml" rel="self"/>
+  <link href="http://blog.ryangeyer.com/"/>
+  <updated>2014-04-16T09:43:38-07:00</updated>
+  <id>http://blog.ryangeyer.com/</id>
+  <author>
+    <name><![CDATA[Ryan J. Geyer]]></name>
+    <email><![CDATA[me@ryangeyer.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Navigating Domain Registration - A tale of a near miss]]></title>
+    <link href="http://blog.ryangeyer.com/2009/12/02/navigating-domain-registration-a-tale-of-a-near-miss/"/>
+    <updated>2009-12-02T23:00:00-08:00</updated>
+    <id>http://blog.ryangeyer.com/2009/12/02/navigating-domain-registration-a-tale-of-a-near-miss</id>
+    <content type="html"><![CDATA[<p>The story you are about to read is true, not even the names have been changed so as to fully implicate the accused.</p>
+
+<p>First, a teensy bit of background.  I conduct a lot of transactions online, and do most of my business electronically.  I own three of my own domains, and manage a fourth for a friend, as well as hosting all of them on my own <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a>.  As such I feel I&rsquo;ve become pretty attuned to possible scams, phishing attempts, and other ne'er-do-wells.  That is, until last week.</p>
+
+<p>See, when I needed to register a new domain and have it hosted, I went with the &ldquo;all in one&rdquo; offering with the hosting company I was using before I switched to my VPS.  This was super convenient, as they handled registering the domain for me, and set me up with one year of hosting a website and email for that domain for one year.  Great, one stop shopping!  That was nearly one year ago, and the domain is due for renewal in December.</p>
+
+<p>So, when I received an email from a domain registrar I did not recognize suggesting that I renew my domain I assumed that it was the domain registrar that my hosting company used to register the domain on my behalf.  I happily followed the link and renewed my domain with that registrar for two more years.  I did find it odd that I didn&rsquo;t have to supply any user credentials or other identification, but I just assumed they&rsquo;d use some of the personal information I provided to compare against the WHOIS or something.  Besides, what do they care if someone else pays to renew a domain, even if it doesn&rsquo;t belong to them, right?</p>
+
+<p>Well, some days later I received another email, from what appeared to be a separate entity than the domain registrar I renewed with.  This email requested that I authorize a domain name transfer to them.  Hmmmn.. Wait, I thought I renewed, not transferred.  Something is wrong here..</p>
+
+<p>I proceeded to do a few quick Google searches on the domain registrar that I renewed with, and the name of the registrar which was apparently requesting a domain transfer.  Turns out they&rsquo;re all part of the same organization based out of Canada, and all I read was experiences of shady business practices and situations of domains which were either lost, or trapped in limbo!  Some keywords for you to search on in order to read what I read about.  No bueno!</p>
+
+<p><a href="http://www.google.com/search?q=domain+registry+of+america+scam">domain registry of america scam</a>
+<a href="http://www.google.com/search?q=domain+registry+of+america+brandon+gray">domain registry of america brandon gray</a>
+<a href="http://www.google.com/search?q=namejuice.com&ie=utf-8">namejuice.com</a></p>
+
+<p>Great, so now I realize I&rsquo;ve given my personal details to some unscrupulous individuals and they&rsquo;ve charged me $50 for two years of domain registration which I&rsquo;ll likely never actually receive from them.  Fortunately, the domain transfer request turned out to be suspicious enough to catch my attention and make me thing twice before proceeding!  At least my domain name is safe (I hope).</p>
+
+<p>Next steps?  I call my bank, and file a chargeback for the $50 charge, and have them cancel the Visa bank card I used to place the order.  Now I get to be on the look out for odd or fraudulent charges on my account, yay me!  Tomorrow I&rsquo;m going to try to actually renew and transfer my domain to <a href="http://www.register.com">Register.com</a> where I manage my other domains.</p>
+
+<p>So, here are the lessons I&rsquo;ve learned and some sage advice you might benefit from.</p>
+
+<ul>
+  <li>Whenever possible, register your domain name yourself with a reputable domain registrar.  Something like;
+    <ul>
+      <li><a href="http://www.register.com">Register.com</a></li>
+      <li><a href="http://www.networksolutions.com">Network Solutions</a></li>
+      <li><a href="http://www.godaddy.com">Go Daddy</a></li>
+    </ul>
+  </li>
+  <li>If you do happen to let some entity register a domain on your behalf, know who that registrar is.  You can use the <a href="http://www.whois.net/">WHOIS domain services</a> to learn what registrar "owns" your domain.</li>
+  <li>When renewing or registering a domain, make sure not to do so by clicking on links from emails, instead go to the registered web address for the domain registrar identified in the previous bullet point</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Caveman instincts]]></title>
+    <link href="http://blog.ryangeyer.com/2009/11/05/caveman-instincts/"/>
+    <updated>2009-11-05T23:00:00-08:00</updated>
+    <id>http://blog.ryangeyer.com/2009/11/05/caveman-instincts</id>
+    <content type="html"><![CDATA[<p>So as you may have already read, we moved from our apartment into a modest house.  This was necessary for a number of reasons, not the least of which were our toddler growing up and needing more space, and the fact that I&rsquo;m working 90%+ from home and needed an office.  A couple of side benefits for me were getting a nice small(ish) lawn in the back yard, and a garage.</p>
+
+<p>Lets talk about the lawn first.  At our apartment, we had a small patch of dirt that was maybe 5' x 8' that we did clean up and laid sod.  For a few weeks it was GREAT and looked fantastic.  I&rsquo;d water it regularly and mow it every week, it was great and I had a huge sense of pride and accomplishment in it.  However, due to the way the sun shined (or didn&rsquo;t as the case may be) the grass didn&rsquo;t last long and I was immensely mournful when it met with it&rsquo;s eventual demise.</p>
+
+<p>With the new place, I get another chance to have a healthy lawn!  It&rsquo;s significantly larger, but not huge this time.  I am again mowing it weekly, and watering it regularly, and I have a strange almost indescribable sense of pride and glee everytime I work on it or look out the window at it.  What is it about a healthy, green, and well manicured lawn that resonates so deeply with the male psyche?  I can&rsquo;t explain it, I just know that it makes me smile and makes me want to GRUNT in satisfaction.  UHHH UHH OHHAAHH!!</p>
+
+<p>I also scored a two car garage in the move.  Now, I know this is fairly mundane for most but allow me to explain.  Growing up we lived in like three different places that had garages, however we never had space to work or park cars in the garage!  As I type this, both my <a href="/categories/1967-cadillac-sedan-deville/">67 Caddy</a> and our family minivan are safely parked in the garage along with my tools and some items which we&rsquo;re storing, and it&rsquo;s clean and organized!  On top of that, I have room to work which is a total luxury for me.  I have done some pretty significant mechanics work in a carport with space for one car at our old apartment.  This included completely dismantling <a href="/2009/09/03/the-x-is-dead-long-live-the-x/">the explorer</a> down to just the sheet metal, frame, and suspension.  In the short month that we&rsquo;ve lived in this house I&rsquo;ve had the opportunity to help my sister change her oil, and I&rsquo;ve started to dig into the project of getting the Caddy&rsquo;s cooling system up to snuff.  The difference between working outdoors, or in a cramped carport vs. working in a garage is indescribable!</p>
+
+<p>So a lawn, and a garage&hellip;  Two things which I&rsquo;ve gained from moving in here which seem to appeal to the very core of my being as a man.  I don&rsquo;t claim to understand it, but I can tell you that it&rsquo;s extraordinarily gratifying and just seems to be part of the male DNA.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The sleeper has awakened!]]></title>
+    <link href="http://blog.ryangeyer.com/2009/11/01/the-sleeper-has-awakened/"/>
+    <updated>2009-11-01T23:00:00-08:00</updated>
+    <id>http://blog.ryangeyer.com/2009/11/01/the-sleeper-has-awakened</id>
+    <content type="html"><![CDATA[<p>Man, nearly two months without a post here.  Google Analytics tells me I'm only disappointing about two dozen people, so to you my loyal readers, accept my humblest apologies.  But, I do have an excuse or two!</p>
+
+
+
+
+<p><a href="http://www.flickr.com/photos/rgeyer/4056790007/" title="Marathon Conference Calls by qwikrex, on Flickr"><img src="http://farm4.static.flickr.com/3021/4056790007_3a2ae48a63_m.jpg" width="240" height="225" alt="Marathon Conference Calls" class="alignleft" /></a>See, I've been working an insane work schedule.  Pretty much 16-18hours a day 6-7 days a week, mostly on phone calls with an offshore team at odd hours.  When I do have a moment or two that I'm not working, you can bet the last thing I want to be doing is sitting in front of a computer typing a blog post.</p>
+
+
+
+
+<p>To add to that, we moved out of our two bedroom townhouse at the beginning of October, and are just getting fully settled into our new place.  I'm TOTALLY excited about the new house.  We've got three bedrooms and one and a half baths, it's single story which is great because Q can roam around as he pleases.  It's also got a great, and quite large sun room that opens into the backyard, this has become Q's defacto playroom which is excellent.  Plus, we've got a bigger kitchen, a proper dining area where we can sit and eat as a family, and I have my very own office and *drumroll* TWO CAR GARAGE!</p>
+
+
+
+
+<p>Now that we're settled in the new house, and the deadline for work is approaching things are starting to drift back toward "normal" as if there is such a thing for our family.  I even managed to grab a couple hours to work on the Cadillac today, and write this blog entry!  HUZZAH!</p>
+
+
+
+
+<p>In the meantime, my wife has done an excellent job of providing content since I made her an author here to.  You may have noticed <!--<a href="#">-->her posts<!--</a>-->.  I'm totally stoked to have her writing here since I strongly believe she has a future in writing short stories or novels!  I still have two or three of her drafts which I need to review and publish.  And no, I'm not doing a macho "you need me to post for you, you don't have the permissions" thing, she's just not confident enough yet to post without me reviewing/editing.  We'll change that soon enough.  ;-)</p>
+
+
+
+
+<p>Stay tuned to this space for more, as I'll be trying to actually keep things up to date again.  :-)</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My First Post]]></title>
+    <link href="http://blog.ryangeyer.com/2009/08/01/my-first-post/"/>
+    <updated>2009-08-01T00:00:00-07:00</updated>
+    <id>http://blog.ryangeyer.com/2009/08/01/my-first-post</id>
+    <content type="html"><![CDATA[<p>I guess it is only right to introduce myself.  I am a twenty something year old woman that has been happily married for seven years.  We have been blessed with remarkable baby boy.  I am a multicultural person that enjoys and embraces all that I am made up of.  I have had many an up hill battle and I believe it has aided in who I am and so far I love who that is.
+I believe my entries on this will be a bit different than by incredible husband&rsquo;s as I am not an engineer, so only a little will be about photography, cars, and I have little to nothing to talk about computers.  Oh and because I am a girl.  LOL!   So to those that may be just discovering my rantings enjoy the ride.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[No Internet For You!]]></title>
+    <link href="http://blog.ryangeyer.com/2009/02/16/no-internet-for-you/"/>
+    <updated>2009-02-16T23:00:00-08:00</updated>
+    <id>http://blog.ryangeyer.com/2009/02/16/no-internet-for-you</id>
+    <content type="html"><![CDATA[<p>You might have noticed a little change to the look of the site.  Until the 23rd of February it&rsquo;ll continue to look this way.  You can see some detail in the right column, and in the following paragraphs.  :&ndash;)</p>
+
+<p>There is a little piece of legislation that&rsquo;s been passed in New Zealand which could set precedence for similar laws elsewhere.  In short, this legislation says that any copyright holder can accuse an internet user of copyright infringement or theft, and their ISP is compelled to disconnect them without any burden of proof.</p>
+
+<p>You can read more about it <a href="http://lynnepope.net/internet-blackout-protest-is-not-about-filesharing">here</a> and <a href="http://creativefreedom.org.nz/blackout.html">here</a>.</p>
+
+<p>Be sure to sign the <a href="http://creativefreedom.org.nz/whattodo.html#signup">petition</a> and if you do, please comment here, I&rsquo;d like to know my contribution to the cause.</p>
+]]></content>
+  </entry>
+  
+</feed>
